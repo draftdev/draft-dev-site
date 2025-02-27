@@ -1,5 +1,4 @@
 'use client'
-// components/global/gtm-noscript.tsx
 
 export default function GoogleTagManagerNoScript() {
   return (

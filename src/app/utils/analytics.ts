@@ -10,7 +10,6 @@ type EventProps = {
 
 // Track page views
 export const pageview = (url: string): void => {
-  // Push to dataLayer for GTM
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: 'pageview',
@@ -28,7 +27,6 @@ export const pageview = (url: string): void => {
 
 // Track custom events
 export const event = ({ action, category, label, value }: EventProps): void => {
-  // Push to dataLayer for GTM
   if (typeof window !== 'undefined' && window.dataLayer) {
     window.dataLayer.push({
       event: action,
@@ -50,7 +48,6 @@ export const event = ({ action, category, label, value }: EventProps): void => {
 
 // Improved scroll tracking using Intersection Observer
 export const trackScroll = (): (() => void) => {
-  // Exit if document or window are not available (during SSR)
   if (
     typeof document === 'undefined' ||
     typeof window === 'undefined' ||
@@ -172,7 +169,6 @@ export const trackScroll = (): (() => void) => {
 
 // Initialize user interaction tracking
 export const initUserInteractionTracking = (): (() => void) => {
-  // Exit if document or window are not available (during SSR)
   if (typeof document === 'undefined' || typeof window === 'undefined') {
     // Return empty cleanup function
     return () => {}

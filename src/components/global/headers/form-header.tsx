@@ -1,5 +1,5 @@
+import NLSubscribeForm from '@/components/page-components/vendors/mailchimp/newsletter'
 import React from 'react'
-import MailchimpSubscribeForm from '../../page-components/vendors/mailchimp'
 
 interface FormHeaderProps {
   title: string
@@ -37,7 +37,7 @@ export const FormHeader: React.FC<FormHeaderProps> = ({
                   </p>
                 )}
                 <div className="my-8 py-16">
-                  <MailchimpSubscribeForm />
+                  <NLSubscribeForm />
                 </div>
               </div>
             </div>

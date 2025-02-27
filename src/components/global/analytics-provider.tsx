@@ -1,5 +1,4 @@
 'use client'
-// components/global/analytics-provider.tsx
 
 import { useEffect, useRef } from 'react'
 import {
@@ -35,7 +34,6 @@ export default function AnalyticsProvider({
   useEffect(() => {
     // Only initialize once
     if (!interactionTrackingInitialized.current) {
-      // Initialize user interaction tracking
       const interactionCleanup = initUserInteractionTracking()
       interactionTrackingInitialized.current = true
 

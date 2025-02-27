@@ -4,13 +4,15 @@ import { useState } from 'react'
 
 interface SubscribeFormState {
   email: string
+  firstName: string
   status: 'idle' | 'loading' | 'success' | 'error'
   errorMessage: string
 }
 
-export default function MailchimpSubscribeForm() {
+export default function NLSubscribeForm() {
   const [formState, setFormState] = useState<SubscribeFormState>({
     email: '',
+    firstName: '',
     status: 'idle',
     errorMessage: '',
   })
@@ -36,6 +38,7 @@ export default function MailchimpSubscribeForm() {
         ...prev,
         status: 'success',
         email: '',
+        firstName: '',
       }))
     } catch (error) {
       setFormState((prev) => ({
@@ -53,6 +56,8 @@ export default function MailchimpSubscribeForm() {
         className="flex flex-col gap-6"
         target="_blank"
         id="mc-embedded-subscribe-form"
+        name="mc-embedded-subscribe-form"
+        method="post"
       >
         <div className="paragraph-light text-sm">
           <span className="text-secondary">*</span> indicates required
@@ -74,6 +79,30 @@ export default function MailchimpSubscribeForm() {
             className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             placeholder="Enter your email"
           />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <label htmlFor="mce-FNAME" className="paragraph-light">
+            First Name <span className="text-secondary">*</span>
+          </label>
+          <input
+            type="text"
+            name="FNAME"
+            id="mce-FNAME"
+            value={formState.firstName}
+            onChange={(e) =>
+              setFormState((prev) => ({ ...prev, firstName: e.target.value }))
+            }
+            required
+            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            placeholder="Enter your first name"
+          />
+        </div>
+
+        {/* Response messages */}
+        <div id="mce-responses" className="clear">
+          <div id="mce-error-response" style={{ display: 'none' }}></div>
+          <div id="mce-success-response" style={{ display: 'none' }}></div>
         </div>
 
         {/* Honeypot field */}
@@ -103,6 +132,8 @@ export default function MailchimpSubscribeForm() {
         <button
           type="submit"
           disabled={formState.status === 'loading'}
+          id="mc-embedded-subscribe"
+          name="subscribe"
           className="hero-cta-primary border-1 mt-2 border-white bg-transparent text-white shadow-md transition-all duration-200 hover:bg-white hover:text-gray-700 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {formState.status === 'loading' ? 'Subscribing...' : 'Subscribe'}
