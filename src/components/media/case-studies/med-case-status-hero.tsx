@@ -34,8 +34,8 @@ const MedCaseStatusHero = () => {
 
               <div className="mt-6 flex flex-col items-center gap-x-6 sm:mt-16 sm:flex-row">
                 <Link
-                  href="#"
-                  className="my-2 rounded-sm bg-gradient-brand px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                  href="/case-studies"
+                  className="text-gradient-brand my-2 rounded-sm bg-transparent bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm ring-2 ring-gradient-1 hover:bg-gradient-brand hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
                 >
                   Read the full case study
                 </Link>

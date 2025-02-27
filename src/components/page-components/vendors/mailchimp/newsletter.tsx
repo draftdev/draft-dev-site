@@ -120,7 +120,7 @@ export default function NLSubscribeForm() {
         )}
 
         {formState.status === 'success' && (
-          <div className="paragraph-light text-sm">
+          <div className="paragraph-light text-lg">
             Thank you for subscribing!
           </div>
         )}
@@ -130,7 +130,7 @@ export default function NLSubscribeForm() {
           disabled={formState.status === 'loading'}
           id="mc-embedded-subscribe"
           name="subscribe"
-          className="hero-cta-primary border-1 mt-2 border-white bg-transparent text-white shadow-md transition-all duration-200 hover:bg-white hover:text-gray-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="ransition-all mt-2 rounded-sm bg-white p-2 text-lg text-gray-700 shadow-md duration-200 hover:border-white hover:bg-transparent hover:text-white hover:ring-2 hover:ring-white disabled:cursor-not-allowed disabled:opacity-50"
         >
           {formState.status === 'loading' ? 'Subscribing...' : 'Subscribe'}
         </button>
