@@ -59,13 +59,9 @@ export default function NLSubscribeForm() {
         name="mc-embedded-subscribe-form"
         method="post"
       >
-        <div className="paragraph-light text-sm">
-          <span className="text-secondary">*</span> indicates required
-        </div>
-
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-EMAIL" className="paragraph-light">
-            Email Address <span className="text-secondary">*</span>
+          <label htmlFor="mce-EMAIL" className="paragraph-light text-lg">
+            Email Address
           </label>
           <input
             type="email"
@@ -76,14 +72,14 @@ export default function NLSubscribeForm() {
               setFormState((prev) => ({ ...prev, email: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="w-full rounded-sm border-2 border-white bg-transparent p-2 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your email"
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-FNAME" className="paragraph-light">
-            First Name <span className="text-secondary">*</span>
+          <label htmlFor="mce-FNAME" className="paragraph-light text-lg">
+            First Name
           </label>
           <input
             type="text"
@@ -94,7 +90,7 @@ export default function NLSubscribeForm() {
               setFormState((prev) => ({ ...prev, firstName: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="w-full rounded-sm border-2 border-white bg-transparent p-2 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your first name"
           />
         </div>
