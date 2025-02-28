@@ -27,6 +27,18 @@ interface LoadMorePostsClientProps {
   initialPageInfo: PageInfo
 }
 
+function proxyWordPressImage(src: string | undefined): string {
+  if (!src) {
+    return '/site/med-landscape/write_draft_dev.jpg'
+  }
+
+  if (src.includes('candid-cookie.flywheelsites.com')) {
+    return `/api/image?url=${encodeURIComponent(src)}`
+  }
+
+  return src
+}
+
 export default function LoadMorePostsClient({
   initialPosts,
   initialPageInfo,
@@ -66,10 +78,18 @@ export default function LoadMorePostsClient({
             className="flex flex-col gap-8 sm:flex-row sm:items-start"
           >
             <div className="relative w-full sm:w-1/5">
-              {post.featuredImage && (
+              {post.featuredImage ? (
                 <Image
-                  src={post.featuredImage.node.sourceUrl}
+                  src={proxyWordPressImage(post.featuredImage.node.sourceUrl)}
                   alt={post.title}
+                  className="w-full rounded-2xl bg-gray-100 object-cover"
+                  width={600}
+                  height={400}
+                />
+              ) : (
+                <Image
+                  src="/site/med-landscape/write_draft_dev.jpg"
+                  alt="Default image"
                   className="w-full rounded-2xl bg-gray-100 object-cover"
                   width={600}
                   height={400}

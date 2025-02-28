@@ -2,14 +2,13 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const url = request.nextUrl.searchParams.get('url')
-  const width = request.nextUrl.searchParams.get('w') || '768'
-  const quality = request.nextUrl.searchParams.get('q') || '75'
 
   if (!url) {
     return new NextResponse('Missing URL parameter', { status: 400 })
   }
 
   try {
+    // Create Authorization header with Basic auth
     const auth = Buffer.from(
       `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
     ).toString('base64')
@@ -18,6 +17,7 @@ export async function GET(request: NextRequest) {
       Authorization: `Basic ${auth}`,
     })
 
+    // Add X-WP-Privacy header if available
     if (process.env.WORDPRESS_PRIVACY_PASSWORD) {
       headers.append('X-WP-Privacy', process.env.WORDPRESS_PRIVACY_PASSWORD)
     }
@@ -25,6 +25,7 @@ export async function GET(request: NextRequest) {
     const response = await fetch(url, { headers })
 
     if (!response.ok) {
+      console.error('Failed to fetch image:', response.status, url)
       return new NextResponse(`Failed to fetch image: ${response.status}`, {
         status: response.status,
       })
@@ -33,6 +34,7 @@ export async function GET(request: NextRequest) {
     const buffer = await response.arrayBuffer()
     const contentType = response.headers.get('content-type')
 
+    // Return the image with appropriate caching headers
     return new NextResponse(buffer, {
       headers: {
         'Content-Type': contentType || 'image/jpeg',
