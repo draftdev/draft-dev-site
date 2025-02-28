@@ -48,10 +48,12 @@ const faqs: FAQ[] = [
 export default function FAQ(): JSX.Element {
   return (
     <div data-navbar-color="light" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className="subheader-gradient scroll-mt-32" id="faq">Frequently asked questions</h2>
-          <p className="lead-dark max-w-5xl">
+          <h2 className="subheader-gradient scroll-mt-32" id="faq">
+            Frequently asked questions
+          </h2>
+          <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
             <span className="font-semibold">
               Have a different question and can't find the answer you're looking
               for?

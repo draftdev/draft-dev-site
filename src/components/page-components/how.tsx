@@ -32,14 +32,14 @@ const How: React.FC<HowProps> = ({
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="px-6 lg:px-0 lg:pr-4">
             <div className="mx-auto max-w-3xl sm:max-w-4xl lg:mx-0">
-              <h2 className="subheader-mobile-gradient sm:subheader-gradient">
+              <h2 className="subheader-mobile-gradient lg:subheader-gradient">
                 {title}
               </h2>
 
               {(subtitleBold || subtitleRegular) && (
-                <h3 className="sm:paragraph-dark py-4 text-lg text-gray-600">
+                <h3 className="lg:paragraph-dark py-4 text-base text-gray-600">
                   {subtitleBold && (
-                    <span className="sm:lead-dark text-lg font-semibold text-gray-600">
+                    <span className="lg:lead-dark text-base font-semibold text-gray-600">
                       {subtitleBold}
                       {subtitleRegular && ' '}
                     </span>
@@ -51,11 +51,13 @@ const How: React.FC<HowProps> = ({
               <dl className="mt-6 max-w-xl space-y-8 text-lg/7 text-gray-600 lg:max-w-none">
                 {steps.map((step, index) => (
                   <div key={index} className="relative">
-                    <dt className="font-bold text-secondary">
+                    <dt className="text-base font-bold text-secondary lg:text-lg">
                       {step.number}. {step.title}
                     </dt>
                     {step.description && (
-                      <dd className="my-2">{step.description}</dd>
+                      <dd className="my-2 text-base lg:text-lg">
+                        {step.description}
+                      </dd>
                     )}
                   </div>
                 ))}

@@ -1,12 +1,12 @@
 import Image from 'next/image'
 
+import abhishek from '/public/media/testimonials-sm/abhishek_iyer_descope_draft_dev.png'
+import emily from '/public/media/testimonials-sm/emily_blitstein_sinch_mailgun_draft_dev.png'
+import jenny from '/public/media/testimonials-sm/jenny_medeiros_redpanda_draft_dev.png'
 import randall from '/public/media/testimonials-sm/randall_degges_snyk_draft_dev.jpg'
 import rich from '/public/media/testimonials-sm/rich_burroughs_loft_labs_draft_dev.jpg'
 import robert from '/public/media/testimonials-sm/robert_gibb_fabric_draft_dev.jpg'
 import tony from '/public/media/testimonials-sm/tony_chan_cloudforecast_draft_dev.jpg'
-import abhishek from '/public/media/testimonials-sm/abhishek_iyer_descope_draft_dev.png'
-import emily from '/public/media/testimonials-sm/emily_blitstein_sinch_mailgun_draft_dev.png'
-import jenny from '/public/media/testimonials-sm/jenny_medeiros_redpanda_draft_dev.png'
 
 type Testimonial = {
   body: string
@@ -79,13 +79,15 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsGroup() {
   return (
-    <div data-navbar-color="light" className="bg-white py-24 sm:py-32" id="testimonials">
+    <div className="bg-white py-16 lg:py-32" id="testimonials">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="subheader-gradient">Testimonials</h2>
-          <h3 className="lead-dark">What our clients are saying</h3>
+          <h2 className="subheader-mobile-gradient lg:subheader-gradient">
+            Testimonials
+          </h2>
+          <h3 className="lg:lead-dark text-lg">What our clients are saying</h3>
         </div>
-        <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
+        <div className="mx-auto mt-8 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:mt-16 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
             {testimonials.map((testimonial) => (
               <div

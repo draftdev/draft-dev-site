@@ -52,8 +52,10 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
               <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
                 <div className="flex flex-col lg:flex-row">
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h3 className="subheader-gradient">{title}</h3>
-                    <p className="paragraph-dark text-xl">{description}</p>
+                    <h3 className="lg:subheader-gradient subheader-mobile-dark">
+                      {title}
+                    </h3>
+                    <p className="text-base lg:text-xl">{description}</p>
                     <div className="my-8 h-px bg-gray-300" />
                     <ul className="grid grid-cols-1 gap-4 text-base text-gray-600 sm:grid-cols-2">
                       {includedFeatures.map((feature, index) => {
@@ -77,7 +79,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                   </div>
 
                   <div className="flex w-full flex-col lg:w-96">
-                    <div className="flex flex-1 flex-col items-center justify-center px-8">
+                    <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
                       <p className="text-base font-semibold text-white">
                         {priceText}
                       </p>
@@ -89,7 +91,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                       </p>
                       <Link
                         href={callToActionURL}
-                        className="rounded-md bg-white px-6 py-4 text-center text-lg font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        className="rounded-md bg-white px-6 py-4 text-center text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-lg"
                       >
                         Book a Discovery Call
                       </Link>

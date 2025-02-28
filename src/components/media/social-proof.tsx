@@ -3,7 +3,6 @@ const stats = [
   { id: 2, name: 'Clients', value: '100+' },
   { id: 3, name: 'Content Pieces Published', value: '3000+' },
   { id: 4, name: 'Technical Audience', value: '100%' },
-
 ]
 
 export default function SocialProof() {
@@ -12,10 +11,10 @@ export default function SocialProof() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
-            <h2 className="subheader-light">
+            <h2 className="lg:subheader-light subheader-mobile-light">
               A proven track record of success
             </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-100">
+            <p className="mt-4 text-lg text-gray-100 lg:leading-8">
               Draft.dev has worked with hundreds of successful companies,
               including some of the most well-known in the tech industry.
             </p>
