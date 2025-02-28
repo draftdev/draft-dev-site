@@ -87,9 +87,14 @@ export default async function PostPage({ params }: Props) {
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt } = domNode.attribs
+
+      const imageUrl = src.includes('candid-cookie.flywheelsites.com')
+        ? `/api/image?url=${encodeURIComponent(src)}`
+        : src || '/site/med-landscape/write_draft_dev.jpg'
+
       return (
         <Image
-          src={src || '/site/med-landscape/write_draft_dev.jpg'}
+          src={imageUrl}
           alt={alt || 'Blog image'}
           width={768}
           height={450}
@@ -187,11 +192,10 @@ export default async function PostPage({ params }: Props) {
                 </span>
               </div>
             </div>
-
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={post.featuredImage.node.sourceUrl}
+                  src={`/api/image?url=${encodeURIComponent(post.featuredImage.node.sourceUrl)}`}
                   alt={String(post.title)}
                   className="w-full object-cover"
                   width={768}

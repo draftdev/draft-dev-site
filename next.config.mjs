@@ -110,8 +110,13 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/:path*',
+        // Add authentication headers for image paths from WordPress
+        source: '/_next/image',
         headers: [
+          {
+            key: 'Authorization',
+            value: `Basic ${Buffer.from(`${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`).toString('base64')}`,
+          },
           {
             key: 'X-WP-Privacy',
             value: process.env.WORDPRESS_PRIVACY_PASSWORD || '',
