@@ -46,7 +46,7 @@ function Header() {
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
-const POSTS_PER_PAGE = 4
+const POSTS_PER_PAGE = 10
 
 export default async function BlogPage() {
   // Server-render the first 4 posts
