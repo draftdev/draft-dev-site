@@ -1,14 +1,24 @@
-# netlify.toml
-
 [build]
   command = "npm run build"
   publish = ".next"
 
 [build.environment]
+  NEXT_PUBLIC_IMAGE_DOMAIN_1 = "candid-cookie.flywheelsites.com"
+  NEXT_PUBLIC_SITE_URL = "https://draft.dev"
+  NODE_VERSION = "18"
 
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
-  [[redirects]]
-  from = "http://localhost:3000/case-studies/earthly"
-  to = "http://localhost:3000/case-studies"
+# Force HTTPS and add caching headers for images
+[[headers]]
+  for = "/api/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, s-maxage=86400"
+
+# Keep your existing redirects
+[[redirects]]
+  from = "/case-studies/earthly"
+  to = "/case-studies"
   status = 301
   force = true
