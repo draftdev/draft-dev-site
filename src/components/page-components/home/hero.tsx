@@ -15,9 +15,9 @@ const Hero: React.FC = () => {
                   We are a Content Creation Agency for Technical Companies
                 </h1>
                 <p className="sm:paragraph-light pb-6 text-base text-gray-100 sm:pb-0">
-                  Draft.dev helps Marketing
-                  and Developer Relations teams in tech businesses drive
-                  awareness, capture leads, and build trust.
+                  Draft.dev helps Marketing and Developer Relations teams in
+                  tech businesses drive awareness, capture leads, and build
+                  trust.
                 </p>
                 <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
                   <Link
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                   </Link>
                   <Link
                     href="#lead-generation-package"
-                    className="my-2 text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base !scroll-smooth"
+                    className="my-2 !scroll-smooth text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
                   >
                     See Our Lead Generation Package{' '}
                     <span aria-hidden="true">→</span>
@@ -41,9 +41,9 @@ const Hero: React.FC = () => {
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                       <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                         <Image
-                          alt=""
-                          height={1000}
-                          width={1000}
+                          alt="writing code"
+                          height={600}
+                          width={400}
                           src="/site/small-portrait/coding_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
                         />
@@ -55,9 +55,9 @@ const Hero: React.FC = () => {
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                       <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                         <Image
-                          alt=""
-                          height={1000}
-                          width={1000}
+                          alt="reviewing developer content"
+                          height={600}
+                          width={400}
                           src="/site/small-portrait/sales_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
                         />
@@ -71,9 +71,9 @@ const Hero: React.FC = () => {
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                       <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                         <Image
-                          alt=""
-                          height={1000}
-                          width={1000}
+                          alt="writing developer content"
+                          height={600}
+                          width={400}
                           src="/site/small-portrait/laptop_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
                         />
@@ -85,9 +85,9 @@ const Hero: React.FC = () => {
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                       <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                         <Image
-                          alt=""
-                          height={1000}
-                          width={1000}
+                          alt="writing code on GitHub"
+                          height={600}
+                          width={400}
                           src="/site/small-portrait/commit_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
                         />

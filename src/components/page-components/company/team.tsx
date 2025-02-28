@@ -8,23 +8,23 @@ type PersonProps = {
 
 const Person = ({ name, description, img }: PersonProps) => {
   return (
-    <li>
-      <div className="w-48 rounded-4xl bg-white/15 p-1 shadow ring-1 ring-black/5">
+    <li className="flex flex-col items-center lg:items-start">
+      <div className="w-56 rounded-4xl bg-white/15 p-1 shadow ring-1 ring-black/5 sm:w-64">
         <div className="rounded-3xl p-1 shadow-md shadow-black/5">
           <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
             <Image
               alt={`${name} - ${description}`}
               src={img}
-              width={200}
-              height={200}
+              width={260}
+              height={260}
               className="aspect-square w-full object-cover"
             />
           </div>
         </div>
       </div>
-      <div className="text-md mt-4">
-        <h3 className="font-medium text-white">{name}</h3>
-        <p className="text-gray-300">{description}</p>
+      <div className="mt-4 text-center lg:text-left">
+        <h3 className="text-xl font-medium text-white">{name}</h3>
+        <p className="text-lg text-gray-300">{description}</p>
       </div>
     </li>
   )
@@ -96,12 +96,12 @@ const teamMembers: TeamMember[] = [
 
 const Team = () => {
   return (
-    <div className="bg-gradient-brand py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="bg-gradient-brand py-12 text-center lg:py-32 lg:text-left">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="subheader-light">The team</h2>
 
         <hr className="mt-6 border-t border-gray-200/20" />
-        <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {teamMembers.map((member) => (
             <Person
               key={member.name}
