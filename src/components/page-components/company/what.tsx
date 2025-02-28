@@ -38,7 +38,7 @@ const What = () => {
               <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                   <Image
-                    alt=""
+                    alt="Sofware developers coding."
                     src="/site/med-portrait/coding_draft_dev.jpg"
                     width={400}
                     height={600}

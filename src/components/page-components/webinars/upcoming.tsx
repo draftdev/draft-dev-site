@@ -15,16 +15,16 @@ const UpcomingWebinars = () => {
 
               <div className="">
                 <h3 className="lead-dark py-4 font-semibold">
-                  Navigating Diverse Audiences in Technical Marketing
+                  Creating Developer Content That Spreads Organically
                 </h3>
                 <div className="relative">
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <CalendarIcon className="8-4 my-2 h-8" />
-                    <p>19 Feb 2025</p>
+                    <p>19 Mar 2025</p>
                   </div>
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <ClockIcon className="8-4 my-2 h-8" />
-                    <p>1pm CST</p>
+                    <p>xx CST</p>
                   </div>{' '}
                 </div>
               </div>
@@ -32,25 +32,26 @@ const UpcomingWebinars = () => {
               <dl className="mt-6 max-w-xl space-y-8 text-lg text-gray-700 lg:max-w-none">
                 <div className="relative">
                   <dd className="my-4">
-                    Technical professionals come in many roles—developers,
-                    DevOps engineers, architects, and leaders—all with distinct
-                    goals, challenges, and preferences. Tailoring your marketing
-                    efforts to these audiences is essential for driving impact
-                    and achieving results.
+                    Developers engage with content in different ways—some
+                    discover solutions through search engines, while others find
+                    valuable insights on community-driven platforms like Reddit
+                    and Hacker News. Understanding these distinct approaches is
+                    key to creating technical content that spreads organically.
                   </dd>
                   <dd className="my-4">
-                    In this webinar, Tom Williams, Partner at Catchy, and Ryan
-                    Paul Gibson, Founder of Content Lift, will share strategies
-                    for reaching and resonating with different types of
-                    technical professionals. You’ll learn how to segment your
-                    audience, craft role-specific messaging, and choose the
-                    right platforms to optimize your campaigns.
+                    In this webinar, Adam Gordon Bell (Pulumi) and Richard
+                    Rodger (Voxgig) will break down what makes developer content
+                    gain traction. They’ll analyze successful real-world
+                    examples, explore the differences between search
+                    engine-driven and community-driven content, and share
+                    practical strategies to help your content reach the right
+                    audience.
                   </dd>
                 </div>
               </dl>
               <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
                 <Link
-                  href="https://us02web.zoom.us/webinar/register/WN_mB3ViyRAS2a0Ejl3UBdBKQ#/registration"
+                  href="#"
                   className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:bg-gradient-brand hover:text-white hover:ring-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Register Now
