@@ -11,15 +11,15 @@ const Hero: React.FC = () => {
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between">
               <div className="relative max-w-2xl lg:shrink-0">
-                <h1 className="sm:header-light mb-6 pb-4 font-code text-3xl font-semibold text-white">
+                <h1 className="sm:header-light mb-6 pb-4 text-center font-code text-3xl font-semibold text-white sm:text-left">
                   We are a Content Creation Agency for Technical Companies
                 </h1>
-                <p className="sm:paragraph-light pb-6 text-base text-gray-100 sm:pb-0">
+                <p className="sm:paragraph-light px-8 pb-6 text-base text-gray-100 sm:px-0 sm:pb-0">
                   Draft.dev helps Marketing and Developer Relations teams in
                   tech businesses drive awareness, capture leads, and build
                   trust.
                 </p>
-                <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
+                <div className="sm:items-left mt-6 flex flex-col items-center gap-x-6 sm:mt-16 sm:flex-row">
                   <Link
                     href="/call"
                     className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl text-center">
             <LogosFlex />
           </div>
         </div>

@@ -14,8 +14,8 @@ export function LogosFlex({
 
   return (
     <div className="text-white">
-      <div className="mb-5">
-        <h3 className="subheader-mobile-light pb-3 font-semibold sm:pb-0 sm:text-left sm:text-base">
+      <div className="lg:mb-5">
+        <h3 className="subheader-mobile-light text-base font-semibold sm:pb-3 sm:text-left">
           Trusted by 100+ tech companies
         </h3>
       </div>
@@ -30,7 +30,7 @@ export function LogosFlex({
           <Image
             alt="Red Panda logo"
             src={redpanda}
-            className="h-18"
+            className="lg:h-18 h-14"
             width={200}
             height={50}
             priority
@@ -40,42 +40,42 @@ export function LogosFlex({
             src={tailscale}
             width={200}
             height={50}
-            className="h-18"
+            className="lg:h-18 h-14"
           />
           <Image
             alt="Earthly logo"
             src={earthly}
             width={200}
             height={50}
-            className="h-18"
+            className="lg:h-18 h-14"
           />
           <Image
             alt="Foxit logo"
             src={foxit}
             width={200}
             height={50}
-            className="h-16"
+            className="lg:h-18 h-14"
           />
           <Image
             alt="Rewind logo"
             src={rewind}
             width={200}
             height={50}
-            className="h-18"
+            className="lg:h-18 h-14"
           />
           <Image
             alt="Saucelabs logo"
             src={saucelabs}
             width={200}
             height={50}
-            className="h-18"
+            className="lg:h-18 h-14"
           />
           <Image
             alt="ContainIQ logo"
             src={containiq}
             width={200}
             height={50}
-            className="h-18"
+            className="lg:h-18 h-14"
           />
         </div>
       </div>

@@ -86,7 +86,7 @@ const getNavStyles = (hasScrolled: boolean, isSlug: boolean = false) => {
   // If it's a slug page, always return the "scrolled" styles
   if (isSlug) {
     return {
-      text: 'tablet:text-gray-800',
+      text: 'tablet:text-gray-700',
       background:
         'bg-white tablet:bg-white/95 tablet:backdrop-blur-sm tablet:shadow-md',
       hoverBg: 'hover:bg-gray-100/80 tablet:hover:bg-gray-100/80',
@@ -95,7 +95,7 @@ const getNavStyles = (hasScrolled: boolean, isSlug: boolean = false) => {
   }
 
   return {
-    text: `text-gray-800 ${hasScrolled ? 'tablet:text-gray-800' : 'tablet:text-white'}`,
+    text: `text-gray-700 ${hasScrolled ? 'tablet:text-gray-700' : 'tablet:text-white'}`,
     background: `bg-white ${hasScrolled ? 'tablet:bg-white/95 tablet:backdrop-blur-sm tablet:shadow-md' : 'tablet:bg-transparent'}`,
     hoverBg: `hover:bg-gray-100/80 ${hasScrolled ? 'tablet:hover:bg-gray-100/80' : 'tablet:hover:bg-white/10'}`,
     logo: hasScrolled
@@ -265,7 +265,6 @@ export function DynamicNavbar({ banner }: NavbarProps) {
     </nav>
   )
 
-  // Enhanced mobile navigation with nested disclosure for "Why Us?"
   const MobileNav = () => (
     <DisclosurePanel className="bg-white tablet:hidden">
       <div className="flex flex-col py-2">
@@ -289,7 +288,7 @@ export function DynamicNavbar({ banner }: NavbarProps) {
                   <DisclosurePanel className="pl-4">
                     <div className="border-l border-gray-100 py-2">
                       <div className="pl-4">
-                        <h4 className="px-6 py-1 text-sm font-medium text-gray-500">
+                        <h4 className="py-1 text-sm font-medium text-secondary">
                           Use Cases
                         </h4>
                         {NAVIGATION_CONFIG.useCases.map((item) => (
@@ -298,14 +297,13 @@ export function DynamicNavbar({ banner }: NavbarProps) {
                             href={item.href}
                             className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
                           >
-                            <item.icon className="h-5 w-5" />
                             {item.name}
                           </Link>
                         ))}
                       </div>
 
                       <div className="mt-2 pl-4">
-                        <h4 className="px-6 py-1 text-sm font-medium text-gray-500">
+                        <h4 className="py-1 text-sm font-medium text-secondary">
                           Who We Help
                         </h4>
                         {NAVIGATION_CONFIG.whoWeHelp.map((item) => (
@@ -314,7 +312,6 @@ export function DynamicNavbar({ banner }: NavbarProps) {
                             href={item.href}
                             className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
                           >
-                            <item.icon className="h-5 w-5" />
                             {item.name}
                           </Link>
                         ))}
@@ -376,7 +373,7 @@ export function DynamicNavbar({ banner }: NavbarProps) {
                 <DesktopNav />
 
                 <DisclosureButton
-                  className="flex h-12 w-12 items-center justify-center rounded-lg text-gray-800 hover:bg-gray-100/80 lg:hidden"
+                  className="flex h-12 w-12 items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100/80 lg:hidden"
                   aria-label="Open main menu"
                 >
                   {open ? (
