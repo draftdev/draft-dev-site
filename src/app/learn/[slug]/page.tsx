@@ -89,20 +89,15 @@ export default async function PostPage({ params }: Props) {
       const { src, alt, width, height } = domNode.attribs
 
       if (!src) return undefined
-
-      // Add uniqueness to each image URL to prevent caching collisions
-      // This adds a unique parameter to each image URL
       const timestamp = Date.now()
       const uniqueId = Math.random().toString(36).substring(2, 10)
 
       let imageUrl = src
 
       if (src.includes('candid-cookie.flywheelsites.com')) {
-        // Create unique URL for each image to prevent Netlify from caching the same response
         imageUrl = `/api/image?url=${encodeURIComponent(src.trim())}&_v=${timestamp}-${uniqueId}`
       }
 
-      // Try using unoptimized Image or fallback to regular img tag
       return (
         <div className="my-4">
           <img
@@ -119,7 +114,6 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  // Also update the featured image section in the return statement
   {
     post.featuredImage && (
       <div className="mb-10 overflow-hidden rounded-xl">
@@ -136,7 +130,6 @@ export default async function PostPage({ params }: Props) {
           width={768}
           height={450}
           priority
-          unoptimized={true} // Try this to bypass Next.js Image optimization
         />
       </div>
     )
@@ -228,11 +221,10 @@ export default async function PostPage({ params }: Props) {
                 </span>
               </div>
             </div>
-            // Update the featured image section in [slug]/page.tsx
+
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
-                {/* Use a unique version parameter to prevent caching issues */}
-                <img
+                <Image
                   src={
                     post.featuredImage.node.sourceUrl.includes(
                       'candid-cookie.flywheelsites.com',
