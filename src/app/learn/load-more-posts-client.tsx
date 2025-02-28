@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useTransition } from 'react'
 
@@ -27,13 +26,16 @@ interface LoadMorePostsClientProps {
   initialPageInfo: PageInfo
 }
 
-function proxyWordPressImage(src: string | undefined): string {
+function proxyWordPressImage(src: string | undefined, postId: string): string {
   if (!src) {
     return '/site/med-landscape/write_draft_dev.jpg'
   }
 
+  // Add uniqueness parameters to prevent caching issues
+  const uniqueParams = `&postId=${postId}&_v=${Date.now()}-${Math.random().toString(36).substring(2, 10)}`
+
   if (src.includes('candid-cookie.flywheelsites.com')) {
-    return `/api/image?url=${encodeURIComponent(src)}`
+    return `/api/image?url=${encodeURIComponent(src)}${uniqueParams}`
   }
 
   return src
@@ -51,7 +53,7 @@ export default function LoadMorePostsClient({
     if (!pageInfo.hasNextPage || !pageInfo.endCursor) return
 
     try {
-      const res = await fetch('/lib/wordpress', {
+      const res = await fetch('/api/wordpress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ after: pageInfo.endCursor }),
@@ -79,20 +81,25 @@ export default function LoadMorePostsClient({
           >
             <div className="relative w-full sm:w-1/5">
               {post.featuredImage ? (
-                <Image
-                  src={proxyWordPressImage(post.featuredImage.node.sourceUrl)}
+                <img
+                  src={proxyWordPressImage(
+                    post.featuredImage.node.sourceUrl,
+                    post.id,
+                  )}
                   alt={post.title}
                   className="w-full rounded-2xl bg-gray-100 object-cover"
-                  width={600}
-                  height={400}
+                  width="600"
+                  height="400"
+                  loading="lazy"
                 />
               ) : (
-                <Image
+                <img
                   src="/site/med-landscape/write_draft_dev.jpg"
                   alt="Default image"
                   className="w-full rounded-2xl bg-gray-100 object-cover"
-                  width={600}
-                  height={400}
+                  width="600"
+                  height="400"
+                  loading="lazy"
                 />
               )}
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
