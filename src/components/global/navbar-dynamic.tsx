@@ -154,7 +154,7 @@ export function DynamicNavbar({ banner }: NavbarProps) {
             />
           </PopoverButton>
 
-          <PopoverPanel className="fixed inset-x-0 top-[4.5rem] z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw] tablet:w-[90vw]">
+          <PopoverPanel className="fixed inset-x-0 top-[4.5rem] z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]">
             <div className="absolute right-5 top-4">
               <PopoverButton className="flex h-8 w-8 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100">
                 <XMarkIcon className="h-5 w-5" aria-hidden="true" />

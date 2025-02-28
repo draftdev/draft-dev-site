@@ -4,12 +4,17 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'draft-test-local.local',
+        hostname: 'candid-cookie.flywheelsites.com',
         pathname: '/**',
       },
       {
         protocol: 'https',
-        hostname: 'https://candid-cookie.flywheelsites.com/',
+        hostname: 'localhost:3000/learn',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'candid-cookie.flywheelsites.com/',
         pathname: '/**',
       },
 
