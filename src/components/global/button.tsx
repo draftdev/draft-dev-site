@@ -24,19 +24,31 @@ const variants = {
     'data-[disabled]:bg-transparent data-[hover]:text-gray-400 data-[disabled]:opacity-40',
   ),
 }
+
 const toneClasses = {
   light: 'text-white',
   dark: 'text-gray-600',
 }
 
-// Add the colorMode prop in addition to variant
-type ButtonProps = {
+// Separate the common props
+type CommonButtonProps = {
   variant?: keyof typeof variants
   colorMode?: 'light' | 'dark'
-} & (
-  | React.ComponentPropsWithoutRef<typeof Link>
-  | (Headless.ButtonProps & { href?: undefined })
-)
+  className?: string
+}
+
+// Define the props for Headless Button
+type HeadlessButtonProps = CommonButtonProps &
+  Omit<Headless.ButtonProps, 'as'> & {
+    href?: undefined
+  }
+
+// Define the props for Link
+type LinkButtonProps = CommonButtonProps &
+  React.ComponentPropsWithoutRef<typeof Link>
+
+// Use a discriminated union based on the presence of href
+type ButtonProps = HeadlessButtonProps | LinkButtonProps
 
 export function Button({
   variant = 'primary',
@@ -44,11 +56,19 @@ export function Button({
   className,
   ...props
 }: ButtonProps) {
-  className = clsx(variants[variant], toneClasses[colorMode], className)
+  const combinedClassName = clsx(
+    variants[variant],
+    toneClasses[colorMode],
+    className,
+  )
 
-  if (typeof props.href === 'undefined') {
-    return <Headless.Button {...props} className={className} />
+  if (typeof (props as LinkButtonProps).href === 'undefined') {
+    // Need to cast to HeadlessButtonProps to satisfy TypeScript
+    const buttonProps = props as HeadlessButtonProps
+    return <Headless.Button {...buttonProps} className={combinedClassName} />
   }
 
-  return <Link {...props} className={className} />
+  // Need to cast to LinkButtonProps to satisfy TypeScript
+  const linkProps = props as LinkButtonProps
+  return <Link {...linkProps} className={combinedClassName} />
 }

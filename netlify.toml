@@ -5,8 +5,7 @@
   publish = ".next"
 
 [build.environment]
-  SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
-  NEXT_TYPESCRIPT_CHECK = "0"
+
 
   [[redirects]]
   from = "http://localhost:3000/case-studies/earthly"
