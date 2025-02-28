@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://draft.dev/blog_sitemap.xml
