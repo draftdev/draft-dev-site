@@ -11,9 +11,6 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Log the URL being requested for debugging
-    console.log(`Fetching image from: ${url} (version: ${version})`)
-
     // Create Authorization header with Basic auth
     const auth = Buffer.from(
       `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,

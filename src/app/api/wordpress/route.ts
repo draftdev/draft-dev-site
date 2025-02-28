@@ -1,8 +1,6 @@
-// app/api/wordpress/route.ts
-import { getWpPostsForApi } from '@/app/lib/wordpress-api' // Use the non-cached version
+import { getWpPosts } from '@/app/lib/wordpress'
 import { NextResponse } from 'next/server'
 
-// Required for Next.js 13+ App Router to handle POST requests
 export const dynamic = 'force-dynamic'
 
 export async function POST(request: Request) {
@@ -17,12 +15,7 @@ export async function POST(request: Request) {
       )
     }
 
-    // Use the non-cached version of getWpPosts
-    const { posts, pageInfo } = await getWpPostsForApi(
-      first,
-      after,
-      currentPage,
-    )
+    const { posts, pageInfo } = await getWpPosts(first, after, currentPage)
 
     // Return clean response
     return NextResponse.json({

@@ -1,3 +1,4 @@
+// app/learn/page.tsx
 import { getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
 import type { Metadata } from 'next'
@@ -49,7 +50,7 @@ export const revalidate = 0
 const POSTS_PER_PAGE = 10
 
 export default async function BlogPage() {
-  // Server-render the first 4 posts
+  // Server-render the first 10 posts
   const { posts, pageInfo } = await getWpPosts(POSTS_PER_PAGE, null, 1)
 
   return (

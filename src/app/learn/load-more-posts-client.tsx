@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 
 interface Post {
   id: string
@@ -13,6 +14,17 @@ interface Post {
       sourceUrl: string
     }
   }
+  categories?: { id: string; name: string }[]
+  date?: string
+  author?: {
+    node: {
+      name: string
+      avatar?: {
+        url: string
+      }
+    }
+  }
+  originalAuthor?: string | null
 }
 
 interface PageInfo {
@@ -48,26 +60,87 @@ export default function LoadMorePostsClient({
   const [posts, setPosts] = useState<Post[]>(initialPosts)
   const [pageInfo, setPageInfo] = useState<PageInfo>(initialPageInfo)
   const [isPending, startTransition] = useTransition()
+  const [isError, setIsError] = useState(false)
+  const [debug, setDebug] = useState<string>('')
+
+  // Debug logging on mount
+  useEffect(() => {}, [initialPosts, initialPageInfo])
 
   async function handleLoadMore() {
-    if (!pageInfo.hasNextPage || !pageInfo.endCursor) return
+    if (!pageInfo.hasNextPage || !pageInfo.endCursor) {
+      console.log('No more pages to load')
+      return
+    }
+
+    setIsError(false)
+    setDebug('')
 
     try {
+      const requestBody = {
+        after: pageInfo.endCursor,
+        first: 10,
+        currentPage: pageInfo.currentPage + 1,
+      }
+
+      setDebug(
+        (prev) =>
+          prev + `Fetching request with cursor: ${pageInfo.endCursor}\n`,
+      )
+
       const res = await fetch('/api/wordpress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ after: pageInfo.endCursor }),
+        body: JSON.stringify(requestBody),
+        // Ensure we're not using cached responses
+        cache: 'no-store',
+        next: { revalidate: 0 },
       })
-      if (!res.ok) throw new Error('Failed to fetch more posts')
+
+      setDebug((prev) => prev + `Response status: ${res.status}\n`)
+
+      if (!res.ok) {
+        const errorText = await res.text()
+        console.error('API error:', res.status, errorText)
+        setIsError(true)
+        setDebug((prev) => prev + `Error: ${errorText}\n`)
+        throw new Error(
+          `Failed to fetch more posts: ${res.status} - ${errorText}`,
+        )
+      }
 
       const data = await res.json()
+
+      setDebug((prev) => prev + `Received posts: ${data.posts?.length || 0}\n`)
+
+      // Detailed validation
+      if (!data) {
+        throw new Error('No data received from API')
+      }
+
+      if (!data.posts) {
+        throw new Error('No posts field in API response')
+      }
+
+      if (!Array.isArray(data.posts)) {
+        throw new Error(`Posts is not an array: ${typeof data.posts}`)
+      }
+
+      if (!data.pageInfo) {
+        throw new Error('No pageInfo in API response')
+      }
 
       startTransition(() => {
         setPosts((prev) => [...prev, ...data.posts])
         setPageInfo(data.pageInfo)
       })
     } catch (error) {
-      console.error(error)
+      console.error('Load more error:', error)
+      setIsError(true)
+      setDebug(
+        (prev) =>
+          prev +
+          `Error: ${error instanceof Error ? error.message : String(error)}\n`,
+      )
     }
   }
 
@@ -81,7 +154,7 @@ export default function LoadMorePostsClient({
           >
             <div className="relative w-full sm:w-1/5">
               {post.featuredImage ? (
-                <img
+                <Image
                   src={proxyWordPressImage(
                     post.featuredImage.node.sourceUrl,
                     post.id,
@@ -93,7 +166,7 @@ export default function LoadMorePostsClient({
                   loading="lazy"
                 />
               ) : (
-                <img
+                <Image
                   src="/site/med-landscape/write_draft_dev.jpg"
                   alt="Default image"
                   className="w-full rounded-2xl bg-gray-100 object-cover"
@@ -123,16 +196,26 @@ export default function LoadMorePostsClient({
         ))}
       </div>
 
-      {/* If there's another page, show "Load More" */}
       {pageInfo.hasNextPage && (
         <div className="mt-10 flex justify-center">
           <button
             onClick={handleLoadMore}
             disabled={isPending}
-            className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+            className="rounded-md bg-gradient-brand px-4 py-2 text-white hover:bg-gradient-1"
           >
             {isPending ? 'Loading...' : 'Load More'}
           </button>
+        </div>
+      )}
+
+      {isError && (
+        <div className="mt-4 text-center text-red-600">
+          Failed to load more posts. Please try again.
+          {debug && (
+            <pre className="mt-2 rounded bg-gray-100 p-2 text-left text-xs">
+              {debug}
+            </pre>
+          )}
         </div>
       )}
     </div>
