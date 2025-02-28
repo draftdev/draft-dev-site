@@ -65,13 +65,9 @@ export default function FiftyIdeasSubscribeForm() {
         name="mc-embedded-subscribe-form"
         method="post"
       >
-        <div className="paragraph-light text-sm">
-          <span className="text-secondary">*</span> indicates required
-        </div>
-
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-EMAIL" className="paragraph-light">
-            Email Address <span className="text-secondary">*</span>
+          <label htmlFor="mce-EMAIL" className="paragraph-dark text-lg">
+            Email Address
           </label>
           <input
             type="email"
@@ -82,14 +78,14 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, email: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your email"
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-FNAME" className="paragraph-light">
-            First Name <span className="text-secondary">*</span>
+          <label htmlFor="mce-FNAME" className="paragraph-dark text-lg">
+            First Name
           </label>
           <input
             type="text"
@@ -100,14 +96,14 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, firstName: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="border-gray-22 w-full rounded-sm border-2 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your first name"
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-LNAME" className="paragraph-light">
-            Last Name <span className="text-secondary">*</span>
+          <label htmlFor="mce-LNAME" className="paragraph-dark text-lg">
+            Last Name
           </label>
           <input
             type="text"
@@ -118,14 +114,14 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, lastName: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your last name"
           />
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="mce-MMERGE8" className="paragraph-light">
-            Company Name <span className="text-secondary">*</span>
+          <label htmlFor="mce-MMERGE8" className="paragraph-dark text-lg">
+            Company Name
           </label>
           <input
             type="text"
@@ -136,7 +132,7 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, companyName: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-white bg-transparent px-4 py-3 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your company name"
           />
         </div>
@@ -179,7 +175,7 @@ export default function FiftyIdeasSubscribeForm() {
           disabled={formState.status === 'loading'}
           id="mc-embedded-subscribe"
           name="subscribe"
-          className="hero-cta-primary border-1 mt-2 border-white bg-transparent text-white shadow-md transition-all duration-200 hover:bg-white hover:text-gray-700 disabled:cursor-not-allowed disabled:opacity-50"
+          className="mt-2 rounded-md bg-gradient-brand p-2 shadow-sm transition-all duration-200 hover:bg-white hover:bg-none hover:text-gradient-1 hover:ring-2 hover:ring-gradient-1 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {formState.status === 'loading' ? 'Subscribing...' : 'Subscribe'}
         </button>

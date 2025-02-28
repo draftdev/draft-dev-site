@@ -30,52 +30,52 @@ export function LogosFlex({
           <Image
             alt="Red Panda logo"
             src={redpanda}
-            className="h-16"
-            width={192}
-            height={48}
+            className="h-18"
+            width={200}
+            height={50}
             priority
           />
           <Image
             alt="Tailscale logo"
             src={tailscale}
-            width={192}
-            height={48}
-            className="h-16"
+            width={200}
+            height={50}
+            className="h-18"
           />
           <Image
             alt="Earthly logo"
             src={earthly}
-            width={192}
-            height={48}
-            className="h-16"
+            width={200}
+            height={50}
+            className="h-18"
           />
           <Image
             alt="Foxit logo"
             src={foxit}
-            width={192}
-            height={48}
+            width={200}
+            height={50}
             className="h-16"
           />
           <Image
             alt="Rewind logo"
             src={rewind}
-            width={192}
-            height={48}
-            className="h-16"
+            width={200}
+            height={50}
+            className="h-18"
           />
           <Image
             alt="Saucelabs logo"
             src={saucelabs}
-            width={192}
-            height={48}
-            className="h-16"
+            width={200}
+            height={50}
+            className="h-18"
           />
           <Image
             alt="ContainIQ logo"
             src={containiq}
-            width={192}
-            height={48}
-            className="h-16"
+            width={200}
+            height={50}
+            className="h-18"
           />
         </div>
       </div>

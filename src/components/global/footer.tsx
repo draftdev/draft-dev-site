@@ -84,6 +84,9 @@ function Sitemap() {
           <SitemapLink href="/newsletter">Newsletter</SitemapLink>
           <SitemapLink href="/webinars">Webinars</SitemapLink>
           <SitemapLink href="/playbook">Tech Content Playbook</SitemapLink>
+          <SitemapLink href="/ideas">
+            50 Winning Ideas for Your Startup's Blog
+          </SitemapLink>
         </SitemapLinks>
       </div>
       <div>
