@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   description:
     'We support Developer Relations and Developer Advocate Teams by consistently delivering content that technical audiences truly care about and respect.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

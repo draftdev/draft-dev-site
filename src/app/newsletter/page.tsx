@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description:
     'Sign up to our Draft.dev Newsletter - we publish software development news and occasionally share news about webinars and other free resources.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   description:
     'We specialize in content marketing for tech companies and create lead gen engines based on articles, eBooks, & video tutorials that attract technical audiences.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

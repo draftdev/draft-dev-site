@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     'Learn how Loft Labs scaled its Kubernetes blog by 4x and achieved top SEO rankings with Draft.dev',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

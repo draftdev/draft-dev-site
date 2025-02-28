@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description:
     'Consistently convert organic traffic into high-quality MQLs and SQLs with our proven lead qualification system and our expert guidance.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

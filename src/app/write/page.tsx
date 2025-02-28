@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: 'Write for Draft.dev',
   description:
     'If you are a software developer and you want to build your personal brand while getting paid to write about interesting technical topics give us your details and we will get in touch.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function Write() {

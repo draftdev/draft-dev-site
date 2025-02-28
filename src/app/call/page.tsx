@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   title: 'Book a Discovery Call - Draft.dev',
   description:
     'Book a Discovery Call with us to learn more about our Lead Generation Package and other custom services.',
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 export default function Call() {
   return (

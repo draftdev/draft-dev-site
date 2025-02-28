@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description:
     'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

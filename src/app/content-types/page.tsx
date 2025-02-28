@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description:
     'Learn how we help clients by providing tutorials, round-up articles, video tutorials, comparison content, technical guides, and persuasive writing.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

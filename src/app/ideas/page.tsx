@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description:
     "Kickstart your startup's content marketing efforts. Enter your email to get it now!",
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

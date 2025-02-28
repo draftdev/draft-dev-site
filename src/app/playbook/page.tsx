@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description:
     'Download our Technical Marketing Playbook: Learn everything you need to produce high-quality technical marketing content.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

@@ -6,12 +6,12 @@ import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title:'Technical Video Tutorials - Draft.dev',
+  title: 'Technical Video Tutorials - Draft.dev',
   description:
     'Learn more about how we can help you create tech-video-tutorials designed to reach software developers, and see some examples.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 

@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: 'Post Not Found - Draft.dev',
       description: 'The requested blog post could not be found.',
       robots: {
-        index: false,
-        follow: false,
+        index: true,
+        follow: true,
       },
     }
   }

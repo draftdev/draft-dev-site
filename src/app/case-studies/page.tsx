@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description:
     'Learn why clients like SupaBase, Earthly, Loft Labs, RedPanda, and others choose us.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 
