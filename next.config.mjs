@@ -9,6 +9,27 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'candid-cookie.flywheelsites.com/',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'glittery-faun-4426fe.netlify.app/',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'glittery-faun-4426fe.netlify.app',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'glittery-faun-4426fe.netlify.app/',
+        pathname: '/**',
+      },
+
+      {
+        protocol: 'https',
         hostname: 'localhost:3000/learn',
         pathname: '/**',
       },
