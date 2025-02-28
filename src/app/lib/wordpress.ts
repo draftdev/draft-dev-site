@@ -47,7 +47,6 @@ declare global {
   }
 }
 
-// GraphQL query for fetching multiple posts with pagination
 const ALL_POSTS_QUERY = `
 query AllPosts($first: Int, $after: String) {
   posts(first: $first, after: $after, where: { status: PUBLISH }) {
@@ -86,7 +85,6 @@ query AllPosts($first: Int, $after: String) {
 }
 `
 
-// GraphQL query for fetching a single post by slug
 const POST_BY_SLUG_QUERY = `
 query PostBySlug($slug: ID!) {
   post(id: $slug, idType: SLUG) {
