@@ -73,8 +73,15 @@ export async function generateMetadata({
   }
 }
 
-export default async function PostPage(props: any) {
-  const { slug } = props.params
+interface PostPageProps {
+  params: {
+    slug: string
+  }
+  searchParams?: Record<string, string | string[] | undefined>
+}
+
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = params
 
   const post = await getWpPost(slug)
   if (!post) {

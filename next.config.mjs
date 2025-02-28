@@ -85,6 +85,20 @@ const nextConfig = {
       },
     ],
   },
+
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'X-WP-Privacy',
+            value: process.env.WORDPRESS_PRIVACY_PASSWORD || '',
+          },
+        ],
+      },
+    ]
+  },
 }
 
 export default nextConfig
