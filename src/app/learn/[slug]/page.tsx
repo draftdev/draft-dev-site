@@ -1,3 +1,4 @@
+// [slug]/page.tsx
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
@@ -9,14 +10,12 @@ import sanitizeHtml from 'sanitize-html'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-// Fix the type definition here
-type Params = {
-  params: {
-    slug: string
-  }
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getWpPost(params.slug)
 
   if (!post) {
@@ -76,7 +75,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   }
 }
 
-export default async function PostPage({ params }: Params) {
+// Use the same Props type for the page component
+export default async function PostPage({ params }: Props) {
   const { slug } = params
 
   const post = await getWpPost(slug)
