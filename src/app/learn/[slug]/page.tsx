@@ -86,31 +86,34 @@ export default async function PostPage({ params }: Props) {
 
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
-      const { src, alt } = domNode.attribs
+      const { src, alt, width, height } = domNode.attribs
 
-      // Skip transformation if src is missing
       if (!src) return undefined
 
-      // Process the image URL correctly
+      // Add uniqueness to each image URL to prevent caching collisions
+      // This adds a unique parameter to each image URL
+      const timestamp = Date.now()
+      const uniqueId = Math.random().toString(36).substring(2, 10)
+
       let imageUrl = src
 
       if (src.includes('candid-cookie.flywheelsites.com')) {
-        // Ensure URL is properly encoded
-        imageUrl = `/api/image?url=${encodeURIComponent(src.trim())}`
-
-        // For debugging
-        console.log('Transforming image:', src, 'to', imageUrl)
+        // Create unique URL for each image to prevent Netlify from caching the same response
+        imageUrl = `/api/image?url=${encodeURIComponent(src.trim())}&_v=${timestamp}-${uniqueId}`
       }
 
+      // Try using unoptimized Image or fallback to regular img tag
       return (
-        <Image
-          src={imageUrl}
-          alt={alt || 'Blog image'}
-          width={768}
-          height={450}
-          className="my-4 rounded-lg object-cover"
-          unoptimized={true} // Try this to bypass Next.js Image optimization
-        />
+        <div className="my-4">
+          <img
+            src={imageUrl}
+            alt={alt || 'Blog image'}
+            width={width || '768'}
+            height={height || 'auto'}
+            className="mx-auto rounded-lg object-cover"
+            loading="lazy"
+          />
+        </div>
       )
     }
     return undefined
@@ -191,7 +194,6 @@ export default async function PostPage({ params }: Props) {
             <h1 className="mb-5 text-4xl font-bold tracking-tight text-gray-700">
               {post.title}
             </h1>
-
             <div className="mb-8 flex items-center gap-x-4 text-sm text-gray-500">
               <time
                 dateTime={
@@ -226,15 +228,24 @@ export default async function PostPage({ params }: Props) {
                 </span>
               </div>
             </div>
+            // Update the featured image section in [slug]/page.tsx
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
-                <Image
-                  src={`/api/image?url=${encodeURIComponent(post.featuredImage.node.sourceUrl)}`}
+                {/* Use a unique version parameter to prevent caching issues */}
+                <img
+                  src={
+                    post.featuredImage.node.sourceUrl.includes(
+                      'candid-cookie.flywheelsites.com',
+                    )
+                      ? `/api/image?url=${encodeURIComponent(post.featuredImage.node.sourceUrl.trim())}&_v=${Date.now()}`
+                      : post.featuredImage.node.sourceUrl
+                  }
                   alt={String(post.title)}
-                  className="w-full object-cover"
-                  width={768}
-                  height={450}
-                  priority
+                  className="w-full rounded-xl object-cover"
+                  width="768"
+                  height="450"
+                  loading="eager"
+                  fetchPriority="high"
                 />
               </div>
             )}
