@@ -39,3 +39,9 @@
   to = "/case-studies"
   status = 301
   force = true
+
+  [[redirects]]
+  from = "https://glittery-faun-4426fe.netlify.app/"
+  to = "https://draft.dev"
+  status = 301
+  force = true
