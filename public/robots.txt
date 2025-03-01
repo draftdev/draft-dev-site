@@ -6,4 +6,5 @@ Disallow: /learn/assets
 Disallow: /learn/assets/*
 Disallow: /categories/*
 Disallow: /assets/*
+Disallow: /learn/posts/*
 Sitemap: https://draft.dev/blog_sitemap.xml
