@@ -192,10 +192,11 @@ export function Footer() {
                 <div className="pt-10">
                   <Link href="/" title="Home">
                     <Image
-                      src="draft/logos/draftlogo_clean_white.svg"
+                      src="/draft/logos/draftlogo_clean_white.svg"
                       alt="Logo"
                       width={180}
                       height={72}
+                      priority
                     />
                   </Link>
                   <div className="mt-6 flex justify-start gap-6">
