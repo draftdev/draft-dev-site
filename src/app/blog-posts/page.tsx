@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   description:
     'Learn how Draft.dev helps hundreds of clients by creating blog posts that resonate with a technical audience and captures leads.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 
