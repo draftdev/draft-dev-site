@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/for-marketers',
+  },
 }
 
 export default function ForMarketers(): JSX.Element {

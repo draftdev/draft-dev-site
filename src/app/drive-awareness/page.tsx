@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/drive-awareness',
+  },
 }
 
 export default function DriveAwareness() {

@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/build-trust',
+  },
 }
 
 export default function BuildTrust() {

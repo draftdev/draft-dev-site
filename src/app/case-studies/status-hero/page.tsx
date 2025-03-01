@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/case-studies/status-hero',
+  },
 }
 
 export default function StatusHeroCaseStudy() {

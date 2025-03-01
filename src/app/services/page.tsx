@@ -10,6 +10,9 @@ export const metadata: Metadata = {
     index: false,
     follow: false,
   },
+  alternates: {
+    canonical: '/services',
+  },
 }
 
 function Header() {

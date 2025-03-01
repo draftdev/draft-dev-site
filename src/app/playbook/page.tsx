@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/playbook',
+  },
 }
 
 export default function Playbook() {

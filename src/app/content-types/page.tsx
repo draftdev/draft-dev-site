@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/content-types',
+  },
 }
 
 export default function ContentTypes() {
