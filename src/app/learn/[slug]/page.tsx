@@ -1,4 +1,5 @@
-// [slug]/page.tsx
+// app/learn/[slug]/page.tsx
+
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
@@ -34,11 +35,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       '...'
 
   return {
+    // Post-specific title and description
     title: post.title,
-    description: description,
+    description,
+
+    // Open Graph & Twitter settings
     openGraph: {
       title: post.title,
-      description: description,
+      description,
       type: 'article',
       publishedTime: post.date,
       authors: [post.originalAuthor || post.author?.node?.name || 'Draft.dev'],
@@ -63,38 +67,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: 'summary_large_image',
       title: post.title,
-      description: description,
+      description,
       images: post.featuredImage
         ? [post.featuredImage.node.sourceUrl]
         : ['/site/med-landscape/write_draft_dev.jpg'],
     },
+
+    // Use a relative path for the canonical, which Next.js merges with metadataBase
     alternates: {
-      canonical: `https://draft.dev/learn/${params.slug}`,
+      canonical: `/learn/${params.slug}`,
     },
   }
 }
 
-// Use the same Props type for the page component
 export default async function PostPage({ params }: Props) {
   const { slug } = params
-
   const post = await getWpPost(slug)
   if (!post) {
     notFound()
   }
 
+  // Transform <img> tags in the post content
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt, width, height } = domNode.attribs
-
       if (!src) return undefined
+
       const timestamp = Date.now()
       const uniqueId = Math.random().toString(36).substring(2, 10)
-
       let imageUrl = src
 
+      // Example: rewriting certain images to go through an API
       if (src.includes('candid-cookie.flywheelsites.com')) {
-        imageUrl = `/api/image?url=${encodeURIComponent(src.trim())}&_v=${timestamp}-${uniqueId}`
+        imageUrl = `/api/image?url=${encodeURIComponent(
+          src.trim(),
+        )}&_v=${timestamp}-${uniqueId}`
       }
 
       return (
@@ -113,27 +120,7 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  {
-    post.featuredImage && (
-      <div className="mb-10 overflow-hidden rounded-xl">
-        <Image
-          src={
-            post.featuredImage.node.sourceUrl.includes(
-              'candid-cookie.flywheelsites.com',
-            )
-              ? `/api/image?url=${encodeURIComponent(post.featuredImage.node.sourceUrl.trim())}`
-              : post.featuredImage.node.sourceUrl
-          }
-          alt={String(post.title)}
-          className="w-full object-cover"
-          width={768}
-          height={450}
-          priority
-        />
-      </div>
-    )
-  }
-
+  // Prepare the post's HTML content safely
   const sanitizedContent = sanitizeHtml(post.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
@@ -143,11 +130,13 @@ export default async function PostPage({ params }: Props) {
     },
   })
 
+  // Figure out the author name
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev'
 
   return (
     <>
+      {/* JSON-LD for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -180,6 +169,8 @@ export default async function PostPage({ params }: Props) {
           }),
         }}
       />
+
+      {/* The actual post layout */}
       <div className="bg-white">
         <div className="mx-auto max-w-3xl px-6 py-36 lg:px-8">
           <article className="prose prose-lg prose-blue mx-auto max-w-none">
@@ -200,19 +191,6 @@ export default async function PostPage({ params }: Props) {
                     })
                   : 'Unknown date'}
               </time>
-
-              {/* {post.categories?.[0] && (
-                <>
-                  <span>•</span>
-                  <Link
-                    href={`/categories/${String(post.categories[0].name).toLowerCase()}`}
-                    className="text-primary hover:underline"
-                  >
-                    {post.categories[0].name}
-                  </Link>
-                </>
-              )} */}
-
               <span>•</span>
               <div className="flex items-center">
                 <span className="font-medium text-gray-700">
@@ -228,7 +206,9 @@ export default async function PostPage({ params }: Props) {
                     post.featuredImage.node.sourceUrl.includes(
                       'candid-cookie.flywheelsites.com',
                     )
-                      ? `/api/image?url=${encodeURIComponent(post.featuredImage.node.sourceUrl.trim())}&_v=${Date.now()}`
+                      ? `/api/image?url=${encodeURIComponent(
+                          post.featuredImage.node.sourceUrl.trim(),
+                        )}&_v=${Date.now()}`
                       : post.featuredImage.node.sourceUrl
                   }
                   alt={String(post.title)}
@@ -240,6 +220,8 @@ export default async function PostPage({ params }: Props) {
                 />
               </div>
             )}
+
+            {/* Render the sanitized, transformed HTML content */}
             {parse(sanitizedContent, { replace: transform })}
           </article>
         </div>
