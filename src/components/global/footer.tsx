@@ -62,6 +62,7 @@ function Sitemap() {
           <SitemapLink href="/blog-posts">Blog Content</SitemapLink>
           <SitemapLink href="/tutorials">Tutorials</SitemapLink>
           <SitemapLink href="/video-tutorials">Video Tutorials</SitemapLink>
+          <SitemapLink href="/learn/technical-ebooks">E-Books</SitemapLink>
         </SitemapLinks>
       </div>
       <div>

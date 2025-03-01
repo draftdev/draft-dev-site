@@ -19,8 +19,8 @@ export default function Ideas() {
   return (
     <>
       <ServiceHeader
-        title="50 Winning Ideas For Your Startup's Blog"
-        description="Kickstart your startup's content marketing efforts. Enter your email to get it now!"
+        title="50 Winning Ideas For Your Company's Blog"
+        description="Kickstart your content marketing efforts. Enter your email to get it now!"
       />
       <ServiceInfo />
       <SocialProof />
