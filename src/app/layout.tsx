@@ -7,6 +7,7 @@ import DynamicNavbar from '@/components/global/navbar-dynamic'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://draft.dev',
     types: {
       'application/rss+xml': [
         {
@@ -77,6 +77,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const headersList = headers()
+  const path = headersList.get('x-pathname') || ''
+  const canonicalUrl = `https://draft.dev${path === '/' ? '' : path}`
+
+  // Check if we're on Netlify domain
+  const host = headersList.get('host') || ''
+  const isNetlifyDomain = host.includes('netlify.app')
+
   return (
     <html
       lang="en"
@@ -84,6 +92,10 @@ export default function RootLayout({
     >
       <head>
         <meta data-grammarly-disable="true" />
+        {/* Dynamic canonical tag - this overrides any page-specific canonical */}
+        <link rel="canonical" href={canonicalUrl} />
+        {/* If on Netlify domain, add noindex */}
+        {isNetlifyDomain && <meta name="robots" content="noindex,nofollow" />}
         <GoogleAnalytics />
       </head>
       <body className="bg-white antialiased">
@@ -100,7 +112,7 @@ export default function RootLayout({
     </html>
   )
 }
-
+// import AnalyticsProvider from '@/components/global/analytics-provider'
 // import { BookDiscoveryCall } from '@/components/global/cta/book-discovery-call'
 // import FAQ from '@/components/global/faq'
 // import { Footer } from '@/components/global/footer'
@@ -186,16 +198,18 @@ export default function RootLayout({
 //     >
 //       <head>
 //         <meta data-grammarly-disable="true" />
+//         <GoogleAnalytics />
 //       </head>
 //       <body className="bg-white antialiased">
-//         <GoogleAnalytics />
-//         <DynamicNavbar />
-//         <div className="flex min-h-screen flex-col">
-//           <main className="flex-grow">{children}</main>
-//           <BookDiscoveryCall />
-//           <FAQ />
-//           <Footer />
-//         </div>
+//         <AnalyticsProvider>
+//           <DynamicNavbar />
+//           <div className="flex min-h-screen flex-col">
+//             <main className="flex-grow">{children}</main>
+//             <BookDiscoveryCall />
+//             <FAQ />
+//             <Footer />
+//           </div>
+//         </AnalyticsProvider>
 //       </body>
 //     </html>
 //   )
