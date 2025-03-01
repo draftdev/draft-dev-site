@@ -153,29 +153,31 @@ export default function LoadMorePostsClient({
             className="flex flex-col gap-8 sm:flex-row sm:items-start"
           >
             <div className="relative w-full sm:w-1/5">
-              {post.featuredImage ? (
-                <Image
-                  src={proxyWordPressImage(
-                    post.featuredImage.node.sourceUrl,
-                    post.id,
-                  )}
-                  alt={post.title}
-                  className="w-full rounded-2xl bg-gray-100 object-cover"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-              ) : (
-                <Image
-                  src="/site/med-landscape/write_draft_dev.jpg"
-                  alt="Default image"
-                  className="w-full rounded-2xl bg-gray-100 object-cover"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-              )}
-              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              <Link href={`/learn/${post.slug}`}>
+                {post.featuredImage ? (
+                  <Image
+                    src={proxyWordPressImage(
+                      post.featuredImage.node.sourceUrl,
+                      post.id,
+                    )}
+                    alt={post.title}
+                    className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
+                    width={600}
+                    height={400}
+                    loading="lazy"
+                  />
+                ) : (
+                  <Image
+                    src="/site/med-landscape/write_draft_dev.jpg"
+                    alt="Default image"
+                    className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
+                    width={600}
+                    height={400}
+                    loading="lazy"
+                  />
+                )}
+                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </Link>
             </div>
 
             <div className="w-full sm:w-2/3">

@@ -24,7 +24,7 @@ const UpcomingWebinars = () => {
                   </div>
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <ClockIcon className="8-4 my-2 h-8" />
-                    <p>xx CST</p>
+                    <p>11:00AM PST (Vancouver)</p>
                   </div>{' '}
                 </div>
               </div>
