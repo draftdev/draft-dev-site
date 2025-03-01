@@ -6,7 +6,6 @@ Disallow: /*/[slug]
 Disallow: /learn/assets
 Disallow: /learn/platforms
 Disallow: /learn/writing
-Disallow: /learn/technical-blogs
 Disallow: /learn/content-marketing
 Disallow: /learn/assets/*
 Disallow: /categories/*
