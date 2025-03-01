@@ -37,30 +37,54 @@ const NAVIGATION_CONFIG = {
     { name: 'For DevRels', href: '/for-dev-rels', icon: CodeBracketIcon },
   ],
   recentPosts: [
-    // {
-    //   id: 1,
-    //   title: 'Boost your conversion rate',
-    //   href: '#',
-    //   date: 'Mar 16, 2023',
-    //   datetime: '2023-03-16',
-    //   category: { title: 'Marketing', href: '#' },
-    //   imageUrl:
-    //     'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?auto=format&fit=crop&w=3603&q=80',
-    //   description:
-    //     'Et et dolore officia quis nostrud esse aute cillum irure do esse.',
-    // },
-    // {
-    //   id: 2,
-    //   title: 'How to use search engine optimization to drive sales',
-    //   href: '#',
-    //   date: 'Mar 10, 2023',
-    //   datetime: '2023-03-10',
-    //   category: { title: 'Sales', href: '#' },
-    //   imageUrl:
-    //     'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?auto=format&fit=crop&w=3270&q=80',
-    //   description:
-    //     'Optio cum necessitatibus dolor voluptatum provident commodi.',
-    // },
+    {
+      id: 1,
+      title: 'The Technical Content Manager Playbook',
+      href: '/playbook',
+      /* date: 'Mar 16, 2023', */
+       /* datetime: '2023-03-16', */
+      /* category: { title: 'Marketing', href: '#' }, */
+      imageUrl:
+        '/site/med-portrait/technical_content_manager_playbook_draft_dev.webp',
+      description:
+        'This free Playbook is a collection of resources you can use to manage a top-tier technical blog.',
+    },
+    {
+      id: 2,
+      title: '50 Winning Ideas For Your Company Blog',
+      href: '/ideas',
+/*       date: 'Mar 10, 2023',
+      datetime: '2023-03-10',
+      category: { title: 'Sales', href: '#' }, */
+      imageUrl:
+        '/site/med-portrait/50_ideas_draft_dev.webp',
+      description:
+        'Kickstart your content marketing efforts. Download this free guide and get 50 ideas for free.',
+    },
+/*     {
+      id: 1,
+      title: 'A Complete Introduction to Technical Marketing',
+      href: '/learn/a-complete-introduction-to-technical-marketing',
+      date: 'Mar 16, 2023',
+      datetime: '2023-03-16',
+      category: { title: 'Marketing', href: '#' }, 
+      imageUrl:
+        '/site/med-landscape/introduction_to_technical_marketing_draft_dev.webp',
+      description:
+        'One of the challenges many B2B marketers face is selling a complex product to a knowledgeable audience.',
+    },
+    {
+      id: 2,
+      title: '101 Content Marketing Tips and Resources',
+      href: 'learn/101-content-marketing-tips-and-resources',
+      date: 'Mar 10, 2023',
+      datetime: '2023-03-10',
+      category: { title: 'Sales', href: '#' },
+      imageUrl:
+        '/site/med-landscape/101_content_marketing_tips_draft_dev.webp',
+      description:
+        'No matter what you do or where you work, content marketing is critical to helping businesses get seen.',
+    }, */
   ],
   links: [
     { href: '/why-us', label: 'Why Us?' },
@@ -223,7 +247,7 @@ export function DynamicNavbar({ banner }: NavbarProps) {
             <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
           </div>
           <div>
-            <div className="flex items-center gap-x-4 text-sm text-gray-600">
+            {/* <div className="flex items-center gap-x-4 text-sm text-gray-600">
               <time dateTime={post.datetime}>{post.date}</time>
               <PopoverButton
                 as={Link}
@@ -232,7 +256,7 @@ export function DynamicNavbar({ banner }: NavbarProps) {
               >
                 {post.category.title}
               </PopoverButton>
-            </div>
+            </div> */}
             <h4 className="mt-2 text-sm font-semibold text-gray-900">
               <PopoverButton as={Link} href={post.href}>
                 <span className="absolute inset-0" />
