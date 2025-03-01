@@ -31,7 +31,7 @@ export default function ForDevRels(): JSX.Element {
         }}
         secondaryCTA={{
           text: 'See Our Lead Generation Package',
-          href: '/lead-generation',
+          href: './#lead-generation-package',
         }}
       />
       <main>
