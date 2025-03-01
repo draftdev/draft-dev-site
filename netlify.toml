@@ -8,30 +8,16 @@
   NEXT_PUBLIC_IMAGE_DOMAIN_1 = "candid-cookie.flywheelsites.com"
   NEXT_PUBLIC_SITE_URL = "https://draft.dev"
   NODE_VERSION = "18"
-  # Increase Next.js memory limit for image processing
-  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Prevent caching of image API
-[[headers]]
-  for = "/api/image*"
-  [headers.values]
-    Cache-Control = "no-cache, no-store, must-revalidate"
-    Pragma = "no-cache"
-    Expires = "0"
-
 # Add function configuration for API routes
 [functions]
-  # Increase timeout for image processing
   node_bundler = "esbuild"
   included_files = ["public/**/*", ".next/server/**/*"]
   external_node_modules = ["sharp"]
 
-[functions."api/image"]
-  # Increase timeout for image processing functions
-  timeout = 30
 
 # Keep your existing redirects
 [[redirects]]

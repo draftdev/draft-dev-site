@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description:
     'Draft.dev is a technical content marketing agency focused run by subject matter experts. Learn more about us here.',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 }
 
