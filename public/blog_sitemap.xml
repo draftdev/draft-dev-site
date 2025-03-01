@@ -2,8 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://draft.dev/learn</loc>
-    <lastmod>2025-03-01T02:43:45.472Z</lastmod>
+    <lastmod>2025-03-01T19:20:51.582Z</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/writing-guides</loc>
+    <lastmod>2025-03-01T11:19:53Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/content-marketing-resources</loc>
+    <lastmod>2025-03-01T10:57:56Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/technical-blogs</loc>
+    <lastmod>2025-03-01T09:58:09Z</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/strategies-for-business-growth-through-developer-ecosystems</loc>
@@ -57,22 +72,22 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-blog-platforms</loc>
-    <lastmod>2025-02-28T13:33:05Z</lastmod>
+    <lastmod>2025-03-01T10:05:13Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/software-development-blogs</loc>
-    <lastmod>2025-02-28T17:35:03Z</lastmod>
+    <lastmod>2025-03-01T10:05:45Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/devops-blogs</loc>
-    <lastmod>2025-02-28T17:53:51Z</lastmod>
+    <lastmod>2025-03-01T10:04:19Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/saas-bloggers</loc>
-    <lastmod>2025-02-28T14:12:35Z</lastmod>
+    <lastmod>2025-03-01T10:06:02Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -87,7 +102,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/python-blogs</loc>
-    <lastmod>2025-02-28T13:34:27Z</lastmod>
+    <lastmod>2025-03-01T10:04:05Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -107,12 +122,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-best-technical-writing-blogs</loc>
-    <lastmod>2025-02-28T13:33:49Z</lastmod>
+    <lastmod>2025-03-01T10:04:30Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/what-is-a-head-of-growth</loc>
-    <lastmod>2025-02-28T13:33:34Z</lastmod>
+    <lastmod>2025-03-01T08:58:12Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -132,7 +147,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/b2b-writing</loc>
-    <lastmod>2025-02-28T13:29:16Z</lastmod>
+    <lastmod>2025-03-01T09:09:35Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -152,7 +167,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/what-is-a-head-of-marketing</loc>
-    <lastmod>2025-02-28T13:27:35Z</lastmod>
+    <lastmod>2025-03-01T09:00:53Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -247,7 +262,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/two-content-marketing-strategies-for-early-stage-startup-seo</loc>
-    <lastmod>2025-02-28T13:51:52Z</lastmod>
+    <lastmod>2025-03-01T09:03:37Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -262,7 +277,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/what-is-a-technical-seo-specialist</loc>
-    <lastmod>2025-02-28T14:07:06Z</lastmod>
+    <lastmod>2025-03-01T09:06:45Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -287,7 +302,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/finding-and-hiring-developer-relations-professionals</loc>
-    <lastmod>2025-02-28T14:19:10Z</lastmod>
+    <lastmod>2025-03-01T09:19:07Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -307,32 +322,32 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/product-led-growth-for-developer-tools-companies</loc>
-    <lastmod>2025-02-28T13:26:11Z</lastmod>
+    <lastmod>2025-03-01T09:19:36Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/refreshing-blog-posts</loc>
-    <lastmod>2025-02-28T13:42:44Z</lastmod>
+    <lastmod>2025-03-01T07:57:24Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-product-management-blogs</loc>
-    <lastmod>2025-02-28T13:58:45Z</lastmod>
+    <lastmod>2025-03-01T10:04:35Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-cybersecurity-blogs</loc>
-    <lastmod>2025-02-28T14:14:42Z</lastmod>
+    <lastmod>2025-03-01T10:04:40Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-data-science-machine-learning-and-ai-blogs</loc>
-    <lastmod>2025-02-28T13:26:53Z</lastmod>
+    <lastmod>2025-03-01T10:04:44Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-crypto-and-cryptocurrency-blogs</loc>
-    <lastmod>2025-02-28T13:44:22Z</lastmod>
+    <lastmod>2025-03-01T10:04:49Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -372,7 +387,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/5-technical-writing-services-compared</loc>
-    <lastmod>2025-02-28T13:56:13Z</lastmod>
+    <lastmod>2025-03-01T09:12:31Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -407,7 +422,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/101-content-marketing-tips-and-resources</loc>
-    <lastmod>2025-02-28T13:58:58Z</lastmod>
+    <lastmod>2025-03-01T09:07:45Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -427,7 +442,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/ultimate-guide-to-technical-writing</loc>
-    <lastmod>2025-02-28T17:49:52Z</lastmod>
+    <lastmod>2025-03-01T09:01:46Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -477,7 +492,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-to-write-technical-comparisons</loc>
-    <lastmod>2025-02-28T14:01:25Z</lastmod>
+    <lastmod>2025-03-01T08:52:54Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -488,21 +503,6 @@
   <url>
     <loc>https://draft.dev/learn/generating-content-ideas-that-will-resonate-with-software-developers</loc>
     <lastmod>2025-02-28T13:39:27Z</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://draft.dev/learn/great-technical-tutorials-address-the-why-and-how</loc>
-    <lastmod>2025-02-28T13:21:07Z</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://draft.dev/learn/the-b2b-saas-marketing-guide</loc>
-    <lastmod>2025-02-28T14:13:06Z</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://draft.dev/learn/the-fundamentals-of-speaking-at-technology-conferences</loc>
-    <lastmod>2025-02-28T13:52:55Z</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
