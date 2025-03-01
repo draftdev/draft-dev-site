@@ -11,6 +11,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/case-studies',
+  },
 }
 
 export default function CaseStudy() {

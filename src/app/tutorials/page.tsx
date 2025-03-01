@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/tutorials',
+  },
 }
 
 export default function Tutorials() {

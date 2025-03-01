@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: '/for-dev-rels',
+  },
 }
 
 export default function ForDevRels(): JSX.Element {
