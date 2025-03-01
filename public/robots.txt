@@ -4,7 +4,6 @@ Disallow: /_next/
 Disallow: /api/
 Disallow: /*/[slug]
 Disallow: /learn/assets
-Disallow: /learn/platforms
 Disallow: /learn/assets/*
 Disallow: /categories/*
 Disallow: /assets/*
