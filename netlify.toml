@@ -58,3 +58,9 @@ force = true
   to = "https://draft.dev/learn/great-content-marketing-doesnt-depend-on-luck"
   status = 301
   force = true
+
+    [[redirects]]
+  from = "https://draft.dev/best"
+  to = "https://draft.dev/learn/"
+  status = 301
+  force = true
