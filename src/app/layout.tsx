@@ -107,7 +107,6 @@ export default function RootLayout({
       className={`${firaSans.variable} ${firaCode.variable} !scroll-smooth`}
     >
       <body className="bg-white antialiased">
-        {/* GoogleAnalytics can be placed here since it's a client component */}
         <GoogleAnalytics />
 
         <AnalyticsProvider>
