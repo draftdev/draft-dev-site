@@ -1,10 +1,13 @@
-// app/robots.js
-
 export default function robots() {
-  const netlifyUrl = process.env.DEPLOY_URL || process.env.URL || ''
-  const isNetlifyDomain = netlifyUrl.includes('netlify.app')
+  // Check if we're in a Netlify deploy preview or branch deploy
+  const isNetlifyPreview =
+    process.env.CONTEXT === 'deploy-preview' ||
+    process.env.CONTEXT === 'branch-deploy' ||
+    process.env.NETLIFY_SITE_NAME?.includes('netlify')
 
-  if (isNetlifyDomain) {
+  // Handle Netlify environments
+  if (isNetlifyPreview) {
+    // Block all crawling on preview/branch deploys
     return {
       rules: [
         {
@@ -15,6 +18,7 @@ export default function robots() {
     }
   }
 
+  // Default rules for production (draft.dev)
   return {
     rules: [
       {
@@ -28,12 +32,11 @@ export default function robots() {
           '/learn/platforms',
           '/learn/writing',
           '/learn/technical-blogs',
-
+          '/learn/content-marketing',
           '/learn/assets/*',
           '/categories/*',
           '/assets/*',
           '/learn/posts/*',
-          '/learn/content-marketing',
         ],
       },
     ],
