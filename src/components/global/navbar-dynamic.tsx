@@ -42,7 +42,7 @@ const NAVIGATION_CONFIG = {
       title: 'The Technical Content Manager Playbook',
       href: '/playbook',
       /* date: 'Mar 16, 2023', */
-       /* datetime: '2023-03-16', */
+      /* datetime: '2023-03-16', */
       /* category: { title: 'Marketing', href: '#' }, */
       imageUrl:
         '/site/med-portrait/technical_content_manager_playbook_draft_dev.webp',
@@ -53,21 +53,20 @@ const NAVIGATION_CONFIG = {
       id: 2,
       title: '50 Winning Ideas For Your Company Blog',
       href: '/ideas',
-/*       date: 'Mar 10, 2023',
+      /*       date: 'Mar 10, 2023',
       datetime: '2023-03-10',
       category: { title: 'Sales', href: '#' }, */
-      imageUrl:
-        '/site/med-portrait/50_ideas_draft_dev.webp',
+      imageUrl: '/site/med-portrait/50_ideas_draft_dev.webp',
       description:
         'Kickstart your content marketing efforts. Download this free guide and get 50 ideas for free.',
     },
-/*     {
+    /*     {
       id: 1,
       title: 'A Complete Introduction to Technical Marketing',
       href: '/learn/a-complete-introduction-to-technical-marketing',
       date: 'Mar 16, 2023',
       datetime: '2023-03-16',
-      category: { title: 'Marketing', href: '#' }, 
+      category: { title: 'Marketing', href: '#' },
       imageUrl:
         '/site/med-landscape/introduction_to_technical_marketing_draft_dev.webp',
       description:
@@ -88,7 +87,7 @@ const NAVIGATION_CONFIG = {
   ],
   links: [
     { href: '/why-us', label: 'Why Us?' },
-    { href: './#lead-generation-package', label: 'Lead Generation' },
+    { href: '/#lead-generation-package', label: 'Lead Generation' },
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/learn', label: 'Blog' },
     { href: '/playbook', label: 'Content Playbook' },
