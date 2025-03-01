@@ -13,3 +13,4 @@ Disallow: /categories/*
 Disallow: /assets/*
 Disallow: /learn/posts/*
 Sitemap: https://draft.dev/blog_sitemap.xml
+Sitemap: https://draft.dev/main_sitemap.xml
