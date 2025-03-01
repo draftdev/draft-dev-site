@@ -5,7 +5,6 @@ Disallow: /api/
 Disallow: /*/[slug]
 Disallow: /learn/assets
 Disallow: /learn/platforms
-Disallow: /learn/writing
 Disallow: /learn/assets/*
 Disallow: /categories/*
 Disallow: /assets/*
