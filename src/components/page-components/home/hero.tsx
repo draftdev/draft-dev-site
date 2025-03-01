@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
                   </Link>
                   <Link
                     href="#lead-generation-package"
-                    className="my-2 !scroll-smooth text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
+                    className="my-2 text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
                   >
                     See Our Lead Generation Package{' '}
                     <span aria-hidden="true">→</span>

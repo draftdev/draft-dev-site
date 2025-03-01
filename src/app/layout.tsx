@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${firaSans.variable} ${firaCode.variable} !scroll-smooth`}
+      className={`${firaSans.variable} ${firaCode.variable}`}
     >
       <head>
         <meta data-grammarly-disable="true" />
