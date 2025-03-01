@@ -72,7 +72,7 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/about">Our Team</SitemapLink>
           <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="#faq">Frequently Asked Questions</SitemapLink>
+          <SitemapLink href="https://draft.dev/#faq">Frequently Asked Questions</SitemapLink>
           <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink>
         </SitemapLinks>
       </div>
@@ -96,7 +96,7 @@ function Sitemap() {
         </SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/case-studies">Case Studies</SitemapLink>
-          <SitemapLink href=".#testimonials">Testimonials</SitemapLink>
+          <SitemapLink href="https://draft.dev/#testimonials">Testimonials</SitemapLink>
           <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
         </SitemapLinks>
       </div>

@@ -87,7 +87,7 @@ const NAVIGATION_CONFIG = {
   ],
   links: [
     { href: '/why-us', label: 'Why Us?' },
-    { href: '/#lead-generation-package', label: 'Lead Generation' },
+    { href: 'https://draft.dev/#lead-generation-package', label: 'Lead Generation' },
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/learn', label: 'Blog' },
     { href: '/playbook', label: 'Content Playbook' },
