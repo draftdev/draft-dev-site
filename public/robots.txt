@@ -2,4 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /_next/
 Disallow: /api/
+Disallow: /learn/assets
+Disallow: /learn/assets/*
+Disallow: /categories/*
+Disallow: /assets/*
 Sitemap: https://draft.dev/blog_sitemap.xml

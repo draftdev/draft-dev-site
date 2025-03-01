@@ -12,14 +12,11 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Add function configuration for API routes
 [functions]
   node_bundler = "esbuild"
   included_files = ["public/**/*", ".next/server/**/*"]
   external_node_modules = ["sharp"]
 
-
-# Keep your existing redirects
 [[redirects]]
   from = "/case-studies/earthly"
   to = "/case-studies"
@@ -29,5 +26,35 @@
   [[redirects]]
   from = "https://glittery-faun-4426fe.netlify.app/"
   to = "https://draft.dev"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://draft.dev/team"
+  to = "https://draft.dev/about"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://draft.dev/case-study"
+  to = "https://draft.dev/case-studies"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://draft.dev/learn/b2b-marketing"
+  to = "https://draft.dev/learn/the-b2b-saas-marketing-guide"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://draft.dev/lead-generation"
+  to = "https://draft.dev/#lead-generation-package"
+  status = 301
+  force = true
+
+  [[redirects]]
+  from = "https://draft.dev/learn/great-content-marketing-doesn-t-depend-on-luck"
+  to = "https://draft.dev/learn/great-content-marketing-doesnt-depend-on-luck"
   status = 301
   force = true
