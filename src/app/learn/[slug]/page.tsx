@@ -3,7 +3,6 @@ import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import sanitizeHtml from 'sanitize-html'
 
@@ -202,7 +201,7 @@ export default async function PostPage({ params }: Props) {
                   : 'Unknown date'}
               </time>
 
-              {post.categories?.[0] && (
+              {/* {post.categories?.[0] && (
                 <>
                   <span>•</span>
                   <Link
@@ -212,7 +211,7 @@ export default async function PostPage({ params }: Props) {
                     {post.categories[0].name}
                   </Link>
                 </>
-              )}
+              )} */}
 
               <span>•</span>
               <div className="flex items-center">
