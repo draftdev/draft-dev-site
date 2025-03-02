@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState, useTransition } from 'react'
+import { useState, useTransition } from 'react'
 
 interface Post {
   id: string
@@ -63,12 +63,10 @@ export default function LoadMorePostsClient({
   const [isError, setIsError] = useState(false)
   const [debug, setDebug] = useState<string>('')
 
-  // Debug logging on mount
-  useEffect(() => {}, [initialPosts, initialPageInfo])
+  // No need for empty effect
 
   async function handleLoadMore() {
     if (!pageInfo.hasNextPage || !pageInfo.endCursor) {
-      console.log('No more pages to load')
       return
     }
 
@@ -100,7 +98,7 @@ export default function LoadMorePostsClient({
 
       if (!res.ok) {
         const errorText = await res.text()
-        console.error('API error:', res.status, errorText)
+        // Set error state instead of console logging
         setIsError(true)
         setDebug((prev) => prev + `Error: ${errorText}\n`)
         throw new Error(
@@ -134,7 +132,7 @@ export default function LoadMorePostsClient({
         setPageInfo(data.pageInfo)
       })
     } catch (error) {
-      console.error('Load more error:', error)
+      // Error is handled through state
       setIsError(true)
       setDebug(
         (prev) =>
@@ -147,7 +145,7 @@ export default function LoadMorePostsClient({
   return (
     <div>
       <div className="space-y-12">
-        {posts.map((post) => (
+        {posts.map((post, index) => (
           <article
             key={post.id}
             className="flex flex-col gap-8 sm:flex-row sm:items-start"
@@ -164,7 +162,8 @@ export default function LoadMorePostsClient({
                     className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
                     width={600}
                     height={400}
-                    loading="lazy"
+                    priority={index < 3}
+                    loading={index < 3 ? undefined : 'lazy'}
                   />
                 ) : (
                   <Image
@@ -173,7 +172,8 @@ export default function LoadMorePostsClient({
                     className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
                     width={600}
                     height={400}
-                    loading="lazy"
+                    priority={index < 3}
+                    loading={index < 3 ? undefined : 'lazy'}
                   />
                 )}
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
