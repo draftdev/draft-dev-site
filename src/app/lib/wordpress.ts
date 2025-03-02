@@ -144,8 +144,10 @@ export async function fetchGraphQL(query: string, variables = {}) {
       method: 'POST',
       headers,
       body: JSON.stringify({ query, variables }),
-      cache: 'no-store',
-      next: { tags: ['posts'] },
+      next: {
+        revalidate: 3600, // Revalidate every hour
+        tags: ['posts'],
+      },
     })
 
     if (!response.ok) {
