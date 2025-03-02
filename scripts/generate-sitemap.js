@@ -108,7 +108,7 @@ const generateSitemap = async () => {
   }
 
   // Write sitemap file
-  fs.writeFileSync('public/blog_sitemap.xml', xmlString)
+  fs.writeFileSync('public/blog_sitemap_test.xml', xmlString)
   console.log('Blog sitemap written to public/blog_sitemap.xml')
 
   console.log('Blog sitemap generation completed successfully!')

@@ -4,16 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MiniCaseLoft from './mini-case-loft'
 
-export const metadata = {
-  title:'Loft Labs Case Study - Draft.dev',
-  description:
-    'How Loft Scaled Its Kubernetes Blog and Achieved Top SEO Rankings with Draft.dev',
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
-
 export default function CaseStudyLoftLabs() {
   const stats = [
     { label: 'Growth in blog traffic in one year', value: '4x' },
@@ -74,7 +64,7 @@ export default function CaseStudyLoftLabs() {
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
-                <h2
+                <h1
                   className="subheader-light pt-16"
                   style={{ lineHeight: '1.3' }}
                 >
@@ -87,7 +77,7 @@ export default function CaseStudyLoftLabs() {
                     <span className="header-gradient px-3">4x</span>
                   </span>{' '}
                   and achieved top SEO rankings with Draft.dev
-                </h2>
+                </h1>
               </div>
             </div>
 
@@ -167,7 +157,10 @@ export default function CaseStudyLoftLabs() {
           </div>
         </div>
 
-        <div className="mx-auto my-24 max-w-7xl px-6 lg:px-8 scroll-mt-32" id="more-case-studies">
+        <div
+          className="mx-auto my-24 max-w-7xl scroll-mt-32 px-6 lg:px-8"
+          id="more-case-studies"
+        >
           <div className="mx-auto">
             <h2 className="subheader-gradient">More Case Studies</h2>
             <p className="lead-dark">

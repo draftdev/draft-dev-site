@@ -4,16 +4,6 @@ import MiniCaseEarthly from '@/components/media/case-studies/mini-case-earthly'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export const metadata = {
-  title:'Technical Content Marketing Case Studies - Draft.dev',
-  description:
-    'See how Earthly increased their monthly blog visitors by 346% with Draft.dev technical content.',
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
-
 export default function CaseStudyMain() {
   const stats = [
     { label: 'Blog visitors per workday', value: '1,500' },
@@ -74,7 +64,7 @@ export default function CaseStudyMain() {
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
-                <h2
+                <h1
                   className="subheader-light pt-16"
                   style={{ lineHeight: '1.3' }}
                 >
@@ -87,10 +77,10 @@ export default function CaseStudyMain() {
                     <span className="header-gradient px-3">346%</span>
                   </span>{' '}
                   and ramped up its content production with Draft.dev
-                </h2>
+                </h1>
               </div>
             </div>
-{/* 
+            {/*
             <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:mt-12 sm:flex-row">
               <Link
                 href="#"
@@ -167,7 +157,10 @@ export default function CaseStudyMain() {
           </div>
         </div>
 
-        <div className="mx-auto my-24 max-w-7xl px-6 lg:px-8 scroll-mt-32" id="more-case-studies">
+        <div
+          className="mx-auto my-24 max-w-7xl scroll-mt-32 px-6 lg:px-8"
+          id="more-case-studies"
+        >
           <div className="mx-auto">
             <h2 className="subheader-gradient">More Case Studies</h2>
             <p className="lead-dark">

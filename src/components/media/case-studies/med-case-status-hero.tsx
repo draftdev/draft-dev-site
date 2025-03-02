@@ -8,7 +8,7 @@ const MedCaseStatusHero = () => {
         <div className="mx-auto max-w-7xl p-6 lg:px-8">
           <div className="mx-auto max-w-xl gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div className="relative w-full lg:max-w-xl lg:shrink-0">
-              <h1 className="subheader-case-study mb-6 pb-4 font-semibold text-gradient-3">
+              <h2 className="subheader-case-study mb-6 pb-4 font-semibold text-gradient-3">
                 How{' '}
                 <span className="bg-gradient-brand px-2 text-white">
                   Status Hero
@@ -16,7 +16,7 @@ const MedCaseStatusHero = () => {
                 grew blog traffic by{' '}
                 <span className="bg-gradient-brand px-2 text-white">211%</span>{' '}
                 with Draft.dev
-              </h1>
+              </h2>
 
               <div className="relative max-w-xl py-8 pl-8">
                 <div className="absolute left-0 top-0 h-full w-1 bg-gray-300" />

@@ -4,16 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import MiniCaseStatusHero from './mini-case-status-hero'
 
-export const metadata = {
-  title:'Status Hero Case Study - Draft.dev',
-  description:
-    'How Status Hero Grew Blog Traffic By 211% and Increased its Trial Conversion Rate With Draft.dev',
-  robots: {
-    index: false,
-    follow: false,
-  },
-}
-
 export default function CaseStudyStatusHero() {
   const stats = [
     { label: 'Increase in blog traffic', value: '211%' },
@@ -77,7 +67,7 @@ export default function CaseStudyStatusHero() {
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
-                <h2
+                <h1
                   className="subheader-light pt-16"
                   style={{ lineHeight: '1.3' }}
                 >
@@ -90,7 +80,7 @@ export default function CaseStudyStatusHero() {
                     <span className="header-gradient px-3">211%</span>
                   </span>{' '}
                   and increased its trial conversion rate with Draft.dev
-                </h2>
+                </h1>
               </div>
             </div>
 
@@ -170,7 +160,10 @@ export default function CaseStudyStatusHero() {
           </div>
         </div>
 
-        <div className="mx-auto my-24 max-w-7xl px-6 lg:px-8 scroll-mt-32" id="more-case-studies">
+        <div
+          className="mx-auto my-24 max-w-7xl scroll-mt-32 px-6 lg:px-8"
+          id="more-case-studies"
+        >
           <div className="mx-auto">
             <h2 className="subheader-gradient">More Case Studies</h2>
             <p className="lead-dark">
