@@ -1,19 +1,22 @@
 // app/learn/[slug]/page.tsx
 import { getWpPost } from '@/app/lib/wordpress'
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
+import dynamicImport from 'next/dynamic'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import sanitizeHtml from 'sanitize-html'
 
 // Dynamically import components that aren't needed for initial rendering
-const BlogContentRenderer = dynamic(() => import('../blog-content-renderer'), {
-  loading: () => (
-    <div className="h-96 w-full animate-pulse rounded-md bg-gray-100"></div>
-  ),
-})
+const BlogContentRenderer = dynamicImport(
+  () => import('../blog-content-renderer'),
+  {
+    loading: () => (
+      <div className="h-96 w-full animate-pulse rounded-md bg-gray-100"></div>
+    ),
+  },
+)
 
-export const dynamicRendering = 'force-static'
+export const dynamic = 'force-static'
 export const revalidate = 3600 // Revalidate at most once per hour
 
 // This generates static pages for common blog posts at build time
