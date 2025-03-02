@@ -1,47 +1,27 @@
 // app/learn/[slug]/layout.tsx
-import Script from 'next/script'
-import { Suspense } from 'react'
+import type { Metadata } from 'next'
 
 type BlogLayoutProps = {
   children: React.ReactNode
   params: { slug: string }
 }
 
-// Using a separate component for analytics to prevent it from blocking rendering
-function AnalyticsScripts() {
-  return (
-    <>
-      {/* Load analytics scripts with proper strategy */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-N4PJMERESN"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="gtag-config"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-N4PJMERESN');
-          `,
-        }}
-      />
-    </>
-  )
+// Next will call this for every route that matches /learn/[slug]
+export async function generateMetadata({
+  params,
+}: BlogLayoutProps): Promise<Metadata> {
+  const { slug } = params
+
+  return {
+    alternates: {
+      canonical: `/learn/${slug}`,
+    },
+    // Optionally override or add more metadata:
+    title: `Draft.dev Blog – ${slug}`,
+    description: 'Technical blog post at Draft.dev',
+  }
 }
 
 export default function BlogPostLayout({ children }: BlogLayoutProps) {
-  return (
-    <>
-      {/* Main content - highest priority */}
-      {children}
-
-      {/* Load analytics without blocking page rendering */}
-      <Suspense fallback={null}>
-        <AnalyticsScripts />
-      </Suspense>
-    </>
-  )
+  return <>{children}</>
 }
