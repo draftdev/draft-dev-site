@@ -51,7 +51,8 @@ const UpcomingWebinars = () => {
               </dl>
               <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
                 <Link
-                  href="#"
+                  href="https://us02web.zoom.us/webinar/register/WN_EZDD9GN4TlSuZl5kBIJo5w#/registration
+"
                   className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:bg-gradient-brand hover:text-white hover:ring-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Register Now
