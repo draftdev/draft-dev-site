@@ -12,18 +12,18 @@ const Hero: React.FC = () => {
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between">
               <div className="relative max-w-2xl lg:shrink-0">
                 <h1
-                  className="sm:header-light mb-6 pb-4 pl-4 text-left font-code text-3xl font-semibold text-white sm:pl-0"
+                  className="sm:header-light my-6 pb-4 pl-3 text-left font-code text-3xl font-semibold text-white sm:pl-0"
                   style={{ contentVisibility: 'auto' }}
                 >
                   {' '}
                   We are a Content Creation Agency for Technical Companies
                 </h1>
-                <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-base text-gray-100 sm:bg-transparent sm:p-0">
+                <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-lg text-gray-100 sm:bg-transparent sm:p-0">
                   Draft.dev helps Marketing and Developer Relations teams in
                   tech businesses drive awareness, capture leads, and build
                   trust.
                 </p>
-                <div className="mb-6 mt-16 flex flex-col items-center gap-y-4 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0">
+                <div className="mb-6 mt-16 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
                   <Link
                     href="/call"
                     className="mb-8 inline-block rounded-sm px-3.5 py-2.5 font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:mb-0 sm:text-base"
