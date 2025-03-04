@@ -1,91 +1,67 @@
-import { clsx } from 'clsx'
 import Image from 'next/image'
 
 export function LogosFlex({
   className,
 }: React.ComponentPropsWithoutRef<'div'>) {
-  const redpanda = '/media/logos/redpanda_logo_draft_dev.svg'
-  const rewind = '/media/logos/rewind_logo_draft_dev.svg'
-  const earthly = '/media/logos/earthly_logo_draft_dev.svg'
-  const tailscale = '/media/logos/tailscale_logo_draft_dev.svg'
-  const saucelabs = '/media/logos/saucelabs_logo_draft_dev.svg'
-  const foxit = '/media/logos/foxit_logo_draft_dev.svg'
-  const containiq = '/media/logos/containiq_logo_draft_dev.svg'
+  const redpanda = '/media/logos/red-panda-logo.svg'
+  const sinch = '/media/logos/sinch-logo.svg'
+  const amadeus = '/media/logos/amadeus-logo.svg'
+  const jetbrains = '/media/logos/jetbrains-logo.svg'
+  const equinix = '/media/logos/equinix-logo.svg'
+  const loft = '/media/logos/loft-logo.svg'
 
   return (
-    <div className="mx-auto max-w-7xl px-6 text-white lg:px-8">
-      <div className="lg:mb-5">
-        <h3 className="subheader-mobile-light hidden text-center text-base font-semibold sm:block sm:pb-3 lg:text-left">
+    <section className="lg:pb-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="mb-8 hidden text-left text-lg font-medium text-white lg:block">
           Trusted by 100+ tech companies
-        </h3>
-      </div>
-      <div className="rounded-lg bg-white/5 py-8">
-        <div
-          className={clsx(
-            className,
-            'grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7',
-            'items-center justify-items-center',
-          )}
-        >
+        </h2>
+
+        <div className="mx-auto mt-10 grid grid-cols-1 items-center gap-x-8 gap-y-10 rounded-lg bg-white/5 p-8 sm:grid-cols-2 sm:gap-x-10 md:grid-cols-4 lg:mx-0 lg:grid-cols-6">
           <Image
-            alt="Red Panda logo"
+            className="max-h-10 w-full object-contain"
             src={redpanda}
-            className="lg:h-18 h-14"
-            width={200}
-            height={50}
-            priority={true}
-            loading="eager"
+            alt="Redpanda"
+            width={158}
+            height={48}
           />
           <Image
-            alt="Tailscale logo"
-            src={tailscale}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
-            priority={true}
-            loading="eager"
+            className="max-h-10 w-full object-contain"
+            src={sinch}
+            alt="Sinch"
+            width={158}
+            height={48}
           />
           <Image
-            alt="Earthly logo"
-            src={earthly}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
-            priority={true}
-            loading="eager"
+            className="max-h-10 w-full object-contain"
+            src={amadeus}
+            alt="Amadeus"
+            width={158}
+            height={48}
           />
           <Image
-            alt="Foxit logo"
-            src={foxit}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
-            priority={true}
-            loading="eager"
+            className="max-h-10 w-full object-contain"
+            src={jetbrains}
+            alt="JetBrains"
+            width={158}
+            height={48}
           />
           <Image
-            alt="Rewind logo"
-            src={rewind}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
+            className="max-h-10 w-full object-contain"
+            src={equinix}
+            alt="Equinix"
+            width={158}
+            height={48}
           />
           <Image
-            alt="Saucelabs logo"
-            src={saucelabs}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
-          />
-          <Image
-            alt="ContainIQ logo"
-            src={containiq}
-            width={200}
-            height={50}
-            className="lg:h-18 h-14"
+            className="max-h-10 w-full object-contain"
+            src={loft}
+            alt="Loft"
+            width={158}
+            height={48}
           />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
