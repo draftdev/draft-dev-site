@@ -13,17 +13,17 @@ export function LogosFlex({
   const containiq = '/media/logos/containiq_logo_draft_dev.svg'
 
   return (
-    <div className="text-white">
+    <div className="mx-auto max-w-7xl px-6 text-white lg:px-8">
       <div className="lg:mb-5">
-        <h3 className="subheader-mobile-light text-base font-semibold sm:pb-3 sm:text-left">
+        <h3 className="subheader-mobile-light hidden text-center text-base font-semibold sm:block sm:pb-3 lg:text-left">
           Trusted by 100+ tech companies
         </h3>
       </div>
-      <div className="rounded-lg px-4 py-8 sm:bg-white/5">
+      <div className="rounded-lg bg-white/5 py-8">
         <div
           className={clsx(
             className,
-            'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7',
+            'grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7',
             'items-center justify-items-center',
           )}
         >
