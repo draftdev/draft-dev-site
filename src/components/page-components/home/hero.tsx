@@ -11,7 +11,11 @@ const Hero: React.FC = () => {
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between">
               <div className="relative max-w-2xl lg:shrink-0">
-                <h1 className="sm:header-light mb-6 pb-4 text-center font-code text-3xl font-semibold text-white sm:text-left">
+                <h1
+                  className="sm:header-light mb-6 pb-4 text-center font-code text-3xl font-semibold text-white sm:text-left"
+                  style={{ contentVisibility: 'auto' }}
+                >
+                  {' '}
                   We are a Content Creation Agency for Technical Companies
                 </h1>
                 <p className="sm:paragraph-light px-8 pb-6 text-base text-gray-100 sm:px-0 sm:pb-0">
@@ -46,6 +50,8 @@ const Hero: React.FC = () => {
                           width={400}
                           src="/site/small-portrait/coding_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
+                          priority={true}
+                          loading="eager"
                         />
                       </div>
                     </div>
@@ -60,6 +66,8 @@ const Hero: React.FC = () => {
                           width={400}
                           src="/site/small-portrait/sales_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
+                          priority={true}
+                          loading="eager"
                         />
                       </div>
                     </div>
@@ -76,6 +84,8 @@ const Hero: React.FC = () => {
                           width={400}
                           src="/site/small-portrait/laptop_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
+                          priority={true}
+                          loading="eager"
                         />
                       </div>
                     </div>
@@ -90,6 +100,8 @@ const Hero: React.FC = () => {
                           width={400}
                           src="/site/small-portrait/commit_draft_dev.jpg"
                           className="aspect-[2/3] w-full rounded-xl object-cover"
+                          priority={true}
+                          loading="eager"
                         />
                       </div>
                     </div>

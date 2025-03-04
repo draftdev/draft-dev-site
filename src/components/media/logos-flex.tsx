@@ -33,7 +33,8 @@ export function LogosFlex({
             className="lg:h-18 h-14"
             width={200}
             height={50}
-            priority
+            priority={true}
+            loading="eager"
           />
           <Image
             alt="Tailscale logo"
@@ -41,6 +42,8 @@ export function LogosFlex({
             width={200}
             height={50}
             className="lg:h-18 h-14"
+            priority={true}
+            loading="eager"
           />
           <Image
             alt="Earthly logo"
@@ -48,6 +51,8 @@ export function LogosFlex({
             width={200}
             height={50}
             className="lg:h-18 h-14"
+            priority={true}
+            loading="eager"
           />
           <Image
             alt="Foxit logo"
@@ -55,6 +60,8 @@ export function LogosFlex({
             width={200}
             height={50}
             className="lg:h-18 h-14"
+            priority={true}
+            loading="eager"
           />
           <Image
             alt="Rewind logo"
