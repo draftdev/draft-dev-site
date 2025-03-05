@@ -4,19 +4,18 @@ import Image from 'next/image'
 export function LogosDark({
   className,
 }: React.ComponentPropsWithoutRef<'div'>) {
-  const redpanda = '/media/logos/redpanda_logo_draft_dev.svg'
-  const rewind = '/media/logos/rewind_logo_draft_dev.svg'
-  const earthly = '/media/logos/earthly_logo_draft_dev.svg'
-  const tailscale = '/media/logos/tailscale_logo_draft_dev.svg'
-  const saucelabs = '/media/logos/saucelabs_logo_draft_dev.svg'
-  const foxit = '/media/logos/foxit_logo_draft_dev.svg'
-  const containiq = '/media/logos/containiq_logo_draft_dev.svg'
+  const redpanda = '/media/logos/red-panda-logo.svg'
+  const sinch = '/media/logos/sinch-logo.svg'
+  const amadeus = '/media/logos/amadeus-logo.svg'
+  const jetbrains = '/media/logos/jetbrains-logo.svg'
+  const equinix = '/media/logos/equinix-logo.svg'
+  const loft = '/media/logos/loft-logo.svg'
 
   return (
     <div className="bg-gradient-brand py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
-          <h3 className="subheader-mobile-light pb-3 font-semibold sm:pb-0 sm:text-left sm:text-base">
+          <h3 className="subheader-mobile-light pb-3 text-center text-base font-semibold sm:pb-0 sm:text-left sm:text-base">
             Trusted by 100+ tech companies
           </h3>
         </div>
@@ -24,59 +23,51 @@ export function LogosDark({
           <div
             className={clsx(
               className,
-              'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7',
+              'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6',
               'items-center justify-items-center',
             )}
           >
             <Image
-              alt="Red Panda logo"
+              className="max-h-10 w-full object-contain"
               src={redpanda}
-              className="h-16"
-              width={192}
+              alt="Redpanda"
+              width={158}
               height={48}
-              priority
             />
             <Image
-              alt="Tailscale logo"
-              src={tailscale}
-              width={192}
+              className="max-h-10 w-full object-contain"
+              src={sinch}
+              alt="Sinch"
+              width={158}
               height={48}
-              className="h-16"
             />
             <Image
-              alt="Earthly logo"
-              src={earthly}
-              width={192}
+              className="max-h-10 w-full object-contain"
+              src={amadeus}
+              alt="Amadeus"
+              width={158}
               height={48}
-              className="h-16"
             />
             <Image
-              alt="Foxit logo"
-              src={foxit}
-              width={192}
+              className="max-h-10 w-full object-contain"
+              src={jetbrains}
+              alt="JetBrains"
+              width={158}
               height={48}
-              className="h-16"
             />
             <Image
-              alt="Rewind logo"
-              src={rewind}
-              width={192}
+              className="max-h-10 w-full object-contain"
+              src={equinix}
+              alt="Equinix"
+              width={158}
               height={48}
-              className="h-16"
             />
             <Image
-              alt="Saucelabs logo"
-              src={saucelabs}
-              width={192}
+              className="max-h-10 w-full object-contain"
+              src={loft}
+              alt="Loft"
+              width={158}
               height={48}
-              className="h-16"
-            />
-            <Image
-              alt="ContainIQ logo"
-              src={containiq}
-              width={192}
-              height={48}
-              className="h-16"
             />
           </div>
         </div>
