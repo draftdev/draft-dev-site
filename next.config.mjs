@@ -51,7 +51,7 @@ const nextConfig = {
       },
       {
         // Cache JS and CSS
-        source: '/:path*.(?:js|css)',
+        source: '/:path*.(js|css)',
         headers: [
           {
             key: 'Cache-Control',
@@ -60,12 +60,6 @@ const nextConfig = {
         ],
       },
     ]
-  },
-
-  // Improve production builds
-  compiler: {
-    // Remove console.log in production
-    removeConsole: process.env.NODE_ENV === 'production',
   },
 }
 

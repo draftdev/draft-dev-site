@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /_next/
 Disallow: /api/
-Disallow: /*/[slug]
 Disallow: /learn/assets
 Disallow: /learn/assets/*
 Disallow: /categories/*
