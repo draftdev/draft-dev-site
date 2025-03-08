@@ -3,9 +3,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  poweredByHeader: false, // Remove X-Powered-By header for security
+  poweredByHeader: false,
 
-  // Optimize image handling
   images: {
     domains: [
       'candid-cookie.flywheelsites.com',
@@ -18,9 +17,7 @@ const nextConfig = {
     ],
     // Configure image formats
     formats: ['image/webp', 'image/avif'],
-    // Set a reasonable image size cap
     minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
-    // Allow remote images
     remotePatterns: [
       {
         protocol: 'https',
@@ -69,12 +66,6 @@ const nextConfig = {
   compiler: {
     // Remove console.log in production
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-
-  experimental: {
-    optimizeCss: true,
-    optimizeFonts: true,
-    scrollRestoration: true,
   },
 }
 
