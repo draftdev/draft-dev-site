@@ -3,6 +3,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  poweredByHeader: false, // Remove X-Powered-By header for security
+
+  // Optimize image handling
   images: {
     domains: [
       'candid-cookie.flywheelsites.com',
@@ -13,6 +16,11 @@ const nextConfig = {
       'i3.wp.com',
       'secure.gravatar.com',
     ],
+    // Configure image formats
+    formats: ['image/webp', 'image/avif'],
+    // Set a reasonable image size cap
+    minimumCacheTTL: 60 * 60 * 24 * 7, // 7 days
+    // Allow remote images
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,18 +28,53 @@ const nextConfig = {
       },
     ],
   },
+
+  // Set cache headers for static assets
   async headers() {
     return [
       {
+        // Cache images
         source: '/api/image',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=43200',
+            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days, SWR 1 day
+          },
+        ],
+      },
+      {
+        // Cache static assets
+        source: '/:path*.(jpg|jpeg|png|webp|avif|ico|svg|woff|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days, SWR 1 day
+          },
+        ],
+      },
+      {
+        // Cache JS and CSS
+        source: '/:path*.(?:js|css)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year, immutable
           },
         ],
       },
     ]
+  },
+
+  // Improve production builds
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  experimental: {
+    optimizeCss: true,
+    optimizeFonts: true,
+    scrollRestoration: true,
   },
 }
 
