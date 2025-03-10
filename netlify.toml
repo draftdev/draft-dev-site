@@ -61,12 +61,12 @@ force = true
 
     [[redirects]]
   from = "https://draft.dev/best"
-  to = "https://draft.dev/learn/"
+  to = "https://draft.dev/learn"
   status = 301
   force = true
 
       [[redirects]]
   from = "https://draft.dev/best/best-cybersecurity-blogs"
-  to = "https://draft.dev/learn/"
+  to = "https://draft.dev/learn"
   status = 301
   force = true
