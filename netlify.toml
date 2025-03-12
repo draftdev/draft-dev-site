@@ -15,7 +15,6 @@
 [functions]
   node_bundler = "esbuild"
   included_files = ["public/**/*", ".next/server/**/*"]
-  external_node_modules = ["sharp"]
 
 [[redirects]]
   from = "/case-studies/earthly"
