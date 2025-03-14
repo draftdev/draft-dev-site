@@ -1,5 +1,3 @@
-// app/learn/[slug]/page.tsx
-
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
@@ -35,11 +33,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       '...'
 
   return {
-    // Post-specific title and description
     title: post.title,
     description,
-
-    // Open Graph & Twitter settings
     openGraph: {
       title: post.title,
       description,
@@ -73,7 +68,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : ['/site/med-landscape/write_draft_dev.jpg'],
     },
 
-    // Use a relative path for the canonical, which Next.js merges with metadataBase
     alternates: {
       canonical: `/learn/${params.slug}`,
     },
@@ -87,7 +81,6 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  // Transform <img> tags in the post content
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt, width, height } = domNode.attribs
@@ -97,7 +90,6 @@ export default async function PostPage({ params }: Props) {
       const uniqueId = Math.random().toString(36).substring(2, 10)
       let imageUrl = src
 
-      // Example: rewriting certain images to go through an API
       if (src.includes('candid-cookie.flywheelsites.com')) {
         imageUrl = `/api/image?url=${encodeURIComponent(
           src.trim(),
@@ -106,11 +98,11 @@ export default async function PostPage({ params }: Props) {
 
       return (
         <div className="my-4">
-          <img
+          <Image
             src={imageUrl}
             alt={alt || 'Blog image'}
-            width={width || '768'}
-            height={height || 'auto'}
+            width="768"
+            height="400"
             className="mx-auto rounded-lg object-cover"
             loading="lazy"
           />
@@ -120,7 +112,6 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  // Prepare the post's HTML content safely
   const sanitizedContent = sanitizeHtml(post.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
@@ -136,7 +127,6 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      {/* JSON-LD for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

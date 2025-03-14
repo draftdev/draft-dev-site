@@ -1,4 +1,3 @@
-// app/lib/wordpress.ts
 import { cache } from 'react'
 
 export interface Post {
@@ -140,6 +139,8 @@ export async function fetchGraphQL(query: string, variables = {}) {
       headers.append('X-WP-Privacy', process.env.WORDPRESS_PRIVACY_PASSWORD)
     }
 
+    // This next: { revalidate: 3600 } triggers Next.js to revalidate
+    // the server-side cache every hour. Not specifically about images.
     const response = await fetch(baseUrl, {
       method: 'POST',
       headers,

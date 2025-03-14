@@ -1,4 +1,3 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -78,7 +77,9 @@ const nextConfig = {
         headers: [
           {
             key: 'Authorization',
-            value: `Basic ${Buffer.from(`${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`).toString('base64')}`,
+            value: `Basic ${Buffer.from(
+              `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
+            ).toString('base64')}`,
           },
           {
             key: 'X-WP-Privacy',
@@ -92,7 +93,8 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days, SWR 1 day
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
+            // 7 days, with SWR for 1 day
           },
         ],
       },
@@ -102,7 +104,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days, SWR 1 day
+            value: 'public, max-age=604800, stale-while-revalidate=86400',
           },
         ],
       },
