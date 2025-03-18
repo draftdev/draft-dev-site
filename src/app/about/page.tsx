@@ -23,7 +23,7 @@ export default function About() {
   return (
     <>
       <MedHeader
-        title="About Draft.Dev"
+        title="About Draft.dev"
         descriptionOne="Draft.dev is a content marketing agency focused on
           creating in-depth, technical content for companies in tech. We work
           with subject matter experts from around the world."

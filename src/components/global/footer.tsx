@@ -72,7 +72,9 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/about">Our Team</SitemapLink>
           <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="https://draft.dev/#faq">Frequently Asked Questions</SitemapLink>
+          <SitemapLink href="https://draft.dev/#faq">
+            Frequently Asked Questions
+          </SitemapLink>
           <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink>
         </SitemapLinks>
       </div>
@@ -96,7 +98,9 @@ function Sitemap() {
         </SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/case-studies">Case Studies</SitemapLink>
-          <SitemapLink href="https://draft.dev/#testimonials">Testimonials</SitemapLink>
+          <SitemapLink href="https://draft.dev/#testimonials">
+            Testimonials
+          </SitemapLink>
           <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
         </SitemapLinks>
       </div>
@@ -168,7 +172,7 @@ function Copyright() {
     <div className="bg-white/15 py-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
       <div className="shadow-md shadow-black/5">
         <div className="text-center text-sm/6 text-white">
-          &copy; {new Date().getFullYear()} Draft.Dev
+          &copy; {new Date().getFullYear()} Draft.dev
         </div>
       </div>
     </div>

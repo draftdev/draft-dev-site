@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <MedHeader
-        title="Draft.Dev Privacy Policy"
+        title="Draft.dev Privacy Policy"
         descriptionOne="Updated 12/22/20"
         descriptionTwo="We want to protect your privacy. In order to operate, our web sites and business operations may gather information about you with your consent. These terms explain how this may happen, what we do with any potentially personal information, and how you can get in contact should you have any concerns."
       />

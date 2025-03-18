@@ -21,7 +21,7 @@ export default function Webinars() {
   return (
     <>
       <MedHeader
-        title="Draft.Dev Webinars"
+        title="Draft.dev Webinars"
         descriptionOne="Elevate your developer marketing expertise with our monthly webinar series."
         descriptionTwo=""
       />
