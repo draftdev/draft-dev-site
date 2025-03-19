@@ -1,24 +1,13 @@
 import { getWpPost } from '@/app/lib/wordpress'
+import { getImageUrl } from '@/app/utils/wp-image'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import sanitizeHtml from 'sanitize-html'
+
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
-
-function proxyWordPressImage(src: string | undefined, postId: string): string {
-  if (!src) {
-    return '/site/med-landscape/write_draft_dev.jpg'
-  }
-
-  if (src.includes('candid-cookie.flywheelsites.com')) {
-    const urlHash = src.split('/').pop()?.split('.')[0] || ''
-    return `/api/image?url=${encodeURIComponent(src)}&id=${postId}-${urlHash}`
-  }
-
-  return src
-}
 
 type Props = {
   params: { slug: string }
@@ -47,8 +36,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description,
-
-    // Open Graph & Twitter settings
     openGraph: {
       title: post.title,
       description,
@@ -81,7 +68,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         ? [post.featuredImage.node.sourceUrl]
         : ['/site/med-landscape/write_draft_dev.jpg'],
     },
-
     alternates: {
       canonical: `/learn/${params.slug}`,
     },
@@ -99,7 +85,9 @@ export default async function PostPage({ params }: Props) {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt, width, height } = domNode.attribs
       if (!src) return undefined
-      let imageUrl = proxyWordPressImage(src, post.id)
+
+      // Process the image URL through our utility
+      const imageUrl = getImageUrl(src)
 
       return (
         <div className="my-4">
@@ -164,7 +152,6 @@ export default async function PostPage({ params }: Props) {
         }}
       />
 
-      {/* The actual post layout */}
       <div className="bg-white">
         <div className="mx-auto max-w-3xl px-6 py-36 lg:px-8">
           <article className="prose prose-lg prose-blue mx-auto max-w-none">
@@ -196,16 +183,13 @@ export default async function PostPage({ params }: Props) {
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={proxyWordPressImage(
-                    post.featuredImage.node.sourceUrl,
-                    post.id,
-                  )}
+                  src={getImageUrl(post.featuredImage.node.sourceUrl)}
                   alt={String(post.title)}
                   className="w-full rounded-xl object-cover"
                   width="768"
                   height="450"
                   loading="eager"
-                  fetchPriority="high"
+                  priority
                 />
               </div>
             )}

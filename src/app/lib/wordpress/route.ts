@@ -1,39 +1,48 @@
-// app/api/wordpress/route.ts
-import { getWpPostsForApi } from '@/app/lib/wordpress-api' // Use the non-cached version
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-// Required for Next.js 13+ App Router to handle POST requests
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
-export async function POST(request: Request) {
+export async function GET(request: NextRequest) {
+  const url = request.nextUrl.searchParams.get('url')
+
+  if (!url) {
+    return new NextResponse('Missing URL parameter', { status: 400 })
+  }
+
   try {
-    const body = await request.json()
-    const { after, first = 10, currentPage = 2 } = body
+    const auth = Buffer.from(
+      `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
+    ).toString('base64')
 
-    if (!after) {
-      return NextResponse.json(
-        { error: 'Missing cursor parameter' },
-        { status: 400 },
-      )
+    const response = await fetch(decodeURIComponent(url), {
+      headers: {
+        Authorization: `Basic ${auth}`,
+        ...(process.env.WORDPRESS_PRIVACY_PASSWORD
+          ? { 'X-WP-Privacy': process.env.WORDPRESS_PRIVACY_PASSWORD }
+          : {}),
+      },
+      next: { revalidate: 86400 }, // Cache for 24 hours at the fetch level
+    })
+
+    if (!response.ok) {
+      console.error(`Failed to fetch image: ${response.status} for URL: ${url}`)
+      return new NextResponse(`Failed to fetch image: ${response.status}`, {
+        status: response.status,
+      })
     }
 
-    // Use the non-cached version of getWpPosts
-    const { posts, pageInfo } = await getWpPostsForApi(
-      first,
-      after,
-      currentPage,
-    )
+    const buffer = await response.arrayBuffer()
+    const contentType = response.headers.get('content-type') || 'image/jpeg'
 
-    // Return clean response
-    return NextResponse.json({
-      posts,
-      pageInfo,
+    return new NextResponse(buffer, {
+      headers: {
+        'Content-Type': contentType,
+        'Cache-Control':
+          'public, max-age=86400, s-maxage=86400, stale-while-revalidate=43200',
+      },
     })
   } catch (error) {
-    console.error('WordPress API error:', error)
-    return NextResponse.json(
-      { error: 'Failed to fetch posts', details: String(error) },
-      { status: 500 },
-    )
+    console.error('Image proxy error:', error)
+    return new NextResponse('Failed to fetch image', { status: 500 })
   }
 }
