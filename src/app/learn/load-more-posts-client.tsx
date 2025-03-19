@@ -37,17 +37,13 @@ interface LoadMorePostsClientProps {
   initialPosts: Post[]
   initialPageInfo: PageInfo
 }
-
 function proxyWordPressImage(src: string | undefined, postId: string): string {
   if (!src) {
     return '/site/med-landscape/write_draft_dev.jpg'
   }
 
-  // Add uniqueness parameters to prevent caching issues
-  const uniqueParams = `&postId=${postId}&_v=${Date.now()}-${Math.random().toString(36).substring(2, 10)}`
-
   if (src.includes('candid-cookie.flywheelsites.com')) {
-    return `/api/image?url=${encodeURIComponent(src)}${uniqueParams}`
+    return `/api/image?url=${encodeURIComponent(src)}&postId=${postId}`
   }
 
   return src
