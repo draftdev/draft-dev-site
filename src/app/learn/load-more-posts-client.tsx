@@ -38,14 +38,11 @@ interface LoadMorePostsClientProps {
   initialPageInfo: PageInfo
 }
 
-function proxyWordPressImage(src: string | undefined, postId: string): string {
-  if (!src) {
-    return '/site/med-landscape/write_draft_dev.jpg'
-  }
+function proxyWordPressImage(src: string | undefined): string {
+  if (!src) return '/site/med-landscape/write_draft_dev.jpg'
 
   if (src.includes('candid-cookie.flywheelsites.com')) {
-    const urlHash = src.split('/').pop()?.split('.')[0] || ''
-    return `/api/image?url=${encodeURIComponent(src)}&id=${postId}-${urlHash}`
+    return `/api/image?url=${encodeURIComponent(src)}`
   }
 
   return src
@@ -147,10 +144,7 @@ export default function LoadMorePostsClient({
               <Link href={`/learn/${post.slug}`}>
                 {post.featuredImage ? (
                   <Image
-                    src={proxyWordPressImage(
-                      post.featuredImage.node.sourceUrl,
-                      post.id,
-                    )}
+                    src={proxyWordPressImage(post.featuredImage.node.sourceUrl)}
                     alt={post.title}
                     className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
                     width={600}

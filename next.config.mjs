@@ -69,50 +69,14 @@ const nextConfig = {
       },
     ],
   },
-
   async headers() {
     return [
       {
-        // Authentication headers for WordPress images
-        source: '/_next/image',
-        headers: [
-          {
-            key: 'Authorization',
-            value: `Basic ${Buffer.from(`${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`).toString('base64')}`,
-          },
-          {
-            key: 'X-WP-Privacy',
-            value: process.env.WORDPRESS_PRIVACY_PASSWORD || '',
-          },
-        ],
-      },
-      {
-        // Cache headers for image proxy - UPDATED for longer caching
         source: '/api/image',
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=2592000, stale-while-revalidate=604800', // 30 days cache, 7 days stale-while-revalidate
-          },
-        ],
-      },
-      {
-        // Cache static assets
-        source: '/:path*.(jpg|jpeg|png|webp|avif|ico|svg|woff|woff2)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=604800, stale-while-revalidate=86400', // 7 days, SWR 1 day
-          },
-        ],
-      },
-      {
-        // Cache JS and CSS
-        source: '/:path*.(js|css)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable', // 1 year, immutable
+            value: 'public, max-age=31536000',
           },
         ],
       },
