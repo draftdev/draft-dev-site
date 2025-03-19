@@ -61,6 +61,7 @@ const nextConfig = {
         hostname: 'glittery-faun-4426fe.netlify.app',
         pathname: '/**',
       },
+      // Fallback pattern for any other HTTPS sources
       {
         protocol: 'https',
         hostname: '**',
@@ -72,6 +73,7 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Authentication headers for WordPress images
         source: '/_next/image',
         headers: [
           {
@@ -85,6 +87,7 @@ const nextConfig = {
         ],
       },
       {
+        // Cache headers for image proxy - UPDATED for longer caching
         source: '/api/image',
         headers: [
           {

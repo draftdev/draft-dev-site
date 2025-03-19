@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   const url = request.nextUrl.searchParams.get('url')
-  const version = request.nextUrl.searchParams.get('postId') || 'default'
+  const id = request.nextUrl.searchParams.get('id') || 'default'
 
   if (!url) {
     return new NextResponse('Missing URL parameter', { status: 400 })
@@ -46,7 +46,7 @@ export async function GET(request: NextRequest) {
         'Content-Type': contentType || 'image/jpeg',
         'Cache-Control':
           'public, max-age=2592000, stale-while-revalidate=604800', // 30 days, SWR 7 days
-        'X-Image-Version': version,
+        'X-Image-ID': id,
       },
     })
   } catch (error) {

@@ -37,13 +37,15 @@ interface LoadMorePostsClientProps {
   initialPosts: Post[]
   initialPageInfo: PageInfo
 }
+
 function proxyWordPressImage(src: string | undefined, postId: string): string {
   if (!src) {
     return '/site/med-landscape/write_draft_dev.jpg'
   }
 
   if (src.includes('candid-cookie.flywheelsites.com')) {
-    return `/api/image?url=${encodeURIComponent(src)}&postId=${postId}`
+    const urlHash = src.split('/').pop()?.split('.')[0] || ''
+    return `/api/image?url=${encodeURIComponent(src)}&id=${postId}-${urlHash}`
   }
 
   return src
@@ -58,8 +60,6 @@ export default function LoadMorePostsClient({
   const [isPending, startTransition] = useTransition()
   const [isError, setIsError] = useState(false)
   const [debug, setDebug] = useState<string>('')
-
-  // No need for empty effect
 
   async function handleLoadMore() {
     if (!pageInfo.hasNextPage || !pageInfo.endCursor) {
@@ -85,7 +85,6 @@ export default function LoadMorePostsClient({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody),
-        // Ensure we're not using cached responses
         cache: 'no-store',
         next: { revalidate: 0 },
       })
@@ -94,7 +93,6 @@ export default function LoadMorePostsClient({
 
       if (!res.ok) {
         const errorText = await res.text()
-        // Set error state instead of console logging
         setIsError(true)
         setDebug((prev) => prev + `Error: ${errorText}\n`)
         throw new Error(
@@ -106,7 +104,6 @@ export default function LoadMorePostsClient({
 
       setDebug((prev) => prev + `Received posts: ${data.posts?.length || 0}\n`)
 
-      // Detailed validation
       if (!data) {
         throw new Error('No data received from API')
       }

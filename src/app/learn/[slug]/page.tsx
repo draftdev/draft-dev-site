@@ -1,14 +1,24 @@
-// app/learn/[slug]/page.tsx
-
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import sanitizeHtml from 'sanitize-html'
-
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
+
+function proxyWordPressImage(src: string | undefined, postId: string): string {
+  if (!src) {
+    return '/site/med-landscape/write_draft_dev.jpg'
+  }
+
+  if (src.includes('candid-cookie.flywheelsites.com')) {
+    const urlHash = src.split('/').pop()?.split('.')[0] || ''
+    return `/api/image?url=${encodeURIComponent(src)}&id=${postId}-${urlHash}`
+  }
+
+  return src
+}
 
 type Props = {
   params: { slug: string }
@@ -35,7 +45,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       '...'
 
   return {
-    // Post-specific title and description
     title: post.title,
     description,
 
@@ -73,7 +82,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         : ['/site/med-landscape/write_draft_dev.jpg'],
     },
 
-    // Use a relative path for the canonical, which Next.js merges with metadataBase
     alternates: {
       canonical: `/learn/${params.slug}`,
     },
@@ -87,22 +95,11 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  // Transform <img> tags in the post content
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt, width, height } = domNode.attribs
       if (!src) return undefined
-
-      const timestamp = Date.now()
-      const uniqueId = Math.random().toString(36).substring(2, 10)
-      let imageUrl = src
-
-      // Example: rewriting certain images to go through an API
-      if (src.includes('candid-cookie.flywheelsites.com')) {
-        imageUrl = `/api/image?url=${encodeURIComponent(
-          src.trim(),
-        )}&_v=${timestamp}-${uniqueId}`
-      }
+      let imageUrl = proxyWordPressImage(src, post.id)
 
       return (
         <div className="my-4">
@@ -120,7 +117,6 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  // Prepare the post's HTML content safely
   const sanitizedContent = sanitizeHtml(post.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
@@ -130,13 +126,11 @@ export default async function PostPage({ params }: Props) {
     },
   })
 
-  // Figure out the author name
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev'
 
   return (
     <>
-      {/* JSON-LD for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -202,15 +196,10 @@ export default async function PostPage({ params }: Props) {
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={
-                    post.featuredImage.node.sourceUrl.includes(
-                      'candid-cookie.flywheelsites.com',
-                    )
-                      ? `/api/image?url=${encodeURIComponent(
-                          post.featuredImage.node.sourceUrl.trim(),
-                        )}&_v=${Date.now()}`
-                      : post.featuredImage.node.sourceUrl
-                  }
+                  src={proxyWordPressImage(
+                    post.featuredImage.node.sourceUrl,
+                    post.id,
+                  )}
                   alt={String(post.title)}
                   className="w-full rounded-xl object-cover"
                   width="768"
