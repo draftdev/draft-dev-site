@@ -1,5 +1,4 @@
 import { getWpPost } from '@/app/lib/wordpress'
-import { getImageUrl } from '@/app/utils/wp-image'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -83,21 +82,28 @@ export default async function PostPage({ params }: Props) {
 
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
-      const { src, alt, width, height } = domNode.attribs
+      const { src, alt } = domNode.attribs
       if (!src) return undefined
 
-      // Process the image URL through our utility
-      const imageUrl = getImageUrl(src)
+      // Don't use getImageUrl here - Next.js Image will handle optimization
+      const imageUrl = src
 
+      // For content images, use Next.js Image component for optimization
       return (
         <div className="my-4">
-          <img
+          <Image
             src={imageUrl}
             alt={alt || 'Blog image'}
-            width={width || '768'}
-            height={height || 'auto'}
+            width={768}
+            height={512}
             className="mx-auto rounded-lg object-cover"
-            loading="lazy"
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 768px"
+            // Skip Next.js optimization for external non-whitelisted domains
+            unoptimized={
+              !imageUrl.includes('candid-cookie.flywheelsites.com') &&
+              !imageUrl.startsWith('/')
+            }
           />
         </div>
       )
@@ -183,13 +189,15 @@ export default async function PostPage({ params }: Props) {
             {post.featuredImage && (
               <div className="mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={getImageUrl(post.featuredImage.node.sourceUrl)}
+                  src={post.featuredImage.node.sourceUrl}
                   alt={String(post.title)}
                   className="w-full rounded-xl object-cover"
-                  width="768"
-                  height="450"
+                  width={1200}
+                  height={675}
                   loading="eager"
                   priority
+                  quality={90}
+                  sizes="(max-width: 1280px) 100vw, 1200px"
                 />
               </div>
             )}

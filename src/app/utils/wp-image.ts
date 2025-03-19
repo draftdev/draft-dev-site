@@ -5,10 +5,5 @@ export function getImageUrl(
   if (!src) {
     return fallbackImage
   }
-
-  // Check if it's a WordPress image that needs proxying
-  if (src.includes('candid-cookie.flywheelsites.com')) {
-    return `/api/image?url=${encodeURIComponent(src.trim())}`
-  }
-  return src
+  return src.trim()
 }

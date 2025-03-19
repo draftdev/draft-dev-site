@@ -1,6 +1,5 @@
 'use client'
 
-import { getImageUrl } from '@/app/utils/wp-image'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useTransition } from 'react'
@@ -38,6 +37,9 @@ interface LoadMorePostsClientProps {
   initialPosts: Post[]
   initialPageInfo: PageInfo
 }
+
+// Default fallback image used when post has no featured image
+const FALLBACK_IMAGE = '/site/med-landscape/write_draft_dev.jpg'
 
 export default function LoadMorePostsClient({
   initialPosts,
@@ -99,42 +101,54 @@ export default function LoadMorePostsClient({
   return (
     <div>
       <div className="space-y-12">
-        {posts.map((post, index) => (
-          <article
-            key={post.id}
-            className="flex flex-col gap-8 sm:flex-row sm:items-start"
-          >
-            <div className="relative w-full sm:w-1/5">
-              <Link href={`/learn/${post.slug}`}>
-                <Image
-                  src={getImageUrl(post.featuredImage?.node.sourceUrl)}
-                  alt={post.title}
-                  className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
-                  width={600}
-                  height={400}
-                  priority={index < 3}
-                  loading={index < 3 ? undefined : 'lazy'}
-                />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-              </Link>
-            </div>
+        {posts.map((post, index) => {
+          // Get image source with fallback
+          const imageSource =
+            post.featuredImage?.node.sourceUrl || FALLBACK_IMAGE
 
-            <div className="w-full sm:w-2/3">
-              <div className="group relative">
-                <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 sm:text-2xl">
-                  <Link href={`/learn/${post.slug}`}>
-                    <span className="absolute inset-0" />
-                    {post.title}
-                  </Link>
-                </h3>
-                <p
-                  className="mt-4 line-clamp-3 text-base text-gray-600"
-                  dangerouslySetInnerHTML={{ __html: post.excerpt }}
-                />
+          return (
+            <article
+              key={post.id}
+              className="flex flex-col gap-8 sm:flex-row sm:items-start"
+            >
+              <div className="relative w-full sm:w-1/5">
+                <Link href={`/learn/${post.slug}`}>
+                  <Image
+                    src={imageSource}
+                    alt={post.title}
+                    className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
+                    width={600}
+                    height={400}
+                    priority={index < 3}
+                    quality={80}
+                    sizes="(max-width: 768px) 100vw, 20vw"
+                    unoptimized={
+                      !imageSource.includes(
+                        'candid-cookie.flywheelsites.com',
+                      ) && !imageSource.startsWith('/')
+                    }
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                </Link>
               </div>
-            </div>
-          </article>
-        ))}
+
+              <div className="w-full sm:w-2/3">
+                <div className="group relative">
+                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 sm:text-2xl">
+                    <Link href={`/learn/${post.slug}`}>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p
+                    className="mt-4 line-clamp-3 text-base text-gray-600"
+                    dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                  />
+                </div>
+              </div>
+            </article>
+          )
+        })}
       </div>
 
       {pageInfo.hasNextPage && (
