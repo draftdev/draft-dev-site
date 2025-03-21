@@ -182,3 +182,42 @@
     @apply bg-transparent font-code font-semibold text-white;
   }
 }
+@layer base {
+  :root {
+    --banner-height: 41px;
+  }
+
+  body {
+    padding-top: 64px;
+  }
+
+  body[data-banner='visible'] {
+    padding-top: calc(var(--banner-height) + 64px); /* Banner + navbar height */
+  }
+}
+
+@layer components {
+  /* Banner container */
+  .banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    height: var(--banner-height);
+  }
+
+  /* Navbar container */
+  .navbar-container {
+    position: relative;
+  }
+
+  body[data-banner='visible'] .navbar-container > div {
+    top: var(--banner-height);
+  }
+
+  body:not([data-banner='visible']) .navbar-container > div {
+    top: 0;
+    transition: top 0.3s ease-in-out;
+  }
+}

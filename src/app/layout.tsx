@@ -1,9 +1,9 @@
+import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
 import { Suspense } from 'react'
-;<link rel="preload" href="/styles/tailwind.css" as="style" />
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
@@ -119,7 +119,10 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-
+        <Banner
+          text="Free Download: 50 Winning Ideas For Your Company's Blog"
+          link="/ideas"
+        />
         <DynamicNavbar />
 
         <div className="flex min-h-screen flex-col">
