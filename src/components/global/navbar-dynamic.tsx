@@ -171,6 +171,108 @@ const WhyUsPopoverContent = memo(({ onClose }: { onClose: () => void }) => {
 })
 WhyUsPopoverContent.displayName = 'WhyUsPopoverContent'
 
+// Create a component for the disclosure panel content to avoid hooks in callbacks
+const MobileNavContent = memo(
+  ({
+    links,
+    closeMobileMenu,
+  }: {
+    links: typeof NAVIGATION_CONFIG.links
+    closeMobileMenu: () => void
+  }) => {
+    const router = useRouter()
+
+    return (
+      <div className="flex flex-col py-2">
+        {links.map(({ href, label }) =>
+          label === 'Why Us?' ? (
+            <Disclosure
+              key={label}
+              as="div"
+              className="border-b border-gray-100"
+            >
+              {({ open: subOpen, close: subClose }) => (
+                <>
+                  <DisclosureButton className="flex w-full items-center justify-between px-6 py-3 text-base font-medium text-gray-900 hover:bg-gray-50">
+                    <span>{label}</span>
+                    <ChevronDownIcon
+                      className={`h-5 w-5 text-gray-500 ${
+                        subOpen ? 'rotate-180 transform' : ''
+                      }`}
+                    />
+                  </DisclosureButton>
+                  <DisclosurePanel className="pl-4">
+                    <div className="border-l border-gray-100 py-2">
+                      <div className="pl-4">
+                        <h4 className="py-1 text-sm font-medium text-secondary">
+                          Use Cases
+                        </h4>
+                        {NAVIGATION_CONFIG.useCases.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                            onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+                              e.preventDefault()
+                              subClose()
+                              closeMobileMenu()
+                              router.push(item.href)
+                            }}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+
+                      <div className="mt-2 pl-4">
+                        <h4 className="py-1 text-sm font-medium text-secondary">
+                          Who We Help
+                        </h4>
+                        {NAVIGATION_CONFIG.whoWeHelp.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                            onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+                              e.preventDefault()
+                              subClose()
+                              closeMobileMenu()
+                              router.push(item.href)
+                            }}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </DisclosurePanel>
+                </>
+              )}
+            </Disclosure>
+          ) : (
+            <Link
+              key={href}
+              href={href}
+              className="px-6 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
+              onClick={(e: MouseEvent<HTMLAnchorElement>) => {
+                if (href.startsWith('http')) {
+                  return
+                }
+                e.preventDefault()
+                closeMobileMenu()
+                router.push(href)
+              }}
+            >
+              {label}
+            </Link>
+          ),
+        )}
+      </div>
+    )
+  },
+)
+MobileNavContent.displayName = 'MobileNavContent'
+
 interface NavbarProps {}
 
 export function DynamicNavbar({}: NavbarProps) {
@@ -180,6 +282,8 @@ export function DynamicNavbar({}: NavbarProps) {
   const [isBannerVisible, setIsBannerVisible] = useState(true)
   const [isWhyUsOpen, setIsWhyUsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // We'll handle this directly in the Disclosure render prop
 
   useEffect(() => {
     setIsBannerVisible(!!document.body.getAttribute('data-banner'))
@@ -300,13 +404,13 @@ export function DynamicNavbar({}: NavbarProps) {
 
       <Disclosure
         as="div"
-        className={`fixed left-0 right-0 z-50 bg-white/95 shadow-md backdrop-blur-sm`}
+        className="fixed left-0 right-0 z-50 bg-white/95 shadow-md backdrop-blur-sm"
         defaultOpen={isMobileMenuOpen}
       >
         {({ open, close }) => {
-          useEffect(() => {
+          if (isMobileMenuOpen !== open) {
             setIsMobileMenuOpen(open)
-          }, [open])
+          }
 
           return (
             <>
@@ -340,95 +444,10 @@ export function DynamicNavbar({}: NavbarProps) {
                 </div>
 
                 <DisclosurePanel className="bg-white tablet:hidden">
-                  <div className="flex flex-col py-2">
-                    {NAVIGATION_CONFIG.links.map(({ href, label }) =>
-                      label === 'Why Us?' ? (
-                        <Disclosure
-                          key={label}
-                          as="div"
-                          className="border-b border-gray-100"
-                        >
-                          {({ open: subOpen, close: subClose }) => (
-                            <>
-                              <DisclosureButton className="flex w-full items-center justify-between px-6 py-3 text-base font-medium text-gray-900 hover:bg-gray-50">
-                                <span>{label}</span>
-                                <ChevronDownIcon
-                                  className={`h-5 w-5 text-gray-500 ${
-                                    subOpen ? 'rotate-180 transform' : ''
-                                  }`}
-                                />
-                              </DisclosureButton>
-                              <DisclosurePanel className="pl-4">
-                                <div className="border-l border-gray-100 py-2">
-                                  <div className="pl-4">
-                                    <h4 className="py-1 text-sm font-medium text-secondary">
-                                      Use Cases
-                                    </h4>
-                                    {NAVIGATION_CONFIG.useCases.map((item) => (
-                                      <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                                        onClick={(
-                                          e: MouseEvent<HTMLAnchorElement>,
-                                        ) => {
-                                          e.preventDefault()
-                                          subClose()
-                                          close()
-                                          router.push(item.href)
-                                        }}
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    ))}
-                                  </div>
-
-                                  <div className="mt-2 pl-4">
-                                    <h4 className="py-1 text-sm font-medium text-secondary">
-                                      Who We Help
-                                    </h4>
-                                    {NAVIGATION_CONFIG.whoWeHelp.map((item) => (
-                                      <Link
-                                        key={item.name}
-                                        href={item.href}
-                                        className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                                        onClick={(
-                                          e: MouseEvent<HTMLAnchorElement>,
-                                        ) => {
-                                          e.preventDefault()
-                                          subClose()
-                                          close()
-                                          router.push(item.href)
-                                        }}
-                                      >
-                                        {item.name}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </div>
-                              </DisclosurePanel>
-                            </>
-                          )}
-                        </Disclosure>
-                      ) : (
-                        <Link
-                          key={href}
-                          href={href}
-                          className="px-6 py-2 text-base font-medium text-gray-900 hover:bg-gray-50"
-                          onClick={(e: MouseEvent<HTMLAnchorElement>) => {
-                            if (href.startsWith('http')) {
-                              return
-                            }
-                            e.preventDefault()
-                            close()
-                            router.push(href)
-                          }}
-                        >
-                          {label}
-                        </Link>
-                      ),
-                    )}
-                  </div>
+                  <MobileNavContent
+                    links={NAVIGATION_CONFIG.links}
+                    closeMobileMenu={close}
+                  />
                 </DisclosurePanel>
               </div>
             </>

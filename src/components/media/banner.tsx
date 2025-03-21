@@ -2,7 +2,6 @@
 
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 interface BannerProps {
@@ -13,7 +12,6 @@ interface BannerProps {
 let bannerStateForSession = true
 
 const Banner: React.FC<BannerProps> = ({ text, link }) => {
-  const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(bannerStateForSession)
 
   useEffect(() => {
@@ -38,7 +36,7 @@ const Banner: React.FC<BannerProps> = ({ text, link }) => {
 
   return (
     <div className="banner-container">
-      <div className="flex items-center gap-x-6 bg-gradient-brand px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+      <div className="flex items-center gap-x-6 bg-primary px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
         <p className="text-sm leading-6 text-white sm:text-base">
           <Link href={link} className="flex items-center">
             <strong className="font-semibold">{text} </strong>
