@@ -2,6 +2,7 @@ import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseLoft from '@/components/media/case-studies/med-case-loft'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
+import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
@@ -66,6 +67,14 @@ export default function BuildTrust() {
       <MedCaseLoft />
       <LogosDark />
       <TestimonialsGroup />
+      <Testimonial
+        quote="Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate."
+        name="Henry Poydar"
+        role="Founder & CEO"
+        company="Status Hero"
+        imageSrc="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
+        imageAlt="Henry Poydar"
+      />
     </>
   )
 }

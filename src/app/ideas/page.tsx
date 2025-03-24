@@ -1,4 +1,5 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import ServiceInfo from '@/components/page-components/fifty-ideas.tsx/service-info'
@@ -28,6 +29,7 @@ export default function Ideas() {
       <ServiceInfo />
       <SocialProof />
       <TestimonialsGroup />
+      <LogosDark />
     </>
   )
 }

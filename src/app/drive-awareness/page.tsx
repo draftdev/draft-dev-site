@@ -2,6 +2,7 @@ import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseLoft from '@/components/media/case-studies/med-case-loft'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
+import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
@@ -66,6 +67,14 @@ export default function DriveAwareness() {
       <MedCaseLoft />
       <LogosDark />
       <TestimonialsGroup />
+      <Testimonial
+        quote="Having draft.dev source quality technical content for the Loft Labs blog has been a competitive advantage. It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published."
+        name="Rich Burroughs"
+        role="Developer Advocate"
+        company="Loft Labs"
+        imageSrc="/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg"
+        imageAlt="Rich Burroughs"
+      />
     </>
   )
 }

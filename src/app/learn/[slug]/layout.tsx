@@ -1,4 +1,5 @@
 // app/learn/[slug]/layout.tsx
+import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 
 type BlogLayoutProps = {
@@ -23,5 +24,10 @@ export async function generateMetadata({
 }
 
 export default function BlogPostLayout({ children }: BlogLayoutProps) {
-  return <>{children}</>
+  return (
+    <>
+      {children}
+      <LogosDark />
+    </>
+  )
 }

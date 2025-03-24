@@ -72,9 +72,7 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/about">Our Team</SitemapLink>
           <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="https://draft.dev/#faq">
-            Frequently Asked Questions
-          </SitemapLink>
+          <SitemapLink href="#faq">Frequently Asked Questions</SitemapLink>
           <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink>
         </SitemapLinks>
       </div>

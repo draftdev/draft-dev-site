@@ -1,4 +1,5 @@
 import { MedHeader } from '@/components/global/headers/med-header'
+import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import PastWebinars from '@/components/page-components/webinars/past-webinars'
 import UpcomingWebinars from '@/components/page-components/webinars/upcoming'
@@ -29,6 +30,14 @@ export default function Webinars() {
       <UpcomingWebinars />
       <PastWebinars />
       <TestimonialsGroup />
+      <Testimonial
+        quote="It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team."
+        name="Adam Gordon Bell"
+        role="Director of Developer Relations"
+        company="Earthly"
+        imageSrc="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
+        imageAlt="Adam Gordon Bell"
+      />
     </>
   )
 }

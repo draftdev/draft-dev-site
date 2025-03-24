@@ -2,6 +2,7 @@ import ServiceHeader from '@/components/global/headers/service-header'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import What from '@/components/page-components/what'
 
+import Testimonial from '@/components/media/testimonials/testimonial'
 import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
 
@@ -73,6 +74,14 @@ export default function VideoTutorials() {
         requestPricingText="Request Pricing"
       />
       <TestimonialsGroup />
+      <Testimonial
+        quote="Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate."
+        name="Henry Poydar"
+        role="Founder & CEO"
+        company="Status Hero"
+        imageSrc="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
+        imageAlt="Henry Poydar"
+      />
     </>
   )
 }
