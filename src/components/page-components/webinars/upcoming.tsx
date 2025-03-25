@@ -15,16 +15,16 @@ const UpcomingWebinars = () => {
 
               <div className="">
                 <h3 className="lead-dark py-4 font-semibold">
-                  Creating Developer Content That Spreads Organically
+                  Branding in Tech: What Works, What Doesn’t, and Why It Matters
                 </h3>
                 <div className="relative">
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <CalendarIcon className="8-4 my-2 h-8" />
-                    <p>19 Mar 2025</p>
+                    <p>16 Apr 2025</p>
                   </div>
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <ClockIcon className="8-4 my-2 h-8" />
-                    <p>11:00AM PST (Vancouver)</p>
+                    <p>1:00pm CT</p>
                   </div>{' '}
                 </div>
               </div>
@@ -32,27 +32,30 @@ const UpcomingWebinars = () => {
               <dl className="mt-6 max-w-xl space-y-8 text-lg text-gray-700 lg:max-w-none">
                 <div className="relative">
                   <dd className="my-4">
-                    Developers engage with content in different ways—some
-                    discover solutions through search engines, while others find
-                    valuable insights on community-driven platforms like Reddit
-                    and Hacker News. Understanding these distinct approaches is
-                    key to creating technical content that spreads organically.
+                    Branding isn’t always the first thing that comes to mind in
+                    the tech world, but it plays an important role in building
+                    trust, authenticity, and technical credibility. In an
+                    industry where developers and technical decision-makers
+                    value substance over hype, how do you create a brand that
+                    truly resonates?
                   </dd>
                   <dd className="my-4">
-                    In this webinar, Adam Gordon Bell (Pulumi) and Richard
-                    Rodger (Voxgig) will break down what makes developer content
-                    gain traction. They’ll analyze successful real-world
-                    examples, explore the differences between search
-                    engine-driven and community-driven content, and share
-                    practical strategies to help your content reach the right
-                    audience.
+                    In this webinar, Madhukar Kumar and Paul Bukhovko (VP,
+                    Affiliate Marketing, AirSlate) will discuss the shifting
+                    landscape of branding in DevRel and technical marketing.
+                    They’ll share insights on what makes a brand stand out,
+                    common pitfalls to avoid, and key strategies for building
+                    long-term credibility with technical audiences.
+                  </dd>
+                  <dd>
+                    Join us to explore what effective branding looks like in
+                    today’s developer ecosystem.
                   </dd>
                 </div>
               </dl>
               <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
                 <Link
-                  href="https://us02web.zoom.us/webinar/register/WN_EZDD9GN4TlSuZl5kBIJo5w#/registration
-"
+                  href="https://us02web.zoom.us/webinar/register/WN_7N3_ZtHhTEuvpSWYpWuSNg#/registration"
                   className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:bg-gradient-brand hover:text-white hover:ring-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Register Now
