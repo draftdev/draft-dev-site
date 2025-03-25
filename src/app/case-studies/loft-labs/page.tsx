@@ -1,5 +1,6 @@
 import CaseStudyLoftLabs from '@/components/media/case-studies/case-study-loft'
 import { LogosDark } from '@/components/media/logos-dark'
+import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import type { Metadata } from 'next'
 
@@ -20,8 +21,9 @@ export default function CaseStudy() {
   return (
     <>
       <CaseStudyLoftLabs />
-      <LogosDark />
+      <SocialProof />
       <TestimonialsGroup />
+      <LogosDark />
     </>
   )
 }

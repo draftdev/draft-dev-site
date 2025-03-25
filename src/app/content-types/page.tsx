@@ -1,4 +1,5 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import Examples from '@/components/page-components/content-types/examples'
 import ServiceInfo from '@/components/page-components/content-types/service-info'
@@ -36,6 +37,7 @@ export default function ContentTypes() {
       <ServiceInfo />
       <Examples />
       <TestimonialsGroup />
+      <LogosDark />
     </>
   )
 }

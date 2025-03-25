@@ -1,4 +1,5 @@
 import { MedHeader } from '@/components/global/headers/med-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -194,6 +195,7 @@ export default function PrivacyPolicy() {
           info@portablecto.com.
         </p>
       </div>
+      <LogosDark />
     </>
   )
 }

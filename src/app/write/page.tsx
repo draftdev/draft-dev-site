@@ -1,4 +1,5 @@
 import { MedHeader } from '@/components/global/headers/med-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import AirtableEmbed from '@/components/page-components/vendors/air-table'
 
 import type { Metadata } from 'next'
@@ -27,6 +28,7 @@ export default function Write() {
       <main className="block">
         <AirtableEmbed />
       </main>
+      <LogosDark />
     </div>
   )
 }

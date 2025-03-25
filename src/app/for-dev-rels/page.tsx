@@ -110,8 +110,15 @@ export default function ForDevRels(): JSX.Element {
         />
         <MedCaseStatusHero />
         <LogosDark />
-
         <TestimonialsGroup />
+        <Testimonial
+          quote="Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials. We’re constantly iterating to build the best educational materials for developer security and Draft.dev has been instrumental in helping us."
+          name="Randall Degges"
+          role="Head of Developer & Security Relations"
+          company="snyk"
+          imageSrc="/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg"
+          imageAlt="Randall Degges"
+        />
       </main>
     </div>
   )
