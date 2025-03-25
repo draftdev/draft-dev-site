@@ -8,10 +8,10 @@ export default function NotFound() {
           Content Not Found
         </h2>
         <Link
-          href="/learn"
+          href="/"
           className="rounded-lg bg-blue-600 px-6 py-2 text-white hover:bg-blue-700"
         >
-          Back to Blog
+          Back to Draft.dev
         </Link>
       </div>
     </div>

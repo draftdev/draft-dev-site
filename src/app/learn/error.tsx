@@ -12,7 +12,7 @@ export default function Error({
     <div className="flex min-h-screen items-center justify-center bg-white">
       <div className="px-6 text-center">
         <h2 className="mb-4 text-2xl font-bold text-gray-900">
-          Unable to load blog content
+          Unable to load content
         </h2>
         <button
           onClick={() => reset()}
