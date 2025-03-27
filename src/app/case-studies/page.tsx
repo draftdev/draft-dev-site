@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Case Studies - Draft.dev',
   description:
-    'Learn why clients like SupaBase, Earthly, Loft Labs, RedPanda, and others choose us.',
+    'Learn why clients like Supabase, Jetbrains, Loft Labs, Redpanda, and others choose us.',
   robots: {
     index: true,
     follow: true,
