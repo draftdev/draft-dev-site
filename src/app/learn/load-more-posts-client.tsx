@@ -156,7 +156,7 @@ export default function LoadMorePostsClient({
           <button
             onClick={handleLoadMore}
             disabled={isPending}
-            className="rounded-md bg-gradient-brand px-4 py-2 text-white hover:bg-gradient-1"
+            className="rounded-md bg-gradient-brand px-4 py-2 text-lg text-white hover:bg-gradient-1"
           >
             {isPending ? 'Loading...' : 'Load More'}
           </button>
