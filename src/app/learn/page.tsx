@@ -1,7 +1,7 @@
 // app/learn/page.tsx
 import { getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
-import { LogosDark } from '@/components/media/logos-dark'
+import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
 import LoadMorePostsClient from './load-more-posts-client'
 
@@ -60,7 +60,7 @@ export default async function BlogPage() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
         <LoadMorePostsClient initialPosts={posts} initialPageInfo={pageInfo} />
       </div>
-      <LogosDark />
+      <NewsletterFull />
     </div>
   )
 }

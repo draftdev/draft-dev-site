@@ -1,5 +1,5 @@
 // app/learn/[slug]/layout.tsx
-import { LogosDark } from '@/components/media/logos-dark'
+import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
 
 type BlogLayoutProps = {
@@ -27,7 +27,7 @@ export default function BlogPostLayout({ children }: BlogLayoutProps) {
   return (
     <>
       {children}
-      <LogosDark />
+      <NewsletterFull />
     </>
   )
 }

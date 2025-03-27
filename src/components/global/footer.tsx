@@ -180,7 +180,6 @@ function Copyright() {
 export function Footer() {
   return (
     <>
-      {/* CTA positioned outside the footer */}
       <div className="relative z-10">
         <CallToAction />
       </div>
