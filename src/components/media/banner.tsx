@@ -40,9 +40,6 @@ const Banner: React.FC<BannerProps> = ({ text, link }) => {
         <p className="text-sm leading-6 text-white sm:text-base">
           <Link href={link} className="flex items-center">
             <strong className="font-semibold">{text} </strong>
-            <span aria-hidden="true" className="ml-1">
-              &rarr;
-            </span>
           </Link>
         </p>
         <div className="flex flex-1 justify-end">
