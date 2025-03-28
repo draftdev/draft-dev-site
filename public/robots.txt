@@ -2,8 +2,10 @@ User-agent: *
 Allow: /
 Disallow: /_next/
 Disallow: /api/
-Disallow: /learn/assets
+Disallow: https://portal
+Disallow: https://portal/*
 Disallow: /learn/assets/*
+Disallow: /learn/assets
 Disallow: /categories/*
 Disallow: /assets/*
 Disallow: /learn/posts/*
