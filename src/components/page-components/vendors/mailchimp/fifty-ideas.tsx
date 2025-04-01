@@ -70,7 +70,7 @@ export default function FiftyIdeasSubscribeForm() {
       >
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-EMAIL" className="paragraph-dark text-lg">
-            Email Address
+            Email Address *
           </label>
           <input
             type="email"
@@ -81,14 +81,14 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, email: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
+            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-gray-800 shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your email"
           />
         </div>
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-FNAME" className="paragraph-dark text-lg">
-            First Name
+            First Name *
           </label>
           <input
             type="text"
@@ -106,7 +106,7 @@ export default function FiftyIdeasSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-LNAME" className="paragraph-dark text-lg">
-            Last Name
+            Last Name *
           </label>
           <input
             type="text"
@@ -124,7 +124,7 @@ export default function FiftyIdeasSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-MMERGE8" className="paragraph-dark text-lg">
-            Company Name
+            Company Name *
           </label>
           <input
             type="text"
@@ -142,7 +142,7 @@ export default function FiftyIdeasSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-MMERGE9" className="paragraph-dark text-lg">
-            How many employees work in your company?
+            How many employees work in your company? *
           </label>
           <select
             name="MMERGE9"
@@ -152,9 +152,11 @@ export default function FiftyIdeasSubscribeForm() {
               setFormState((prev) => ({ ...prev, companySize: e.target.value }))
             }
             required
-            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-white shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
+            className="w-full rounded-sm border-2 border-gray-200 bg-transparent p-2 text-gray-400 shadow-sm placeholder:text-gray-400 focus:border-secondary focus:outline-none"
           >
-            <option value="">Select company size</option>
+            <option value="" disabled selected>
+              Select company size
+            </option>
             <option value="1-10">1-10</option>
             <option value="11-50">11-50</option>
             <option value="51-150">51-150</option>
