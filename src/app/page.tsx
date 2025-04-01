@@ -86,7 +86,7 @@ export default function Home() {
           description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
           callToActionURL="/call"
           priceText="Generate qualified leads"
-          price="$10,000"
+          price="$9,000"
           currency="/Month"
           includedFeatures={[
             {
