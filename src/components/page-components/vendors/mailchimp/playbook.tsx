@@ -70,7 +70,7 @@ export default function PlaybookSubscribeForm() {
       >
         <div className="mt-8 flex flex-col gap-3">
           <label htmlFor="mce-EMAIL" className="paragraph-dark text-lg">
-            Email Address
+            Email Address *
           </label>
           <input
             type="email"
