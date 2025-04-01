@@ -193,9 +193,7 @@ export default function FiftyIdeasSubscribeForm() {
         )}
 
         {formState.status === 'success' && (
-          <div className="paragraph-light text-sm">
-            Thank you for subscribing!
-          </div>
+          <div className="paragraph-light text-sm">Thank you!</div>
         )}
 
         <button
@@ -205,7 +203,7 @@ export default function FiftyIdeasSubscribeForm() {
           name="subscribe"
           className="mt-2 rounded-md bg-gradient-brand p-2 shadow-sm transition-all duration-200 hover:bg-white hover:bg-none hover:text-gradient-1 hover:ring-2 hover:ring-gradient-1 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {formState.status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+          {formState.status === 'loading' ? 'Confirming...' : 'Download'}
         </button>
       </form>
     </div>

@@ -88,7 +88,7 @@ export default function PlaybookSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-FNAME" className="paragraph-dark text-lg">
-            First Name
+            First Name *
           </label>
           <input
             type="text"
@@ -106,7 +106,7 @@ export default function PlaybookSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-LNAME" className="paragraph-dark text-lg">
-            Last Name
+            Last Name *
           </label>
           <input
             type="text"
@@ -124,7 +124,7 @@ export default function PlaybookSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-MMERGE8" className="paragraph-dark text-lg">
-            Company Name
+            Company Name *
           </label>
           <input
             type="text"
@@ -142,7 +142,7 @@ export default function PlaybookSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-MMERGE9" className="paragraph-dark text-lg">
-            How many employees work in your company?
+            How many employees work in your company? *
           </label>
           <select
             name="MMERGE9"
