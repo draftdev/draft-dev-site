@@ -221,3 +221,7 @@
     transition: top 0.3s ease-in-out;
   }
 }
+
+.single-post .post-thumbnail {
+  display: none;
+}

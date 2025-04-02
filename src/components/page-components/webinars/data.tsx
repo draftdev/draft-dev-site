@@ -2,6 +2,13 @@ import type { Data } from '@/components/global/types'
 
 export const pastWebinars: Data[] = [
   {
+    id: '12',
+    title: 'Creating Developer Content That Spreads Organically',
+    url: 'https://www.youtube.com/watch?v=52pwdp5k1Sk',
+    date: '2025-03-19',
+    description: 'What makes developer content gain traction.',
+  },
+  {
     id: '11',
     title: 'Navigating Diverse Audiences in Technical Marketing',
     url: 'https://www.youtube.com/watch?v=F0xzOrYcpDU',
