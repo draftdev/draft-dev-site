@@ -125,7 +125,7 @@ export default function RootLayout({
           link="/ideas"
         /> */}
         <Banner
-          text="Join Our FREE Webinar: Branding in Tech: What Works, What Doesn’t, and Why It Matters - April 16th"
+          text="Join Our FREE Webinar: Branding in Tech: What Works, What Doesn’t, and Why It Matters - April 16th→"
           link="https://us02web.zoom.us/webinar/register/WN_7N3_ZtHhTEuvpSWYpWuSNg#/registration"
         />
         <DynamicNavbar />
