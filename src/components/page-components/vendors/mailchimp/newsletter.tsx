@@ -5,6 +5,7 @@ import { useState } from 'react'
 interface SubscribeFormState {
   email: string
   firstName: string
+  lastName: string
   status: 'idle' | 'loading' | 'success' | 'error'
   errorMessage: string
 }
@@ -13,6 +14,7 @@ export default function NLSubscribeForm() {
   const [formState, setFormState] = useState<SubscribeFormState>({
     email: '',
     firstName: '',
+    lastName: '',
     status: 'idle',
     errorMessage: '',
   })
@@ -39,6 +41,7 @@ export default function NLSubscribeForm() {
         status: 'success',
         email: '',
         firstName: '',
+        lastName: '',
       }))
     } catch (error) {
       setFormState((prev) => ({
@@ -61,7 +64,7 @@ export default function NLSubscribeForm() {
       >
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-EMAIL" className="paragraph-light text-lg">
-            Email Address
+            Email Address *
           </label>
           <input
             type="email"
@@ -79,7 +82,7 @@ export default function NLSubscribeForm() {
 
         <div className="flex flex-col gap-3">
           <label htmlFor="mce-FNAME" className="paragraph-light text-lg">
-            First Name
+            First Name *
           </label>
           <input
             type="text"
@@ -92,6 +95,24 @@ export default function NLSubscribeForm() {
             required
             className="w-full rounded-sm border-2 border-white bg-transparent p-2 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none"
             placeholder="Enter your first name"
+          />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <label htmlFor="mce-LNAME" className="paragraph-light text-lg">
+            Last Name *
+          </label>
+          <input
+            type="text"
+            name="LNAME"
+            id="mce-LNAME"
+            value={formState.lastName}
+            onChange={(e) =>
+              setFormState((prev) => ({ ...prev, lastName: e.target.value }))
+            }
+            required
+            className="w-full rounded-sm border-2 border-white bg-transparent p-2 text-white shadow-md placeholder:text-gray-400 focus:border-secondary focus:outline-none"
+            placeholder="Enter your last name"
           />
         </div>
 
