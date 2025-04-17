@@ -141,7 +141,7 @@ export default function LoadMorePostsClient({
                     </Link>
                   </h3>
                   <p
-                    className="mt-4 line-clamp-3 text-base text-gray-600"
+                    className="mt-4 line-clamp-3 max-w-2xl text-base text-gray-600"
                     dangerouslySetInnerHTML={{ __html: post.excerpt }}
                   />
                 </div>

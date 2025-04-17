@@ -48,6 +48,11 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/manuel_weiss_draft_dev.jpg',
   },
   {
+    name: 'Elzet Blaauw',
+    description: 'COO',
+    img: '/draft/team/elzet_blaauw_draft_dev.jpg',
+  },
+  {
     name: 'Clayton Kast',
     description: 'Account Director',
     img: '/draft/team/clayton_kast_draft_dev.jpg',
@@ -62,11 +67,7 @@ const teamMembers: TeamMember[] = [
     description: 'Engineering Manager',
     img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
   },
-  {
-    name: 'Elzet Blaauw',
-    description: 'Managing Editor',
-    img: '/draft/team/elzet_blaauw_draft_dev.jpg',
-  },
+
   {
     name: 'Sarah Cottone',
     description: 'Content Strategist',
