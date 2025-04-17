@@ -122,7 +122,7 @@ export default function RootLayout({
         </Suspense>
         <Banner
           text="Download Our Free E-Book: Building and Scaling Developer Marketing"
-          link="/ideas"
+          link="/developer-marketing"
         />
         {/* <Banner
           text="Join Our FREE Webinar: Branding in Tech: What Works, What Doesn’t, and Why It Matters - April 16th→"
