@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import PlaybookSubscribeForm from '../vendors/mailchimp/playbook'
+import PlaybookSubscribeForm from '../vendors/hubspot/form-playbook'
 
 const ServiceInfo = () => {
   return (
@@ -22,8 +22,8 @@ const ServiceInfo = () => {
                   <Image
                     alt="webinars"
                     src="/site/med-portrait/playbook_draft_dev.jpeg"
-                    width={400}
-                    height={600}
+                    width={500}
+                    height={650}
                     className="rounded-xl"
                   />
                 </div>

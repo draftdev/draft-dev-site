@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import FiftyIdeasSubscribeForm from '../vendors/mailchimp/fifty-ideas'
+import FiftyIdeasSubscribeForm from '../vendors/hubspot/form-fifty-ideas'
 
 const ServiceInfo = () => {
   return (
@@ -8,6 +8,9 @@ const ServiceInfo = () => {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="lg:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
+              <h2 className="sm:subheader-gradient subheader-mobile-gradient">
+                Get a steady stream of ideas for your next blog posts
+              </h2>
               <FiftyIdeasSubscribeForm />
             </div>
           </div>
@@ -19,8 +22,8 @@ const ServiceInfo = () => {
                   <Image
                     alt="fifty-ideas for your blog."
                     src="/site/med-portrait/sales_draft_dev.jpg"
-                    width={400}
-                    height={600}
+                    width={500}
+                    height={650}
                     className="rounded-xl"
                   />
                 </div>
