@@ -9,5 +9,6 @@ Disallow: /learn/assets
 Disallow: /categories/*
 Disallow: /assets/*
 Disallow: /learn/posts/*
+Disallow: *.pdf
 Sitemap: https://draft.dev/blog_sitemap.xml
 Sitemap: https://draft.dev/main_sitemap.xml
