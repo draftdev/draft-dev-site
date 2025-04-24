@@ -2,19 +2,43 @@ import type { Data } from '@/components/global/types'
 
 export const pastWebinars: Data[] = [
   {
-    id: '12',
+    id: '15',
+    title: 'Branding in Tech: What Works, What Doesn’t, and Why It Matters',
+    url: 'https://www.youtube.com/watch?v=T3rGEmsFKbc',
+    date: '2025-04-16',
+    description:
+      'The shifting landscape of branding in DevRel and technical marketing.',
+  },
+  {
+    id: '14',
     title: 'Creating Developer Content That Spreads Organically',
     url: 'https://www.youtube.com/watch?v=52pwdp5k1Sk',
     date: '2025-03-19',
     description: 'What makes developer content gain traction.',
   },
   {
-    id: '11',
+    id: '13',
     title: 'Navigating Diverse Audiences in Technical Marketing',
     url: 'https://www.youtube.com/watch?v=F0xzOrYcpDU',
-    date: '2025-02-24',
+    date: '2025-02-25',
     description:
       'Learn how to navigate diverse technical audiences in marketing.',
+  },
+  {
+    id: '12',
+    title: 'Designing and Optimizing the Developer Journey',
+    url: 'https://www.youtube.com/watch?v=3ZZAmznChtc',
+    date: '2025-01-24',
+    description:
+      'Strategies to optimize the dev journey to reach your technical marketing goals.',
+  },
+  {
+    id: '11',
+    title: 'Unpacking The State Of Developer Relations 2024',
+    url: 'https://www.youtube.com/watch?v=e9BKYkZ1IQE',
+    date: '2025-01-13',
+    description:
+      'Learn about the key areas impacting developer relations programs.',
   },
   {
     id: '10',
@@ -84,7 +108,7 @@ export const pastWebinars: Data[] = [
     id: '2',
     title: 'Cultivating a Thriving Developer Community',
     url: 'https://www.youtube.com/watch?v=NuaN-k0jVhk',
-    date: '2024-3-1',
+    date: '2024-2-23',
     description:
       'Explore the world of community engagement and its impact on the developer ecosystem.',
   },

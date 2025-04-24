@@ -11,7 +11,7 @@ const PastWebinars = () => {
             Past Webinars
           </h2>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {pastWebinars.map((webinar: Data) => (
               <ResourceCard key={webinar.id} resource={webinar} />
             ))}

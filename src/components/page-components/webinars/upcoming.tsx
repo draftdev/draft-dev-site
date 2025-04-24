@@ -15,7 +15,7 @@ const UpcomingWebinars = () => {
 
               <div className="">
                 <h3 className="lead-dark py-4 font-semibold">
-                  Branding in Tech: What Works, What Doesn’t, and Why It Matters
+                  Balancing Open-Source and Product Advocacy
                 </h3>
                 <div className="relative">
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
