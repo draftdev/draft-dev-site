@@ -20,7 +20,7 @@ const UpcomingWebinars = () => {
                 <div className="relative">
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <CalendarIcon className="8-4 my-2 h-8" />
-                    <p>16 Apr 2025</p>
+                    <p>13 May 2025</p>
                   </div>
                   <div className="flex items-center space-x-2 text-xl text-gray-500">
                     <ClockIcon className="8-4 my-2 h-8" />
@@ -32,30 +32,33 @@ const UpcomingWebinars = () => {
               <dl className="mt-6 max-w-xl space-y-8 text-lg text-gray-700 lg:max-w-none">
                 <div className="relative">
                   <dd className="my-4">
-                    Branding isn’t always the first thing that comes to mind in
-                    the tech world, but it plays an important role in building
-                    trust, authenticity, and technical credibility. In an
-                    industry where developers and technical decision-makers
-                    value substance over hype, how do you create a brand that
-                    truly resonates?
+                    Devtool companies often walk a fine line between supporting
+                    open-source communities and advocating for their commercial
+                    products. This intersection presents unique challenges and
+                    opportunities for DevRel teams working to build authentic
+                    relationships with technical audiences.
                   </dd>
                   <dd className="my-4">
-                    In this webinar, Madhukar Kumar and Paul Bukhovko (VP,
-                    Affiliate Marketing, AirSlate) will discuss the shifting
-                    landscape of branding in DevRel and technical marketing.
-                    They’ll share insights on what makes a brand stand out,
-                    common pitfalls to avoid, and key strategies for building
-                    long-term credibility with technical audiences.
+                    In this webinar, Dewan Ishtiaque Ahmed (Principal Developer
+                    Advocate at Harness) and Matt McClintock (Head of Content at
+                    Revelo) will explore effective strategies for maintaining
+                    credibility while serving both open-source and commercial
+                    interests. They'll share practical insights on creating
+                    value-driven content, building genuine community engagement,
+                    and measuring impact across these sometimes competing
+                    domains.
                   </dd>
                   <dd>
-                    Join us to explore what effective branding looks like in
-                    today’s developer ecosystem.
+                    Join us to learn how leading organizations successfully
+                    navigate this balance, avoid common pitfalls, and create
+                    DevRel programs that resonate with developers while driving
+                    business goals.
                   </dd>
                 </div>
               </dl>
               <div className="mt-6 flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
                 <Link
-                  href="https://us02web.zoom.us/webinar/register/WN_7N3_ZtHhTEuvpSWYpWuSNg#/registration"
+                  href="https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA?_gl=1*paueeh*_gcl_aw*R0NMLjE3NDQyMjgyMjcuQ2p3S0NBand0ZGlfQmhBQ0Vpd0E5N3k4QkwydU5qbmZraWJYVS0yMEhPcldSS3UyUVItdGV5bl8zblZ0aHpqQ3g5Q0h0bXZjRXl4RkJCb0N6UHNRQXZEX0J3RQ..*_gcl_au*MTQ4ODMxOTgyMi4xNzQ0MjI4MjI1*_ga*MTUwNTY4ODgyMi4xNzM0NTQ4NTQz*_ga_L8TBF28DDX*MTc0NTUyODg5NC45Ni4xLjE3NDU1Mjg5MDYuMC4wLjA.#/registration"
                   className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:bg-gradient-brand hover:text-white hover:ring-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Register Now
