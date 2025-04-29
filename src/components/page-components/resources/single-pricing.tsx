@@ -81,13 +81,17 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                   <div className="flex w-full flex-col lg:w-96">
                     <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
                       <p className="text-base font-semibold text-white">
-                        {priceText}
+                        {/* {priceText} */}
                       </p>
-                      <p className="flex items-baseline justify-center gap-x-2">
-                        <span className="subheader-light">{price}</span>
-                        <span className="my-10 text-sm font-semibold leading-6 tracking-wide text-white/80">
-                          {currency}
+                      <p className="my-2 flex items-start justify-center gap-2">
+                        {/* <span className="subheader-light">{price}</span> */}
+                        <span className="subheader-light font-code text-2xl">
+                          See What Targeted Technical Content Can Do for Your
+                          Funnel.
                         </span>
+                        {/* <span className="my-10 text-sm font-semibold leading-6 tracking-wide text-white/80">
+                          {currency}
+                        </span> */}
                       </p>
                       <Link
                         href={callToActionURL}
