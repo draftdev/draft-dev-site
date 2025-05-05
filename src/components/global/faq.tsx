@@ -58,14 +58,13 @@ export default function FAQ(): JSX.Element {
               Have a different question and can't find the answer you're looking
               for?
             </span>{' '}
-            Reach out to our support team by{' '}
             <Link
-              href="mailto:sales@draft.dev"
+              href="https://draft.dev/call"
               className="hover:text-gradient-brand font-semibold text-secondary underline"
             >
-              sending us an email
+              Book a discovery call
             </Link>{' '}
-            and we'll get back to you as soon as we can.
+            to learn more.
           </p>
 
           <p className="p-dark"></p>
