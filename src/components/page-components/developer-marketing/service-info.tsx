@@ -9,8 +9,13 @@ const ServiceInfo = () => {
           <div className="lg:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
               <h2 className="sm:subheader-gradient subheader-mobile-gradient">
-                Effectively reach and convert developer audiences
+                Building and Scaling Developer Marketing
               </h2>
+              <p className="">
+                This guide offers strategies and insights for effectively
+                reaching and converting developer audiences through authentic,
+                value-driven approaches.
+              </p>
               <FormDeveloperMarketing />
             </div>
           </div>

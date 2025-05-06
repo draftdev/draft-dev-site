@@ -1,4 +1,3 @@
-import ServiceHeader from '@/components/global/headers/service-header'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -22,10 +21,10 @@ export const metadata: Metadata = {
 export default function DeveloperMarketing() {
   return (
     <>
-      <ServiceHeader
+      {/* <ServiceHeader
         title="Building and Scaling Developer Marketing"
         description="This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches."
-      />
+      /> */}
       <ServiceInfo />
       <SocialProof />
       <TestimonialsGroup />
