@@ -120,14 +120,14 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-        <Banner
+        {/* <Banner
           text="Download Our Free E-Book: Building and Scaling Developer Marketing"
           link="/developer-marketing"
-        />
-        {/* <Banner
-          text="Join Our FREE Webinar: Branding in Tech: What Works, What Doesn’t, and Why It Matters - April 16th→"
-          link="https://us02web.zoom.us/webinar/register/WN_7N3_ZtHhTEuvpSWYpWuSNg#/registration"
         /> */}
+        <Banner
+          text="Join Our FREE Webinar: Balancing Open-Source and Product Advocacy - May 13th→"
+          link="https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA"
+        />
         <DynamicNavbar />
 
         <div className="flex min-h-screen flex-col">
