@@ -20,17 +20,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
       title: 'Post Not Found - Draft.dev',
       description: 'The requested blog post could not be found.',
-      robots: {
-        index: true,
-        follow: true,
-      },
+      robots: { index: true, follow: true },
     }
   }
 
+  // Sanitize excerpt if it exists
+  const cleanExcerpt = post.excerpt
+    ? sanitizeHtml(post.excerpt, { allowedTags: [] }).trim()
+    : null
+
   const description =
-    post.excerpt ||
-    sanitizeHtml(post.content, { allowedTags: [] }).substring(0, 160).trim() +
-      '...'
+    cleanExcerpt && cleanExcerpt.length > 0
+      ? cleanExcerpt
+      : sanitizeHtml(post.content, { allowedTags: [] })
+          .substring(0, 160)
+          .trim() + '...'
 
   return {
     title: post.title,

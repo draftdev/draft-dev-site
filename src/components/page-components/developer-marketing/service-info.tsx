@@ -8,14 +8,14 @@ const ServiceInfo = () => {
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="lg:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
-              <h2 className="sm:subheader-gradient subheader-mobile-gradient">
+              <h1 className="sm:subheader-gradient subheader-mobile-gradient">
                 Building and Scaling Developer Marketing
-              </h2>
-              <p className="">
+              </h1>
+              <h2 className="">
                 This guide offers strategies and insights for effectively
                 reaching and converting developer audiences through authentic,
                 value-driven approaches.
-              </p>
+              </h2>
               <FormDeveloperMarketing />
             </div>
           </div>

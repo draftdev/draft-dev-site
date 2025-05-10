@@ -64,7 +64,7 @@ query AllPosts($first: Int, $after: String) {
           name
         }
       }
-      excerpt
+      excerpt(format: RENDERED)
       date
       featuredImage {
         node {
@@ -98,6 +98,7 @@ query PostBySlug($slug: ID!) {
       }
     }
     content
+    excerpt(format: RENDERED)
     date
     featuredImage {
       node {
