@@ -65,29 +65,26 @@ const UpcomingWebinars = () => {
       isFeatured: true,
     },
     {
+      title: 'How to Set Up a Content Marketing Engine in the Age of AI',
+      date: '22 May 2025',
+      time: '11:00pm CT',
+      description1:
+        'In this webinar, you will learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content. ',
+      registrationLink:
+        'https://us02web.zoom.us/webinar/register/WN_JarLTp6aQ_-J6UdCP4ltYw',
+      isFeatured: false,
+    },
+    {
       title: 'How DevRel, Marketing, and Sales Can (and should) Work Together',
       date: '27 May 2025',
       time: '1:00pm CT',
       description1:
-        'The relationship between Developer Relations, Marketing, and Sales teams can determine the success of your developer-focused strategy. Yet many DevRel programs have been built explicitly in opposition to these traditional functions, creating an inefficient distance between teams. This separation has often led to reinvented wheels, missed opportunities, and challenges in demonstrating value.',
-      description2:
         'In this webinar, Kurtis Kemple (Sr. Director of DevRel at Slack) and Dave Neary (Director of Developer Relations at Ampere Computing) will explore the costs of this oppositional mindset and chart a path toward more effective cross-functional collaboration.',
-      description3:
-        'Join us to discover practical frameworks for building strategic partnerships that amplify impact across your organization.',
+
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_1ee1lo0uQ5W1BvQ6E0Xhww',
       isFeatured: false,
     },
-    // {
-    //   title: 'Building Community-Driven Documentation',
-    //   date: '10 June 2025',
-    //   time: '1:00pm CT',
-    //   description1:
-    //     'Learn how to create documentation that not only serves as a resource but also fosters community engagement and contributions from your users.',
-    //   registrationLink:
-    //     'https://us02web.zoom.us/webinar/register/WN_example_link2',
-    //   isFeatured: false,
-    // },
   ]
 
   return (
