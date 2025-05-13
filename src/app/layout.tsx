@@ -125,8 +125,8 @@ export default function RootLayout({
           link="/developer-marketing"
         /> */}
         <Banner
-          text="Join Our FREE Webinar: Balancing Open-Source and Product Advocacy - May 13th→"
-          link="https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA"
+          text="Join Our FREE Webinar: How to Set Up a Content Marketing Engine in the Age of AI - May 22nd→"
+          link="https://us02web.zoom.us/webinar/register/8517470695490/WN_JarLTp6aQ_-J6UdCP4ltYw"
         />
         <DynamicNavbar />
 

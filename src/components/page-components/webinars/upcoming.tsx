@@ -50,29 +50,33 @@ const WebinarCard = ({
 const UpcomingWebinars = () => {
   // Sample data for the webinars
   const webinars = [
-    {
-      title: 'Balancing Open-Source and Product Advocacy',
-      date: '13 May 2025',
-      time: '1:00pm CT',
-      description1:
-        'Devtool companies often walk a fine line between supporting open-source communities and advocating for their commercial products. This intersection presents unique challenges and opportunities for DevRel teams working to build authentic relationships with technical audiences.',
-      description2:
-        "In this webinar, Dewan Ishtiaque Ahmed (Principal Developer Advocate at Harness) and Matt McClintock (Head of Content at Revelo) will explore effective strategies for maintaining credibility while serving both open-source and commercial interests. They'll share practical insights on creating value-driven content, building genuine community engagement, and measuring impact across these sometimes competing domains.",
-      description3:
-        'Join us to learn how leading organizations successfully navigate this balance, avoid common pitfalls, and create DevRel programs that resonate with developers while driving business goals.',
-      registrationLink:
-        'https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA',
-      isFeatured: true,
-    },
+    // {
+    //   title: 'Balancing Open-Source and Product Advocacy',
+    //   date: '13 May 2025',
+    //   time: '1:00pm CT',
+    //   description1:
+    //     'Devtool companies often walk a fine line between supporting open-source communities and advocating for their commercial products. This intersection presents unique challenges and opportunities for DevRel teams working to build authentic relationships with technical audiences.',
+    //   description2:
+    //     "In this webinar, Dewan Ishtiaque Ahmed (Principal Developer Advocate at Harness) and Matt McClintock (Head of Content at Revelo) will explore effective strategies for maintaining credibility while serving both open-source and commercial interests. They'll share practical insights on creating value-driven content, building genuine community engagement, and measuring impact across these sometimes competing domains.",
+    //   description3:
+    //     'Join us to learn how leading organizations successfully navigate this balance, avoid common pitfalls, and create DevRel programs that resonate with developers while driving business goals.',
+    //   registrationLink:
+    //     'https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA',
+    //   isFeatured: true,
+    // },
     {
       title: 'How to Set Up a Content Marketing Engine in the Age of AI',
       date: '22 May 2025',
-      time: '11:00pm CT',
+      time: '11:00am CT',
       description1:
-        'In this webinar, you will learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content. ',
+        'Content marketing has proven time and time again that it can be a valuable revenue driver for businesses, regardless of industry. Marketers who fail to succeed at content marketing usually either lack the processes, systems, and frameworks needed, or they lack the discipline to carry out those processes consistently.',
+      description2:
+        'In this webinar, you will learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
+      description3:
+        'Manuel Weiss (co-owner at Draft.dev) walks you through the pre-requisites and goals of building an effective content marketing engine for technical audiences in the age of AI: The tech stack, strategy, and a tried and trusted framework to help you reverse engineer your production and publishing plan.',
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_JarLTp6aQ_-J6UdCP4ltYw',
-      isFeatured: false,
+      isFeatured: true,
     },
     {
       title: 'How DevRel, Marketing, and Sales Can (and should) Work Together',
@@ -83,6 +87,17 @@ const UpcomingWebinars = () => {
 
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_1ee1lo0uQ5W1BvQ6E0Xhww',
+      isFeatured: false,
+    },
+    {
+      title: 'Creating Content that Resonates with your Technical Audience',
+      date: '05 June 2025',
+      time: '11:00am CT',
+      description1:
+        'In this hands-on webinar, Manuel Weiss will demonstrate practical approaches to creating content that genuinely resonates with technical audiences.',
+
+      registrationLink:
+        'https://us02web.zoom.us/webinar/register/WN_DWI0C0mPQG2niI9NXX6HHg',
       isFeatured: false,
     },
   ]
