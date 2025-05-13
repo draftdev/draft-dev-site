@@ -53,6 +53,18 @@ module.exports = {
           'linear-gradient(315deg, var(--secondary), var(--primary))',
         'gradient-text': 'linear-gradient(to bottom right, #916C7C, #916C7C)',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.primary.DEFAULT'),
+              '&:hover': {
+                color: theme('colors.primary.80'),
+              },
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
