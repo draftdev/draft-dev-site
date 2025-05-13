@@ -119,6 +119,10 @@ export default async function PostPage({ params }: Props) {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
+      h1: ['id'],
+      h2: ['id'],
+      h3: ['id'],
+      h4: ['id'],
       iframe: ['src', 'allow', 'allowfullscreen', 'frameborder', 'scrolling'],
       img: ['src', 'alt', 'title', 'width', 'height'],
     },
