@@ -119,15 +119,35 @@ export default async function PostPage({ params }: Props) {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
-      h1: ['id'],
-      h2: ['id'],
-      h3: ['id'],
-      h4: ['id'],
+      '*': ['style', 'class'], // Allow style and class on all elements
+      h1: ['id', 'style', 'class'],
+      h2: ['id', 'style', 'class'],
+      h3: ['id', 'style', 'class'],
+      h4: ['id', 'style', 'class'],
       iframe: ['src', 'allow', 'allowfullscreen', 'frameborder', 'scrolling'],
       img: ['src', 'alt', 'title', 'width', 'height'],
     },
+    allowedStyles: {
+      '*': {
+        // Allow common CSS properties
+        border: [/.*/],
+        'border-left': [/.*/],
+        'border-right': [/.*/],
+        'border-top': [/.*/],
+        'border-bottom': [/.*/],
+        padding: [/.*/],
+        margin: [/.*/],
+        'background-color': [/.*/],
+        background: [/.*/],
+        color: [/.*/],
+        'font-weight': [/.*/],
+        'font-size': [/.*/],
+        'text-align': [/.*/],
+        width: [/.*/],
+        height: [/.*/],
+      },
+    },
   })
-
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev'
 
