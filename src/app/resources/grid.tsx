@@ -47,7 +47,7 @@ export default function ResourceGrid(): JSX.Element {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="subheader-gradient sm:text-5xl">All Resources</h2>
+          <h1 className="subheader-gradient sm:text-5xl">All Resources</h1>
         </div>
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {posts.map((post) => (
