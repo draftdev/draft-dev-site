@@ -9,7 +9,7 @@ const ServiceInfo = () => {
           <div className="lg:px-0 lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
               <h2 className="sm:subheader-gradient subheader-mobile-gradient">
-                Get a steady stream of ideas for your next blog posts
+                50 Winning Ideas For Your Company's Blog
               </h2>
               <FiftyIdeasSubscribeForm />
             </div>

@@ -62,7 +62,7 @@ const NAVIGATION_CONFIG = {
     },
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/learn', label: 'Blog' },
-    { href: '/developer-marketing', label: 'Scaling Dev Marketing' },
+    { href: '/resources', label: 'Free Resources' },
     { href: '/about', label: 'Company' },
     { href: '/call', label: 'Book Discovery Call' },
   ],

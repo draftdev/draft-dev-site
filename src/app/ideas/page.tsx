@@ -1,4 +1,3 @@
-import ServiceHeader from '@/components/global/headers/service-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -22,10 +21,6 @@ export const metadata: Metadata = {
 export default function Ideas() {
   return (
     <>
-      <ServiceHeader
-        title="50 Winning Ideas For Your Company's Blog"
-        description="Kickstart your content marketing efforts. Enter your email to get it now!"
-      />
       <ServiceInfo />
       <SocialProof />
       <TestimonialsGroup />

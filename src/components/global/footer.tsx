@@ -84,9 +84,7 @@ function Sitemap() {
           <SitemapLink href="/learn">Draft.dev Blog</SitemapLink>
           <SitemapLink href="/newsletter">Newsletter</SitemapLink>
           <SitemapLink href="/webinars">Webinars</SitemapLink>
-          <SitemapLink href="/developer-marketing">
-            Building and Scaling Developer Marketing
-          </SitemapLink>
+          <SitemapLink href="/resources">Free Resources</SitemapLink>
           <SitemapLink href="/playbook">Tech Content Playbook</SitemapLink>
           <SitemapLink href="/ideas">
             50 Winning Ideas for Your Startup's Blog
