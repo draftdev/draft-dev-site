@@ -1,4 +1,5 @@
 import { LogosFlex } from '@/components/media/logos-flex'
+import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -11,8 +12,27 @@ const Hero: React.FC = () => {
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between">
               <div className="relative max-w-2xl lg:shrink-0">
+                <div className="mt-24 py-3 sm:mt-32 lg:mt-16">
+                  <span className="mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary ring-1 ring-inset ring-primary-40">
+                    <Link href="/resources" className="">
+                      Free eBook
+                    </Link>
+                  </span>
+                  <Link
+                    href="/content-marketing-engine"
+                    className="inline-flex"
+                  >
+                    <span className="inline-flex items-center text-sm text-white">
+                      How to Start a Content Marketing Engine
+                      <ChevronRightIcon
+                        aria-hidden="true"
+                        className="size-5 text-gray-400"
+                      />
+                    </span>
+                  </Link>
+                </div>
                 <h1
-                  className="sm:header-light my-6 pb-4 pl-3 text-left font-code text-3xl font-semibold text-white sm:pl-0"
+                  className="sm:header-light mb-6 pb-4 pl-3 text-left font-code text-3xl font-semibold text-white sm:pl-0"
                   style={{ contentVisibility: 'auto' }}
                 >
                   {' '}

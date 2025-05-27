@@ -1,24 +1,24 @@
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import ServiceInfo from '@/components/page-components/developer-marketing/service-info'
+import ServiceInfo from '@/components/page-components/content-marketing-engine/service-info'
 
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Building and Scaling Developer Marketing - Draft.dev',
+  title: 'How to Start a Content Marketing Engine - Draft.dev',
   description:
-    'Download our Building and Scaling Developer Marketing eBook: Learn effective strategies for marketing to developers through authentic, value-driven approaches that drive awareness and build trust.',
+    'Learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/developer-marketing',
+    canonical: '/content-marketing-engine',
   },
 }
 
-export default function DeveloperMarketing() {
+export default function ContentMarketingEngine() {
   return (
     <>
       <ServiceInfo />
