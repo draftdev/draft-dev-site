@@ -21,15 +21,15 @@ const posts: Post[] = [
     href: '/developer-marketing',
     description:
       'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
-    imageUrl: '/site/med-landscape/marketing_draft_dev.jpg',
+    imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
   {
     id: 2,
-    title: "The Technical Content Manager's Playbook",
-    href: '/playbook',
+    title: 'How to Start a Content Marketing Engine',
+    href: '/content-marketing-engine',
     description:
-      'This free Technical Content Manager Playbook is a collection of resources you can use to manage a top-tier technical blog. Among other things, it includes a template for creating technical content briefs, a multi-author publishing calendar, and a technical blogging style guide.',
-    imageUrl: '/site/med-landscape/newsletter_draft_dev.jpg',
+      'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine that provides you with insights and data to prove its effectiveness to business leadership.',
+    imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
   },
   {
     id: 3,
@@ -37,7 +37,16 @@ const posts: Post[] = [
     href: '/ideas',
     description:
       'Kickstart your content marketing efforts with this in-depth guide.',
-    imageUrl: '/site/med-landscape/write_draft_dev.jpg',
+    imageUrl: '/site/med-landscape/ideas_og_draft_dev.jpg',
+  },
+
+  {
+    id: 4,
+    title: "The Technical Content Manager's Playbook",
+    href: '/playbook',
+    description:
+      'This free Technical Content Manager Playbook is a collection of resources you can use to manage a top-tier technical blog. Among other things, it includes a template for creating technical content briefs, a multi-author publishing calendar, and a technical blogging style guide.',
+    imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
   // More resources...
 ]
