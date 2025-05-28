@@ -125,8 +125,8 @@ export default function RootLayout({
           link="/developer-marketing"
         /> */}
         <Banner
-          text="Join Our FREE Webinar: How DevRel, Marketing, and Sales Can (and should) Work Together - May 27th→"
-          link="https://us02web.zoom.us/webinar/register/3017477601282/WN_1ee1lo0uQ5W1BvQ6E0Xhww"
+          text="Join Our FREE Webinar: Creating Content that Resonates with your Technical Audience - June 5th →"
+          link="https://us02web.zoom.us/webinar/register/6017484449340/WN_DWI0C0mPQG2niI9NXX6HHg"
         />
         <DynamicNavbar />
 
