@@ -6,7 +6,7 @@ import ServiceInfo from '@/components/page-components/content-marketing-engine/s
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Start a Content Marketing Engine - Draft.dev',
+  title: 'How to Set Up a Content Marketing Engine in the Age of AI - Draft.dev',
   description:
     'Learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
   robots: {

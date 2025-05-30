@@ -9,7 +9,7 @@ const ServiceInfo = () => {
           <div className="lg:pr-4 lg:pt-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl">
               <h2 className="sm:subheader-gradient subheader-mobile-gradient px-8">
-                How to Start a Content Marketing Engine
+                How to Set Up a Content Marketing Engine in the Age of AI
               </h2>
               <FormContentMarketingEngine />
             </div>
