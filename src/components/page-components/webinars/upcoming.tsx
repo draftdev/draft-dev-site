@@ -90,11 +90,11 @@ const UpcomingWebinars = () => {
       isFeatured: false,
     },
     {
-      title: 'Creating Content that Resonates with your Technical Audience',
+      title: 'How to Orchestrate Content to Drive Business',
       date: '05 June 2025',
       time: '11:00am CT',
       description1:
-        'In this hands-on webinar, Manuel Weiss will demonstrate practical approaches to creating content that genuinely resonates with technical audiences.',
+        'In this hands-on webinar, Manuel Weiss will demonstrate practical approaches to creating content that turns traffic into leads and revenue.',
 
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_DWI0C0mPQG2niI9NXX6HHg',
