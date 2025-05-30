@@ -76,7 +76,7 @@ const UpcomingWebinars = () => {
         'Manuel Weiss (co-owner at Draft.dev) walks you through the pre-requisites and goals of building an effective content marketing engine for technical audiences in the age of AI: The tech stack, strategy, and a tried and trusted framework to help you reverse engineer your production and publishing plan.',
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_JarLTp6aQ_-J6UdCP4ltYw',
-      isFeatured: true,
+      isFeatured: false,
     },
     {
       title: 'How DevRel, Marketing, and Sales Can (and should) Work Together',
@@ -98,7 +98,7 @@ const UpcomingWebinars = () => {
 
       registrationLink:
         'https://us02web.zoom.us/webinar/register/WN_DWI0C0mPQG2niI9NXX6HHg',
-      isFeatured: false,
+      isFeatured: true,
     },
   ]
 
