@@ -38,20 +38,19 @@ const NAVIGATION_CONFIG = {
   recentPosts: [
     {
       id: 1,
-      title: 'The Technical Content Manager Playbook',
-      href: '/playbook',
-      imageUrl:
-        '/site/med-portrait/technical_content_manager_playbook_draft_dev.webp',
+      title: 'Building and Scaling Developer Marketing',
+      href: '/developer-marketing',
+      imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
       description:
-        'This free Playbook is a collection of resources you can use to manage a top-tier technical blog.',
+        'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
     },
     {
       id: 2,
-      title: '50 Winning Ideas For Your Company Blog',
-      href: '/ideas',
-      imageUrl: '/site/med-portrait/50_ideas_draft_dev.webp',
+      title: 'How to Set Up a Content Marketing Engine in the Age of AI',
+      href: '/content-marketing-engine',
+      imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
       description:
-        'Kickstart your content marketing efforts. Download this free guide and get 50 ideas for free.',
+        'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine.',
     },
   ],
   links: [
