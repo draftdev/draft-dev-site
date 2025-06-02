@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
                 <div className="mt-24 py-3 sm:mt-32 lg:mt-16">
                   <span className="mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary ring-1 ring-inset ring-primary-40">
                     <Link href="/resources" className="">
-                      Free eBook
+                      New eBook
                     </Link>
                   </span>
                   <Link
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                     className="inline-flex"
                   >
                     <span className="inline-flex items-center text-sm text-white">
-                      How to Start a Content Marketing Engine
+                      How to Set Up a Content Marketing Engine in the Age of AI
                       <ChevronRightIcon
                         aria-hidden="true"
                         className="size-5 text-gray-400"
