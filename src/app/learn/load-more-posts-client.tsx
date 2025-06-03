@@ -111,17 +111,17 @@ export default function LoadMorePostsClient({
               key={post.id}
               className="flex flex-col gap-8 sm:flex-row sm:items-start"
             >
-              <div className="relative w-full sm:w-1/5">
+              <div className="relative w-full sm:w-1/4">
                 <Link href={`/learn/${post.slug}`}>
                   <Image
                     src={imageSource}
                     alt={post.title}
-                    className="aspect-[3/2] w-full rounded-2xl bg-gray-100 object-cover"
-                    width={600}
-                    height={400}
+                    className="aspect-video w-full rounded-2xl bg-gray-100 object-cover"
+                    width={400}
+                    height={225}
                     priority={index < 3}
                     quality={80}
-                    sizes="(max-width: 768px) 100vw, 20vw"
+                    sizes="(max-width: 768px) 100vw, 25vw"
                     unoptimized={
                       !imageSource.includes(
                         'candid-cookie.flywheelsites.com',
@@ -132,7 +132,7 @@ export default function LoadMorePostsClient({
                 </Link>
               </div>
 
-              <div className="w-full sm:w-2/3">
+              <div className="w-full sm:w-3/4">
                 <div className="group relative">
                   <h3 className="text-xl font-semibold text-gray-900 group-hover:text-gray-600 sm:text-2xl">
                     <Link href={`/learn/${post.slug}`}>

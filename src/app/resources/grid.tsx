@@ -69,8 +69,8 @@ export default function ResourceGrid(): JSX.Element {
                   <Image
                     alt={post.title}
                     src={post.imageUrl}
-                    width={800}
-                    height={600}
+                    width={400}
+                    height={210}
                     className="sm:aspect-2/1 lg:aspect-3/2 aspect-video w-full rounded-2xl bg-gray-100 object-cover"
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />

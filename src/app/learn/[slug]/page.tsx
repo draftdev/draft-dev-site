@@ -92,17 +92,17 @@ export default async function PostPage({ params }: Props) {
       // Don't use getImageUrl here - Next.js Image will handle optimization
       const imageUrl = src
 
-      // For content images, use Next.js Image component for optimization
+      // For content images, use smaller dimensions for better performance
       return (
         <div className="my-4">
           <Image
             src={imageUrl}
             alt={alt || 'Blog image'}
-            width={768}
-            height={512}
+            width={600}
+            height={400}
             className="mx-auto rounded-lg object-cover"
             quality={85}
-            sizes="(max-width: 768px) 100vw, 768px"
+            sizes="(max-width: 768px) 100vw, 600px"
             // Skip Next.js optimization for external non-whitelisted domains
             unoptimized={
               !imageUrl.includes('candid-cookie.flywheelsites.com') &&
@@ -220,12 +220,12 @@ export default async function PostPage({ params }: Props) {
                   src={post.featuredImage.node.sourceUrl}
                   alt={String(post.title)}
                   className="w-full rounded-xl object-cover"
-                  width={1200}
-                  height={675}
+                  width={800}
+                  height={450}
                   loading="eager"
                   priority
                   quality={90}
-                  sizes="(max-width: 1280px) 100vw, 1200px"
+                  sizes="(max-width: 1280px) 100vw, 800px"
                 />
               </div>
             )}
