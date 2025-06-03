@@ -50,55 +50,43 @@ const WebinarCard = ({
 const UpcomingWebinars = () => {
   // Sample data for the webinars
   const webinars = [
-    // {
-    //   title: 'Balancing Open-Source and Product Advocacy',
-    //   date: '13 May 2025',
-    //   time: '1:00pm CT',
-    //   description1:
-    //     'Devtool companies often walk a fine line between supporting open-source communities and advocating for their commercial products. This intersection presents unique challenges and opportunities for DevRel teams working to build authentic relationships with technical audiences.',
-    //   description2:
-    //     "In this webinar, Dewan Ishtiaque Ahmed (Principal Developer Advocate at Harness) and Matt McClintock (Head of Content at Revelo) will explore effective strategies for maintaining credibility while serving both open-source and commercial interests. They'll share practical insights on creating value-driven content, building genuine community engagement, and measuring impact across these sometimes competing domains.",
-    //   description3:
-    //     'Join us to learn how leading organizations successfully navigate this balance, avoid common pitfalls, and create DevRel programs that resonate with developers while driving business goals.',
-    //   registrationLink:
-    //     'https://us02web.zoom.us/webinar/register/WN_N_9XBjrtQL2d8v8dOrTLXA',
-    //   isFeatured: true,
-    // },
-    {
-      title: 'How to Set Up a Content Marketing Engine in the Age of AI',
-      date: '22 May 2025',
-      time: '11:00am CT',
-      description1:
-        'Content marketing has proven time and time again that it can be a valuable revenue driver for businesses, regardless of industry. Marketers who fail to succeed at content marketing usually either lack the processes, systems, and frameworks needed, or they lack the discipline to carry out those processes consistently.',
-      description2:
-        'In this webinar, you will learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
-      description3:
-        'Manuel Weiss (co-owner at Draft.dev) walks you through the pre-requisites and goals of building an effective content marketing engine for technical audiences in the age of AI: The tech stack, strategy, and a tried and trusted framework to help you reverse engineer your production and publishing plan.',
-      registrationLink:
-        'https://us02web.zoom.us/webinar/register/WN_JarLTp6aQ_-J6UdCP4ltYw',
-      isFeatured: false,
-    },
-    {
-      title: 'How DevRel, Marketing, and Sales Can (and should) Work Together',
-      date: '27 May 2025',
-      time: '1:00pm CT',
-      description1:
-        'In this webinar, Kurtis Kemple (Sr. Director of DevRel at Slack) and Dave Neary (Director of Developer Relations at Ampere Computing) will explore the costs of this oppositional mindset and chart a path toward more effective cross-functional collaboration.',
-
-      registrationLink:
-        'https://us02web.zoom.us/webinar/register/WN_1ee1lo0uQ5W1BvQ6E0Xhww',
-      isFeatured: false,
-    },
     {
       title: 'How to Orchestrate Content to Drive Business',
-      date: '05 June 2025',
+      date: 'June 5 2025',
       time: '11:00am CT',
       description1:
-        'In this hands-on webinar, Manuel Weiss will demonstrate practical approaches to creating content that turns traffic into leads and revenue.',
+        'In this hands-on webinar, Manuel Weiss will demonstrate how to strategically build evergreen content to reel people into your content funnel, create content that drives large spikes in traffic, and how to create content clusters around pillar content, nudging your readers down the funnel. He will also present a framework around how to transform your content clusters into valuable gated assets that convert visitors into leads.',
+      description2:
+        'Join us to learn how to create interconnected content systems that establish authority, drive organic traffic, and generate qualified leads and business from technical audiences.',
+      description3: '',
+      registrationLink:
+        'https://us02web.zoom.us/webinar/register/6017484449340/WN_DWI0C0mPQG2niI9NXX6HHg',
+      isFeatured: true,
+    },
+    {
+      title:
+        'Interactive Content Strategies: Engaging Developers Through Action',
+      date: '18 June 2025',
+      time: '1:00pm CT',
+      description1:
+        "In this webinar, Spence Taylor and Leon Adato will explore strategies for creating interactive content that resonates. They'll cover formats like live workshops, sandbox environments, and developer onboarding flows.",
 
       registrationLink:
-        'https://us02web.zoom.us/webinar/register/WN_DWI0C0mPQG2niI9NXX6HHg',
+        'https://us02web.zoom.us/webinar/register/5917482854805/WN_uezd14aBQmKpihQs7IL2zA',
       isFeatured: true,
+    },
+
+    {
+      title:
+        'How to Orchestrate Promotion Waves and Maximize Reach without Being Spammy',
+      date: '6 Aug 2025',
+      time: '11:00am CT',
+      description1:
+        "In this strategic webinar, Manuel Weiss will showcase frameworks for orchestrating effective content promotion across multiple channels. You'll learn how to create coordinated distribution waves, time promotions for maximum visibility without audience fatigue.",
+
+      registrationLink:
+        'https://us02web.zoom.us/webinar/register/8417489732873/WN_T5ymVqZhShKUernjiQg_Cg',
+      isFeatured: false,
     },
   ]
 
