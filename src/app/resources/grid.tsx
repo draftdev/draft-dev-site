@@ -16,21 +16,22 @@ interface Post {
 
 const posts: Post[] = [
   {
-    id: 1,
+    id: 2,
+    title: 'How to Set Up a Content Marketing Engine in the Age of AI',
+    href: '/content-marketing-engine',
+    description:
+      'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine that provides you with insights and data to prove its effectiveness to business leadership.',
+    imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
+  },
+  {
+    id: 2,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
       'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
-  {
-    id: 2,
-    title: 'How to Start a Content Marketing Engine',
-    href: '/content-marketing-engine',
-    description:
-      'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine that provides you with insights and data to prove its effectiveness to business leadership.',
-    imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
-  },
+
   {
     id: 3,
     title: "50 Winning Ideas For Your Company's Blog",

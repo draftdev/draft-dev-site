@@ -38,19 +38,19 @@ const NAVIGATION_CONFIG = {
   recentPosts: [
     {
       id: 1,
-      title: 'Building and Scaling Developer Marketing',
-      href: '/developer-marketing',
-      imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
-      description:
-        'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
-    },
-    {
-      id: 2,
       title: 'How to Set Up a Content Marketing Engine in the Age of AI',
       href: '/content-marketing-engine',
       imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
       description:
         'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine.',
+    },
+    {
+      id: 2,
+      title: 'Building and Scaling Developer Marketing',
+      href: '/developer-marketing',
+      imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
+      description:
+        'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
     },
   ],
   links: [
