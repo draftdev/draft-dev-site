@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/devrel-marketing-and-sales</loc>
+    <lastmod>2025-05-30T09:01:37Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/open-source-and-product-advocacy</loc>
+    <lastmod>2025-05-22T15:39:35Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/setting-up-content-marketing-engine</loc>
-    <lastmod>2025-05-22T16:56:34Z</lastmod>
+    <lastmod>2025-05-22T20:53:13Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -107,7 +117,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/software-development-blogs</loc>
-    <lastmod>2025-05-09T15:25:09Z</lastmod>
+    <lastmod>2025-06-03T10:54:28Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -227,12 +237,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-ultimate-list-of-developer-podcasts</loc>
-    <lastmod>2025-05-09T15:14:41Z</lastmod>
+    <lastmod>2025-06-02T11:01:05Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/the-ultimate-list-of-developer-newsletters</loc>
-    <lastmod>2025-05-09T15:11:00Z</lastmod>
+    <lastmod>2025-06-03T10:31:44Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -777,7 +787,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/engineering-blogs</loc>
-    <lastmod>2025-05-09T15:29:00Z</lastmod>
+    <lastmod>2025-06-03T11:08:32Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
