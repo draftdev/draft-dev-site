@@ -16,6 +16,14 @@ interface Post {
 
 const posts: Post[] = [
   {
+    id: 1,
+    title: 'How to Orchestrate Technical Content to Drive Business',
+    href: '/orchestrate-technical-content',
+    description:
+      'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and how to transform your expertise into valuable gated assets that convert visitors into leads.',
+    imageUrl: '/site/med-landscape/orchestrate_thumb_draft_dev.jpg',
+  },
+  {
     id: 2,
     title: 'How to Set Up a Content Marketing Engine in the Age of AI',
     href: '/content-marketing-engine',
@@ -24,7 +32,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
@@ -33,7 +41,7 @@ const posts: Post[] = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "50 Winning Ideas For Your Company's Blog",
     href: '/ideas',
     description:
@@ -42,7 +50,7 @@ const posts: Post[] = [
   },
 
   {
-    id: 4,
+    id: 5,
     title: "The Technical Content Manager's Playbook",
     href: '/playbook',
     description:
