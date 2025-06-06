@@ -69,11 +69,6 @@ const teamMembers: TeamMember[] = [
   },
 
   {
-    name: 'Sarah Cottone',
-    description: 'Content Strategist',
-    img: '/draft/team/sarah_cottone_draft_dev.jpg',
-  },
-  {
     name: 'Aniket Bhattacharyea',
     description: 'Developer Advocate',
     img: '/draft/team/aniket_bhattacharyea_draft_dev.jpg',
