@@ -1,5 +1,6 @@
 'use client'
 
+import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useTransition } from 'react'
@@ -12,6 +13,7 @@ interface Post {
   featuredImage?: {
     node: {
       sourceUrl: string
+      altText?: string
     }
   }
   categories?: { id: string; name: string }[]
@@ -25,7 +27,6 @@ interface Post {
     }
   }
   originalAuthor?: string | null
-  // ADD YOAST FIELDS:
   seoTitle?: string
   seoDesc?: string
   seoKeyword?: string
@@ -43,9 +44,6 @@ interface LoadMorePostsClientProps {
   initialPosts: Post[]
   initialPageInfo: PageInfo
 }
-
-// Default fallback image used when post has no featured image
-const FALLBACK_IMAGE = '/site/med-landscape/write_draft_dev.jpg'
 
 export default function LoadMorePostsClient({
   initialPosts,
@@ -108,9 +106,9 @@ export default function LoadMorePostsClient({
     <div>
       <div className="space-y-12">
         {posts.map((post, index) => {
-          // Get image source with fallback
-          const imageSource =
-            post.featuredImage?.node.sourceUrl || FALLBACK_IMAGE
+          // Always use proxy to hide WordPress domain
+          const imageUrl = getImageUrl(post.featuredImage?.node.sourceUrl)
+          const imageAlt = getImageAlt(post)
 
           return (
             <article
@@ -120,19 +118,16 @@ export default function LoadMorePostsClient({
               <div className="relative w-full sm:w-1/4">
                 <Link href={`/learn/${post.slug}`}>
                   <Image
-                    src={imageSource}
-                    alt={post.title}
+                    src={imageUrl}
+                    alt={imageAlt}
                     className="aspect-video w-full rounded-2xl bg-gray-100 object-cover"
                     width={400}
                     height={225}
                     priority={index < 3}
                     quality={80}
                     sizes="(max-width: 768px) 100vw, 25vw"
-                    unoptimized={
-                      !imageSource.includes(
-                        'candid-cookie.flywheelsites.com',
-                      ) && !imageSource.startsWith('/')
-                    }
+                    // Disable optimization for proxy URLs to avoid double-processing
+                    unoptimized={imageUrl.includes('/api/image-proxy')}
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </Link>

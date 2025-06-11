@@ -1,4 +1,4 @@
-// app/learn/[slug]/page.tsx
+// app/learn/[slug]/page.tsx - Updated to use proxied images
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -18,6 +18,21 @@ export const revalidate = 0
 type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
+}
+
+// Helper function to proxy WordPress images
+function getProxiedImageUrl(wpImageUrl: string | undefined): string {
+  if (!wpImageUrl) {
+    return 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
+  }
+
+  // If it's already a draft.dev URL, return as-is
+  if (wpImageUrl.includes('draft.dev')) {
+    return wpImageUrl
+  }
+
+  // Proxy WordPress images through your Next.js API route
+  return `/api/image-proxy?url=${encodeURIComponent(wpImageUrl)}`
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -46,6 +61,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
 
+  // Use proxied image URL for metadata
+  const imageUrl = getProxiedImageUrl(post.featuredImage?.node?.sourceUrl)
+  const imageAlt = post.featuredImage?.node?.altText || post.title
+
   return {
     title: `${post.title} - Draft.dev`,
     description,
@@ -61,31 +80,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: [displayAuthor],
       section: post.categories?.[0]?.name || 'Technical Content Marketing',
       tags: post.customFields?.targetKeywords || [],
-      images: post.featuredImage
-        ? [
-            {
-              url: post.featuredImage.node.sourceUrl,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
-        : [
-            {
-              url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
-              width: 1200,
-              height: 630,
-              alt: 'Draft.dev Technical Content Marketing Blog',
-            },
-          ],
+      images: [
+        {
+          url: imageUrl, // Now uses proxied URL
+          width: 1200,
+          height: 630,
+          alt: imageAlt, // Uses WordPress alt text
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.seo?.twitterDescription || description,
-      images: post.featuredImage
-        ? [post.featuredImage.node.sourceUrl]
-        : ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
+      images: [imageUrl], // Uses proxied URL
       creator: '@draftdev',
       site: '@draftdev',
     },
@@ -123,7 +131,8 @@ export default async function PostPage({ params }: Props) {
       const { src, alt } = domNode.attribs
       if (!src) return undefined
 
-      const imageUrl = src
+      // Proxy content images as well
+      const imageUrl = getProxiedImageUrl(src)
 
       // For content images, use optimized dimensions
       return (
@@ -136,11 +145,8 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto rounded-lg object-cover"
             quality={85}
             sizes="(max-width: 768px) 100vw, 700px"
-            // Skip Next.js optimization for external non-whitelisted domains
-            unoptimized={
-              !imageUrl.includes('candid-cookie.flywheelsites.com') &&
-              !imageUrl.startsWith('/')
-            }
+            // Since we're proxying, we can optimize all images
+            unoptimized={false}
           />
         </div>
       )
@@ -206,6 +212,12 @@ export default async function PostPage({ params }: Props) {
     Math.ceil(
       sanitizedContent.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200,
     )
+
+  // Get proxied image URL for featured image
+  const featuredImageUrl = getProxiedImageUrl(
+    post.featuredImage?.node?.sourceUrl,
+  )
+  const featuredImageAlt = post.featuredImage?.node?.altText || post.title
 
   return (
     <>
@@ -370,8 +382,8 @@ export default async function PostPage({ params }: Props) {
             {post.featuredImage && (
               <div className="not-prose mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={post.featuredImage.node.sourceUrl}
-                  alt={post.title}
+                  src={featuredImageUrl} // Uses proxied URL
+                  alt={featuredImageAlt} // Uses WordPress alt text
                   className="w-full rounded-xl object-cover"
                   width={800}
                   height={450}
@@ -379,6 +391,7 @@ export default async function PostPage({ params }: Props) {
                   priority
                   quality={90}
                   sizes="(max-width: 1280px) 100vw, 800px"
+                  unoptimized={false} // Can optimize since we're proxying
                 />
               </div>
             )}
