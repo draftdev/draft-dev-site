@@ -40,8 +40,7 @@ const Hero: React.FC = () => {
                 </h1>
                 <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-lg text-gray-100 sm:bg-transparent sm:p-0">
                   Draft.dev helps Marketing and Developer Relations teams in
-                  tech businesses drive awareness, capture leads, and build
-                  trust.
+                  tech businesses build trust, drive awareness, and capture leads.
                 </p>
                 <div className="mb-6 mt-16 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
                   <Link

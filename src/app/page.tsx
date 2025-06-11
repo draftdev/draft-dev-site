@@ -13,7 +13,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Content Creation Agency for Technical Audiences - Draft.dev',
   description:
-    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies build trust, drive awareness, and capture leads.',
   robots: {
     index: true,
     follow: true,

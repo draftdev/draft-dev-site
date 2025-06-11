@@ -23,13 +23,13 @@ import { Link } from './link'
 
 const NAVIGATION_CONFIG = {
   useCases: [
+    { name: 'Build Trust', href: '/build-trust', icon: UserGroupIcon },
     { name: 'Drive Awareness', href: '/drive-awareness', icon: SignalIcon },
     {
       name: 'Capture Leads',
       href: '/capture-leads',
       icon: ClipboardDocumentCheckIcon,
     },
-    { name: 'Build Trust', href: '/build-trust', icon: UserGroupIcon },
   ],
   whoWeHelp: [
     { name: 'For Marketers', href: '/for-marketers', icon: GlobeAltIcon },

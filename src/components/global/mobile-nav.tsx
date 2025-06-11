@@ -54,6 +54,17 @@ const MobileNavContent = ({ links }: MobileNavProps) => {
                         Use Cases
                       </h4>
                       <Link
+                        href="/build-trust"
+                        className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          disclosureClose()
+                          router.push('/build-trust')
+                        }}
+                      >
+                        Build Trust
+                      </Link>
+                      <Link
                         href="/drive-awareness"
                         className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
                         onClick={(e) => {
@@ -74,17 +85,6 @@ const MobileNavContent = ({ links }: MobileNavProps) => {
                         }}
                       >
                         Capture Leads
-                      </Link>
-                      <Link
-                        href="/build-trust"
-                        className="flex items-center gap-2 px-6 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          disclosureClose()
-                          router.push('/build-trust')
-                        }}
-                      >
-                        Build Trust
                       </Link>
                     </div>
 
