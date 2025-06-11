@@ -1,5 +1,3 @@
-// app/lib/schema.ts - Fixed schema without alt properties and cleaned up duplicates
-
 export interface Post {
   id: string
   slug: string
