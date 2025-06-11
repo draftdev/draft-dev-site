@@ -1,5 +1,4 @@
-// app/lib/schema.ts - Unified approach using image proxy for SEO
-import { getImageAlt, getImageUrl } from './image-utils'
+// app/lib/schema.ts - Fixed schema without alt properties and cleaned up duplicates
 
 export interface Post {
   id: string
@@ -80,11 +79,11 @@ export function generateArticleSchema(post: Post, slug: string) {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
-  // Use the same proxy approach for schema (keeps everything consistent)
-  const imageUrl = makeAbsoluteUrl(
-    getImageUrl(post.featuredImage?.node.sourceUrl),
-  )
-  const imageAlt = getImageAlt(post)
+  // Keep original WordPress URL for schema (for SEO purposes)
+  const originalImageUrl = post.featuredImage?.node.sourceUrl
+  const schemaImageUrl = originalImageUrl
+    ? makeAbsoluteUrl(originalImageUrl)
+    : 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
 
   return {
     '@context': 'https://schema.org',
@@ -93,15 +92,14 @@ export function generateArticleSchema(post: Post, slug: string) {
     headline: post.title,
     description: post.seoDesc || post.excerpt || '',
 
-    // Image using consistent proxy approach
+    // Image without alt property (schema.org doesn't support alt for ImageObject)
     image: {
       '@type': 'ImageObject',
       '@id': `https://draft.dev/learn/${slug}#primaryimage`,
-      url: imageUrl,
-      contentUrl: imageUrl,
+      url: schemaImageUrl,
+      contentUrl: schemaImageUrl,
       width: 1200,
       height: 630,
-      alt: imageAlt,
     },
 
     datePublished: publishedDate,
@@ -116,75 +114,11 @@ export function generateArticleSchema(post: Post, slug: string) {
     author: {
       '@type': 'Organization',
       '@id': 'https://draft.dev/#organization',
-      name: 'Draft.dev',
-      url: 'https://draft.dev',
-      logo: {
-        '@type': 'ImageObject',
-        '@id': 'https://draft.dev/#logo',
-        url: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        contentUrl: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        width: 180,
-        height: 60,
-        alt: 'Draft.dev Logo',
-      },
-      description:
-        'Technical content marketing agency helping companies reach developers, DevOps practitioners, and technical decision-makers',
-      foundingDate: '2020',
-      numberOfEmployees: {
-        '@type': 'QuantitativeValue',
-        value: '50-100',
-      },
-      knowsAbout: [
-        'Technical Content Marketing',
-        'Developer Relations',
-        'Software Development',
-        'DevOps',
-        'API Documentation',
-        'Technical Writing',
-        'Content Strategy',
-        'Developer Marketing',
-        'Cloud Computing',
-        'Software Engineering',
-        'Data Engineering',
-        'Technical Tutorials',
-        'Developer Tools Marketing',
-        'B2B SaaS Marketing',
-      ],
-      areaServed: 'Worldwide',
-      sameAs: [
-        'https://twitter.com/draftdev',
-        'https://linkedin.com/company/draft-dev',
-        'https://github.com/draftdev',
-      ],
     },
 
     publisher: {
       '@type': 'Organization',
       '@id': 'https://draft.dev/#organization',
-      name: 'Draft.dev',
-      url: 'https://draft.dev',
-      logo: {
-        '@type': 'ImageObject',
-        '@id': 'https://draft.dev/#logo',
-        url: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        contentUrl: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        width: 180,
-        height: 60,
-        alt: 'Draft.dev Logo',
-      },
-      description:
-        'We help Marketing and Developer Relations teams in tech companies drive awareness, capture leads, and build trust through expert technical content',
-      sameAs: [
-        'https://twitter.com/draftdev',
-        'https://linkedin.com/company/draft-dev',
-        'https://github.com/draftdev',
-      ],
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'customer service',
-        url: 'https://draft.dev/call',
-        availableLanguage: 'English',
-      },
     },
 
     articleSection: post.categories?.[0]?.name || 'Technical Content Marketing',
@@ -243,25 +177,6 @@ export function generateBlogSchema(posts: Post[]) {
     publisher: {
       '@type': 'Organization',
       '@id': 'https://draft.dev/#organization',
-      name: 'Draft.dev',
-      description:
-        'Technical content marketing agency specializing in developer-focused content creation',
-      url: 'https://draft.dev',
-      logo: {
-        '@type': 'ImageObject',
-        '@id': 'https://draft.dev/#logo',
-        url: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        contentUrl: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-        width: 180,
-        height: 60,
-        alt: 'Draft.dev Logo',
-      },
-      foundingDate: '2020',
-      sameAs: [
-        'https://twitter.com/draftdev',
-        'https://linkedin.com/company/draft-dev',
-        'https://github.com/draftdev',
-      ],
     },
 
     audience: {
@@ -291,25 +206,32 @@ export function generateBlogSchema(posts: Post[]) {
       },
     ],
 
-    // Use consistent proxy approach for blog post images
-    blogPost: posts.slice(0, 10).map((post) => ({
-      '@type': 'BlogPosting',
-      '@id': `https://draft.dev/learn/${post.slug}#article`,
-      headline: post.title,
-      url: `https://draft.dev/learn/${post.slug}`,
-      datePublished: post.date ? new Date(post.date).toISOString() : undefined,
-      description: post.seoDesc || post.excerpt || '',
-      image: {
-        '@type': 'ImageObject',
-        url: makeAbsoluteUrl(getImageUrl(post.featuredImage?.node.sourceUrl)),
-        alt: getImageAlt(post),
-      },
-      author: {
-        '@type': 'Organization',
-        '@id': 'https://draft.dev/#organization',
-        name: 'Draft.dev',
-      },
-    })),
+    // Keep original WordPress URLs in schema for SEO
+    blogPost: posts.slice(0, 10).map((post) => {
+      const originalImageUrl = post.featuredImage?.node.sourceUrl
+      const schemaImageUrl = originalImageUrl
+        ? makeAbsoluteUrl(originalImageUrl)
+        : 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
+
+      return {
+        '@type': 'BlogPosting',
+        '@id': `https://draft.dev/learn/${post.slug}#article`,
+        headline: post.title,
+        url: `https://draft.dev/learn/${post.slug}`,
+        datePublished: post.date
+          ? new Date(post.date).toISOString()
+          : undefined,
+        description: post.seoDesc || post.excerpt || '',
+        image: {
+          '@type': 'ImageObject',
+          url: schemaImageUrl,
+        },
+        author: {
+          '@type': 'Organization',
+          '@id': 'https://draft.dev/#organization',
+        },
+      }
+    }),
   }
 }
 
@@ -369,7 +291,6 @@ export function generateOrganizationSchema() {
       width: 180,
       height: 60,
       caption: 'Draft.dev Logo',
-      alt: 'Draft.dev - Technical Content Marketing Agency Logo',
     },
 
     image: [
@@ -378,7 +299,6 @@ export function generateOrganizationSchema() {
         url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'Draft.dev Technical Content Marketing Team',
       },
     ],
 
@@ -431,6 +351,8 @@ export function generateOrganizationSchema() {
     sameAs: [
       'https://twitter.com/draftdev',
       'https://linkedin.com/company/draft-dev',
+      'https://github.com/draftdev',
+      'https://www.crunchbase.com/organization/draft-dev',
     ],
 
     knowsAbout: [
@@ -519,7 +441,6 @@ export function generateWebSiteSchema() {
     publisher: {
       '@type': 'Organization',
       '@id': 'https://draft.dev/#organization',
-      name: 'Draft.dev',
     },
 
     copyrightYear: 2020,
