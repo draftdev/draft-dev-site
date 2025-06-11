@@ -120,7 +120,7 @@ export default function LoadMorePostsClient({
 
           return (
             <article
-              key={post.id} // Use post.id as key, not index
+              key={post.id}
               className="flex flex-col gap-8 sm:flex-row sm:items-start"
             >
               <div className="relative w-full sm:w-1/4">
@@ -134,9 +134,7 @@ export default function LoadMorePostsClient({
                     priority={index < 3}
                     quality={80}
                     sizes="(max-width: 768px) 100vw, 25vw"
-                    unoptimized={imageUrl.includes('/api/image-proxy')}
-                    // Force unique key for each image
-                    key={`image-${post.id}-${imageUrl.slice(-20)}`}
+                    // No unoptimized prop needed since we're not using proxy
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </Link>

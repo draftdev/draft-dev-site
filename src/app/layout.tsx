@@ -138,7 +138,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
       <head>
-        <link rel="preconnect" href="https://candid-cookie.flywheelsites.com" />
         <link
           rel="preload"
           href="/draft/logos/draftlogo_main_filled.svg"

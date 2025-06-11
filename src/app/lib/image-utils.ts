@@ -1,4 +1,4 @@
-// app/lib/image-utils.ts - Skip default WordPress images to reduce proxy calls
+// app/lib/image-utils.ts - No proxy, direct URLs
 export function getImageUrl(
   wpImageUrl: string | undefined,
   postId?: string,
@@ -19,24 +19,14 @@ export function getImageUrl(
     return wpImageUrl
   }
 
-  // Skip the default WordPress image that all posts are using
-  // This eliminates unnecessary proxy calls for the same default image
-  if (wpImageUrl.includes('roi_draft_dev.jpg')) {
-    return fallbackImage
-  }
-
-  // For WordPress images, ALWAYS proxy to hide the domain
+  // For WordPress images, use them directly (no proxy)
   if (wpImageUrl.includes('candid-cookie.flywheelsites.com')) {
-    const httpsUrl = wpImageUrl.replace('http://', 'https://')
-    // Add post ID as cache busting parameter to help with debugging
-    const cacheBuster = postId ? `&postId=${postId}` : ''
-    return `/api/image-proxy?url=${encodeURIComponent(httpsUrl)}${cacheBuster}`
+    return wpImageUrl
   }
 
-  // For other external images, proxy them too for consistency
+  // For other external images, use them directly
   if (wpImageUrl.startsWith('http')) {
-    const cacheBuster = postId ? `&postId=${postId}` : ''
-    return `/api/image-proxy?url=${encodeURIComponent(wpImageUrl)}${cacheBuster}`
+    return wpImageUrl
   }
 
   return fallbackImage

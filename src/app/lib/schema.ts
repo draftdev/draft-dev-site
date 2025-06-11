@@ -431,8 +431,6 @@ export function generateOrganizationSchema() {
     sameAs: [
       'https://twitter.com/draftdev',
       'https://linkedin.com/company/draft-dev',
-      'https://github.com/draftdev',
-      'https://www.crunchbase.com/organization/draft-dev',
     ],
 
     knowsAbout: [

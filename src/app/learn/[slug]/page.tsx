@@ -1,4 +1,4 @@
-// app/learn/[slug]/page.tsx - Complete file
+// app/learn/[slug]/page.tsx - No proxy implementation
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
 
-  // Use proxied image URL for metadata
+  // Use direct image URL (no proxy)
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const imageAlt = getImageAlt(post)
 
@@ -121,7 +121,7 @@ export default async function PostPage({ params }: Props) {
       const { src, alt } = domNode.attribs
       if (!src) return undefined
 
-      // Proxy content images as well
+      // Use direct image URL (no proxy)
       const imageUrl = getImageUrl(src)
 
       // For content images, use optimized dimensions
@@ -135,7 +135,7 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto rounded-lg object-cover"
             quality={85}
             sizes="(max-width: 768px) 100vw, 700px"
-            unoptimized={imageUrl.includes('/api/image-proxy')}
+            // No unoptimized prop needed since we're not using proxy
           />
         </div>
       )
@@ -201,7 +201,7 @@ export default async function PostPage({ params }: Props) {
       sanitizedContent.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200,
     )
 
-  // Get proxied image URL for featured image
+  // Get direct image URL for featured image (no proxy)
   const featuredImageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const featuredImageAlt = getImageAlt(post)
 
@@ -377,7 +377,7 @@ export default async function PostPage({ params }: Props) {
                   priority
                   quality={90}
                   sizes="(max-width: 1280px) 100vw, 800px"
-                  unoptimized={featuredImageUrl.includes('/api/image-proxy')}
+                  // No unoptimized prop needed since we're not using proxy
                 />
               </div>
             )}
@@ -426,9 +426,6 @@ export default async function PostPage({ params }: Props) {
                   <div>
                     <p className="text-sm font-medium text-gray-900">
                       {displayAuthor}
-                    </p>
-                    <p className="text-sm text-gray-500">
-                      Technical Content Expert at Draft.dev
                     </p>
                   </div>
                 </div>
