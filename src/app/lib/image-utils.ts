@@ -1,4 +1,4 @@
-// app/lib/image-utils.ts - Always proxy WordPress images to hide domain
+// app/lib/image-utils.ts - Skip default WordPress images to reduce proxy calls
 export function getImageUrl(
   wpImageUrl: string | undefined,
   postId?: string,
@@ -17,6 +17,12 @@ export function getImageUrl(
   // If it's a relative URL, use it directly
   if (wpImageUrl.startsWith('/')) {
     return wpImageUrl
+  }
+
+  // Skip the default WordPress image that all posts are using
+  // This eliminates unnecessary proxy calls for the same default image
+  if (wpImageUrl.includes('roi_draft_dev.jpg')) {
+    return fallbackImage
   }
 
   // For WordPress images, ALWAYS proxy to hide the domain
