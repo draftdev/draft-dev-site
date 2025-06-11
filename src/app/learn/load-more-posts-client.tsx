@@ -72,8 +72,6 @@ export default function LoadMorePostsClient({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestBody),
-        cache: 'no-store',
-        next: { revalidate: 0 },
       })
 
       if (!res.ok) {
@@ -93,7 +91,15 @@ export default function LoadMorePostsClient({
       }
 
       startTransition(() => {
-        setPosts((prev) => [...prev, ...data.posts])
+        setPosts((prevPosts) => {
+          // Ensure we don't add duplicate posts
+          const existingIds = new Set(prevPosts.map((p) => p.id))
+          const newPosts = data.posts.filter(
+            (p: Post) => !existingIds.has(p.id),
+          )
+
+          return [...prevPosts, ...newPosts]
+        })
         setPageInfo(data.pageInfo)
       })
     } catch (error) {
@@ -106,13 +112,15 @@ export default function LoadMorePostsClient({
     <div>
       <div className="space-y-12">
         {posts.map((post, index) => {
-          // Always use proxy to hide WordPress domain
-          const imageUrl = getImageUrl(post.featuredImage?.node.sourceUrl)
+          const imageUrl = getImageUrl(
+            post.featuredImage?.node.sourceUrl,
+            post.id,
+          )
           const imageAlt = getImageAlt(post)
 
           return (
             <article
-              key={post.id}
+              key={post.id} // Use post.id as key, not index
               className="flex flex-col gap-8 sm:flex-row sm:items-start"
             >
               <div className="relative w-full sm:w-1/4">
@@ -126,8 +134,9 @@ export default function LoadMorePostsClient({
                     priority={index < 3}
                     quality={80}
                     sizes="(max-width: 768px) 100vw, 25vw"
-                    // Disable optimization for proxy URLs to avoid double-processing
                     unoptimized={imageUrl.includes('/api/image-proxy')}
+                    // Force unique key for each image
+                    key={`image-${post.id}-${imageUrl.slice(-20)}`}
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </Link>
@@ -157,7 +166,7 @@ export default function LoadMorePostsClient({
           <button
             onClick={handleLoadMore}
             disabled={isPending}
-            className="rounded-md bg-gradient-brand px-4 py-2 text-lg text-white hover:bg-gradient-1"
+            className="rounded-md bg-gradient-brand px-4 py-2 text-lg text-white hover:bg-gradient-1 disabled:opacity-50"
           >
             {isPending ? 'Loading...' : 'Load More'}
           </button>

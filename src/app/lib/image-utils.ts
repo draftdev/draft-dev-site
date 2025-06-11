@@ -1,5 +1,8 @@
 // app/lib/image-utils.ts - Always proxy WordPress images to hide domain
-export function getImageUrl(wpImageUrl: string | undefined): string {
+export function getImageUrl(
+  wpImageUrl: string | undefined,
+  postId?: string,
+): string {
   const fallbackImage = '/site/med-landscape/write_draft_dev.jpg'
 
   if (!wpImageUrl) {
@@ -19,12 +22,15 @@ export function getImageUrl(wpImageUrl: string | undefined): string {
   // For WordPress images, ALWAYS proxy to hide the domain
   if (wpImageUrl.includes('candid-cookie.flywheelsites.com')) {
     const httpsUrl = wpImageUrl.replace('http://', 'https://')
-    return `/api/image-proxy?url=${encodeURIComponent(httpsUrl)}`
+    // Add post ID as cache busting parameter to help with debugging
+    const cacheBuster = postId ? `&postId=${postId}` : ''
+    return `/api/image-proxy?url=${encodeURIComponent(httpsUrl)}${cacheBuster}`
   }
 
   // For other external images, proxy them too for consistency
   if (wpImageUrl.startsWith('http')) {
-    return `/api/image-proxy?url=${encodeURIComponent(wpImageUrl)}`
+    const cacheBuster = postId ? `&postId=${postId}` : ''
+    return `/api/image-proxy?url=${encodeURIComponent(wpImageUrl)}${cacheBuster}`
   }
 
   return fallbackImage

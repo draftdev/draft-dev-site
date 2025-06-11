@@ -1,4 +1,4 @@
-// app/lib/wordpress.ts - Updated queries to include alt text
+// app/lib/wordpress.ts - Updated with alt text support
 import { cache } from 'react'
 
 export interface Post {
@@ -12,7 +12,7 @@ export interface Post {
   featuredImage?: {
     node: {
       sourceUrl: string
-      altText?: string // Added alt text
+      altText?: string
     }
   }
   excerpt: string
@@ -44,7 +44,28 @@ export interface Post {
   }
 }
 
-// Updated query to include alt text
+export interface PageInfo {
+  hasNextPage: boolean
+  endCursor: string | null
+  currentPage: number
+}
+
+export interface PostsResponse {
+  posts: Post[]
+  pageInfo: PageInfo
+}
+
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      WORDPRESS_API_URL: string
+      WORDPRESS_API_USERNAME: string
+      WORDPRESS_API_PASSWORD: string
+      WORDPRESS_PRIVACY_PASSWORD: string
+    }
+  }
+}
+
 const ALL_POSTS_QUERY = `
 query AllPosts($first: Int, $after: String) {
   posts(first: $first, after: $after, where: { status: PUBLISH }) {
@@ -131,31 +152,6 @@ query PostBySlug($slug: ID!) {
   }
 }
 `
-
-// Rest of your WordPress functions remain the same...
-// Just make sure they handle the new altText field properly
-
-export interface PageInfo {
-  hasNextPage: boolean
-  endCursor: string | null
-  currentPage: number
-}
-
-export interface PostsResponse {
-  posts: Post[]
-  pageInfo: PageInfo
-}
-
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      WORDPRESS_API_URL: string
-      WORDPRESS_API_USERNAME: string
-      WORDPRESS_API_PASSWORD: string
-      WORDPRESS_PRIVACY_PASSWORD: string
-    }
-  }
-}
 
 function getAuthHeader() {
   const auth = Buffer.from(

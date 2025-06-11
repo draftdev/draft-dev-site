@@ -1,4 +1,4 @@
-// app/lib/schema.ts - Unified approach using the same image proxy
+// app/lib/schema.ts - Unified approach using image proxy for SEO
 import { getImageAlt, getImageUrl } from './image-utils'
 
 export interface Post {
@@ -313,7 +313,6 @@ export function generateBlogSchema(posts: Post[]) {
   }
 }
 
-// Rest of schema functions remain the same...
 export function generateBreadcrumbSchema(title: string, slug: string) {
   return {
     '@context': 'https://schema.org',

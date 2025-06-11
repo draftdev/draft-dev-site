@@ -1,4 +1,5 @@
-// app/learn/[slug]/page.tsx - Updated to use proxied images
+// app/learn/[slug]/page.tsx - Complete file
+import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
@@ -18,21 +19,6 @@ export const revalidate = 0
 type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
-}
-
-// Helper function to proxy WordPress images
-function getProxiedImageUrl(wpImageUrl: string | undefined): string {
-  if (!wpImageUrl) {
-    return 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
-  }
-
-  // If it's already a draft.dev URL, return as-is
-  if (wpImageUrl.includes('draft.dev')) {
-    return wpImageUrl
-  }
-
-  // Proxy WordPress images through your Next.js API route
-  return `/api/image-proxy?url=${encodeURIComponent(wpImageUrl)}`
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -62,8 +48,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
 
   // Use proxied image URL for metadata
-  const imageUrl = getProxiedImageUrl(post.featuredImage?.node?.sourceUrl)
-  const imageAlt = post.featuredImage?.node?.altText || post.title
+  const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
+  const imageAlt = getImageAlt(post)
 
   return {
     title: `${post.title} - Draft.dev`,
@@ -82,10 +68,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       tags: post.customFields?.targetKeywords || [],
       images: [
         {
-          url: imageUrl, // Now uses proxied URL
+          url: imageUrl.startsWith('/')
+            ? `https://draft.dev${imageUrl}`
+            : imageUrl,
           width: 1200,
           height: 630,
-          alt: imageAlt, // Uses WordPress alt text
+          alt: imageAlt,
         },
       ],
     },
@@ -93,7 +81,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.seo?.twitterDescription || description,
-      images: [imageUrl], // Uses proxied URL
+      images: [
+        imageUrl.startsWith('/') ? `https://draft.dev${imageUrl}` : imageUrl,
+      ],
       creator: '@draftdev',
       site: '@draftdev',
     },
@@ -132,7 +122,7 @@ export default async function PostPage({ params }: Props) {
       if (!src) return undefined
 
       // Proxy content images as well
-      const imageUrl = getProxiedImageUrl(src)
+      const imageUrl = getImageUrl(src)
 
       // For content images, use optimized dimensions
       return (
@@ -145,8 +135,7 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto rounded-lg object-cover"
             quality={85}
             sizes="(max-width: 768px) 100vw, 700px"
-            // Since we're proxying, we can optimize all images
-            unoptimized={false}
+            unoptimized={imageUrl.includes('/api/image-proxy')}
           />
         </div>
       )
@@ -158,7 +147,7 @@ export default async function PostPage({ params }: Props) {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
       ...sanitizeHtml.defaults.allowedAttributes,
-      '*': ['style', 'class', 'id'], // Allow style, class, and id on all elements
+      '*': ['style', 'class', 'id'],
       h1: ['id', 'style', 'class'],
       h2: ['id', 'style', 'class'],
       h3: ['id', 'style', 'class'],
@@ -182,7 +171,6 @@ export default async function PostPage({ params }: Props) {
     },
     allowedStyles: {
       '*': {
-        // Allow common CSS properties for better content rendering
         border: [/.*/],
         'border-left': [/.*/],
         'border-right': [/.*/],
@@ -214,10 +202,8 @@ export default async function PostPage({ params }: Props) {
     )
 
   // Get proxied image URL for featured image
-  const featuredImageUrl = getProxiedImageUrl(
-    post.featuredImage?.node?.sourceUrl,
-  )
-  const featuredImageAlt = post.featuredImage?.node?.altText || post.title
+  const featuredImageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
+  const featuredImageAlt = getImageAlt(post)
 
   return (
     <>
@@ -382,8 +368,8 @@ export default async function PostPage({ params }: Props) {
             {post.featuredImage && (
               <div className="not-prose mb-10 overflow-hidden rounded-xl">
                 <Image
-                  src={featuredImageUrl} // Uses proxied URL
-                  alt={featuredImageAlt} // Uses WordPress alt text
+                  src={featuredImageUrl}
+                  alt={featuredImageAlt}
                   className="w-full rounded-xl object-cover"
                   width={800}
                   height={450}
@@ -391,7 +377,7 @@ export default async function PostPage({ params }: Props) {
                   priority
                   quality={90}
                   sizes="(max-width: 1280px) 100vw, 800px"
-                  unoptimized={false} // Can optimize since we're proxying
+                  unoptimized={featuredImageUrl.includes('/api/image-proxy')}
                 />
               </div>
             )}
@@ -483,14 +469,14 @@ export default async function PostPage({ params }: Props) {
                   href="/learn"
                   className="group block rounded-lg bg-gray-50 p-6 transition-colors hover:bg-gray-100"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-600">
+                  <h3 className="subheader-gradient text-lg group-hover:text-primary-80">
                     Browse All Articles
                   </h3>
                   <p className="mt-2 text-gray-600">
                     Explore our complete library of technical content marketing
                     resources and developer relations insights.
                   </p>
-                  <span className="mt-4 inline-flex items-center font-medium text-blue-600">
+                  <span className="mt-4 inline-flex items-center font-medium text-primary">
                     View all posts
                     <svg
                       className="ml-2 h-4 w-4"

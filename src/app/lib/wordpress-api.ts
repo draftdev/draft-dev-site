@@ -1,4 +1,4 @@
-// app/lib/wordpress-api.ts - COMPLETE FILE
+// app/lib/wordpress-api.ts - Complete file for API routes
 import { fetchGraphQL } from './wordpress'
 
 const ALL_POSTS_QUERY = `
@@ -24,6 +24,9 @@ query AllPosts($first: Int, $after: String) {
       featuredImage {
         node {
           sourceUrl
+          altText
+          id
+          title
         }
       }
       author {
@@ -73,7 +76,16 @@ export async function getWpPostsForApi(
       excerpt: post.excerpt,
       date: post.date,
       modified: post.modified,
-      featuredImage: post.featuredImage,
+      featuredImage: post.featuredImage
+        ? {
+            node: {
+              sourceUrl: post.featuredImage.node.sourceUrl,
+              altText: post.featuredImage.node.altText,
+              id: post.featuredImage.node.id,
+              title: post.featuredImage.node.title,
+            },
+          }
+        : undefined,
       author: post.author?.node
         ? {
             node: post.author.node,
