@@ -25,6 +25,12 @@ interface Post {
     }
   }
   originalAuthor?: string | null
+  // ADD YOAST FIELDS:
+  seoTitle?: string
+  seoDesc?: string
+  seoKeyword?: string
+  ogDesc?: string
+  twitterDesc?: string
 }
 
 interface PageInfo {

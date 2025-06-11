@@ -1,3 +1,4 @@
+// app/lib/wordpress-api.ts - COMPLETE FILE
 import { fetchGraphQL } from './wordpress'
 
 const ALL_POSTS_QUERY = `
@@ -17,8 +18,9 @@ query AllPosts($first: Int, $after: String) {
           name
         }
       }
-      excerpt
+      excerpt(format: RENDERED)
       date
+      modified
       featuredImage {
         node {
           sourceUrl
@@ -33,10 +35,17 @@ query AllPosts($first: Int, $after: String) {
         }
       }
       originalAuthor: metaValue(key: "original_author")
+      # Yoast SEO fields
+      seoTitle: metaValue(key: "_yoast_wpseo_title")
+      seoDesc: metaValue(key: "_yoast_wpseo_metadesc")
+      seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
+      ogDesc: metaValue(key: "_yoast_wpseo_opengraph-description")
+      twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
     }
   }
 }
 `
+
 export async function getWpPostsForApi(
   first = 10,
   after: string | null = null,
@@ -63,6 +72,7 @@ export async function getWpPostsForApi(
       categories: post.categories?.nodes || [],
       excerpt: post.excerpt,
       date: post.date,
+      modified: post.modified,
       featuredImage: post.featuredImage,
       author: post.author?.node
         ? {
@@ -70,6 +80,12 @@ export async function getWpPostsForApi(
           }
         : undefined,
       originalAuthor: post.originalAuthor || null,
+      // Yoast SEO fields
+      seoTitle: post.seoTitle || null,
+      seoDesc: post.seoDesc || null,
+      seoKeyword: post.seoKeyword || null,
+      ogDesc: post.ogDesc || null,
+      twitterDesc: post.twitterDesc || null,
     }))
 
     return {

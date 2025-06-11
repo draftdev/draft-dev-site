@@ -1,31 +1,34 @@
-import { getWpPosts } from '@/app/lib/wordpress'
-import { NextResponse } from 'next/server'
+// app/api/wordpress/route.ts
+import { getWpPostsForApi } from '@/app/lib/wordpress-api'
+import { NextRequest, NextResponse } from 'next/server'
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { after, first = 10, currentPage = 2 } = body
+    const { after, first = 10, currentPage = 1 } = body
 
     if (!after) {
       return NextResponse.json(
-        { error: 'Missing cursor parameter' },
+        { error: 'Missing required parameter: after' },
         { status: 400 },
       )
     }
 
-    const { posts, pageInfo } = await getWpPosts(first, after, currentPage)
+    const result = await getWpPostsForApi(first, after, currentPage)
 
-    // Return clean response
-    return NextResponse.json({
-      posts,
-      pageInfo,
+    return NextResponse.json(result, {
+      headers: {
+        'Cache-Control':
+          'public, max-age=300, s-maxage=300, stale-while-revalidate=150',
+      },
     })
   } catch (error) {
-    console.error('WordPress API error:', error)
+    console.error('API Route Error:', error)
     return NextResponse.json(
-      { error: 'Failed to fetch posts', details: String(error) },
+      { error: 'Failed to fetch posts' },
       { status: 500 },
     )
   }
