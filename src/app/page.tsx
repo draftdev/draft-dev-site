@@ -1,4 +1,4 @@
-// app/page.tsx - Fixed homepage Open Graph
+// app/page.tsx - Simplified homepage (metadata handled by layout)
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
@@ -8,50 +8,6 @@ import How from '@/components/page-components/how'
 import SinglePricing from '@/components/page-components/resources/single-pricing'
 import What from '@/components/page-components/what'
 import Why from '@/components/page-components/why'
-import type { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Content Creation Agency for Technical Audiences - Draft.dev',
-  description:
-    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies build trust, drive awareness, and capture leads.',
-
-  openGraph: {
-    type: 'website',
-    url: 'https://draft.dev',
-    siteName: 'Draft.dev',
-    locale: 'en_US',
-    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
-    description:
-      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies build trust, drive awareness, and capture leads.',
-    images: [
-      {
-        url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Draft.dev Technical Content Creation Agency',
-      },
-    ],
-  },
-
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
-    description:
-      'Technical content marketing agency helping Marketing and Developer Relations teams build trust and drive awareness.',
-    images: ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
-    creator: '@draftdev',
-    site: '@draftdev',
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  alternates: {
-    canonical: 'https://draft.dev',
-  },
-}
 
 export default function Home() {
   return (

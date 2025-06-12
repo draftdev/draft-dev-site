@@ -5,6 +5,7 @@ import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
+import { headers } from 'next/headers'
 import { Suspense } from 'react'
 
 const DynamicNavbar = dynamic(
@@ -44,17 +45,20 @@ const firaCode = Fira_Code({
 })
 
 export async function generateMetadata(): Promise<Metadata> {
+  const headersList = headers()
+  const pathname = headersList.get('x-pathname') || '/'
+
+  // Generate page-specific metadata based on URL
+  const pageMetadata = getPageMetadata(pathname)
+
   return {
     metadataBase: new URL('https://draft.dev'),
     title: {
       template: '%s - Draft.dev',
-      default:
-        'Technical Content Marketing Agency for Developer-Focused Companies - Draft.dev',
+      default: pageMetadata.title,
     },
-    description:
-      'We help Marketing and Developer Relations teams in tech companies drive awareness, capture leads, and build trust through expert technical content created by subject matter experts.',
-    keywords:
-      'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing, DevOps content, B2B SaaS marketing',
+    description: pageMetadata.description,
+    keywords: pageMetadata.keywords,
     authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
     creator: 'Draft.dev',
     publisher: 'Draft.dev',
@@ -72,30 +76,32 @@ export async function generateMetadata(): Promise<Metadata> {
 
     openGraph: {
       type: 'website',
-      url: 'https://draft.dev',
+      url: `https://draft.dev${pathname}`,
       siteName: 'Draft.dev',
       locale: 'en_US',
-      title: 'Technical Content Marketing Agency - Draft.dev',
-      description:
-        'Expert technical content creation for developer-focused companies. 300+ subject matter experts, 100+ clients, 3000+ published pieces.',
+      title: pageMetadata.title,
+      description: pageMetadata.description,
       images: [
         {
-          url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
+          url: pageMetadata.image,
           width: 1200,
           height: 630,
-          alt: 'Draft.dev Technical Content Creation Agency',
+          alt: pageMetadata.imageAlt,
         },
       ],
     },
 
     twitter: {
       card: 'summary_large_image',
-      title: 'Technical Content Marketing Agency - Draft.dev',
-      description:
-        'Expert technical content creation for developer-focused companies by subject matter experts.',
+      title: pageMetadata.title,
+      description: pageMetadata.description,
+      images: [pageMetadata.image],
       creator: '@draftdev',
       site: '@draftdev',
-      images: ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
+    },
+
+    alternates: {
+      canonical: `https://draft.dev${pathname}`,
     },
 
     icons: {
@@ -120,6 +126,81 @@ export async function generateMetadata(): Promise<Metadata> {
     category: 'Technology',
     classification: 'Business',
   }
+}
+
+function getPageMetadata(pathname: string) {
+  const defaultImage =
+    'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
+
+  const pageConfigs = {
+    '/': {
+      title:
+        'Technical Content Marketing Agency for Developer-Focused Companies - Draft.dev',
+      description:
+        'We help Marketing and Developer Relations teams in tech companies drive awareness, capture leads, and build trust through expert technical content created by subject matter experts.',
+      keywords:
+        'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
+      image: defaultImage,
+      imageAlt: 'Draft.dev Technical Content Creation Agency',
+    },
+    '/about': {
+      title: 'About Draft.dev - Technical Content Marketing Experts',
+      description:
+        "Learn about Draft.dev's mission to help tech companies create authentic technical content that resonates with developers through our network of 300+ subject matter experts.",
+      keywords:
+        'about draft.dev, technical content marketing team, developer relations experts, content marketing agency',
+      image: defaultImage,
+      imageAlt: 'About Draft.dev Technical Content Marketing Team',
+    },
+    '/call': {
+      title: 'Schedule a Discovery Call - Draft.dev',
+      description:
+        'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
+      keywords:
+        'technical content marketing consultation, developer content strategy, draft.dev discovery call',
+      image: defaultImage,
+      imageAlt: 'Schedule a Discovery Call with Draft.dev',
+    },
+    '/write': {
+      title: 'Write for Draft.dev - Join Our Technical Writing Network',
+      description:
+        "Join our network of 300+ technical experts and get paid to write about cutting-edge technologies. We're looking for experienced developers and technical professionals.",
+      keywords:
+        'technical writing jobs, freelance developer writing, write for draft.dev, technical content creation',
+      image: defaultImage,
+      imageAlt: 'Write for Draft.dev - Technical Writing Opportunities',
+    },
+    '/case-studies': {
+      title: 'Case Studies - Draft.dev Success Stories',
+      description:
+        'See how Draft.dev has helped tech companies drive awareness, capture leads, and build trust through expert technical content marketing campaigns.',
+      keywords:
+        'draft.dev case studies, technical content marketing results, developer relations success stories',
+      image: defaultImage,
+      imageAlt: 'Draft.dev Case Studies and Success Stories',
+    },
+    '/resources': {
+      title: 'Technical Content Marketing Resources - Draft.dev',
+      description:
+        'Free resources to help you create better technical content, improve your developer relations, and build authority in technical communities.',
+      keywords:
+        'technical content marketing resources, developer relations guides, content strategy templates',
+      image: defaultImage,
+      imageAlt: 'Technical Content Marketing Resources',
+    },
+    '/learn': {
+      title: 'Technical Content Marketing Blog - Draft.dev',
+      description:
+        'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
+      keywords:
+        'technical content marketing blog, developer relations insights, software development content',
+      image: defaultImage,
+      imageAlt: 'Draft.dev Technical Content Marketing Blog',
+    },
+  }
+
+  // Return specific page config or default to homepage
+  return pageConfigs[pathname as keyof typeof pageConfigs] || pageConfigs['/']
 }
 
 export const viewport = {
