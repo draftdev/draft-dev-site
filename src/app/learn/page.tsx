@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 import LoadMorePostsClient from './load-more-posts-client'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Marketing Blog - Draft.dev',
+  title: 'Technical Content Marketing Blog',
   description:
     'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
   keywords:
@@ -83,6 +83,7 @@ const POSTS_PER_PAGE = 10
 export default async function BlogPage() {
   const { posts, pageInfo } = await getWpPosts(POSTS_PER_PAGE, null, 1)
 
+  // Keep your existing schemas
   const blogSchema = generateBlogSchema(posts)
   const websiteSchema = generateWebSiteSchema()
 
