@@ -313,7 +313,7 @@ export function generateOrganizationSchema() {
 
     numberOfEmployees: {
       '@type': 'QuantitativeValue',
-      value: '50-100',
+      value: '50',
     },
 
     naics: '541613',
