@@ -227,7 +227,7 @@ function getPageMetadata(pathname: string) {
     },
 
     '/capture-leads': {
-      title: 'Capture Leads with Technical Content - Draft.dev',
+      title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
       description:
         "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
       keywords:
@@ -282,7 +282,7 @@ function getPageMetadata(pathname: string) {
         'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
       keywords:
         'technical video content, developer video tutorials, technical demos, video marketing for developers',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/video_tutorials_og_draft_dev.jpg',
       imageAlt: 'Technical Video Tutorials and Content',
     },
 
@@ -292,7 +292,7 @@ function getPageMetadata(pathname: string) {
         'Expert-written technical blog posts that resonate with developers. See samples of our technical content and learn about our blog writing services.',
       keywords:
         'technical blog posts, developer blog content, technical writing services, engineering blog posts',
-      image: '/draft/og/learn_og_draft_dev.jpg',
+      image: '/draft/og/blog_posts_og_draft_dev.jpg',
       imageAlt: 'Technical Blog Posts and Content',
     },
 
@@ -302,7 +302,7 @@ function getPageMetadata(pathname: string) {
         "Join our network of 300+ technical experts and get paid to write about cutting-edge technologies. We're looking for experienced developers and technical professionals.",
       keywords:
         'technical writing jobs, freelance developer writing, write for draft.dev, technical content creation, technical writer opportunities',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/write_og_draft_dev.jpg',
       imageAlt: 'Write for Draft.dev - Technical Writing Opportunities',
     },
 
@@ -312,17 +312,17 @@ function getPageMetadata(pathname: string) {
         "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
       keywords:
         'draft.dev privacy policy, privacy protection, data security, personal information policy',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/privacy_og_draft_dev.jpg',
       imageAlt: 'Draft.dev Privacy Policy',
     },
 
     '/newsletter': {
       title: 'Technical Content Marketing Newsletter - Draft.dev',
       description:
-        'Subscribe to our monthly newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
+        'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
       keywords:
         'technical content marketing newsletter, developer marketing newsletter, content marketing tips, technical writing insights',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/newsletter_og_draft_dev.jpg',
       imageAlt: 'Technical Content Marketing Newsletter',
     },
 
@@ -332,7 +332,7 @@ function getPageMetadata(pathname: string) {
         'Join our educational webinars on technical content marketing, developer relations, and creating content that resonates with technical audiences.',
       keywords:
         'technical content marketing webinars, developer marketing webinars, content strategy webinars, technical writing education',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/webinars_og_draft_dev.jpg',
       imageAlt: 'Technical Content Marketing Webinars',
     },
 
@@ -342,7 +342,7 @@ function getPageMetadata(pathname: string) {
         'Get inspired with technical content ideas and topics that resonate with developer audiences. Discover trending topics in technical content marketing.',
       keywords:
         'technical content ideas, developer content topics, technical blog ideas, content inspiration for developers',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/ideas_og_draft_dev.jpg',
       imageAlt: 'Technical Content Ideas and Inspiration',
     },
 
@@ -352,28 +352,28 @@ function getPageMetadata(pathname: string) {
         'Download our Technical Marketing Playbook: Learn everything you need to produce high-quality technical marketing content.',
       keywords:
         'technical content marketing playbook, content marketing guide, technical writing resources, developer marketing playbook',
-      image: '/draft/og/main_og_draft_dev.jpg',
-      imageAlt: 'Technical Content Marketing Playbook',
+      image: '/draft/og/playbook_og_draft_dev.jpg',
+      imageAlt: 'Technical Content Marketing eBook',
     },
 
     '/orchestrate-technical-content': {
-      title: 'Orchestrate Technical Content - Draft.dev',
+      title: 'How to Orchestrate Technical Content - Draft.dev',
       description:
         'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
       keywords:
         'orchestrate technical content, content orchestration, technical content management, content strategy execution',
-      image: '/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/orchestrate_og_draft_dev.jpg',
       imageAlt: 'Orchestrate Technical Content at Scale',
     },
 
     '/developer-marketing': {
-      title: 'Developer Marketing Services - Draft.dev',
+      title: 'Building and Scaling Developer Marketing - Draft.dev',
       description:
         'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
       keywords:
         'developer marketing, marketing to developers, developer relations marketing, technical audience marketing',
-      image: '/draft/og/main_og_draft_dev.jpg',
-      imageAlt: 'Developer Marketing Services',
+      image: '/draft/og/developer_marketing_og_draft_dev.jpg',
+      imageAlt: 'Developer Marketing eBook',
     },
 
     // Individual Case Studies
