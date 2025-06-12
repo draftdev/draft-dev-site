@@ -1,4 +1,4 @@
-// app/learn/page.tsx
+// app/learn/page.tsx - Fixed blog listing Open Graph
 import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
 import { getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
@@ -12,11 +12,15 @@ export const metadata: Metadata = {
     'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
   keywords:
     'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
+
   openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/learn',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
     title: 'Draft.dev Blog - Technical Content Marketing Resources',
     description:
       'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
-    type: 'website',
     images: [
       {
         url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
@@ -26,6 +30,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'Draft.dev Blog - Technical Content Marketing Resources',
@@ -35,6 +40,7 @@ export const metadata: Metadata = {
     creator: '@draftdev',
     site: '@draftdev',
   },
+
   alternates: {
     canonical: 'https://draft.dev/learn',
     types: {
@@ -46,6 +52,7 @@ export const metadata: Metadata = {
       ],
     },
   },
+
   robots: {
     index: true,
     follow: true,
@@ -74,24 +81,19 @@ export const revalidate = 0
 const POSTS_PER_PAGE = 10
 
 export default async function BlogPage() {
-  // Server-render the first 10 posts
   const { posts, pageInfo } = await getWpPosts(POSTS_PER_PAGE, null, 1)
 
-  // Generate schemas for the blog listing
   const blogSchema = generateBlogSchema(posts)
   const websiteSchema = generateWebSiteSchema()
 
   return (
     <>
-      {/* Blog Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(blogSchema),
         }}
       />
-
-      {/* Website Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

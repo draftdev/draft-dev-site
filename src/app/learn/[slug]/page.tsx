@@ -1,4 +1,4 @@
-// app/learn/[slug]/page.tsx - No proxy implementation
+// app/learn/[slug]/page.tsx - Fixed Open Graph implementation
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
@@ -51,16 +51,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const imageAlt = getImageAlt(post)
 
+  // CRITICAL: Construct the complete URL for this specific post
+  const postUrl = `https://draft.dev/learn/${params.slug}`
+
   return {
     title: `${post.title} - Draft.dev`,
     description,
     keywords:
       post.customFields?.targetKeywords?.join(', ') || post.seo?.focuskw,
     authors: [{ name: displayAuthor, url: 'https://draft.dev/about' }],
+
+    // ✅ FIXED: Complete Open Graph with all missing critical tags
     openGraph: {
+      type: 'article',
+      url: postUrl, // ✅ Fix: Specific page URL instead of homepage
+      siteName: 'Draft.dev', // ✅ Fix: Add missing og:site_name
+      locale: 'en_US', // ✅ Fix: Add missing og:locale
       title: post.title,
       description: post.seo?.opengraphDescription || description,
-      type: 'article',
       publishedTime: post.date,
       modifiedTime: post.modified || post.date,
       authors: [displayAuthor],
@@ -77,6 +85,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
+
     twitter: {
       card: 'summary_large_image',
       title: post.title,
@@ -87,9 +96,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       creator: '@draftdev',
       site: '@draftdev',
     },
+
     alternates: {
-      canonical: `https://draft.dev/learn/${params.slug}`,
+      canonical: postUrl, // ✅ Canonical URL matches og:url
     },
+
     robots: {
       index: true,
       follow: true,
@@ -112,7 +123,7 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  // Generate enhanced schemas
+  // Generate enhanced schemas (keep your existing schema work)
   const articleSchema = generateArticleSchema(post, slug)
   const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
 
@@ -121,10 +132,8 @@ export default async function PostPage({ params }: Props) {
       const { src, alt } = domNode.attribs
       if (!src) return undefined
 
-      // Use direct image URL (no proxy)
       const imageUrl = getImageUrl(src)
 
-      // For content images, use optimized dimensions
       return (
         <div className="my-6">
           <Image
@@ -135,7 +144,6 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto rounded-lg object-cover"
             quality={85}
             sizes="(max-width: 768px) 100vw, 700px"
-            // No unoptimized prop needed since we're not using proxy
           />
         </div>
       )
@@ -201,29 +209,24 @@ export default async function PostPage({ params }: Props) {
       sanitizedContent.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200,
     )
 
-  // Get direct image URL for featured image (no proxy)
   const featuredImageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const featuredImageAlt = getImageAlt(post)
 
   return (
     <>
-      {/* Enhanced Article Schema */}
+      {/* Keep your existing schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(articleSchema),
         }}
       />
-
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-
-      {/* Add FAQ Schema if FAQs exist */}
       {post.customFields?.faqQuestions &&
         post.customFields.faqQuestions.length > 0 && (
           <script
@@ -342,7 +345,6 @@ export default async function PostPage({ params }: Props) {
                   <span>{readingTime} min read</span>
                 </div>
 
-                {/* Category if available */}
                 {post.categories?.[0] && (
                   <div className="flex items-center gap-2">
                     <svg
@@ -377,7 +379,6 @@ export default async function PostPage({ params }: Props) {
                   priority
                   quality={90}
                   sizes="(max-width: 1280px) 100vw, 800px"
-                  // No unoptimized prop needed since we're not using proxy
                 />
               </div>
             )}
@@ -387,7 +388,7 @@ export default async function PostPage({ params }: Props) {
               {parse(sanitizedContent, { replace: transform })}
             </div>
 
-            {/* FAQ Section if available */}
+            {/* FAQ Section */}
             {post.customFields?.faqQuestions &&
               post.customFields.faqQuestions.length > 0 && (
                 <div className="not-prose mt-16">

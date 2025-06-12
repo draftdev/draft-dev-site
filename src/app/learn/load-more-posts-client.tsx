@@ -134,7 +134,6 @@ export default function LoadMorePostsClient({
                     priority={index < 3}
                     quality={80}
                     sizes="(max-width: 768px) 100vw, 25vw"
-                    // No unoptimized prop needed since we're not using proxy
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </Link>

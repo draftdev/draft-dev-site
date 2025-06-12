@@ -1,48 +1,35 @@
+// app/api/wordpress/route.ts
+import { getWpPostsForApi } from '@/app/lib/wordpress-api'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
-export async function GET(request: NextRequest) {
-  const url = request.nextUrl.searchParams.get('url')
-
-  if (!url) {
-    return new NextResponse('Missing URL parameter', { status: 400 })
-  }
-
+export async function POST(request: NextRequest) {
   try {
-    const auth = Buffer.from(
-      `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
-    ).toString('base64')
+    const body = await request.json()
+    const { after, first = 10, currentPage = 1 } = body
 
-    const response = await fetch(decodeURIComponent(url), {
-      headers: {
-        Authorization: `Basic ${auth}`,
-        ...(process.env.WORDPRESS_PRIVACY_PASSWORD
-          ? { 'X-WP-Privacy': process.env.WORDPRESS_PRIVACY_PASSWORD }
-          : {}),
-      },
-      next: { revalidate: 86400 }, // Cache for 24 hours at the fetch level
-    })
-
-    if (!response.ok) {
-      console.error(`Failed to fetch image: ${response.status} for URL: ${url}`)
-      return new NextResponse(`Failed to fetch image: ${response.status}`, {
-        status: response.status,
-      })
+    if (!after) {
+      return NextResponse.json(
+        { error: 'Missing required parameter: after' },
+        { status: 400 },
+      )
     }
 
-    const buffer = await response.arrayBuffer()
-    const contentType = response.headers.get('content-type') || 'image/jpeg'
+    const result = await getWpPostsForApi(first, after, currentPage)
 
-    return new NextResponse(buffer, {
+    return NextResponse.json(result, {
       headers: {
-        'Content-Type': contentType,
         'Cache-Control':
-          'public, max-age=86400, s-maxage=86400, stale-while-revalidate=43200',
+          'public, max-age=300, s-maxage=300, stale-while-revalidate=150',
       },
     })
   } catch (error) {
-    console.error('Image proxy error:', error)
-    return new NextResponse('Failed to fetch image', { status: 500 })
+    console.error('API Route Error:', error)
+    return NextResponse.json(
+      { error: 'Failed to fetch posts' },
+      { status: 500 },
+    )
   }
 }
