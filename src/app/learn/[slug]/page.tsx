@@ -1,4 +1,3 @@
-// app/learn/[slug]/page.tsx - Fixed Open Graph implementation
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
@@ -51,22 +50,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const imageAlt = getImageAlt(post)
 
-  // CRITICAL: Construct the complete URL for this specific post
   const postUrl = `https://draft.dev/learn/${params.slug}`
 
   return {
-    title: `${post.title} - Draft.dev`,
+    title: post.title,
     description,
     keywords:
       post.customFields?.targetKeywords?.join(', ') || post.seo?.focuskw,
     authors: [{ name: displayAuthor, url: 'https://draft.dev/about' }],
 
-    // ✅ FIXED: Complete Open Graph with all missing critical tags
     openGraph: {
       type: 'article',
-      url: postUrl, // ✅ Fix: Specific page URL instead of homepage
-      siteName: 'Draft.dev', // ✅ Fix: Add missing og:site_name
-      locale: 'en_US', // ✅ Fix: Add missing og:locale
+      url: postUrl,
+      siteName: 'Draft.dev',
+      locale: 'en_US',
       title: post.title,
       description: post.seo?.opengraphDescription || description,
       publishedTime: post.date,
@@ -98,7 +95,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
 
     alternates: {
-      canonical: postUrl, // ✅ Canonical URL matches og:url
+      canonical: postUrl,
     },
 
     robots: {
