@@ -140,7 +140,7 @@ function getPageMetadata(pathname: string) {
         'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
       keywords:
         'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
-      image: '/public/draft/og/main_og_draft_dev.jpg',
+      image: '/draft/og/main_og_draft_dev.jpg',
       imageAlt: 'Draft.dev Technical Content Creation Agency',
     },
 
