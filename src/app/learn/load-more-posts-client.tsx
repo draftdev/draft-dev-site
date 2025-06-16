@@ -18,6 +18,7 @@ interface Post {
   }
   categories?: { id: string; name: string }[]
   date?: string
+  modified?: string
   author?: {
     node: {
       name: string
@@ -27,11 +28,26 @@ interface Post {
     }
   }
   originalAuthor?: string | null
+  // Yoast SEO fields - these should be at root level
   seoTitle?: string
   seoDesc?: string
   seoKeyword?: string
   ogDesc?: string
   twitterDesc?: string
+  customFields?: {
+    faqQuestions?: Array<{
+      question: string
+      answer: string
+    }>
+    targetKeywords?: string[]
+    authorCredentials?: string
+    readingTime?: number
+    expertSources?: string[]
+    videoUrl?: string
+    authorLinkedIn?: string
+    authorTwitter?: string
+    relatedTopics?: string[]
+  }
 }
 
 interface PageInfo {
@@ -92,7 +108,6 @@ export default function LoadMorePostsClient({
 
       startTransition(() => {
         setPosts((prevPosts) => {
-          // Ensure we don't add duplicate posts
           const existingIds = new Set(prevPosts.map((p) => p.id))
           const newPosts = data.posts.filter(
             (p: Post) => !existingIds.has(p.id),

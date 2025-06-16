@@ -10,10 +10,8 @@ import What from '@/components/page-components/what'
 import Why from '@/components/page-components/why'
 
 export default function Home() {
-  // Service schema for homepage
   const serviceSchema = generateServiceSchema()
 
-  // Sample testimonials for review schema
   const testimonials = [
     {
       quote:
@@ -21,9 +19,70 @@ export default function Home() {
       name: 'Rich Burroughs',
       role: 'Developer Advocate',
       company: 'Loft Labs',
-      rating: 5,
     },
-    // Add more testimonials from your testimonials component
+    {
+      quote:
+        "It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team.",
+      name: 'Adam Gordon Bell',
+      role: 'Director of Developer Relations',
+      company: 'Earthly',
+    },
+    {
+      quote:
+        'Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate.',
+      name: 'Henry Poydar',
+      role: 'Founder & CEO',
+      company: 'Status Hero',
+    },
+    {
+      quote:
+        'Content is one of the biggest and best channels you can invest in. And if you want to quickly scale without compromising the quality and expertise, Draft.dev is the way to go.',
+      name: 'Rahul Patwardhan',
+      role: 'Senior Director, Demand Generation',
+      company: 'Loft Labs',
+    },
+    {
+      quote:
+        "I was thoroughly impressed by the smooth onboarding and ability to adapt to our product suite. Draft.dev's attention to detail and dedication to aligning content with our brand have significantly impacted our developer-focused content strategy. The high-quality technical blog posts have been well-received internally, and we're excited to see the full impact on our content program.",
+      name: 'Emily Blitstein',
+      role: 'Sr. Content Marketing Manager',
+      company: 'Sinch Mailgun',
+    },
+    {
+      quote:
+        'Draft.dev is our go-to for practical, well-written content that actually resonates with technical audiences and helps us inspire the developer community. It has been invaluable (for our internal team and my sanity) to have their brilliant writers, editors, and PMs in our content corner!',
+      name: 'Jenny Medeiros',
+      role: 'Head of Content',
+      company: 'Redpanda',
+    },
+    {
+      quote:
+        'Partnering with Draft.dev has accelerated our technical content output while also extending the bandwidth of our developer relations team to focus more on core product activities. It is truly high-quality content written by devs for devs, helping devs in the process.',
+      name: 'Abhishek Iyer',
+      role: 'Director, Marketing and Growth',
+      company: 'Descope',
+    },
+    {
+      quote:
+        'Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials. We’re constantly iterating to build the best educational materials for developer security and Draft.dev has been instrumental in helping us realize these ambitions.',
+      name: 'Randall Degges',
+      role: 'Head of Developer & Security Relations',
+      company: 'Snyk',
+    },
+    {
+      quote:
+        'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
+      name: 'Robert Gibb',
+      role: 'Content Marketing',
+      company: 'fabric',
+    },
+    {
+      quote:
+        "We've seen amazing results with the technical content produced from the team at Draft.dev. The attention to technical detail from start to finish has been a huge addition to our content.",
+      name: 'Tony Chan',
+      role: 'Co-Founder & CEO',
+      company: 'CloudForecast',
+    },
   ]
 
   return (

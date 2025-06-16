@@ -3,7 +3,7 @@ export interface Post {
   slug: string
   title: string
   categories: { id: string; name: string }[]
-  content?: string
+  content?: string // Made optional since some components don't need content
   date: string
   featuredImage?: {
     node: {
@@ -28,6 +28,7 @@ export interface Post {
   seoKeyword?: string
   ogDesc?: string
   twitterDesc?: string
+  // Enhanced custom fields for AI optimization
   customFields?: {
     faqQuestions?: Array<{
       question: string
@@ -39,10 +40,12 @@ export interface Post {
     expertSources?: string[]
     videoUrl?: string
     authorLinkedIn?: string
+    authorTwitter?: string
     relatedTopics?: string[]
   }
 }
 
+// Shared constants to eliminate redundancy
 const PUBLISHER_REF = {
   '@type': 'Organization',
   '@id': 'https://draft.dev/#organization',
@@ -76,6 +79,7 @@ const TECHNICAL_AUDIENCE = {
   audienceType: 'Technical Professionals',
 } as const
 
+// Consolidated expertise keywords (removed duplicates)
 const CORE_EXPERTISE = [
   'Technical Content Marketing',
   'Developer Relations',
@@ -88,20 +92,9 @@ const CORE_EXPERTISE = [
   'Software Engineering Content',
   'Data Engineering Content',
   'B2B SaaS Marketing',
-  'Technical Content Strategy',
-  'Technical Content Creation',
-  'Technical Content Promotion',
-  'Content Marketing',
-  'Content Strategy',
-  'B2B Lead Generation',
-  'B2B Demand Generation',
-  'B2B Tech Marketing',
-  'Thought Leadership Content',
-  'Developer Relations',
-  'DevRel',
-  'Dev Advocacy',
 ] as const
 
+// Helper to make URLs absolute for schema
 function makeAbsoluteUrl(relativeUrl: string): string {
   if (relativeUrl.startsWith('http')) {
     return relativeUrl
@@ -109,6 +102,7 @@ function makeAbsoluteUrl(relativeUrl: string): string {
   return `https://draft.dev${relativeUrl}`
 }
 
+// Shared helper for image URL processing
 function getSchemaImageUrl(post: Post): string {
   const originalImageUrl = post.featuredImage?.node.sourceUrl
   return originalImageUrl
@@ -116,6 +110,7 @@ function getSchemaImageUrl(post: Post): string {
     : DEFAULT_IMAGE_URL
 }
 
+// AI-Optimized Person Author Schema
 export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
@@ -126,6 +121,9 @@ export function generatePersonAuthor(post: Post) {
   const baseAuthor = {
     '@type': 'Person',
     name: authorName,
+    jobTitle:
+      post.customFields?.authorCredentials || 'Technical Content Expert',
+    description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: PUBLISHER_REF,
     url: 'https://draft.dev/about',
     expertise: post.customFields?.targetKeywords || [
@@ -137,6 +135,9 @@ export function generatePersonAuthor(post: Post) {
   // Only add social links if they exist
   if (post.customFields?.authorLinkedIn) {
     const sameAs = [post.customFields.authorLinkedIn]
+    if (post.customFields?.authorTwitter) {
+      sameAs.push(post.customFields.authorTwitter)
+    }
     return { ...baseAuthor, sameAs }
   }
 
@@ -156,6 +157,7 @@ export function generateFAQSchema(
   }))
 }
 
+// Enhanced Article Schema with AI optimizations
 export function generateArticleSchema(post: Post, slug: string) {
   const wordCount = estimateWordCount(post.content)
   const readingTime =
@@ -211,6 +213,7 @@ export function generateArticleSchema(post: Post, slug: string) {
       'technical content marketing, developer relations',
   }
 
+  // Add optional fields only if they exist
   if (post.customFields?.targetKeywords) {
     articleSchema.expertise = post.customFields.targetKeywords
   }
@@ -233,6 +236,7 @@ export function generateArticleSchema(post: Post, slug: string) {
   return articleSchema
 }
 
+// Enhanced Blog Schema with more posts and AI optimization
 export function generateBlogSchema(posts: Post[]) {
   return {
     '@context': 'https://schema.org',
@@ -433,6 +437,48 @@ export function generateOrganizationSchema() {
   }
 }
 
+// Alternative: Standalone testimonial schema
+export function generateTestimonialSchema(
+  testimonials: Array<{
+    quote: string
+    name: string
+    role: string
+    company: string
+  }>,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://draft.dev/#testimonials',
+    name: 'Client Testimonials',
+    description:
+      'What our clients say about Draft.dev technical content marketing services',
+    itemListElement: testimonials.map((testimonial, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Quotation',
+        '@id': `https://draft.dev/#testimonial-${index}`,
+        text: testimonial.quote,
+        author: {
+          '@type': 'Person',
+          name: testimonial.name,
+          jobTitle: testimonial.role,
+          worksFor: {
+            '@type': 'Organization',
+            name: testimonial.company,
+          },
+        },
+        about: {
+          '@type': 'Organization',
+          '@id': 'https://draft.dev/#organization',
+        },
+      },
+    })),
+  }
+}
+
+// Service Schema for B2B optimization (used in homepage)
 export function generateServiceSchema() {
   return {
     '@context': 'https://schema.org',
@@ -490,6 +536,51 @@ export function generateServiceSchema() {
         },
       ],
     },
+  }
+}
+
+// Review Schema for testimonials and social proof
+export function generateReviewSchema(
+  testimonials: Array<{
+    quote: string
+    name: string
+    role: string
+    company: string
+    rating: number
+  }>,
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://draft.dev/#organization',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: testimonials.length.toString(),
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: testimonials.map((testimonial, index) => ({
+      '@type': 'Review',
+      '@id': `https://draft.dev/#review-${index}`,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: testimonial.rating.toString(),
+        bestRating: '5',
+        worstRating: '1',
+      },
+      author: {
+        '@type': 'Person',
+        name: testimonial.name,
+        jobTitle: testimonial.role,
+        worksFor: {
+          '@type': 'Organization',
+          name: testimonial.company,
+        },
+      },
+      reviewBody: testimonial.quote,
+      publisher: PUBLISHER_REF,
+    })),
   }
 }
 
@@ -557,4 +648,7 @@ function estimateWordCount(content: string): number {
   const textContent = content.replace(/<[^>]*>/g, ' ')
   const words = textContent.split(/\s+/).filter((word) => word.length > 0)
   return words.length
+}
+function generateOrganizationSchemaWithTestimonials() {
+  throw new Error('Function not implemented.')
 }
