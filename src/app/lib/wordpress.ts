@@ -175,6 +175,45 @@ query PostBySlug($slug: ID!) {
 }
 `
 
+// Lightweight query for schema posts only
+const SCHEMA_POSTS_QUERY = `
+query SchemaPostsQuery($first: Int, $after: String) {
+  posts(first: $first, after: $after, where: { status: PUBLISH }) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    nodes {
+      slug
+      title
+      date
+      excerpt(format: RENDERED)
+      featuredImage {
+        node {
+          sourceUrl
+        }
+      }
+      categories {
+        nodes {
+          name
+        }
+      }
+      # Only SEO fields needed for schema
+      seoDesc: metaValue(key: "_yoast_wpseo_metadesc")
+      seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
+      targetKeywords: metaValue(key: "target_keywords")
+      # Minimal author info
+      author {
+        node {
+          name
+        }
+      }
+      originalAuthor: metaValue(key: "original_author")
+    }
+  }
+}
+`
+
 function getAuthHeader() {
   const auth = Buffer.from(
     `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
@@ -394,3 +433,65 @@ export const getWpPost = cache(async (slug: string) => {
     return null
   }
 })
+
+// Lightweight function to fetch posts for schema only
+export const getSchemaPostsData = cache(
+  async (limit: number = 200): Promise<Post[]> => {
+    const allPosts: any[] = []
+    let hasNextPage = true
+    let endCursor = null
+
+    while (hasNextPage && allPosts.length < limit) {
+      try {
+        const data = await fetchGraphQL(SCHEMA_POSTS_QUERY, {
+          first: Math.min(50, limit - allPosts.length),
+          after: endCursor,
+        })
+
+        if (!data?.posts?.nodes) break
+
+        const formattedPosts = data.posts.nodes.map((post: any) => ({
+          slug: post.slug,
+          title: post.title,
+          date: post.date,
+          excerpt: post.excerpt || '',
+          seoDesc: post.seoDesc,
+          seoKeyword: post.seoKeyword,
+          featuredImage: post.featuredImage
+            ? {
+                node: {
+                  sourceUrl: post.featuredImage.node.sourceUrl,
+                },
+              }
+            : undefined,
+          categories: post.categories?.nodes || [],
+          author: post.author?.node
+            ? {
+                node: {
+                  name: post.author.node.name,
+                },
+              }
+            : undefined,
+          originalAuthor: post.originalAuthor || null,
+          customFields: post.targetKeywords
+            ? {
+                targetKeywords: post.targetKeywords
+                  .split(',')
+                  .map((k: string) => k.trim())
+                  .filter((k: string) => k.length > 0),
+              }
+            : undefined,
+        }))
+
+        allPosts.push(...formattedPosts)
+        hasNextPage = data.posts.pageInfo.hasNextPage
+        endCursor = data.posts.pageInfo.endCursor
+      } catch (error) {
+        console.error('Error fetching schema posts:', error)
+        break
+      }
+    }
+
+    return allPosts.slice(0, limit) // Ensure we don't exceed the limit
+  },
+)

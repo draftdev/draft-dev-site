@@ -90,6 +90,21 @@ function getSchemaImageUrl(post: Post): string {
     : DEFAULT_IMAGE_URL
 }
 
+function stripHtmlTags(html: string): string {
+  if (!html) return ''
+  // Remove HTML tags and decode HTML entities
+  return html
+    .replace(/<[^>]*>/g, '') // Remove HTML tags
+    .replace(/&nbsp;/g, ' ') // Replace non-breaking spaces
+    .replace(/&amp;/g, '&') // Decode ampersands
+    .replace(/&lt;/g, '<') // Decode less than
+    .replace(/&gt;/g, '>') // Decode greater than
+    .replace(/&quot;/g, '"') // Decode quotes
+    .replace(/&#39;/g, "'") // Decode apostrophes
+    .replace(/\s+/g, ' ') // Normalize whitespace
+    .trim() // Remove leading/trailing whitespace
+}
+
 export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
@@ -148,12 +163,16 @@ export function generateArticleSchema(post: Post, slug: string) {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
+  // Clean the description - strip HTML tags
+  const cleanDescription = stripHtmlTags(post.seoDesc || post.excerpt || '')
+
+  // Build the base schema
   const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `https://draft.dev/learn/${slug}#article`,
     headline: post.title,
-    description: post.seoDesc || post.excerpt || '',
+    description: cleanDescription,
 
     image: {
       '@type': 'ImageObject',
@@ -189,15 +208,17 @@ export function generateArticleSchema(post: Post, slug: string) {
       'technical content marketing, developer relations',
   }
 
+  // Add FAQ schema as mainEntity if FAQs exist
   if (post.customFields?.faqQuestions?.length) {
     articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
   }
 
+  // Add video schema as associated media if video exists
   if (post.customFields?.videoUrl) {
     articleSchema.video = {
       '@type': 'VideoObject',
       name: post.title,
-      description: post.seoDesc || post.excerpt || '',
+      description: cleanDescription,
       url: post.customFields.videoUrl,
       uploadDate: publishedDate,
       publisher: PUBLISHER_REF,
@@ -231,7 +252,7 @@ export function generateBlogSchema(posts: Post[]) {
       headline: post.title,
       url: `https://draft.dev/learn/${post.slug}`,
       datePublished: post.date ? new Date(post.date).toISOString() : undefined,
-      description: post.seoDesc || post.excerpt || '',
+      description: stripHtmlTags(post.seoDesc || post.excerpt || ''),
       keywords: post.customFields?.targetKeywords?.join(', ') || '',
       image: {
         '@type': 'ImageObject',
@@ -335,6 +356,9 @@ export function generateOrganizationSchema() {
       addressCountry: 'US',
       addressRegion: 'IL',
       addressLocality: 'Chicago',
+      // Optional: Add these if you want to remove warnings
+      // postalCode: '60601',
+      // streetAddress: '123 Main Street',
     },
 
     areaServed: 'Worldwide',
@@ -360,6 +384,7 @@ export function generateOrganizationSchema() {
       'https://en.wikipedia.org/wiki/Content_marketing',
     ],
 
+    // Expanded knowsAbout to include all expertise areas
     knowsAbout: [
       {
         '@type': 'Thing',
@@ -458,7 +483,7 @@ export function generateOrganizationSchema() {
       ],
     },
 
-    slogan: 'We are a Content Creation Agency for Technical Companies',
+    slogan: 'Technical Content Marketing by Subject Matter Experts',
   }
 }
 
@@ -592,6 +617,9 @@ export function generateReviewSchema(
     review: testimonials.map((testimonial, index) => ({
       '@type': 'Review',
       '@id': `https://draft.dev/#review-${index}`,
+      reviewRating: {
+        '@type': 'Rating',
+      },
       author: {
         '@type': 'Person',
         name: testimonial.name,
@@ -618,7 +646,7 @@ export function generateVideoSchema(
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name: title,
-    description: description,
+    description: stripHtmlTags(description),
     url: videoUrl,
     uploadDate: uploadDate || new Date().toISOString(),
     publisher: PUBLISHER_REF,

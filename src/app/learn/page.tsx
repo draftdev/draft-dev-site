@@ -1,6 +1,6 @@
-// app/learn/page.tsx - Fixed blog listing Open Graph
+// app/learn/page.tsx - Optimized with full schema
 import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
-import { getWpPosts } from '@/app/lib/wordpress'
+import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
 import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
@@ -77,14 +77,23 @@ function Header() {
 }
 
 export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 3600 // Revalidate every hour
 const POSTS_PER_PAGE = 10
+const SCHEMA_POST_LIMIT = 200 // Maximum posts to include in schema
 
 export default async function BlogPage() {
-  const { posts, pageInfo } = await getWpPosts(POSTS_PER_PAGE, null, 1)
+  // Fetch initial posts for UI rendering
+  const { posts: initialPosts, pageInfo } = await getWpPosts(
+    POSTS_PER_PAGE,
+    null,
+    1,
+  )
 
-  // Keep your existing schemas
-  const blogSchema = generateBlogSchema(posts)
+  // Fetch lightweight data for schema (all posts up to limit)
+  const schemaPostsData = await getSchemaPostsData(SCHEMA_POST_LIMIT)
+
+  // Generate schemas with all posts
+  const blogSchema = generateBlogSchema(schemaPostsData)
   const websiteSchema = generateWebSiteSchema()
 
   return (
@@ -105,8 +114,9 @@ export default async function BlogPage() {
       <div className="overflow-hidden">
         <Header />
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+          {/* Only render the initial 10 posts in the UI */}
           <LoadMorePostsClient
-            initialPosts={posts}
+            initialPosts={initialPosts}
             initialPageInfo={pageInfo}
           />
         </div>
