@@ -20,7 +20,7 @@ const posts: Post[] = [
     title: 'How to Orchestrate Technical Content to Drive Business',
     href: '/orchestrate-technical-content',
     description:
-      'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and how to transform your expertise into valuable gated assets that convert visitors into leads.',
+      'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and transform your expertise into valuable gated assets that convert visitors into leads.',
     imageUrl: '/site/med-landscape/orchestrate_thumb_draft_dev.jpg',
   },
   {
