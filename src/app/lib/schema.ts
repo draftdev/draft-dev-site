@@ -3,7 +3,7 @@ export interface Post {
   slug: string
   title: string
   categories: { id: string; name: string }[]
-  content: string
+  content?: string
   date: string
   featuredImage?: {
     node: {
@@ -28,7 +28,6 @@ export interface Post {
   seoKeyword?: string
   ogDesc?: string
   twitterDesc?: string
-  // Enhanced custom fields for AI optimization
   customFields?: {
     faqQuestions?: Array<{
       question: string
@@ -40,12 +39,69 @@ export interface Post {
     expertSources?: string[]
     videoUrl?: string
     authorLinkedIn?: string
-    authorTwitter?: string
     relatedTopics?: string[]
   }
 }
 
-// Helper to make URLs absolute for schema
+const PUBLISHER_REF = {
+  '@type': 'Organization',
+  '@id': 'https://draft.dev/#organization',
+} as const
+
+const DEFAULT_IMAGE_URL =
+  'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
+
+const CORE_TOPICS = [
+  {
+    '@type': 'Thing',
+    name: 'Technical Content Marketing',
+    sameAs: 'https://en.wikipedia.org/wiki/Content_marketing',
+    url: 'https://draft.dev/learn',
+  },
+  {
+    '@type': 'Thing',
+    name: 'Software Development',
+    url: 'https://draft.dev/learn',
+  },
+  {
+    '@type': 'Thing',
+    name: 'Developer Relations',
+    sameAs: 'https://en.wikipedia.org/wiki/Developer_relations',
+    url: 'https://draft.dev/learn',
+  },
+] as const
+
+const TECHNICAL_AUDIENCE = {
+  '@type': 'Audience',
+  audienceType: 'Technical Professionals',
+} as const
+
+const CORE_EXPERTISE = [
+  'Technical Content Marketing',
+  'Developer Relations',
+  'API Documentation',
+  'Technical Writing',
+  'Content Strategy',
+  'Developer Marketing',
+  'DevOps Content',
+  'Cloud Computing Content',
+  'Software Engineering Content',
+  'Data Engineering Content',
+  'B2B SaaS Marketing',
+  'Technical Content Strategy',
+  'Technical Content Creation',
+  'Technical Content Promotion',
+  'Content Marketing',
+  'Content Strategy',
+  'B2B Lead Generation',
+  'B2B Demand Generation',
+  'B2B Tech Marketing',
+  'Thought Leadership Content',
+  'Developer Relations',
+  'DevRel',
+  'Dev Advocacy',
+] as const
+
 function makeAbsoluteUrl(relativeUrl: string): string {
   if (relativeUrl.startsWith('http')) {
     return relativeUrl
@@ -53,41 +109,38 @@ function makeAbsoluteUrl(relativeUrl: string): string {
   return `https://draft.dev${relativeUrl}`
 }
 
-// AI-Optimized Person Author Schema
+function getSchemaImageUrl(post: Post): string {
+  const originalImageUrl = post.featuredImage?.node.sourceUrl
+  return originalImageUrl
+    ? makeAbsoluteUrl(originalImageUrl)
+    : DEFAULT_IMAGE_URL
+}
+
 export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
   if (!authorName || authorName === 'Draft.dev Team') {
-    return {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    }
+    return PUBLISHER_REF
   }
 
-  return {
+  const baseAuthor = {
     '@type': 'Person',
     name: authorName,
-    jobTitle:
-      post.customFields?.authorCredentials || 'Technical Content Expert',
-    description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
-    worksFor: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
+    worksFor: PUBLISHER_REF,
     url: 'https://draft.dev/about',
     expertise: post.customFields?.targetKeywords || [
       'Technical Content Marketing',
       'Software Development',
     ],
-    ...(post.customFields?.authorLinkedIn && {
-      sameAs: [
-        post.customFields.authorLinkedIn,
-        ...(post.customFields.authorTwitter
-          ? [post.customFields.authorTwitter]
-          : []),
-      ],
-    }),
   }
+
+  // Only add social links if they exist
+  if (post.customFields?.authorLinkedIn) {
+    const sameAs = [post.customFields.authorLinkedIn]
+    return { ...baseAuthor, sameAs }
+  }
+
+  return baseAuthor
 }
 
 export function generateFAQSchema(
@@ -103,7 +156,6 @@ export function generateFAQSchema(
   }))
 }
 
-// Enhanced Article Schema with AI optimizations
 export function generateArticleSchema(post: Post, slug: string) {
   const wordCount = estimateWordCount(post.content)
   const readingTime =
@@ -117,12 +169,7 @@ export function generateArticleSchema(post: Post, slug: string) {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
-  const originalImageUrl = post.featuredImage?.node.sourceUrl
-  const schemaImageUrl = originalImageUrl
-    ? makeAbsoluteUrl(originalImageUrl)
-    : 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
-
-  // Build the base schema as a mutable object
+  // Build the base schema
   const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -130,10 +177,9 @@ export function generateArticleSchema(post: Post, slug: string) {
     headline: post.title,
     description: post.seoDesc || post.excerpt || '',
 
-    // Simplified image schema
     image: {
       '@type': 'ImageObject',
-      url: schemaImageUrl,
+      url: getSchemaImageUrl(post),
       width: 1200,
       height: 630,
     },
@@ -147,13 +193,8 @@ export function generateArticleSchema(post: Post, slug: string) {
       '@id': `https://draft.dev/learn/${slug}`,
     },
 
-    // AI-optimized author schema
     author: generatePersonAuthor(post),
-
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
+    publisher: PUBLISHER_REF,
 
     articleSection: post.categories?.[0]?.name || 'Technical Content Marketing',
     wordCount: wordCount,
@@ -161,54 +202,23 @@ export function generateArticleSchema(post: Post, slug: string) {
     inLanguage: 'en-US',
     isAccessibleForFree: true,
 
-    // Simplified audience
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Technical Professionals',
-    },
+    audience: TECHNICAL_AUDIENCE,
+    about: CORE_TOPICS,
 
-    // Enhanced about with authority signals
-    about: [
-      {
-        '@type': 'Thing',
-        name: 'Technical Content Marketing',
-        sameAs: 'https://en.wikipedia.org/wiki/Content_marketing',
-        url: 'https://draft.dev/learn',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Software Development',
-        url: 'https://draft.dev/learn',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Developer Relations',
-        sameAs: 'https://en.wikipedia.org/wiki/Developer_relations',
-        url: 'https://draft.dev/learn',
-      },
-    ],
-
-    // Enhanced keywords for AI understanding
     keywords:
       post.customFields?.targetKeywords?.join(', ') ||
       post.seoKeyword ||
       'technical content marketing, developer relations',
   }
 
-  // Add expertise signals if available
   if (post.customFields?.targetKeywords) {
     articleSchema.expertise = post.customFields.targetKeywords
   }
 
-  // Add FAQ schema if available
-  if (
-    post.customFields?.faqQuestions &&
-    post.customFields.faqQuestions.length > 0
-  ) {
+  if (post.customFields?.faqQuestions?.length) {
     articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
   }
 
-  // Add video schema if video content exists
   if (post.customFields?.videoUrl) {
     articleSchema.video = {
       '@type': 'VideoObject',
@@ -216,17 +226,13 @@ export function generateArticleSchema(post: Post, slug: string) {
       description: post.seoDesc || post.excerpt || '',
       url: post.customFields.videoUrl,
       uploadDate: publishedDate,
-      publisher: {
-        '@type': 'Organization',
-        '@id': 'https://draft.dev/#organization',
-      },
+      publisher: PUBLISHER_REF,
     }
   }
 
   return articleSchema
 }
 
-// Enhanced Blog Schema with more posts and AI optimization
 export function generateBlogSchema(posts: Post[]) {
   return {
     '@context': 'https://schema.org',
@@ -238,84 +244,29 @@ export function generateBlogSchema(posts: Post[]) {
     url: 'https://draft.dev/learn',
     inLanguage: 'en-US',
 
-    // Enhanced keywords for AI discovery
     keywords:
       'technical content marketing, developer relations, software development tutorials, API documentation, technical writing, developer marketing, DevOps content',
 
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
+    publisher: PUBLISHER_REF,
+    audience: TECHNICAL_AUDIENCE,
+    about: CORE_TOPICS,
+    expertise: CORE_EXPERTISE,
 
-    // Simplified audience
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Technical Professionals',
-    },
-
-    // Enhanced about with authority signals
-    about: [
-      {
-        '@type': 'Thing',
-        name: 'Technical Content Marketing',
-        description:
-          'Strategies and best practices for marketing to technical audiences',
-        sameAs: 'https://en.wikipedia.org/wiki/Content_marketing',
+    blogPost: posts.slice(0, 200).map((post) => ({
+      '@type': 'BlogPosting',
+      '@id': `https://draft.dev/learn/${post.slug}#article`,
+      headline: post.title,
+      url: `https://draft.dev/learn/${post.slug}`,
+      datePublished: post.date ? new Date(post.date).toISOString() : undefined,
+      description: post.seoDesc || post.excerpt || '',
+      keywords: post.customFields?.targetKeywords?.join(', ') || '',
+      image: {
+        '@type': 'ImageObject',
+        url: getSchemaImageUrl(post),
       },
-      {
-        '@type': 'Thing',
-        name: 'Developer Relations',
-        description:
-          'Building relationships and community with software developers',
-        sameAs: 'https://en.wikipedia.org/wiki/Developer_relations',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Software Development',
-        description:
-          'Programming tutorials, best practices, and technical guides',
-      },
-    ],
-
-    // Add expertise array for AI understanding
-    expertise: [
-      'API Documentation',
-      'Technical Tutorials',
-      'Developer Marketing',
-      'Software Development Content',
-      'Technical Writing',
-      'Content Strategy',
-      'Developer Relations',
-    ],
-
-    // Increase to 20 posts for better AI understanding
-    blogPost: posts.slice(0, 20).map((post) => {
-      const originalImageUrl = post.featuredImage?.node.sourceUrl
-      const schemaImageUrl = originalImageUrl
-        ? makeAbsoluteUrl(originalImageUrl)
-        : 'https://draft.dev/site/med-landscape/write_draft_dev.jpg'
-
-      return {
-        '@type': 'BlogPosting',
-        '@id': `https://draft.dev/learn/${post.slug}#article`,
-        headline: post.title,
-        url: `https://draft.dev/learn/${post.slug}`,
-        datePublished: post.date
-          ? new Date(post.date).toISOString()
-          : undefined,
-        description: post.seoDesc || post.excerpt || '',
-        keywords: post.customFields?.targetKeywords?.join(', ') || '',
-        image: {
-          '@type': 'ImageObject',
-          url: schemaImageUrl,
-        },
-        author: generatePersonAuthor(post),
-        publisher: {
-          '@type': 'Organization',
-          '@id': 'https://draft.dev/#organization',
-        },
-      }
-    }),
+      author: generatePersonAuthor(post),
+      publisher: PUBLISHER_REF,
+    })),
   }
 }
 
@@ -356,7 +307,6 @@ export function generateBreadcrumbSchema(title: string, slug: string) {
   }
 }
 
-// Enhanced Organization Schema with authority signals
 export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
@@ -379,7 +329,7 @@ export function generateOrganizationSchema() {
     image: [
       {
         '@type': 'ImageObject',
-        url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
+        url: DEFAULT_IMAGE_URL,
         width: 1200,
         height: 630,
       },
@@ -431,59 +381,15 @@ export function generateOrganizationSchema() {
       },
     ],
 
-    // Enhanced sameAs with authority signals
     sameAs: [
       'https://twitter.com/draftdev',
       'https://linkedin.com/company/draft-dev',
-      'https://en.wikipedia.org/wiki/Content_marketing', // Topic authority
-      'https://github.com/draft-dev', // If you have a GitHub presence
+      'https://en.wikipedia.org/wiki/Content_marketing',
     ],
 
-    // Enhanced expertise for AI understanding
-    expertise: [
-      'Technical Content Marketing',
-      'Developer Relations',
-      'Software Development Content',
-      'API Documentation',
-      'Technical Writing',
-      'Content Strategy',
-      'Developer Marketing',
-      'DevOps Content',
-      'Cloud Computing Content',
-      'Software Engineering Content',
-      'Data Engineering Content',
-      'Technical Tutorials',
-      'Developer Tools Marketing',
-      'B2B SaaS Marketing',
-      'Technical Blog Writing',
-    ],
+    expertise: CORE_EXPERTISE,
 
-    // Enhanced knowsAbout for AI topic understanding
-    knowsAbout: [
-      {
-        '@type': 'Thing',
-        name: 'Technical Content Marketing',
-        sameAs: 'https://en.wikipedia.org/wiki/Content_marketing',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Developer Relations',
-        sameAs: 'https://en.wikipedia.org/wiki/Developer_relations',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Software Development',
-        sameAs: 'https://en.wikipedia.org/wiki/Software_development',
-      },
-      {
-        '@type': 'Thing',
-        name: 'API Documentation',
-      },
-      {
-        '@type': 'Thing',
-        name: 'Technical Writing',
-      },
-    ],
+    knowsAbout: CORE_TOPICS,
 
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -527,7 +433,6 @@ export function generateOrganizationSchema() {
   }
 }
 
-// NEW: Service Schema for B2B optimization
 export function generateServiceSchema() {
   return {
     '@context': 'https://schema.org',
@@ -536,16 +441,10 @@ export function generateServiceSchema() {
     name: 'Technical Content Marketing Services',
     description:
       'Expert technical content creation for developer audiences including blog posts, tutorials, documentation, and developer relations content',
-    provider: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
+    provider: PUBLISHER_REF,
     serviceType: 'Content Marketing',
     category: 'B2B Marketing Services',
-    audience: {
-      '@type': 'Audience',
-      audienceType: 'Technical Professionals',
-    },
+    audience: TECHNICAL_AUDIENCE,
     areaServed: 'Worldwide',
     offers: [
       {
@@ -594,48 +493,6 @@ export function generateServiceSchema() {
   }
 }
 
-// NEW: Review Schema for testimonials
-export function generateReviewSchema(
-  testimonials: Array<{
-    quote: string
-    name: string
-    role: string
-    company: string
-    rating?: number
-  }>,
-) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://draft.dev/#organization',
-    review: testimonials.map((testimonial) => ({
-      '@type': 'Review',
-      reviewBody: testimonial.quote,
-      author: {
-        '@type': 'Person',
-        name: testimonial.name,
-        jobTitle: testimonial.role,
-        worksFor: {
-          '@type': 'Organization',
-          name: testimonial.company,
-        },
-      },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: testimonial.rating || 5,
-        bestRating: '5',
-      },
-    })),
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: testimonials.length,
-      bestRating: '5',
-    },
-  }
-}
-
-// NEW: VideoObject Schema for video content
 export function generateVideoSchema(
   videoUrl: string,
   title: string,
@@ -643,21 +500,23 @@ export function generateVideoSchema(
   uploadDate?: string,
   duration?: string,
 ) {
-  return {
+  const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name: title,
     description: description,
     url: videoUrl,
     uploadDate: uploadDate || new Date().toISOString(),
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
+    publisher: PUBLISHER_REF,
     contentUrl: videoUrl,
-    ...(duration && { duration: duration }), // ISO 8601 format like PT10M30S
     inLanguage: 'en-US',
   }
+
+  if (duration) {
+    schema.duration = duration
+  }
+
+  return schema
 }
 
 export function generateWebSiteSchema() {
@@ -679,11 +538,7 @@ export function generateWebSiteSchema() {
       'query-input': 'required name=search_term_string',
     },
 
-    publisher: {
-      '@type': 'Organization',
-      '@id': 'https://draft.dev/#organization',
-    },
-
+    publisher: PUBLISHER_REF,
     copyrightYear: 2020,
     inLanguage: 'en-US',
 
