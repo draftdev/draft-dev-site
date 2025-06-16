@@ -3,7 +3,7 @@ export interface Post {
   slug: string
   title: string
   categories: { id: string; name: string }[]
-  content?: string // Made optional since some components don't need content
+  content?: string
   date: string
   featuredImage?: {
     node: {
@@ -22,13 +22,11 @@ export interface Post {
   }
   originalAuthor?: string | null
   modified?: string
-  // Yoast SEO fields
   seoTitle?: string
   seoDesc?: string
   seoKeyword?: string
   ogDesc?: string
   twitterDesc?: string
-  // Enhanced custom fields for AI optimization
   customFields?: {
     faqQuestions?: Array<{
       question: string
@@ -45,7 +43,6 @@ export interface Post {
   }
 }
 
-// Shared constants to eliminate redundancy
 const PUBLISHER_REF = {
   '@type': 'Organization',
   '@id': 'https://draft.dev/#organization',
@@ -79,22 +76,6 @@ const TECHNICAL_AUDIENCE = {
   audienceType: 'Technical Professionals',
 } as const
 
-// Consolidated expertise keywords (removed duplicates)
-const CORE_EXPERTISE = [
-  'Technical Content Marketing',
-  'Developer Relations',
-  'API Documentation',
-  'Technical Writing',
-  'Content Strategy',
-  'Developer Marketing',
-  'DevOps Content',
-  'Cloud Computing Content',
-  'Software Engineering Content',
-  'Data Engineering Content',
-  'B2B SaaS Marketing',
-] as const
-
-// Helper to make URLs absolute for schema
 function makeAbsoluteUrl(relativeUrl: string): string {
   if (relativeUrl.startsWith('http')) {
     return relativeUrl
@@ -102,7 +83,6 @@ function makeAbsoluteUrl(relativeUrl: string): string {
   return `https://draft.dev${relativeUrl}`
 }
 
-// Shared helper for image URL processing
 function getSchemaImageUrl(post: Post): string {
   const originalImageUrl = post.featuredImage?.node.sourceUrl
   return originalImageUrl
@@ -110,7 +90,6 @@ function getSchemaImageUrl(post: Post): string {
     : DEFAULT_IMAGE_URL
 }
 
-// AI-Optimized Person Author Schema
 export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
@@ -126,13 +105,12 @@ export function generatePersonAuthor(post: Post) {
     description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: PUBLISHER_REF,
     url: 'https://draft.dev/about',
-    expertise: post.customFields?.targetKeywords || [
+    knowsAbout: post.customFields?.targetKeywords || [
       'Technical Content Marketing',
       'Software Development',
     ],
   }
 
-  // Only add social links if they exist
   if (post.customFields?.authorLinkedIn) {
     const sameAs = [post.customFields.authorLinkedIn]
     if (post.customFields?.authorTwitter) {
@@ -157,7 +135,6 @@ export function generateFAQSchema(
   }))
 }
 
-// Enhanced Article Schema with AI optimizations
 export function generateArticleSchema(post: Post, slug: string) {
   const wordCount = estimateWordCount(post.content)
   const readingTime =
@@ -171,7 +148,6 @@ export function generateArticleSchema(post: Post, slug: string) {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
-  // Build the base schema
   const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -213,11 +189,6 @@ export function generateArticleSchema(post: Post, slug: string) {
       'technical content marketing, developer relations',
   }
 
-  // Add optional fields only if they exist
-  if (post.customFields?.targetKeywords) {
-    articleSchema.expertise = post.customFields.targetKeywords
-  }
-
   if (post.customFields?.faqQuestions?.length) {
     articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
   }
@@ -236,7 +207,6 @@ export function generateArticleSchema(post: Post, slug: string) {
   return articleSchema
 }
 
-// Enhanced Blog Schema with more posts and AI optimization
 export function generateBlogSchema(posts: Post[]) {
   return {
     '@context': 'https://schema.org',
@@ -254,7 +224,6 @@ export function generateBlogSchema(posts: Post[]) {
     publisher: PUBLISHER_REF,
     audience: TECHNICAL_AUDIENCE,
     about: CORE_TOPICS,
-    expertise: CORE_EXPERTISE,
 
     blogPost: posts.slice(0, 200).map((post) => ({
       '@type': 'BlogPosting',
@@ -391,9 +360,65 @@ export function generateOrganizationSchema() {
       'https://en.wikipedia.org/wiki/Content_marketing',
     ],
 
-    expertise: CORE_EXPERTISE,
-
-    knowsAbout: CORE_TOPICS,
+    knowsAbout: [
+      {
+        '@type': 'Thing',
+        name: 'Technical Content Marketing',
+        sameAs: 'https://en.wikipedia.org/wiki/Content_marketing',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Software Development',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Developer Relations',
+        sameAs: 'https://en.wikipedia.org/wiki/Developer_relations',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'API Documentation',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Technical Writing',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Developer Marketing',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'DevOps Content',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Cloud Computing Content',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Software Engineering Content',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'Data Engineering Content',
+        url: 'https://draft.dev/learn',
+      },
+      {
+        '@type': 'Thing',
+        name: 'B2B SaaS Marketing',
+        url: 'https://draft.dev/learn',
+      },
+    ],
 
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -433,11 +458,85 @@ export function generateOrganizationSchema() {
       ],
     },
 
-    slogan: 'Technical Content Marketing by Subject Matter Experts',
+    slogan: 'We are a Content Creation Agency for Technical Companies',
   }
 }
 
-// Alternative: Standalone testimonial schema
+export function generateServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://draft.dev/#service',
+    name: 'Technical Content Marketing Services',
+    description:
+      'Expert technical content creation for developer audiences including blog posts, tutorials, documentation, and developer relations content',
+    provider: PUBLISHER_REF,
+    serviceType: 'Content Marketing',
+    category: 'B2B Marketing Services',
+    audience: TECHNICAL_AUDIENCE,
+    areaServed: 'Worldwide',
+
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Technical Content Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Technical Blog Writing',
+            description: 'Expert-written technical blog posts and tutorials',
+            category: 'Content Creation',
+            provider: PUBLISHER_REF,
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Developer Relations Content',
+            description:
+              'Content strategy and creation for developer relations teams',
+            category: 'Developer Marketing',
+            provider: PUBLISHER_REF,
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Lead Generation Campaigns',
+            description:
+              'Comprehensive content campaigns designed to drive qualified leads',
+            category: 'Lead Generation',
+            provider: PUBLISHER_REF,
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Technical Tutorials',
+            description: 'Step-by-step technical tutorials and guides',
+            category: 'Technical Writing',
+            provider: PUBLISHER_REF,
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'API Documentation',
+            description: 'Comprehensive API documentation and developer guides',
+            category: 'Documentation',
+            provider: PUBLISHER_REF,
+          },
+        },
+      ],
+    },
+  }
+}
+
 export function generateTestimonialSchema(
   testimonials: Array<{
     quote: string
@@ -478,97 +577,21 @@ export function generateTestimonialSchema(
   }
 }
 
-// Service Schema for B2B optimization (used in homepage)
-export function generateServiceSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    '@id': 'https://draft.dev/#service',
-    name: 'Technical Content Marketing Services',
-    description:
-      'Expert technical content creation for developer audiences including blog posts, tutorials, documentation, and developer relations content',
-    provider: PUBLISHER_REF,
-    serviceType: 'Content Marketing',
-    category: 'B2B Marketing Services',
-    audience: TECHNICAL_AUDIENCE,
-    areaServed: 'Worldwide',
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'Technical Blog Writing',
-        description: 'Expert-written technical blog posts and tutorials',
-        category: 'Content Creation',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Developer Relations Content',
-        description:
-          'Content strategy and creation for developer relations teams',
-        category: 'Developer Marketing',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Lead Generation Campaigns',
-        description:
-          'Comprehensive content campaigns designed to drive qualified leads',
-        category: 'Lead Generation',
-      },
-    ],
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Technical Content Services',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Technical Tutorials',
-            description: 'Step-by-step technical tutorials and guides',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'API Documentation',
-            description: 'Comprehensive API documentation and developer guides',
-          },
-        },
-      ],
-    },
-  }
-}
-
-// Review Schema for testimonials and social proof
 export function generateReviewSchema(
   testimonials: Array<{
     quote: string
     name: string
     role: string
     company: string
-    rating: number
   }>,
 ) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': 'https://draft.dev/#organization',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: testimonials.length.toString(),
-      bestRating: '5',
-      worstRating: '1',
-    },
     review: testimonials.map((testimonial, index) => ({
       '@type': 'Review',
       '@id': `https://draft.dev/#review-${index}`,
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: testimonial.rating.toString(),
-        bestRating: '5',
-        worstRating: '1',
-      },
       author: {
         '@type': 'Person',
         name: testimonial.name,
@@ -643,12 +666,9 @@ export function generateWebSiteSchema() {
   }
 }
 
-function estimateWordCount(content: string): number {
+function estimateWordCount(content?: string): number {
   if (!content) return 0
   const textContent = content.replace(/<[^>]*>/g, ' ')
   const words = textContent.split(/\s+/).filter((word) => word.length > 0)
   return words.length
-}
-function generateOrganizationSchemaWithTestimonials() {
-  throw new Error('Function not implemented.')
 }
