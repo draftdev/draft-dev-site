@@ -1,4 +1,7 @@
-// app/lib/wordpress.ts - Updated with alt text support
+// ========================================
+// FILE: app/lib/wordpress.ts
+// ========================================
+
 import { cache } from 'react'
 
 export interface Post {
@@ -25,7 +28,7 @@ export interface Post {
     }
   }
   originalAuthor?: string | null
-  // Enhanced fields for AI optimization
+  // Enhanced custom fields for AI optimization
   customFields?: {
     faqQuestions?: Array<{
       question: string
@@ -35,6 +38,10 @@ export interface Post {
     authorCredentials?: string
     readingTime?: number
     expertSources?: string[]
+    videoUrl?: string
+    authorLinkedIn?: string
+    authorTwitter?: string
+    relatedTopics?: string[]
   }
   seo?: {
     metaDesc?: string
@@ -107,6 +114,16 @@ query AllPosts($first: Int, $after: String) {
       seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
       ogDesc: metaValue(key: "_yoast_wpseo_opengraph-description")
       twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
+      # Enhanced custom fields for AI optimization
+      targetKeywords: metaValue(key: "target_keywords")
+      authorCredentials: metaValue(key: "author_credentials")
+      readingTime: metaValue(key: "reading_time")
+      expertSources: metaValue(key: "expert_sources")
+      videoUrl: metaValue(key: "video_url")
+      authorLinkedIn: metaValue(key: "author_linkedin")
+      authorTwitter: metaValue(key: "author_twitter")
+      relatedTopics: metaValue(key: "related_topics")
+      faqData: metaValue(key: "faq_questions")
     }
   }
 }
@@ -149,6 +166,16 @@ query PostBySlug($slug: ID!) {
     seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
     ogDesc: metaValue(key: "_yoast_wpseo_opengraph-description")
     twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
+    # Enhanced custom fields for AI optimization
+    targetKeywords: metaValue(key: "target_keywords")
+    authorCredentials: metaValue(key: "author_credentials")
+    readingTime: metaValue(key: "reading_time")
+    expertSources: metaValue(key: "expert_sources")
+    videoUrl: metaValue(key: "video_url")
+    authorLinkedIn: metaValue(key: "author_linkedin")
+    authorTwitter: metaValue(key: "author_twitter")
+    relatedTopics: metaValue(key: "related_topics")
+    faqData: metaValue(key: "faq_questions")
   }
 }
 `
@@ -204,6 +231,60 @@ export async function fetchGraphQL(query: string, variables = {}) {
   }
 }
 
+// Helper function to parse custom fields
+function parseCustomFields(rawPost: any) {
+  const customFields: any = {}
+
+  // Parse target keywords (comma-separated string to array)
+  if (rawPost.targetKeywords) {
+    customFields.targetKeywords = rawPost.targetKeywords
+      .split(',')
+      .map((k: string) => k.trim())
+      .filter((k: string) => k.length > 0)
+  }
+
+  // Parse FAQ data (JSON string)
+  if (rawPost.faqData) {
+    try {
+      customFields.faqQuestions = JSON.parse(rawPost.faqData)
+    } catch (e) {
+      console.warn('Failed to parse FAQ data:', e)
+    }
+  }
+
+  // Parse related topics
+  if (rawPost.relatedTopics) {
+    customFields.relatedTopics = rawPost.relatedTopics
+      .split(',')
+      .map((t: string) => t.trim())
+      .filter((t: string) => t.length > 0)
+  }
+
+  // Parse expert sources
+  if (rawPost.expertSources) {
+    customFields.expertSources = rawPost.expertSources
+      .split(',')
+      .map((s: string) => s.trim())
+      .filter((s: string) => s.length > 0)
+  }
+
+  // Simple field mappings
+  if (rawPost.authorCredentials)
+    customFields.authorCredentials = rawPost.authorCredentials
+  if (rawPost.readingTime) {
+    const parsedTime = parseInt(rawPost.readingTime, 10)
+    if (!isNaN(parsedTime)) {
+      customFields.readingTime = parsedTime
+    }
+  }
+  if (rawPost.videoUrl) customFields.videoUrl = rawPost.videoUrl
+  if (rawPost.authorLinkedIn)
+    customFields.authorLinkedIn = rawPost.authorLinkedIn
+  if (rawPost.authorTwitter) customFields.authorTwitter = rawPost.authorTwitter
+
+  return Object.keys(customFields).length > 0 ? customFields : undefined
+}
+
 export const getWpPosts = cache(
   async (
     first = 10,
@@ -246,8 +327,13 @@ export const getWpPosts = cache(
               }
             : undefined,
           originalAuthor: post.originalAuthor || null,
-          seo: post.seo || undefined,
-          customFields: post.customFields || undefined,
+          seo: {
+            metaDesc: post.seoDesc,
+            focuskw: post.seoKeyword,
+            opengraphDescription: post.ogDesc,
+            twitterDescription: post.twitterDesc,
+          },
+          customFields: parseCustomFields(post),
         })),
         pageInfo: {
           hasNextPage: data.posts.pageInfo.hasNextPage,
@@ -300,11 +386,272 @@ export const getWpPost = cache(async (slug: string) => {
           }
         : undefined,
       originalAuthor: post.originalAuthor || null,
-      seo: post.seo || undefined,
-      customFields: post.customFields || undefined,
+      seo: {
+        metaDesc: post.seoDesc,
+        focuskw: post.seoKeyword,
+        opengraphDescription: post.ogDesc,
+        twitterDescription: post.twitterDesc,
+      },
+      customFields: parseCustomFields(post),
     }
   } catch (error) {
     console.error('Error fetching post:', error)
     return null
   }
 })
+
+// // app/lib/wordpress.ts
+// import { cache } from 'react'
+
+// export interface Post {
+//   id: string
+//   slug: string
+//   title: string
+//   categories: { id: string; name: string }[]
+//   content: string
+//   date: string
+//   featuredImage?: {
+//     node: {
+//       sourceUrl: string
+//     }
+//   }
+//   excerpt: string
+//   author?: {
+//     node: {
+//       name: string
+//       avatar?: {
+//         url: string
+//       }
+//     }
+//   }
+//   originalAuthor?: string | null
+// }
+
+// export interface PageInfo {
+//   hasNextPage: boolean
+//   endCursor: string | null
+//   currentPage: number
+// }
+
+// export interface PostsResponse {
+//   posts: Post[]
+//   pageInfo: PageInfo
+// }
+
+// declare global {
+//   namespace NodeJS {
+//     interface ProcessEnv {
+//       WORDPRESS_API_URL: string
+//       WORDPRESS_API_USERNAME: string
+//       WORDPRESS_API_PASSWORD: string
+//       WORDPRESS_PRIVACY_PASSWORD: string
+//     }
+//   }
+// }
+
+// const ALL_POSTS_QUERY = `
+// query AllPosts($first: Int, $after: String) {
+//   posts(first: $first, after: $after, where: { status: PUBLISH }) {
+//     pageInfo {
+//       hasNextPage
+//       endCursor
+//     }
+//     nodes {
+//       id
+//       slug
+//       title
+//       categories {
+//         nodes {
+//           id
+//           name
+//         }
+//       }
+//       excerpt(format: RENDERED)
+//       date
+//       featuredImage {
+//         node {
+//           sourceUrl
+//         }
+//       }
+//       author {
+//         node {
+//           name
+//           avatar {
+//             url
+//           }
+//         }
+//       }
+//       originalAuthor: metaValue(key: "original_author")
+//     }
+//   }
+// }
+// `
+
+// const POST_BY_SLUG_QUERY = `
+// query PostBySlug($slug: ID!) {
+//   post(id: $slug, idType: SLUG) {
+//     id
+//     slug
+//     title
+//     categories {
+//       nodes {
+//         id
+//         name
+//       }
+//     }
+//     content
+//     excerpt(format: RENDERED)
+//     date
+//     featuredImage {
+//       node {
+//         sourceUrl
+//       }
+//     }
+//     author {
+//       node {
+//         name
+//         avatar {
+//           url
+//         }
+//       }
+//     }
+//     originalAuthor: metaValue(key: "original_author")
+//   }
+// }
+// `
+
+// function getAuthHeader() {
+//   const auth = Buffer.from(
+//     `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`,
+//   ).toString('base64')
+//   return `Basic ${auth}`
+// }
+
+// export async function fetchGraphQL(query: string, variables = {}) {
+//   const baseUrl = process.env.WORDPRESS_API_URL
+//   if (!baseUrl) {
+//     throw new Error('WORDPRESS_API_URL is not defined')
+//   }
+
+//   try {
+//     const headers = new Headers({
+//       'Content-Type': 'application/json',
+//       Authorization: getAuthHeader(),
+//     })
+
+//     if (process.env.WORDPRESS_PRIVACY_PASSWORD) {
+//       headers.append('X-WP-Privacy', process.env.WORDPRESS_PRIVACY_PASSWORD)
+//     }
+
+//     const response = await fetch(baseUrl, {
+//       method: 'POST',
+//       headers,
+//       body: JSON.stringify({ query, variables }),
+//       next: {
+//         revalidate: 3600, // Revalidate every hour
+//         tags: ['posts'],
+//       },
+//     })
+
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! status: ${response.status}`)
+//     }
+
+//     const text = await response.text()
+//     const json = JSON.parse(text)
+
+//     if (json.errors) {
+//       throw new Error(json.errors[0].message)
+//     }
+
+//     return json.data
+//   } catch (error) {
+//     console.error('WordPress API Error:', error)
+//     throw error
+//   }
+// }
+
+// export const getWpPosts = cache(
+//   async (
+//     first = 10,
+//     after: string | null = null,
+//     currentPage = 1,
+//   ): Promise<PostsResponse> => {
+//     try {
+//       const data = await fetchGraphQL(ALL_POSTS_QUERY, { first, after })
+//       if (!data?.posts?.nodes || !data.posts.pageInfo) {
+//         return {
+//           posts: [],
+//           pageInfo: {
+//             hasNextPage: false,
+//             endCursor: null,
+//             currentPage,
+//           },
+//         }
+//       }
+
+//       return {
+//         posts: data.posts.nodes.map((post: any) => ({
+//           id: post.id,
+//           slug: post.slug,
+//           title: post.title,
+//           categories: post.categories?.nodes || [],
+//           excerpt: post.excerpt,
+//           date: post.date,
+//           featuredImage: post.featuredImage,
+//           author: post.author?.node
+//             ? {
+//                 node: post.author.node,
+//               }
+//             : undefined,
+//           originalAuthor: post.originalAuthor || null,
+//         })),
+//         pageInfo: {
+//           hasNextPage: data.posts.pageInfo.hasNextPage,
+//           endCursor: data.posts.pageInfo.endCursor,
+//           currentPage,
+//         },
+//       }
+//     } catch (error) {
+//       console.error('Error fetching posts:', error)
+//       return {
+//         posts: [],
+//         pageInfo: {
+//           hasNextPage: false,
+//           endCursor: null,
+//           currentPage,
+//         },
+//       }
+//     }
+//   },
+// )
+
+// export const getWpPost = cache(async (slug: string) => {
+//   if (!slug) {
+//     return null
+//   }
+
+//   try {
+//     const data = await fetchGraphQL(POST_BY_SLUG_QUERY, { slug })
+
+//     if (!data?.post) {
+//       return null
+//     }
+
+//     const post = data.post
+
+//     return {
+//       ...post,
+//       categories: post.categories?.nodes || [],
+//       author: post.author?.node
+//         ? {
+//             node: post.author.node,
+//           }
+//         : undefined,
+//       originalAuthor: post.originalAuthor || null,
+//     }
+//   } catch (error) {
+//     console.error('Error fetching post:', error)
+//     return null
+//   }
+// })

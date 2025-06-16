@@ -3,6 +3,7 @@ import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
+  generateVideoSchema,
 } from '@/app/lib/schema'
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
@@ -120,9 +121,19 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  // Generate enhanced schemas (keep your existing schema work)
+  // Generate enhanced schemas with AI optimizations
   const articleSchema = generateArticleSchema(post, slug)
   const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
+
+  // Generate video schema if video content exists
+  const videoSchema = post.customFields?.videoUrl
+    ? generateVideoSchema(
+        post.customFields.videoUrl,
+        post.title,
+        post.seoDesc || post.excerpt || '',
+        post.date ? new Date(post.date).toISOString() : undefined,
+      )
+    : null
 
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
@@ -211,19 +222,23 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      {/* Keep your existing schemas */}
+      {/* Enhanced Article Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(articleSchema),
         }}
       />
+
+      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
+
+      {/* FAQ Page Schema (separate from article) */}
       {post.customFields?.faqQuestions &&
         post.customFields.faqQuestions.length > 0 && (
           <script
@@ -237,6 +252,16 @@ export default async function PostPage({ params }: Props) {
             }}
           />
         )}
+
+      {/* Video Schema if video content exists */}
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(videoSchema),
+          }}
+        />
+      )}
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">
@@ -425,6 +450,12 @@ export default async function PostPage({ params }: Props) {
                     <p className="text-sm font-medium text-gray-900">
                       {displayAuthor}
                     </p>
+                    {/* Show author credentials if available */}
+                    {post.customFields?.authorCredentials && (
+                      <p className="text-xs text-gray-500">
+                        {post.customFields.authorCredentials}
+                      </p>
+                    )}
                   </div>
                 </div>
 

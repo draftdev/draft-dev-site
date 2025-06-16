@@ -1,4 +1,3 @@
-// app/api/wordpress/route.ts
 import { getWpPostsForApi } from '@/app/lib/wordpress-api'
 import { NextRequest, NextResponse } from 'next/server'
 
