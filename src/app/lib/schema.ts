@@ -481,7 +481,7 @@ export function generateOrganizationSchema() {
     },
 
     slogan: 'A Content Creation Agency for Technical Companies',
-    testimonial: [
+    hasPart: [
       {
         '@type': 'CreativeWork',
         name: 'Testimonial from Rich Burroughs',
