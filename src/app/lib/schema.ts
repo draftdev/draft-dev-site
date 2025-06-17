@@ -382,7 +382,6 @@ export function generateOrganizationSchema() {
       'https://en.wikipedia.org/wiki/Content_marketing',
     ],
 
-    // Expanded knowsAbout to include all expertise areas
     knowsAbout: [
       {
         '@type': 'Thing',
@@ -481,7 +480,7 @@ export function generateOrganizationSchema() {
       ],
     },
 
-    slogan: 'Technical Content Marketing by Subject Matter Experts',
+    slogan: 'A Content Creation Agency for Technical Companies',
     testimonial: [
       {
         '@type': 'Testimonial',
@@ -728,39 +727,6 @@ export function generateTestimonialSchema(
           '@id': 'https://draft.dev/#organization',
         },
       },
-    })),
-  }
-}
-
-export function generateReviewSchema(
-  testimonials: Array<{
-    quote: string
-    name: string
-    role: string
-    company: string
-  }>,
-) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': 'https://draft.dev/#organization',
-    review: testimonials.map((testimonial, index) => ({
-      '@type': 'Review',
-      '@id': `https://draft.dev/#review-${index}`,
-      reviewRating: {
-        '@type': 'Rating',
-      },
-      author: {
-        '@type': 'Person',
-        name: testimonial.name,
-        jobTitle: testimonial.role,
-        worksFor: {
-          '@type': 'Organization',
-          name: testimonial.company,
-        },
-      },
-      reviewBody: testimonial.quote,
-      publisher: PUBLISHER_REF,
     })),
   }
 }
