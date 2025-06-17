@@ -116,7 +116,7 @@ export function generatePersonAuthor(post: Post) {
     '@type': 'Person',
     name: authorName,
     jobTitle:
-      post.customFields?.authorCredentials || 'Technical Content Expert',
+      post.customFields?.authorCredentials || 'Technical Content Writers',
     description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: PUBLISHER_REF,
     url: 'https://draft.dev/about',
@@ -154,8 +154,6 @@ export function generateArticleSchema(post: Post, slug: string) {
   const wordCount = estimateWordCount(post.content)
   const readingTime =
     post.customFields?.readingTime || Math.ceil(wordCount / 200)
-
-  // Ensure proper date formatting
   const publishedDate = post.date
     ? new Date(post.date).toISOString()
     : new Date().toISOString()
@@ -484,6 +482,138 @@ export function generateOrganizationSchema() {
     },
 
     slogan: 'Technical Content Marketing by Subject Matter Experts',
+    testimonial: [
+      {
+        '@type': 'Testimonial',
+        text: "Having draft.dev source quality technical content for the Loft Labs blog has been a competitive advantage. It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published.",
+        author: {
+          '@type': 'Person',
+          name: 'Rich Burroughs',
+          jobTitle: 'Developer Advocate',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Loft Labs',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: "It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team.",
+        author: {
+          '@type': 'Person',
+          name: 'Adam Gordon Bell',
+          jobTitle: 'Director of Developer Relations',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Earthly',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate.',
+        author: {
+          '@type': 'Person',
+          name: 'Henry Poydar',
+          jobTitle: 'Founder & CEO',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Status Hero',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'Content is one of the biggest and best channels you can invest in. And if you want to quickly scale without compromising the quality and expertise, Draft.dev is the way to go.',
+        author: {
+          '@type': 'Person',
+          name: 'Rahul Patwardhan',
+          jobTitle: 'Senior Director, Demand Generation',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Loft Labs',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: "I was thoroughly impressed by the smooth onboarding and ability to adapt to our product suite. Draft.dev's attention to detail and dedication to aligning content with our brand have significantly impacted our developer-focused content strategy. The high-quality technical blog posts have been well-received internally, and we're excited to see the full impact on our content program.",
+        author: {
+          '@type': 'Person',
+          name: 'Emily Blitstein',
+          jobTitle: 'Sr. Content Marketing Manager',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Sinch Mailgun',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'Draft.dev is our go-to for practical, well-written content that actually resonates with technical audiences and helps us inspire the developer community. It has been invaluable (for our internal team and my sanity) to have their brilliant writers, editors, and PMs in our content corner!',
+        author: {
+          '@type': 'Person',
+          name: 'Jenny Medeiros',
+          jobTitle: 'Head of Content',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Redpanda',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'Partnering with Draft.dev has accelerated our technical content output while also extending the bandwidth of our developer relations team to focus more on core product activities. It is truly high-quality content written by devs for devs, helping devs in the process.',
+        author: {
+          '@type': 'Person',
+          name: 'Abhishek Iyer',
+          jobTitle: 'Director, Marketing and Growth',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Descope',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials. We’re constantly iterating to build the best educational materials for developer security and Draft.dev has been instrumental in helping us realize these ambitions.',
+        author: {
+          '@type': 'Person',
+          name: 'Randall Degges',
+          jobTitle: 'Head of Developer & Security Relations',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'Snyk',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: 'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
+        author: {
+          '@type': 'Person',
+          name: 'Robert Gibb',
+          jobTitle: 'Content Marketing',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'fabric',
+          },
+        },
+      },
+      {
+        '@type': 'Testimonial',
+        text: "We've seen amazing results with the technical content produced from the team at Draft.dev. The attention to technical detail from start to finish has been a huge addition to our content.",
+        author: {
+          '@type': 'Person',
+          name: 'Tony Chan',
+          jobTitle: 'Co-Founder & CEO',
+          worksFor: {
+            '@type': 'Organization',
+            name: 'CloudForecast',
+          },
+        },
+      },
+    ],
   }
 }
 
