@@ -161,10 +161,8 @@ export function generateArticleSchema(post: Post, slug: string) {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
-  // Clean the description - strip HTML tags
   const cleanDescription = stripHtmlTags(post.seoDesc || post.excerpt || '')
 
-  // Build the base schema
   const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -302,7 +300,7 @@ export function generateBreadcrumbSchema(title: string, slug: string) {
 export function generateOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': ['Organization', 'ProfessionalService', 'EducationalOrganization'],
     '@id': 'https://draft.dev/#organization',
     name: 'Draft.dev',
     alternateName: 'Draft',
@@ -354,12 +352,7 @@ export function generateOrganizationSchema() {
       addressCountry: 'US',
       addressRegion: 'IL',
       addressLocality: 'Chicago',
-      // Optional: Add these if you want to remove warnings
-      // postalCode: '60601',
-      // streetAddress: '123 Main Street',
     },
-
-    areaServed: 'Worldwide',
 
     contactPoint: [
       {
