@@ -1,5 +1,6 @@
 import { generateOrganizationSchema } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
+import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
@@ -439,10 +440,10 @@ export default function RootLayout({
         </Suspense>
 
         {/* Dynamic Banner - Update as needed */}
-        {/* <Banner
-          text="Join Our FREE Webinar: Interactive Content Strategies: Engaging Developers Through Action - June 18th →"
-          link="https://us02web.zoom.us/webinar/register/5917482854805/WN_uezd14aBQmKpihQs7IL2zA"
-        /> */}
+        <Banner
+          text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
+          link="https://draft.dev/content-marketing-engine"
+        />
 
         <DynamicNavbar />
 
