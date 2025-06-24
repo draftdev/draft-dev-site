@@ -388,23 +388,6 @@ export default async function PostPage({ params }: Props) {
               </div>
             </header>
 
-            {/* Featured Image */}
-            {post.featuredImage && (
-              <div className="not-prose mb-10 overflow-hidden rounded-xl">
-                <Image
-                  src={featuredImageUrl}
-                  alt={featuredImageAlt}
-                  className="w-full rounded-xl object-cover"
-                  width={800}
-                  height={450}
-                  loading="eager"
-                  priority
-                  quality={90}
-                  sizes="(max-width: 1280px) 100vw, 800px"
-                />
-              </div>
-            )}
-
             {/* Article Content */}
             <div className="prose-headings:scroll-mt-20">
               {parse(sanitizedContent, { replace: transform })}
