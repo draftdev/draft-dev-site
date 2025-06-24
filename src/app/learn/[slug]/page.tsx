@@ -201,12 +201,17 @@ export default async function PostPage({ params }: Props) {
       )
     : null
 
+  // Track which image is first for LCP optimization
+  let isFirstImage = true
+
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
       const { src, alt } = domNode.attribs
       if (!src) return undefined
 
       const imageUrl = getImageUrl(src)
+      const isLCP = isFirstImage
+      isFirstImage = false
 
       return (
         <div className="my-6">
@@ -216,8 +221,9 @@ export default async function PostPage({ params }: Props) {
             width={700}
             height={400}
             className="mx-auto rounded-lg object-cover"
-            quality={75} // Reduced from 85 for faster loading
+            quality={75}
             sizes="(max-width: 768px) 100vw, 700px"
+            priority={isLCP}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
