@@ -11,15 +11,78 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { cache } from 'react'
 import sanitizeHtml from 'sanitize-html'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+// Enable ISR with 1 hour revalidation
+export const revalidate = 3600
+export const dynamicParams = true
 
 type Props = {
   params: { slug: string }
   searchParams: { [key: string]: string | string[] | undefined }
 }
+
+// Cache heavy content processing
+const processPostContent = cache(async (post: any) => {
+  const sanitizedContent = sanitizeHtml(post.content, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
+    allowedAttributes: {
+      ...sanitizeHtml.defaults.allowedAttributes,
+      '*': ['style', 'class', 'id'],
+      h1: ['id', 'style', 'class'],
+      h2: ['id', 'style', 'class'],
+      h3: ['id', 'style', 'class'],
+      h4: ['id', 'style', 'class'],
+      h5: ['id', 'style', 'class'],
+      h6: ['id', 'style', 'class'],
+      iframe: [
+        'src',
+        'allow',
+        'allowfullscreen',
+        'frameborder',
+        'scrolling',
+        'width',
+        'height',
+      ],
+      img: ['src', 'alt', 'title', 'width', 'height', 'class', 'style'],
+      div: ['class', 'style', 'id'],
+      span: ['class', 'style', 'id'],
+      pre: ['class', 'style'],
+      code: ['class', 'style'],
+    },
+    allowedStyles: {
+      '*': {
+        border: [/.*/],
+        'border-left': [/.*/],
+        'border-right': [/.*/],
+        'border-top': [/.*/],
+        'border-bottom': [/.*/],
+        padding: [/.*/],
+        margin: [/.*/],
+        'background-color': [/.*/],
+        background: [/.*/],
+        color: [/.*/],
+        'font-weight': [/.*/],
+        'font-size': [/.*/],
+        'text-align': [/.*/],
+        width: [/.*/],
+        height: [/.*/],
+        display: [/.*/],
+        'max-width': [/.*/],
+        'max-height': [/.*/],
+      },
+    },
+  })
+
+  const readingTime =
+    post.customFields?.readingTime ||
+    Math.ceil(
+      sanitizedContent.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200,
+    )
+
+  return { sanitizedContent, readingTime }
+})
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getWpPost(params.slug)
@@ -121,7 +184,10 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  // Generate enhanced schemas with AI optimizations
+  // Process content with caching
+  const { sanitizedContent, readingTime } = await processPostContent(post)
+
+  // Generate ONLY individual post schemas - NO BLOG SCHEMA HERE
   const articleSchema = generateArticleSchema(post, slug)
   const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
 
@@ -150,8 +216,10 @@ export default async function PostPage({ params }: Props) {
             width={700}
             height={400}
             className="mx-auto rounded-lg object-cover"
-            quality={85}
+            quality={75} // Reduced from 85 for faster loading
             sizes="(max-width: 768px) 100vw, 700px"
+            placeholder="blur"
+            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
         </div>
       )
@@ -159,70 +227,14 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  const sanitizedContent = sanitizeHtml(post.content, {
-    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
-    allowedAttributes: {
-      ...sanitizeHtml.defaults.allowedAttributes,
-      '*': ['style', 'class', 'id'],
-      h1: ['id', 'style', 'class'],
-      h2: ['id', 'style', 'class'],
-      h3: ['id', 'style', 'class'],
-      h4: ['id', 'style', 'class'],
-      h5: ['id', 'style', 'class'],
-      h6: ['id', 'style', 'class'],
-      iframe: [
-        'src',
-        'allow',
-        'allowfullscreen',
-        'frameborder',
-        'scrolling',
-        'width',
-        'height',
-      ],
-      img: ['src', 'alt', 'title', 'width', 'height', 'class', 'style'],
-      div: ['class', 'style', 'id'],
-      span: ['class', 'style', 'id'],
-      pre: ['class', 'style'],
-      code: ['class', 'style'],
-    },
-    allowedStyles: {
-      '*': {
-        border: [/.*/],
-        'border-left': [/.*/],
-        'border-right': [/.*/],
-        'border-top': [/.*/],
-        'border-bottom': [/.*/],
-        padding: [/.*/],
-        margin: [/.*/],
-        'background-color': [/.*/],
-        background: [/.*/],
-        color: [/.*/],
-        'font-weight': [/.*/],
-        'font-size': [/.*/],
-        'text-align': [/.*/],
-        width: [/.*/],
-        height: [/.*/],
-        display: [/.*/],
-        'max-width': [/.*/],
-        'max-height': [/.*/],
-      },
-    },
-  })
-
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
-  const readingTime =
-    post.customFields?.readingTime ||
-    Math.ceil(
-      sanitizedContent.replace(/<[^>]*>/g, ' ').split(/\s+/).length / 200,
-    )
-
-  const featuredImageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
-  const featuredImageAlt = getImageAlt(post)
 
   return (
     <>
-      {/* Enhanced Article Schema */}
+      {/* INDIVIDUAL POST SCHEMAS ONLY */}
+
+      {/* Article Schema - for this specific post */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -230,7 +242,7 @@ export default async function PostPage({ params }: Props) {
         }}
       />
 
-      {/* Breadcrumb Schema */}
+      {/* Breadcrumb Schema - navigation path to this post */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -238,7 +250,7 @@ export default async function PostPage({ params }: Props) {
         }}
       />
 
-      {/* FAQ Page Schema (separate from article) */}
+      {/* FAQ Schema - only if this post has FAQs */}
       {post.customFields?.faqQuestions &&
         post.customFields.faqQuestions.length > 0 && (
           <script
@@ -253,7 +265,7 @@ export default async function PostPage({ params }: Props) {
           />
         )}
 
-      {/* Video Schema if video content exists */}
+      {/* Video Schema - only if this post has video */}
       {videoSchema && (
         <script
           type="application/ld+json"

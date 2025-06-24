@@ -1,4 +1,4 @@
-// app/learn/page.tsx - Optimized with full schema
+// app/learn/page.tsx - Main blog listing page with blog schema
 import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
 import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
@@ -76,10 +76,9 @@ function Header() {
   )
 }
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 3600 // Revalidate every hour
+export const revalidate = 3600 // Revalidate every hour with ISR
 const POSTS_PER_PAGE = 10
-const SCHEMA_POST_LIMIT = 200 // Maximum posts to include in schema
+const SCHEMA_POST_LIMIT = 50
 
 export default async function BlogPage() {
   // Fetch initial posts for UI rendering
@@ -89,10 +88,8 @@ export default async function BlogPage() {
     1,
   )
 
-  // Fetch lightweight data for schema (all posts up to limit)
   const schemaPostsData = await getSchemaPostsData(SCHEMA_POST_LIMIT)
 
-  // Generate schemas with all posts
   const blogSchema = generateBlogSchema(schemaPostsData)
   const websiteSchema = generateWebSiteSchema()
 
@@ -104,6 +101,8 @@ export default async function BlogPage() {
           __html: JSON.stringify(blogSchema),
         }}
       />
+
+      {/* Website Schema - overall site information */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
