@@ -198,6 +198,8 @@ export default async function PostPage({ params }: Props) {
         post.title,
         post.seoDesc || post.excerpt || '',
         post.date ? new Date(post.date).toISOString() : undefined,
+        undefined, // duration (optional)
+        getImageUrl(post.featuredImage?.node?.sourceUrl), // thumbnail URL
       )
     : null
 
@@ -210,8 +212,8 @@ export default async function PostPage({ params }: Props) {
       if (!src) return undefined
 
       const imageUrl = getImageUrl(src)
-      const isLCP = isFirstImage
-      isFirstImage = false
+      const isLCP = isFirstImage // First image is likely LCP
+      isFirstImage = false // Subsequent images won't be prioritized
 
       return (
         <div className="my-6">
@@ -223,7 +225,7 @@ export default async function PostPage({ params }: Props) {
             className="mx-auto rounded-lg object-cover"
             quality={75}
             sizes="(max-width: 768px) 100vw, 700px"
-            priority={isLCP}
+            priority={isLCP} // ✅ First image gets priority for LCP
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />

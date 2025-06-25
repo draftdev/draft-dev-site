@@ -740,6 +740,7 @@ export function generateVideoSchema(
   description: string,
   uploadDate?: string,
   duration?: string,
+  thumbnailUrl?: string,
 ) {
   const schema: any = {
     '@context': 'https://schema.org',
@@ -755,6 +756,12 @@ export function generateVideoSchema(
 
   if (duration) {
     schema.duration = duration
+  }
+
+  if (thumbnailUrl) {
+    schema.thumbnailUrl = thumbnailUrl.startsWith('/')
+      ? `https://draft.dev${thumbnailUrl}`
+      : thumbnailUrl
   }
 
   return schema
