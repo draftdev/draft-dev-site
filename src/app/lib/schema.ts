@@ -742,22 +742,52 @@ export function generateVideoSchema(
   duration?: string,
   thumbnailUrl?: string,
 ) {
+  function getVideoEmbedUrl(url: string): string {
+    // Handle YouTube URLs
+    const youtubeMatch = url.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
+    )
+    if (youtubeMatch) {
+      return `https://www.youtube.com/embed/${youtubeMatch[1]}`
+    }
+
+    // Handle Vimeo URLs
+    const vimeoMatch = url.match(/vimeo\.com\/(\d+)/)
+    if (vimeoMatch) {
+      return `https://player.vimeo.com/video/${vimeoMatch[1]}`
+    }
+
+    return url
+  }
+
+  const embedUrl = getVideoEmbedUrl(videoUrl)
+
   const schema: any = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name: title,
     description: stripHtmlTags(description),
-    url: videoUrl,
     uploadDate: uploadDate || new Date().toISOString(),
     publisher: PUBLISHER_REF,
-    contentUrl: videoUrl,
     inLanguage: 'en-US',
   }
 
+  // Use embedUrl for YouTube/Vimeo, contentUrl for direct video files
+  if (
+    videoUrl.includes('youtube.com') ||
+    videoUrl.includes('youtu.be') ||
+    videoUrl.includes('vimeo.com')
+  ) {
+    schema.embedUrl = embedUrl
+    schema.url = videoUrl // Original watch URL
+  } else {
+    // For direct video files (.mp4, .webm, etc.)
+    schema.contentUrl = videoUrl
+    schema.url = videoUrl
+  }
   if (duration) {
     schema.duration = duration
   }
-
   if (thumbnailUrl) {
     schema.thumbnailUrl = thumbnailUrl.startsWith('/')
       ? `https://draft.dev${thumbnailUrl}`
