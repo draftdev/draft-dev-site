@@ -1,5 +1,3 @@
-// app/learn/[slug]/page.tsx - UPDATED VERSION WITH ANNOTATIONS
-
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
@@ -24,7 +22,6 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// Cache heavy content processing
 const processPostContent = cache(async (post: any) => {
   const sanitizedContent = sanitizeHtml(post.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
@@ -187,26 +184,9 @@ export default async function PostPage({ params }: Props) {
 
   // Process content with caching
   const { sanitizedContent, readingTime } = await processPostContent(post)
-
-  // Generate ONLY individual post schemas - NO BLOG SCHEMA HERE
   const articleSchema = generateArticleSchema(post, slug)
   const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
 
-  // ⚠️ REMOVED: Standalone video schema generation
-  // The generateVideoSchema call below is NO LONGER NEEDED because
-  // the video is already included in the articleSchema above
-  // const videoSchema = post.customFields?.videoUrl
-  //   ? generateVideoSchema(
-  //       post.customFields.videoUrl,
-  //       post.title,
-  //       post.seoDesc || post.excerpt || '',
-  //       post.date ? new Date(post.date).toISOString() : undefined,
-  //       undefined, // duration (optional)
-  //       getImageUrl(post.featuredImage?.node?.sourceUrl), // thumbnail URL
-  //     )
-  //   : null
-
-  // Track which image is first for LCP optimization
   let isFirstImage = true
 
   const transform = (domNode: DOMNode) => {
@@ -244,8 +224,6 @@ export default async function PostPage({ params }: Props) {
   return (
     <>
       {/* INDIVIDUAL POST SCHEMAS ONLY */}
-
-      {/* Article Schema - for this specific post */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -275,21 +253,6 @@ export default async function PostPage({ params }: Props) {
             }}
           />
         )}
-
-      {/* ⚠️ REMOVED SECTION - Video Schema
-          This standalone video schema was causing the duplicate VideoObject error.
-          The video is ALREADY included in the articleSchema above, so this is redundant.
-
-          BEFORE (REMOVED):
-          {videoSchema && (
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{
-                __html: JSON.stringify(videoSchema),
-              }}
-            />
-          )}
-      */}
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">

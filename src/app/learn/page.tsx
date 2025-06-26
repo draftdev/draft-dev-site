@@ -1,4 +1,3 @@
-// app/learn/page.tsx - Main blog listing page with blog schema
 import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
 import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
 import { MedHeader } from '@/components/global/headers/med-header'
