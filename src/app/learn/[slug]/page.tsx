@@ -1,9 +1,10 @@
+// app/learn/[slug]/page.tsx - UPDATED VERSION WITH ANNOTATIONS
+
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import {
   generateArticleSchema,
   generateBreadcrumbSchema,
   generateFAQSchema,
-  generateVideoSchema,
 } from '@/app/lib/schema'
 import { getWpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
@@ -191,17 +192,19 @@ export default async function PostPage({ params }: Props) {
   const articleSchema = generateArticleSchema(post, slug)
   const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
 
-  // Generate video schema if video content exists
-  const videoSchema = post.customFields?.videoUrl
-    ? generateVideoSchema(
-        post.customFields.videoUrl,
-        post.title,
-        post.seoDesc || post.excerpt || '',
-        post.date ? new Date(post.date).toISOString() : undefined,
-        undefined, // duration (optional)
-        getImageUrl(post.featuredImage?.node?.sourceUrl), // thumbnail URL
-      )
-    : null
+  // ⚠️ REMOVED: Standalone video schema generation
+  // The generateVideoSchema call below is NO LONGER NEEDED because
+  // the video is already included in the articleSchema above
+  // const videoSchema = post.customFields?.videoUrl
+  //   ? generateVideoSchema(
+  //       post.customFields.videoUrl,
+  //       post.title,
+  //       post.seoDesc || post.excerpt || '',
+  //       post.date ? new Date(post.date).toISOString() : undefined,
+  //       undefined, // duration (optional)
+  //       getImageUrl(post.featuredImage?.node?.sourceUrl), // thumbnail URL
+  //     )
+  //   : null
 
   // Track which image is first for LCP optimization
   let isFirstImage = true
@@ -273,15 +276,20 @@ export default async function PostPage({ params }: Props) {
           />
         )}
 
-      {/* Video Schema - only if this post has video */}
-      {videoSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(videoSchema),
-          }}
-        />
-      )}
+      {/* ⚠️ REMOVED SECTION - Video Schema
+          This standalone video schema was causing the duplicate VideoObject error.
+          The video is ALREADY included in the articleSchema above, so this is redundant.
+
+          BEFORE (REMOVED):
+          {videoSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify(videoSchema),
+              }}
+            />
+          )}
+      */}
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">
@@ -465,6 +473,7 @@ export default async function PostPage({ params }: Props) {
                 <div className="mt-4 sm:mt-0">
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <span>Share this article:</span>
+
                     <a
                       href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://draft.dev/learn/${slug}`)}&via=draftdev`}
                       target="_blank"
@@ -473,6 +482,7 @@ export default async function PostPage({ params }: Props) {
                     >
                       Twitter
                     </a>
+
                     <a
                       href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://draft.dev/learn/${slug}`)}`}
                       target="_blank"
