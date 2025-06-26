@@ -92,7 +92,6 @@ function getSchemaImageUrl(post: Post): string {
 
 function stripHtmlTags(html: string): string {
   if (!html) return ''
-  // Remove HTML tags and decode HTML entities
   return html
     .replace(/<[^>]*>/g, '') // Remove HTML tags
     .replace(/&nbsp;/g, ' ') // Replace non-breaking spaces
@@ -209,16 +208,15 @@ export function generateArticleSchema(post: Post, slug: string) {
     articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
   }
 
-  // Add video schema as associated media if video exists
   if (post.customFields?.videoUrl) {
-    articleSchema.video = {
-      '@type': 'VideoObject',
-      name: post.title,
-      description: cleanDescription,
-      url: post.customFields.videoUrl,
-      uploadDate: publishedDate,
-      publisher: PUBLISHER_REF,
-    }
+    articleSchema.video = generateVideoSchema(
+      post.customFields.videoUrl,
+      post.title,
+      cleanDescription,
+      publishedDate,
+      undefined, // duration - optional
+      undefined, // thumbnailUrl - will be auto-generated from YouTube ID
+    )
   }
 
   return articleSchema
@@ -743,16 +741,22 @@ export function generateVideoSchema(
   thumbnailUrl?: string,
 ) {
   function getVideoId(url: string): string | null {
-    const match = url.match(
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s]+)/,
-    )
+    // Enhanced regex to catch more YouTube URL formats
+    const youtubeRegex =
+      /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
+    const match = url.match(youtubeRegex)
     return match ? match[1] : null
   }
 
-  const videoId = getVideoId(videoUrl)
+  function getVimeoId(url: string): string | null {
+    const vimeoRegex =
+      /vimeo\.com\/(?:channels\/|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)/
+    const match = url.match(vimeoRegex)
+    return match ? match[3] : null
+  }
 
-  // For Vimeo videos
-  const vimeoMatch = videoUrl.match(/vimeo\.com\/(\d+)/)
+  const videoId = getVideoId(videoUrl)
+  const vimeoId = getVimeoId(videoUrl)
 
   const schema: any = {
     '@context': 'https://schema.org',
@@ -765,31 +769,108 @@ export function generateVideoSchema(
   }
 
   if (videoId) {
-    // YouTube video
     schema.embedUrl = `https://www.youtube.com/embed/${videoId}`
-    schema.contentUrl = `https://youtube.googleapis.com/v/${videoId}`
+    schema.contentUrl = `https://www.youtube.com/watch?v=${videoId}`
     schema.url = videoUrl
-    schema.thumbnailUrl = `https://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`
-  } else if (vimeoMatch) {
-    // Vimeo video
-    schema.embedUrl = `https://player.vimeo.com/video/${vimeoMatch[1]}`
+
+    schema.thumbnailUrl = [
+      `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    ]
+
+    // Set thumbnail dimensions for schema
+    schema.thumbnail = {
+      '@type': 'ImageObject',
+      url: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+      width: 480,
+      height: 360,
+    }
+  } else if (vimeoId) {
+    schema.embedUrl = `https://player.vimeo.com/video/${vimeoId}`
+    schema.contentUrl = `https://vimeo.com/${vimeoId}`
     schema.url = videoUrl
-    // Vimeo thumbnails require API call, use placeholder or fetch separately
-    schema.thumbnailUrl =
-      thumbnailUrl || 'https://draft.dev/site/video-placeholder.jpg'
+
+    schema.thumbnailUrl = thumbnailUrl || `https://vumbnail.com/${vimeoId}.jpg`
+
+    if (thumbnailUrl) {
+      schema.thumbnail = {
+        '@type': 'ImageObject',
+        url: thumbnailUrl,
+        width: 640,
+        height: 360,
+      }
+    }
   } else {
-    // Other video types
     schema.contentUrl = videoUrl
     schema.url = videoUrl
-    schema.thumbnailUrl =
-      thumbnailUrl || 'https://draft.dev/site/video-placeholder.jpg'
+    schema.thumbnailUrl = thumbnailUrl || DEFAULT_IMAGE_URL
+
+    if (thumbnailUrl) {
+      schema.thumbnail = {
+        '@type': 'ImageObject',
+        url: thumbnailUrl,
+      }
+    }
   }
 
   if (duration) {
-    schema.duration = duration
+    if (duration.startsWith('PT')) {
+      schema.duration = duration
+    } else {
+      const totalSeconds = parseInt(duration)
+      const minutes = Math.floor(totalSeconds / 60)
+      const seconds = totalSeconds % 60
+      schema.duration = `PT${minutes}M${seconds}S`
+    }
   }
 
   return schema
+}
+
+export function getYouTubeThumbnail(
+  videoUrl: string,
+  quality: 'maxres' | 'hq' | 'mq' | 'sd' = 'hq',
+): string | null {
+  const videoId = videoUrl.match(
+    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+  )?.[1]
+
+  if (!videoId) return null
+
+  const qualityMap = {
+    maxres: 'maxresdefault.jpg',
+    hq: 'hqdefault.jpg',
+    mq: 'mqdefault.jpg',
+    sd: 'sddefault.jpg',
+  }
+
+  return `https://i.ytimg.com/vi/${videoId}/${qualityMap[quality]}`
+}
+
+export async function validateYouTubeThumbnail(
+  videoId: string,
+): Promise<string> {
+  const thumbnailQualities = [
+    'maxresdefault.jpg',
+    'hqdefault.jpg',
+    'mqdefault.jpg',
+    'sddefault.jpg',
+  ]
+
+  for (const quality of thumbnailQualities) {
+    const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/${quality}`
+
+    try {
+      const response = await fetch(thumbnailUrl, { method: 'HEAD' })
+      if (response.ok) {
+        return thumbnailUrl
+      }
+    } catch (error) {
+      console.warn(`Failed to validate thumbnail: ${thumbnailUrl}`)
+    }
+  }
+
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
 }
 
 export function generateWebSiteSchema() {
