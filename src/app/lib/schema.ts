@@ -742,25 +742,17 @@ export function generateVideoSchema(
   duration?: string,
   thumbnailUrl?: string,
 ) {
-  function getVideoEmbedUrl(url: string): string {
-    // Handle YouTube URLs
-    const youtubeMatch = url.match(
-      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
+  function getVideoId(url: string): string | null {
+    const match = url.match(
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s]+)/,
     )
-    if (youtubeMatch) {
-      return `https://www.youtube.com/embed/${youtubeMatch[1]}`
-    }
-
-    // Handle Vimeo URLs
-    const vimeoMatch = url.match(/vimeo\.com\/(\d+)/)
-    if (vimeoMatch) {
-      return `https://player.vimeo.com/video/${vimeoMatch[1]}`
-    }
-
-    return url
+    return match ? match[1] : null
   }
 
-  const embedUrl = getVideoEmbedUrl(videoUrl)
+  const videoId = getVideoId(videoUrl)
+
+  // For Vimeo videos
+  const vimeoMatch = videoUrl.match(/vimeo\.com\/(\d+)/)
 
   const schema: any = {
     '@context': 'https://schema.org',
@@ -772,26 +764,29 @@ export function generateVideoSchema(
     inLanguage: 'en-US',
   }
 
-  // Use embedUrl for YouTube/Vimeo, contentUrl for direct video files
-  if (
-    videoUrl.includes('youtube.com') ||
-    videoUrl.includes('youtu.be') ||
-    videoUrl.includes('vimeo.com')
-  ) {
-    schema.embedUrl = embedUrl
-    schema.url = videoUrl // Original watch URL
+  if (videoId) {
+    // YouTube video
+    schema.embedUrl = `https://www.youtube.com/embed/${videoId}`
+    schema.contentUrl = `https://youtube.googleapis.com/v/${videoId}`
+    schema.url = videoUrl
+    schema.thumbnailUrl = `https://i3.ytimg.com/vi/${videoId}/hqdefault.jpg`
+  } else if (vimeoMatch) {
+    // Vimeo video
+    schema.embedUrl = `https://player.vimeo.com/video/${vimeoMatch[1]}`
+    schema.url = videoUrl
+    // Vimeo thumbnails require API call, use placeholder or fetch separately
+    schema.thumbnailUrl =
+      thumbnailUrl || 'https://draft.dev/site/video-placeholder.jpg'
   } else {
-    // For direct video files (.mp4, .webm, etc.)
+    // Other video types
     schema.contentUrl = videoUrl
     schema.url = videoUrl
+    schema.thumbnailUrl =
+      thumbnailUrl || 'https://draft.dev/site/video-placeholder.jpg'
   }
+
   if (duration) {
     schema.duration = duration
-  }
-  if (thumbnailUrl) {
-    schema.thumbnailUrl = thumbnailUrl.startsWith('/')
-      ? `https://draft.dev${thumbnailUrl}`
-      : thumbnailUrl
   }
 
   return schema
