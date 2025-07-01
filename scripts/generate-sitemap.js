@@ -249,10 +249,6 @@ const mainFunction = async () => {
   // Option 1: Standard implementation
   await generateSitemap()
 
-  // Option 2: Stream writer implementation for large sitemaps
-  // Uncomment to use this instead
-  // await generateSitemapStreamWriter()
-
   console.log('Sitemap generation process complete!')
 }
 
