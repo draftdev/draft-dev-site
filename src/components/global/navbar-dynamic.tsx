@@ -277,28 +277,37 @@ export function DynamicNavbar({}: NavbarProps) {
   const pathname = usePathname()
   const router = useRouter()
   const isSlug = pathname?.startsWith('/learn/')
-  const [isBannerVisible, setIsBannerVisible] = useState(false)
+  const [bannerHeight, setBannerHeight] = useState(0)
   const [isWhyUsOpen, setIsWhyUsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    // Check initial banner state
-    setIsBannerVisible(!!document.body.getAttribute('data-banner'))
-
-    const handleBannerChange = (event: CustomEvent) => {
-      setIsBannerVisible(event.detail.isVisible)
+    // Get initial banner height from CSS variable
+    const updateBannerHeight = () => {
+      const height = getComputedStyle(
+        document.documentElement,
+      ).getPropertyValue('--banner-height')
+      setBannerHeight(parseInt(height) || 0)
     }
 
+    // Listen for banner visibility changes
+    const handleBannerChange = (event: CustomEvent) => {
+      updateBannerHeight()
+    }
+
+    updateBannerHeight()
     window.addEventListener(
       'bannerVisibilityChange',
       handleBannerChange as EventListener,
     )
+    window.addEventListener('resize', updateBannerHeight)
 
     return () => {
       window.removeEventListener(
         'bannerVisibilityChange',
         handleBannerChange as EventListener,
       )
+      window.removeEventListener('resize', updateBannerHeight)
     }
   }, [])
 
@@ -350,7 +359,8 @@ export function DynamicNavbar({}: NavbarProps) {
       {isWhyUsOpen && (
         <div
           id="why-us-popover"
-          className={`fixed inset-x-0 ${isBannerVisible ? 'top-[8.5rem]' : 'top-[4.5rem]'} z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]`}
+          className="fixed inset-x-0 z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]"
+          style={{ top: `${bannerHeight + 72}px` }}
         >
           <div className="absolute right-5 top-4">
             <button
@@ -393,11 +403,12 @@ export function DynamicNavbar({}: NavbarProps) {
 
   return (
     <header className="navbar-container">
-      {isSlug && <div className={`${isBannerVisible ? 'h-24' : 'h-16'}`}></div>}
+      {isSlug && <div style={{ height: `${bannerHeight + 64}px` }}></div>}
 
       <Disclosure
         as="div"
-        className={`fixed left-0 right-0 z-40 bg-white/95 shadow-md backdrop-blur-sm ${isBannerVisible ? 'top-[4rem]' : 'top-0'}`}
+        className="fixed left-0 right-0 z-40 bg-white/95 shadow-md backdrop-blur-sm transition-all duration-300"
+        style={{ top: `${bannerHeight}px` }}
         defaultOpen={isMobileMenuOpen}
       >
         {({ open, close }) => {

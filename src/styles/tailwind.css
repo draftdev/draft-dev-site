@@ -8,6 +8,7 @@
     --primary: #544b84;
     --secondary: #916c7c;
     --gradient-stop: #765c80;
+    --banner-height: 0px; /* Dynamic, set by JavaScript */
   }
 
   html,
@@ -182,43 +183,22 @@
     @apply bg-transparent font-code font-semibold text-white;
   }
 }
-@layer base {
-  :root {
-    --banner-height: 41px;
-  }
 
-  body {
-    padding-top: 64px;
-  }
-
-  body[data-banner='visible'] {
-    padding-top: calc(var(--banner-height) + 64px); /* Banner + navbar height */
-  }
-}
-
+/* Banner and Navigation Layout */
 @layer components {
-  /* Banner container */
+  /* Banner container - higher z-index than navbar */
   .banner-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 60;
-    height: var(--banner-height);
+    z-index: 50; /* Higher than navbar (z-40) */
   }
 
-  /* Navbar container */
-  .navbar-container {
-    position: relative;
-  }
-
-  body[data-banner='visible'] .navbar-container > div {
-    top: var(--banner-height);
-  }
-
-  body:not([data-banner='visible']) .navbar-container > div {
-    top: 0;
+  /* Ensure smooth transitions */
+  .navbar-container > div {
     transition: top 0.3s ease-in-out;
+  }
+
+  /* Why Us popover should be above banner */
+  #why-us-popover {
+    z-index: 60; /* Higher than banner */
   }
 }
 
