@@ -7,6 +7,7 @@ export default function FormOrchestrateTechnicalContent() {
     <LoadHubSpotForm
       portalId="146032007"
       formId="15791873-10c9-408a-ad4b-cd7c8dc376cd"
+      region="eu1"
     />
   )
 }
