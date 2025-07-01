@@ -8,10 +8,10 @@ const loadHubspotScript = (
 
   if (document.getElementById(scriptId)) {
     if (
-      window.hbspt &&
+      window['hbspt'] &&
       !document.getElementById(targetDivId)?.hasChildNodes()
     ) {
-      window.hbspt.forms.create({
+      window['hbspt'].forms.create({
         region: region,
         portalId: portalId,
         formId: formID,
@@ -26,12 +26,11 @@ const loadHubspotScript = (
   script.src = '//js.hsforms.net/forms/shell.js'
   script.async = true
 
-  const head = document.querySelector('head') as HTMLHeadElement
-  head.appendChild(script)
+  document.body.appendChild(script)
 
   script.onload = () => {
-    if (window.hbspt) {
-      window.hbspt.forms.create({
+    if (window['hbspt']) {
+      window['hbspt'].forms.create({
         region: region,
         portalId: portalId,
         formId: formID,

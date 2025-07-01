@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "bundler",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -23,7 +23,9 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "es5"
+    "target": "es5",
+    "downlevelIteration": true,
+    "useDefineForClassFields": false
   },
   "include": [
     "next-env.d.ts",
