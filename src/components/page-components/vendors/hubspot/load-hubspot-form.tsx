@@ -6,16 +6,15 @@ import loadHubspotScript from './load-hubspot-script'
 interface HubSpotFormProps {
   portalId: string
   formId: string
-  region: string
 }
 
-const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
+const LoadHubSpotForm = ({ portalId, formId }: HubSpotFormProps) => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // Validate inputs
-    if (!portalId || !formId || !region) {
+    if (!portalId || !formId) {
       setError('Missing required form configuration')
       setLoading(false)
       return
@@ -24,7 +23,7 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
     // Ensure DOM is ready
     const loadForm = () => {
       try {
-        loadHubspotScript(formId, portalId, region)
+        loadHubspotScript(formId, portalId)
 
         // Check if form loaded after a delay
         setTimeout(() => {
@@ -52,7 +51,7 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
         return () => window.removeEventListener('load', loadForm)
       }
     }
-  }, [formId, portalId, region])
+  }, [formId, portalId])
 
   return (
     <div className="hubspot-form-container max-w-7xl">
@@ -67,7 +66,7 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
           <p className="font-semibold">Error loading form</p>
           <p className="text-sm">{error}</p>
           <p className="mt-2 text-xs">
-            Portal ID: {portalId}, Form ID: {formId}, Region: {region}
+            Portal ID: {portalId}, Form ID: {formId}
           </p>
         </div>
       )}

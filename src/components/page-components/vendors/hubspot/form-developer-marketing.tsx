@@ -7,7 +7,6 @@ export default function FormDeveloperMarketing() {
     <LoadHubSpotForm
       portalId="146032007"
       formId="5ba3fe77-627d-46c1-bed1-6189e2b7dcb8"
-      region="eu1"
     />
   )
 }
