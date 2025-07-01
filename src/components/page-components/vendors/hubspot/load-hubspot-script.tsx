@@ -6,56 +6,69 @@ const loadHubspotScript = (
   const scriptId = `hs-script-${formID}`
   const targetDivId = `hubspotForm-${formID}`
 
-  console.log(
-    `Loading form: ${formID} for portal: ${portalId} in region: ${region}`,
-  )
+  console.log('🔍 Loading HubSpot form:', { formID, portalId, region })
 
-  // Check if script already exists
+  // Check if target div exists
+  const targetDiv = document.getElementById(targetDivId)
+  if (!targetDiv) {
+    console.error('❌ Target div not found:', targetDivId)
+    return
+  }
+
+  // Check if script already loaded
   if (document.getElementById(scriptId)) {
-    console.log('Script already exists, checking if form needs to be created')
-    // If script exists but form hasn't been created yet
-    if (
-      window.hbspt &&
-      !document.getElementById(targetDivId)?.hasChildNodes()
-    ) {
-      console.log('Creating form with existing script')
-      window.hbspt.forms.create({
-        region: region,
-        portalId: portalId,
-        formId: formID,
-        target: `#${targetDivId}`,
-      })
+    console.log('✅ Script already loaded, creating form...')
+
+    // Check if hbspt is available
+    if (window.hbspt && window.hbspt.forms) {
+      // Only create if form hasn't been created yet
+      if (!targetDiv.hasChildNodes()) {
+        console.log('📝 Creating form in existing container...')
+        window.hbspt.forms.create({
+          region: region,
+          portalId: portalId,
+          formId: formID,
+          target: `#${targetDivId}`,
+        })
+      } else {
+        console.log('⚠️ Form already exists in container')
+      }
+    } else {
+      console.error('❌ window.hbspt not available despite script being loaded')
     }
     return
   }
 
-  console.log('Creating new HubSpot script')
-  // Create new script - using shell.js which was working before
+  console.log('📥 Loading HubSpot script...')
   const script = document.createElement('script')
   script.id = scriptId
-  script.src = 'https://js.hsforms.net/forms/shell.js'
+  script.src = '//js.hsforms.net/forms/shell.js'
   script.async = true
 
   const head = document.querySelector('head') as HTMLHeadElement
   head.appendChild(script)
 
   script.onload = () => {
-    console.log('HubSpot script loaded successfully')
-    if (window.hbspt) {
-      console.log('Creating form after script load')
-      window.hbspt.forms.create({
-        region: region,
-        portalId: portalId,
-        formId: formID,
-        target: `#${targetDivId}`,
-      })
-    } else {
-      console.error('HubSpot API not available after script load')
-    }
+    console.log('✅ HubSpot script loaded successfully')
+
+    // Add a small delay to ensure hbspt is initialized
+    setTimeout(() => {
+      if (window.hbspt && window.hbspt.forms) {
+        console.log('📝 Creating form after script load...')
+        window.hbspt.forms.create({
+          region: region,
+          portalId: portalId,
+          formId: formID,
+          target: `#${targetDivId}`,
+        })
+      } else {
+        console.error('❌ window.hbspt still not available after script load')
+      }
+    }, 100)
   }
 
   script.onerror = (error) => {
-    console.error('Failed to load HubSpot script:', error)
+    console.error('❌ Failed to load HubSpot script:', error)
   }
 }
 

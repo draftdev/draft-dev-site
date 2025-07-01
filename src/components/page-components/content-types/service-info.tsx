@@ -34,7 +34,8 @@ const ServiceInfo = () => {
               <p className="lead-dark py-6 text-xl">
                 <strong>Check out the examples below</strong> to see how
                 different content types work together to create a comprehensive
-                developer marketing strategy. The right column contains links to content we've produced for our clients.
+                developer marketing strategy. The right column contains links to
+                content we've produced for our clients.
               </p>
             </div>
           </div>
