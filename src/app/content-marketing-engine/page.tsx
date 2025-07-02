@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -6,7 +7,8 @@ import ServiceInfo from '@/components/page-components/content-marketing-engine/s
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Set Up a Content Marketing Engine in the Age of AI - Draft.dev',
+  title:
+    'How to Set Up a Content Marketing Engine in the Age of AI - Draft.dev',
   description:
     'Learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
   robots: {
@@ -32,6 +34,7 @@ export default function ContentMarketingEngine() {
         imageSrc="/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg"
         imageAlt="Robert Gibb"
       />
+      <FAQ />
     </>
   )
 }

@@ -1,5 +1,6 @@
 import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
 import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
+import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
 import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
@@ -119,6 +120,7 @@ export default async function BlogPage() {
           />
         </div>
         <NewsletterFull />
+        <FAQ />
       </div>
     </>
   )

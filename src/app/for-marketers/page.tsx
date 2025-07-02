@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
 import { LogosDark } from '@/components/media/logos-dark'
@@ -119,6 +120,7 @@ export default function ForMarketers(): JSX.Element {
           imageAlt="Robert Gibb"
         />
       </main>
+      <FAQ />
     </div>
   )
 }

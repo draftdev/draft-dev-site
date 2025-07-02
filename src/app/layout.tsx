@@ -1,4 +1,3 @@
-import FAQ from '@/components/global/faq'
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
@@ -419,6 +418,13 @@ export default function RootLayout({
           as="image"
         />
 
+        <link
+          rel="preload"
+          href="/site/small-portrait/coding_draft_dev.jpg"
+          as="image"
+          fetchPriority="high"
+        />
+
         {/* Preload HubSpot forms script for better performance */}
         <link
           rel="preload"
@@ -451,7 +457,7 @@ export default function RootLayout({
 
         <div className="flex min-h-screen flex-col">
           <main className="flex-grow">{children}</main>
-          <FAQ />
+
           <Footer />
         </div>
       </body>

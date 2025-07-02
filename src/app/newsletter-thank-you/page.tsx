@@ -1,4 +1,5 @@
 import { Container } from '@/components/global/container'
+import FAQ from '@/components/global/faq'
 import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -26,13 +27,21 @@ export default function ThankYou() {
             </h1>
             <div className="mx-auto my-6 max-w-2xl text-center">
               <p>
-                If you are interested in some of our other resources, feel free to <strong><Link href="/resources">browse through our resources library </Link></strong>and download our free podcasting guides and checklists!
+                If you are interested in some of our other resources, feel free
+                to{' '}
+                <strong>
+                  <Link href="/resources">
+                    browse through our resources library{' '}
+                  </Link>
+                </strong>
+                and download our free podcasting guides and checklists!
               </p>
             </div>
           </div>
         </div>
       </Container>
       <NewsletterFull />
+      <FAQ />
     </>
   )
 }

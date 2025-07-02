@@ -1,4 +1,5 @@
 import { Container } from '@/components/global/container'
+import FAQ from '@/components/global/faq'
 import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
 
@@ -34,6 +35,7 @@ export default function ThankYou() {
         </div>
       </Container>
       <NewsletterFull />
+      <FAQ />
     </>
   )
 }

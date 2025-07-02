@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import type { Metadata } from 'next'
 import ResourceGrid from './grid'
@@ -29,6 +30,7 @@ export default function Resources() {
           imageAlt="Rich Burroughs"
         />
       </main>
+      <FAQ />
     </>
   )
 }

@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -38,6 +39,7 @@ export default function ContentTypes() {
       <Examples />
       <TestimonialsGroup />
       <LogosDark />
+      <FAQ />
     </>
   )
 }

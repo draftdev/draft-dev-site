@@ -1,4 +1,5 @@
 import { Container } from '@/components/global/container'
+import FAQ from '@/components/global/faq'
 import NewsletterFull from '@/components/media/newsletter-full'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -40,6 +41,7 @@ export default function CallBooked() {
         </div>
       </Container>
       <NewsletterFull />
+      <FAQ />
     </>
   )
 }

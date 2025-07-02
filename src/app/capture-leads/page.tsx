@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseLoft from '@/components/media/case-studies/med-case-loft'
 import { LogosDark } from '@/components/media/logos-dark'
@@ -75,6 +76,7 @@ export default function BuildTrust() {
         imageSrc="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
         imageAlt="Henry Poydar"
       />
+      <FAQ />
     </>
   )
 }

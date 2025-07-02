@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -25,6 +26,7 @@ export default function Ideas() {
       <SocialProof />
       <TestimonialsGroup />
       <LogosDark />
+      <FAQ />
     </>
   )
 }

@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import { LogosDark } from '@/components/media/logos-dark'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -31,6 +32,7 @@ export default function Newsletter() {
         imageSrc="/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg"
         imageAlt="Rich Burroughs"
       />
+      <FAQ />
     </>
   )
 }

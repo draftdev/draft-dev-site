@@ -3,6 +3,7 @@ import {
   generateServiceSchema,
   generateTestimonialSchema,
 } from '@/app/lib/schema'
+import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
@@ -243,6 +244,7 @@ export default function Home() {
             imageAlt="Rich Burroughs"
           />
         </main>
+        <FAQ />
       </div>
     </>
   )

@@ -2,6 +2,7 @@ import ServiceHeader from '@/components/global/headers/service-header'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import What from '@/components/page-components/what'
 
+import FAQ from '@/components/global/faq'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
@@ -82,6 +83,7 @@ export default function VideoTutorials() {
         imageSrc="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
         imageAlt="Henry Poydar"
       />
+      <FAQ />
     </>
   )
 }

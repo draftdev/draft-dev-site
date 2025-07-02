@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -45,6 +46,7 @@ export default function BlogPosts() {
         imageSrc="/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg"
         imageAlt="Robert Gibb"
       />
+      <FAQ />
     </>
   )
 }

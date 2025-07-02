@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import CaseStudyMain from '@/components/media/case-studies/case-study-main'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
@@ -24,6 +25,7 @@ export default function CaseStudy() {
       <SocialProof />
       <TestimonialsGroup />
       <LogosDark />
+      <FAQ />
     </>
   )
 }

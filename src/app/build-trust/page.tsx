@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseStatusHero from '@/components/media/case-studies/med-case-status-hero'
 import { LogosDark } from '@/components/media/logos-dark'
@@ -67,6 +68,7 @@ export default function BuildTrust() {
       <MedCaseStatusHero />
       <LogosDark />
       <TestimonialsGroup />
+      <FAQ />
     </>
   )
 }

@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
@@ -38,6 +39,7 @@ export default function Webinars() {
         imageSrc="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
         imageAlt="Adam Gordon Bell"
       />
+      <FAQ />
     </>
   )
 }

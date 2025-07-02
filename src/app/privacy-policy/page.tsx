@@ -1,3 +1,4 @@
+import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
@@ -196,6 +197,7 @@ export default function PrivacyPolicy() {
         </p>
       </div>
       <LogosDark />
+      <FAQ />
     </>
   )
 }
