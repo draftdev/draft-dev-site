@@ -2,6 +2,46 @@ import type { Data } from '@/components/global/types'
 
 export const pastWebinars: Data[] = [
   {
+    id: '20',
+    title: 'Interactive Content Strategies for Technical Audiences',
+    url: 'https://www.youtube.com/watch?v=UvpyyCdCNPU',
+    date: '2025-06-23',
+    description:
+      'Proven strategies for creating content that keeps developers engaged.',
+  },
+  {
+    id: '19',
+    title: 'How to Orchestrate Technical Content to Drive Business',
+    url: 'https://www.youtube.com/watch?v=Pfd8W8xuudo',
+    date: '2025-06-05',
+    description:
+      'Complete framework you need to build systematic content marketing engines.',
+  },
+  {
+    id: '18',
+    title: 'How DevRel, Marketing, and Sales Can (and Should) Work Together',
+    url: 'https://www.youtube.com/watch?v=pBbl_JCMonc',
+    date: '2025-05-28',
+    description:
+      'The relationship between Developer Relations, Marketing, and Sales.',
+  },
+  {
+    id: '17',
+    title: 'How to Set Up a Content Marketing Engine in the Age of AI',
+    url: 'https://www.youtube.com/watch?v=LmvcnZF4C3w',
+    date: '2025-05-22',
+    description:
+      'Build predictable, revenue-driving content marketing systems for technical audiences.',
+  },
+  {
+    id: '16',
+    title: 'Balancing Open-Source and Product Advocacy',
+    url: 'https://www.youtube.com/watch?v=O-2pG8RRvAY',
+    date: '2025-05-16',
+    description:
+      'The balancing act between open-source advocacy and product marketing.',
+  },
+  {
     id: '15',
     title: 'Branding in Tech: What Works, What Doesn’t, and Why It Matters',
     url: 'https://www.youtube.com/watch?v=T3rGEmsFKbc',

@@ -52,21 +52,6 @@ const UpcomingWebinars = () => {
   const webinars = [
     {
       title:
-        'Interactive Content Strategies: Engaging Developers Through Action',
-      date: 'June 18 2025',
-      time: '1:00pm CT',
-      description1:
-        "In this webinar, Spence Taylor (Lead Developer Relations Engineer at New Relic) and Leon Adato (Principal Technology Advocate at Catchpoint) will explore strategies for creating interactive content that resonates. They'll cover formats like live workshops, sandbox environments, and developer onboarding flows—anything that gets developers engaged through doing, not just reading.",
-      description2:
-        'Join us on June 18th to learn how to design interactive experiences that drive meaningful engagement, discover proven frameworks for moving beyond static content, and get actionable strategies for implementing interactive elements in your developer programs.',
-      description3: '',
-      registrationLink:
-        'https://us02web.zoom.us/webinar/register/6817482854734/WN_uezd14aBQmKpihQs7IL2zA',
-      isFeatured: true,
-    },
-
-    {
-      title:
         'How to Orchestrate Promotion Waves and Maximize Reach without Being Spammy',
       date: '6 Aug 2025',
       time: '11:00am CT',
@@ -78,7 +63,7 @@ const UpcomingWebinars = () => {
 
       registrationLink:
         'https://us02web.zoom.us/webinar/register/8417489732873/WN_T5ymVqZhShKUernjiQg_Cg',
-      isFeatured: false,
+      isFeatured: true,
     },
   ]
 

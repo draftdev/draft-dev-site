@@ -11,12 +11,27 @@ interface BannerProps {
 
 const Banner: React.FC<BannerProps> = ({ text, link }) => {
   const [isVisible, setIsVisible] = useState(true)
+  const [isDesktop, setIsDesktop] = useState(false)
 
+  // Check if viewport is desktop size
   useEffect(() => {
-    // Measure banner height
+    const checkViewport = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+
+    checkViewport()
+    window.addEventListener('resize', checkViewport)
+
+    return () => {
+      window.removeEventListener('resize', checkViewport)
+    }
+  }, [])
+
+  // Update CSS variable and fire custom event
+  useEffect(() => {
     const updateBannerHeight = () => {
       const banner = document.querySelector('.banner-container')
-      if (banner && isVisible) {
+      if (banner && isVisible && isDesktop) {
         const height = banner.getBoundingClientRect().height
         document.documentElement.style.setProperty(
           '--banner-height',
@@ -27,27 +42,24 @@ const Banner: React.FC<BannerProps> = ({ text, link }) => {
       }
     }
 
-    // Update height on mount and resize
     updateBannerHeight()
     window.addEventListener('resize', updateBannerHeight)
 
-    // Set data attribute
-    if (isVisible) {
+    if (isVisible && isDesktop) {
       document.body.setAttribute('data-banner', 'visible')
     } else {
       document.body.removeAttribute('data-banner')
     }
 
-    // Dispatch event
     const event = new CustomEvent('bannerVisibilityChange', {
-      detail: { isVisible },
+      detail: { isVisible: isVisible && isDesktop },
     })
     window.dispatchEvent(event)
 
     return () => {
       window.removeEventListener('resize', updateBannerHeight)
     }
-  }, [isVisible])
+  }, [isVisible, isDesktop])
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -55,7 +67,8 @@ const Banner: React.FC<BannerProps> = ({ text, link }) => {
     setIsVisible(false)
   }
 
-  if (!isVisible) {
+  // Don't render at all if mobile or dismissed
+  if (!isVisible || !isDesktop) {
     return null
   }
 
