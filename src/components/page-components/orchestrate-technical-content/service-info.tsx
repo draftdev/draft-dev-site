@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import FormOrchestrateTechnicalContent from '../vendors/hubspot/form-content-marketing-engine'
+import FormOrchestrateTechnicalContent from '../vendors/hubspot/form-orchestrate-technical-content'
 
 const ServiceInfo = () => {
   return (
