@@ -17,8 +17,8 @@ module.exports = {
         desktop: '1280px',
       },
       fontFamily: {
-        sans: ['var(--font-fira-sans)', 'system-ui', 'sans-serif'],
-        code: ['var(--font-fira-code)', 'monospace'],
+        sans: ['var(--font-fira-sans)', 'var(--font-fallback-sans)'],
+        code: ['var(--font-fira-code)', 'var(--font-fallback-code)'],
       },
       borderRadius: {
         '4xl': '2rem',
