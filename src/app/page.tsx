@@ -3,17 +3,39 @@ import {
   generateServiceSchema,
   generateTestimonialSchema,
 } from '@/app/lib/schema'
-import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
-import Testimonial from '@/components/media/testimonials/testimonial'
-import Testimonials from '@/components/media/testimonials/testimonials-group'
-import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
-import How from '@/components/page-components/how'
-import SinglePricing from '@/components/page-components/resources/single-pricing'
+import dynamic from 'next/dynamic'
+
 import What from '@/components/page-components/what'
-import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
+
+const FAQ = dynamic(() => import('@/components/global/faq'), {
+  loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+})
+
+const Testimonial = dynamic(
+  () => import('@/components/media/testimonials/testimonial'),
+  {
+    loading: () => <div className="h-64 animate-pulse bg-gray-50" />,
+  },
+)
+
+const Testimonials = dynamic(
+  () => import('@/components/media/testimonials/testimonials-group'),
+  {
+    loading: () => <div className="h-96 animate-pulse bg-gray-100" />,
+  },
+)
+
+const CaseStudyHome = dynamic(
+  () => import('@/components/page-components/home/case-study-home'),
+)
+const How = dynamic(() => import('@/components/page-components/how'))
+const Why = dynamic(() => import('@/components/page-components/why'))
+const SinglePricing = dynamic(
+  () => import('@/components/page-components/resources/single-pricing'),
+)
 
 export const metadata: Metadata = {
   title: 'Content Creation Agency for Technical Audiences - Draft.dev',
@@ -131,21 +153,11 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(testimonialSchema),
+          __html: JSON.stringify([
+            organizationSchema,
+            serviceSchema,
+            testimonialSchema,
+          ]),
         }}
       />
 
