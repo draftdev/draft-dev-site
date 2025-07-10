@@ -465,12 +465,6 @@ export default function RootLayout({
           href="https://www.googletagmanager.com"
           crossOrigin="anonymous"
         />
-
-        {/* DNS Prefetch (optional, lower priority) */}
-        <link rel="dns-prefetch" href="//js.hsforms.net" />
-        <link rel="dns-prefetch" href="//js-eu1.hubspot.com" />
-        <link rel="dns-prefetch" href="//forms.hubspot.com" />
-        <link rel="dns-prefetch" href="//cdn2.hubspot.net" />
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
