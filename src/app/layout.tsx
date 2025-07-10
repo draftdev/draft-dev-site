@@ -412,35 +412,65 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
       <head>
+        {/* Preload critical images */}
         <link
           rel="preload"
           href="/draft/logos/draftlogo_main_filled.svg"
           as="image"
         />
-
         <link
           rel="preload"
-          href="/site/small-portrait/coding_draft_dev.jpg"
+          href="/site/small-portrait/mobile_img.jpg"
           as="image"
           fetchPriority="high"
         />
 
-        {/* Preload HubSpot forms script for better performance */}
+        {/* Preload HubSpot forms script */}
         <link
           rel="preload"
-          href="//js.hsforms.net/forms/shell.js"
+          href="https://js.hsforms.net/forms/shell.js"
           as="script"
           crossOrigin="anonymous"
         />
 
-        {/* DNS prefetch for HubSpot domains to reduce connection time */}
+        {/* Preconnect to critical domains */}
+        <link
+          rel="preconnect"
+          href="https://js.hsforms.net"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://js-eu1.hubspot.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://forms.hubspot.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://cdn2.hubspot.net"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://www.googletagmanager.com"
+          crossOrigin="anonymous"
+        />
+
+        {/* DNS Prefetch (optional, lower priority) */}
         <link rel="dns-prefetch" href="//js.hsforms.net" />
         <link rel="dns-prefetch" href="//js-eu1.hubspot.com" />
         <link rel="dns-prefetch" href="//forms.hubspot.com" />
-
-        {/* Preconnect to critical HubSpot domains for faster loading */}
-        <link rel="preconnect" href="//js.hsforms.net" />
-        <link rel="preconnect" href="//js-eu1.hubspot.com" />
+        <link rel="dns-prefetch" href="//cdn2.hubspot.net" />
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
