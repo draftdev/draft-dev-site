@@ -7,18 +7,34 @@ import ServiceInfo from '@/components/page-components/developer-marketing/servic
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Building and Scaling Developer Marketing - Draft.dev',
+  title: 'Building and Scaling Developer Marketing',
   description:
-    'Download our Building and Scaling Developer Marketing eBook: Learn effective strategies for marketing to developers through authentic, value-driven approaches that drive awareness and build trust.',
-  robots: {
-    index: true,
-    follow: true,
+    'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
+  keywords:
+    'developer marketing, marketing to developers, developer relations marketing, technical audience marketing',
+  openGraph: {
+    title: 'Building and Scaling Developer Marketing - Draft.dev',
+    description:
+      'Reach software engineers through authentic, expert-driven content.',
+    url: 'https://draft.dev/developer-marketing',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/developer_marketing_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Developer Marketing eBook',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Developer Marketing - Draft.dev',
+    description: 'Reach technical decision makers effectively.',
+    images: ['https://draft.dev/draft/og/developer_marketing_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/developer-marketing',
+    canonical: 'https://draft.dev/developer-marketing',
   },
 }
-
 export default function DeveloperMarketing() {
   return (
     <>

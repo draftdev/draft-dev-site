@@ -7,15 +7,32 @@ import UpcomingWebinars from '@/components/page-components/webinars/upcoming'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Webinars - Draft.dev',
+  title: 'Technical Content Marketing Webinars',
   description:
-    'At Draft.dev, we consistently host webinars with industry peers. Watch our previous sessions here and sign up for our upcoming webinars.',
-  robots: {
-    index: true,
-    follow: true,
+    'Join our educational webinars on technical content marketing, developer relations, and creating content that resonates with technical audiences.',
+  keywords:
+    'technical content marketing webinars, developer marketing webinars, content strategy webinars, technical writing education',
+  openGraph: {
+    title: 'Technical Content Marketing Webinars - Draft.dev',
+    description:
+      'Educational webinars on technical content marketing and developer relations.',
+    url: 'https://draft.dev/webinars',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/webinars_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing Webinars',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Content Webinars - Draft.dev',
+    description: 'Learn technical content marketing strategies.',
+    images: ['https://draft.dev/draft/og/webinars_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/webinars',
+    canonical: 'https://draft.dev/webinars',
   },
 }
 

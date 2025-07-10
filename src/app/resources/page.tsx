@@ -4,15 +4,33 @@ import type { Metadata } from 'next'
 import ResourceGrid from './grid'
 
 export const metadata: Metadata = {
-  title: 'Free Resources - Draft.dev',
+  title: 'Technical Content Marketing Resources',
   description:
-    'Free developer marketing guides, webinars, newsletter, and expert articles.',
-  robots: {
-    index: true,
-    follow: true,
+    'Free resources to help you create better technical content, improve your developer relations, and build authority in technical communities.',
+  keywords:
+    'technical content marketing resources, developer relations guides, content strategy templates, technical writing resources',
+  openGraph: {
+    title: 'Technical Content Marketing Resources - Draft.dev',
+    description:
+      'Free resources to help you create better technical content and improve developer relations.',
+    url: 'https://draft.dev/resources',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/resources_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing Resources',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Content Marketing Resources - Draft.dev',
+    description:
+      'Free resources for technical content marketing and developer relations.',
+    images: ['https://draft.dev/draft/og/resources_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/resources',
+    canonical: 'https://draft.dev/resources',
   },
 }
 

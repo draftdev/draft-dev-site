@@ -6,15 +6,31 @@ import ServiceInfo from '@/components/page-components/newsletter/service-info'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Subscribe to the Draft.dev Newsletter',
+  title: 'Technical Content Marketing Newsletter',
   description:
-    'Sign up to our Draft.dev Newsletter - we publish software development news and occasionally share news about webinars and other free resources.',
-  robots: {
-    index: true,
-    follow: true,
+    'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
+  keywords:
+    'technical content marketing newsletter, developer marketing newsletter, content marketing tips, technical writing insights',
+  openGraph: {
+    title: 'Technical Content Marketing Newsletter - Draft.dev',
+    description: 'Resources and tips for reaching developers through content.',
+    url: 'https://draft.dev/newsletter',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/newsletter_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing Newsletter',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Content Newsletter - Draft.dev',
+    description: 'Tips for reaching developers through content marketing.',
+    images: ['https://draft.dev/draft/og/newsletter_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/newsletter',
+    canonical: 'https://draft.dev/newsletter',
   },
 }
 

@@ -8,18 +8,34 @@ import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Video Tutorials - Draft.dev',
+  title: 'Technical Video Tutorials',
   description:
-    'Learn more about how we can help you create tech-video-tutorials designed to reach software developers, and see some examples.',
-  robots: {
-    index: true,
-    follow: true,
+    'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+  keywords:
+    'technical video content, developer video tutorials, technical demos, video marketing for developers',
+  openGraph: {
+    title: 'Technical Video Tutorials - Draft.dev',
+    description:
+      'Professional video content designed to engage developer audiences.',
+    url: 'https://draft.dev/video-tutorials',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/video_tutorials_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Video Tutorials and Content',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Video Tutorials - Draft.dev',
+    description: 'Engage developers with professional video content.',
+    images: ['https://draft.dev/draft/og/video_tutorials_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/video-tutorials',
+    canonical: 'https://draft.dev/video-tutorials',
   },
 }
-
 export default function VideoTutorials() {
   return (
     <>

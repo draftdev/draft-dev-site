@@ -11,15 +11,32 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Developer Marketing that Resonates - Draft.dev',
+  title: 'Content Marketing for Developer Relations',
   description:
-    'We support Developer Relations and Developer Advocate Teams by consistently delivering content that technical audiences truly care about and respect.',
-  robots: {
-    index: true,
-    follow: true,
+    'Empower DevRel teams with expert technical content that builds community, drives adoption, and showcases your technical expertise.',
+  keywords:
+    'developer relations content, devrel content marketing, developer community content, technical community building',
+  openGraph: {
+    title: 'Content Marketing for Developer Relations - Draft.dev',
+    description:
+      'Expert technical content that builds community and drives adoption.',
+    url: 'https://draft.dev/for-dev-rels',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/devrel_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Content Marketing for Developer Relations Teams',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Content for Developer Relations - Draft.dev',
+    description: 'Build community and drive adoption with expert content.',
+    images: ['https://draft.dev/draft/og/devrel_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/for-dev-rels',
+    canonical: 'https://draft.dev/for-dev-rels',
   },
 }
 

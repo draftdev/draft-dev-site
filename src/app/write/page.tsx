@@ -5,15 +5,33 @@ import AirtableEmbed from '@/components/page-components/vendors/air-table'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Write for Draft.dev',
+  title: 'Write for Draft.dev - Join Our Technical Writing Network',
   description:
-    'If you are a software developer and you want to build your personal brand while getting paid to write about interesting technical topics give us your details and we will get in touch.',
-  robots: {
-    index: true,
-    follow: true,
+    "Join our network of 300+ technical experts and get paid to write about cutting-edge technologies. We're looking for experienced developers and technical professionals.",
+  keywords:
+    'technical writing jobs, freelance developer writing, write for draft.dev, technical content creation, technical writer opportunities',
+  openGraph: {
+    title: 'Write for Draft.dev - Join Our Technical Writing Network',
+    description:
+      'Join our network of 300+ technical experts and get paid to write about cutting-edge technologies.',
+    url: 'https://draft.dev/write',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/write_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Write for Draft.dev - Technical Writing Opportunities',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Write for Draft.dev - Join Our Technical Writing Network',
+    description:
+      'Join our network of 300+ technical experts and get paid to write about cutting-edge technologies.',
+    images: ['https://draft.dev/draft/og/write_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/write',
+    canonical: 'https://draft.dev/write',
   },
 }
 

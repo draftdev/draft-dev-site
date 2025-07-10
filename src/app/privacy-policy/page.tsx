@@ -4,15 +4,30 @@ import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Draft.dev',
+  title: 'Privacy Policy',
   description:
-    'We want to protect your privacy. These terms explain how we gather information and how you can get in contact should you have any concerns.',
+    "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
+  keywords:
+    'draft.dev privacy policy, privacy protection, data security, personal information policy',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
+  },
+  openGraph: {
+    title: 'Privacy Policy - Draft.dev',
+    description: 'How we collect, use, and protect your personal information.',
+    url: 'https://draft.dev/privacy-policy',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/privacy_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Draft.dev Privacy Policy',
+      },
+    ],
   },
   alternates: {
-    canonical: '/privacy-policy',
+    canonical: 'https://draft.dev/privacy-policy',
   },
 }
 

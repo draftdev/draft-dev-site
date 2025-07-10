@@ -8,16 +8,33 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title:
-    'Build Trust and Thought Leadership with Technical Content - Draft.dev',
+  title: 'Build Trust with Technical Audiences',
   description:
-    'We deliver high-quality tech content that is written and reviewed by experienced developers, and edited by professional editors.',
-  robots: {
-    index: true,
-    follow: true,
+    'Learn how Draft.dev helps tech companies build trust with developers through authentic, expert-driven technical content that resonates with technical audiences.',
+  keywords:
+    'build trust with developers, technical content credibility, developer relations trust, authentic technical content',
+  openGraph: {
+    title: 'Build Trust with Technical Audiences - Draft.dev',
+    description:
+      'Build trust with developers through authentic, expert-driven technical content.',
+    url: 'https://draft.dev/build-trust',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/build_trust_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Build Trust with Technical Audiences',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Build Trust with Technical Audiences - Draft.dev',
+    description:
+      'Build trust with developers through authentic technical content.',
+    images: ['https://draft.dev/draft/og/build_trust_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/build-trust',
+    canonical: 'https://draft.dev/build-trust',
   },
 }
 

@@ -7,15 +7,32 @@ import ServiceInfo from '@/components/page-components/orchestrate-technical-cont
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'How to Orchestrate Technical Content to Drive Business - Draft.dev',
+  title: 'How to Orchestrate Technical Content',
   description:
-    'Learn how to build systematic content marketing that drives predictable business revenue.',
-  robots: {
-    index: true,
-    follow: true,
+    'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
+  keywords:
+    'orchestrate technical content, content orchestration, technical content management, content strategy execution',
+  openGraph: {
+    title: 'How to Orchestrate Technical Content - Draft.dev',
+    description:
+      'Strategic planning and execution for technical content at scale.',
+    url: 'https://draft.dev/orchestrate-technical-content',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/orchestrate_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Orchestrate Technical Content at Scale',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Orchestrate Technical Content - Draft.dev',
+    description: 'Manage technical content at scale.',
+    images: ['https://draft.dev/draft/og/orchestrate_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/orchestrate-technical-content',
+    canonical: 'https://draft.dev/orchestrate-technical-content',
   },
 }
 

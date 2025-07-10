@@ -87,13 +87,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) {
     return {
-      title: 'Post Not Found - Draft.dev',
+      title: 'Post Not Found',
       description: 'The requested blog post could not be found.',
-      robots: { index: false, follow: true },
+      robots: { index: false, follow: false }, // Change follow to false for 404s
     }
   }
 
-  // Sanitize excerpt if it exists
   const cleanExcerpt = post.excerpt
     ? sanitizeHtml(post.excerpt, { allowedTags: [] }).trim()
     : null
@@ -108,7 +107,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
 
-  // Use direct image URL (no proxy)
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const imageAlt = getImageAlt(post)
 
@@ -118,15 +116,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description,
     keywords:
-      post.customFields?.targetKeywords?.join(', ') || post.seo?.focuskw,
-    authors: [{ name: displayAuthor, url: 'https://draft.dev/about' }],
+      post.customFields?.targetKeywords?.join(', ') ||
+      post.seo?.focuskw ||
+      'technical content marketing, developer relations',
+    authors: [{ name: displayAuthor }],
 
     openGraph: {
       type: 'article',
       url: postUrl,
       siteName: 'Draft.dev',
       locale: 'en_US',
-      title: post.title,
+      title: `${post.title} - Draft.dev`,
       description: post.seo?.opengraphDescription || description,
       publishedTime: post.date,
       modifiedTime: post.modified || post.date,
@@ -147,7 +147,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     twitter: {
       card: 'summary_large_image',
-      title: post.title,
+      title: `${post.title} - Draft.dev`,
       description: post.seo?.twitterDescription || description,
       images: [
         imageUrl.startsWith('/') ? `https://draft.dev${imageUrl}` : imageUrl,
@@ -158,18 +158,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     alternates: {
       canonical: postUrl,
-    },
-
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
     },
   }
 }

@@ -9,15 +9,32 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
+  title: 'Inbound Lead Generation and Technical Copy Writing',
   description:
-    'Consistently convert organic traffic into high-quality MQLs and SQLs with our proven lead qualification system and our expert guidance.',
-  robots: {
-    index: true,
-    follow: true,
+    "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
+  keywords:
+    'capture leads developers, technical lead generation, developer marketing leads, technical content conversion',
+  openGraph: {
+    title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
+    description:
+      'Capture qualified leads from developers with strategic technical content.',
+    url: 'https://draft.dev/capture-leads',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/capture_leads_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Capture Leads with Technical Content Marketing',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Capture Developer Leads - Draft.dev',
+    description: 'Strategic technical content that captures qualified leads.',
+    images: ['https://draft.dev/draft/og/capture_leads_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/capture-leads',
+    canonical: 'https://draft.dev/capture-leads',
   },
 }
 
