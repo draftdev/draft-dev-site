@@ -1,10 +1,11 @@
 import Banner from '@/components/media/banner'
-import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
 import Script from 'next/script'
 import { Suspense } from 'react'
+
+import '@/styles/tailwind.css'
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
