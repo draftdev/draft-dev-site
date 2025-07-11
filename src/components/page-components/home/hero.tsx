@@ -42,19 +42,6 @@ const Hero: React.FC = () => {
                   tech businesses build trust, drive awareness, and capture
                   leads.
                 </p>
-                <div className="mt-16 flex justify-center pb-0 lg:hidden">
-                  <Image
-                    alt="writing code"
-                    height={300}
-                    width={300}
-                    src="/site/small-portrait/mobile_img.jpg"
-                    className="w-full max-w-[300px] rounded-xl object-cover"
-                    priority
-                    sizes="(max-width: 768px) 100vw, 300px"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkbHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-                  />
-                </div>
 
                 {/* CTAs — center on mobile */}
                 <div className="mb-6 mt-16 flex flex-col items-center gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 sm:pl-0 lg:items-start lg:pl-0">
