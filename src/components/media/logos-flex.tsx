@@ -17,13 +17,14 @@ export function LogosFlex({
           Trusted by 100+ tech companies
         </h2>
 
-        <div className="mx-auto mt-10 grid grid-cols-1 items-center gap-x-8 gap-y-10 rounded-lg bg-white/5 p-8 sm:grid-cols-2 sm:gap-x-10 md:grid-cols-4 lg:mx-0 lg:grid-cols-6">
+        <div className="mx-auto mt-10 grid grid-cols-1 items-center gap-x-10 gap-y-10 rounded-lg bg-white/5 p-8 sm:grid-cols-2 sm:gap-x-10 md:grid-cols-4 lg:mx-0 lg:grid-cols-6">
           <Image
             className="max-h-10 w-full object-contain"
             src={redpanda}
             alt="Redpanda"
             width={158}
             height={48}
+            priority
           />
           <Image
             className="max-h-10 w-full object-contain"

@@ -6,7 +6,7 @@ import React from 'react'
 
 const Hero: React.FC = () => {
   return (
-    <div className="bg-gradient-brand pt-20">
+    <div className="bg-gradient-brand pt-10">
       <main className="relative isolate pb-16">
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* H1 always visible */}
-                <h1 className="sm:header-light mb-6 pb-4 pl-3 text-left font-code text-3xl font-semibold text-white sm:pl-0">
+                <h1 className="sm:header-light mb-6 pb-4 pl-3 text-center font-code text-4xl font-semibold text-white sm:pl-0 sm:text-left">
                   We are a Content Creation Agency for Technical Companies
                 </h1>
 

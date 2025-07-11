@@ -127,12 +127,10 @@ export default function RootLayout({
           strategy="lazyOnload"
         />
 
-        <Suspense fallback={<div className="h-12" />}>
-          <Banner
-            text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
-            link="https://draft.dev/content-marketing-engine"
-          />
-        </Suspense>
+        <Banner
+          text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
+          link="https://draft.dev/content-marketing-engine"
+        />
 
         <DynamicNavbar />
 
