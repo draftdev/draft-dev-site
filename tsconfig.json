@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "es5",
+    "target": "es2020",
     "downlevelIteration": true,
     "useDefineForClassFields": false
   },
