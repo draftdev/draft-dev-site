@@ -123,12 +123,6 @@ export default function RootLayout({
           href="/draft/logos/draftlogo_main_filled.svg"
           fetchPriority="high"
         />
-        <link
-          rel="preload"
-          href="/site/small-portrait/mobile_img.jpg"
-          as="image"
-          fetchPriority="high"
-        />
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
