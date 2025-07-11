@@ -1,7 +1,7 @@
 import Banner from '@/components/media/banner'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Fira_Code, Fira_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import { Suspense } from 'react'
 
@@ -28,22 +28,27 @@ const GoogleAnalytics = dynamic(
   { ssr: false },
 )
 
-const firaSans = Fira_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const firaSans = localFont({
+  src: [
+    { path: '../fonts/FiraSans-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../fonts/FiraSans-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../fonts/FiraSans-Bold.ttf', weight: '700', style: 'normal' },
+    {
+      path: '../fonts/FiraSans-BoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
   display: 'swap',
   variable: '--font-fira-sans',
   preload: true,
-  adjustFontFallback: true,
 })
 
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const firaCode = localFont({
+  src: [{ path: '../fonts/FiraCode-VariableFont_wght.ttf', style: 'normal' }],
   display: 'swap',
   variable: '--font-fira-code',
   preload: true,
-  adjustFontFallback: true,
 })
 
 export const metadata: Metadata = {
@@ -110,19 +115,6 @@ export default function RootLayout({
       <head>
         <link rel="dns-prefetch" href="https://js.hsforms.net" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-
-        <link
-          rel="preload"
-          as="image"
-          href="/draft/logos/draftlogo_main_filled.svg"
-          fetchPriority="high"
-        />
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
