@@ -5,6 +5,10 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+
+  // Enable JIT mode for optimal performance
+  mode: 'jit',
+
   theme: {
     extend: {
       screens: {
@@ -67,6 +71,7 @@ module.exports = {
       }),
     },
   },
+
   plugins: [
     require('@tailwindcss/typography'),
     function ({ addUtilities }) {
@@ -81,4 +86,15 @@ module.exports = {
       addUtilities(newUtilities)
     },
   ],
+
+  // Production optimizations
+  ...(process.env.NODE_ENV === 'production' && {
+    purge: {
+      enabled: true,
+      content: ['./src/**/*.{js,ts,jsx,tsx}'],
+      options: {
+        safelist: ['bg-gradient-brand', 'text-gradient'],
+      },
+    },
+  }),
 }
