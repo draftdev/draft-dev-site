@@ -11,15 +11,32 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Marketing that Converts - Draft.dev',
+  title: 'Technical Content for Marketers',
   description:
-    'We specialize in content marketing for tech companies and create lead gen engines based on articles, eBooks, & video tutorials that attract technical audiences.',
-  robots: {
-    index: true,
-    follow: true,
+    'We help marketing teams in tech companies create authentic technical content that resonates with developers and drives business results.',
+  keywords:
+    'technical content for marketers, developer marketing, marketing to developers, technical marketing strategy',
+  openGraph: {
+    title: 'Technical Content for Marketers - Draft.dev',
+    description:
+      'Create authentic technical content that resonates with developers.',
+    url: 'https://draft.dev/for-marketers',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/marketers_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing for Marketing Teams',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Content for Marketers - Draft.dev',
+    description: 'Authentic technical content that drives business results.',
+    images: ['https://draft.dev/draft/og/marketers_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/for-marketers',
+    canonical: 'https://draft.dev/for-marketers',
   },
 }
 

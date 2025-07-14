@@ -1,8 +1,9 @@
 import Banner from '@/components/media/banner'
+
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Fira_Code, Fira_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import { headers } from 'next/headers'
 import { Suspense } from 'react'
 
@@ -26,20 +27,35 @@ const GoogleAnalytics = dynamic(
   { ssr: false },
 )
 
-const firaSans = Fira_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const firaSans = localFont({
+  src: [
+    { path: '../fonts/FiraSans-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../fonts/FiraSans-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../fonts/FiraSans-Bold.ttf', weight: '700', style: 'normal' },
+    {
+      path: '../fonts/FiraSans-BoldItalic.ttf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
   display: 'swap',
   variable: '--font-fira-sans',
   preload: true,
+  fallback: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'Segoe UI',
+    'Roboto',
+    'sans-serif',
+  ],
 })
 
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+const firaCode = localFont({
+  src: [{ path: '../fonts/FiraCode-VariableFont_wght.ttf', style: 'normal' }],
   display: 'swap',
   variable: '--font-fira-code',
   preload: true,
+  fallback: ['Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'],
 })
 
 export async function generateMetadata(): Promise<Metadata> {

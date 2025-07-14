@@ -8,15 +8,32 @@ import CalendlyWidget from '@/components/page-components/vendors/calendly'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Book a Discovery Call - Draft.dev',
+  title: 'Schedule a Discovery Call',
   description:
-    'Book a Discovery Call with us to learn more about our Lead Generation Package and other custom services.',
-  robots: {
-    index: true,
-    follow: true,
+    'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
+  keywords:
+    'technical content marketing consultation, developer content strategy, draft.dev discovery call, technical content agency',
+  openGraph: {
+    title: 'Schedule a Discovery Call - Draft.dev',
+    description:
+      'Ready to transform your technical content marketing? Schedule a 30-minute discovery call.',
+    url: 'https://draft.dev/call',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/call_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Schedule a Discovery Call with Draft.dev',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Schedule a Discovery Call - Draft.dev',
+    description: 'Transform your technical content marketing with Draft.dev.',
+    images: ['https://draft.dev/draft/og/call_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/call',
+    canonical: 'https://draft.dev/call',
   },
 }
 export default function Call() {

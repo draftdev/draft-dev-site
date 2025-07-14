@@ -8,15 +8,32 @@ import ServiceInfo from '@/components/page-components/blog-service/service-info'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Blog Content - Draft.dev',
+  title: 'Technical Blog Posts',
   description:
-    'Learn how Draft.dev helps hundreds of clients by creating blog posts that resonate with a technical audience and captures leads.',
-  robots: {
-    index: true,
-    follow: true,
+    'Expert-written technical blog posts that resonate with developers. See samples of our technical content and learn about our blog writing services.',
+  keywords:
+    'technical blog posts, developer blog content, technical writing services, engineering blog posts',
+  openGraph: {
+    title: 'Technical Blog Posts - Draft.dev',
+    description:
+      'Expert-written technical blog posts that resonate with developers.',
+    url: 'https://draft.dev/blog-posts',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/blog_posts_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Blog Posts and Content',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Blog Posts - Draft.dev',
+    description: 'Expert technical blog posts for developer audiences.',
+    images: ['https://draft.dev/draft/og/blog_posts_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/blog-posts',
+    canonical: 'https://draft.dev/blog-posts',
   },
 }
 

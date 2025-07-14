@@ -9,15 +9,33 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About us - Draft.dev',
+  title: 'About us', // Will become "About us - Draft.dev" with template
   description:
-    'Draft.dev is a technical content marketing agency focused run by subject matter experts. Learn more about us here.',
-  robots: {
-    index: true,
-    follow: true,
+    'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+  keywords:
+    'about draft.dev, technical content marketing team, developer relations experts, content marketing agency team, karl hughes',
+  openGraph: {
+    title: 'About us - Draft.dev',
+    description:
+      'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+    url: 'https://draft.dev/about',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Draft.dev Technical Content Marketing Team',
+      },
+    ],
+  },
+  twitter: {
+    title: 'About us - Draft.dev',
+    description:
+      'Draft.dev is a technical content marketing agency run by subject matter experts.',
+    images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/about',
+    canonical: 'https://draft.dev/about',
   },
 }
 

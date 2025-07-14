@@ -7,16 +7,33 @@ import ServiceInfo from '@/components/page-components/content-marketing-engine/s
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title:
-    'How to Set Up a Content Marketing Engine in the Age of AI - Draft.dev',
+  title: 'Content Marketing Engine',
   description:
-    'Learn how to build the backbone of your Content Marketing Operation in the age of AI Overviews and zero-click content.',
-  robots: {
-    index: true,
-    follow: true,
+    "Transform your technical content marketing with Draft.dev's proven content marketing engine designed to drive consistent results for tech companies.",
+  keywords:
+    'content marketing engine, technical content automation, content marketing system, scalable content marketing',
+  openGraph: {
+    title: 'Content Marketing Engine - Draft.dev',
+    description:
+      "Transform your technical content marketing with Draft.dev's proven content marketing engine.",
+    url: 'https://draft.dev/content-marketing-engine',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/content_engine_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Content Marketing Engine for Tech Companies',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Content Marketing Engine - Draft.dev',
+    description:
+      'Transform your technical content marketing with our proven content engine.',
+    images: ['https://draft.dev/draft/og/content_engine_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/content-marketing-engine',
+    canonical: 'https://draft.dev/content-marketing-engine',
   },
 }
 

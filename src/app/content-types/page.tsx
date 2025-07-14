@@ -8,15 +8,32 @@ import ServiceInfo from '@/components/page-components/content-types/service-info
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Types we Create for Our Clients - Draft.dev',
+  title: 'Technical Content Types',
   description:
-    'Learn how we help clients by providing tutorials, round-up articles, video tutorials, comparison content, technical guides, and persuasive writing.',
-  robots: {
-    index: true,
-    follow: true,
+    'Explore the various types of technical content we create: tutorials, blog posts, documentation, case studies, and more to reach your developer audience.',
+  keywords:
+    'technical content types, developer content formats, technical tutorials, technical blog posts, technical documentation',
+  openGraph: {
+    title: 'Technical Content Types - Draft.dev',
+    description:
+      'Tutorials, blog posts, documentation, and more for your developer audience.',
+    url: 'https://draft.dev/content-types',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/content_types_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Types of Technical Content We Create',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Technical Content Types - Draft.dev',
+    description: 'Various content formats to reach your developer audience.',
+    images: ['https://draft.dev/draft/og/content_types_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/content-types',
+    canonical: 'https://draft.dev/content-types',
   },
 }
 

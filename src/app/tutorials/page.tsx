@@ -8,15 +8,32 @@ import ServiceInfo from '@/components/page-components/tutorials/service-info'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Developer Tutorials - Draft.dev',
+  title: 'Developer Tutorials',
   description:
-    'Learn more about how we can help you create in-depth tutorials designed to reach software developers, and see some examples.',
-  robots: {
-    index: true,
-    follow: true,
+    "We help create tutorials designed to reach software engineers. Learn more about Draft.dev's technical content writing services and see our tutorial samples.",
+  keywords:
+    'developer tutorials, technical tutorials, software engineering guides, programming tutorials, developer marketing',
+  openGraph: {
+    title: 'Developer Tutorials - Draft.dev',
+    description:
+      'Tutorials designed to reach software engineers, written by experts.',
+    url: 'https://draft.dev/tutorials',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/tutorials_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Developer Tutorials by Draft.dev',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Developer Tutorials - Draft.dev',
+    description: 'Expert-written tutorials for software engineers.',
+    images: ['https://draft.dev/draft/og/tutorials_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/tutorials',
+    canonical: 'https://draft.dev/tutorials',
   },
 }
 

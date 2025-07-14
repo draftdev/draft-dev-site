@@ -13,6 +13,38 @@ import How from '@/components/page-components/how'
 import SinglePricing from '@/components/page-components/resources/single-pricing'
 import What from '@/components/page-components/what'
 import Why from '@/components/page-components/why'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+  description:
+    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+  keywords:
+    'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
+  openGraph: {
+    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    description:
+      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    url: 'https://draft.dev',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/main_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Draft.dev Technical Content Creation Agency',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    description:
+      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    images: ['https://draft.dev/draft/og/main_og_draft_dev.jpg'],
+  },
+  alternates: {
+    canonical: 'https://draft.dev',
+  },
+}
 
 export default function Home() {
   const organizationSchema = generateOrganizationSchema()

@@ -9,15 +9,33 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Custom Content Marketing that Drive Awareness - Draft.dev',
+  title: 'Custom Content Marketing that Drives Awareness',
   description:
     'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
-  robots: {
-    index: true,
-    follow: true,
+  keywords:
+    'drive awareness, technical content marketing, developer marketing, inbound lead generation, content strategy',
+  openGraph: {
+    title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
+    description:
+      'Establish Inbound Lead Generation Engines with content technical audiences care about.',
+    url: 'https://draft.dev/drive-awareness',
+    images: [
+      {
+        url: 'https://draft.dev/draft/og/awareness_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Drive Awareness with Technical Content Marketing',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Drive Awareness with Technical Content - Draft.dev',
+    description:
+      'Create content that technical audiences truly care about and respect.',
+    images: ['https://draft.dev/draft/og/awareness_og_draft_dev.jpg'],
   },
   alternates: {
-    canonical: '/drive-awareness',
+    canonical: 'https://draft.dev/drive-awareness',
   },
 }
 

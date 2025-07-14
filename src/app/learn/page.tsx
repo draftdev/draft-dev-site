@@ -11,58 +11,29 @@ export const metadata: Metadata = {
   description:
     'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
   keywords:
-    'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
-
+    'technical content marketing blog, developer relations insights, software development content, content marketing resources',
   openGraph: {
-    type: 'website',
-    url: 'https://draft.dev/learn',
-    siteName: 'Draft.dev',
-    locale: 'en_US',
-    title: 'Draft.dev Blog - Technical Content Marketing Resources',
+    title: 'Technical Content Marketing Blog - Draft.dev',
     description:
-      'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
+      'Expert insights on technical content marketing, developer relations, and content strategy for technical audiences.',
+    url: 'https://draft.dev/learn',
     images: [
       {
-        url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
+        url: 'https://draft.dev/draft/og/learn_og_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'Draft.dev Technical Content Marketing Blog',
       },
     ],
   },
-
   twitter: {
-    card: 'summary_large_image',
-    title: 'Draft.dev Blog - Technical Content Marketing Resources',
+    title: 'Technical Content Marketing Blog - Draft.dev',
     description:
-      'Expert insights on technical content marketing, developer relations, and content strategy for technical audiences.',
-    images: ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
-    creator: '@draftdev',
-    site: '@draftdev',
+      'Expert insights on technical content marketing and developer relations.',
+    images: ['https://draft.dev/draft/og/learn_og_draft_dev.jpg'],
   },
-
   alternates: {
     canonical: 'https://draft.dev/learn',
-    types: {
-      'application/rss+xml': [
-        {
-          title: 'Draft.dev Blog',
-          url: '/learn/feed.xml',
-        },
-      ],
-    },
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 }
 
