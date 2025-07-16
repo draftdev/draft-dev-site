@@ -1,10 +1,10 @@
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
-import { GoogleTagManager } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
 import { headers } from 'next/headers'
+import Script from 'next/script'
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
@@ -411,7 +411,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
-      <GoogleTagManager gtmId="GTM-5W5755G3" />
       <head>
         <link
           rel="preload"
@@ -427,6 +426,30 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white antialiased">
+        <Script
+          id="gtm-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+              (function(w,d,s,l,i){
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-5W5755G3');
+            `,
+          }}
+        />
+
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5W5755G3"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         {/* <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense> */}
