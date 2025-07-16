@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
 import { headers } from 'next/headers'
-import Script from 'next/script'
+import { Suspense } from 'react'
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
@@ -21,10 +21,10 @@ const Footer = dynamic(
   },
 )
 
-// const GoogleAnalytics = dynamic(
-//   () => import('@/components/global/google-analytics'),
-//   { ssr: false },
-// )
+const GoogleAnalytics = dynamic(
+  () => import('@/components/global/google-analytics'),
+  { ssr: false },
+)
 
 const firaSans = Fira_Sans({
   subsets: ['latin'],
@@ -424,35 +424,28 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
-      </head>
-      <body className="bg-white antialiased">
-        <Script
-          id="gtm-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-              (function(w,d,s,l,i){
-                var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-5W5755G3');
-            `,
-          }}
+
+        {/* Preload HubSpot forms script for better performance */}
+        <link
+          rel="preload"
+          href="//js.hsforms.net/forms/shell.js"
+          as="script"
+          crossOrigin="anonymous"
         />
 
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5W5755G3"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* <Suspense fallback={null}>
+        {/* DNS prefetch for HubSpot domains to reduce connection time */}
+        <link rel="dns-prefetch" href="//js.hsforms.net" />
+        <link rel="dns-prefetch" href="//js-eu1.hubspot.com" />
+        <link rel="dns-prefetch" href="//forms.hubspot.com" />
+
+        {/* Preconnect to critical HubSpot domains for faster loading */}
+        <link rel="preconnect" href="//js.hsforms.net" />
+        <link rel="preconnect" href="//js-eu1.hubspot.com" />
+      </head>
+      <body className="bg-white antialiased">
+        <Suspense fallback={null}>
           <GoogleAnalytics />
-        </Suspense> */}
+        </Suspense>
 
         {/* Dynamic Banner - Update as needed */}
         <Banner
