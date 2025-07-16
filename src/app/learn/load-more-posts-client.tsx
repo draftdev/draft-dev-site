@@ -144,11 +144,13 @@ export default function LoadMorePostsClient({
                     src={imageUrl}
                     alt={imageAlt}
                     className="aspect-video w-full rounded-2xl bg-gray-100 object-cover"
-                    width={400}
-                    height={225}
+                    width={390} // Match actual display width
+                    height={205} // Match actual display height
                     priority={index < 3}
-                    quality={80}
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    quality={75} // Reduced from 80 for better compression
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 390px"
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                   <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </Link>
