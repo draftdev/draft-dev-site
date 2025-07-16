@@ -17,10 +17,9 @@ declare global {
         [key: string]: any
       },
     ) => void
+    dataLayer: any[]
     gtmDidInit: boolean
   }
-
-  var dataLayer: any[]
 }
 
 export {}
