@@ -1,4 +1,4 @@
-import * as Headless from '@headlessui/react'
+import { Button as HeadlessButton } from '@headlessui/react'
 import { clsx } from 'clsx'
 import * as React from 'react'
 import { Link } from './link'
@@ -39,7 +39,7 @@ type CommonButtonProps = {
 
 // Define the props for Headless Button
 type HeadlessButtonProps = CommonButtonProps &
-  Omit<Headless.ButtonProps, 'as'> & {
+  Omit<React.ComponentPropsWithoutRef<typeof HeadlessButton>, 'as'> & {
     href?: undefined
   }
 
@@ -65,7 +65,7 @@ export function Button({
   if (typeof (props as LinkButtonProps).href === 'undefined') {
     // Need to cast to HeadlessButtonProps to satisfy TypeScript
     const buttonProps = props as HeadlessButtonProps
-    return <Headless.Button {...buttonProps} className={combinedClassName} />
+    return <HeadlessButton {...buttonProps} className={combinedClassName} />
   }
 
   // Need to cast to LinkButtonProps to satisfy TypeScript
