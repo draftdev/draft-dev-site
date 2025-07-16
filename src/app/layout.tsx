@@ -4,6 +4,10 @@ import '@/styles/tailwind.css'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
 
+const Analytics = dynamic(() => import('@/components/analytics'), {
+  ssr: false,
+})
+
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
   {
@@ -17,11 +21,6 @@ const Footer = dynamic(
     ssr: false,
     loading: () => <div className="h-64 bg-gradient-brand"></div>,
   },
-)
-
-const GoogleAnalytics = dynamic(
-  () => import('@/components/global/google-analytics'),
-  { ssr: false },
 )
 
 export const viewport = {
@@ -54,7 +53,7 @@ export default function RootLayout({
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
-          <GoogleAnalytics />
+          <Analytics />
         </Suspense>
 
         {/* Dynamic Banner - Update as needed */}
