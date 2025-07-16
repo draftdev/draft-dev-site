@@ -1,10 +1,10 @@
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
+import { GoogleTagManager } from '@next/third-parties/google'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import { Fira_Code, Fira_Sans } from 'next/font/google'
 import { headers } from 'next/headers'
-import { Suspense } from 'react'
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
@@ -21,10 +21,10 @@ const Footer = dynamic(
   },
 )
 
-const GoogleAnalytics = dynamic(
-  () => import('@/components/global/google-analytics'),
-  { ssr: false },
-)
+// const GoogleAnalytics = dynamic(
+//   () => import('@/components/global/google-analytics'),
+//   { ssr: false },
+// )
 
 const firaSans = Fira_Sans({
   subsets: ['latin'],
@@ -411,6 +411,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
+      <GoogleTagManager gtmId="GTM-5W5755G3" />
       <head>
         <link
           rel="preload"
@@ -424,28 +425,11 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
-
-        {/* Preload HubSpot forms script for better performance */}
-        <link
-          rel="preload"
-          href="//js.hsforms.net/forms/shell.js"
-          as="script"
-          crossOrigin="anonymous"
-        />
-
-        {/* DNS prefetch for HubSpot domains to reduce connection time */}
-        <link rel="dns-prefetch" href="//js.hsforms.net" />
-        <link rel="dns-prefetch" href="//js-eu1.hubspot.com" />
-        <link rel="dns-prefetch" href="//forms.hubspot.com" />
-
-        {/* Preconnect to critical HubSpot domains for faster loading */}
-        <link rel="preconnect" href="//js.hsforms.net" />
-        <link rel="preconnect" href="//js-eu1.hubspot.com" />
       </head>
       <body className="bg-white antialiased">
-        <Suspense fallback={null}>
+        {/* <Suspense fallback={null}>
           <GoogleAnalytics />
-        </Suspense>
+        </Suspense> */}
 
         {/* Dynamic Banner - Update as needed */}
         <Banner
