@@ -144,10 +144,10 @@ export default function LoadMorePostsClient({
                     src={imageUrl}
                     alt={imageAlt}
                     className="aspect-video w-full rounded-2xl bg-gray-100 object-cover"
-                    width={390} // Match actual display width
-                    height={205} // Match actual display height
+                    width={390}
+                    height={205}
                     priority={index < 3}
-                    quality={75} // Reduced from 80 for better compression
+                    quality={75}
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 390px"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
