@@ -203,12 +203,12 @@ export default async function PostPage({ params }: Props) {
           <Image
             src={imageUrl}
             alt={alt || 'Blog content image'}
-            width={700}
-            height={400}
+            width={768}
+            height={450}
             className="mx-auto rounded-lg object-cover"
             quality={75}
             sizes="(max-width: 768px) 100vw, 700px"
-            priority={isLCP} // ✅ First image gets priority for LCP
+            priority={isLCP}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />

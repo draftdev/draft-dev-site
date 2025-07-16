@@ -1,8 +1,8 @@
 import Banner from '@/components/media/banner'
+import { firaCode, firaSans } from '@/fonts'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
-import { Fira_Code, Fira_Sans } from 'next/font/google'
 import { headers } from 'next/headers'
 import { Suspense } from 'react'
 
@@ -25,22 +25,6 @@ const GoogleAnalytics = dynamic(
   () => import('@/components/global/google-analytics'),
   { ssr: false },
 )
-
-const firaSans = Fira_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-fira-sans',
-  preload: true,
-})
-
-const firaCode = Fira_Code({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-  variable: '--font-fira-code',
-  preload: true,
-})
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = headers()
