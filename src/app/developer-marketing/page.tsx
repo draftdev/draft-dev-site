@@ -6,16 +6,51 @@ import ServiceInfo from '@/components/page-components/developer-marketing/servic
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const developerMarketingMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Building and Scaling Developer Marketing - Draft.dev',
   description:
-    'Download our Building and Scaling Developer Marketing eBook: Learn effective strategies for marketing to developers through authentic, value-driven approaches that drive awareness and build trust.',
+    'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
+  keywords:
+    'developer marketing, marketing to developers, developer relations marketing, technical audience marketing',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/developer-marketing',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Building and Scaling Developer Marketing - Draft.dev',
+    description:
+      'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
+    images: [
+      {
+        url: '/draft/og/developer_marketing_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Developer Marketing eBook',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Building and Scaling Developer Marketing - Draft.dev',
+    description:
+      'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
+    images: ['/draft/og/developer_marketing_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/developer-marketing' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/developer-marketing',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

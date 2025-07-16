@@ -7,16 +7,51 @@ import ServiceInfo from '@/components/page-components/content-types/service-info
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Technical Content Types we Create for Our Clients - Draft.dev',
+export const contentTypesMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Technical Content Types - Draft.dev',
   description:
-    'Learn how we help clients by providing tutorials, round-up articles, video tutorials, comparison content, technical guides, and persuasive writing.',
+    'Explore the various types of technical content we create: tutorials, blog posts, documentation, case studies, and more to reach your developer audience.',
+  keywords:
+    'technical content types, developer content formats, technical tutorials, technical blog posts, technical documentation',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/content-types',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Technical Content Types - Draft.dev',
+    description:
+      'Explore the various types of technical content we create: tutorials, blog posts, documentation, case studies, and more to reach your developer audience.',
+    images: [
+      {
+        url: '/draft/og/content_types_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Types of Technical Content We Create',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Content Types - Draft.dev',
+    description:
+      'Explore the various types of technical content we create: tutorials, blog posts, documentation, case studies, and more to reach your developer audience.',
+    images: ['/draft/og/content_types_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/content-types' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/content-types',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

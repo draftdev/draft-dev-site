@@ -13,6 +13,58 @@ import How from '@/components/page-components/how'
 import SinglePricing from '@/components/page-components/resources/single-pricing'
 import What from '@/components/page-components/what'
 import Why from '@/components/page-components/why'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+  description:
+    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+  keywords:
+    'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    description:
+      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    images: [
+      {
+        url: '/draft/og/main_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Draft.dev Technical Content Creation Agency',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    description:
+      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    images: ['/draft/og/main_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+
+  alternates: { canonical: 'https://draft.dev' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+}
 
 export default function Home() {
   const organizationSchema = generateOrganizationSchema()

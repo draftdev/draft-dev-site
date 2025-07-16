@@ -3,16 +3,51 @@ import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const privacyPolicyMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Privacy Policy - Draft.dev',
   description:
-    'We want to protect your privacy. These terms explain how we gather information and how you can get in contact should you have any concerns.',
+    "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
+  keywords:
+    'draft.dev privacy policy, privacy protection, data security, personal information policy',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/privacy-policy',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Privacy Policy - Draft.dev',
+    description:
+      "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
+    images: [
+      {
+        url: '/draft/og/privacy_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Draft.dev Privacy Policy',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy - Draft.dev',
+    description:
+      "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
+    images: ['/draft/og/privacy_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/privacy-policy' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/privacy-policy',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

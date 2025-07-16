@@ -7,16 +7,51 @@ import Testimonial from '@/components/media/testimonials/testimonial'
 import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const videoTutorialsMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Technical Video Tutorials - Draft.dev',
   description:
-    'Learn more about how we can help you create tech-video-tutorials designed to reach software developers, and see some examples.',
+    'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+  keywords:
+    'technical video content, developer video tutorials, technical demos, video marketing for developers',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/video-tutorials',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Technical Video Tutorials - Draft.dev',
+    description:
+      'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+    images: [
+      {
+        url: '/draft/og/video_tutorials_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Video Tutorials and Content',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Video Tutorials - Draft.dev',
+    description:
+      'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+    images: ['/draft/og/video_tutorials_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/video-tutorials' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/video-tutorials',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

@@ -7,16 +7,51 @@ import ServiceInfo from '@/components/page-components/tutorials/service-info'
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const tutorialsMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Developer Tutorials - Draft.dev',
   description:
-    'Learn more about how we can help you create in-depth tutorials designed to reach software developers, and see some examples.',
+    "We write tutorials designed to reach software engineers. Learn more about Draft.dev's technical content writing services and see our tutorial samples.",
+  keywords:
+    'developer tutorials, technical tutorials, software engineering guides, programming tutorials, developer marketing',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/tutorials',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Developer Tutorials - Draft.dev',
+    description:
+      "We write tutorials designed to reach software engineers. Learn more about Draft.dev's technical content writing services and see our tutorial samples.",
+    images: [
+      {
+        url: '/draft/og/tutorials_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Developer Tutorials by Draft.dev',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Developer Tutorials - Draft.dev',
+    description:
+      "We write tutorials designed to reach software engineers. Learn more about Draft.dev's technical content writing services and see our tutorial samples.",
+    images: ['/draft/og/tutorials_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/tutorials' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/tutorials',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

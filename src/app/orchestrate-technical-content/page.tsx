@@ -6,16 +6,51 @@ import ServiceInfo from '@/components/page-components/orchestrate-technical-cont
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'How to Orchestrate Technical Content to Drive Business - Draft.dev',
+export const orchestrateMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'How to Orchestrate Technical Content - Draft.dev',
   description:
-    'Learn how to build systematic content marketing that drives predictable business revenue.',
+    'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
+  keywords:
+    'orchestrate technical content, content orchestration, technical content management, content strategy execution',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/orchestrate-technical-content',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'How to Orchestrate Technical Content - Draft.dev',
+    description:
+      'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
+    images: [
+      {
+        url: '/draft/og/orchestrate_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Orchestrate Technical Content at Scale',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Orchestrate Technical Content - Draft.dev',
+    description:
+      'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
+    images: ['/draft/og/orchestrate_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/orchestrate-technical-content' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/orchestrate-technical-content',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

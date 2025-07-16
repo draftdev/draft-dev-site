@@ -8,16 +8,51 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const captureLeadsMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
   description:
-    'Consistently convert organic traffic into high-quality MQLs and SQLs with our proven lead qualification system and our expert guidance.',
+    "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
+  keywords:
+    'capture leads developers, technical lead generation, developer marketing leads, technical content conversion',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/capture-leads',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
+    description:
+      "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
+    images: [
+      {
+        url: '/draft/og/capture_leads_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Capture Leads with Technical Content Marketing',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
+    description:
+      "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
+    images: ['/draft/og/capture_leads_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/capture-leads' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/capture-leads',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

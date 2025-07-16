@@ -7,17 +7,51 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title:
-    'Build Trust and Thought Leadership with Technical Content - Draft.dev',
+export const buildTrustMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Build Trust with Technical Audiences - Draft.dev',
   description:
-    'We deliver high-quality tech content that is written and reviewed by experienced developers, and edited by professional editors.',
+    'Learn how Draft.dev helps tech companies build trust with developers through authentic, expert-driven technical content that resonates with technical audiences.',
+  keywords:
+    'build trust with developers, technical content credibility, developer relations trust, authentic technical content',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/build-trust',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Build Trust with Technical Audiences - Draft.dev',
+    description:
+      'Learn how Draft.dev helps tech companies build trust with developers through authentic, expert-driven technical content that resonates with technical audiences.',
+    images: [
+      {
+        url: '/draft/og/build_trust_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Build Trust with Technical Audiences',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Build Trust with Technical Audiences - Draft.dev',
+    description:
+      'Learn how Draft.dev helps tech companies build trust with developers through authentic, expert-driven technical content that resonates with technical audiences.',
+    images: ['/draft/og/build_trust_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/build-trust' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/build-trust',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

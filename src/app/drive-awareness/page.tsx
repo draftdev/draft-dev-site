@@ -8,16 +8,51 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Custom Content Marketing that Drive Awareness - Draft.dev',
+export const driveAwarenessMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
   description:
     'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
+  keywords:
+    'drive awareness, technical content marketing, developer marketing, inbound lead generation, content strategy',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/drive-awareness',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
+    description:
+      'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
+    images: [
+      {
+        url: '/draft/og/awareness_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Drive Awareness with Technical Content Marketing',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
+    description:
+      'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
+    images: ['/draft/og/awareness_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/drive-awareness' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/drive-awareness',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

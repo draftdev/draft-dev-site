@@ -8,16 +8,51 @@ import How from '@/components/page-components/how'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const aboutMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'About us - Draft.dev',
   description:
-    'Draft.dev is a technical content marketing agency focused run by subject matter experts. Learn more about us here.',
+    'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+  keywords:
+    'about draft.dev, technical content marketing team, developer relations experts, content marketing agency team, karl hughes',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/about',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'About us - Draft.dev',
+    description:
+      'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+    images: [
+      {
+        url: '/draft/og/about_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About Draft.dev Technical Content Marketing Team',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About us - Draft.dev',
+    description:
+      'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+    images: ['/draft/og/about_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/about' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/about',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

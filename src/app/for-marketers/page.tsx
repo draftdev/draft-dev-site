@@ -10,16 +10,51 @@ import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Technical Marketing that Converts - Draft.dev',
+export const forMarketersMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Technical Content for Marketers - Draft.dev',
   description:
-    'We specialize in content marketing for tech companies and create lead gen engines based on articles, eBooks, & video tutorials that attract technical audiences.',
+    'Help marketing teams in tech companies create authentic technical content that resonates with developers and drives business results.',
+  keywords:
+    'technical content for marketers, developer marketing, marketing to developers, technical marketing strategy',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/for-marketers',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Technical Content for Marketers - Draft.dev',
+    description:
+      'Help marketing teams in tech companies create authentic technical content that resonates with developers and drives business results.',
+    images: [
+      {
+        url: '/draft/og/marketers_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing for Marketing Teams',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Content for Marketers - Draft.dev',
+    description:
+      'Help marketing teams in tech companies create authentic technical content that resonates with developers and drives business results.',
+    images: ['/draft/og/marketers_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/for-marketers' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/for-marketers',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

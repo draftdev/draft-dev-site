@@ -7,12 +7,13 @@ import type { Metadata } from 'next'
 import LoadMorePostsClient from './load-more-posts-client'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Marketing Blog',
   description:
     'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
   keywords:
     'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
-
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
     url: 'https://draft.dev/learn',
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
       'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
     images: [
       {
-        url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
+        url: '/site/med-landscape/write_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'Draft.dev Technical Content Marketing Blog',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Draft.dev Blog - Technical Content Marketing Resources',
     description:
       'Expert insights on technical content marketing, developer relations, and content strategy for technical audiences.',
-    images: ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
+    images: ['/site/med-landscape/write_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

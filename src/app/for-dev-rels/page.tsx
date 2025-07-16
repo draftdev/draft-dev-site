@@ -10,16 +10,51 @@ import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Developer Marketing that Resonates - Draft.dev',
+export const forDevRelsMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Content Marketing for Developer Relations - Draft.dev',
   description:
-    'We support Developer Relations and Developer Advocate Teams by consistently delivering content that technical audiences truly care about and respect.',
+    'Empower DevRel teams with expert technical content that builds community, drives adoption, and showcases your technical expertise.',
+  keywords:
+    'developer relations content, devrel content marketing, developer community content, technical community building',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/for-dev-rels',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Content Marketing for Developer Relations - Draft.dev',
+    description:
+      'Empower DevRel teams with expert technical content that builds community, drives adoption, and showcases your technical expertise.',
+    images: [
+      {
+        url: '/draft/og/devrel_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Content Marketing for Developer Relations Teams',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Content Marketing for Developer Relations - Draft.dev',
+    description:
+      'Empower DevRel teams with expert technical content that builds community, drives adoption, and showcases your technical expertise.',
+    images: ['/draft/og/devrel_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/for-dev-rels' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/for-dev-rels',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

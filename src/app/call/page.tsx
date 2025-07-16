@@ -7,18 +7,54 @@ import CalendlyWidget from '@/components/page-components/vendors/calendly'
 
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Book a Discovery Call - Draft.dev',
+export const callMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Schedule a Discovery Call - Draft.dev',
   description:
-    'Book a Discovery Call with us to learn more about our Lead Generation Package and other custom services.',
+    'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
+  keywords:
+    'technical content marketing consultation, developer content strategy, draft.dev discovery call, technical content agency',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/call',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Schedule a Discovery Call - Draft.dev',
+    description:
+      'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
+    images: [
+      {
+        url: '/draft/og/call_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Schedule a Discovery Call with Draft.dev',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Schedule a Discovery Call - Draft.dev',
+    description:
+      'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
+    images: ['/draft/og/call_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/call' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/call',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
+
 export default function Call() {
   return (
     <>

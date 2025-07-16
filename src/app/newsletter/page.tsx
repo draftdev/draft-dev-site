@@ -5,16 +5,51 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import ServiceInfo from '@/components/page-components/newsletter/service-info'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Subscribe to the Draft.dev Newsletter',
+export const newsletterMetadata: Metadata = {
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Technical Content Marketing Newsletter - Draft.dev',
   description:
-    'Sign up to our Draft.dev Newsletter - we publish software development news and occasionally share news about webinars and other free resources.',
+    'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
+  keywords:
+    'technical content marketing newsletter, developer marketing newsletter, content marketing tips, technical writing insights',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/newsletter',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Technical Content Marketing Newsletter - Draft.dev',
+    description:
+      'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
+    images: [
+      {
+        url: '/draft/og/newsletter_og_draft_dev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing Newsletter',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Content Marketing Newsletter - Draft.dev',
+    description:
+      'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
+    images: ['/draft/og/newsletter_og_draft_dev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: { canonical: 'https://draft.dev/newsletter' },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/newsletter',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
