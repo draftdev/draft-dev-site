@@ -3,7 +3,7 @@ import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 
-export const privacyPolicyMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Privacy Policy - Draft.dev',
   description:

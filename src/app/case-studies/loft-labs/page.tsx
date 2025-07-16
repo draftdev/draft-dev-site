@@ -5,7 +5,7 @@ import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import type { Metadata } from 'next'
 
-export const loftLabsMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Loft Labs Case Study - Draft.dev',
   description:

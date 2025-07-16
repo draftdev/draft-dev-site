@@ -7,7 +7,7 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const buildTrustMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Build Trust with Technical Audiences - Draft.dev',
   description:

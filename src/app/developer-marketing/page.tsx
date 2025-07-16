@@ -6,7 +6,7 @@ import ServiceInfo from '@/components/page-components/developer-marketing/servic
 
 import type { Metadata } from 'next'
 
-export const developerMarketingMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Building and Scaling Developer Marketing - Draft.dev',
   description:

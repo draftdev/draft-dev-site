@@ -4,7 +4,7 @@ import AirtableEmbed from '@/components/page-components/vendors/air-table'
 
 import type { Metadata } from 'next'
 
-export const writeMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Write for Draft.dev - Join Our Technical Writing Network',
   description:

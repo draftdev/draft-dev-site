@@ -8,7 +8,7 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const driveAwarenessMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
   description:

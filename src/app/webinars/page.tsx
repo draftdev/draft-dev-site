@@ -6,7 +6,7 @@ import PastWebinars from '@/components/page-components/webinars/past-webinars'
 import UpcomingWebinars from '@/components/page-components/webinars/upcoming'
 import type { Metadata } from 'next'
 
-export const webinarsMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Marketing Webinars - Draft.dev',
   description:

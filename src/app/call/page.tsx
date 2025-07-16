@@ -7,7 +7,7 @@ import CalendlyWidget from '@/components/page-components/vendors/calendly'
 
 import type { Metadata } from 'next'
 
-export const callMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Schedule a Discovery Call - Draft.dev',
   description:

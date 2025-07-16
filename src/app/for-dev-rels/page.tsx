@@ -10,7 +10,7 @@ import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
-export const forDevRelsMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Content Marketing for Developer Relations - Draft.dev',
   description:

@@ -7,7 +7,7 @@ import ServiceInfo from '@/components/page-components/content-types/service-info
 
 import type { Metadata } from 'next'
 
-export const contentTypesMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Types - Draft.dev',
   description:

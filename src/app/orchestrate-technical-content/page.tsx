@@ -6,7 +6,7 @@ import ServiceInfo from '@/components/page-components/orchestrate-technical-cont
 
 import type { Metadata } from 'next'
 
-export const orchestrateMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'How to Orchestrate Technical Content - Draft.dev',
   description:

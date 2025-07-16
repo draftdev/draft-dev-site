@@ -6,7 +6,7 @@ import ServiceInfo from '@/components/page-components/fifty-ideas.tsx/service-in
 
 import type { Metadata } from 'next'
 
-export const ideasMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Ideas - Draft.dev',
   description:

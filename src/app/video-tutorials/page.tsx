@@ -7,7 +7,7 @@ import Testimonial from '@/components/media/testimonials/testimonial'
 import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
 
-export const videoTutorialsMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Video Tutorials - Draft.dev',
   description:

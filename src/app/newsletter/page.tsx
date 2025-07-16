@@ -5,7 +5,7 @@ import TestimonialsGroup from '@/components/media/testimonials/testimonials-grou
 import ServiceInfo from '@/components/page-components/newsletter/service-info'
 import type { Metadata } from 'next'
 
-export const newsletterMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Marketing Newsletter - Draft.dev',
   description:

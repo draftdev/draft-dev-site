@@ -6,7 +6,7 @@ import ServiceInfo from '@/components/page-components/playbook/service-info'
 
 import type { Metadata } from 'next'
 
-export const playbookMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Marketing Playbook - Draft.dev',
   description:

@@ -8,7 +8,7 @@ import How from '@/components/page-components/how'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
-export const aboutMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About us - Draft.dev',
   description:

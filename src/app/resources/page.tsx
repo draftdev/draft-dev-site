@@ -3,7 +3,7 @@ import Testimonial from '@/components/media/testimonials/testimonial'
 import type { Metadata } from 'next'
 import ResourceGrid from './grid'
 
-export const resourcesMetadata: Metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Marketing Resources - Draft.dev',
   description:
