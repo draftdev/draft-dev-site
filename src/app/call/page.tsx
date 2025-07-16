@@ -3,7 +3,7 @@ import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import CalendlyWidget from '@/components/page-components/vendors/calendly'
+import HubSpotMeetings from '@/components/page-components/vendors/hubspot/hubspot-meetings'
 
 import type { Metadata } from 'next'
 
@@ -64,7 +64,8 @@ export default function Call() {
         descriptionTwo="Use the form below to schedule a discovery call"
       />
       <main className="overflow-hidden">
-        <CalendlyWidget url="https://calendly.com/d/2by-kmh-7q6" />
+        <HubSpotMeetings />
+
         <SocialProof />
         <TestimonialsGroup />
         <LogosDark />
