@@ -424,23 +424,6 @@ export default function RootLayout({
           as="image"
           fetchPriority="high"
         />
-
-        {/* Preload HubSpot forms script for better performance */}
-        <link
-          rel="preload"
-          href="//js.hsforms.net/forms/shell.js"
-          as="script"
-          crossOrigin="anonymous"
-        />
-
-        {/* DNS prefetch for HubSpot domains to reduce connection time */}
-        <link rel="dns-prefetch" href="//js.hsforms.net" />
-        <link rel="dns-prefetch" href="//js-eu1.hubspot.com" />
-        <link rel="dns-prefetch" href="//forms.hubspot.com" />
-
-        {/* Preconnect to critical HubSpot domains for faster loading */}
-        <link rel="preconnect" href="//js.hsforms.net" />
-        <link rel="preconnect" href="//js-eu1.hubspot.com" />
       </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
