@@ -493,33 +493,6 @@ export default async function PostPage({ params }: Props) {
                     </svg>
                   </span>
                 </Link>
-
-                <Link
-                  href="/call"
-                  className="group block rounded-lg bg-gradient-brand p-6 text-white transition-opacity hover:opacity-90"
-                >
-                  <h3 className="text-lg font-semibold">
-                    Need Technical Content?
-                  </h3>
-                  <p className="mt-2 text-blue-100">
-                    Let our team of 300+ technical experts create content that
-                    resonates with your developer audience.
-                  </p>
-                  <span className="mt-4 inline-flex items-center font-medium">
-                    Schedule a call
-                    <svg
-                      className="ml-2 h-4 w-4"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                </Link>
               </div>
             </div>
           </aside>
