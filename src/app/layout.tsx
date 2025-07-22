@@ -1,12 +1,8 @@
+import GTM from '@/components/global/gtm'
 import Banner from '@/components/media/banner'
 import { firaCode, firaSans } from '@/fonts'
 import '@/styles/tailwind.css'
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
-
-const Analytics = dynamic(() => import('@/components/analytics'), {
-  ssr: false,
-})
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
@@ -52,9 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white antialiased">
-        <Suspense fallback={null}>
-          <Analytics />
-        </Suspense>
+        <GTM />
 
         {/* Dynamic Banner - Update as needed */}
         <Banner
