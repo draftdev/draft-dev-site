@@ -31,9 +31,10 @@ const Hero: React.FC = () => {
                     </span>
                   </Link>
                 </div>
-                <h1 className="sm:header-light mb-6 pb-4 pl-3 text-left font-code text-3xl font-semibold text-white sm:pl-0">
+                <h1 className="mb-6 py-4 text-left font-code text-3xl font-semibold leading-tight text-white sm:text-6xl">
                   We are a Content Creation Agency for Technical Companies
                 </h1>
+
                 <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-lg text-gray-100 sm:bg-transparent sm:p-0">
                   Draft.dev helps Marketing and Developer Relations teams in
                   tech businesses build trust, drive awareness, and capture

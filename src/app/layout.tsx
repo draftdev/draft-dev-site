@@ -38,7 +38,23 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
       <head>
+        <link
+          rel="preload"
+          href="/fonts/FiraSans-Bold.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/FiraCode-VariableFont_wght.ttf"
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
+
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+
         <link
           rel="preload"
           href="/draft/logos/draftlogo_main_filled.svg"
