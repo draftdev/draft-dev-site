@@ -11,7 +11,6 @@ const nextConfig = {
   poweredByHeader: false,
   experimental: {
     optimizeCss: true,
-    cssChunking: 'loose-separate',
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
