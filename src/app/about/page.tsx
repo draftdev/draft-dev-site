@@ -1,3 +1,4 @@
+import { generateOrganizationSchema } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
       'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
     images: [
       {
-        url: '/draft/og/about_og_draft_dev.jpg',
+        url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'About Draft.dev Technical Content Marketing Team',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: 'About us - Draft.dev',
     description:
       'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
-    images: ['/draft/og/about_og_draft_dev.jpg'],
+    images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
@@ -57,8 +58,45 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
+  // Generate schemas appropriate for About page
+  const organizationSchema = generateOrganizationSchema()
+
+  // You could also create a custom AboutPage schema
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': 'https://draft.dev/about#webpage',
+    url: 'https://draft.dev/about',
+    name: 'About Draft.dev',
+    description:
+      'Learn about Draft.dev, a technical content marketing agency run by subject matter experts.',
+    isPartOf: {
+      '@id': 'https://draft.dev/#website',
+    },
+    about: {
+      '@id': 'https://draft.dev/#organization',
+    },
+    mainEntity: {
+      '@id': 'https://draft.dev/#organization',
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageSchema),
+        }}
+      />
+
       <MedHeader
         title="About Draft.dev"
         descriptionOne="Draft.dev is a technical content marketing agency focused on
@@ -106,19 +144,19 @@ export default function About() {
               number: '1',
               title: 'Discovery Call',
               description:
-                'Before we begin working with a new client, we want to make sure we’re a good fit for you. In our 30-minute discovery session, we’ll ask you where your business is at, what your content goals are, and the type of content you’re looking to produce.',
+                "Before we begin working with a new client, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll ask you where your business is at, what your content goals are, and the type of content you're looking to produce.",
             },
             {
               number: '2',
               title: 'Statement of Work and Timeline',
               description:
-                ' We almost always have a backlog of new clients waiting to start, so once you’re ready to reserve a spot in our production calendar, we’ll send over an estimated timeline and statement of work. This allows us to ensure we have enough writers and editors ready to help maintain our rigorous quality standards, and that both parties are on the same page as far as the scope of work is concerned.',
+                "We almost always have a backlog of new clients waiting to start, so once you're ready to reserve a spot in our production calendar, we'll send over an estimated timeline and statement of work. This allows us to ensure we have enough writers and editors ready to help maintain our rigorous quality standards, and that both parties are on the same page as far as the scope of work is concerned.",
             },
             {
               number: '3',
               title: 'Topic Strategy and Intake',
               description:
-                'During the topic strategy phase, we’ll define your content goals, requirements, and the preferences of all stakeholders on your team. Your team will be able to provide examples of articles you like and any desired topic ideas you have in mind. All relevant information about your brand and content strategy is helpful to our Technical Content Specialists and can be incorporated into your content plan.',
+                "During the topic strategy phase, we'll define your content goals, requirements, and the preferences of all stakeholders on your team. Your team will be able to provide examples of articles you like and any desired topic ideas you have in mind. All relevant information about your brand and content strategy is helpful to our Technical Content Specialists and can be incorporated into your content plan.",
             },
           ]}
           imageSrc="/site/med-portrait/developers_draft_dev.jpg"

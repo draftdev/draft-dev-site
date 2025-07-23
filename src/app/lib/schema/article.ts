@@ -1,0 +1,154 @@
+import { cache } from 'react'
+import {
+  CORE_TOPICS,
+  PUBLISHER_REF,
+  TECHNICAL_AUDIENCE,
+  type Post,
+} from './constants'
+import { estimateWordCount, getSchemaImageUrl, stripHtmlTags } from './utils'
+import { generateVideoSchema } from './video'
+
+export function generatePersonAuthor(post: Post) {
+  const authorName = post.originalAuthor || post.author?.node?.name
+
+  if (!authorName || authorName === 'Draft.dev Team') {
+    return PUBLISHER_REF
+  }
+
+  const baseAuthor = {
+    '@type': 'Person',
+    name: authorName,
+    jobTitle:
+      post.customFields?.authorCredentials || 'Technical Content Writer',
+    description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
+    worksFor: PUBLISHER_REF,
+    url: 'https://draft.dev/about',
+    knowsAbout: post.customFields?.targetKeywords || [
+      'Technical Content Marketing',
+      'Software Development',
+    ],
+  }
+
+  if (post.customFields?.authorLinkedIn) {
+    const sameAs = [post.customFields.authorLinkedIn]
+    if (post.customFields?.authorTwitter) {
+      sameAs.push(post.customFields.authorTwitter)
+    }
+    return { ...baseAuthor, sameAs }
+  }
+
+  return baseAuthor
+}
+
+export function generateFAQSchema(
+  faqs: Array<{ question: string; answer: string }>,
+) {
+  return faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: stripHtmlTags(faq.answer),
+    },
+  }))
+}
+
+export const generateArticleSchema = cache((post: Post, slug: string) => {
+  const wordCount = estimateWordCount(post.content)
+  const readingTime =
+    post.customFields?.readingTime || Math.ceil(wordCount / 200)
+  const publishedDate = post.date
+    ? new Date(post.date).toISOString()
+    : new Date().toISOString()
+  const modifiedDate = post.modified
+    ? new Date(post.modified).toISOString()
+    : publishedDate
+
+  const cleanDescription = stripHtmlTags(post.seoDesc || post.excerpt || '')
+
+  const articleSchema: any = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `https://draft.dev/learn/${slug}#article`,
+    headline: post.title,
+    description: cleanDescription,
+    image: {
+      '@type': 'ImageObject',
+      url: getSchemaImageUrl(post),
+      width: 1200,
+      height: 630,
+    },
+    datePublished: publishedDate,
+    dateModified: modifiedDate,
+    url: `https://draft.dev/learn/${slug}`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://draft.dev/learn/${slug}`,
+    },
+    author: generatePersonAuthor(post),
+    publisher: PUBLISHER_REF,
+    articleSection: post.categories?.[0]?.name || 'Technical Content Marketing',
+    wordCount: wordCount,
+    timeRequired: `PT${readingTime}M`,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    audience: TECHNICAL_AUDIENCE,
+    about: CORE_TOPICS,
+    keywords:
+      post.customFields?.targetKeywords?.join(', ') ||
+      post.seoKeyword ||
+      'technical content marketing, developer relations',
+  }
+
+  if (post.customFields?.faqQuestions?.length) {
+    articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
+  }
+
+  if (post.customFields?.videoUrl) {
+    articleSchema.video = generateVideoSchema(
+      post.customFields.videoUrl,
+      post.title,
+      cleanDescription,
+      publishedDate,
+    )
+  }
+
+  return articleSchema
+})
+
+export const generateBreadcrumbSchema = cache((title: string, slug: string) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `https://draft.dev/learn/${slug}#breadcrumbs`,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: {
+          '@type': 'WebPage',
+          '@id': 'https://draft.dev',
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: {
+          '@type': 'WebPage',
+          '@id': 'https://draft.dev/learn',
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: title,
+        item: {
+          '@type': 'WebPage',
+          '@id': `https://draft.dev/learn/${slug}`,
+        },
+      },
+    ],
+  }
+})

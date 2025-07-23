@@ -1,4 +1,4 @@
-import { generateBlogSchema, generateWebSiteSchema } from '@/app/lib/schema'
+import { generateBlogSchema } from '@/app/lib/schema'
 import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
 import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
@@ -8,7 +8,7 @@ import LoadMorePostsClient from './load-more-posts-client'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'Technical Content Marketing Blog',
+  title: 'Technical Content Marketing Blog - Draft.dev',
   description:
     'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
   keywords:
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       'Expert insights on technical content marketing, developer relations, software development tutorials, and content strategy for reaching technical audiences.',
     images: [
       {
-        url: '/site/med-landscape/write_draft_dev.jpg',
+        url: 'https://draft.dev/site/med-landscape/write_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'Draft.dev Technical Content Marketing Blog',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: 'Draft.dev Blog - Technical Content Marketing Resources',
     description:
       'Expert insights on technical content marketing, developer relations, and content strategy for technical audiences.',
-    images: ['/site/med-landscape/write_draft_dev.jpg'],
+    images: ['https://draft.dev/site/med-landscape/write_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       'application/rss+xml': [
         {
           title: 'Draft.dev Blog',
-          url: '/learn/feed.xml',
+          url: 'https://draft.dev/learn/feed.xml',
         },
       ],
     },
@@ -90,9 +90,7 @@ export default async function BlogPage() {
   )
 
   const schemaPostsData = await getSchemaPostsData(SCHEMA_POST_LIMIT)
-
   const blogSchema = generateBlogSchema(schemaPostsData)
-  const websiteSchema = generateWebSiteSchema()
 
   return (
     <>
@@ -103,18 +101,9 @@ export default async function BlogPage() {
         }}
       />
 
-      {/* Website Schema - overall site information */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
-        }}
-      />
-
       <div className="overflow-hidden">
         <Header />
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8">
-          {/* Only render the initial 10 posts in the UI */}
           <LoadMorePostsClient
             initialPosts={initialPosts}
             initialPageInfo={pageInfo}

@@ -1,3 +1,4 @@
+import type { Post } from '@/app/lib/schema'
 import { cache } from 'react'
 
 export interface Post {

@@ -2,6 +2,7 @@ import {
   generateOrganizationSchema,
   generateServiceSchema,
   generateTestimonialSchema,
+  generateWebSiteSchema,
 } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
@@ -69,6 +70,7 @@ export const metadata: Metadata = {
 export default function Home() {
   const organizationSchema = generateOrganizationSchema()
   const serviceSchema = generateServiceSchema()
+  const websiteSchema = generateWebSiteSchema()
 
   // Extract testimonials data for schema
   const testimonialData = [
@@ -152,6 +154,13 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(organizationSchema),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema),
         }}
       />
 
