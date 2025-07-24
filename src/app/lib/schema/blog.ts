@@ -23,20 +23,39 @@ export const generateBlogSchema = cache((posts: Post[]) => {
     publisher: PUBLISHER_REF,
     audience: TECHNICAL_AUDIENCE,
     about: CORE_TOPICS,
-    blogPost: posts.slice(0, 100).map((post) => ({
-      '@type': 'BlogPosting',
-      '@id': `https://draft.dev/learn/${post.slug}#article`,
-      headline: post.title,
-      url: `https://draft.dev/learn/${post.slug}`,
-      datePublished: post.date ? new Date(post.date).toISOString() : undefined,
-      description: stripHtmlTags(post.seoDesc || post.excerpt || ''),
-      keywords: post.customFields?.targetKeywords?.join(', ') || '',
-      image: {
-        '@type': 'ImageObject',
-        url: getSchemaImageUrl(post),
-      },
-      author: generatePersonAuthor(post),
-      publisher: PUBLISHER_REF,
-    })),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://draft.dev/learn',
+    },
+    blogPost: posts.slice(0, 100).map((post) => {
+      const keywordList = post.customFields?.targetKeywords?.slice(0, 5)
+      const keywords =
+        keywordList && keywordList.length > 0
+          ? keywordList.join(', ')
+          : undefined
+
+      return {
+        '@type': 'BlogPosting',
+        '@id': `https://draft.dev/learn/${post.slug}#article`,
+        headline: post.title,
+        url: `https://draft.dev/learn/${post.slug}`,
+        ...(post.date && {
+          datePublished: new Date(post.date).toISOString(),
+        }),
+        description: stripHtmlTags(post.seoDesc || post.excerpt || ''),
+        ...(keywords && { keywords }),
+        image: {
+          '@type': 'ImageObject',
+          url: getSchemaImageUrl(post),
+        },
+        author: generatePersonAuthor(post),
+        publisher: PUBLISHER_REF,
+        isPartOf: {
+          '@type': 'Blog',
+          name: 'Draft.dev Blog',
+          url: 'https://draft.dev/learn',
+        },
+      }
+    }),
   }
 })

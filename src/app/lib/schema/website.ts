@@ -5,12 +5,11 @@ export const generateWebSiteSchema = cache(() => {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    '@id': 'https://draft.dev/#website',
+    '@id': 'https://draft.dev/#webSite',
     name: 'Draft.dev',
     description:
-      'Technical content marketing agency helping tech companies reach developers through expert-driven content',
+      'Technical content marketing agency helping tech companies reach developers through expert-driven content. Brought to you by Draft.dev.',
     url: 'https://draft.dev',
-
     potentialAction: {
       '@type': 'SearchAction',
       target: {
@@ -19,11 +18,9 @@ export const generateWebSiteSchema = cache(() => {
       },
       'query-input': 'required name=search_term_string',
     },
-
     publisher: PUBLISHER_REF,
     copyrightYear: 2020,
     inLanguage: 'en-US',
-
     about: {
       '@type': 'Thing',
       name: 'Technical Content Marketing',
