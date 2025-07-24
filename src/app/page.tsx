@@ -1,7 +1,6 @@
 import {
   generateOrganizationSchema,
   generateServiceSchema,
-  generateTestimonialSchema,
   generateWebSiteSchema,
 } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
@@ -146,8 +145,6 @@ export default function Home() {
     },
   ]
 
-  const testimonialSchema = generateTestimonialSchema(testimonialData)
-
   return (
     <>
       <script
@@ -168,13 +165,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(serviceSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(testimonialSchema),
         }}
       />
 
