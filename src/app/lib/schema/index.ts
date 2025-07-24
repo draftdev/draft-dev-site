@@ -2,6 +2,7 @@
 export {
   generateArticleSchema,
   generateBreadcrumbSchema,
+  generateFAQPageSchema,
   generateFAQSchema,
   generatePersonAuthor,
 } from './article'

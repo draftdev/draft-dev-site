@@ -251,6 +251,7 @@ export default async function PostPage({ params }: Props) {
               __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'FAQPage',
+                '@id': `https://draft.dev/learn/${slug}#faq`,
                 mainEntity: generateFAQSchema(post.customFields.faqQuestions),
               }),
             }}

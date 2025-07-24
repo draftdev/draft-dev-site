@@ -45,6 +45,18 @@ export function generateFAQSchema(
   }))
 }
 
+export function generateFAQPageSchema(post: Post, slug: string) {
+  if (!post.customFields?.faqQuestions?.length) return null
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `https://draft.dev/learn/${slug}#faq`,
+    name: 'Frequently Asked Questions',
+    mainEntity: generateFAQSchema(post.customFields.faqQuestions),
+  }
+}
+
 export const generateArticleSchema = cache((post: Post, slug: string) => {
   const wordCount = estimateWordCount(post.content)
   const readingTime =
@@ -106,10 +118,6 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
     ...(about && { about }),
   }
 
-  if (post.customFields?.faqQuestions?.length) {
-    articleSchema.mainEntity = generateFAQSchema(post.customFields.faqQuestions)
-  }
-
   if (post.customFields?.videoUrl) {
     articleSchema.video = generateVideoSchema(
       post.customFields.videoUrl,
@@ -132,28 +140,19 @@ export const generateBreadcrumbSchema = cache((title: string, slug: string) => {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: {
-          '@type': 'WebPage',
-          '@id': 'https://draft.dev',
-        },
+        item: { '@type': 'WebPage', '@id': 'https://draft.dev' },
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: {
-          '@type': 'WebPage',
-          '@id': 'https://draft.dev/learn',
-        },
+        item: { '@type': 'WebPage', '@id': 'https://draft.dev/learn' },
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: title,
-        item: {
-          '@type': 'WebPage',
-          '@id': `https://draft.dev/learn/${slug}`,
-        },
+        item: { '@type': 'WebPage', '@id': `https://draft.dev/learn/${slug}` },
       },
     ],
   }
