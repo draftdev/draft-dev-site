@@ -1,10 +1,5 @@
 import { cache } from 'react'
-import {
-  CORE_TOPICS,
-  PUBLISHER_REF,
-  TECHNICAL_AUDIENCE,
-  type Post,
-} from './constants'
+import { PUBLISHER_REF, TECHNICAL_AUDIENCE, type Post } from './constants'
 import { estimateWordCount, getSchemaImageUrl, stripHtmlTags } from './utils'
 import { generateVideoSchema } from './video'
 
@@ -23,10 +18,7 @@ export function generatePersonAuthor(post: Post) {
     description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: PUBLISHER_REF,
     url: 'https://draft.dev/about',
-    knowsAbout: post.customFields?.targetKeywords || [
-      'Technical Content Marketing',
-      'Software Development',
-    ],
+    knowsAbout: post.customFields?.targetKeywords?.slice(0, 3),
   }
 
   if (post.customFields?.authorLinkedIn) {
@@ -66,6 +58,18 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
 
   const cleanDescription = stripHtmlTags(post.seoDesc || post.excerpt || '')
 
+  const keywordList = post.customFields?.targetKeywords?.slice(0, 5)
+  const keywords =
+    keywordList && keywordList.length > 0 ? keywordList.join(', ') : undefined
+
+  const about =
+    keywordList && keywordList.length > 0
+      ? keywordList.slice(0, 2).map((term) => ({
+          '@type': 'Thing',
+          name: term,
+        }))
+      : undefined
+
   const articleSchema: any = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -85,19 +89,21 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
       '@type': 'WebPage',
       '@id': `https://draft.dev/learn/${slug}`,
     },
+    isPartOf: {
+      '@type': 'Blog',
+      name: 'Draft.dev Blog',
+      url: 'https://draft.dev/learn',
+    },
     author: generatePersonAuthor(post),
     publisher: PUBLISHER_REF,
     articleSection: post.categories?.[0]?.name || 'Technical Content Marketing',
-    wordCount: wordCount,
+    wordCount,
     timeRequired: `PT${readingTime}M`,
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     audience: TECHNICAL_AUDIENCE,
-    about: CORE_TOPICS,
-    keywords:
-      post.customFields?.targetKeywords?.join(', ') ||
-      post.seoKeyword ||
-      'technical content marketing, developer relations',
+    ...(keywords && { keywords }),
+    ...(about && { about }),
   }
 
   if (post.customFields?.faqQuestions?.length) {
