@@ -33,7 +33,8 @@ export function generateVideoSchema(
     name: title,
     description: stripHtmlTags(description),
     uploadDate: uploadDate || new Date().toISOString(),
-    publisher: PUBLISHER_REF,
+    publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
+
     inLanguage: 'en-US',
   }
 

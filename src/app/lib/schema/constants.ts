@@ -43,10 +43,7 @@ export interface Post {
   }
 }
 
-export const PUBLISHER_REF = {
-  '@type': 'Organization',
-  '@id': 'https://draft.dev/#organization',
-} as const
+export const PUBLISHER_REF = 'https://draft.dev/#organization'
 
 export const DEFAULT_IMAGE_URL =
   'https://draft.dev/site/med-landscape/write_draft_dev.jpg'

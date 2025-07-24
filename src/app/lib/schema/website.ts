@@ -18,7 +18,8 @@ export const generateWebSiteSchema = cache(() => {
       },
       'query-input': 'required name=search_term_string',
     },
-    publisher: PUBLISHER_REF,
+    publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
+
     copyrightYear: 2020,
     inLanguage: 'en-US',
     about: {

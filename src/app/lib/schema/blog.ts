@@ -20,7 +20,7 @@ export const generateBlogSchema = cache((posts: Post[]) => {
     inLanguage: 'en-US',
     keywords:
       'technical content marketing, developer relations, software development tutorials, API documentation, technical writing, developer marketing, DevOps content',
-    publisher: PUBLISHER_REF,
+    publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     audience: TECHNICAL_AUDIENCE,
     about: CORE_TOPICS,
     mainEntityOfPage: {
@@ -49,7 +49,7 @@ export const generateBlogSchema = cache((posts: Post[]) => {
           url: getSchemaImageUrl(post),
         },
         author: generatePersonAuthor(post),
-        publisher: PUBLISHER_REF,
+        publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
         isPartOf: {
           '@type': 'Blog',
           name: 'Draft.dev Blog',

@@ -33,7 +33,7 @@ export const generateTestimonialSchema = cache(
               name: testimonial.company,
             },
           },
-          about: PUBLISHER_REF,
+          about: { '@id': PUBLISHER_REF, '@type': 'Organization' },
         },
       })),
     }

@@ -7,7 +7,7 @@ export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
   if (!authorName || authorName === 'Draft.dev Team') {
-    return PUBLISHER_REF
+    return { '@id': PUBLISHER_REF }
   }
 
   const baseAuthor = {
@@ -16,7 +16,7 @@ export function generatePersonAuthor(post: Post) {
     jobTitle:
       post.customFields?.authorCredentials || 'Technical Content Writer',
     description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
-    worksFor: PUBLISHER_REF,
+    worksFor: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     url: 'https://draft.dev/about',
     knowsAbout: post.customFields?.targetKeywords?.slice(0, 3),
   }
@@ -107,7 +107,7 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
       url: 'https://draft.dev/learn',
     },
     author: generatePersonAuthor(post),
-    publisher: PUBLISHER_REF,
+    publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     articleSection: post.categories?.[0]?.name || 'Technical Content Marketing',
     wordCount,
     timeRequired: `PT${readingTime}M`,
