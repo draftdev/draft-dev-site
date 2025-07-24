@@ -45,8 +45,5 @@ export function validateSchemaSize(schema: any, name: string): void {
         `⚠️ Large schema detected: ${name} is ${sizeInKB.toFixed(2)}KB`,
       )
     }
-
-    // Log schema to console for debugging
-    console.log(`Schema ${name}:`, schema)
   }
 }

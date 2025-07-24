@@ -8,7 +8,7 @@ import {
 export const generateOrganizationSchema = cache(() => {
   return {
     '@context': 'https://schema.org',
-    '@type': ['Organization', 'ProfessionalService', 'EducationalOrganization'],
+    '@type': ['Organization', 'ProfessionalService'],
     '@id': 'https://draft.dev/#organization',
     name: 'Draft.dev',
     alternateName: 'Draft',
