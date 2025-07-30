@@ -31,6 +31,7 @@ export interface Post {
     }>
     targetKeywords?: string[]
     authorCredentials?: string
+    authorBio?: string
     readingTime?: number
     expertSources?: string[]
     videoUrl?: string
@@ -112,6 +113,7 @@ query AllPosts($first: Int, $after: String) {
       # Enhanced custom fields for AI optimization
       targetKeywords: metaValue(key: "target_keywords")
       authorCredentials: metaValue(key: "author_credentials")
+      authorBio: metaValue(key: "author_bio")
       readingTime: metaValue(key: "reading_time")
       expertSources: metaValue(key: "expert_sources")
       videoUrl: metaValue(key: "video_url")
@@ -164,6 +166,7 @@ query PostBySlug($slug: ID!) {
     # Enhanced custom fields for AI optimization
     targetKeywords: metaValue(key: "target_keywords")
     authorCredentials: metaValue(key: "author_credentials")
+    authorBio: metaValue(key: "author_bio")
     readingTime: metaValue(key: "reading_time")
     expertSources: metaValue(key: "expert_sources")
     videoUrl: metaValue(key: "video_url")
@@ -305,6 +308,7 @@ function parseCustomFields(rawPost: any) {
   // Simple field mappings
   if (rawPost.authorCredentials)
     customFields.authorCredentials = rawPost.authorCredentials
+  if (rawPost.authorBio) customFields.authorBio = rawPost.authorBio
   if (rawPost.readingTime) {
     const parsedTime = parseInt(rawPost.readingTime, 10)
     if (!isNaN(parsedTime)) {
