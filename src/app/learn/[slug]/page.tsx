@@ -181,9 +181,6 @@ export default async function PostPage({ params }: Props) {
     notFound()
   }
 
-  console.log('Post custom fields:', post.customFields)
-  console.log('FAQ data:', post.customFields?.faqQuestions)
-
   // Process content with caching
   const { sanitizedContent, readingTime } = await processPostContent(post)
   const articleSchema = generateArticleSchema(post, slug)

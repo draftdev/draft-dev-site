@@ -27,7 +27,6 @@ export default function Analytics() {
     window.dataLayer = window.dataLayer || []
 
     const initGTM = () => {
-      console.log('GTM loading now') // Debug line
       if (window.gtmDidInit) return
       window.gtmDidInit = true
 
