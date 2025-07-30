@@ -533,16 +533,6 @@ export default async function PostPage({ params }: Props) {
                       LinkedIn
                     </a>
                   </div>
-
-                  {/* Back to top */}
-                  <button
-                    onClick={() =>
-                      window.scrollTo({ top: 0, behavior: 'smooth' })
-                    }
-                    className="text-sm text-gray-500 transition-colors hover:text-gray-700"
-                  >
-                    Back to top ↑
-                  </button>
                 </div>
               </div>
             </footer>
