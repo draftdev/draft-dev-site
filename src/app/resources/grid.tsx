@@ -15,21 +15,21 @@ interface Post {
 }
 
 const posts: Post[] = [
-  {
+    {
     id: 1,
-    title: 'How to Orchestrate Technical Content to Drive Business',
-    href: '/orchestrate-technical-content',
-    description:
-      'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and transform your expertise into valuable gated assets that convert visitors into leads.',
-    imageUrl: '/site/med-landscape/orchestrate_thumb_draft_dev.jpg',
-  },
-  {
-    id: 2,
     title: 'How to Set Up a Content Marketing Engine in the Age of AI',
     href: '/content-marketing-engine',
     description:
       'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine that provides you with insights and data to prove its effectiveness to business leadership.',
     imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
+  },
+  {
+    id: 2,
+    title: 'How to Orchestrate Technical Content to Drive Business',
+    href: '/orchestrate-technical-content',
+    description:
+      'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and transform your expertise into valuable gated assets that convert visitors into leads.',
+    imageUrl: '/site/med-landscape/orchestrate_thumb_draft_dev.jpg',
   },
   {
     id: 3,
@@ -39,16 +39,14 @@ const posts: Post[] = [
       'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
-
-  {
+    {
     id: 4,
-    title: "50 Winning Ideas For Your Company's Blog",
-    href: '/ideas',
+    title: "How to run your own Keyword Audit and Creating Topic Clusters",
+    href: '/keyword-audit-topic-clusters',
     description:
-      'Kickstart your content marketing efforts with this in-depth guide.',
-    imageUrl: '/site/med-landscape/ideas_og_draft_dev.jpg',
+      'In this free PDF guide, we will walk you through how to conduct your own SEO keyword research and the process of generating topic clusters. Learn how to find keywords people are searching for and how to plan and map topic clusters.',
+    imageUrl: '/site/med-landscape/keyword-audit-topic-clusters-draft-dev.jpg',
   },
-
   {
     id: 5,
     title: "The Technical Content Manager's Playbook",
@@ -57,6 +55,24 @@ const posts: Post[] = [
       'This free Technical Content Manager Playbook is a collection of resources you can use to manage a top-tier technical blog. Among other things, it includes a template for creating technical content briefs, a multi-author publishing calendar, and a technical blogging style guide.',
     imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
+    {
+    id: 6,
+    title: "The Content Engine Checklist",
+    href: '/content-engine-checklist',
+    description:
+      'In this free PDF checklist, we give you an overview on key aspects to consider when building a content engine and when starting and running the engine. We talk about the Tech Setup, Marketing Automation and Advertisement, and Content Typtes and Content Promotion.',
+    imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
+  },
+  {
+    id: 7,
+    title: "50 Winning Ideas For Your Company's Blog",
+    href: '/ideas',
+    description:
+      'Kickstart your content marketing efforts with this in-depth guide.',
+    imageUrl: '/site/med-landscape/ideas_og_draft_dev.jpg',
+  },
+
+
   // More resources...
 ]
 
