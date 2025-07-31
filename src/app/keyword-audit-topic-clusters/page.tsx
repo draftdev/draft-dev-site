@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Learn how to conduct your own SEO keyword research and the process of generating topic clusters. Learn how to find keywords people are searching for.',
   keywords:
-    'orchestrate technical content, content orchestration, technical content management, content strategy execution',
+    'seo keyword audit, content clusters, SEO, topic clusters, technical content, content strategy execution',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     'Learn what to consider when running a content. We talk about Tech Setup, Marketing Automation and Advertisement, and Content Types and Content Promotion.',
   keywords:
-    'orchestrate technical content, content orchestration, technical content management, content strategy execution',
+    'content engine, content marketing, technical content marketing, content strategy execution, content marketing checklist',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
