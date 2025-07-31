@@ -60,7 +60,7 @@ const posts: Post[] = [
     title: "The Content Engine Checklist",
     href: '/content-engine-checklist',
     description:
-      'In this free PDF checklist, we give you an overview on key aspects to consider when building a content engine and when starting and running the engine. We talk about the Tech Setup, Marketing Automation and Advertisement, and Content Typtes and Content Promotion.',
+      'In this free PDF checklist, we give you an overview on key aspects to consider when building a content engine and when starting and running the engine. We talk about the Tech Setup, Marketing Automation and Advertisement, and Content Types and Content Promotion.',
     imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
   },
   {
