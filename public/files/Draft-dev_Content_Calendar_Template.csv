@@ -1,0 +1,96 @@
+Task ID,Created At,Completed At,Last Modified,Name,Section/Column,Assignee,Assignee Email,Start Date,Due Date,Tags,Notes,Projects,Parent Task,Blocked By (Dependencies),Blocking (Dependencies),Priority
+1204175480287741,2023-03-15,,2023-03-16,Welcome. How to get started?,Read ME,,,,,,"Each card is a content piece. A card moves from Content Backlog to Done. At each stage you need to perform several tasks.
+
+The template includes for each stage an overview card with a description. It also includes examples of content pieces.
+When creating a new content piece you can duplicate the ""Content Template"" task (exclude tags) or even convert it to a template task.
+
+You can find a in-depth description of each content stage on the ""Overview: ..."" card at the top of each section. Here is a short overview:
+    Content Backlog: A list of content ideas that are in line with your target audience and marketing goals.
+    Preparation: Content is ready to be handed to writer
+    Writing: Content that is finalized from the writer’s perspective and ready for editing
+    Editing: Content that is ready to be published
+    Scheduling: Content that is scheduled for publishing
+    Scheduled: This column includes all content added to the CMS and waiting for the publish date.
+    Published: This column includes all published content pieces that are waiting to be promoted.
+    Promoting: Content that is promoted through defined channels
+    Done: Party - Congrats you published yet another content piece.
+
+Hope you find it useful.",Draft.dev Content Calendar,,,,
+1204192774636857,2023-03-16,,2023-03-16,"Review and update subtasks on the ""Content Template"" Task in the Content Backlog section",,,,,,,,,Welcome. How to get started?,,,
+1204192774636858,2023-03-16,,2023-03-16,Start with adding your existing content pieces to the board based on the state,,,,,,,,,Welcome. How to get started?,,,
+1204192774636859,2023-03-16,,2023-03-16,Start with adding new content ideas to the content backlog,,,,,,,,,Welcome. How to get started?,,,
+1204126239486037,2023-03-07,,2023-03-14,Overview: Content Backlog,Content Backlog,,,,,,"This list should include all your content ideas. There are multiple sources for content ideas - the team, customers, stakeholders, gap analysis of competitors content or your own, etc. Or you can use a keyword audit to https://draft.dev/keyword-audit-topic-clusters
+
+Classify content using labels, based on content type, channel, funnel stage, etc.
+
+The output of this stage: A list of content ideas that are in line with your target audience and marketing goals.",Draft.dev Content Calendar,,,,
+1204143317007299,2023-03-09,,2023-03-16,Content Template - COPY ME,Content Backlog,,,,,,"This task represents a content piece you want to write. 
+
+Duplicate this task to create a new content backlog item.
+Or 'Convert task to template.'"" to have it available as an option when you add a task to a section.
+
+See the subtasks and subtasks within these subtasks below to define what is expected to happen at each content creation stage.",Draft.dev Content Calendar,,,,
+1204175480287773,2023-03-15,,2023-03-15,Add tags to categorize your content,,,,,,,,,Content Template - COPY ME,,,
+1204143494514906,2023-03-09,,2023-03-15,Preparation,,,,,,,,,Content Template - COPY ME,,,
+1204143494514907,2023-03-09,,2023-03-15,Create content brief,,,,,,,,,Preparation,,,
+1204143494514908,2023-03-09,,2023-03-09,Due date added,,,,,,,,,Preparation,,,
+1204143494514909,2023-03-09,,2023-03-09,Owner assigned,,,,,,,,,Preparation,,,
+1204175480287775,2023-03-15,,2023-03-15,Identify and assign a writer,,,,,,,,,Preparation,,,
+1204175480287776,2023-03-15,,2023-03-15,"Identify and add reviewer, editors",,,,,,,,,Preparation,,,
+1204175480287777,2023-03-15,,2023-03-15,Brief writer,,,,,,,,,Preparation,,,
+1204143324477602,2023-03-09,,2023-03-15,Writing,,,,,,,,,Content Template - COPY ME,,,
+1.20414E+15,2023-03-09,,2023-03-15,Draft finished,,,,,,,,,Writing,,,
+1204143494514911,2023-03-09,,2023-03-15,Draft reviewed and feedback provided,,,,,,,,,Writing,,,
+1204175480287778,2023-03-15,,2023-03-15,Content finalized,,,,,,,,,Writing,,,
+1204175480287779,2023-03-15,,2023-03-15,Editing,,,,,,,,,Content Template - COPY ME,,,
+1204175480287781,2023-03-15,,2023-03-15,Proofreadning,,,,,,,,,Editing,,,
+1204175480287782,2023-03-15,,2023-03-15,Copyediting,,,,,,,,,Editing,,,
+1204175480287783,2023-03-15,,2023-03-15,Check for readability (e.g. https://hemingwayapp.com/),,,,,,,,,Editing,,,
+1204175480287785,2023-03-15,,2023-03-15,Technical SEO audit done,,,,,,,,,Editing,,,
+1204175480287786,2023-03-15,,2023-03-15,Internal links added,,,,,,,,,Editing,,,
+1204175480287787,2023-03-15,,2023-03-15,External links added,,,,,,,,,Editing,,,
+1204175480287788,2023-03-15,,2023-03-15,Approved,,,,,,,,,Editing,,,
+1204143324477603,2023-03-09,,2023-03-15,Scheduling,,,,,,,,,Content Template - COPY ME,,,
+1.20418E+15,2023-03-15,,2023-03-15,Creation of design assets,,,,,,,,,Scheduling,,,
+1204175480287791,2023-03-15,,2023-03-15,Images optimized,,,,,,,,,Scheduling,,,
+1204175480287792,2023-03-15,,2023-03-15,Content added to CMS,,,,,,,,,Scheduling,,,
+1204175480287793,2023-03-15,,2023-03-15,Content format and structure checked for SEO,,,,,,,,,Scheduling,,,
+1204175480287794,2023-03-15,,2023-03-15,Meta description and image added,,,,,,,,,Scheduling,,,
+1204175480287795,2023-03-15,,2023-03-15,Test content and images on mobile,,,,,,,,,Scheduling,,,
+1204175480287796,2023-03-15,,2023-03-15,Test image size and load speed,,,,,,,,,Scheduling,,,
+1204175480287797,2023-03-15,,2023-03-15,Content scheduled to be published,,,,,,,,,Scheduling,,,
+1204175480287798,2023-03-15,,2023-03-15,Social Media promotion scheduled,,,,,,,,,Scheduling,,,
+1204175480287799,2023-03-15,,2023-03-15,(Optional) Confirm go-live date with relevant third parties,,,,,,,,,Scheduling,,,
+1.20418E+15,2023-03-15,,2023-03-15,Published,,,,,,,,,Content Template - COPY ME,,,
+1204175480287801,2023-03-15,,2023-03-15,Add backlinks to new content piece,,,,,,,,,Published,,,
+1204175480287804,2023-03-15,,2023-03-15,Promoting,,,,,,,,,Content Template - COPY ME,,,
+1204175480287805,2023-03-15,,2023-03-15,Publish summary as twitter thread,,,,,,,,,Promoting,,,
+1204175480287806,2023-03-15,,2023-03-15,Schedule individual tweets over next 5 days,,,,,,,,,Promoting,,,
+1204175480287808,2023-03-15,,2023-03-15,Add to newsletter,,,,,,,,,Promoting,,,
+1204175480287809,2023-03-15,,2023-03-15,Add to sponsorships (if applicable),,,,,,,,,Promoting,,,
+1204175480287811,2023-03-15,,2023-03-15,Share in online communities,,,,,,,,,Promoting,,,
+1204175480287812,2023-03-15,,2023-03-15,Publish on LinkedIn,,,,,,,,,Promoting,,,
+1204175480287813,2023-03-15,,2023-03-15,"Publish on other social channels (TikTok, Instagram)",,,,,,,,,Promoting,,,
+1204175480287815,2023-03-15,,2023-03-15,Reach out to partners who agreed to co-promote content,,,,,,,,,Promoting,,,
+1204143317007274,2023-03-09,,2023-03-14,Overview: Preparation,Preparation,,,,,,"This is all about getting your content ready for writing. Be it internal or external. A well-written content brief is a great tool to do that. This brief includes the target audience, URL, h1 headline, keywords, links, etc.
+
+You also want to set a due date for the content piece. As soon as you set a due date it will also show up on the calendar view of the board.
+
+Additionally, this is a good time to https://draft.dev/learn/finding-motivating-writers and get the ball rolling. 
+
+The output of this stage: Content is ready and handed to writers",Draft.dev Content Calendar,,,,
+1.20414E+15,2023-03-09,,2023-03-14,Overview: Writing,Writing,,,,,,"Surprise - this is where the content gets written. This includes first drafts, draft reviews, and incorporating early feedback. Once the content is in a stage to be handed over for editing - proofreading, SEO optimization, etc.
+
+The output of this stage: Content that is finalized from the writer's perspective and ready for editing",Draft.dev Content Calendar,,,,
+1204143317007282,2023-03-09,,2023-03-14,Overview: Editing,Editing,,,,,,"The content is fairly finished. Now it is about polishing and ensuring we get the content to a state where it is ready to be published. Typically, this involves proofreading, copy editing, adding links, and SEO optimizations, …
+
+The output of this stage: Content that is ready to be published",Draft.dev Content Calendar,,,,
+1204143317007284,2023-03-09,,2023-03-14,Overview: Scheduling,Scheduling,,,,,,"At this stage, you need to make the finished content ready for publishing. Content needs to be added to Content Management System, and formatted and structured correctly.
+
+The output of this stage: Content that is scheduled for publishing",Draft.dev Content Calendar,,,,
+1204143317007286,2023-03-09,,2023-03-14,Overview: Scheduled,Scheduled,,,,,,This column includes all content added to the CMS and waiting for the publish date.,Draft.dev Content Calendar,,,,
+1.20414E+15,2023-03-09,,2023-03-14,Overview: Published,Published,,,,,,This column includes all published content pieces that are waiting to be promoted.,Draft.dev Content Calendar,,,,
+1204143317007292,2023-03-09,,2023-03-14,Overview: Promoting,Promoting,,,,,,"In this phase, you arehttps://draft.dev/learn/promotion. Social media promotions. Outreach to external partners for co-promotion. You can now also add backlinks to the newly published content.
+
+The output of this stage: Content that is promoted through defined channels",Draft.dev Content Calendar,,,,
+1204143317007294,2023-03-09,,2023-03-14,Overview: Done,Done,,,,,,The output of this stage: Party - Congrats you published yet another content piece.,Draft.dev Content Calendar,,,,
