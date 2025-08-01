@@ -32,13 +32,13 @@ const Hero: React.FC = () => {
                   </Link>
                 </div>
                 <h1 className="mb-6 py-4 text-left font-code text-3xl font-semibold leading-tight text-white sm:text-6xl">
-                  We are a Content Creation Agency for Technical Companies
+                  The Leader in Technical Content
                 </h1>
 
                 <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-lg text-gray-100 sm:bg-transparent sm:p-0">
-                  Draft.dev helps Marketing and Developer Relations teams in
-                  tech businesses build trust, drive awareness, and capture
-                  leads.
+                  We help Developer Marketing, Product, and Developer Relations
+                  teams drive business value through authentic, technical
+                  content.
                 </p>
                 <div className="mb-6 mt-16 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
                   <Link
@@ -48,11 +48,10 @@ const Hero: React.FC = () => {
                     Book a Discovery Call
                   </Link>
                   <Link
-                    href="#lead-generation-package"
+                    href="#your-path-to-technical-content"
                     className="inline-block font-semibold text-white hover:text-gray-200 sm:text-base"
                   >
-                    See Our Lead Generation Package{' '}
-                    <span aria-hidden="true">→</span>
+                    How We Work <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>

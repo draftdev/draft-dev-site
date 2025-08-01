@@ -10,16 +10,14 @@ import Testimonials from '@/components/media/testimonials/testimonials-group'
 import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
 import How from '@/components/page-components/how'
-import SinglePricing from '@/components/page-components/resources/single-pricing'
 import What from '@/components/page-components/what'
-import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+  title: 'The Leader in Technical Content - Draft.dev',
   description:
-    'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+    'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
   keywords:
     'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -29,9 +27,9 @@ export const metadata: Metadata = {
     url: 'https://draft.dev',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    title: 'The Leader in Technical Content - Draft.dev',
     description:
-      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+      'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -44,9 +42,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Content Creation Agency for Technical Audiences - Draft.dev',
+    title: 'The Leader in Technical Content - Draft.dev',
     description:
-      'We are a technical content marketing agency helping Marketing and Developer Relations teams in Tech Companies drive awareness, capture leads, and build trust.',
+      'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -172,31 +170,31 @@ export default function Home() {
         <main>
           <Hero />
           <What
-            title="Technical Content Marketing by Subject Matter Experts"
-            subtitleBold="Transform your technical marketing"
-            subtitleRegular="with expert-written content that resonates with developers and generates qualified leads."
+            title="Stop begging your engineers to create content..."
+            subtitleBold="Impress them"
+            subtitleRegular="with the tehcnical content you get from Draft.dev."
             features={[
               {
-                title: 'Drive Technical Authority',
+                title: 'Real Engineers Create Our Content',
                 description:
-                  "We create in-depth technical tutorials, guides, and documentation that showcase your product's capabilities while building credibility with developers.",
+                  "We work with hundreds of practicing software, data, and devops engineers to create in-depth technical tutorials, guides, and comparisons that showcase your product's capabilities while building credibility with developers.",
               },
               {
-                title: 'Scale Your Content Program',
+                title: 'Align Content with Business Goals',
                 description:
-                  'Our network of technical experts delivers consistent, high-quality content that frees your team to focus on core business priorities.',
+                  "Our in-house team of content marketing, SEO, and engineering professionals will help you drive measurable business value through content, ensuring that you're getting the most from your efforts.",
               },
               {
-                title: 'Generate Developer Interest',
+                title: 'Build Your Brand and Generate Leads',
                 description:
-                  'From technical blog posts to product tutorials, we create content that attracts developers and converts them into engaged users.',
+                  "Content creation is just the start. We'll help you promote your content on all the channels developers use to ensure it reaches the right audience, engenders trust, and builds your brand.",
               },
             ]}
             imageSrc="/site/med-portrait/pair_programming_draft_dev.jpg"
             imageAlt="Technical content development"
           />
           <SocialProof />
-          <Why
+          {/* <Why
             title="The Draft.dev Difference"
             subtitle="Partner with technical content experts who understand your industry and deliver results."
             subtitleBold="You'll only pay for content if you're 100% satisfied."
@@ -251,37 +249,36 @@ export default function Home() {
             ]}
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
-          />
-
-          <How
-            title="Your Path to Technical Content"
-            subtitleBold="Our streamlined process ensures consistent, high-quality
-                    technical content delivered on time."
-            subtitleRegular="Here's how we help you create content that resonates with
-                  developers."
-            steps={[
-              {
-                number: '1',
-                title: 'Schedule A Discovery Call',
-                description:
-                  "In this 30-minute introductory call, we'll learn about your company and marketing strategy. If Draft.dev is a good fit for your business, we can start the onboarding process.",
-              },
-              {
-                number: '2',
-                title: 'Create Your Content Plan',
-                description:
-                  "Based on your budget, goals, and marketing strategy, we'll create your customized content plan. This helps you see exactly what you'll be getting and ensures that we meet your expectations.",
-              },
-              {
-                number: '3',
-                title: 'Ready-to-publish Technical Content',
-                description:
-                  "Once your content plan is approved and our team will get started, you'll receive tested and edited content that's ready to publish every 1-2 weeks. If our work ever falls short of your expectations, we'll work with you to revise it.",
-              },
-            ]}
-            imageSrc="/site/med-portrait/commit_draft_dev.jpg"
-            imageAlt="Technical content development"
-          />
+          /> */}
+          <div id="how-we-work">
+            <How
+              title="How We Work"
+              subtitleBold="Our robust process ensures you get high-quality technical content you can count on every week."
+              subtitleRegular="Here's how we help you create content that resonates with developers:"
+              steps={[
+                {
+                  number: '1',
+                  title: 'Schedule A Discovery Call',
+                  description:
+                    "In this 30-minute introductory call, we'll learn about your company and marketing strategy. If Draft.dev is a good fit for your business, we can build a scope of work that fits your budget.",
+                },
+                {
+                  number: '2',
+                  title: 'Create Your Content Roadmap',
+                  description:
+                    "Based on your marketing strategy and goals, we'll leverage our extensive experience in the industry to build a content roadmap just for you. This helps you see exactly what you'll be getting and ensures that your team is aligned on the expectations and priorities.",
+                },
+                {
+                  number: '3',
+                  title: 'Ready-to-publish Technical Content',
+                  description:
+                    "Our team of engineers, editors, and technical content specialists will create detailed outlines for you to review before starting weekly content delivery. Each piece is tested and edited for quality assurance. If our work ever falls short of your expectations, we'll work with you to revise it.",
+                },
+              ]}
+              imageSrc="/site/med-portrait/commit_draft_dev.jpg"
+              imageAlt="Technical content development"
+            />
+          </div>
 
           <CaseStudyHome />
 
