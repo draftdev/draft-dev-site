@@ -49,6 +49,14 @@ const posts: Post[] = [
   },
   {
     id: 5,
+    title: 'The Airtable Content Calendar Template',
+    href: '/airtable-content-calendar-template',
+    description:
+      'Build a comprehensive Airtable content calendar with database power. Free template includes pipeline tracking, task management, and team views.',
+    imageUrl: '/site/med-landscape/airtable_guide_og_draft_dev.jpg',
+  },
+  {
+    id: 6,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
@@ -56,7 +64,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
   {
-    id: 6,
+    id: 7,
     title: 'How to run your own Keyword Audit and Creating Topic Clusters',
     href: '/keyword-audit-topic-clusters',
     description:
@@ -64,7 +72,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/keyword-audit-topic-clusters-draft-dev.jpg',
   },
   {
-    id: 7,
+    id: 8,
     title: "The Technical Content Manager's Playbook",
     href: '/playbook',
     description:
@@ -72,7 +80,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
   {
-    id: 8,
+    id: 9,
     title: 'The Content Engine Checklist',
     href: '/content-engine-checklist',
     description:
@@ -80,7 +88,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
   },
   {
-    id: 9,
+    id: 10,
     title: "50 Winning Ideas For Your Company's Blog",
     href: '/ideas',
     description:
