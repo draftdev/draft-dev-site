@@ -33,7 +33,7 @@ const posts: Post[] = [
   },
   {
     id: 3,
-    title: 'the Trello Content Calendar Template',
+    title: 'The Trello Content Calendar Template',
     href: '/trello-content-calendar-template',
     description:
       'Build a powerful Trello content calendar with automated workflows. Free template includes a 10-stage Kanban system and pre-built checklists.',
@@ -41,6 +41,14 @@ const posts: Post[] = [
   },
   {
     id: 4,
+    title: 'The Asana Content Calendar Template',
+    href: '/asana-content-calendar-template',
+    description:
+      'Complete Asana content calendar setup guide with downloadable template. Includes workflow stages, automation tips, and team collaboration features.',
+    imageUrl: '/site/med-landscape/asana_guide_og_draft_dev.jpg',
+  },
+  {
+    id: 5,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
@@ -48,7 +56,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
   {
-    id: 5,
+    id: 6,
     title: 'How to run your own Keyword Audit and Creating Topic Clusters',
     href: '/keyword-audit-topic-clusters',
     description:
@@ -56,7 +64,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/keyword-audit-topic-clusters-draft-dev.jpg',
   },
   {
-    id: 6,
+    id: 7,
     title: "The Technical Content Manager's Playbook",
     href: '/playbook',
     description:
@@ -64,7 +72,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
   {
-    id: 7,
+    id: 8,
     title: 'The Content Engine Checklist',
     href: '/content-engine-checklist',
     description:
@@ -72,7 +80,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
   },
   {
-    id: 8,
+    id: 9,
     title: "50 Winning Ideas For Your Company's Blog",
     href: '/ideas',
     description:
