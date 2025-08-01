@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
                     Book a Discovery Call
                   </Link>
                   <Link
-                    href="#your-path-to-technical-content"
+                    href="#how-we-work"
                     className="inline-block font-semibold text-white hover:text-gray-200 sm:text-base"
                   >
                     How We Work <span aria-hidden="true">→</span>
