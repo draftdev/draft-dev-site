@@ -68,7 +68,7 @@ export default function AsanaTemplate() {
         role="Developer Advocate"
         company="Loft Labs"
         imageSrc="/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg"
-        imageAlt="Robert Gibb"
+        imageAlt="Rich Burroughs, Developer Advocate at Loft Labs"
       />
       <FAQ />
     </>

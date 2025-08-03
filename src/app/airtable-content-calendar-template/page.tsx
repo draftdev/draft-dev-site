@@ -68,7 +68,7 @@ export default function AirtableTemplate() {
         role="Senior Content Marketing Manager"
         company="Sinch Mailgun"
         imageSrc="/media/testimonials-sm/em_sinch_mailgun.jpg"
-        imageAlt="Em Blitstein"
+        imageAlt="Em Blitstein, Senior Content Marketing Manager at Sinch Mailgun"
       />
       <FAQ />
     </>
