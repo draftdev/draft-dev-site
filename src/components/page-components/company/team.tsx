@@ -53,11 +53,6 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/elzet_blaauw_draft_dev.jpg',
   },
   {
-    name: 'Clayton Kast',
-    description: 'Account Director',
-    img: '/draft/team/clayton_kast_draft_dev.jpg',
-  },
-  {
     name: 'Annika Puura',
     description: 'Operations Manager',
     img: '/draft/team/annika_puura_draft_dev.jpg',
