@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/content-calendar</loc>
+    <lastmod>2025-08-03T14:52:30Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/trello-content-calendar</loc>
+    <lastmod>2025-08-03T14:50:20Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/asana-content-calendar</loc>
+    <lastmod>2025-08-03T14:50:48Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/airtable-content-calendar</loc>
+    <lastmod>2025-08-03T14:51:41Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/how-video-marketing-improves-seo</loc>
+    <lastmod>2025-07-30T17:31:48Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/b2b-thought-leadership-demand</loc>
     <lastmod>2025-07-26T11:27:48Z</lastmod>
     <priority>0.8</priority>
@@ -142,7 +167,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-blog-platforms</loc>
-    <lastmod>2025-07-30T08:50:15Z</lastmod>
+    <lastmod>2025-07-30T10:16:26Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
