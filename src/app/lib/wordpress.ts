@@ -281,12 +281,24 @@ function parseCustomFields(rawPost: any) {
   }
 
   // Parse FAQ data (JSON string)
-  if (rawPost.faqData) {
+  function tryParseJson<T>(jsonString: string, fallback: T, slug?: string): T {
     try {
-      customFields.faqQuestions = JSON.parse(rawPost.faqData)
+      const parsed = JSON.parse(jsonString)
+      return parsed as T
     } catch (e) {
-      console.warn('Failed to parse FAQ data:', e)
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('❌ Failed to parse JSON:', e.message)
+        if (slug) {
+          console.warn('📝 Slug:', slug)
+          console.warn('📄 Raw string:', jsonString)
+        }
+      }
+      return fallback
     }
+  }
+
+  if (rawPost.faqData) {
+    customFields.faqQuestions = tryParseJson(rawPost.faqData, [], rawPost.slug)
   }
 
   // Parse related topics

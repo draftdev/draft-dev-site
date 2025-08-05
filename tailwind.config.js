@@ -8,11 +8,11 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        md: '788',
-        lg: '1090px', // Default is 1024px
-        xl: '1280px', // Default is 1280px
+        md: '788px',
+        lg: '1024px',
+        xl: '1280px',
 
-        tablet: '1090px',
+        tablet: '1024px',
         laptop: '1024px',
         desktop: '1280px',
       },
