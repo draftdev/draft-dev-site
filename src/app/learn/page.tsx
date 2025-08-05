@@ -79,7 +79,7 @@ function Header() {
 
 export const revalidate = 3600 // Revalidate every hour with ISR
 const POSTS_PER_PAGE = 10
-const SCHEMA_POST_LIMIT = 50
+const SCHEMA_POST_LIMIT = 10
 
 export default async function BlogPage() {
   // Fetch initial posts for UI rendering

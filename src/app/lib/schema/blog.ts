@@ -27,7 +27,7 @@ export const generateBlogSchema = cache((posts: Post[]) => {
       '@type': 'WebPage',
       '@id': 'https://draft.dev/learn',
     },
-    blogPost: posts.slice(0, 100).map((post) => {
+    blogPost: posts.slice(0, 10).map((post) => {
       const keywordList = post.customFields?.targetKeywords?.slice(0, 5)
       const keywords =
         keywordList && keywordList.length > 0
