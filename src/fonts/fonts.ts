@@ -1,3 +1,5 @@
+// src/fonts/fonts.ts
+
 import localFont from 'next/font/local'
 
 export const firaSans = localFont({

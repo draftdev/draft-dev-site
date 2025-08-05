@@ -1,3 +1,5 @@
+'use client'
+
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import dynamic from 'next/dynamic'
@@ -39,7 +41,6 @@ export default function RootLayout({
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-
         <link
           rel="preload"
           href="/draft/logos/draftlogo_main_filled.svg"
@@ -51,7 +52,6 @@ export default function RootLayout({
           <Analytics />
         </Suspense>
 
-        {/* Dynamic Banner - Update as needed */}
         <Banner
           text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
           link="https://draft.dev/content-marketing-engine"
@@ -61,7 +61,6 @@ export default function RootLayout({
 
         <div className="flex min-h-screen flex-col">
           <main className="flex-grow">{children}</main>
-
           <Footer />
         </div>
       </body>
