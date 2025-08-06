@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Free Airtable Content Calendar Template - Draft.dev',
   description:
-    'Build a comprehensive Airtable content calendar with database power. Free template includes pipeline tracking, task management, and team views.',
+    'Free Airtable template includes pipeline tracking, task management, and team views.',
   keywords:
     'airtable content calendar template, free content calendar template, airtable editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Free Airtable Content Calendar Template - Draft.dev',
     description:
-      'Build a comprehensive Airtable content calendar with database power. Free template includes pipeline tracking, task management, and team views.',
+      'Free Airtable template includes pipeline tracking, task management, and team views.',
     images: [
       {
         url: '/draft/og/airtable_lp_og_draft_dev.jpg',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Airtable Content Calendar Template - Draft.dev',
     description:
-      'Build a comprehensive Airtable content calendar with database power. Free template includes pipeline tracking, task management, and team views.',
+      'Free Airtable template includes pipeline tracking, task management, and team views.',
     images: ['/draft/og/asana_lp_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',

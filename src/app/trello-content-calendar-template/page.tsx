@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Free Trello Content Calendar Template - Draft.dev',
   description:
-    'Download our free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists. Setup in 10 minutes.',
+    'Free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists.',
   keywords:
     'trello content calendar template, free content calendar template, trello editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Free Trello Content Calendar Template - Draft.dev',
     description:
-      'Download our free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists. Perfect for teams managing 5-50 content pieces monthly.',
+      'Free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists.',
     images: [
       {
         url: '/draft/og/trello_lp_og_draft_dev.jpg',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Trello Content Calendar Template - Draft.dev',
     description:
-      'Download our free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists. Setup in 10 minutes.',
+      'Free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists.',
     images: ['/draft/og/trello_lp_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',

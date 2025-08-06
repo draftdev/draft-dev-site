@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Free Asana Content Calendar Template - Draft.dev',
   description:
-    'Complete Asana content calendar setup guide with downloadable template. Includes workflow stages, automation tips, and team collaboration features.',
+    'Free Asana content calendar template. Includes workflow stages, automation tips, and more.',
   keywords:
     'asana content calendar template, free content calendar template, asana editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Free Asana Content Calendar Template - Draft.dev',
     description:
-      'Complete Asana content calendar setup guide with downloadable template. Includes workflow stages, automation tips, and team collaboration features.',
+      'Free Asana content calendar template. Includes workflow stages, automation tips, and more.',
     images: [
       {
         url: '/draft/og/asana_lp_og_draft_dev.jpg',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Free Asana Content Calendar Template - Draft.dev',
     description:
-      'Complete Asana content calendar setup guide with downloadable template. Includes workflow stages, automation tips, and team collaboration features.',
+      'Free Asana content calendar template. Includes workflow stages, automation tips, and more.',
     images: ['/draft/og/asana_lp_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
