@@ -172,7 +172,7 @@ export default function Home() {
           <What
             title="Stop begging your engineers to create content..."
             subtitleBold="Impress them"
-            subtitleRegular="with the tehcnical content you get from Draft.dev."
+            subtitleRegular="with the technical content you get from Draft.dev."
             features={[
               {
                 title: 'Real Engineers Create Our Content',
