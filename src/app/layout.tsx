@@ -1,6 +1,7 @@
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import { firaCode, firaSans } from '../fonts/fonts'
 
 const Analytics = dynamic(() => import('@/components/analytics'), {
@@ -42,9 +43,9 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white antialiased">
-        {/* <Suspense fallback={null}>
+        <Suspense fallback={null}>
           <Analytics />
-        </Suspense> */}
+        </Suspense>
 
         <Banner
           text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
