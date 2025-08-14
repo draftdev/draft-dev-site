@@ -328,7 +328,7 @@ export function DynamicNavbar({}: NavbarProps) {
       {isWhyUsOpen && (
         <div
           id="why-us-popover"
-          className="fixed inset-x-0 z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]"
+          className="fixed inset-x-0 top-20 z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]"
         >
           <div className="absolute right-5 top-4">
             <button

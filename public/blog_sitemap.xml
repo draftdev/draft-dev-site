@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/orchestrate-content-promotion-waves</loc>
+    <lastmod>2025-08-12T18:24:33Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://draft.dev/learn/technical-writer-for-hire</loc>
+    <lastmod>2025-08-07T05:01:20Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/content-calendar</loc>
     <lastmod>2025-08-03T14:52:30Z</lastmod>
     <priority>0.8</priority>
@@ -22,7 +32,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-video-marketing-improves-seo</loc>
-    <lastmod>2025-07-30T17:31:48Z</lastmod>
+    <lastmod>2025-08-05T15:25:56Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -42,7 +52,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/interactive-content-strategies</loc>
-    <lastmod>2025-08-05T12:16:23Z</lastmod>
+    <lastmod>2025-08-12T15:03:04Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -132,7 +142,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/optimizing-developer-content-for-success</loc>
-    <lastmod>2025-06-30T10:58:12Z</lastmod>
+    <lastmod>2025-08-11T14:48:30Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -203,11 +213,6 @@
   <url>
     <loc>https://draft.dev/learn/what-is-a-director-of-product-marketing</loc>
     <lastmod>2025-03-31T14:52:22Z</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://draft.dev/learn/technical-writer-for-hire</loc>
-    <lastmod>2025-03-31T14:53:44Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -292,7 +297,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-ultimate-list-of-developer-podcasts</loc>
-    <lastmod>2025-07-26T11:20:24Z</lastmod>
+    <lastmod>2025-08-14T14:26:28Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
