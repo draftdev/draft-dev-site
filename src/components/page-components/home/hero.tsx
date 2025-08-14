@@ -69,10 +69,10 @@ export default function Hero() {
               </div>
             </div>
           </div>
-
+          {/*
           <div className="text-center">
             <LogosFlex />
-          </div>
+          </div> */}
         </div>
       </main>
     </div>
