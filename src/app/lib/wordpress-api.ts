@@ -68,12 +68,18 @@ function parseCustomFields(rawPost: any) {
       .filter((k: string) => k.length > 0)
   }
 
-  // Parse FAQ data (JSON string)
   function tryParseJson<T>(jsonString: string, fallback: T, slug?: string): T {
     try {
-      const parsed = JSON.parse(jsonString)
-      return Array.isArray(parsed) ? (parsed as T) : fallback
-    } catch (e) {
+      let s = jsonString.trim()
+
+      s = s.replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'")
+
+      s = s.replace(/,\s*([}\]])/g, '$1')
+
+      s = s.replace(/<!--[\s\S]*?-->/g, '')
+
+      return JSON.parse(s) as T
+    } catch (e: any) {
       if (process.env.NODE_ENV !== 'production') {
         console.warn('❌ Failed to parse JSON:', e.message)
         if (slug) {

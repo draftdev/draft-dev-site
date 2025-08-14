@@ -196,7 +196,6 @@ export default async function PostPage({ params }: Props) {
       const imageUrl = getImageUrl(src)
       const isLCP = isFirstImage // First image is likely LCP
       isFirstImage = false // Subsequent images won't be prioritized
-
       return (
         <div className="my-6">
           <Image
@@ -210,6 +209,8 @@ export default async function PostPage({ params }: Props) {
             priority={isLCP}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+            referrerPolicy="no-referrer"
+            unoptimized
           />
         </div>
       )
