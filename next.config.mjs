@@ -1,3 +1,4 @@
+// next.config.js
 import bundleAnalyzer from '@next/bundle-analyzer'
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -17,19 +18,19 @@ const nextConfig = {
   },
   images: {
     remotePatterns: [
-      { protocol: 'https', hostname: 'candid-cookie.flywheelsites.com' },
-      { protocol: 'http', hostname: 'candid-cookie.flywheelsites.com' },
+      { protocol: 'https', hostname: 'thepodcastconsultant.com' },
+      { protocol: 'https', hostname: 'www.thepodcastconsultant.com' },
+      { protocol: 'https', hostname: '*.flywheelsites.com' },
+      { protocol: 'http', hostname: '*.flywheelsites.com' },
       { protocol: 'https', hostname: 'draft.dev' },
       { protocol: 'https', hostname: 'i.imgur.com' },
       { protocol: 'https', hostname: 'imgur.com' },
-      { protocol: 'https', hostname: 'i0.wp.com' },
-      { protocol: 'https', hostname: 'i1.wp.com' },
-      { protocol: 'https', hostname: 'i2.wp.com' },
-      { protocol: 'https', hostname: 'i3.wp.com' },
+      { protocol: 'https', hostname: '*.wp.com' },
       { protocol: 'https', hostname: 'secure.gravatar.com' },
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 86400,
+    // Reasonable defaults; keep wide for hero/LCP candidates
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768],
   },
