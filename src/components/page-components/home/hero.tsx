@@ -5,13 +5,13 @@ import React from 'react'
 
 const Hero: React.FC = () => {
   return (
-    <div className="bg-gradient-brand pt-20">
+    <div className="bg-gradient-brand">
       <main className="relative isolate pb-16">
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between">
               <div className="relative max-w-2xl lg:shrink-0">
-                <div className="mt-24 py-3 sm:mt-32 lg:mt-16">
+                <div className="py-3 lg:mt-16">
                   <Link
                     href="/resources"
                     className="mr-3 inline-block rounded-full bg-white px-3 py-1 text-sm font-semibold text-primary ring-1 ring-inset ring-primary-40"
@@ -58,9 +58,6 @@ const Hero: React.FC = () => {
                   </Link>
                 </div>
               </div>
-
-              {/* Optional image grid can go here */}
-              <div className="mt-14 hidden justify-end gap-8 sm:-mt-44 sm:pl-20 lg:mt-0 lg:flex lg:pl-0"></div>
             </div>
           </div>
           <div className="text-center">
