@@ -80,7 +80,7 @@
 
   /* Typography styles */
   .header-base {
-    @apply py-1 font-code font-semibold;
+    @apply py-1 font-sans font-semibold;
     font-size: 3.75rem;
     line-height: 1.125;
     letter-spacing: -2px;

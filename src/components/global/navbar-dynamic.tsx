@@ -373,7 +373,7 @@ export function DynamicNavbar({}: NavbarProps) {
     <header className="navbar-container">
       <Disclosure
         as="div"
-        className="sticky left-0 right-0 top-0 z-40 bg-white/95 shadow-md backdrop-blur-sm"
+        className="sticky left-0 right-0 top-0 z-40 bg-white/95 shadow-md"
       >
         {({ open, close }) => {
           if (isMobileMenuOpen !== open) {
