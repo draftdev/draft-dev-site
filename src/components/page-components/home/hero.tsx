@@ -67,9 +67,6 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
-
-              {/* Image grid deferred to keep the H1 as the LCP */}
-              <div className="mt-14 hidden justify-end gap-8 sm:-mt-44 sm:pl-20 lg:mt-0 lg:flex lg:pl-0" />
             </div>
           </div>
 
