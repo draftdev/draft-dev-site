@@ -1,18 +1,9 @@
-// components/page-components/home/hero.tsx
+import { LogosFlex } from '@/components/media/logos-flex'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
-import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import React from 'react'
 
-// Works with either default export or named `LogosFlex`
-const LogosFlex = dynamic(
-  () =>
-    import('@/components/media/logos-flex').then(
-      (m) => m.LogosFlex as React.ComponentType,
-    ),
-  { ssr: false, loading: () => null },
-)
-
-export default function Hero() {
+const Hero: React.FC = () => {
   return (
     <div className="bg-gradient-brand pt-20">
       <main className="relative isolate pb-16">
@@ -42,11 +33,11 @@ export default function Hero() {
                   </Link>
                 </div>
 
-                <h1 className="mb-6 py-4 text-left font-code text-3xl font-semibold leading-tight text-white sm:text-6xl">
+                <h1 className="mb-6 py-4 text-left font-code text-5xl font-semibold leading-tight text-white sm:text-6xl">
                   The Leader in Technical Content
                 </h1>
 
-                <p className="sm:paragraph-light rounded-lg bg-white/5 p-5 text-lg text-gray-100 sm:bg-transparent sm:p-0">
+                <p className="sm:paragraph-light max-w-prose rounded-lg bg-white/5 p-4 text-base text-gray-100 sm:bg-transparent sm:p-0">
                   We help Developer Marketing, Product, and Developer Relations
                   teams drive business value through authentic, technical
                   content.
@@ -67,14 +58,18 @@ export default function Hero() {
                   </Link>
                 </div>
               </div>
+
+              {/* Optional image grid can go here */}
+              <div className="mt-14 hidden justify-end gap-8 sm:-mt-44 sm:pl-20 lg:mt-0 lg:flex lg:pl-0"></div>
             </div>
           </div>
-          {/*
           <div className="text-center">
             <LogosFlex />
-          </div> */}
+          </div>
         </div>
       </main>
     </div>
   )
 }
+
+export default Hero

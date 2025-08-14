@@ -38,10 +38,6 @@
     @apply -m-2 rounded-xl bg-primary-20/5 p-2 ring-1 ring-inset ring-primary-40/10 lg:-m-4 lg:rounded-2xl lg:p-4;
   }
 
-  .banner-container {
-    z-index: 50;
-  }
-
   .navbar-container > div {
     transition: top 0.3s ease-in-out;
   }
