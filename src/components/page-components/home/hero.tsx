@@ -1,11 +1,18 @@
-'use client'
-
-import { LogosFlex } from '@/components/media/logos-flex'
+// components/page-components/home/hero.tsx
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
-import React from 'react'
 
-const Hero: React.FC = () => {
+// Works with either default export or named `LogosFlex`
+const LogosFlex = dynamic(
+  () =>
+    import('@/components/media/logos-flex').then(
+      (m) => m.LogosFlex as React.ComponentType,
+    ),
+  { ssr: false, loading: () => null },
+)
+
+export default function Hero() {
   return (
     <div className="bg-gradient-brand pt-20">
       <main className="relative isolate pb-16">
@@ -61,10 +68,11 @@ const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Optional image grid can go here */}
-              <div className="mt-14 hidden justify-end gap-8 sm:-mt-44 sm:pl-20 lg:mt-0 lg:flex lg:pl-0"></div>
+              {/* Image grid deferred to keep the H1 as the LCP */}
+              <div className="mt-14 hidden justify-end gap-8 sm:-mt-44 sm:pl-20 lg:mt-0 lg:flex lg:pl-0" />
             </div>
           </div>
+
           <div className="text-center">
             <LogosFlex />
           </div>
@@ -73,5 +81,3 @@ const Hero: React.FC = () => {
     </div>
   )
 }
-
-export default Hero

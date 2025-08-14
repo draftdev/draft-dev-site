@@ -1,5 +1,3 @@
-'use client'
-
 import Banner from '@/components/media/banner'
 import '@/styles/tailwind.css'
 import dynamic from 'next/dynamic'
@@ -12,9 +10,7 @@ const Analytics = dynamic(() => import('@/components/analytics'), {
 
 const DynamicNavbar = dynamic(
   () => import('@/components/global/navbar-dynamic'),
-  {
-    ssr: true,
-  },
+  { ssr: true },
 )
 
 const Footer = dynamic(
@@ -40,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link
           rel="preload"
           href="/draft/logos/draftlogo_main_filled.svg"

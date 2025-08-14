@@ -194,62 +194,7 @@ export default function Home() {
             imageAlt="Technical content development"
           />
           <SocialProof />
-          {/* <Why
-            title="The Draft.dev Difference"
-            subtitle="Partner with technical content experts who understand your industry and deliver results."
-            subtitleBold="You'll only pay for content if you're 100% satisfied."
-            features={[
-              {
-                title: 'Subject Matter Experts',
-                description:
-                  'We create expert-driven technical content for software professionals. Our global network of developers and subject matter experts delivers in-depth coverage across diverse technologies.',
-                linkText: 'How we build trust with technical audiences',
-                linkHref: '/build-trust',
-              },
-              {
-                title: 'Consistent Quality and Style',
-                description:
-                  "If you've worked with freelancers before, you know the quality can vary. Our editors ensure that every piece of content is technically accurate, meets our quality standards, and has a consistent style.",
-                linkText: 'What our clients say about our work',
-                linkHref: '/case-studies',
-              },
-              {
-                title: 'Content You Can Count On',
-                description:
-                  "Never worry about whether you'll have a new post ready for your blog again. When you work with Draft.dev, you'll get ready-to-publish blog posts or videos every 1-2 weeks depending on your needs.",
-                linkText: 'How we predictably generate demand',
-                linkHref: '/drive-awareness',
-              },
-            ]}
-          />
-          <SinglePricing
-            title="Lead Generation Package"
-            description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
-            callToActionURL="/call"
-            priceText="Generate qualified leads"
-            price="$9,000"
-            currency="/Month"
-            includedFeatures={[
-              {
-                leadText: 'Strategic Content Creation:',
-                text: 'Full-funnel technical content with demo apps, code samples, and social collateral.',
-              },
-              {
-                leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of existing content, competitor research, and measurable goals.',
-              },
-              {
-                leadText: 'Lead Collection System:',
-                text: 'Downloadable assets with landing page copy optimized for MQL/SQL conversion.',
-              },
-              {
-                leadText: 'Performance Optimization:',
-                text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
-              },
-            ]}
-            disclaimerTwo="Delivery starts after initial planning period"
-            disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
-          /> */}
+
           <div id="how-we-work">
             <How
               title="How We Work"
