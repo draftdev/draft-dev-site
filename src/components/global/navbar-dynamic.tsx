@@ -388,11 +388,11 @@ export function DynamicNavbar({}: NavbarProps) {
                     <Link href="/" title="Home">
                       <Image
                         src="/draft/logos/draftlogo_main_filled.svg"
-                        alt="Logo"
+                        alt="Draft.dev"
                         width={160}
                         height={64}
-                        fetchPriority="low"
-                        priority={false}
+                        priority
+                        fetchPriority="high"
                         className="h-auto max-h-[45px] w-auto"
                       />
                     </Link>

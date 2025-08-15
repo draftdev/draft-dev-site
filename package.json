@@ -2,6 +2,20 @@
   "name": "draft.dev",
   "version": "0.1.0",
   "private": true,
+  "browserslist": {
+    "production": [
+      "defaults and supports es6-module",
+      "not dead",
+      "not op_mini all",
+      "not safari < 15",
+      "not ios_saf < 15"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,19 +25,19 @@
     "prebuild": "npm run generate-sitemap"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.1",
-    "@heroicons/react": "^2.1.4",
+    "@headlessui/react": "^2.2.7",
+    "@heroicons/react": "^2.2.0",
     "@next/third-parties": "^15.4.1",
     "@tailwindcss/typography": "^0.5.15",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.12",
     "feed": "^4.2.2",
-    "html-react-parser": "^5.1.19",
+    "html-react-parser": "^5.2.6",
     "next": "^14.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-use-measure": "^2.1.1",
-    "sanitize-html": "^2.13.1",
+    "sanitize-html": "^2.17.0",
     "sharp": "^0.33.5",
     "web-vitals": "^5.1.0"
   },

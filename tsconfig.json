@@ -23,8 +23,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "es6",
-    "downlevelIteration": true,
+    "target": "es2022",
     "useDefineForClassFields": false
   },
   "include": [

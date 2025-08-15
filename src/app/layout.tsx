@@ -35,13 +35,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
-      <head>
-        <link
-          rel="preload"
-          href="/draft/logos/draftlogo_main_filled.svg"
-          as="image"
-        />
-      </head>
       <body className="bg-white antialiased">
         <Suspense fallback={null}>
           <Analytics />
