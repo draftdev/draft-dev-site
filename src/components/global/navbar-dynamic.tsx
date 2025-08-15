@@ -275,8 +275,7 @@ interface NavbarProps {}
 
 export function DynamicNavbar({}: NavbarProps) {
   const pathname = usePathname()
-  const router = useRouter()
-  const isSlug = pathname?.startsWith('/learn/')
+
   const [isWhyUsOpen, setIsWhyUsOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -329,6 +328,7 @@ export function DynamicNavbar({}: NavbarProps) {
         <div
           id="why-us-popover"
           className="fixed inset-x-0 top-20 z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]"
+          style={{ top: 'calc(var(--banner-height) + var(--nav-height))' }}
         >
           <div className="absolute right-5 top-4">
             <button
@@ -373,7 +373,7 @@ export function DynamicNavbar({}: NavbarProps) {
     <header className="navbar-container">
       <Disclosure
         as="div"
-        className="sticky left-0 right-0 top-0 z-40 bg-white/95 shadow-md"
+        className="sticky left-0 right-0 top-[var(--banner-height)] z-40 bg-white/95 shadow-md"
       >
         {({ open, close }) => {
           if (isMobileMenuOpen !== open) {

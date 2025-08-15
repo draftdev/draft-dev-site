@@ -8,7 +8,8 @@
     --primary: #544b84;
     --secondary: #916c7c;
     --gradient-stop: #765c80;
-    --banner-height: 0px; /* Dynamic, set by JavaScript */
+    --banner-height: 0px;
+    --nav-height: 72px;
   }
 
   html,

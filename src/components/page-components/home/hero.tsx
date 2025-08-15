@@ -1,7 +1,14 @@
-import { LogosFlex } from '@/components/media/logos-flex'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import React from 'react'
+const LogosFlexLazy = dynamic(
+  () => import('@/components/media/logos-flex').then((mod) => mod.LogosFlex),
+  {
+    ssr: false,
+    loading: () => null,
+  },
+)
 
 const Hero: React.FC = () => {
   return (
@@ -33,11 +40,11 @@ const Hero: React.FC = () => {
                   </Link>
                 </div>
 
-                <h1 className="mb-6 py-4 text-left font-code text-5xl font-semibold leading-tight text-white sm:text-6xl">
+                <h1 className="mb-4 py-2 text-left font-code text-5xl font-semibold leading-tight text-white sm:text-6xl">
                   The Leader in Technical Content
                 </h1>
 
-                <p className="sm:paragraph-light max-w-prose rounded-lg bg-white/5 p-4 text-base text-gray-100 sm:bg-transparent sm:p-0">
+                <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
                   We help Developer Marketing, Product, and Developer Relations
                   teams drive business value through authentic, technical
                   content.
@@ -61,7 +68,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div className="text-center">
-            <LogosFlex />
+            <LogosFlexLazy />
           </div>
         </div>
       </main>
