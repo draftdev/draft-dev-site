@@ -67,8 +67,8 @@ export default function DriveAwareness() {
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See Our Lead Generation Package',
-          href: './#lead-generation-package',
+          text: 'See How We Work',
+          href: './#how-we-work',
         }}
       />
       <Why

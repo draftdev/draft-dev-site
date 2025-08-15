@@ -48,7 +48,7 @@ force = true
 
   [[redirects]]
   from = "https://draft.dev/lead-generation"
-  to = "https://draft.dev/#lead-generation-package"
+  to = "https://draft.dev/"
   status = 301
   force = true
 

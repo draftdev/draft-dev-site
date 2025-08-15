@@ -65,8 +65,8 @@ export default function ContentTypes() {
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See Our Lead Generation Package',
-          href: './#lead-generation-package',
+          text: 'See How We Work',
+          href: './#how-we-work',
         }}
         description="Explore the different content types we create for technical audiences."
       />

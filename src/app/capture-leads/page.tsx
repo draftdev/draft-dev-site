@@ -67,8 +67,8 @@ export default function BuildTrust() {
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See Our Lead Generation Package',
-          href: './#lead-generation-package',
+          text: 'See How We Work',
+          href: './#how-we-work',
         }}
       />
       <Why
@@ -87,8 +87,8 @@ export default function BuildTrust() {
             title: 'Lead Qualification',
             description:
               'With our proven lead qualification system and our expert guidance you will consistently convert organic traffic into high-quality Marketing Qualified Leads and Sales Qualified Leads your Sales organization can close.',
-            linkText: 'Learn more about our Lead Generation Package',
-            linkHref: './#lead-generation-package',
+            linkText: 'Learn more about how we work',
+            linkHref: './#how-we-work',
           },
           {
             title: 'Recurring check-ins',
