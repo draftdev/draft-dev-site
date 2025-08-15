@@ -11,7 +11,6 @@ import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
 import How from '@/components/page-components/how'
 import What from '@/components/page-components/what'
-import Vitals from '@/components/vitals'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -146,7 +145,6 @@ export default function Home() {
 
   return (
     <>
-      <Vitals />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
