@@ -2,43 +2,42 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import MiniCaseStatusHero from './mini-case-status-hero'
+import MiniCaseMailgun from './mini-case-mailgun'
 
-export default function CaseStudyStatusHero() {
+export default function CaseStudySinchMailgun() {
   const stats = [
-    { label: 'Increase in blog traffic', value: '211%' },
-    { label: 'Growth in Medium audience', value: '50x' },
-    { label: 'Hours saved per week', value: '40' },
+    { label: 'Achieved 20-45% CTR rates with Draft.dev' },
+    { label: 'Quality developer content' },
+    { label: 'Weeks of internal time saved' },
+    { label: 'Expanded content initiatives' },
   ]
 
   const highlights = [
     {
       name: 'Challenges',
       description: [
-        'Increasing trial users and conversion rate',
-        'Creating valuable content for a technical audience',
-        'Improving presence in Google search results',
-        'Building a regular content pipeline',
+        'Internal developer resources without bandwidth',
+        'Time and resource-intensive content needs',
+        'Technical product is difficult for non-developer writers',
+        'Need for high volume and quality',
       ],
     },
     {
       name: 'Solution',
       description: [
-        'Content strategy and planning',
-        'Keyword research',
-        'Industry-insider writers',
-        'Collaborative editing process',
+        'Subject matter expert writers',
+        'Professional and seamless processes',
+        'Strategic suggestions and feedback',
+        'Testing and tutorial content creation',
       ],
     },
     {
       name: 'Results',
       description: [
-        '211% increase in blog visitors',
-        '50x growth in Medium audience',
-        '40 hours saved per week',
-        'High SEO rankings',
-        'Growth in trial users and conversion rate',
-        'Consistent content pipeline',
+        '20-45% CTR for developer content',
+        'Expanded internal programming',
+        'More time to create thought leadership content',
+        'Content used by support teams',
       ],
     },
   ]
@@ -52,17 +51,16 @@ export default function CaseStudyStatusHero() {
       company: 'Loft Labs',
     },
     {
-      name: 'Em Blitstein',
-      role: 'Senior Content Marketing Manager',
-      imageUrl: '/media/testimonials-lg/em_sinch_mailgun.jpg',
-      company: 'Sinch Mailgun',
-    },
-
-    {
       name: 'Adam Gordon Bell',
       role: 'Director of Developer Relations',
       imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
       company: 'Earthly',
+    },
+    {
+      name: 'Henry Poydar',
+      role: 'Founder & CEO',
+      imageUrl: '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+      company: 'Status Hero',
     },
   ]
 
@@ -79,35 +77,35 @@ export default function CaseStudyStatusHero() {
                 >
                   How{' '}
                   <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">Status Hero</span>
+                    <span className="header-gradient px-3">Sinch Mailgun</span>
                   </span>{' '}
-                  grew blog traffic by{' '}
+                  REVIVED ITS DEVELOPER-FIRST CONTENT STRATEGY AND ACHIEVED{' '}
                   <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">211%</span>
+                    <span className="header-gradient px-3">20-45%</span>
                   </span>{' '}
-                  and increased its trial conversion rate with Draft.dev
+                  CTR with Draft.dev
                 </h1>
               </div>
             </div>
 
-            {/* <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:mt-12 sm:flex-row">
+            <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:mt-12 sm:flex-row">
               <Link
-                href="#"
+                href="/files/sinch_mailgun_case_study_draft_dev.pdf"
                 className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
               >
                 Download the full case study
               </Link>
               <Link
-                href="#"
+                href="/#how-we-work"
                 className="my-2 text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
               >
-                Just give me the hard facts <span aria-hidden="true">→</span>
+                See how we work <span aria-hidden="true">→</span>
               </Link>
-            </div> */}
+            </div>
 
             {/* Stats Grid */}
-            <div className="mx-auto max-w-2xl lg:max-w-5xl">
-              <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-3">
+            <div className="mx-auto mt-12 max-w-2xl lg:max-w-5xl">
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:grid-cols-4">
                 {stats.map((stat, index) => (
                   <div
                     key={index}
@@ -116,14 +114,14 @@ export default function CaseStudyStatusHero() {
                     <dt className="font-code text-lg font-bold text-gray-300">
                       {stat.label}
                     </dt>
-                    <dd className="header-light text-center">{stat.value}</dd>
                   </div>
                 ))}
               </dl>
             </div>
           </div>
         </div>
-        <MiniCaseStatusHero />
+
+        <MiniCaseMailgun />
         <div className="sm:py-22 bg-gradient-brand py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
@@ -149,20 +147,20 @@ export default function CaseStudyStatusHero() {
                 </div>
               ))}
             </dl>
-            {/* <div className="flex items-center justify-center gap-x-6 sm:my-10">
+            <div className="flex items-center justify-center gap-x-6 sm:my-10">
               <Link
-                href="#"
+                href="/files/sinch_mailgun_case_study_draft_dev.pdf"
                 className="rounded-sm px-3.5 py-2.5 font-code text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 hover:text-gradient-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Download the full case study
               </Link>
               <Link
-                href="#"
+                href="/#how-we-work"
                 className="font-code text-base text-white hover:text-gray-300"
               >
-                Technical writing examples <span aria-hidden="true">→</span>
+                See how we work <span aria-hidden="true">→</span>
               </Link>
-            </div> */}
+            </div>
           </div>
         </div>
 
@@ -179,7 +177,7 @@ export default function CaseStudyStatusHero() {
           </div>
           <ul
             role="list"
-            className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-4xl lg:grid-cols-3"
+            className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-3 lg:mx-0 lg:max-w-4xl"
           >
             {relatedCaseStudies.map((client) => (
               <li key={client.name}>

@@ -55,6 +55,12 @@ export default function CaseStudyLoftLabs() {
       imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
       company: 'Earthly',
     },
+    {
+      name: 'Em Blitstein',
+      role: 'Senior Content Marketing Manager',
+      imageUrl: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+      company: 'Sinch Mailgun',
+    },
   ]
 
   return (
@@ -170,7 +176,7 @@ export default function CaseStudyLoftLabs() {
           </div>
           <ul
             role="list"
-            className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-4xl"
+            className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-4xl lg:grid-cols-3"
           >
             {relatedCaseStudies.map((client) => (
               <li key={client.name}>
