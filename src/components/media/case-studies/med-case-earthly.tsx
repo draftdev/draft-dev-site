@@ -38,13 +38,13 @@ const MedCaseEarthly = () => {
 
               <div className="mt-6 flex flex-col items-center gap-x-6 sm:mt-16 sm:flex-row">
                 <Link
-                  href="/case-studies"
+                  href="/case-studies/earthly"
                   className="text-gradient-brand my-2 rounded-sm bg-transparent bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm ring-2 ring-gradient-1 hover:bg-gradient-brand hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
                 >
                   Read the full case study
                 </Link>
                 <Link
-                  href="/case-studies#more-case-studies"
+                  href="/case-studies"
                   className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-800 sm:my-0 sm:text-base"
                 >
                   View other case studies <span aria-hidden="true">→</span>

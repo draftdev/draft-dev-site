@@ -12,7 +12,7 @@ export const MedHeader: React.FC<MedHeaderProps> = ({
   descriptionTwo,
 }) => {
   return (
-    <div className="bg-gradient-brand pt-32">
+    <div className="bg-gradient-brand pt-16">
       <main className="relative isolate pb-12">
         <div
           aria-hidden="true"

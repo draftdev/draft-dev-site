@@ -1,15 +1,15 @@
 import FAQ from '@/components/global/faq'
-import CaseStudyMain from '@/components/media/case-studies/case-study-main'
+import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
-import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import type { Metadata } from 'next'
+import CaseStudiesFeature from '../../components/media/case-studies/featured'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Case Studies - Draft.dev Success Stories',
   description:
-    'Learn why clients like Supabase, Jetbrains, Loft Labs, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+    'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
   keywords:
     'draft.dev case studies, technical content marketing results, developer relations success stories, client testimonials',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Case Studies - Draft.dev Success Stories',
     description:
-      'Learn why clients like Supabase, Jetbrains, Loft Labs, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
     images: [
       {
         url: '/draft/og/case_studies_og_draft_dev.jpg',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Case Studies - Draft.dev Success Stories',
     description:
-      'Learn why clients like Supabase, Jetbrains, Loft Labs, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
     images: ['/draft/og/case_studies_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -53,11 +53,16 @@ export const metadata: Metadata = {
   },
 }
 
-export default function CaseStudy() {
+export default function CaseStudyIndexPage() {
   return (
     <>
-      <CaseStudyMain />
-      <SocialProof />
+      <MedHeader
+        title="Draft.dev Case Studies"
+        descriptionOne="Discover how leading tech companies achieve remarkable results with Draft.dev's technical content marketing services. Our case studies showcase real client success stories, including traffic increases of 346%, conversion rate improvements, and top SEO rankings achieved through expert-written technical content."
+        descriptionTwo="Learn how our network of 300+ subject matter experts creates high-quality technical tutorials, blog posts, and developer-focused content that drives measurable business growth."
+      />
+      <CaseStudiesFeature />
+
       <TestimonialsGroup />
       <LogosDark />
       <FAQ />

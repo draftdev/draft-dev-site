@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function CaseStudy() {
+export default function SinchCaseStudy() {
   return (
     <>
       <CaseStudySinchMailgun />

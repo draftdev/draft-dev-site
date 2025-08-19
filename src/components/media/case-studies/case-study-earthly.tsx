@@ -4,7 +4,7 @@ import MiniCaseEarthly from '@/components/media/case-studies/mini-case-earthly'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function CaseStudyMain() {
+export default function CaseStudyEarthly() {
   const stats = [
     { label: 'Blog visitors per workday', value: '1,500' },
     { label: 'Increase in monthly readers', value: '346%' },
@@ -176,7 +176,7 @@ export default function CaseStudyMain() {
           </div>
           <ul
             role="list"
-            className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-4xl lg:grid-cols-3"
+            className="mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-3 lg:mx-0"
           >
             {relatedCaseStudies.map((client) => (
               <li key={client.name}>
