@@ -59,7 +59,7 @@ export default function VideoTutorials() {
   return (
     <>
       <ServiceHeader
-        title="Video Content That Accelerates Product Adoption and Awareness"
+        title="Video Product Tutorials by Draft.dev"
         primaryCTA={{
           text: 'Book a Discovery Call',
           href: '/call',
@@ -72,7 +72,7 @@ export default function VideoTutorials() {
       />
 
       <What
-        title="Quality Video Tutorials for a Technical Audience."
+        title="Quality Video Tutorials for a Technical Audience"
         subtitleBold="Turn your product's technical features into compelling video content"
         subtitleRegular="that drives developer adoption and reduces friction in the buyer's journey."
         features={[

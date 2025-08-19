@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'Paid Media Promotion - Draft.dev',
+  title: 'Paid Content Promotion - Draft.dev',
   description:
     'Amplify your technical content through strategic paid promotion. We place your content in developer newsletters, niche communities, and targeted channels that drive qualified traffic and leads.',
   keywords: 'technical content promotion, paid promotion, devtools promotion',

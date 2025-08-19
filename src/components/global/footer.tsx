@@ -67,14 +67,14 @@ function Sitemap() {
           </SitemapLink>
           <SitemapLink href="/video-tutorials">Video Tutorials</SitemapLink>
           <SitemapLink href="/tutorials">Tutorials</SitemapLink>
-          <SitemapLink href="/developer-content-strategy">
+          <SitemapLink href="/dev-content-strategy">
             Developer Content Strategy
           </SitemapLink>
           <SitemapLink href="/ai-content-strategy">
             AI Content Strategy
           </SitemapLink>
-          <SitemapLink href="/developer-content-promotion">
-            Dev Content Promotion
+          <SitemapLink href="/paid-content-promotion">
+            Paid Content Promotion
           </SitemapLink>
         </SitemapLinks>
       </div>
@@ -93,8 +93,8 @@ function Sitemap() {
           <SitemapLink href="/draft-dev-vs-freelancers">
             Draft.dev vs. Freelancers
           </SitemapLink>
-          <SitemapLink href="/draft-dev-vs-seo-agencies">
-            Draft.dev vs. SEO Agencies
+          <SitemapLink href="/draft-dev-vs-seo-agency">
+            Draft.dev vs. SEO Agency
           </SitemapLink>
           <SitemapLink href="/draft-dev-vs-ai-gen-content">
             Draft.dev vs. AI Generated Content
