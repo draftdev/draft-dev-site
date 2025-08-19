@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Video Tutorials - Draft.dev',
   description:
-    'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+    'Transform complex technical features into engaging video tutorials. We create product-focused videos that drive developer adoption, reduce support tickets, and accelerate sales cycles.',
   keywords:
     'technical video content, developer video tutorials, technical demos, video marketing for developers',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Technical Video Tutorials - Draft.dev',
     description:
-      'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+      'Transform complex technical features into engaging video tutorials. We create product-focused videos that drive developer adoption, reduce support tickets, and accelerate sales cycles.',
     images: [
       {
         url: '/draft/og/video_tutorials_og_draft_dev.jpg',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Technical Video Tutorials - Draft.dev',
     description:
-      'Professional technical video content creation including tutorials, demos, and educational content designed to engage developer audiences.',
+      'PTransform complex technical features into engaging video tutorials. We create product-focused videos that drive developer adoption, reduce support tickets, and accelerate sales cycles.',
     images: ['/draft/og/video_tutorials_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -59,7 +59,7 @@ export default function VideoTutorials() {
   return (
     <>
       <ServiceHeader
-        title="Technical Video Tutorials by Draft.dev"
+        title="Video Content That Accelerates Product Adoption and Awareness"
         primaryCTA={{
           text: 'Book a Discovery Call',
           href: '/call',
@@ -68,13 +68,13 @@ export default function VideoTutorials() {
           text: 'See which content types we support',
           href: '/content-types',
         }}
-        description="We create high-quality video tutorials for a technical audience."
+        description="Our product-focused videos bridge the gap between features and value, showing developers exactly how your solution solves their problems. Each video is crafted to reduce friction, answer objections, and accelerate time-to-value."
       />
 
       <What
-        title="Why choose Draft.dev for your video tutorials?"
-        subtitleBold="Stop begging your engineers to record videos."
-        subtitleRegular="Let us help."
+        title="Quality Video Tutorials for a Technical Audience."
+        subtitleBold="Turn your product's technical features into compelling video content"
+        subtitleRegular="that drives developer adoption and reduces friction in the buyer's journey."
         features={[
           {
             title: 'Subject Matter Experts',
@@ -111,12 +111,12 @@ export default function VideoTutorials() {
       />
       <TestimonialsGroup />
       <Testimonial
-        quote="Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate."
-        name="Henry Poydar"
-        role="Founder & CEO"
-        company="Status Hero"
-        imageSrc="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
-        imageAlt="Henry Poydar"
+        quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
+        name="Em Blitstein"
+        role="Senior Content Marketing Manager"
+        company="Sinch Mailgun"
+        imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
+        imageAlt="Em Blitstein"
       />
       <FAQ />
     </>

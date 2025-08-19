@@ -147,12 +147,12 @@ export default function ForMarketers(): JSX.Element {
         <LogosDark />
         <TestimonialsGroup />
         <Testimonial
-          quote="In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!"
-          name="Robert Gibb"
-          role="Content Marketing Manager"
-          company="fabric"
-          imageSrc="/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg"
-          imageAlt="Robert Gibb"
+          quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
+          name="Em Blitstein"
+          role="Senior Content Marketing Manager"
+          company="Sinch Mailgun"
+          imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
+          imageAlt="Em Blitstein"
         />
       </main>
       <FAQ />

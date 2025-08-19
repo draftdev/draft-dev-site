@@ -67,12 +67,12 @@ export default function Webinars() {
       <PastWebinars />
       <TestimonialsGroup />
       <Testimonial
-        quote="It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team."
-        name="Adam Gordon Bell"
-        role="Director of Developer Relations"
-        company="Earthly"
-        imageSrc="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
-        imageAlt="Adam Gordon Bell"
+        quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
+        name="Em Blitstein"
+        role="Senior Content Marketing Manager"
+        company="Sinch Mailgun"
+        imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
+        imageAlt="Em Blitstein"
       />
       <FAQ />
     </>

@@ -22,8 +22,8 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
   secondaryCTA,
 }) => {
   return (
-    <div className="bg-gradient-brand pt-32">
-      <main className="relative isolate pb-16">
+    <div className="bg-gradient-brand py-16">
+      <main className="relative isolate">
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto max-w-4xl gap-x-12 lg:mx-0 lg:flex lg:items-center">

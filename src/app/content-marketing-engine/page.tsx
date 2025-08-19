@@ -61,12 +61,12 @@ export default function ContentMarketingEngine() {
       <SocialProof />
       <TestimonialsGroup />
       <Testimonial
-        quote="In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!"
-        name="Robert Gibb"
-        role="Content Marketing Manager"
-        company="fabric"
-        imageSrc="/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg"
-        imageAlt="Robert Gibb"
+        quote="Content is one of the biggest and best channels you can invest in. And if you want to quickly scale without compromising the quality and expertise, Draft.dev is the way to go."
+        name="Rahul Patwardhan"
+        role="Senior Director, Demand Generation"
+        company="Loft Labs"
+        imageSrc="/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg"
+        imageAlt="Rahul Patwardhan"
       />
       <FAQ />
     </>

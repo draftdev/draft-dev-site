@@ -55,14 +55,50 @@ function Sitemap() {
     <>
       <div>
         <SitemapHeading>
-          <span className="sitemap-heading">Tech Content</span>
+          <span className="sitemap-heading">Services</span>
         </SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/content-types">Content Types</SitemapLink>
-          <SitemapLink href="/blog-posts">Blog Content</SitemapLink>
-          <SitemapLink href="/tutorials">Tutorials</SitemapLink>
+          <SitemapLink href="/learn/technical-ebooks">
+            Technical E-Books
+          </SitemapLink>
+          <SitemapLink href="/blog-posts">Technical Blog Content</SitemapLink>
+          <SitemapLink href="/content-refreshes">
+            Technical Content Refreshes
+          </SitemapLink>
           <SitemapLink href="/video-tutorials">Video Tutorials</SitemapLink>
-          <SitemapLink href="/learn/technical-ebooks">E-Books</SitemapLink>
+          <SitemapLink href="/tutorials">Tutorials</SitemapLink>
+          <SitemapLink href="/developer-content-strategy">
+            Developer Content Strategy
+          </SitemapLink>
+          <SitemapLink href="/ai-content-strategy">
+            AI Content Strategy
+          </SitemapLink>
+          <SitemapLink href="/developer-content-promotion">
+            Dev Content Promotion
+          </SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>
+          <span className="sitemap-heading">Learn</span>
+        </SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/learn">Draft.dev Blog</SitemapLink>
+          <SitemapLink href="/newsletter">Draft.dev Newsletter</SitemapLink>
+          <SitemapLink href="/webinars">Draft.dev Webinars</SitemapLink>
+          <SitemapLink href="/content-types">
+            Content Types We Produce
+          </SitemapLink>
+
+          <SitemapLink href="/draft-dev-vs-freelancers">
+            Draft.dev vs. Freelancers
+          </SitemapLink>
+          <SitemapLink href="/draft-dev-vs-seo-agencies">
+            Draft.dev vs. SEO Agencies
+          </SitemapLink>
+          <SitemapLink href="/draft-dev-vs-ai-gen-content">
+            Draft.dev vs. AI Generated Content
+          </SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -70,9 +106,15 @@ function Sitemap() {
           <span className="sitemap-heading">Company</span>
         </SitemapHeading>
         <SitemapLinks>
+          <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
+
           <SitemapLink href="/about">Our Team</SitemapLink>
+          <SitemapLink href="https://draft.dev/#testimonials">
+            Testimonials
+          </SitemapLink>
+          <SitemapLink href="/case-studies">Case Studies</SitemapLink>
           <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="#faq">Frequently Asked Questions</SitemapLink>
+          <SitemapLink href="/#faq">Frequently Asked Questions</SitemapLink>
           <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink>
         </SitemapLinks>
       </div>
@@ -81,28 +123,22 @@ function Sitemap() {
           <span className="sitemap-heading">Resources</span>
         </SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/learn">Draft.dev Blog</SitemapLink>
-          <SitemapLink href="/newsletter">Newsletter</SitemapLink>
-          <SitemapLink href="/webinars">Webinars</SitemapLink>
           <SitemapLink href="/resources">Free Resources</SitemapLink>
-          <SitemapLink href="/playbook">Tech Content Playbook</SitemapLink>
-          <SitemapLink href="/ideas">
-            50 Winning Ideas for Your Startup's Blog
+          <SitemapLink href="/trello-content-calendar-template">
+            Trello Content Calendar Template
+          </SitemapLink>
+          <SitemapLink href="/asana-content-calendar-template">
+            Asana Content Calendar Template
+          </SitemapLink>
+          <SitemapLink href="/airtable-content-calendar-template">
+            Airtable Content Calendar Template
+          </SitemapLink>
+          <SitemapLink href="/content-engine-checklist">
+            The Content Engine Checklist
           </SitemapLink>
         </SitemapLinks>
       </div>
-      <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Learn more</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/case-studies">Case Studies</SitemapLink>
-          <SitemapLink href="https://draft.dev/#testimonials">
-            Testimonials
-          </SitemapLink>
-          <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
-        </SitemapLinks>
-      </div>
+      <div></div>
     </>
   )
 }
