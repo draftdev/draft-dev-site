@@ -51,7 +51,7 @@ const moreCaseStudies: CaseLink[] = [
 
 export default function CaseStudiesFeature() {
   return (
-    <div className="bg-white py-16 dark:bg-gray-900">
+    <div className="bg-white py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto my-10 flex max-w-2xl flex-col items-center justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center">
           {/* LEFT: Title + Dek with Draft.dev text styles */}
@@ -62,9 +62,7 @@ export default function CaseStudiesFeature() {
                 and Achieved 20–45% CTR with Draft.dev
               </h2>
 
-              <p className="mt-6 text-xl/8 text-gray-600 dark:text-gray-400">
-                {featured.dek}
-              </p>
+              <p className="mt-6 text-xl/8 text-gray-600">{featured.dek}</p>
 
               <div className="mt-12 flex flex-col items-center gap-x-6 sm:flex-row">
                 <Link
