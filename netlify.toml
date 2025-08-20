@@ -17,12 +17,6 @@
   included_files = ["public/**/*", ".next/server/**/*"]
 
 [[redirects]]
-  from = "/case-studies/earthly"
-  to = "/case-studies"
-  status = 301
-  force = true
-
-[[redirects]]
 from = "https://glittery-faun-4426fe.netlify.app/*"
 to = "https://draft.dev/:splat"
 status = 301

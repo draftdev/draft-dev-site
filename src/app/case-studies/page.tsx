@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Case Studies - Draft.dev Success Stories',
   description:
-    'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+    'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, Sinch Mailgun, and others choose Draft.dev for their technical content marketing needs.',
   keywords:
     'draft.dev case studies, technical content marketing results, developer relations success stories, client testimonials',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Case Studies - Draft.dev Success Stories',
     description:
-      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, Sinch Mailgun, and others choose Draft.dev for their technical content marketing needs.',
     images: [
       {
         url: '/draft/og/case_studies_og_draft_dev.jpg',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Case Studies - Draft.dev Success Stories',
     description:
-      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, and others choose Draft.dev for their technical content marketing needs.',
+      'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, Sinch Mailgun, and others choose Draft.dev for their technical content marketing needs.',
     images: ['/draft/og/case_studies_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
