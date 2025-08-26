@@ -1,6 +1,8 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import FAQ from '@/components/page-components/services/faq-seo'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -137,6 +139,8 @@ export default function DraftDevVsSEOAgency() {
       />
 
       <ServiceInfo />
+      <LogosDark />
+      <FAQ />
       <Testimonial
         quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
         name="Em Blitstein"
@@ -147,8 +151,6 @@ export default function DraftDevVsSEOAgency() {
       />
 
       <TestimonialsGroup />
-
-      {/* <FAQ /> */}
     </>
   )
 }
