@@ -1,8 +1,8 @@
 import ServiceHeader from '@/components/global/headers/service-header'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import FAQ from '@/components/page-components/services/faq-video'
 import What from '@/components/page-components/what'
 
-import FAQ from '@/components/global/faq'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import VideoCard from '@/components/page-components/video-tutorials/video-card'
 import type { Metadata } from 'next'
@@ -109,7 +109,7 @@ export default function VideoTutorials() {
         requestPricingHref="/call"
         requestPricingText="Request Pricing"
       />
-      <TestimonialsGroup />
+      <FAQ />
       <Testimonial
         quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
         name="Em Blitstein"
@@ -118,7 +118,7 @@ export default function VideoTutorials() {
         imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
         imageAlt="Em Blitstein"
       />
-      <FAQ />
+      <TestimonialsGroup />
     </>
   )
 }
