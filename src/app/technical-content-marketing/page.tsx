@@ -307,84 +307,105 @@ export default function PrivacyPolicy() {
         TODO: Implement Mailchimp_Dashboard pic Here
         <p className="text-sm italic">Mailchimp is a powerful, cost-effective service to start growing your lead database.</p>
         <h3>Create a newsletter signup form and welcome email</h3>
-
-TODO: CONTINUE FROM HERE.
-
-
-
-        <p className="paragraph-dark my-5 max-w-5xl">
-          We keep your information safely and securely for as long as necessary
-          or according to your instructions, and we review the data we hold at
-          least once every two years.
+        <p>
+          As a first step, we encourage you to create a <a href="https://mailchimp.com/help/add-a-signup-form-to-your-website/">signup form</a> and a <a href="https://mailchimp.com/help/create-an-automated-welcome-email/">welcome email</a>.
+          If you have some HTML and CSS skills, you can customize the email signup form. If not, just use Mailchimp’s <a href="https://mailchimp.com/help/how-the-form-builder-works/">form builder</a> to create a signup form at the bottom of each blog post you publish. Use a <a href="https://mailchimp.com/help/about-double-opt-in/">double opt-in</a> process to ensure high-quality leads.<br />
+          For technical content marketing, implement contextual signup forms based on content topic. Developers reading Python content should see Python-specific offers, while those viewing cloud architecture content should receive cloud-focused incentives. These contextual offers can achieve 30-40% higher conversion rates than generic newsletter signups among technical audiences.<br />
+          Finally, you could consider adding a <a href="https://mailchimp.com/help/add-a-pop-up-signup-form-to-your-website/">pop-up signup form</a>. But be aware that this is very aggressive and intrusive. If you have a technical audience it is very likely this will hurt your brand. <strong>Your content’s primary goal should be building trust</strong>. Pop-ups might hurt your reputation more than they help in the long run.<br />
+          This caution is especially important for technical audiences, who have even lower tolerance for interruptive marketing tactics. Instead, implement "value-trigger" conversion points – offering extended code examples, downloadable configurations, or interactive tools at natural breakpoints in technical content. These contextual offers convert 3-5x better than pop-ups with technical audiences while preserving trust.
         </p>
-        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">
-          When and How We Share Your Personal Information with Others
-        </h2>
-        <p className="paragraph-dark my-5 max-w-5xl">
-          Portable CTO, LLC may share your personal information to deliver
-          content and services from our sites, affiliated companies and third
-          parties that might interest you; including sponsored content and
-          events, for business operations, and to comply with valid legal
-          processes.
+        <h4>
+          Trade contact details for assets that provide value
+        </h4>
+        <p>
+          Once your content engine is up and running, you should create a gated content asset to attract more signups to your email list. Such an asset is typically a downloadable piece of content with more depth than a typical blog post placed behind a signup form.<br />
+          In the AI era, your gated content must deliver substantially more value than what AI systems already provide for free. <strong>For technical audiences, focus on creating assets with high implementation value</strong>: detailed architectural patterns, production-ready code libraries, benchmarking tools, security checklists, or interactive learning environments that solve specific developer problems. <br />
+          If you don’t have such a piece yet, you can start by inviting readers to “join our weekly newsletter,” “get updates about new posts,” or “sign up for a free trial.” Put this call to action (CTA) at the bottom of each blog post.<br />
+          For technical audiences specifically, create CTAs that speak to developer value propositions: "Get the complete code repository," "Access advanced implementation guides," or "Join our developer community." <strong>Avoid marketing language that sounds too promotional, as it tends to alienate technical professionals</strong>.<br />
+          <i>If you are interested in learning more about creating high-quality digital assets that provide value to your readers, check out our other resources about creating blog posts and gated assets based on keyword research and content clusters on our <a href="https://draft.dev">Draft.dev website</a>.</i>
         </p>
-
-        <ul
-          className="paragraph-dark my-5 max-w-5xl list-disc pl-5"
-          role="list"
-        >
-          <li className="py-2">
-            We may share your information with advertisers, partners, and
-            sponsors when you give permission and agree to our terms and privacy
-            policy by registering for content or services offered by Portable
-            CTO, LLC and our sponsors.
-          </li>
-          <li className="py-2">
-            We need to provide your information to other companies in order to
-            deliver the services you want from us, such as having an email list
-            sent out and managing your email preferences, or to process your
-            event order. In these cases, the information is used only for the
-            specific service you wanted from us.
-          </li>
-        </ul>
-
-        <p className="paragraph-dark my-5 max-w-5xl">
-          We may also aggregate information and disclose it to advertisers and
-          other third parties for marketing, promotional, and other purposes. In
-          these cases, we do NOT disclose any personally identifiable
-          information as part of this. Use of your contact data by others is
-          governed by the terms and conditions of their Privacy Policy.
+        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">Setting up Retargeting Audiences</h2>
+        <h3>The What, Why, And Desired Result</h3>
+        <p>
+          <strong>Key Metric:</strong>
+          Retargeting audience size.<br />
+          <strong>Why it Matters:</strong>
+          Retargeting helps increase brand awareness by serving ad impressions to previous blog visitors, and it increases repeat visits to your site.<br />
+          <strong>Final Result:</strong>
+          Advertising impressions to visitors that have previously engaged with your content.
         </p>
-        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">Transfers</h2>
-        <p className="paragraph-dark my-5 max-w-5xl">
-          We may buy or sell a company or property. If we sell a business, we
-          may transfer some or all of your information as a part of the sale so
-          that you will continue to receive the service being provided to you or
-          for other business purposes.
+        <hr />
+        <h3>Understanding how retargeting works</h3>
+        <p>
+          After you install a retargeting code snippet, new visitors are marked with a cookie whenever they read one of your blog posts. This cookie stays in the user’s browser for a certain amount of time, during which you can use retargeting to put advertisements in front of those visitors. Retargeting advertisements can appear on social media sites and any websites that are part of the Google Advertising Network.
         </p>
-        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">
-          Your Rights Over Your Personal Information
-        </h2>
-
-        <ul
-          className="paragraph-dark my-5 max-w-5xl list-disc pl-5"
-          role="list"
-        >
-          <li className="py-2">
-            You have the right to opt out of our direct marketing at any point.
-            You can unsubscribe from our emails by following the unsubscribe
-            link at the bottom of each email, or by contacting us directly.
-          </li>
-          <li className="py-2">
-            You can request access to the personal information we hold on you,
-            at any time, and we will provide that information within one month
-            of receiving your request.
-          </li>
-          <li className="py-2">
-            You can also request your information to be deleted, and we will
-            respond within one month of receiving your request.
-          </li>
-        </ul>
-
+        <h3>Install the appropriate retargeting scripts</h3>
+        <p>
+          Depending on your target audience, install the <a href="https://www.facebook.com/business/learn/facebook-ads-pixel">Meta</a>, <a href="https://support.google.com/google-ads/answer/2476688?hl=en">Google</a>, <a href="https://business.x.com/en/advertising">Twitter/X</a>, or <a href="https://business.linkedin.com/marketing-solutions/ad-targeting/retargeting">LinkedIn</a> retargeting scripts on your blog. This code usually goes in the same place as your Google Analytics code does, but there’s very good documentation for implementing these snippets on each platform’s documentation page. If you opt to use Google Tag Manager, you can load your snippets from Tag Manager directly.
+        </p>
+        <h3>What about privacy?</h3>
+        <p>
+          According to GDPR regulations in Europe and the CCPA act in California, users must give consent to these retargeting cookies. We recommend cookie consent solutions like <a href="https://cookie-script.com/consent-mode-v2">Cookie Script</a> or <a href="https://www.iubenda.com/en/">Iubenda</a> for this. You can find a list of “Content Mode Partners” on <a href="https://cmppartnerprogram.withgoogle.com/">Google’s CMP Partner Program page</a>.<br />
+          If you are not sure about the rules in your locale, be sure to check with a lawyer or experienced professional first.
+        </p>
+        <h3>What if you don’t have an advertising budget yet?</h3>
+        <p>
+          Even if you don’t run ads right away, it’s very powerful to have these tracking scripts in place ahead of time. That way, whenever you do decide to start advertising, you can turn it on and immediately start sending ad impressions to your cookied visitors, driving traffic to your landing page of choice.
+        </p>
+        TODO: Insert retargeting_audience_dashboard pic Here
+        <p className="text-sm italic">Dedicated retargeting audiences, based on which pages your visitors have visited, are very powerful.</p>
+        <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">Creating a Content Calendar</h2>
+        <h3>The What, Why, And Desired Result</h3>
+        <p>
+          <strong>Key Metric:</strong>
+          Content pieces published per month.<br />
+          <strong>Why it Matters:</strong>
+          Predictability comes from <i>acting</i>, not <i>reacting</i>. Content should be planned and created with intention.<br />
+          <strong>Final Result:</strong>
+          You know when new content will be published and you have a healthy backlog of content that is ready to publish.
+        </p>
+        <hr />
+        <h3>Why you need a content calendar</h3>
+        <p>
+          As a content marketer, your goal is to create a steady stream of new content that leads to a predictable number of fresh leads in your database each month. You also need to be able to report your activities and plans to the business.<br />
+          We recommend creating a content calendar that shows (planned) publishing dates in a simple calendar view. You can use <a href="https://trello.com/en-US">Trello</a> (with the <a href="https://trello.com/power-ups/55a5d917446f517774210011/calendar">Calendar Power-Up</a>), <a href="https://airtable.com/">Airtable</a>, <a href="https://asana.com/">Asana</a>, or a simple spreadsheet for it.
+        </p>
+        TODO: Add trello_content_calendar pic here
+        <p>For your convenience, we have created a few ready-to-use content calendar templates. Whichever tool you prefer, these resources should be helpful to you:
+          <ul>
+            <li><a href="https://draft.dev/trello-content-calendar-template">Trello Content Calendar Template→</a></li>
+            <li><a href="https://draft.dev/airtable-content-calendar-template">Airtable Content Calendar Template→</a></li>
+            <li><a href="https://draft.dev/asana-content-calendar-template">Asana Content Calendar Template→</a></li>
+          </ul>
+        </p>
+        <p>
+          Not every piece of content will be delivered on time, so your publishing dates can be somewhat fluid, especially at the beginning. That is okay, but over time, you’ll want to decrease the number of articles that are delivered (and published) late.<br />
+          The goal is to create <strong>predictability</strong> in knowing “what is coming up.” This predictability allows you to plan ahead, orchestrate distribution waves to promote your content, be strategic about what you do with every piece, and transparently report your activities to the business.<br />
+          A content calendar also dissuades you from the “inspiration strikes, let’s write and publish this article now!” approach. Rather, you will build up a healthy buffer of content that is ready to publish at predetermined times. One piece per week over the course of a month is better than four pieces in a week with nothing published the rest of the month.<br />
+          Additionally, you could set up reminders for content refresh cycles. Technical content that ranks well or receives significant AI citations <strong>should be systematically updated</strong> every 90-120 days to maintain its relevance and authority. Establish a "living content" approach for your most valuable technical resources, treating them as products rather than one-time publications.
+        </p>
+        <h3>Create your calendar before you lock in topics</h3>
+        <p>
+          Even before you have your first topics ready, you can use your content calendar to put placeholders for each piece of content you want to produce in the upcoming year. If you’re starting with one piece of content every two weeks, you’ve got roughly 25 pieces to create over the next year. It doesn’t sound that bad when you think about it that way!
+        </p>
+        TODO: insert content_calendar_with_placeholders pic here
+        <h3>Publish blog content at least once every two weeks</h3>
+        <p>
+          Having a consistent frequency helps set expectations with your readers and improves search engine performance. As you become more efficient with topic discovery and content production, your publishing cadence should increase.<br />
+          Search algorithms and AI systems both <strong>prioritize regularly updated sources</strong>, and technical audiences expect continual evolution. However, with reduced direct traffic from informational queries, focus on higher-quality technical resources rather than high volume. For many technical B2B companies, 3-4 comprehensive technical resources per month (1200+ words) with proper code examples, visuals, and interactive elements outperform higher volumes of thinner content.<br />
+          Should you and your team not have the capacity to publish an article every two weeks, start by creating multiple articles (which you won’t publish immediately), so you have enough at your disposal. This allows you to buy yourself the time to create more articles while the ones from your “content buffer” are being published.<br />
+          Consider partnering with specialized technical content services like <a href="https://draft.dev">Draft.dev</a> that understand both the technical requirements and AI-era optimization needs. Technical content requires particular expertise, and the investment in high-quality, authoritative resources pays even greater dividends in the AI era where content quality is a primary factor in citation likelihood.<br />
+          Once you know your team’s output capacity, look at your content calendar and start re-ordering the publishing dates of your placeholder slots. This will allow you to quickly see how many pieces you have in your content pipeline and exactly which ones will be published on which date. It might sound simple, but a content calendar is a very powerful tool.<br />
+          <i>We have a dedicated eBook around which types of content to create and why in our <a href="https://draft.dev/resources">Resources section</a> on our Draft.dev website. Head over there to check out the <a href="https://draft.dev/orchestrate-technical-content">How to Orchestrate Technical Content to Drive Business" eBook!</a></i>
+        </p>
+          TODO: Insert banner for Orchestrate Technical CONTENT here.
+        <h3>An example of a content calendar in action</h3>
+        <p>
+          Let’s say you want to publish one article every other week or roughly two articles per month.<br />
+          Right now, you only have the capacity to create one article per month, so you should wait to start publishing until you have at least six articles ready.<br />
+          These six articles buy you three months of time, and in those three months, you can work on finding additional writers, be it internal or external contributors, that allow you to ramp up content production. This will allow you to reach your goal of publishing two articles per month consistently.<br />
+          <strong>In short, try to figure out your current capacity and reverse engineer how many content pieces need to be produced in advance to allow for a content buffer</strong>. This gives you time to work on topic discovery and content production before your content buffer runs dry.
+        </p>
         <h2 className="mb-6 text-2xl font-bold tracking-tight text-gray-900 lg:text-3xl">
           Policy Changes, Questions & Comments
         </h2>
