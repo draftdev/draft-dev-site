@@ -1,6 +1,8 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import FAQ from '@/components/page-components/services/faq-freelancers'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -131,6 +133,8 @@ export default function DraftDevVsFreelancers() {
       />
 
       <ServiceInfo />
+      <LogosDark />
+      <FAQ />
       <Testimonial
         quote="It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team."
         name="Adam Gordon Bell"
@@ -141,8 +145,6 @@ export default function DraftDevVsFreelancers() {
       />
 
       <TestimonialsGroup />
-
-      {/* <FAQ /> */}
     </>
   )
 }
