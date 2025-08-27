@@ -12,7 +12,7 @@ export function LogosFlex({
 
   return (
     <section className="lg:pb-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto px-6">
         <h2 className="mb-8 hidden text-left text-lg font-medium text-white lg:block">
           Trusted by 100+ tech companies
         </h2>
