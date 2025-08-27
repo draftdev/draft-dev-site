@@ -18,7 +18,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:extra": "tailwindcss -c tailwind.extra.config.js -i ./src/styles/extra.css -o ./public/extra.css --minify --watch",
+    "build": "next build && npm run build:extra",
+    "build:extra": "tailwindcss -c tailwind.extra.config.js -i ./src/styles/extra.css -o ./public/extra.css --minify",
     "start": "next start",
     "lint": "next lint",
     "generate-sitemap": "node scripts/generate-sitemap.js",
