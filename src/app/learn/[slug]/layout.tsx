@@ -1,4 +1,5 @@
 import '@/styles/prose.css'
+import '@/styles/tailwind.css'
 
 type BlogLayoutProps = {
   children: React.ReactNode

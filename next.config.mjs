@@ -6,7 +6,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   experimental: {
-    esmExternals: 'loose',
     optimizePackageImports: [
       '@headlessui/react',
       '@heroicons/react',
