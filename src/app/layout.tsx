@@ -9,7 +9,7 @@ const Analytics = dynamic(() => import('@/components/analytics'), {
 })
 
 const DynamicNavbar = dynamic(
-  () => import('@/components/global/navbar-dynamic'),
+  () => import('@/components/global/nav/navbar-dynamic'),
   { ssr: true },
 )
 
@@ -17,7 +17,7 @@ const Footer = dynamic(
   () => import('@/components/global/footer').then((mod) => mod.Footer),
   {
     ssr: false,
-    loading: () => <div className="h-64 bg-gradient-brand"></div>,
+    loading: () => <div className="bg-gradient-brand h-64"></div>,
   },
 )
 

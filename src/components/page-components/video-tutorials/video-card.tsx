@@ -1,6 +1,5 @@
 'use client'
 
-import { CheckIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
 import type { FC, ReactNode } from 'react'
 import { useEffect, useState } from 'react'
@@ -27,7 +26,7 @@ const VideoCard: FC<VideoCardProps> = ({
   }, [])
 
   return (
-    <div className="max-w-full bg-gradient-brand py-10 sm:py-16">
+    <div className="bg-gradient-brand max-w-full py-10 sm:py-16">
       <div className="mx-auto max-w-7xl">
         <div className="">
           <div className="mx-auto text-white ring-gray-200 sm:py-6 lg:mx-0 lg:flex">
@@ -46,10 +45,6 @@ const VideoCard: FC<VideoCardProps> = ({
               >
                 {includedFeatures.map((feature) => (
                   <li key={feature} className="flex gap-x-2">
-                    <CheckIcon
-                      aria-hidden="true"
-                      className="h-6 w-5 flex-none text-white"
-                    />
                     {feature}
                   </li>
                 ))}
@@ -57,7 +52,7 @@ const VideoCard: FC<VideoCardProps> = ({
             </div>
 
             <div className="-mt-2 p-2 lg:mt-0 lg:flex lg:w-full lg:max-w-md lg:shrink-0 lg:flex-col lg:justify-center">
-              <div className="flex flex-col items-center justify-center rounded-2xl bg-white/10 shadow-lg ring-1 ring-inset ring-white/20">
+              <div className="flex flex-col items-center justify-center rounded-2xl bg-white/10 shadow-lg ring-1 ring-white/20 ring-inset">
                 <div className="w-full overflow-hidden rounded-t-xl">
                   {videoLoaded && (
                     <iframe
@@ -74,7 +69,7 @@ const VideoCard: FC<VideoCardProps> = ({
                 <div className="w-full">
                   <Link
                     href={requestPricingHref}
-                    className="block w-full rounded-b-md bg-white px-3 py-2 text-center text-base font-semibold text-gray-800 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                    className="block w-full rounded-b-md bg-white px-3 py-2 text-center text-base font-semibold text-gray-800 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                   >
                     {requestPricingText}
                   </Link>

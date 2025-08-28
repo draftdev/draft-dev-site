@@ -66,7 +66,7 @@ export default function CaseStudyEarthly() {
   return (
     <>
       <main>
-        <div className="relative isolate bg-gradient-brand">
+        <div className="bg-gradient-brand relative isolate">
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
@@ -121,7 +121,7 @@ export default function CaseStudyEarthly() {
           </div>
         </div>
         <MiniCaseEarthly />
-        <div className="sm:py-22 bg-gradient-brand py-12">
+        <div className="bg-gradient-brand py-12 sm:py-22">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
               {highlights.map((highlight) => (
@@ -135,7 +135,7 @@ export default function CaseStudyEarthly() {
                     </span>
                   </dt>
                   <dd>
-                    <ul className="list-disc space-y-2 pl-4 pt-8">
+                    <ul className="list-disc space-y-2 pt-8 pl-4">
                       {highlight.description.map((item, index) => (
                         <li key={index} className="text-lg text-white">
                           {item}
@@ -186,7 +186,7 @@ export default function CaseStudyEarthly() {
                 >
                   <div className="rounded-4xl bg-white/15 p-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-[1.02]">
                     <div className="rounded-4xl p-1 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                         <Image
                           src={client.imageUrl}
                           alt={`${client.name}'s case study for ${client.company}`}

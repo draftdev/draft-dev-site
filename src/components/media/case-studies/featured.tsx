@@ -67,7 +67,7 @@ export default function CaseStudiesFeature() {
               <div className="mt-12 flex flex-col items-center gap-x-6 sm:flex-row">
                 <Link
                   href="/case-studies/sinch-mailgun"
-                  className="my-2 rounded bg-gradient-1 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gradient-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                  className="bg-gradient-1 hover:bg-gradient-2 focus-visible:outline-primary my-2 rounded px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Read this case study
                 </Link>
@@ -85,7 +85,7 @@ export default function CaseStudiesFeature() {
           <div className="w-full lg:flex lg:max-w-lg lg:flex-auto lg:items-center lg:justify-center">
             <div className="hidden lg:block lg:w-[400px]">
               <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt="Em Blitstein"
                     height={600}
@@ -102,7 +102,7 @@ export default function CaseStudiesFeature() {
       </div>
 
       {/* More Case Studies */}
-      <div className="mt-24 bg-gradient-brand py-16">
+      <div className="bg-gradient-brand mt-24 py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h3 className="lg:subheader-light subheader-mobile-light">
@@ -126,7 +126,7 @@ export default function CaseStudiesFeature() {
                 >
                   <div className="rounded-4xl bg-white/5 p-1 shadow-sm ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
                     <div className="rounded-4xl p-1 shadow-md shadow-black/20">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-white/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-white/10">
                         <Image
                           src={client.imageUrl}
                           alt={`${client.name}'s case study for ${client.company}`}
