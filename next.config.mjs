@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  productionBrowserSourceMaps: true, // turn off after debugging
   reactStrictMode: true,
   poweredByHeader: false,
   compiler: {

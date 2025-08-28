@@ -1,3 +1,12 @@
+/* Tailwind ONCE */
+@import 'tailwindcss';
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../src/**/*.{js,ts,jsx,tsx,mdx}";
+
+/* Plugins ONCE (typography, etc.) */
+@plugin "@tailwindcss/typography";
+
 /* TOKENS — only here */
 @theme {
   --breakpoint-sm: 640px;
@@ -34,12 +43,6 @@
   --gradient-stop: #765c80;
   --nav-height: 72px;
 }
-
-/* Tailwind ONCE */
-@import 'tailwindcss';
-
-/* Plugins ONCE (typography, etc.) */
-@plugin "@tailwindcss/typography";
 
 /* Base/global utilities that everything needs */
 html,
@@ -87,5 +90,53 @@ body {
   background-clip: text;
   color: transparent;
 }
+/* ========================= */
+/* Heading utilities (v4)    */
+/* ========================= */
 
-/* (keep any other global helpers you need across pages) */
+/* Display headings: code font, tight tracking, white by default */
+@utility heading {
+  @apply font-code font-semibold tracking-tight text-balance text-white;
+}
+
+/* Subheadings: match your legacy “subheader-*” style (code font, white) */
+@utility subheading-light {
+  @apply font-code font-semibold tracking-tight text-balance text-white;
+}
+
+/* Back-compat aliases (old class names some components still use) */
+@utility subheader-light {
+  @apply subheading-light;
+}
+@utility subheader-mobile-light {
+  @apply subheading-light;
+}
+
+/* Gradient text helpers */
+@utility text-gradient-1 {
+  background-image: linear-gradient(
+    315deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+@utility text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Eyebrow/badge */
+@utility hero-eyebrow {
+  @apply rounded-full bg-gray-100 px-3 py-1;
+  color: var(--color-secondary);
+}
+
+/* Tokenized radius from your theme */
+@utility rounded-4xl {
+  border-radius: var(--radius-4xl);
+}

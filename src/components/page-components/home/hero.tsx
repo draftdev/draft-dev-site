@@ -1,9 +1,7 @@
-import { LogosFlex } from '@/components/media/logos-flex'
 import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import heroImg from '../../../../public/site/med-portrait/hero.webp'
 
 const Hero: React.FC = () => {
   return (
@@ -62,20 +60,36 @@ const Hero: React.FC = () => {
               </div>
 
               <div className="mt-10 flex justify-center lg:mt-0 lg:justify-start">
-                <div className="inline-block shrink-0">
-                  <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                    <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                        {/* Responsive wrapper controls the visual width */}
-                        <div className="relative aspect-[2/3] w-[60vw] max-w-[320px] sm:max-w-[360px] lg:w-[400px]">
+                <div className="md:hidden">
+                  <div className="mx-auto aspect-[2/3] w-[260px] sm:w-[300px]">
+                    <Image
+                      src="/site/med-portrait/hero.webp"
+                      alt="Technical content development"
+                      width={600}
+                      height={900}
+                      priority
+                      placeholder="empty"
+                      className="rounded-xl object-cover"
+                      sizes="(max-width: 640px) 60vw, (max-width: 1024px) 360px, 400px"
+                    />
+                  </div>
+                </div>
+
+                {/* Desktop: bring back your fancy borders */}
+                <div className="hidden md:block">
+                  <div className="inline-block shrink-0">
+                    <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+                      <div className="rounded-4xl p-2 shadow-md shadow-black/5">
+                        <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                           <Image
+                            src="/site/med-portrait/hero.webp"
                             alt="Technical content development"
-                            src={heroImg}
-                            fill
-                            className="rounded-xl object-cover"
-                            priority // <— preload
-                            fetchPriority="high" // <— browser hint
-                            sizes="(max-width: 640px) 60vw, (max-width: 1024px) 360px, 400px"
+                            width={400}
+                            height={600}
+                            priority
+                            placeholder="empty"
+                            className="block h-auto w-[300px] rounded-xl"
+                            sizes="(min-width: 1024px) 400px, 80vw"
                           />
                         </div>
                       </div>
@@ -85,9 +99,9 @@ const Hero: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-24 text-center">
+            {/* <div className="mt-24 text-center">
               <LogosFlex className="mx-auto" />
-            </div>
+            </div> */}
           </div>
         </div>
       </main>
