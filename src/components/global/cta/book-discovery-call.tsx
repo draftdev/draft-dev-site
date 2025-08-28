@@ -5,13 +5,13 @@ export const BookDiscoveryCall = () => {
   return (
     <div
       data-navbar-color="dark"
-      className="relative isolate bg-gradient-brand py-10"
+      className="bg-gradient-brand relative isolate py-10"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col gap-16 py-16 lg:flex-row lg:items-center lg:py-20 xl:gap-x-20">
           <div className="flex-none px-8 sm:px-0 lg:max-w-sm">
             <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-              <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+              <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                 <Image
                   alt="Book a discovery call"
                   width={500}
@@ -36,7 +36,7 @@ export const BookDiscoveryCall = () => {
             <div className="mt-6 flex flex-col items-center gap-x-6 sm:mt-16 sm:flex-row">
               <Link
                 href="/call"
-                className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
               >
                 Schedule a Discovery Call
               </Link>

@@ -1,0 +1,106 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+/* Only prose/article overrides live here */
+
+.prose {
+  --tw-prose-body: theme(colors.gray.700);
+  --tw-prose-lead: theme(colors.gray.600);
+
+  --tw-prose-headings: var(--color-primary);
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-links-hover: var(--color-primary-80);
+
+  --tw-prose-code: theme(colors.gray.800);
+  --tw-prose-pre-bg: theme(colors.gray.50);
+  --tw-prose-quotes: theme(colors.gray.800);
+  --tw-prose-bullets: theme(colors.gray.300);
+  --tw-prose-hr: theme(colors.gray.200);
+  --tw-prose-captions: theme(colors.gray.500);
+}
+
+/* Brand gradient for H1–H3 only */
+.prose :where(h1, h2, h3):not(:where(.not-prose *)) {
+  background-image: linear-gradient(
+    315deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.prose :where(h1 strong, h2 strong, h3 strong):not(:where(.not-prose *)) {
+  color: inherit;
+}
+
+/* H4 stays neutral (no gradient) */
+.prose :where(h4):not(:where(.not-prose *)) {
+  color: theme(colors.gray.800);
+  font-family: var(--font-code);
+  letter-spacing: -0.01em;
+}
+
+/* Headings font family & tracking for H1–H3 */
+.prose :where(h1, h2, h3):not(:where(.not-prose *)) {
+  font-family: var(--font-code);
+  letter-spacing: -0.01em;
+}
+
+/* Tighter paragraphs */
+.prose :where(p):not(:where(.not-prose *)) {
+  margin-block: 0.7em;
+}
+
+/* Lists tighter + smaller indent */
+.prose :where(ul, ol):not(:where(.not-prose *)) {
+  margin-block: 0.5em;
+  padding-inline-start: 1.1em;
+}
+.prose :where(li):not(:where(.not-prose *)) {
+  margin-block: 0.15em;
+}
+.prose :where(ul ul, ul ol, ol ul, ol ol):not(:where(.not-prose *)) {
+  margin-block: 0.35em;
+}
+
+/* Softer blockquotes */
+.prose :where(blockquote):not(:where(.not-prose *)) {
+  border-left-color: theme(colors.gray.200);
+  color: theme(colors.gray.600);
+  padding-left: 0.9em;
+}
+
+/* Mono family for code/pre */
+.prose :where(code, pre):not(:where(.not-prose *)) {
+  font-family: var(--font-code);
+}
+
+/* Embeds / iframes used in articles */
+.youtube-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 2rem 0;
+}
+.youtube-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+.prose iframe {
+  width: 100% !important;
+  min-height: 400px;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+.prose iframe[src*='youtube.com'],
+.prose iframe[src*='youtu.be'] {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: 315px;
+}

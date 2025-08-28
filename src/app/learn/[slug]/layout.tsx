@@ -1,4 +1,4 @@
-// app/learn/[slug]/layout.tsx
+import '@/styles/prose.css'
 
 type BlogLayoutProps = {
   children: React.ReactNode
