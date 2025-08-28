@@ -57,7 +57,7 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
                   {primaryCTA && (
                     <Link
                       href={primaryCTA.href}
-                      className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
+                      className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                     >
                       {primaryCTA.text}
                     </Link>

@@ -85,7 +85,7 @@ export default function CaseStudiesFeature() {
           <div className="w-full lg:flex lg:max-w-lg lg:flex-auto lg:items-center lg:justify-center">
             <div className="hidden lg:block lg:w-[400px]">
               <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt="Em Blitstein"
                     height={600}
@@ -126,7 +126,7 @@ export default function CaseStudiesFeature() {
                 >
                   <div className="rounded-4xl bg-white/5 p-1 shadow-sm ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
                     <div className="rounded-4xl p-1 shadow-md shadow-black/20">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-white/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-white/10">
                         <Image
                           src={client.imageUrl}
                           alt={`${client.name}'s case study for ${client.company}`}

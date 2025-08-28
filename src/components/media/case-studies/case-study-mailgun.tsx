@@ -95,7 +95,7 @@ export default function CaseStudySinchMailgun() {
             <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mt-12 sm:mb-24 sm:flex-row">
               <Link
                 href="/files/sinch_mailgun_case_study_draft_dev.pdf"
-                className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
+                className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
               >
                 Download the full case study
               </Link>
@@ -154,7 +154,7 @@ export default function CaseStudySinchMailgun() {
             <div className="flex items-center justify-center gap-x-6 sm:my-10">
               <Link
                 href="/files/sinch_mailgun_case_study_draft_dev.pdf"
-                className="font-code hover:text-gradient-2 focus-visible:outline-primary rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                className="font-code hover:text-gradient-2 focus-visible:outline-primary rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 Download the full case study
               </Link>
@@ -191,7 +191,7 @@ export default function CaseStudySinchMailgun() {
                 >
                   <div className="rounded-4xl bg-white/15 p-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-[1.02]">
                     <div className="rounded-4xl p-1 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                         <Image
                           src={client.imageUrl}
                           alt={`${client.name}'s case study for ${client.company}`}

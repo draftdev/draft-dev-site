@@ -11,7 +11,7 @@ const Person = ({ name, description, img }: PersonProps) => {
     <li className="flex flex-col items-center lg:items-start">
       <div className="w-56 rounded-4xl bg-white/15 p-1 shadow ring-1 ring-black/5 sm:w-64">
         <div className="rounded-3xl p-1 shadow-md shadow-black/5">
-          <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+          <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
             <Image
               alt={`${name} - ${description}`}
               src={img}

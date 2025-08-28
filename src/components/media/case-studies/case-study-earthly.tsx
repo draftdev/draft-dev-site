@@ -190,7 +190,7 @@ export default function CaseStudyEarthly() {
                 >
                   <div className="rounded-4xl bg-white/15 p-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-[1.02]">
                     <div className="rounded-4xl p-1 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                         <Image
                           src={client.imageUrl}
                           alt={`${client.name}'s case study for ${client.company}`}

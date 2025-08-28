@@ -26,7 +26,7 @@ function Testimonial({
             <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
               <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                 {/* NOTE: add `outline` here so outline-1 takes effect */}
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   {/* Match grid col width to keep the frame aligned */}
                   <div className="relative aspect-[2/3] w-[384px]">
                     <Image

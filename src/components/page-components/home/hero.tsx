@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
                 <div className="inline-block shrink-0">
                   <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                         {/* Responsive wrapper controls the visual width */}
                         <div className="relative aspect-[2/3] w-[60vw] max-w-[320px] sm:max-w-[360px] lg:w-[400px]">
                           <Image
