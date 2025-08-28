@@ -75,10 +75,12 @@ const Hero: React.FC = () => {
                             src={imageSrc}
                             fill
                             className="rounded-xl object-cover"
+                            priority
                             fetchPriority="high"
-                            sizes="(max-width: 640px) 60vw, (max-width: 1024px) 360px, 400px"
-                            placeholder="blur"
-                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABhZSURBVHhe7Z1rcFTXef/3P3u9M"
+                            sizes="(max-width: 640px) min(60vw, 320px),
+           (max-width: 1024px) 360px,
+           400px"
+                            quality={60}
                           />
                         </div>
                       </div>
