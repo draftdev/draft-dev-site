@@ -258,7 +258,7 @@ export default async function PostPage({ params }: Props) {
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">
-          <article className="prose prose-sm sm:prose-base md:prose-lg prose-blue mx-auto max-w-none">
+          <article className="prose prose-sm sm:prose-base md:prose-lg mx-auto max-w-none">
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="not-prose mb-8">
               <ol className="flex items-center space-x-2 text-sm text-gray-500">

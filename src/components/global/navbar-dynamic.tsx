@@ -124,7 +124,7 @@ const RecentPosts = memo(
                 height={200}
                 width={300}
               />
-              <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
+              <div className="absolute inset-0 rounded-lg ring-1 ring-gray-900/10 ring-inset" />
             </div>
             <div>
               <h4 className="text-sm font-semibold text-gray-800">
@@ -198,7 +198,7 @@ const MobileNavContent = memo(
                   <DisclosurePanel className="pl-4">
                     <div className="border-l border-gray-100 py-2">
                       <div className="pl-4">
-                        <h4 className="py-1 text-sm font-medium text-secondary">
+                        <h4 className="text-secondary py-1 text-sm font-medium">
                           Use Cases
                         </h4>
                         {NAVIGATION_CONFIG.useCases.map((item) => (
@@ -219,7 +219,7 @@ const MobileNavContent = memo(
                       </div>
 
                       <div className="mt-2 pl-4">
-                        <h4 className="py-1 text-sm font-medium text-secondary">
+                        <h4 className="text-secondary py-1 text-sm font-medium">
                           Who We Help
                         </h4>
                         {NAVIGATION_CONFIG.whoWeHelp.map((item) => (
@@ -313,7 +313,7 @@ export function DynamicNavbar({}: NavbarProps) {
     <div className="relative">
       <button
         id="why-us-button"
-        className={`flex items-center whitespace-nowrap px-1 pt-1 md:px-2 lg:px-3 xl:px-4 ${STYLES.linkBase} ${STYLES.textColor} ${STYLES.linkHover}`}
+        className={`flex items-center px-1 pt-1 whitespace-nowrap md:px-2 lg:px-3 xl:px-4 ${STYLES.linkBase} ${STYLES.textColor} ${STYLES.linkHover}`}
         onClick={() => setIsWhyUsOpen(!isWhyUsOpen)}
         aria-expanded={isWhyUsOpen}
       >
@@ -324,9 +324,8 @@ export function DynamicNavbar({}: NavbarProps) {
         <div
           id="why-us-popover"
           className="fixed inset-x-0 top-20 z-50 mx-auto max-h-[calc(100vh-5rem)] w-[95vw] max-w-4xl overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 lg:w-[85vw]"
-          style={{ top: 'calc(var(--banner-height) + var(--nav-height))' }}
         >
-          <div className="absolute right-5 top-4">
+          <div className="absolute top-4 right-5">
             <button
               className="flex h-8 w-8 items-center justify-center rounded-full text-gray-500 hover:bg-gray-100"
               onClick={() => setIsWhyUsOpen(false)}
@@ -346,7 +345,7 @@ export function DynamicNavbar({}: NavbarProps) {
 
   const DesktopNav = memo(() => (
     <nav
-      className={`hidden items-center justify-end space-x-1 md:space-x-2 lg:space-x-3 tablet:flex ${STYLES.textColor}`}
+      className={`tablet:flex hidden items-center justify-end space-x-1 md:space-x-2 lg:space-x-3 ${STYLES.textColor}`}
     >
       {NAVIGATION_CONFIG.links.map(({ href, label }) =>
         label === 'Why Us?' ? (
@@ -355,7 +354,7 @@ export function DynamicNavbar({}: NavbarProps) {
           <Link
             key={href}
             href={href}
-            className={`whitespace-nowrap px-1 pt-1 md:px-2 lg:px-3 xl:px-4 ${STYLES.linkBase} ${STYLES.textColor} ${STYLES.linkHover}`}
+            className={`px-1 pt-1 whitespace-nowrap md:px-2 lg:px-3 xl:px-4 ${STYLES.linkBase} ${STYLES.textColor} ${STYLES.linkHover}`}
           >
             {label}
           </Link>
@@ -369,7 +368,7 @@ export function DynamicNavbar({}: NavbarProps) {
     <header className="navbar-container">
       <Disclosure
         as="div"
-        className="sticky left-0 right-0 top-[var(--banner-height)] z-40 bg-white/95 shadow-md"
+        className="sticky right-0 left-0 z-40 bg-white/95 shadow-md"
       >
         {({ open, close }) => {
           if (isMobileMenuOpen !== open) {
@@ -408,7 +407,7 @@ export function DynamicNavbar({}: NavbarProps) {
                   </DisclosureButton>
                 </div>
 
-                <DisclosurePanel className="bg-white tablet:hidden">
+                <DisclosurePanel className="tablet:hidden bg-white">
                   <MobileNavContent
                     links={NAVIGATION_CONFIG.links}
                     closeMobileMenu={close}

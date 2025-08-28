@@ -14,16 +14,16 @@ const Banner: React.FC<BannerProps> = ({ text, link }) => {
 
   return (
     <div className="banner-container w-full">
-      <div className="relative flex items-center justify-center bg-gradient-brand px-6 py-2.5 sm:px-3.5">
+      <div className="bg-gradient-brand relative flex items-center justify-center px-6 py-2.5 sm:px-3.5">
         <Link
           href={link}
-          className="text-sm font-semibold leading-6 text-white sm:text-base"
+          className="text-sm leading-6 font-semibold text-white sm:text-base"
         >
           {text}
         </Link>
         <button
           type="button"
-          className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md p-1.5 hover:bg-white/10 sm:right-6"
+          className="absolute top-1/2 right-3 -translate-y-1/2 rounded-md p-1.5 hover:bg-white/10 sm:right-6"
           onClick={() => setOpen(false)}
           aria-label="Dismiss banner"
         >

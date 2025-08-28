@@ -2,19 +2,6 @@
   "name": "draft.dev",
   "version": "0.1.0",
   "private": true,
-  "browserslist": {
-    "production": [
-      "chrome >= 115",
-      "edge >= 115",
-      "firefox >= 115",
-      "safari >= 16"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -47,6 +34,7 @@
     "@types/react-dom": "^19",
     "@types/sanitize-html": "^2.13.0",
     "autoprefixer": "^10.4.20",
+    "browserslist": "^4.25.4",
     "dotenv": "^16.4.7",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",

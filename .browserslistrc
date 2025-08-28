@@ -1,0 +1,10 @@
+[production]
+last 2 chrome major versions
+last 2 edge major versions
+last 2 firefox major versions
+safari >= 16
+
+[development]
+last 1 chrome version
+last 1 firefox version
+last 1 safari version

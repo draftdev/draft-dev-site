@@ -1,6 +1,7 @@
 import { Footer } from '@/components/global/footer'
 import DynamicNavbar from '@/components/global/navbar-dynamic'
 import Banner from '@/components/media/banner'
+
 import '@/styles/tailwind.css'
 
 import { firaCode, firaSans } from '../fonts/fonts'

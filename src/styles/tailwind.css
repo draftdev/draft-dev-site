@@ -1,11 +1,12 @@
-@import 'tailwindcss';
-
+/* TOKENS — only here */
 @theme {
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
   --breakpoint-xl: 1280px;
-  --breakpoint-tablet: 768px;
+
+  /* aliases (pick values you want) */
+  --breakpoint-tablet: 768px; /* you used tablet: in Navbar */
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1280px;
 
@@ -13,10 +14,8 @@
   --font-code:
     var(--font-fira-code), ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Radius */
   --radius-4xl: 2rem;
 
-  /* Brand colors → text-primary-60, bg-secondary-20, ring-primary, etc. */
   --color-primary: #544b84;
   --color-primary-80: #6a6296;
   --color-primary-60: #8179a8;
@@ -30,13 +29,19 @@
   --color-secondary-20: #d5d4d6;
 }
 
-/* Plain CSS vars (not Tailwind tokens) */
+/* plain CSS vars */
 :root {
   --gradient-stop: #765c80;
-  --banner-height: 0px;
   --nav-height: 72px;
 }
 
+/* Tailwind ONCE */
+@import 'tailwindcss';
+
+/* Plugins ONCE (typography, etc.) */
+@plugin "@tailwindcss/typography";
+
+/* Base/global utilities that everything needs */
 html,
 body {
   margin: 0;
@@ -48,19 +53,6 @@ body {
   @apply font-sans text-gray-800 antialiased;
 }
 
-.hero-eyebrow {
-  @apply text-secondary rounded-full bg-gray-100 px-3 py-1;
-}
-.hero-cta-primary {
-  @apply focus-visible:outline-secondary-60 rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-lg;
-}
-.hero-cta-secondary {
-  @apply hover:text-secondary-20 text-base font-semibold text-gray-100 sm:text-lg;
-}
-.hero-image-container {
-  @apply bg-primary-20/5 ring-primary-40/10 -m-2 rounded-xl p-2 ring-1 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4;
-}
-
 .navbar-container > div {
   transition: top 0.3s ease-in-out;
 }
@@ -68,26 +60,7 @@ body {
   z-index: 60;
 }
 
-.header-base {
-  font-family: var(--font-code);
-  font-weight: 600;
-  line-height: 1.125;
-  letter-spacing: -2px;
-}
-.header-light {
-  font-family: var(--font-code);
-  font-weight: 600;
-  line-height: 1.125;
-  letter-spacing: -2px;
-  color: white;
-}
-.header-dark {
-  font-family: var(--font-code);
-  font-weight: 600;
-  line-height: 1.125;
-  letter-spacing: -2px;
-  color: var(--color-primary);
-}
+/* your shared helpers (header-*, bg-gradient-brand, etc.) */
 .header-gradient {
   font-family: var(--font-code);
   font-weight: 600;
@@ -102,134 +75,6 @@ body {
     var(--color-primary)
   );
 }
-
-/* Subheaders */
-.subheader-base {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-case-study {
-  line-height: 1.25;
-}
-.subheader-light {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  color: theme(colors.white);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-dark {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  color: theme(colors.gray.600);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-gradient {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(
-    315deg,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-/* Mobile subheaders */
-.subheader-mobile-base {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-mobile-light {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  color: theme(colors.gray.100);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-mobile-dark {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  color: theme(colors.gray.600);
-  line-height: 1.1;
-  letter-spacing: -1px;
-}
-.subheader-mobile-gradient {
-  font-family: var(--font-code);
-  font-weight: 600;
-  margin-block: 1rem;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(
-    315deg,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-
-/* Lead + paragraph helpers (non-prose) */
-.lead-base {
-  font-family: var(--font-sans);
-  line-height: 1.35;
-  letter-spacing: -0.5px;
-  padding-right: 0.25rem; /* pr-1 */
-}
-.lead-light {
-  color: theme(colors.gray.300);
-}
-.lead-dark {
-  color: theme(colors.gray.500);
-}
-.lead-gradient {
-  font-family: var(--font-sans);
-  line-height: 1.35;
-  letter-spacing: -0.5px;
-  padding-right: 0.25rem;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(
-    315deg,
-    var(--color-secondary),
-    var(--color-primary)
-  );
-}
-.paragraph-base {
-  font-family: var(--font-sans);
-  line-height: 1.35;
-  letter-spacing: -0.5px;
-}
-.paragraph-light {
-  color: theme(colors.gray.100);
-}
-.paragraph-dark {
-  color: theme(colors.gray.500);
-}
-
-.text-gradient {
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
 .bg-gradient-brand {
   background-image: linear-gradient(
     315deg,
@@ -237,35 +82,10 @@ body {
     var(--color-primary)
   );
 }
-.list-header {
-  @apply font-code text-3xl font-semibold text-white sm:tracking-tighter;
-}
-.testimonial-light {
-  font-family: var(--font-code);
-  font-weight: 600;
-  color: theme(colors.white);
-  font-size: 2.15rem;
-  line-height: 1.35;
-}
-.case-study-small {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  letter-spacing: 0.1px;
+.text-gradient {
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Logos & forms */
-.logo-flex {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-.logo-flex-mobile {
-  @apply bg-transparent;
-}
-#mc_embed_signup,
-#mc-embedded-subscribe-form {
-  @apply font-code bg-transparent font-semibold text-white;
-}
-
-/* WordPress image toggle */
-.single-post .post-thumbnail {
-  display: none;
-}
+/* (keep any other global helpers you need across pages) */
