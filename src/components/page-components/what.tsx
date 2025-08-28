@@ -34,14 +34,14 @@ const What: React.FC<WhatProps> = ({
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="px-6 lg:px-0 lg:pr-4">
             <div className="mx-auto max-w-3xl sm:max-w-4xl lg:mx-0">
-              <h2 className="subheader-mobile-gradient sm:subheader-gradient">
+              <h2 className="subheader-mobile-gradient text-2xl sm:text-4xl">
                 {title}
               </h2>
 
               {hasSubtitle && (
-                <h3 className="sm:paragraph-dark py-4">
+                <h3 className="sm:paragraph-dark sm:text-lg">
                   {subtitleBold && (
-                    <span className="sm:lead-dark text-base font-semibold">
+                    <span className="sm:lead-dark text-base font-semibold sm:text-lg">
                       {subtitleBold}
                       {subtitleRegular && ' '}
                     </span>
@@ -56,7 +56,7 @@ const What: React.FC<WhatProps> = ({
                 >
                   {features.map((feature, index) => (
                     <div key={index} className="relative">
-                      <dt className="font-bold text-secondary">
+                      <dt className="text-secondary font-bold">
                         {feature.title}
                       </dt>
                       <dd className="my-2">{feature.description}</dd>
@@ -70,7 +70,7 @@ const What: React.FC<WhatProps> = ({
           <div className="hidden lg:ml-auto lg:block">
             <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
               <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt={imageAlt}
                     src={imageSrc}

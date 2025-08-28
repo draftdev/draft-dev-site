@@ -79,13 +79,13 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsGroup() {
   return (
-    <div className="bg-white py-16 lg:py-32" id="testimonials">
+    <div className="bg-white py-16 lg:py-24" id="testimonials">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="subheader-mobile-gradient lg:subheader-gradient">
+          <h2 className="subheader-mobile-gradient lg:subheader-gradient text-2xl sm:text-4xl">
             Testimonials
           </h2>
-          <h3 className="lg:lead-dark text-lg">What our clients are saying</h3>
+          <h3 className="lead-dark text-lg">What our clients are saying</h3>
         </div>
         <div className="mx-auto mt-8 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:mt-16 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
@@ -96,7 +96,7 @@ export default function TestimonialsGroup() {
               >
                 <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                   <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                    <div className="overflow-hidden rounded-3xl bg-gray-50 shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                    <div className="shadow-2xloutline-1 overflow-hidden rounded-3xl bg-gray-50 -outline-offset-1 outline-black/10">
                       <figure className="p-8 text-base">
                         <blockquote className="text-gray-900">
                           <p>{`"${testimonial.body}"`}</p>

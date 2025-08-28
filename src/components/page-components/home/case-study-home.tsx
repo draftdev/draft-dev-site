@@ -2,16 +2,16 @@ import Link from 'next/link'
 
 const CaseStudyHome = () => {
   return (
-    <main className="relative isolate bg-gradient-brand py-16">
+    <main className="bg-gradient-brand relative isolate py-16">
       <div className="px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-center uppercase">
           <h2
-            className="subheader-mobile-light sm:subheader-light"
+            className="subheader-mobile-light sm:subheader-light text-2xl sm:text-5xl"
             style={{ lineHeight: '1.5' }}
           >
             How{' '}
             <span className="inline-flex items-center bg-white px-4">
-              <span className="sm:subheader-gradient text-xl text-gradient-1">
+              <span className="subheader-gradient text-gradient-1">
                 Sinch Mailgun
               </span>
             </span>{' '}
@@ -25,7 +25,7 @@ const CaseStudyHome = () => {
         <div className="mt-6 flex flex-col items-center justify-center gap-x-6 sm:mt-16 sm:flex-row sm:items-center">
           <Link
             href="/case-studies/sinch-mailgun"
-            className="sm:text-md my-2 rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0"
+            className="sm:text-md focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0"
           >
             See this case study
           </Link>

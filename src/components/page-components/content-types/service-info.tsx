@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 const ServiceInfo = () => {
   return (
-    <div className="overflow-hidden bg-white py-14 sm:py-32">
+    <div className="overflow-hidden bg-white py-14 sm:py-24">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
-          <div className="px-6 lg:px-0 lg:pr-4 lg:pt-4">
+          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto sm:max-w-5xl lg:mx-0">
-              <h2 className="subheader-mobile-gradient sm:subheader-gradient">
+              <h2 className="subheader-mobile-gradient text-2xl sm:text-4xl">
                 Why use different types of content?
               </h2>
-              <div className="paragraph-dark py-6 text-xl">
+              <div className="paragraph-dark py-2 text-lg sm:text-xl">
                 <p className="pb-2">
                   The most effective developer marketing strategies combine
                   multiple content types to address different stages of the
@@ -20,10 +20,10 @@ const ServiceInfo = () => {
                 </p>
               </div>
 
-              <h3 className="subheader-mobile-gradient sm:lead-gradient mt-8">
+              <h3 className="subheader-mobile-gradient mt-8 text-lg sm:text-xl">
                 Creating the Right Content Mix
               </h3>
-              <div className="paragraph-dark text-xl">
+              <div className="paragraph-dark text-lg sm:text-xl">
                 <p className="">
                   At Draft.dev, we help you create the optimal mix of technical
                   content to engage your audience at every stage of their
@@ -31,7 +31,7 @@ const ServiceInfo = () => {
                 </p>
               </div>
 
-              <p className="lead-dark py-6 text-xl">
+              <p className="lead-dark py-6 text-lg sm:text-xl">
                 <strong>Check out the examples below</strong> to see how
                 different content types work together to create a comprehensive
                 developer marketing strategy. The right column contains links to

@@ -67,31 +67,35 @@ export default function CaseStudySinchMailgun() {
   return (
     <>
       <main>
-        <div className="relative isolate bg-gradient-brand">
+        <div className="bg-gradient-brand relative isolate">
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
                 <h1
-                  className="subheader-light pt-16"
+                  className="subheader-light pt-16 text-2xl sm:text-6xl"
                   style={{ lineHeight: '1.3' }}
                 >
                   How{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">Sinch Mailgun</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      Sinch Mailgun
+                    </span>
                   </span>{' '}
                   REVIVED ITS DEVELOPER-FIRST CONTENT STRATEGY AND ACHIEVED{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">20-45%</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      20–45%
+                    </span>
                   </span>{' '}
                   CTR with Draft.dev
                 </h1>
               </div>
             </div>
 
-            <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:mt-12 sm:flex-row">
+            <div className="mb-12 flex flex-col items-center justify-center gap-x-6 sm:mt-12 sm:mb-24 sm:flex-row">
               <Link
                 href="/files/sinch_mailgun_case_study_draft_dev.pdf"
-                className="my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
               >
                 Download the full case study
               </Link>
@@ -111,7 +115,7 @@ export default function CaseStudySinchMailgun() {
                     key={index}
                     className="mx-auto flex max-w-lg flex-col-reverse gap-y-3 rounded-xl bg-white/5 px-8 py-4 text-center"
                   >
-                    <dt className="font-code text-lg font-bold text-gray-300">
+                    <dt className="font-code text-base font-bold text-gray-300 sm:text-lg">
                       {stat.label}
                     </dt>
                   </div>
@@ -122,7 +126,7 @@ export default function CaseStudySinchMailgun() {
         </div>
 
         <MiniCaseMailgun />
-        <div className="sm:py-22 bg-gradient-brand py-12">
+        <div className="bg-gradient-brand py-12 sm:py-22">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
               {highlights.map((highlight) => (
@@ -136,7 +140,7 @@ export default function CaseStudySinchMailgun() {
                     </span>
                   </dt>
                   <dd>
-                    <ul className="list-disc space-y-2 pl-4 pt-8">
+                    <ul className="list-disc space-y-2 pt-8 pl-4">
                       {highlight.description.map((item, index) => (
                         <li key={index} className="text-lg text-white">
                           {item}
@@ -150,7 +154,7 @@ export default function CaseStudySinchMailgun() {
             <div className="flex items-center justify-center gap-x-6 sm:my-10">
               <Link
                 href="/files/sinch_mailgun_case_study_draft_dev.pdf"
-                className="rounded-sm px-3.5 py-2.5 font-code text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 hover:text-gradient-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                className="font-code hover:text-gradient-2 focus-visible:outline-primary rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
               >
                 Download the full case study
               </Link>

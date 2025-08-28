@@ -5,6 +5,13 @@ type BlogLayoutProps = {
   params: { slug: string }
 }
 
-export default function BlogPostLayout({ children }: BlogLayoutProps) {
+export default async function BlogPostLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Promise<{ slug: string }>
+}) {
+  const { slug } = await params
   return <>{children}</>
 }

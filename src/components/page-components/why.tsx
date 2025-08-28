@@ -47,7 +47,7 @@ const Why: React.FC<WhyProps> = ({
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-12 lg:max-w-none lg:grid-cols-3">
             {features.map((feature, index) => (
               <div key={index} className="flex flex-col">
-                <dt className="flex items-center gap-x-3 text-lg font-semibold text-secondary">
+                <dt className="text-secondary flex items-center gap-x-3 text-lg font-semibold">
                   {feature.title}
                 </dt>
                 <dd className="mt-2 flex flex-auto flex-col text-base sm:text-lg">
@@ -59,7 +59,7 @@ const Why: React.FC<WhyProps> = ({
                   <p className={feature.description ? 'mt-4' : 'mt-2'}>
                     <Link
                       href={feature.linkHref}
-                      className="text-base font-semibold text-gradient-3 hover:text-gray-700"
+                      className="text-gradient-3 text-base font-semibold hover:text-gray-700"
                     >
                       {feature.linkText}
                       <span aria-hidden="true"> →</span>

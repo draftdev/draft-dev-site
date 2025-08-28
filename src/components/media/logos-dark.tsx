@@ -1,5 +1,4 @@
 import { clsx } from 'clsx'
-import Image from 'next/image'
 
 export function LogosDark({
   className,
@@ -27,47 +26,59 @@ export function LogosDark({
               'items-center justify-items-center',
             )}
           >
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={redpanda}
               alt="Redpanda"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={sinch}
               alt="Sinch"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={amadeus}
               alt="Amadeus"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={jetbrains}
               alt="JetBrains"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={equinix}
               alt="Equinix"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
-            <Image
+            <img
               className="max-h-10 w-full object-contain"
               src={loft}
               alt="Loft"
               width={158}
               height={48}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

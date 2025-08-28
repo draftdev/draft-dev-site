@@ -18,8 +18,8 @@ export const revalidate = 3600
 export const dynamicParams = true
 
 type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  params: Promise<{ slug: string }>
+  searchParams: Promise<Record<string, string | string[] | undefined>>
 }
 
 const processPostContent = cache(async (post: any) => {
@@ -83,7 +83,8 @@ const processPostContent = cache(async (post: any) => {
 })
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = await getWpPost(params.slug)
+  const { slug } = await params
+  const post = await getWpPost(slug)
 
   if (!post) {
     return {
@@ -111,7 +112,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
   const imageAlt = getImageAlt(post)
 
-  const postUrl = `https://draft.dev/learn/${params.slug}`
+  const postUrl = `https://draft.dev/learn/${(await params).slug}`
 
   return {
     title: post.title,
@@ -174,7 +175,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PostPage({ params }: Props) {
-  const { slug } = params
+  const { slug } = await params
   const post = await getWpPost(slug)
 
   if (!post) {
@@ -257,7 +258,7 @@ export default async function PostPage({ params }: Props) {
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">
-          <article className="prose prose-lg prose-blue mx-auto max-w-none">
+          <article className="prose prose-sm sm:prose-base md:prose-lg prose-blue mx-auto max-w-none">
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="not-prose mb-8">
               <ol className="flex items-center space-x-2 text-sm text-gray-500">
@@ -547,14 +548,14 @@ export default async function PostPage({ params }: Props) {
                   href="/learn"
                   className="group block rounded-lg bg-gray-50 p-6 transition-colors hover:bg-gray-100"
                 >
-                  <h3 className="subheader-gradient text-lg group-hover:text-primary-80">
+                  <h3 className="subheader-gradient group-hover:text-primary-80 text-lg">
                     Browse All Articles
                   </h3>
                   <p className="mt-2 text-gray-600">
                     Explore our complete library of technical content marketing
                     resources and developer relations insights.
                   </p>
-                  <span className="mt-4 inline-flex items-center font-medium text-primary">
+                  <span className="text-primary mt-4 inline-flex items-center font-medium">
                     View all posts
                     <svg
                       className="ml-2 h-4 w-4"

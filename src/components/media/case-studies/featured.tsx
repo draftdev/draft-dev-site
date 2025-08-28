@@ -57,7 +57,7 @@ export default function CaseStudiesFeature() {
           {/* LEFT: Title + Dek with Draft.dev text styles */}
           <div className="w-full lg:flex lg:max-w-xl lg:flex-auto lg:flex-col lg:justify-center">
             <div>
-              <h2 className="subheader-gradient sm:text-5xl">
+              <h2 className="subheader-gradient text-2xl sm:text-5xl">
                 How Sinch Mailgun Revived Its Developer-First Content Strategy
                 and Achieved 20–45% CTR with Draft.dev
               </h2>
@@ -67,7 +67,7 @@ export default function CaseStudiesFeature() {
               <div className="mt-12 flex flex-col items-center gap-x-6 sm:flex-row">
                 <Link
                   href="/case-studies/sinch-mailgun"
-                  className="my-2 rounded bg-gradient-1 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gradient-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                  className="from-primary to-secondary hover:from-primary-80 hover:to-secondary-80 focus-visible:outline-primary my-2 rounded bg-gradient-to-br px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Read this case study
                 </Link>
@@ -102,7 +102,7 @@ export default function CaseStudiesFeature() {
       </div>
 
       {/* More Case Studies */}
-      <div className="mt-24 bg-gradient-brand py-16">
+      <div className="bg-gradient-brand mt-24 py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h3 className="lg:subheader-light subheader-mobile-light">

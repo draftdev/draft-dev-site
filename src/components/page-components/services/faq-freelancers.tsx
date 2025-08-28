@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { JSX } from 'react'
 
 type FAQ = {
   id: number
@@ -41,10 +42,10 @@ const faqs: FAQ[] = [
 
 export default function FAQ(): JSX.Element {
   return (
-    <div id="faq" className="py-24 sm:py-32">
+    <div id="faq" className="py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className="subheader-gradient scroll-mt-32" id="faq">
+          <h2 className="subheader-gradient text-2xl sm:text-4xl" id="faq">
             Frequently asked questions
           </h2>
           <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
@@ -54,16 +55,16 @@ export default function FAQ(): JSX.Element {
             </span>{' '}
             <Link
               href="https://draft.dev/call"
-              className="hover:text-gradient-brand font-semibold text-secondary underline"
+              className="hover:text-gradient-brand text-secondary font-semibold underline"
             >
               Book a discovery call
             </Link>{' '}
             to learn more.
           </p>
 
-          <p className="p-dark"></p>
+          <p className="p-dark text-base sm:text-lg"></p>
           <div className="mt-12">
-            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-10">
+            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10">
               {faqs.map((faq) => (
                 <div key={faq.id}>
                   <dt className="text-lg font-semibold text-gray-600">

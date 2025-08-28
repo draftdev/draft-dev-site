@@ -66,7 +66,7 @@ export default function CaseStudyLoftLabs() {
   return (
     <>
       <main>
-        <div className="relative isolate bg-gradient-brand">
+        <div className="bg-gradient-brand relative isolate">
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
@@ -75,12 +75,16 @@ export default function CaseStudyLoftLabs() {
                   style={{ lineHeight: '1.3' }}
                 >
                   How{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">Loft Labs</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      Loft Labs
+                    </span>
                   </span>{' '}
                   scaled its Kubernetes blog by{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">4x</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      4x
+                    </span>
                   </span>{' '}
                   and achieved top SEO rankings with Draft.dev
                 </h1>
@@ -121,7 +125,7 @@ export default function CaseStudyLoftLabs() {
           </div>
         </div>
         <MiniCaseLoft />
-        <div className="sm:py-22 bg-gradient-brand py-12">
+        <div className="bg-gradient-brand py-12 sm:py-22">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
               {highlights.map((highlight) => (
@@ -135,7 +139,7 @@ export default function CaseStudyLoftLabs() {
                     </span>
                   </dt>
                   <dd>
-                    <ul className="list-disc space-y-2 pl-4 pt-8">
+                    <ul className="list-disc space-y-2 pt-8 pl-4">
                       {highlight.description.map((item, index) => (
                         <li key={index} className="text-lg text-white">
                           {item}

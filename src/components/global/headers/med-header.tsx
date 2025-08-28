@@ -16,21 +16,23 @@ export const MedHeader: React.FC<MedHeaderProps> = ({
       <main className="relative isolate pb-12">
         <div
           aria-hidden="true"
-          className="absolute left-1/2 right-0 top-0 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl"
+          className="absolute top-0 right-0 left-1/2 -z-10 -ml-24 transform-gpu overflow-hidden blur-3xl"
         />
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 py-6 sm:pt-16 lg:px-8">
-            <div className="m-auto max-w-2xl items-center gap-x-12 lg:mx-0 lg:flex lg:max-w-none">
-              <div className="relative w-full lg:shrink-0 xl:max-w-4xl">
-                <h1 className="sm:header-light mb-6 pb-4 font-code text-3xl font-semibold text-white">
+            <div className="m-auto max-w-3xl items-center gap-x-12 lg:mx-0 lg:flex">
+              <div className="relative lg:shrink-0">
+                <h1 className="sm:header-light font-code mb-6 text-3xl font-semibold text-white sm:text-5xl">
                   {title}
                 </h1>
-                <p className="sm:paragraph-light pb-6 text-base text-gray-100">
-                  {descriptionOne}
-                </p>
-                <p className="sm:paragraph-light text-base font-semibold text-gray-100">
-                  {descriptionTwo}
-                </p>
+                <div className="max-w-4xl">
+                  <p className="sm:paragraph-light text-base text-gray-100 sm:text-lg">
+                    {descriptionOne}
+                  </p>
+                  <p className="sm:paragraph-light mt-4 text-base font-semibold text-gray-100 sm:text-lg">
+                    {descriptionTwo}
+                  </p>
+                </div>
                 <div className="flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center"></div>
               </div>
             </div>

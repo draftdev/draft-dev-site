@@ -1,4 +1,5 @@
-import Image from 'next/image'
+// components/media/logos-flex.tsx
+import React from 'react'
 
 export function LogosFlex({
   className,
@@ -11,54 +12,66 @@ export function LogosFlex({
   const loft = '/media/logos/loft-logo.svg'
 
   return (
-    <section className="lg:pb-10">
-      <div className="mx-auto px-6">
+    <section className={`lg:py-10 ${className ?? ''}`}>
+      <div className="mx-auto">
         <h2 className="mb-8 hidden text-left text-lg font-medium text-white lg:block">
           Trusted by 100+ tech companies
         </h2>
 
-        <div className="mx-auto mt-10 grid grid-cols-1 items-center gap-x-8 gap-y-10 rounded-lg bg-white/5 p-8 sm:grid-cols-2 sm:gap-x-10 md:grid-cols-4 lg:mx-0 lg:grid-cols-6">
-          <Image
-            className="max-h-10 w-full object-contain"
+        <div className="mx-auto mt-10 grid grid-cols-2 items-center gap-x-8 gap-y-10 rounded-lg bg-white/5 p-8 sm:grid-cols-6">
+          <img
             src={redpanda}
             alt="Redpanda"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
-          <Image
-            className="max-h-10 w-full object-contain"
+          <img
             src={sinch}
             alt="Sinch"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
-          <Image
-            className="max-h-10 w-full object-contain"
+          <img
             src={amadeus}
             alt="Amadeus"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
-          <Image
-            className="max-h-10 w-full object-contain"
+          <img
             src={jetbrains}
             alt="JetBrains"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
-          <Image
-            className="max-h-10 w-full object-contain"
+          <img
             src={equinix}
             alt="Equinix"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
-          <Image
-            className="max-h-10 w-full object-contain"
+          <img
             src={loft}
             alt="Loft"
             width={158}
             height={48}
+            loading="lazy"
+            decoding="async"
+            className="h-6 w-auto object-contain sm:h-8 md:h-10"
           />
         </div>
       </div>

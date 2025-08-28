@@ -4,4 +4,5 @@ module.exports = {
   semi: false,
   tailwindFunctions: ['clsx'],
   plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-tailwindcss'],
+  tailwindStylesheet: './src/styles/tailwind.css',
 }

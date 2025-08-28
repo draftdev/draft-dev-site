@@ -69,7 +69,7 @@ export default function CaseStudyStatusHero() {
   return (
     <>
       <main>
-        <div className="relative isolate bg-gradient-brand">
+        <div className="bg-gradient-brand relative isolate">
           <div className="relative isolate py-16 sm:py-24">
             <div className="px-6 lg:px-8">
               <div className="mx-auto max-w-4xl text-center uppercase">
@@ -78,12 +78,16 @@ export default function CaseStudyStatusHero() {
                   style={{ lineHeight: '1.3' }}
                 >
                   How{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">Status Hero</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      Status Hero
+                    </span>
                   </span>{' '}
                   grew blog traffic by{' '}
-                  <span className="bg-white pt-3">
-                    <span className="header-gradient px-3">211%</span>
+                  <span className="pt-3 sm:inline-block sm:rounded sm:bg-white sm:px-3 sm:py-1">
+                    <span className="sm:from-secondary sm:to-primary text-white sm:bg-gradient-to-br sm:bg-clip-text sm:text-transparent">
+                      211%
+                    </span>
                   </span>{' '}
                   and increased its trial conversion rate with Draft.dev
                 </h1>
@@ -124,7 +128,7 @@ export default function CaseStudyStatusHero() {
           </div>
         </div>
         <MiniCaseStatusHero />
-        <div className="sm:py-22 bg-gradient-brand py-12">
+        <div className="bg-gradient-brand py-12 sm:py-22">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
               {highlights.map((highlight) => (
@@ -138,7 +142,7 @@ export default function CaseStudyStatusHero() {
                     </span>
                   </dt>
                   <dd>
-                    <ul className="list-disc space-y-2 pl-4 pt-8">
+                    <ul className="list-disc space-y-2 pt-8 pl-4">
                       {highlight.description.map((item, index) => (
                         <li key={index} className="text-lg text-white">
                           {item}

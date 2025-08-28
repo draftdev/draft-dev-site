@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { JSX } from 'react'
 
 interface Category {
   title: string
@@ -119,9 +120,9 @@ export default function ResourceGrid(): JSX.Element {
                     src={post.imageUrl}
                     width={400}
                     height={210}
-                    className="sm:aspect-2/1 lg:aspect-3/2 aspect-video w-full rounded-2xl bg-gray-100 object-cover"
+                    className="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2"
                   />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
                 </div>
                 <div className="max-w-xl">
                   <div className="group relative">
