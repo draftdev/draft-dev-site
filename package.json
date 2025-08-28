@@ -2,20 +2,12 @@
   "name": "draft.dev",
   "version": "0.1.0",
   "private": true,
-  "browserslist": {
-    "production": [
-      "defaults and supports es6-module",
-      "not dead",
-      "not op_mini all",
-      "not safari < 15",
-      "not ios_saf < 15"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    "edge >= 115",
+    "chrome >= 115",
+    "firefox >= 115",
+    "safari >= 16"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",

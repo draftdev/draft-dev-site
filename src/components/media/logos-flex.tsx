@@ -14,7 +14,7 @@ export function LogosFlex({
   return (
     <section className={`lg:py-10 ${className ?? ''}`}>
       <div className="mx-auto">
-        <h2 className="mb-8 hidden text-left text-lg font-medium text-white lg:block">
+        <h2 className="mb-8 text-left text-lg font-medium text-white">
           Trusted by 100+ tech companies
         </h2>
 

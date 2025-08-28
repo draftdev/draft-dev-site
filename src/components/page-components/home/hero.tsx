@@ -3,11 +3,9 @@ import { ChevronRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import heroImg from '../../../../public/site/med-portrait/hero.webp'
 
 const Hero: React.FC = () => {
-  const imageSrc = '/site/med-portrait/hero.webp'
-  const imageAlt = 'Technical content development'
-
   return (
     <div className="bg-gradient-brand">
       <main className="relative isolate pb-16 sm:pb-0">
@@ -71,16 +69,13 @@ const Hero: React.FC = () => {
                         {/* Responsive wrapper controls the visual width */}
                         <div className="relative aspect-[2/3] w-[60vw] max-w-[320px] sm:max-w-[360px] lg:w-[400px]">
                           <Image
-                            alt={imageAlt}
-                            src={imageSrc}
+                            alt="Technical content development"
+                            src={heroImg}
                             fill
                             className="rounded-xl object-cover"
-                            priority
-                            fetchPriority="high"
-                            sizes="(max-width: 640px) min(60vw, 320px),
-           (max-width: 1024px) 360px,
-           400px"
-                            quality={60}
+                            priority // <— preload
+                            fetchPriority="high" // <— browser hint
+                            sizes="(max-width: 640px) 60vw, (max-width: 1024px) 360px, 400px"
                           />
                         </div>
                       </div>

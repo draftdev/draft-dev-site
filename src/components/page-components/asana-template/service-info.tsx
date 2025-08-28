@@ -15,7 +15,7 @@ const ServiceInfo = () => {
             </div>
           </div>
 
-          <div className="hidden lg:ml-auto lg:block">
+          <div className="lg:ml-auto">
             <Image
               alt="asana content calendar template"
               src="/site/med-portrait/asana_overview.png"

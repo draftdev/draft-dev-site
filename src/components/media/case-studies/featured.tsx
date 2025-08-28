@@ -83,7 +83,7 @@ export default function CaseStudiesFeature() {
 
           {/* RIGHT: Image (smaller than before) */}
           <div className="w-full lg:flex lg:max-w-lg lg:flex-auto lg:items-center lg:justify-center">
-            <div className="hidden lg:block lg:w-[400px]">
+            <div className="lg:w-[400px]">
               <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
