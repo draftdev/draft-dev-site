@@ -1,7 +1,3 @@
-import CaseStudyStatusHero from '@/components/media/case-studies/case-study-status-hero'
-import { LogosDark } from '@/components/media/logos-dark'
-import SocialProof from '@/components/media/social-proof'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -52,14 +48,82 @@ export const metadata: Metadata = {
   },
 }
 
-export default function StatusHeroCaseStudy() {
+import CaseStudyPage from '../../../components/media/case-studies/case-study-template'
+
+import MiniCaseStatusHero from '@/components/media/case-studies/mini-case-status-hero'
+
+export default function CaseStudyStatusHero() {
+  const stats = [
+    { label: 'Increase in blog traffic', value: '211%' },
+    { label: 'Growth in Medium audience', value: '50x' },
+    { label: 'Hours saved per week', value: '40' },
+  ]
+
+  const highlights = [
+    {
+      name: 'Challenges',
+      description: [
+        'Increasing trial users and conversion rate',
+        'Creating valuable content for a technical audience',
+        'Improving presence in Google search results',
+        'Building a regular content pipeline',
+      ],
+    },
+    {
+      name: 'Solution',
+      description: [
+        'Content strategy and planning',
+        'Keyword research',
+        'Industry-insider writers',
+        'Collaborative editing process',
+      ],
+    },
+    {
+      name: 'Results',
+      description: [
+        '211% increase in blog visitors',
+        '50x growth in Medium audience',
+        '40 hours saved per week',
+        'High SEO rankings',
+        'Growth in trial users and conversion rate',
+        'Consistent content pipeline',
+      ],
+    },
+  ]
+
+  const relatedCaseStudies = [
+    {
+      name: 'Rahul Patwardhan',
+      role: 'Senior Director, Demand Generation',
+      imageUrl:
+        '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
+      company: 'Loft Labs',
+    },
+    {
+      name: 'Em Blitstein',
+      role: 'Senior Content Marketing Manager',
+      imageUrl: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+      company: 'Sinch Mailgun',
+    },
+    {
+      name: 'Adam Gordon Bell',
+      role: 'Director of Developer Relations',
+      imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
+      company: 'Earthly',
+    },
+  ]
+
   return (
-    <>
-      <CaseStudyStatusHero />
-      <SocialProof />
-      <LogosDark />
-      <TestimonialsGroup />
-      <LogosDark />
-    </>
+    <CaseStudyPage
+      title={
+        'How Status Hero grew blog traffic by 211% and increased its trial conversion rate with Draft.dev'
+      }
+      titleHighlights={['Status Hero', '211%']}
+      stats={stats}
+      highlights={highlights}
+      miniCaseSlot={<MiniCaseStatusHero />}
+      relatedCaseStudies={relatedCaseStudies}
+      statsCols={3}
+    />
   )
 }

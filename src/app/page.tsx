@@ -12,6 +12,8 @@ import Hero from '@/components/page-components/home/hero'
 import How from '@/components/page-components/how'
 import What from '@/components/page-components/what'
 import type { Metadata } from 'next'
+import HowImage from '/public/site/med-portrait/commit_draft_dev.webp'
+import WhatImage from '/public/site/med-portrait/pair_programming_draft_dev.webp'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -190,7 +192,7 @@ export default function Home() {
                   "Content creation is just the start. We'll help you promote your content on all the channels developers use to ensure it reaches the right audience, engenders trust, and builds your brand.",
               },
             ]}
-            imageSrc="/site/med-portrait/pair_programming_draft_dev.jpg"
+            imageSrc={WhatImage.src}
             imageAlt="Technical content development"
           />
           <SocialProof />
@@ -220,7 +222,7 @@ export default function Home() {
                     "Our team of engineers, editors, and technical content specialists will create detailed outlines for you to review before starting weekly content delivery. Each piece is tested and edited for quality assurance. If our work ever falls short of your expectations, we'll work with you to revise it.",
                 },
               ]}
-              imageSrc="/site/med-portrait/commit_draft_dev.jpg"
+              imageSrc={HowImage.src}
               imageAlt="Technical content development"
             />
           </div>

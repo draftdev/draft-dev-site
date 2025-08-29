@@ -8,8 +8,8 @@ const MiniCaseStatusHero = () => {
           <div className="mx-auto max-w-2xl gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div className="relative w-full lg:shrink-0 xl:max-w-2xl">
               <div className="relative max-w-xl py-8 pl-8">
-                <div className="absolute left-0 top-0 h-full w-1 bg-gray-300" />
-                <p className="bg-gradient-brand font-code text-3xl font-semibold text-gradient">
+                <div className="absolute top-0 left-0 h-full w-1 bg-gray-300" />
+                <p className="bg-gradient-brand font-code text-gradient text-3xl font-semibold">
                   "Draft.dev has helped us create high-quality content that
                   resonates with our audience on a regular basis. They have
                   helped us double our audience, attract more trial users, and
@@ -23,7 +23,7 @@ const MiniCaseStatusHero = () => {
             </div>
             <div className="hidden lg:block lg:w-[400px]">
               <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt="Henry Poydar"
                     height={500}

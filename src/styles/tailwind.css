@@ -1,226 +1,332 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
-/* Root variables */
-@layer base {
-  :root {
-    --primary: #544b84;
-    --secondary: #916c7c;
-    --gradient-stop: #765c80;
-    --banner-height: 0px;
-    --nav-height: 72px;
-  }
+/* ===== Tokens Tailwind v4 reads ===== */
+@theme {
+  /* colors */
+  --color-primary: #544b84;
+  --color-primary-80: #6a6296;
+  --color-primary-60: #8179a8;
+  --color-primary-40: #9790ba;
+  --color-primary-20: #aea8cc;
 
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    max-width: 100%;
-  }
+  --color-secondary: #916c7c;
+  --color-secondary-80: #a28693;
+  --color-secondary-60: #b3a0a9;
+  --color-secondary-40: #c4bac0;
+  --color-secondary-20: #d5d4d6;
+
+  --color-gradient-1: #8b687f;
+  --color-gradient-2: #785e80;
+  --color-gradient-3: #6c5782;
+
+  /* fonts */
+  --font-sans: var(--font-fira-sans), system-ui, sans-serif;
+  --font-code: var(--font-fira-code), monospace;
+
+  /* radii */
+  --radius-4xl: 2rem;
+
+  /* breakpoints (custom names allowed) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 788px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
+
+  /* app vars */
+  --nav-height: 72px;
+
+  /* gradients as tokens */
+  --bg-gradient-primary: linear-gradient(315deg, var(--color-primary), #765c80);
+  --bg-gradient-background: linear-gradient(
+    315deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  --bg-gradient-brand: linear-gradient(
+    315deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  --bg-gradient-text: linear-gradient(to bottom right, #916c7c, #916c7c);
 }
 
-/* Hero & layout components */
-@layer components {
-  .hero-eyebrow {
-    @apply rounded-full bg-gray-100 px-3 py-1 text-secondary;
-  }
-
-  .hero-cta-primary {
-    @apply rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-60 sm:text-lg;
-  }
-
-  .hero-cta-secondary {
-    @apply text-base font-semibold text-gray-100 hover:text-secondary-20 sm:text-lg;
-  }
-
-  .hero-image-container {
-    @apply -m-2 rounded-xl bg-primary-20/5 p-2 ring-1 ring-inset ring-primary-40/10 lg:-m-4 lg:rounded-2xl lg:p-4;
-  }
-
-  .navbar-container > div {
-    transition: top 0.3s ease-in-out;
-  }
-
-  #why-us-popover {
-    z-index: 60;
-  }
-
-  .youtube-container {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
-    margin: 2rem 0;
-  }
-
-  .youtube-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 0.5rem;
-  }
-
-  .prose iframe {
-    width: 100% !important;
-    min-height: 400px;
-    border-radius: 0.5rem;
-    margin: 2rem 0;
-  }
-
-  .prose iframe[src*='youtube.com'],
-  .prose iframe[src*='youtu.be'] {
-    aspect-ratio: 16 / 9;
-    height: auto;
-    min-height: 315px;
-  }
-
-  /* Typography styles */
-  .header-base {
-    @apply py-1 font-code font-semibold;
-    font-size: 3.75rem;
-    line-height: 1.125;
-    letter-spacing: -2px;
-  }
-
-  .header-gradient {
-    @apply header-base bg-gradient-brand text-gradient;
-  }
-
-  .header-light {
-    @apply header-base text-white;
-  }
-
-  .header-dark {
-    @apply header-base text-primary;
-  }
-
-  .subheader-base {
-    @apply my-4 font-code font-semibold;
-    font-size: 2.85rem;
-    line-height: 1.1;
-    letter-spacing: -1px;
-  }
-
-  .subheader-gradient {
-    @apply subheader-base bg-gradient-brand text-gradient;
-  }
-
-  .subheader-case-study {
-    @apply subheader-base;
-    line-height: 1.25;
-  }
-
-  .subheader-light {
-    @apply subheader-base text-white;
-  }
-
-  .subheader-dark {
-    @apply subheader-base text-gray-600;
-  }
-
-  .subheader-mobile-base {
-    @apply my-4 font-code font-semibold;
-    font-size: 1.45rem;
-    line-height: 1.1;
-    letter-spacing: -1px;
-  }
-
-  .subheader-mobile-light {
-    @apply subheader-mobile-base text-gray-100;
-  }
-
-  .subheader-mobile-dark {
-    @apply subheader-mobile-base text-gray-600;
-  }
-
-  .subheader-mobile-gradient {
-    @apply subheader-mobile-base bg-gradient-brand text-gradient;
-  }
-
-  .lead-base {
-    @apply pr-1 font-sans;
-    font-size: 1.45rem;
-    line-height: 1.35;
-    letter-spacing: -0.5px;
-  }
-
-  .lead-light {
-    @apply lead-base text-gray-300;
-  }
-
-  .lead-dark {
-    @apply lead-base text-gray-500;
-  }
-
-  .lead-gradient {
-    @apply lead-base bg-gradient-brand text-gradient;
-  }
-
-  .paragraph-base {
-    @apply font-sans;
-    font-size: 1.45rem;
-    line-height: 1.35;
-    letter-spacing: -0.5px;
-  }
-
-  .paragraph-light {
-    @apply paragraph-base text-gray-100;
-  }
-
-  .paragraph-dark {
-    @apply paragraph-base text-gray-500;
-  }
-
-  .sitemap-heading {
-    @apply font-code text-lg font-semibold;
-  }
+/* ===== Base reset ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
-/* Utility classes */
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-clip: text;
-  }
+/* ===== Custom UTILITIES (variantable & @apply-able) ===== */
 
-  .list-header {
-    @apply font-code text-3xl font-semibold text-white sm:tracking-tighter;
-  }
+/* typographic bases */
+@utility header-base {
+  @apply font-code py-1 font-semibold;
+  font-size: 3.75rem;
+  line-height: 1.125;
+  letter-spacing: -2px;
+}
 
-  .testimonial-light {
-    @apply font-code font-semibold text-white;
-    font-size: 2.15rem;
-    line-height: 1.35;
-  }
+@utility subheader-base {
+  @apply font-code my-4 font-semibold;
+  font-size: 2.85rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
 
-  .case-study-small {
-    @apply font-sans;
-    font-size: 1rem;
-    letter-spacing: 0.1px;
-  }
+@utility subheader-mobile-base {
+  @apply font-code my-4 font-semibold;
+  font-size: 1.45rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
 
-  .logo-flex {
-    background-color: rgba(255, 255, 255, 0.08);
-  }
+@utility lead-base {
+  @apply pr-1 font-sans;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+}
 
-  .logo-flex-mobile {
-    @apply bg-transparent;
-  }
+@utility paragraph-base {
+  @apply font-sans;
+  font-size: 1.45rem;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+}
 
-  #mc_embed_signup {
-    @apply bg-transparent font-code font-semibold text-white;
-  }
+/* concrete typography utilities so you can use sm:... */
+@utility header-light {
+  @apply header-base text-white;
+}
+@utility header-dark {
+  @apply header-base text-primary;
+}
+@utility header-gradient {
+  @apply header-base bg-gradient-brand text-gradient;
+}
 
-  #mc-embedded-subscribe-form {
-    @apply bg-transparent font-code font-semibold text-white;
-  }
+@utility subheader-light {
+  @apply subheader-base text-white;
+}
+@utility subheader-dark {
+  @apply subheader-base text-gray-600;
+}
+@utility subheader-gradient {
+  @apply subheader-base bg-gradient-brand text-gradient;
+}
+@utility subheader-case-study {
+  @apply subheader-base;
+}
 
-  .single-post .post-thumbnail {
-    display: none;
-  }
+@utility subheader-mobile-light {
+  @apply subheader-mobile-base text-gray-100;
+}
+@utility subheader-mobile-dark {
+  @apply subheader-mobile-base text-gray-600;
+}
+@utility subheader-mobile-gradient {
+  @apply subheader-mobile-base bg-gradient-brand text-gradient;
+}
+
+@utility lead-light {
+  @apply lead-base text-gray-300;
+}
+@utility lead-dark {
+  @apply lead-base text-gray-500;
+}
+@utility lead-gradient {
+  @apply lead-base bg-gradient-brand text-gradient;
+}
+
+@utility paragraph-light {
+  @apply paragraph-base text-gray-100;
+}
+@utility paragraph-dark {
+  @apply paragraph-base text-gray-500;
+}
+
+@utility sitemap-heading {
+  @apply font-code text-lg font-semibold;
+}
+
+/* gradients & helpers */
+@utility text-gradient {
+  @apply bg-clip-text text-transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@utility bg-gradient-brand {
+  background-image: var(--bg-gradient-brand);
+}
+@utility bg-gradient-primary {
+  background-image: var(--bg-gradient-primary);
+}
+@utility bg-gradient-background {
+  background-image: var(--bg-gradient-background);
+}
+
+/* component-style utilities (so variants like sm:hero-... will work if you use them) */
+@utility hero-eyebrow {
+  @apply text-secondary rounded-full bg-gray-100 px-3 py-1;
+}
+
+@utility hero-cta-primary {
+  @apply focus-visible:outline-secondary-60 rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-lg;
+}
+
+@utility hero-cta-secondary {
+  @apply hover:text-secondary-20 text-base font-semibold text-gray-100 sm:text-lg;
+}
+
+@utility hero-image-container {
+  @apply bg-primary-20/5 ring-primary-40/10 -m-2 rounded-xl p-2 ring-1 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4;
+}
+
+/* ===== Buttons & helpers ===== */
+
+/* colors you already reference in markup */
+@utility bg-gradient-1 {
+  background-color: var(--color-gradient-1);
+}
+@utility bg-gradient-2 {
+  background-color: var(--color-gradient-2);
+}
+@utility bg-gradient-3 {
+  background-color: var(--color-gradient-3);
+}
+
+/* so focus-visible:outline-primary works */
+@utility outline-primary {
+  outline-color: var(--color-primary);
+}
+
+/* base button shape/spacing */
+@utility btn {
+  @apply inline-flex items-center justify-center rounded px-3.5 py-2.5 font-semibold transition-colors duration-200;
+}
+@utility btn-sm {
+  @apply px-3 py-2 text-sm;
+}
+@utility btn-lg {
+  @apply px-4 py-3 text-base;
+}
+
+/* Primary brand button (solid) */
+@utility btn-primary {
+  @apply btn text-white shadow-sm ring-2 ring-white;
+  background-color: var(--color-gradient-1);
+}
+/* use as: hover:btn-primary-hover */
+@utility btn-primary-hover {
+  background-color: var(--color-gradient-2);
+}
+
+/* Secondary (subtle on light backgrounds) */
+@utility btn-secondary {
+  @apply btn bg-white text-gray-700 ring-1 ring-gray-200;
+}
+/* use as: hover:btn-secondary-hover */
+@utility btn-secondary-hover {
+  @apply text-gray-800;
+  background-color: #f9fafb;
+}
+
+/* Ghost button (on dark/gradient sections) */
+@utility btn-ghost {
+  @apply btn text-white ring-1 ring-white/20;
+  background-color: transparent;
+}
+/* use as: hover:btn-ghost-hover */
+@utility btn-ghost-hover {
+  @apply bg-white/10;
+}
+
+/* Disabled state helper */
+@utility btn-disabled {
+  @apply cursor-not-allowed opacity-50;
+}
+
+/* ===== Structural CSS that isn’t a utility ===== */
+.navbar-container > div {
+  transition: top 0.3s ease-in-out;
+}
+#why-us-popover {
+  z-index: 60;
+}
+
+.youtube-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 2rem 0;
+}
+.youtube-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+.prose iframe {
+  width: 100% !important;
+  min-height: 400px;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+.prose iframe[src*='youtube.com'],
+.prose iframe[src*='youtu.be'] {
+  aspect-ratio: 16/9;
+  height: auto;
+  min-height: 315px;
+}
+.prose {
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-invert-links: var(--color-primary-60);
+}
+
+.prose a {
+  color: var(--tw-prose-links);
+  text-decoration: underline;
+}
+
+.prose a:hover,
+.prose a:focus-visible {
+  color: var(--color-primary-80);
+}
+
+/* misc */
+.list-header {
+  @apply font-code text-3xl font-semibold text-white sm:tracking-tighter;
+}
+.testimonial-light {
+  @apply font-code font-semibold text-white;
+  font-size: 2.15rem;
+  line-height: 1.35;
+}
+.case-study-small {
+  @apply font-sans;
+  font-size: 1rem;
+  letter-spacing: 0.1px;
+}
+.logo-flex {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+.logo-flex-mobile {
+  @apply bg-transparent;
+}
+#mc_embed_signup,
+#mc-embedded-subscribe-form {
+  @apply font-code bg-transparent font-semibold text-white;
+}
+.single-post .post-thumbnail {
+  display: none;
 }

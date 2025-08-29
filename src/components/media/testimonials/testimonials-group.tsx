@@ -96,7 +96,7 @@ export default function TestimonialsGroup() {
               >
                 <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                   <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                    <div className="overflow-hidden rounded-3xl bg-gray-50 shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                    <div className="overflow-hidden rounded-3xl bg-gray-50 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                       <figure className="p-8 text-base">
                         <blockquote className="text-gray-900">
                           <p>{`"${testimonial.body}"`}</p>

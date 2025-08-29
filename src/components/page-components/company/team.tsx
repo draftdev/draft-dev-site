@@ -11,7 +11,7 @@ const Person = ({ name, description, img }: PersonProps) => {
     <li className="flex flex-col items-center lg:items-start">
       <div className="w-56 rounded-4xl bg-white/15 p-1 shadow ring-1 ring-black/5 sm:w-64">
         <div className="rounded-3xl p-1 shadow-md shadow-black/5">
-          <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+          <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
             <Image
               alt={`${name} - ${description}`}
               src={img}
@@ -92,7 +92,7 @@ const Team = () => {
         <h2 className="subheader-light">The team</h2>
 
         <hr className="mt-6 border-t border-gray-200/20" />
-        <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:mx-0 lg:grid-cols-4">
           {teamMembers.map((member) => (
             <Person
               key={member.name}

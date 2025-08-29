@@ -1,6 +1,8 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import FAQ from '@/components/page-components/services/faq-refresh'
 import What from '@/components/page-components/what'
 import type { Metadata } from 'next'
 
@@ -91,6 +93,9 @@ export default function ContentRefreshes() {
         imageSrc="/site/med-portrait/content_refresh.jpg"
         imageAlt="Technical content refresh"
       />
+      <LogosDark />
+
+      <FAQ />
       <Testimonial
         quote="Draft.dev has helped us create high-quality content that resonates with our audience on a regular basis. They have helped us double our audience, attract more trial users, and increase our trial conversion rate."
         name="Henry Poydar"
@@ -101,8 +106,6 @@ export default function ContentRefreshes() {
       />
 
       <TestimonialsGroup />
-
-      {/* <FAQ /> */}
     </>
   )
 }

@@ -2,25 +2,18 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
+import Script from 'next/script'
 import { Suspense, useEffect } from 'react'
 
 const GTM_ID = 'GTM-5W5755G3'
-
-// Small polyfill so we can use requestIdleCallback where supported
-const onIdle = (cb: () => void, timeout = 2500) => {
-  if (typeof (window as any).requestIdleCallback === 'function') {
-    ;(window as any).requestIdleCallback(cb, { timeout })
-  } else {
-    setTimeout(cb, timeout)
-  }
-}
 
 function PageViewTracker() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    if (!window.dataLayer) return
+    // Always ensure dataLayer exists
+    ;(window as any).dataLayer = (window as any).dataLayer || []
     const qs = searchParams.toString()
     const page_path = qs ? `${pathname}?${qs}` : pathname
 
@@ -37,60 +30,19 @@ function PageViewTracker() {
 }
 
 export default function Analytics() {
-  useEffect(() => {
-    // Initialize dataLayer once
-    ;(window as any).dataLayer = (window as any).dataLayer || []
-
-    const initGTM = () => {
-      if ((window as any).gtmDidInit) return
-      ;(window as any).gtmDidInit = true
-
-      // Match official snippet order: push event BEFORE injecting the script
-      ;(window as any).dataLayer.push({
-        'gtm.start': Date.now(),
-        event: 'gtm.js',
-      })
-
-      const script = document.createElement('script')
-      script.async = true
-      script.src = `https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`
-      document.head.appendChild(script)
-    }
-
-    // Load after idle, or on first interaction (whichever comes first)
-    const idleTimer = onIdle(initGTM, 3000)
-
-    const initOnInteraction = (event: Event) => {
-      initGTM()
-      event.currentTarget?.removeEventListener(
-        event.type,
-        initOnInteraction as any,
-      )
-    }
-
-    document.addEventListener('scroll', initOnInteraction, {
-      once: true,
-      passive: true,
-    })
-    document.addEventListener('mousemove', initOnInteraction, { once: true })
-    document.addEventListener('touchstart', initOnInteraction, {
-      once: true,
-      passive: true,
-    })
-    document.addEventListener('keydown', initOnInteraction, { once: true })
-
-    return () => {
-      // timers/listeners cleaned up automatically by { once: true }, but be tidy:
-      document.removeEventListener('scroll', initOnInteraction as any)
-      document.removeEventListener('mousemove', initOnInteraction as any)
-      document.removeEventListener('touchstart', initOnInteraction as any)
-      document.removeEventListener('keydown', initOnInteraction as any)
-    }
-  }, [])
-
   return (
     <>
-      {/* This <noscript> is rendered on the server too, so it still appears when JS is disabled */}
+      <Script id="gtm-loader" strategy="lazyOnload">{`
+        (function(w,d,s,l,i){
+          w[l]=w[l]||[];
+          w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+          var f=d.getElementsByTagName(s)[0], j=d.createElement(s), dl=l!='dataLayer'?'&l='+l:'';
+          j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+          f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','${GTM_ID}');
+      `}</Script>
+
+      {/* Noscript fallback (kept intact) */}
       <noscript>
         <iframe
           src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

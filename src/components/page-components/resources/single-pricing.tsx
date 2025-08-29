@@ -95,7 +95,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                       </p>
                       <Link
                         href={callToActionURL}
-                        className="rounded-md bg-white px-6 py-4 text-center text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-lg"
+                        className="rounded-md bg-white px-6 py-4 text-center text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-lg"
                       >
                         Book a Discovery Call
                       </Link>

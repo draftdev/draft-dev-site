@@ -21,7 +21,7 @@ export default function NewsletterSmall() {
                 <div className="mt-6">
                   <Link
                     href="/newsletter"
-                    className="inline-block w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-base font-semibold text-white ring-2 ring-white hover:bg-white hover:text-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                    className="inline-block w-full rounded-md bg-transparent px-3.5 py-2.5 text-center text-base font-semibold text-white ring-2 ring-white hover:bg-white hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2"
                   >
                     Sign up for our Newsletter
                   </Link>

@@ -1,6 +1,8 @@
 import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import FAQ from '@/components/page-components/services/faq-promo'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -139,6 +141,8 @@ export default function PaidContentPromotion() {
       />
 
       <ServiceInfo />
+      <LogosDark />
+      <FAQ />
       <Testimonial
         quote="Content is one of the biggest and best channels you can invest in. And if you want to quickly scale without compromising the quality and expertise, Draft.dev is the way to go."
         name="Rahul Patwardhan"
@@ -149,8 +153,6 @@ export default function PaidContentPromotion() {
       />
 
       <TestimonialsGroup />
-
-      {/* <FAQ /> */}
     </>
   )
 }
