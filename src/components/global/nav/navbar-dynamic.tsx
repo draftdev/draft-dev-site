@@ -31,7 +31,6 @@ const STYLES = {
   textColor: 'text-gray-700',
 }
 
-/** Inline icons to drop Heroicons */
 function HamburgerIconInline({
   className = 'h-5 w-5',
 }: {

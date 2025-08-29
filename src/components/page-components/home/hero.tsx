@@ -75,11 +75,11 @@ const Hero: React.FC = () => {
                           src={heroImg}
                           fill
                           className="rounded-xl object-cover"
-                          priority // preload for LCP
-                          fetchPriority="high" // extra hint
+                          priority
+                          fetchPriority="high"
                           sizes="(min-width:1280px) 400px, (min-width:1024px) 320px, 90vw"
                           quality={70}
-                          placeholder="blur" // works because of static import
+                          placeholder="blur"
                         />
                       </div>
                     </div>

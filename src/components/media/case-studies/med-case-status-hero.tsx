@@ -8,7 +8,7 @@ const MedCaseStatusHero = () => {
         <div className="mx-auto max-w-7xl p-6 lg:px-8">
           <div className="mx-auto max-w-xl gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
             <div className="relative w-full lg:max-w-xl lg:shrink-0">
-              <h2 className="subheader-case-study mb-6 pb-4 font-semibold text-gradient-3">
+              <h2 className="subheader-case-study text-gradient-3 mb-6 pb-4 font-semibold">
                 How{' '}
                 <span className="bg-gradient-brand px-2 text-white">
                   Status Hero
@@ -19,7 +19,7 @@ const MedCaseStatusHero = () => {
               </h2>
 
               <div className="relative max-w-xl py-8 pl-8">
-                <div className="absolute left-0 top-0 h-full w-1 bg-gray-300" />
+                <div className="absolute top-0 left-0 h-full w-1 bg-gray-300" />
                 <p className="font-code text-3xl font-semibold text-gray-600">
                   "Draft.dev has helped us create high-quality content that
                   resonates with our audience on a regular basis. They have
@@ -35,7 +35,7 @@ const MedCaseStatusHero = () => {
               <div className="mt-6 flex flex-col items-center gap-x-6 sm:mt-16 sm:flex-row">
                 <Link
                   href="/case-studies/status-hero"
-                  className="text-gradient-brand my-2 rounded-sm bg-transparent bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm ring-2 ring-gradient-1 hover:bg-gradient-brand hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:my-0 sm:text-base"
+                  className="text-gradient-brand ring-gradient-1 hover:bg-gradient-brand focus-visible:outline-primary my-2 rounded-sm bg-transparent bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm ring-2 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
                 >
                   Read the full case study
                 </Link>
@@ -50,7 +50,7 @@ const MedCaseStatusHero = () => {
 
             <div className="m-auto hidden lg:block lg:w-[400px]">
               <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt="Henry Poydar"
                     height={500}

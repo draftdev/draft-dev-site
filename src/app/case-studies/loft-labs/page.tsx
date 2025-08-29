@@ -1,8 +1,3 @@
-import FAQ from '@/components/global/faq'
-import CaseStudyLoftLabs from '@/components/media/case-studies/case-study-loft'
-import { LogosDark } from '@/components/media/logos-dark'
-import SocialProof from '@/components/media/social-proof'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -53,14 +48,78 @@ export const metadata: Metadata = {
   },
 }
 
-export default function LoftCaseStudy() {
+import MiniCaseLoft from '@/components/media/case-studies/mini-case-loft'
+import CaseStudyPage from '../../../components/media/case-studies/case-study-template'
+
+export default function CaseStudyLoftLabs() {
+  const stats = [
+    { label: 'Growth in blog traffic in one year', value: '4x' },
+    { label: 'Visitors for an article since publishing', value: '70,000+' },
+    { label: 'Ranking in search results', value: '#1' },
+  ]
+
+  const highlights = [
+    {
+      name: 'Challenges',
+      description: [
+        'Lack of internal resources for content creation',
+        'Need for Kubernetes expertise in content',
+        'Desire to increase top-of-funnel traffic and SEO rankings',
+      ],
+    },
+    {
+      name: 'Solution',
+      description: [
+        'Consistent, high-quality content with Draft.dev',
+        'Ample network of writers with Kubernetes experience',
+        'Collaborative content creation process',
+        'Professionally edited and ready-to-publish content',
+        'Helpful customer support',
+      ],
+    },
+    {
+      name: 'Results',
+      description: [
+        'Over 4x traffic growth in one year',
+        '70,000+ visitors for a top article since publishing',
+        'Top #1-4 Google search rankings for target keywords',
+        'Content attracting the target audience that converts',
+      ],
+    },
+  ]
+
+  const relatedCaseStudies = [
+    {
+      name: 'Henry Poydar',
+      role: 'Founder & CEO',
+      imageUrl: '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+      company: 'Status Hero',
+    },
+    {
+      name: 'Adam Gordon Bell',
+      role: 'Director of Developer Relations',
+      imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
+      company: 'Earthly',
+    },
+    {
+      name: 'Em Blitstein',
+      role: 'Senior Content Marketing Manager',
+      imageUrl: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+      company: 'Sinch Mailgun',
+    },
+  ]
+
   return (
-    <>
-      <CaseStudyLoftLabs />
-      <SocialProof />
-      <TestimonialsGroup />
-      <LogosDark />
-      <FAQ />
-    </>
+    <CaseStudyPage
+      title={
+        'How Loft Labs scaled its Kubernetes blog by 4x and achieved top SEO rankings with Draft.dev'
+      }
+      titleHighlights={['Loft Labs', '4x']}
+      stats={stats}
+      highlights={highlights}
+      miniCaseSlot={<MiniCaseLoft />}
+      relatedCaseStudies={relatedCaseStudies}
+      statsCols={3}
+    />
   )
 }

@@ -5,11 +5,11 @@ import { Button } from './button'
 
 function CallToAction() {
   return (
-    <div className="-mt-34 md:pb-22 -mx-4 pb-20 lg:-mx-8">
+    <div className="-mx-4 -mt-34 pb-20 md:pb-22 lg:-mx-8">
       <div className="mx-auto max-w-7xl">
         <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
           <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-            <div className="overflow-hidden rounded-3xl bg-gradient-brand p-12 shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
+            <div className="bg-gradient-brand overflow-hidden rounded-3xl p-12 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
               <hgroup>
                 <h2 className="header-light my-6 text-center text-3xl tracking-tight sm:text-5xl">
                   Want to learn more about how we work?
@@ -217,14 +217,14 @@ function Copyright() {
 export function Footer() {
   return (
     <>
-      <div className="relative z-10">
+      <div className="relative z-10 mt-16">
         <CallToAction />
       </div>
 
       {/* Actual footer content */}
-      <footer className="relative -mt-64 bg-gradient-brand pt-36">
+      <footer className="bg-gradient-brand relative -mt-64 pt-36">
         <Container className="relative text-white">
-          <div className="pb-16 pt-24">
+          <div className="pt-24 pb-16">
             <hr className="mt-16 border-t border-gray-200/20" />
             {/* <Link href="/" title="Home">
               <Image
