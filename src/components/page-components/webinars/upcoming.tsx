@@ -92,7 +92,7 @@ function WebinarCard({
         href={registrationLink}
         target={external ? '_blank' : undefined}
         rel={external ? 'noopener noreferrer' : undefined}
-        className={`inline-block ${isFeatured ? 'mt-6' : 'mt-3'} hover:bg-gradient-brand rounded-sm px-3.5 py-2 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:text-white hover:ring-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2`}
+        className={`inline-block ${isFeatured ? 'mt-6' : 'mt-3'} hover:bg-gradient-brand rounded-sm px-3.5 py-2 text-sm font-semibold text-gray-600 shadow-sm ring-2 ring-gray-500 hover:text-white hover:ring-white focus-visible:outline-2 focus-visible:outline-offset-2`}
       >
         Register Now
       </Link>
