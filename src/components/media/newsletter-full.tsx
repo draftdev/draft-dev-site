@@ -9,7 +9,7 @@ export default function NewsletterFull() {
             <div className="bg-gradient-brand overflow-hidden rounded-3xl p-12 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
               <hgroup>
                 <h2 className="header-light my-6 text-center text-3xl tracking-tight sm:text-5xl">
-                  Trusted by 100+ tech companies, over 300 engineers writing your technical content.
+                  Trusted by 100+ tech companies. Over 300 engineers writing your technical content.
                 </h2>
                 <p className="lead-light text-center">
                   Join over 3,000 subscribers and get our resources, tips, and case studies to help you reach developers. Delivered to your inbox every month.
