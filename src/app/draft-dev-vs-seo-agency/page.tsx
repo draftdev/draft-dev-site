@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Why Technical Brands Choose Draft.dev Over SEO Agencies - Draft.dev',
   description:
     'Most content marketing agencies fail with developer audiences. Draft.dev delivers technical content from actual developers who understand your product, speak your language, and earn developer trust.',
-  keywords: 'draft.dev, freelancer, devtool content',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

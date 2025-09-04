@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Content Marketing Engine - Draft.dev',
   description:
     "Transform your technical content marketing with Draft.dev's proven content marketing engine designed to drive consistent results for tech companies.",
-  keywords:
-    'content marketing engine, technical content automation, content marketing system, scalable content marketing',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

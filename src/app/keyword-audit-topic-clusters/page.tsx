@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'How to run your own Keyword Audit and Creating Topic Clusters',
   description:
     'Learn how to conduct your own SEO keyword research and the process of generating topic clusters. Learn how to find keywords people are searching for.',
-  keywords:
-    'seo keyword audit, content clusters, SEO, topic clusters, technical content, content strategy execution',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

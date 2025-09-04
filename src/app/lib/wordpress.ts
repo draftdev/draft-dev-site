@@ -18,9 +18,6 @@ export interface Post {
   author?: {
     node: {
       name: string
-      avatar?: {
-        url: string
-      }
     }
   }
   originalAuthor?: string | null
@@ -30,14 +27,11 @@ export interface Post {
       answer: string
     }>
     targetKeywords?: string[]
-    authorCredentials?: string
     authorBio?: string
     readingTime?: number
-    expertSources?: string[]
     videoUrl?: string
     authorLinkedIn?: string
     authorTwitter?: string
-    relatedTopics?: string[]
   }
   seo?: {
     metaDesc?: string
@@ -98,9 +92,6 @@ query AllPosts($first: Int, $after: String) {
       author {
         node {
           name
-          avatar {
-            url
-          }
         }
       }
       originalAuthor: metaValue(key: "original_author")
@@ -112,14 +103,11 @@ query AllPosts($first: Int, $after: String) {
       twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
       # Enhanced custom fields for AI optimization
       targetKeywords: metaValue(key: "target_keywords")
-      authorCredentials: metaValue(key: "author_credentials")
       authorBio: metaValue(key: "author_bio")
       readingTime: metaValue(key: "reading_time")
-      expertSources: metaValue(key: "expert_sources")
       videoUrl: metaValue(key: "video_url")
       authorLinkedIn: metaValue(key: "author_linkedin")
       authorTwitter: metaValue(key: "author_twitter")
-      relatedTopics: metaValue(key: "related_topics")
       faqData: metaValue(key: "faq_questions")
     }
   }
@@ -151,9 +139,6 @@ query PostBySlug($slug: ID!) {
     author {
       node {
         name
-        avatar {
-          url
-        }
       }
     }
     originalAuthor: metaValue(key: "original_author")
@@ -165,14 +150,11 @@ query PostBySlug($slug: ID!) {
     twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
     # Enhanced custom fields for AI optimization
     targetKeywords: metaValue(key: "target_keywords")
-    authorCredentials: metaValue(key: "author_credentials")
     authorBio: metaValue(key: "author_bio")
     readingTime: metaValue(key: "reading_time")
-    expertSources: metaValue(key: "expert_sources")
     videoUrl: metaValue(key: "video_url")
     authorLinkedIn: metaValue(key: "author_linkedin")
     authorTwitter: metaValue(key: "author_twitter")
-    relatedTopics: metaValue(key: "related_topics")
     faqData: metaValue(key: "faq_questions")
   }
 }
@@ -307,25 +289,7 @@ function parseCustomFields(rawPost: any) {
     customFields.faqQuestions = tryParseJson(rawPost.faqData, [], rawPost.slug)
   }
 
-  // Parse related topics
-  if (rawPost.relatedTopics) {
-    customFields.relatedTopics = rawPost.relatedTopics
-      .split(',')
-      .map((t: string) => t.trim())
-      .filter((t: string) => t.length > 0)
-  }
-
-  // Parse expert sources
-  if (rawPost.expertSources) {
-    customFields.expertSources = rawPost.expertSources
-      .split(',')
-      .map((s: string) => s.trim())
-      .filter((s: string) => s.length > 0)
-  }
-
   // Simple field mappings
-  if (rawPost.authorCredentials)
-    customFields.authorCredentials = rawPost.authorCredentials
   if (rawPost.authorBio) customFields.authorBio = rawPost.authorBio
   if (rawPost.readingTime) {
     const parsedTime = parseInt(rawPost.readingTime, 10)

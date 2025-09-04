@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: 'AI Content Strategy - Draft.dev',
   description:
     'Optimize your content for AI search and LLM visibility. We help developer tools appear in AI-generated answers, summaries, and recommendations where developers are increasingly searching.',
-  keywords: 'technical content refresh, content SEO, ai content refresh',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

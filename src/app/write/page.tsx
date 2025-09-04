@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   title: 'Write for Draft.dev - Join Our Technical Writing Network',
   description:
     "Join our network of 300+ technical experts and get paid to write about cutting-edge technologies. We're looking for experienced developers and technical professionals.",
-  keywords:
-    'technical writing jobs, freelance developer writing, write for draft.dev, technical content creation, technical writer opportunities',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

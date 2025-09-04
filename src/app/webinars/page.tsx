@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Marketing Webinars - Draft.dev',
   description:
     'Join our educational webinars on technical content marketing, developer relations, and creating content that resonates with technical audiences.',
-  keywords:
-    'technical content marketing webinars, developer marketing webinars, content strategy webinars, technical writing education',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Paid Content Promotion - Draft.dev',
   description:
     'Amplify your technical content through strategic paid promotion. We place your content in developer newsletters, niche communities, and targeted channels that drive qualified traffic and leads.',
-  keywords: 'technical content promotion, paid promotion, devtools promotion',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -58,7 +57,7 @@ const ServiceInfo = () => {
     <div className="overflow-hidden bg-white py-14 sm:py-32">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
-          <div className="px-6 lg:px-0 lg:pr-4 lg:pt-4">
+          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto sm:max-w-5xl lg:mx-0">
               <h2 className="subheader-mobile-gradient sm:subheader-gradient">
                 Reach Developers Where They Actually Are

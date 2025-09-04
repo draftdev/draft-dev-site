@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: 'Build Trust with Technical Audiences - Draft.dev',
   description:
     'Learn how Draft.dev helps tech companies build trust with developers through authentic, expert-driven technical content that resonates with technical audiences.',
-  keywords:
-    'build trust with developers, technical content credibility, developer relations trust, authentic technical content',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Marketing Newsletter - Draft.dev',
   description:
     'Subscribe to our newsletter for resources, tips, and case studies to help you reach developers through effective technical content marketing.',
-  keywords:
-    'technical content marketing newsletter, developer marketing newsletter, content marketing tips, technical writing insights',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'How to Orchestrate Technical Content - Draft.dev',
   description:
     'Learn how to orchestrate and manage technical content at scale. Strategic planning and execution for technical content marketing programs.',
-  keywords:
-    'orchestrate technical content, content orchestration, technical content management, content strategy execution',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

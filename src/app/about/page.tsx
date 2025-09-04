@@ -14,8 +14,6 @@ export const metadata: Metadata = {
   title: 'About us - Draft.dev',
   description:
     'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
-  keywords:
-    'about draft.dev, technical content marketing team, developer relations experts, content marketing agency team, karl hughes',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: 'Sinch Mailgun Case Study - Draft.dev',
   description:
     "Discover how Sinch Mailgun revived its developer-first content strategy and achieved 20-45% CTR with Draft.dev's expert technical content services.",
-  keywords:
-    'sinch mailgun case study, draft.dev client success, developer relations success',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

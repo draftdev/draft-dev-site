@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   title: 'Earthly Case Study - Draft.dev Success Stories',
   description:
     'Learn how Earthly increased its monthly blog visitors by 346% and ramped up its content production with Draft.dev',
-  keywords: 'draft.dev case studies, earthly case study',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

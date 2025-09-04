@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Developer Content Strategy - Draft.dev',
   description:
     'Unite DevRel, marketing, and product teams with a cohesive content strategy. We help you build a developer content program that drives both community engagement and business results.',
-  keywords: 'technical content refresh, content SEO, ai content refresh',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

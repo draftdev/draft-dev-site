@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Free Trello Content Calendar Template - Draft.dev',
   description:
     'Free Trello content calendar template with 10-stage workflow, automation rules, and pre-built checklists.',
-  keywords:
-    'trello content calendar template, free content calendar template, trello editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

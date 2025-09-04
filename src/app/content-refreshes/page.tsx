@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Refreshes - Draft.dev',
   description:
     'Revitalize aging content with data-driven, technical refreshes. We help you identify, update, and optimize existing technical content to recapture lost traffic, improve conversions, and maintain credibility.',
-  keywords: 'technical content refresh, content SEO, ai content refresh',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

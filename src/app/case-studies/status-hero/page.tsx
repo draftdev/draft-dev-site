@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: 'Status Hero Case Study - Draft.dev',
   description:
     "Learn how Status Hero achieved remarkable results with Draft.dev's technical content marketing services and expert-driven content strategy.",
-  keywords:
-    'status hero case study, draft.dev success story, technical content marketing results, developer marketing case study',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

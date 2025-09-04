@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: 'Schedule a Discovery Call - Draft.dev',
   description:
     'Ready to transform your technical content marketing? Schedule a 30-minute discovery call to learn how Draft.dev can help you create content that resonates with developers.',
-  keywords:
-    'technical content marketing consultation, developer content strategy, draft.dev discovery call, technical content agency',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

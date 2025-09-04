@@ -411,7 +411,7 @@ export default async function PostPage({ params }: Props) {
               )}
 
             {/* Enhanced Article Footer with Author Bio and Continue Reading */}
-            <footer className="not-prose py-16">
+            <footer className="not-prose py-10">
               <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-8">
                 {/* Author Section - Left Column */}
                 <div>

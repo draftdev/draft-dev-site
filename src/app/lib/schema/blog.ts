@@ -18,8 +18,6 @@ export const generateBlogSchema = cache((posts: Post[]) => {
       'Expert insights on technical content marketing, developer relations, software development, and content strategy for reaching technical audiences.',
     url: 'https://draft.dev/learn',
     inLanguage: 'en-US',
-    keywords:
-      'technical content marketing, developer relations, software development tutorials, API documentation, technical writing, developer marketing, DevOps content',
     publisher: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     audience: TECHNICAL_AUDIENCE,
     about: CORE_TOPICS,

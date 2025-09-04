@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Marketing Resources - Draft.dev',
   description:
     'Free resources to help you create better technical content, improve your developer relations, and build authority in technical communities.',
-  keywords:
-    'technical content marketing resources, developer relations guides, content strategy templates, technical writing resources',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

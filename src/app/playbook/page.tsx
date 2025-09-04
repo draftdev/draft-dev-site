@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Marketing Playbook - Draft.dev',
   description:
     'Download our Technical Marketing Playbook: Learn everything you need to produce high-quality technical marketing content.',
-  keywords:
-    'technical content marketing playbook, content marketing guide, technical writing resources, developer marketing playbook',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

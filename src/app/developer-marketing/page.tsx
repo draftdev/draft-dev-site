@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Building and Scaling Developer Marketing - Draft.dev',
   description:
     'Specialized developer marketing services to help you reach software engineers and technical decision makers through authentic, expert-driven content.',
-  keywords:
-    'developer marketing, marketing to developers, developer relations marketing, technical audience marketing',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

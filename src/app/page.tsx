@@ -20,8 +20,6 @@ export const metadata: Metadata = {
   title: 'The Leader in Technical Content - Draft.dev',
   description:
     'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
-  keywords:
-    'technical content marketing, developer relations, software development content, API documentation, technical writing, developer marketing',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {

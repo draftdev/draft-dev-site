@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   title: 'Custom Content Marketing that Drives Awareness - Draft.dev',
   description:
     'We establish Inbound Lead Generation Engines for our clients by consistently creating content that technical audiences truly care about and respect.',
-  keywords:
-    'drive awareness, technical content marketing, developer marketing, inbound lead generation, content strategy',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

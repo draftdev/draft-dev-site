@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Free Airtable Content Calendar Template - Draft.dev',
   description:
     'Free Airtable template includes pipeline tracking, task management, and team views.',
-  keywords:
-    'airtable content calendar template, free content calendar template, airtable editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

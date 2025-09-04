@@ -15,9 +15,6 @@ export interface Post {
   author?: {
     node: {
       name: string
-      avatar?: {
-        url: string
-      }
     }
   }
   originalAuthor?: string | null
@@ -33,13 +30,10 @@ export interface Post {
       answer: string
     }>
     targetKeywords?: string[]
-    authorCredentials?: string
     readingTime?: number
-    expertSources?: string[]
     videoUrl?: string
     authorLinkedIn?: string
     authorTwitter?: string
-    relatedTopics?: string[]
   }
 }
 

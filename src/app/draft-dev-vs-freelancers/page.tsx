@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Why Choose Draft.dev Over Freelancers - Draft.dev',
   description:
     'Skip the freelancer lottery. Get consistent, high-quality technical content from vetted experts with guaranteed delivery, unified quality standards, and scalable production.',
-  keywords: 'draft.dev, freelancer, devtool content',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

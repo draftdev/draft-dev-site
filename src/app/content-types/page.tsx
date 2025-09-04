@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Types - Draft.dev',
   description:
     'Explore the various types of technical content we create: tutorials, blog posts, documentation, case studies, and more to reach your developer audience.',
-  keywords:
-    'technical content types, developer content formats, technical tutorials, technical blog posts, technical documentation',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

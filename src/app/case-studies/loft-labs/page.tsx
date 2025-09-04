@@ -5,8 +5,6 @@ export const metadata: Metadata = {
   title: 'Loft Labs Case Study - Draft.dev',
   description:
     "Discover how Loft Labs leveraged Draft.dev's technical content expertise to drive awareness and build authority in the developer community.",
-  keywords:
-    'loft labs case study, draft.dev client success, kubernetes content marketing, developer relations success',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

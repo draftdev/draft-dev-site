@@ -31,9 +31,7 @@ query AllPosts($first: Int, $after: String) {
       author {
         node {
           name
-          avatar {
-            url
-          }
+
         }
       }
       originalAuthor: metaValue(key: "original_author")
@@ -45,11 +43,8 @@ query AllPosts($first: Int, $after: String) {
       twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
       # Enhanced custom fields for AI optimization
       targetKeywords: metaValue(key: "target_keywords")
-      authorCredentials: metaValue(key: "author_credentials")
       readingTime: metaValue(key: "reading_time")
-      expertSources: metaValue(key: "expert_sources")
       videoUrl: metaValue(key: "video_url")
-      relatedTopics: metaValue(key: "related_topics")
       faqData: metaValue(key: "faq_questions")
     }
   }
@@ -71,23 +66,37 @@ function parseCustomFields(rawPost: any) {
   function tryParseJson<T>(jsonString: string, fallback: T, slug?: string): T {
     try {
       let s = jsonString.trim()
-
       s = s.replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'")
-
-      s = s.replace(/,\s*([}\]])/g, '$1')
-
       s = s.replace(/<!--[\s\S]*?-->/g, '')
+      s = s.replace(/"([^"]*?)([?!.])(\s*,)/g, '"$1$2"$3')
+      s = s.replace(/,\s*([}\]])/g, '$1')
+      s = s.replace(/,\s*\]/g, ']')
+      s = s.replace(/,\s*\}/g, '}')
 
       return JSON.parse(s) as T
     } catch (e: any) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.warn('❌ Failed to parse JSON:', e.message)
-        if (slug) {
-          console.warn('📝 Slug:', slug)
-          console.warn('📄 Raw string:', jsonString)
+      try {
+        let s2 = jsonString.trim()
+        const quoteCount = (s2.match(/"/g) || []).length
+        if (quoteCount % 2 !== 0) {
+          s2 = s2.replace(/("question"\s*:\s*"[^"]*[?!.])\s*,/g, '$1",')
+          s2 = s2.replace(/("answer"\s*:\s*"[^"]*[.])\s*,/g, '$1",')
         }
+        s2 = s2.replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'")
+
+        s2 = s2.replace(/,\s*([}\]])/g, '$1')
+
+        return JSON.parse(s2) as T
+      } catch (e2) {
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn('❌ Failed to parse JSON:', e.message)
+          if (slug) {
+            console.warn('📝 Slug:', slug)
+            console.warn('📄 Raw string:', jsonString)
+          }
+        }
+        return fallback
       }
-      return fallback
     }
   }
 
@@ -95,25 +104,7 @@ function parseCustomFields(rawPost: any) {
     customFields.faqQuestions = tryParseJson(rawPost.faqData, [], rawPost.slug)
   }
 
-  // Parse related topics
-  if (rawPost.relatedTopics) {
-    customFields.relatedTopics = rawPost.relatedTopics
-      .split(',')
-      .map((t: string) => t.trim())
-      .filter((t: string) => t.length > 0)
-  }
-
-  // Parse expert sources
-  if (rawPost.expertSources) {
-    customFields.expertSources = rawPost.expertSources
-      .split(',')
-      .map((s: string) => s.trim())
-      .filter((s: string) => s.length > 0)
-  }
-
   // Simple field mappings
-  if (rawPost.authorCredentials)
-    customFields.authorCredentials = rawPost.authorCredentials
   if (rawPost.readingTime) {
     const parsedTime = parseInt(rawPost.readingTime, 10)
     if (!isNaN(parsedTime)) {

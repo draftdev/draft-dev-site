@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: 'Developer Tutorials - Draft.dev',
   description:
     "We write tutorials designed to reach software engineers. Learn more about Draft.dev's technical content writing services and see our tutorial samples.",
-  keywords:
-    'developer tutorials, technical tutorials, software engineering guides, programming tutorials, developer marketing',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

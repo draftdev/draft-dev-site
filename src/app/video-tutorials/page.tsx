@@ -12,8 +12,6 @@ export const metadata: Metadata = {
   title: 'Technical Video Tutorials - Draft.dev',
   description:
     'Transform complex technical features into engaging video tutorials. We create product-focused videos that drive developer adoption, reduce support tickets, and accelerate sales cycles.',
-  keywords:
-    'technical video content, developer video tutorials, technical demos, video marketing for developers',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

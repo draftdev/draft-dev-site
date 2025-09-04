@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   title: 'Case Studies - Draft.dev Success Stories',
   description:
     'Learn why clients like Supabase, JetBrains, Loft Labs, Earthly, Redpanda, Sinch Mailgun, and others choose Draft.dev for their technical content marketing needs.',
-  keywords:
-    'draft.dev case studies, technical content marketing results, developer relations success stories, client testimonials',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

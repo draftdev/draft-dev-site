@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Technical Content Ideas - Draft.dev',
   description:
     'Get inspired with technical content ideas and topics that resonate with developer audiences. Discover trending topics in technical content marketing.',
-  keywords:
-    'technical content ideas, developer content topics, technical blog ideas, content inspiration for developers',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

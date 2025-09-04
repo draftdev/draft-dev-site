@@ -11,8 +11,6 @@ export const metadata: Metadata = {
   title: 'Free Asana Content Calendar Template - Draft.dev',
   description:
     'Free Asana content calendar template. Includes workflow stages, automation tips, and more.',
-  keywords:
-    'asana content calendar template, free content calendar template, asana editorial calendar, content planning template, content calendar download',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

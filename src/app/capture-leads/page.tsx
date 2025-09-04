@@ -13,8 +13,6 @@ export const metadata: Metadata = {
   title: 'Inbound Lead Generation and Technical Copy Writing - Draft.dev',
   description:
     "Discover how Draft.dev's strategic technical content helps tech companies capture qualified leads from developers and technical decision makers.",
-  keywords:
-    'capture leads developers, technical lead generation, developer marketing leads, technical content conversion',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

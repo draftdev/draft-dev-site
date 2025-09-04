@@ -22,9 +22,6 @@ interface Post {
   author?: {
     node: {
       name: string
-      avatar?: {
-        url: string
-      }
     }
   }
   originalAuthor?: string | null
@@ -39,14 +36,10 @@ interface Post {
       question: string
       answer: string
     }>
-    targetKeywords?: string[]
-    authorCredentials?: string
     readingTime?: number
-    expertSources?: string[]
     videoUrl?: string
     authorLinkedIn?: string
     authorTwitter?: string
-    relatedTopics?: string[]
   }
 }
 
@@ -152,7 +145,7 @@ export default function LoadMorePostsClient({
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHB0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
                 </Link>
               </div>
 
@@ -180,7 +173,7 @@ export default function LoadMorePostsClient({
           <button
             onClick={handleLoadMore}
             disabled={isPending}
-            className="rounded-md bg-gradient-brand px-4 py-2 text-lg text-white hover:bg-gradient-1 disabled:opacity-50"
+            className="bg-gradient-brand hover:bg-gradient-1 rounded-md px-4 py-2 text-lg text-white disabled:opacity-50"
           >
             {isPending ? 'Loading...' : 'Load More'}
           </button>

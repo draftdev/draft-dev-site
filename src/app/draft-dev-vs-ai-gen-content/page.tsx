@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   title: 'Why Human Expertise Beats AI for Technical Content - Draft.dev',
   description:
     'AI-generated content can get flagged, penalized, and ignored by developers. Get authentic technical content from real experts who provide original insights, tested code, and genuine value.',
-  keywords: 'draft.dev, freelancer, devtool content',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

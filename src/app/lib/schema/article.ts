@@ -13,8 +13,6 @@ export function generatePersonAuthor(post: Post) {
   const baseAuthor = {
     '@type': 'Person',
     name: authorName,
-    jobTitle:
-      post.customFields?.authorCredentials || 'Technical Content Writer',
     description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     url: 'https://draft.dev/about',

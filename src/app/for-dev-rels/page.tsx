@@ -15,8 +15,6 @@ export const metadata: Metadata = {
   title: 'Content Marketing for Developer Relations - Draft.dev',
   description:
     'Empower DevRel teams with expert technical content that builds community, drives adoption, and showcases your technical expertise.',
-  keywords:
-    'developer relations content, devrel content marketing, developer community content, technical community building',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',

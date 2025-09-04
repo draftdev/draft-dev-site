@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   title: 'Privacy Policy - Draft.dev',
   description:
     "Draft.dev's privacy policy explaining how we collect, use, and protect your personal information when you use our technical content marketing services.",
-  keywords:
-    'draft.dev privacy policy, privacy protection, data security, personal information policy',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
