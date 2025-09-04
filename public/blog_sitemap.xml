@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/b2b-copywriting-drives-demand</loc>
+    <lastmod>2025-09-03T15:24:37Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/top-technical-content-marketing-agencies</loc>
     <lastmod>2025-08-26T15:26:38Z</lastmod>
     <priority>0.8</priority>
@@ -42,7 +47,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-video-marketing-improves-seo</loc>
-    <lastmod>2025-08-05T15:25:56Z</lastmod>
+    <lastmod>2025-08-29T07:20:11Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -132,7 +137,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-blogs</loc>
-    <lastmod>2025-08-21T11:22:07Z</lastmod>
+    <lastmod>2025-09-04T11:17:43Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -192,7 +197,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/software-development-blogs</loc>
-    <lastmod>2025-08-21T11:17:12Z</lastmod>
+    <lastmod>2025-09-04T11:20:26Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -217,7 +222,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/python-blogs</loc>
-    <lastmod>2025-07-26T11:03:32Z</lastmod>
+    <lastmod>2025-09-04T11:36:20Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -232,7 +237,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-best-technical-writing-blogs</loc>
-    <lastmod>2025-07-26T11:16:38Z</lastmod>
+    <lastmod>2025-09-04T11:23:59Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -272,7 +277,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-documentation-what-it-is-and-how-to-do-it-well</loc>
-    <lastmod>2025-03-31T14:58:32Z</lastmod>
+    <lastmod>2025-09-02T15:33:17Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -307,12 +312,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-ultimate-list-of-developer-podcasts</loc>
-    <lastmod>2025-08-14T14:26:28Z</lastmod>
+    <lastmod>2025-09-04T11:13:02Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/the-ultimate-list-of-developer-newsletters</loc>
-    <lastmod>2025-07-26T11:21:28Z</lastmod>
+    <lastmod>2025-09-04T11:11:47Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -417,7 +422,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/maximizing-your-content-marketing-roi</loc>
-    <lastmod>2025-07-29T09:57:56Z</lastmod>
+    <lastmod>2025-09-04T11:50:08Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -447,17 +452,17 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/best-cybersecurity-blogs</loc>
-    <lastmod>2025-07-26T11:15:56Z</lastmod>
+    <lastmod>2025-09-04T11:25:25Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-data-science-machine-learning-and-ai-blogs</loc>
-    <lastmod>2025-07-26T11:14:38Z</lastmod>
+    <lastmod>2025-09-04T11:27:00Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/best-crypto-and-cryptocurrency-blogs</loc>
-    <lastmod>2025-07-26T11:07:53Z</lastmod>
+    <lastmod>2025-09-04T11:32:10Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -532,7 +537,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/101-content-marketing-tips-and-resources</loc>
-    <lastmod>2025-07-28T15:37:58Z</lastmod>
+    <lastmod>2025-09-04T11:47:48Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -552,7 +557,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/ultimate-guide-to-technical-writing</loc>
-    <lastmod>2025-07-26T11:31:06Z</lastmod>
+    <lastmod>2025-09-04T11:42:16Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -572,7 +577,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-to-write-persuasive-technical-content</loc>
-    <lastmod>2025-07-28T15:01:02Z</lastmod>
+    <lastmod>2025-09-04T11:42:53Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -602,7 +607,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-to-write-technical-comparisons</loc>
-    <lastmod>2025-07-28T15:19:48Z</lastmod>
+    <lastmod>2025-09-04T11:44:41Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -612,7 +617,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/generating-content-ideas-that-will-resonate-with-software-developers</loc>
-    <lastmod>2025-07-29T10:07:34Z</lastmod>
+    <lastmod>2025-09-04T11:52:18Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -622,7 +627,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/the-b2b-saas-marketing-guide</loc>
-    <lastmod>2025-07-29T09:34:28Z</lastmod>
+    <lastmod>2025-09-04T11:48:56Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -647,7 +652,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/b2b-demand-generation-tips-and-tactics</loc>
-    <lastmod>2025-07-29T09:40:31Z</lastmod>
+    <lastmod>2025-09-04T11:49:33Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -667,12 +672,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/how-to-write-technical-thought-leadership</loc>
-    <lastmod>2025-07-28T15:07:50Z</lastmod>
+    <lastmod>2025-09-04T11:43:30Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/how-to-write-technical-guides</loc>
-    <lastmod>2025-07-28T15:29:20Z</lastmod>
+    <lastmod>2025-09-04T11:46:11Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -712,7 +717,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/a-complete-introduction-to-technical-marketing</loc>
-    <lastmod>2025-07-29T09:29:40Z</lastmod>
+    <lastmod>2025-09-04T11:48:29Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -832,7 +837,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/writing-technical-roundups</loc>
-    <lastmod>2025-07-28T15:33:34Z</lastmod>
+    <lastmod>2025-09-04T11:46:40Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -847,7 +852,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/golang-blogs</loc>
-    <lastmod>2025-07-26T11:04:42Z</lastmod>
+    <lastmod>2025-09-04T11:37:56Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -857,7 +862,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/engineering-blogs</loc>
-    <lastmod>2025-07-26T11:17:12Z</lastmod>
+    <lastmod>2025-09-04T11:22:27Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -867,7 +872,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/c-sharp-blogs</loc>
-    <lastmod>2025-07-26T11:04:12Z</lastmod>
+    <lastmod>2025-09-04T11:39:55Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -882,12 +887,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/computer-science-blogs</loc>
-    <lastmod>2025-07-26T11:05:51Z</lastmod>
+    <lastmod>2025-09-04T11:40:30Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-tutorials</loc>
-    <lastmod>2025-07-28T15:25:02Z</lastmod>
+    <lastmod>2025-09-04T11:45:46Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -897,12 +902,12 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/ruby-blogs</loc>
-    <lastmod>2025-07-26T11:06:57Z</lastmod>
+    <lastmod>2025-09-04T11:32:46Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/javascript-blogs</loc>
-    <lastmod>2025-07-26T11:32:20Z</lastmod>
+    <lastmod>2025-09-04T11:34:33Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -917,17 +922,17 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/php-blogs</loc>
-    <lastmod>2025-07-26T11:02:31Z</lastmod>
+    <lastmod>2025-09-04T11:35:41Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/content-plan</loc>
-    <lastmod>2025-07-29T10:01:15Z</lastmod>
+    <lastmod>2025-09-04T11:51:31Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://draft.dev/learn/promotion</loc>
-    <lastmod>2025-07-25T17:44:29Z</lastmod>
+    <lastmod>2025-09-04T11:08:49Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
