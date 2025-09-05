@@ -78,7 +78,6 @@ const Hero: React.FC = () => {
                           priority
                           fetchPriority="high"
                           sizes="(min-width:1280px) 400px, (min-width:1024px) 320px, 90vw"
-                          quality={70}
                           placeholder="blur"
                         />
                       </div>
