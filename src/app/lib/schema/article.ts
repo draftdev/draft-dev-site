@@ -57,8 +57,7 @@ export function generateFAQPageSchema(post: Post, slug: string) {
 
 export const generateArticleSchema = cache((post: Post, slug: string) => {
   const wordCount = estimateWordCount(post.content)
-  const readingTime =
-    post.customFields?.readingTime || Math.ceil(wordCount / 200)
+  const readingTime = Math.ceil(wordCount / 200)
   const publishedDate = post.date
     ? new Date(post.date).toISOString()
     : new Date().toISOString()

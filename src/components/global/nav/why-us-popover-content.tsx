@@ -46,9 +46,9 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-1 gap-x-6 gap-y-10 lg:grid-cols-2">
-      {/* Left: nav sections */}
-      <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8">
+    <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-0">
+      {/* Left: nav sections - stacks on mobile, 1/3 on desktop */}
+      <div className="grid grid-cols-2 gap-x-6 lg:col-span-1">
         <div>
           <h3 className="text-sm font-medium text-gray-500">Use Cases</h3>
           <div className="mt-4 space-y-2">
@@ -56,7 +56,7 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex gap-x-3 py-2 text-sm font-semibold text-gray-700 hover:text-gray-800"
+                className="block py-2 text-sm font-semibold text-gray-700 hover:text-gray-800"
                 onClick={(e) => go(e, item.href)}
               >
                 {item.name}
@@ -72,7 +72,7 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="flex gap-x-3 py-2 text-sm font-semibold text-gray-700 hover:text-gray-800"
+                className="block py-2 text-sm font-semibold text-gray-700 hover:text-gray-800"
                 onClick={(e) => go(e, item.href)}
               >
                 {item.name}
@@ -82,11 +82,11 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
         </div>
       </div>
 
-      {/* Right: recent posts */}
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      {/* Right: recent posts - stacks on mobile, 2/3 on desktop */}
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2">
         <h3 className="sr-only">Recent posts</h3>
         {recentPosts.map((post) => (
-          <article key={post.id} className="relative flex flex-col gap-y-6">
+          <article key={post.id} className="relative flex flex-col gap-y-4">
             <div className="relative flex-none">
               <Image
                 alt=""
@@ -95,7 +95,7 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
                 height={200}
                 width={300}
               />
-              <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-gray-900/10" />
+              <div className="absolute inset-0 rounded-lg ring-1 ring-gray-900/10 ring-inset" />
             </div>
             <div>
               <h4 className="text-sm font-semibold text-gray-800">
@@ -108,7 +108,7 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
                   {post.title}
                 </Link>
               </h4>
-              <p className="text-sm text-gray-600">{post.description}</p>
+              <p className="mt-1 text-sm text-gray-600">{post.description}</p>
             </div>
           </article>
         ))}

@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import WhyUsPopoverContent from './why-us-popover-content'
+import ServicesPopoverContent from './services-popover-content'
 
 function CloseIconInline({ className = 'h-5 w-5' }: { className?: string }) {
   return (
@@ -20,7 +20,7 @@ function CloseIconInline({ className = 'h-5 w-5' }: { className?: string }) {
   )
 }
 
-export default memo(function WhyUsPopover({
+export default memo(function ServicesPopover({
   open,
   onToggle,
   onClose,
@@ -30,24 +30,27 @@ export default memo(function WhyUsPopover({
   onClose: () => void
 }) {
   return (
-    <div className="relative">
+    <div className="static">
       <button
-        id="why-us-button"
+        id="services-button"
         className="flex items-center px-1 pt-1 text-sm font-medium whitespace-nowrap text-gray-700 hover:bg-gray-100/80 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
         onClick={onToggle}
         aria-expanded={open}
         aria-haspopup="dialog"
       >
-        Why Us?
+        Services
       </button>
 
       {open && (
         <>
           <div
-            id="why-us-popover"
+            id="services-popover"
             role="dialog"
             aria-modal="true"
-            className="fixed top-30 left-1/2 z-50 w-[90vw] max-w-4xl -translate-x-1/2 overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 sm:w-[85vw]"
+            className="absolute left-1/2 z-50 mt-3 w-[90vw] max-w-4xl -translate-x-1/2 transform overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 sm:w-[85vw]"
+            style={{
+              marginLeft: 'calc(-50vw + 50%)',
+            }}
           >
             <div className="absolute top-4 right-5">
               <button
@@ -60,7 +63,7 @@ export default memo(function WhyUsPopover({
               </button>
             </div>
             <div className="max-h-[calc(100vh-10rem)] overflow-y-auto p-4 sm:p-5 lg:p-6">
-              <WhyUsPopoverContent onClose={onClose} />
+              <ServicesPopoverContent onClose={onClose} />
             </div>
           </div>
         </>
