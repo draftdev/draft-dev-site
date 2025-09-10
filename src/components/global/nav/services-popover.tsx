@@ -54,7 +54,7 @@ export default memo(function ServicesPopover({
     <div className="static">
       <button
         id="services-button"
-        className="flex items-center px-1 pt-1 text-sm font-medium whitespace-nowrap text-gray-700 hover:bg-gray-100/80 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
+        className="flex items-center px-1 pt-1 text-base font-medium whitespace-nowrap text-gray-700 hover:bg-gray-100/80 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
         onClick={onToggle}
         aria-expanded={open}
         aria-haspopup="dialog"
