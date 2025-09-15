@@ -1,20 +1,77 @@
+// page 1
+
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
+import { Resources } from '@/components/page-components/mega-guide/Resources'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Marketing Foundations in the Age of AI',
+  metadataBase: new URL('https://draft.dev'),
+  title:
+    'An Introduction to Technical Content Marketing in the AI Era - Draft.dev',
   description:
     'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content-marketing-in-the-age-of-ai/introduction',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title:
+      'An Introduction to Technical Content Marketing in the AI Era - Draft.dev',
+    description:
+      'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/introduction-technical-content-marketing-in-the-ai-era.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Introduction to technical content marketing in the AI era.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'An Introduction to Technical Content Marketing in the AI Era - Draft.dev',
+    description:
+      'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
+    images: [
+      '/draft/og/mega-guide/introduction-technical-content-marketing-in-the-ai-era.jpg',
+    ],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical:
+      'https://draft.dev/technical-content/introduction-to-content-marketing',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
   {
-    id: 'introduction-to-technical-content-marketing-in-the-ai-era',
-    title: 'Introduction to Technical Content Marketing in the AI Era',
+    id: 'content-marketing-in-the-age-of-ai',
+    title: 'Content Marketing in the Age of AI',
     offsetRem: 6,
   },
   {
@@ -24,15 +81,50 @@ export const sections: Array<Section> = [
   },
 ]
 
-export default function TechnicalContentMarketingFoundationsPage() {
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/technical-content-marketing',
+    name: 'Setting Up Your Technical Content Marketing Engine',
+    description: 'Launch a fast, structured, analytics-ready stack.',
+  },
+  {
+    slug: '/content-calendar',
+    name: 'Content Calendar Creation and Management',
+    description: 'Plan cadence, buffers, and predictable output.',
+  },
+  {
+    slug: '/content-funnel',
+    name: 'Understanding the Content Funnel',
+    description: 'Move readers from awareness to product outcomes.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: 'https://draft.dev/content-marketing-engine',
+    name: 'eBook: Content Marketing Engine in the Age of AI',
+    description: 'Systems, cadence, and measurement.',
+  },
+  {
+    href: '/blog/technical-content-refresh-checklist',
+    name: 'Technical Content Refresh Checklist',
+    description: 'Keep top performers fresh for AI citations.',
+  },
+  {
+    href: '/blog/how-to-build-a-content-calendar',
+    name: 'How to Build a Content Calendar',
+    description: 'Simple, spreadsheet-friendly setup.',
+  },
+]
+
+export default function IntroToContentMarketingPage() {
   return (
     <Page
-      title="Technical Content Marketing Foundations in the Age of AI"
+      title="An Introduction to Technical Content Marketing in the AI Era"
       lead="Build a predictable, AI-era-ready content engine for technical audiences—optimize for traffic, leads, and influence in AI systems."
     >
-      {/* === INTRO === */}
-      <Heading id="introduction-to-technical-content-marketing-in-the-ai-era">
-        Introduction to Technical Content Marketing in the AI Era
+      <Heading id="content-marketing-in-the-age-of-ai">
+        Content Marketing in the Age of AI
       </Heading>
 
       <h3 className="mt-6 text-zinc-600">
@@ -142,7 +234,6 @@ export default function TechnicalContentMarketingFoundationsPage() {
         </li>
       </ul>
 
-      {/* === SECTION 2 === */}
       <Heading id="content-marketing-needs-to-drive-revenue">
         Content Marketing Needs to Drive Revenue
       </Heading>
@@ -246,6 +337,8 @@ export default function TechnicalContentMarketingFoundationsPage() {
         Finally, we&apos;ll show you how to set up and use a content calendar to
         ensure that your content engine is consistent and predictable.
       </p>
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

@@ -1,42 +1,33 @@
+// src/components/page-components/mega-guide/Guides.tsx
 import Link from 'next/link'
+import type { GuideLink } from './types'
 
-const BASE = '/technical-content-marketing-in-the-age-of-ai'
-
-const guides = [
-  {
-    slug: '/creating-evergreen-content-that-drives-traffic',
-    name: 'Evergreen Content',
-    description: 'Plan clusters and publish SEO-ready, durable posts.',
-  },
-  {
-    slug: '/creating-viral-spiky-content',
-    name: 'Spiky Content',
-    description: 'Engineer shareable pieces and leverage the spike.',
-  },
-  {
-    slug: '/creating-gated-assets-that-convert',
-    name: 'Gated Assets',
-    description: 'High-value technical lead magnets that actually convert.',
-  },
-]
-
-export function Guides() {
+export function Guides({
+  basePath,
+  items,
+  heading = 'Next Up',
+}: {
+  basePath: string
+  items: GuideLink[]
+  heading?: string
+}) {
   return (
     <section>
-      <h2 className="sitemap-heading">Next Up</h2>
-      <div className="mt-4 grid grid-cols-1 gap-6 border-t border-gray-200 pt-6 sm:grid-cols-3">
-        {guides.map((g) => (
-          <div key={g.slug}>
-            <h3 className="text-sm font-semibold text-gray-900">{g.name}</h3>
-            <p className="mt-1 text-sm text-gray-600">{g.description}</p>
-            <p className="mt-3">
+      <h2 className="sitemap-heading text-3xl">{heading}</h2>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {items.map((g) => (
+          <div
+            key={g.slug}
+            className="relative rounded-xl p-4 ring-1 ring-gray-200"
+          >
+            <h3 className="text-sm font-semibold text-gray-900">
               <Link
-                href={`${BASE}${g.slug}`}
+                href={`${basePath}${g.slug}`}
                 className="text-[color:var(--color-primary)] underline hover:text-[color:var(--color-primary-80)]"
               >
-                Read more →
+                {g.name}
               </Link>
-            </p>
+            </h3>
           </div>
         ))}
       </div>

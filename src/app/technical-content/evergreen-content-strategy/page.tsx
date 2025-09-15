@@ -1,16 +1,64 @@
+// page 5
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Creating Evergreen Content That Drives Traffic',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Evergreen Content Strategy to Drive Consistent Traffic - Draft.dev',
   description:
     'Evergreen vs spiky content, topic discovery, clusters, AI-era SEO, and refresh cycles for predictable growth.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/evergreen-content-strategy',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Evergreen Content Strategy to Drive Consistent Traffic - Draft.dev',
+    description:
+      'Evergreen vs spiky content, topic discovery, clusters, AI-era SEO, and refresh cycles for predictable growth.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/evergreen-content-strategy.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Evergreen technical content that compounds over time.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Evergreen Content Strategy to Drive Consistent Traffic - Draft.dev',
+    description:
+      'Evergreen vs spiky content, topic discovery, clusters, AI-era SEO, and refresh cycles for predictable growth.',
+    images: ['/draft/og/mega-guide/evergreen-content-strategy.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content/evergreen-content-strategy',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -28,6 +76,42 @@ export const sections: Array<Section> = [
     id: 'maintaining-evergreen-content',
     title: 'Maintaining Evergreen Content',
     offsetRem: 8,
+  },
+]
+
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/viral-content',
+    name: 'Viral Content Creation',
+    description: 'Balance spikes with durable compounding assets.',
+  },
+  {
+    slug: '/content-calendar',
+    name: 'Content Calendar Creation and Management',
+    description: 'Ship on time; keep a healthy buffer.',
+  },
+  {
+    slug: '/social-media-marketing-plan-template',
+    name: 'Social Media Marketing Plan and Template',
+    description: 'Distribute smartly across channels.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: 'https://draft.dev/learn',
+    name: 'Draft.dev Learn Library',
+    description: 'Developer-grade examples and guides.',
+  },
+  {
+    href: '/blog/evergreen-content-brief-template',
+    name: 'Evergreen Brief Template',
+    description: 'Handy template to standardize briefs.',
+  },
+  {
+    href: 'https://draft.dev/content-refreshes',
+    name: 'How to Run Content Refreshes',
+    description: '90–120 day refresh rhythm.',
   },
 ]
 
@@ -349,8 +433,8 @@ export default function EvergreenContentPage() {
         mix better than spiky content.
       </p>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

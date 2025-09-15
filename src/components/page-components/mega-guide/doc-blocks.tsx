@@ -2,13 +2,7 @@
 'use client'
 
 import clsx from 'clsx'
-import Link from 'next/link'
-import { createContext, useEffect, useRef } from 'react'
-import { useSectionStore } from './section-provider'
-import { Tag } from './Tag'
 
-/** ————— Page shell ————— */
-// doc-blocks.tsx
 export function Page({
   title,
   lead,
@@ -19,65 +13,31 @@ export function Page({
   children: React.ReactNode
 }) {
   return (
-    <article className="prose prose-h1:mt-0 max-w-none">
-      <header className="mt-0 mb-6">
+    // match blog typography + no clamp
+    <article className="prose prose-lg prose-blue max-w-none">
+      {/* keep custom heading styles out of typography resets */}
+      <header className="not-prose mt-0 mb-6">
         <h1 className="header-dark !mt-0">{title}</h1>
         {lead && <p className="lead-dark">{lead}</p>}
       </header>
 
-      <div className="prose">{children}</div>
-      {/* … */}
+      {/* IMPORTANT: don't add another `.prose` here */}
+      <div className="contents">{children}</div>
     </article>
   )
 }
 
-/** ————— Headings that register with SectionProvider ————— */
-const AnchorContext = createContext<string | null>(null)
-
 export function Heading({
   id,
   children,
-  tag,
-  label,
 }: {
   id: string
   children: React.ReactNode
-  tag?: string
-  label?: string
 }) {
-  const ref = useRef<HTMLHeadingElement>(null)
-  const register = useSectionStore((s) => s.registerHeading)
-
-  useEffect(() => {
-    register({ id, ref, offsetRem: tag || label ? 8 : 6 })
-  }, [id, register, tag, label])
-
   return (
-    <>
-      <div className="flex items-center gap-3">
-        {tag && <Tag>{tag as any}</Tag>}
-        {tag && label && <span className="h-1 w-1 rounded-full bg-gray-300" />}
-        {label && (
-          <span className="font-mono text-base text-gray-500">{label}</span>
-        )}
-      </div>
-      <h2
-        id={id}
-        ref={ref}
-        className={clsx(
-          tag || label ? 'mt-2 scroll-mt-32' : 'scroll-mt-24',
-          'subheader-dark',
-        )}
-      >
-        <Link
-          href={`#${id}`}
-          className="text-inherit no-underline hover:underline"
-        >
-          {children}
-        </Link>
-      </h2>
-      <AnchorContext.Provider value={id}>{null}</AnchorContext.Provider>
-    </>
+    <h2 id={id} className={clsx('subheader-dark scroll-mt-24')}>
+      {children}
+    </h2>
   )
 }
 
@@ -109,7 +69,7 @@ export function Col({
   )
 }
 
-/** ————— Properties list ————— */
+/** ————— Simple properties list ————— */
 export function Properties({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-6">
@@ -147,41 +107,7 @@ export function Property({
   )
 }
 
-/** ————— Code blocks ————— */
-export function CodeGroup({
-  title,
-  tag,
-  label,
-  children,
-}: {
-  title: string
-  tag?: string
-  label?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className="my-6 overflow-hidden rounded-xl ring-1 ring-gray-200">
-      {(title || tag || label) && (
-        <div className="flex items-center gap-2 border-b border-gray-200 bg-white px-4 py-2">
-          {title && (
-            <h3 className="mr-auto text-xs font-semibold text-gray-700">
-              {title}
-            </h3>
-          )}
-          {tag && <Tag>{tag as any}</Tag>}
-          {tag && label && (
-            <span className="h-1 w-1 rounded-full bg-gray-300" />
-          )}
-          {label && (
-            <span className="font-mono text-xs text-gray-500">{label}</span>
-          )}
-        </div>
-      )}
-      <div className="bg-gray-50">{children}</div>
-    </div>
-  )
-}
-
+/** ————— Simple code blocks ————— */
 export function Code({
   children,
   title,
@@ -190,8 +116,15 @@ export function Code({
   title?: string
 }) {
   return (
-    <pre className="overflow-x-auto p-4 text-sm">
-      <code className="font-code whitespace-pre">{children.trim()}</code>
-    </pre>
+    <figure className="not-prose my-6 overflow-hidden rounded-xl ring-1 ring-gray-200">
+      {title && (
+        <figcaption className="border-b border-gray-200 bg-white px-4 py-2 text-xs font-semibold text-gray-700">
+          {title}
+        </figcaption>
+      )}
+      <pre className="overflow-x-auto bg-gray-50 p-4 text-sm">
+        <code className="font-code whitespace-pre">{children.trim()}</code>
+      </pre>
+    </figure>
   )
 }

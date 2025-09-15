@@ -1,16 +1,64 @@
+// page 6
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Creating Viral Spiky Content',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Viral Content Creation - Draft.dev',
   description:
     'What spiky content is, how to create it responsibly, and how to leverage spikes for retargeting, backlinks, and brand lift.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/viral-content',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Viral Content Creation - Draft.dev',
+    description:
+      'What spiky content is, how to create it responsibly, and how to leverage spikes for retargeting, backlinks, and brand lift.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/viral-content-creation.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Create spiky, viral content and harness traffic spikes.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Viral Content Creation - Draft.dev',
+    description:
+      'What spiky content is, how to create it responsibly, and how to leverage spikes for retargeting, backlinks, and brand lift.',
+    images: ['/draft/og/mega-guide/viral-content-creationt.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content/viral-content',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -28,6 +76,42 @@ export const sections: Array<Section> = [
     id: 'leveraging-traffic-spikes',
     title: 'Leveraging Traffic Spikes',
     offsetRem: 8,
+  },
+]
+
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/social-media-marketing-plan-template',
+    name: 'Social Media Marketing Plan and Template',
+    description: 'Amplify reach without being spammy.',
+  },
+  {
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy to drive consistent traffic',
+    description: 'Turn spikes into sustained growth.',
+  },
+  {
+    slug: '/content-funnel',
+    name: 'Understanding the Content Funnel',
+    description: 'Place spikes in a larger journey.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: '/blog/promo-checklist-for-spiky-posts',
+    name: 'Spiky Post Promo Checklist',
+    description: 'Everything to do in the first 48 hours.',
+  },
+  {
+    href: 'https://news.ycombinator.com/newest',
+    name: 'Where to Submit: HN',
+    description: 'If it fits the community—share wisely.',
+  },
+  {
+    href: 'https://ahrefs.com/blog/',
+    name: 'Backlink Prospecting Tactics',
+    description: 'Earn links, don’t beg for them.',
   },
 ]
 
@@ -337,8 +421,8 @@ export default function SpikyContentPage() {
         create a healthy, scalable, predictable content engine.
       </p>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

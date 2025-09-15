@@ -1,3 +1,5 @@
+//page 8
+
 import {
   Heading,
   Page,
@@ -7,10 +9,54 @@ import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
+const BASE_PATH = '/technical-content'
+
 export const metadata: Metadata = {
-  title: 'Creating Gated Assets That Convert',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Gated Content That Converts - Draft.dev',
   description:
     'High-value technical lead magnets: whitepapers, implementation guides, interactive tools, and developer-friendly CTAs.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/gated-content',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Gated Content That Converts - Draft.dev',
+    description:
+      'High-value technical lead magnets: whitepapers, implementation guides, interactive tools, and developer-friendly CTAs.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/gated-content.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Create gated content that technical audiences value.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gated Content That Converts - Draft.dev',
+    description:
+      'High-value technical lead magnets: whitepapers, implementation guides, interactive tools, and developer-friendly CTAs.',
+    images: ['/draft/og/mega-guide/gated-content.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content/gated-content',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -24,13 +70,51 @@ export const sections: Array<Section> = [
     title: 'Value-to-Friction Ratio',
     offsetRem: 8,
   },
-  // The remaining subsections are h3s; they’ll appear within this section
+  // remaining h3 subsections live inside these sections
 ]
 
-export default function GatedAssetsPage() {
+const nextGuides = [
+  {
+    slug: '/newsletter-sponsorships-and-content-syndication',
+    name: 'Newsletter Sponsorships & Syndication',
+    description:
+      'Drive qualified traffic to your gated assets and scale reach.',
+  },
+  {
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy',
+    description: 'Build durable traffic that compounds over time.',
+  },
+  {
+    slug: '/content-funnel',
+    name: 'Content Funnel',
+    description:
+      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
+  },
+]
+
+const resources = [
+  {
+    href: 'https://draft.dev/resources',
+    name: 'Draft.dev Resources Library',
+    description: 'Technical content playbooks, templates, and examples.',
+  },
+  {
+    href: '/blog/technical-content-refresh-checklist',
+    name: 'Technical Content Refresh Checklist',
+    description: 'Keep top performers fresh for AI citations and rankings.',
+  },
+  {
+    href: '/blog/how-to-build-a-content-calendar',
+    name: 'How to Build a Content Calendar',
+    description: 'Plan predictable publishing and buffer management.',
+  },
+]
+
+export default function GatedContentPage() {
   return (
     <Page
-      title="Creating Gated Assets That Convert"
+      title="Gated Content That Converts"
       lead="Offer implementation-grade value—code, architecture, tools—so technical audiences gladly trade an email for access."
     >
       <p>
@@ -226,8 +310,8 @@ export default function GatedAssetsPage() {
         content clusters on our Draft.dev website.
       </p>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

@@ -1,16 +1,13 @@
-// src/app/technical-content-marketing-in-the-age-of-ai/layout.tsx
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+// src/app/technical-content/layout.tsx
 import SubtreeShell from '@/components/page-components/mega-guide/subtree-shell'
+import type { Section } from '@/components/page-components/mega-guide/types'
 import glob from 'fast-glob'
 import type { Metadata } from 'next'
 
-const BASE_PATH = '/technical-content-marketing-in-the-age-of-ai'
+const BASE_PATH = '/technical-content' // matches nav-data.ts
 
 export const metadata: Metadata = {
-  title: {
-    template: '%s - Technical Content Marketing in the Age of AI',
-    default: 'Technical Content Marketing in the Age of AI',
-  },
+  title: 'Technical Content Marketing in the Age of AI',
 }
 
 export default async function Layout({
@@ -19,7 +16,7 @@ export default async function Layout({
   children: React.ReactNode
 }) {
   const pages = await glob('**/page.@(mdx|tsx)', {
-    cwd: 'src/app/technical-content-marketing-in-the-age-of-ai',
+    cwd: 'src/app/technical-content', // <-- update
   })
 
   const entries = await Promise.all(

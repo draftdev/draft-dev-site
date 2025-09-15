@@ -303,6 +303,15 @@ body {
   color: var(--color-primary-80);
 }
 
+.prose :where(h3):not(:where(.not-prose *)) {
+  @apply mt-6 mb-3 font-semibold text-gray-900;
+  font-size: 1.375rem; /* ~22px */
+  line-height: 1.35;
+}
+.prose-lg :where(h3):not(:where(.not-prose *)) {
+  font-size: 1.2rem; /* bump on .prose-lg */
+}
+
 /* misc */
 .list-header {
   @apply font-code text-3xl font-semibold text-white sm:tracking-tighter;

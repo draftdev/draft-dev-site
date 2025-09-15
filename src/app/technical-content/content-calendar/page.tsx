@@ -1,10 +1,17 @@
+// page 3
+
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -28,6 +35,42 @@ export const sections: Array<Section> = [
     id: 'content-calendar-in-action',
     title: 'Content Calendar in Action',
     offsetRem: 8,
+  },
+]
+
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/creating-evergreen-content-that-drives-traffic',
+    name: 'Evergreen Content',
+    description: 'Plan clusters and publish SEO-ready, durable posts.',
+  },
+  {
+    slug: '/creating-viral-spiky-content',
+    name: 'Spiky Content',
+    description: 'Engineer shareable pieces and leverage the spike.',
+  },
+  {
+    slug: '/orchestrating-technical-content-through-the-funnel',
+    name: 'Orchestrating Through the Funnel',
+    description: 'Map content to stages and move people, not pixels.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: 'https://draft.dev/content-marketing-engine',
+    name: 'eBook: Content Marketing Engine in the Age of AI',
+    description: 'A practical guide to building a predictable engine.',
+  },
+  {
+    href: '/blog/technical-content-refresh-checklist',
+    name: 'Technical Content Refresh Checklist',
+    description: 'Keep top performers fresh for AI citations.',
+  },
+  {
+    href: '/blog/how-to-build-a-content-calendar',
+    name: 'How to Build a Content Calendar',
+    description: 'Simple, spreadsheet-friendly setup you can copy.',
   },
 ]
 
@@ -66,6 +109,7 @@ export default function ContentCalendarsPage() {
         You know when new content will be published and you have a healthy
         backlog of content that is ready to publish.
       </p>
+
       <hr className="my-10" />
 
       <h3 className="mt-6 text-zinc-600">Why do I need a content calendar?</h3>
@@ -296,8 +340,9 @@ export default function ContentCalendarsPage() {
         peace of mind it provides are well worth it.
       </p>
 
-      <Guides />
-      <Resources />
+      {/* 👇 Add these near the bottom */}
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

@@ -1,14 +1,20 @@
+// page 7
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Distribution and Promotion Across Social Channels',
+  title: 'Social Media Marketing Plan and Template',
   description:
     'Platform-specific strategies for Twitter/X, LinkedIn, Facebook, and visual platforms to promote technical content effectively.',
 }
@@ -25,6 +31,42 @@ export const sections: Array<Section> = [
     offsetRem: 8,
   },
   { id: 'visual-platforms', title: 'Visual Platforms', offsetRem: 8 },
+]
+
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/content-calendar',
+    name: 'Content Calendar Creation and Management',
+    description: 'Schedule campaigns with your publishing rhythm.',
+  },
+  {
+    slug: '/viral-content',
+    name: 'Viral Content Creation',
+    description: 'Design spikes; prep distribution.',
+  },
+  {
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy to drive consistent traffic',
+    description: 'Anchor social with durable resources.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: '/blog/social-snippet-templates',
+    name: 'Social Post Snippet Templates',
+    description: 'Copy/paste formats that perform.',
+  },
+  {
+    href: '/blog/utm-builder',
+    name: 'UTM Builder Spreadsheet',
+    description: 'Track channel attribution cleanly.',
+  },
+  {
+    href: 'https://buffer.com/library/social-media-calendar/',
+    name: 'Social Calendar Tactics',
+    description: 'Useful patterns and cadence tips.',
+  },
 ]
 
 export default function SocialDistributionPage() {
@@ -490,8 +532,8 @@ export default function SocialDistributionPage() {
         engagement.
       </p>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

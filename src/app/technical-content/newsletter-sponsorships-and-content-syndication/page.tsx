@@ -1,3 +1,5 @@
+//page 9
+
 import {
   Heading,
   Page,
@@ -7,11 +9,12 @@ import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
+const BASE_PATH = '/technical-content'
+
 export const metadata: Metadata = {
-  title:
-    'Newsletter Sponsorships and Content Syndication for Technical Content',
+  title: 'Newsletter Sponsorships & Content Syndication for Technical Content',
   description:
-    'Plan newsletter sponsorships, calculate CPL, track attribution, and syndicate technical content with canonical best practices.',
+    'Plan newsletter buys, calculate CPL, track attribution, and syndicate technical content with canonical best practices.',
 }
 
 export const sections: Array<Section> = [
@@ -27,11 +30,46 @@ export const sections: Array<Section> = [
   },
   {
     id: 'how-to-submit-to-hackernews-and-reddit',
-    title: 'How do I best submit technical content to HackerNews and Reddit?',
+    title: 'How to Submit to Hacker News & Reddit',
     offsetRem: 8,
   },
 ]
 
+const nextGuides = [
+  {
+    slug: '/creating-gated-assets-that-convert',
+    name: 'Creating Gated Assets That Convert',
+    description: 'Package implementation-grade value for lead capture.',
+  },
+  {
+    slug: '/social-media-marketing-plan-template',
+    name: 'Social Media Marketing Plan',
+    description: 'Channel playbooks and schedules for distribution.',
+  },
+  {
+    slug: '/content-funnel',
+    name: 'Content Funnel',
+    description: 'Balance TOFU/MOFU/BOFU and measure movement.',
+  },
+]
+
+const resources = [
+  {
+    href: 'https://cooperpress.com/publications/',
+    name: 'CooperPress Developer Newsletters',
+    description: 'High-signal placements for reaching dev audiences.',
+  },
+  {
+    href: '/blog/canonical-tags-for-content-syndication',
+    name: 'Canonical Tags for Syndication',
+    description: 'Avoid duplicate content and consolidate link equity.',
+  },
+  {
+    href: 'https://draft.dev/resources',
+    name: 'Draft.dev Resources Library',
+    description: 'Technical content templates, guides, and examples.',
+  },
+]
 export default function NewsletterSponsorshipsSyndicationPage() {
   return (
     <Page
@@ -452,8 +490,8 @@ export default function NewsletterSponsorshipsSyndicationPage() {
         </table>
       </div>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

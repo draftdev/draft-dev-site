@@ -1,22 +1,70 @@
+// page 4
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Orchestrating Technical Content Through the Funnel',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Understanding the Content Funnel - Draft.dev',
   description:
     'Map TOFU/MOFU/BOFU, build the right mix, and intentionally move readers toward product outcomes.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/content-funnel',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Understanding the Content Funnel - Draft.dev',
+    description:
+      'Map TOFU/MOFU/BOFU, build the right mix, and intentionally move readers toward product outcomes.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/content-funnel.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Understand and orchestrate the content funnel.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Understanding the Content Funnel - Draft.dev',
+    description:
+      'Map TOFU/MOFU/BOFU, build the right mix, and intentionally move readers toward product outcomes.',
+    images: ['/draft/og/mega-guide/content-funnel.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content/content-funnel',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
   {
-    id: 'understanding-the-content-funnel',
-    title: 'Understanding the Content Funnel',
+    id: 'orchestrating-content-through-the-funnel',
+    title: 'Orchestrating Content Through the Funnel',
     offsetRem: 6,
   },
   { id: 'content-mix-strategy', title: 'Content Mix Strategy', offsetRem: 8 },
@@ -28,10 +76,45 @@ export const sections: Array<Section> = [
   { id: 'intent-mapping', title: 'Intent mapping', offsetRem: 8 },
 ]
 
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy to drive consistent traffic',
+    description: 'Durable traffic that compounds.',
+  },
+  {
+    slug: '/viral-content',
+    name: 'Viral Content Creation',
+    description: 'Shareable spikes and how to harness them.',
+  },
+  {
+    slug: '/social-media-marketing-plan-template',
+    name: 'Social Media Marketing Plan and Template',
+    description: 'Channel-specific playbooks and schedules.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: '/blog/how-to-map-content-to-funnel-stages',
+    name: 'Mapping Content to Funnel Stages',
+    description: 'A practical worksheet.',
+  },
+  {
+    href: '/blog/internal-linking-for-funnel-movement',
+    name: 'Internal Linking to Nudge Intent',
+    description: 'Patterns that actually get clicks.',
+  },
+  {
+    href: 'https://draft.dev/case-studies',
+    name: 'Draft.dev Case Studies',
+    description: 'What a full-funnel program looks like in practice.',
+  },
+]
 export default function OrchestratingThroughFunnelPage() {
   return (
     <Page
-      title="Orchestrating Technical Content Through the Funnel"
+      title="Understanding the Content Funnel"
       lead="Design a cohesive content journey that builds credibility with developers and moves them toward product adoption."
     >
       <p>
@@ -46,8 +129,8 @@ export default function OrchestratingThroughFunnelPage() {
         team.
       </p>
 
-      <Heading id="understanding-the-content-funnel">
-        Understanding the Content Funnel
+      <Heading id="orchestrating-content-through-the-funnel">
+        Orchestrating Content Through the Funnel
       </Heading>
 
       <p>
@@ -55,7 +138,7 @@ export default function OrchestratingThroughFunnelPage() {
         readiness and intent of a reader. It consists of multiple stages.
       </p>
 
-      <h3 className="mt-6 text-zinc-600">Top of funnel (Awareness)</h3>
+      <h3 className="mt-6">Top of funnel (Awareness)</h3>
       <p>
         High up, in the <strong>top of the funnel (TOFU)</strong> we have
         readers that are &quot;far away&quot; from your product (in terms of
@@ -65,7 +148,7 @@ export default function OrchestratingThroughFunnelPage() {
         stage.
       </p>
 
-      <h3 className="mt-6 text-zinc-600">Middle of funnel (Consideration)</h3>
+      <h3 className="mt-6">Middle of funnel (Consideration)</h3>
       <p>
         In the <strong>middle of the funnel (MOFU)</strong> your readers have
         started to understand the fundamentals around your space and product.
@@ -76,7 +159,7 @@ export default function OrchestratingThroughFunnelPage() {
         <strong>Consideration</strong> stage.
       </p>
 
-      <h3 className="mt-6 text-zinc-600">Bottom of funnel (Decision)</h3>
+      <h3 className="mt-6">Bottom of funnel (Decision)</h3>
       <p>
         In the <strong>bottom of the funnel (BOFU)</strong> readers realize that
         your product/service is the best solution to the challenges they are
@@ -308,8 +391,8 @@ export default function OrchestratingThroughFunnelPage() {
         create a predictable content engine for your business.
       </p>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

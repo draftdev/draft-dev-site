@@ -1,16 +1,64 @@
+// page 2
 import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
+import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
 import { Resources } from '@/components/page-components/mega-guide/Resources'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
+import type {
+  GuideLink,
+  ResourceLink,
+  Section,
+} from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
-
 export const metadata: Metadata = {
-  title: 'Setting Up Your Technical Content Marketing Engine',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Setting Up Your Technical Content Marketing Engine - Draft.dev',
   description:
     'CMS decisions, architecture, third-party platforms, analytics and AI metrics, lead collection, and retargeting.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/technical-content-marketing',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Setting Up Your Technical Content Marketing Engine - Draft.dev',
+    description:
+      'CMS decisions, architecture, third-party platforms, analytics and AI metrics, lead collection, and retargeting.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/technical-content-marketing.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Set up a technical content marketing engine.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Setting Up Your Technical Content Marketing Engine - Draft.dev',
+    description:
+      'CMS decisions, architecture, third-party platforms, analytics and AI metrics, lead collection, and retargeting.',
+    images: ['/draft/og/mega-guide/technical-content-marketing.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical:
+      'https://draft.dev/technical-content/technical-content-marketing',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -36,6 +84,41 @@ export const sections: Array<Section> = [
   },
 ]
 
+const nextGuides: GuideLink[] = [
+  {
+    slug: '/content-calendar',
+    name: 'Content Calendar Creation and Management',
+    description: 'Buffers, cadence, and predictability.',
+  },
+  {
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy to drive consistent traffic',
+    description: 'Clusters, SEO, and refresh cycles.',
+  },
+  {
+    slug: '/viral-content',
+    name: 'Viral Content Creation',
+    description: 'Engineer spikes and turn them into compounding value.',
+  },
+]
+
+const resources: ResourceLink[] = [
+  {
+    href: 'https://draft.dev/learn/free-stock-images',
+    name: 'Free Stock Images for Technical Blogs',
+    description: 'Sources that won’t look like clip-art.',
+  },
+  {
+    href: '/blog/nextjs-ga4-setup',
+    name: 'Add GA4 to Next.js in Minutes',
+    description: 'Practical snippet + event tips.',
+  },
+  {
+    href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide',
+    name: 'Google SEO Starter Guide',
+    description: 'The canonical basics straight from the source.',
+  },
+]
 export default function SetupEnginePage() {
   return (
     <Page
@@ -792,8 +875,8 @@ export default function SetupEnginePage() {
         visited, are very powerful.
       </i>
 
-      <Guides />
-      <Resources />
+      <Guides basePath={BASE_PATH} items={nextGuides} />
+      <Resources items={resources} />
     </Page>
   )
 }

@@ -2,16 +2,56 @@ import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
-import { Guides } from '@/components/page-components/mega-guide/Guides'
-import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Technical Content Marketing in the Age of AI',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Technical Content Marketing in the Age of AI - Draft.dev',
   description:
     'A practical, opinionated playbook for building a predictable technical content engine that still wins in an AI-first search landscape.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Technical Content Marketing in the Age of AI - Draft.dev',
+    description:
+      'A practical, opinionated playbook for building a predictable technical content engine that still wins in an AI-first search landscape.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/technical-content.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Technical Content Marketing — Guide overview.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Technical Content Marketing in the Age of AI - Draft.dev',
+    description:
+      'A practical, opinionated playbook for building a predictable technical content engine that still wins in an AI-first search landscape.',
+    images: ['/draft/og/mega-guide/technical-content.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -24,7 +64,7 @@ export const sections: Array<Section> = [
 export default function GuideOverviewPage() {
   return (
     <Page
-      title="Technical Content Marketing in the Age of AI"
+      title="Technical Content Marketing"
       lead="This guide shows you how to build a reliable, data-driven content engine for technical audiences—optimized for both classic SEO and AI-overview ecosystems."
     >
       <p className="text-base">
@@ -203,9 +243,6 @@ export default function GuideOverviewPage() {
           </p>
         </div>
       </div>
-
-      <Guides />
-      <Resources />
     </Page>
   )
 }
