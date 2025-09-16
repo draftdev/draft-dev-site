@@ -58,14 +58,14 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      Step 1: Research & Strategy
+                      <span className="block">Step 1:</span> Research & Strategy
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
                       Clarity and Authenticity
                     </h4>
-                    <p className="text-base lg:text-xl">
+                    <p className="text-base sm:text-lg">
                       We analyze your industry, competitors, positioning,
                       product features, target audience, and make sure to
                       understand your brand and tone of voice, ensuring
@@ -89,14 +89,14 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      Step 2: Content Generation by AI & Humans
+                      <span className="block">Step 2:</span> Content Generation
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
                       Blending AI Efficiency and Human Accuracy
                     </h4>
-                    <p className="text-base lg:text-xl">
+                    <p className="text-base sm:text-lg">
                       We build expert-crafted AI workflows customized to your
                       unique situation. We provide content types like product
                       tutorials, videos, comparisons, how-tos, guides, and much
@@ -120,18 +120,19 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      Step 3: Content Review by Technical Experts
+                      <span className="block">Step 3:</span> Technical Experts
+                      Review
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
                       Technical & Journalistic Expertise
                     </h4>
-                    <p className="text-base lg:text-xl">
+                    <p className="text-base sm:text-lg">
                       We have over 300+ practicing software engineers reviewing
                       your content. Our journalists and editors conduct copy
-                      edits and grammar edits to make sure your content is of
-                      the highest quality, technically correct, and authentic to
+                      edits and grammar edits to ensure your content is of the
+                      highest quality, technically correct, and authentic to
                       your brand's voice.
                     </p>
                     <div className="my-8 bg-gray-300" />
@@ -152,19 +153,19 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      Step 4: Content Refreshes
+                      <span className="block">Step 4:</span> Content Refreshes
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
                       Stay Relevant & Rank Well
                     </h4>
-                    <p className="text-base lg:text-xl">
-                      It's vitally important to keep your content fresh. Nobody
-                      wants to have a prospective customer use ChatGPT to get a
-                      result that shows outdated information about your product.
-                      We run recurring content analysis and technical, as well
-                      as SEO/GEO refreshes.
+                    <p className="text-base sm:text-lg">
+                      It's crucial to keep your content fresh. Nobody wants to
+                      have a prospective customer use ChatGPT to get a result
+                      that shows outdated information about your product. We run
+                      recurring content analysis and technical, as well as
+                      SEO/GEO refreshes.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -184,14 +185,14 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      Step 5: Analyze & Optimize
+                      <span className="block">Step 5:</span> Analyze & Optimize
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
                       Insights and Transparency
                     </h4>
-                    <p className="text-base lg:text-xl">
+                    <p className="text-base sm:text-lg">
                       We provide recurring reports and insights around your
                       performance and apply content improvements based on our
                       internal SEO and AI Optimization platform when new
