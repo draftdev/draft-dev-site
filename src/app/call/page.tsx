@@ -57,8 +57,8 @@ export default function Call() {
   return (
     <>
       <MedHeader
-        title="Book a Discovery Call"
-        descriptionOne="We write technical marketing content designed to reach software developers, DevOps practitioners, data engineers, and engineering managers. If your SaaS business is ready to invest in technical content this year, Draft.dev might be a great fit."
+        title="Let's talk about AI-enabled growth"
+        descriptionOne="We build AI-enabled content engines for enterprise businesses and startups that want to consistently grow, attract, and convert traffic and leads."
         descriptionTwo="Use the form below to schedule a discovery call. Can't find a time that works for you? Email sales@draft.dev to contact us directly."
       />
       <main className="overflow-hidden">

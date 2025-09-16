@@ -11,19 +11,19 @@ const faqs: FAQ[] = [
     id: 1,
     question: 'How quickly can we get started?',
     answer:
-      'Typically, onboarding takes 6-9 weeks between when we sign a statement of work and when your first article is completed. After that, new content will be delivered every week based on your plan. You can see our whole process on our blog.',
+      'Typically, we conduct an initial strategy session to define the scope of work. Once approved, your first content pieces will be delivered to you within 2 weeks. After that, new content will be delivered every week based on your plan. You can see our whole process on our homepage.',
   },
   {
     id: 2,
-    question: 'What if we want more content?',
+    question: 'What if we want a custom package for content creation?',
     answer:
-      'Not a problem. Our standard packages are just a starting point, but we have clients doing anywhere from 12-48 blog posts every quarter.',
+      'Not a problem. Our standard packages are just a starting point, but we have clients doing anywhere from 12-48 blog posts every quarter. Other clients simply want us to produce 1 content piece per week for them.',
   },
   {
     id: 3,
     question: 'What if we just want to try Draft.dev out?',
     answer:
-      "We don't offer trials, but we have an extensive catalog of samples we can share. A few are available here, but we can share many more upon request.",
+      "We don't offer trials, but we have an extensive catalog of samples we can share. A few are available on our website ('Content Type We Produce'), but we can share many more upon request.",
   },
   {
     id: 4,

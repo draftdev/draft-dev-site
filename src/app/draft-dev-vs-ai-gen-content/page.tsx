@@ -60,7 +60,7 @@ const ServiceInfo = () => {
           <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto sm:max-w-5xl lg:mx-0">
               <h2 className="subheader-mobile-gradient sm:subheader-gradient">
-                The AI Content Trap That's Hurting Technical Brands
+                AI speed meets human expertise
               </h2>
               <div className="paragraph-dark py-6 text-xl">
                 <p className="pb-2">
@@ -81,15 +81,14 @@ const ServiceInfo = () => {
               </div>
 
               <h3 className="subheader-mobile-gradient sm:lead-gradient">
-                Draft.dev: Real Developer Expertise Cannot Be Simulated
+                It's not AI OR humans, it's AI AND humans.
               </h3>
               <div className="paragraph-dark text-xl">
                 <p className="">
-                  Draft.dev writers bring what AI cannot: years of experience,
+                  While other content agencies might rely heavily on AI systems to produce sub-par technical content, Draft.dev's 300+ technical experts and content editorsbring what AI alone cannot: years of experience,
                   original insights from real projects, code they've actually
                   deployed, understanding of edge cases and gotchas, and an
-                  authentic voice developers trust. Every piece is original,
-                  valuable, and completely human.
+                  authentic voice developers trust.
                 </p>
               </div>
             </div>
@@ -129,7 +128,7 @@ export default function DraftDevVsAIGenContent() {
           text: 'See which content types we support',
           href: '/content-types',
         }}
-        description="Get original technical content from real developers with genuine expertise, unique insights, and code that actually works."
+        description="While we leverage AI to speed up output, we also have real developers with genuine expertise and unique insights in the loop, producing content and code that actually works."
       />
 
       <ServiceInfo />
