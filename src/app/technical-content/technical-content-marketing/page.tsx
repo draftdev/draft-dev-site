@@ -5,7 +5,6 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type {
   GuideLink,
   ResourceLink,
@@ -878,7 +877,7 @@ export default function SetupEnginePage() {
       </i>
 
       <Guides basePath={BASE_PATH} items={nextGuides} />
-      <Resources items={resources} />
+      {/* <Resources items={resources} /> */}
     </Page>
   )
 }

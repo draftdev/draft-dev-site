@@ -151,7 +151,15 @@ export default function GuideOverviewPage() {
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/setting-up-your-technical-content-marketing-engine"
+                href="/technical-content/introduction-to-content-marketing"
+              >
+                An Introduction to Technical Content Marketing in the AI Era
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="underline"
+                href="/technical-content/technical-content-marketing"
               >
                 Setting Up Your Technical Content Marketing Engine
               </Link>
@@ -165,41 +173,42 @@ export default function GuideOverviewPage() {
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/creating-and-managing-content-calendars"
+                href="/technical-content/content-calendar"
               >
-                Creating & Managing Content Calendars
+                Content Calendar Creation and Management
               </Link>
             </li>
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/creating-evergreen-content-that-drives-traffic"
+                href="/technical-content/content-funnel"
               >
-                Creating Evergreen Content That Drives Traffic
+                Understanding the Content Funnel
               </Link>
             </li>
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/creating-viral-spiky-content"
+                href="/technical-content/evergreen-content-strategy"
               >
-                Creating Viral Spiky Content
+                Evergreen Content Strategy to Drive Consistent Traffic
               </Link>
             </li>
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/orchestrating-technical-content-through-the-funnel"
+                href="/technical-content/viral-content"
               >
-                Orchestrating Technical Content Through the Funnel
+                Creating Viral Content
               </Link>
             </li>
+
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/creating-gated-assets-that-convert"
+                href="/technical-content/gated-content"
               >
-                Creating Gated Assets That Convert
+                Gated Content That Converts
               </Link>
             </li>
           </ul>
@@ -211,17 +220,17 @@ export default function GuideOverviewPage() {
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/newsletter-sponsorships-and-content-syndication"
+                href="/technical-content/content-syndication"
               >
-                Newsletter Sponsorships & Content Syndication
+                Content Syndication and Newsletter Sponsorships
               </Link>
             </li>
             <li>
               <Link
                 className="underline"
-                href="/technical-content-marketing-in-the-age-of-ai/technical-content-distribution-and-promotion-across-social-channels"
+                href="/technical-content/social-media-marketing-plan-template"
               >
-                Social Distribution & Promotion Playbooks
+                Social Media Marketing Plan and Template
               </Link>
             </li>
           </ul>
@@ -235,7 +244,7 @@ export default function GuideOverviewPage() {
           </p>
           <p className="mt-3">
             <Link
-              href="/technical-content-marketing-in-the-age-of-ai/setting-up-your-technical-content-marketing-engine"
+              href="/technical-content/technical-content-marketing"
               className="underline"
             >
               Get started →

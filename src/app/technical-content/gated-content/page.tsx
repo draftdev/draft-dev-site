@@ -5,7 +5,6 @@ import {
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
-import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
@@ -75,19 +74,19 @@ export const sections: Array<Section> = [
 
 const nextGuides = [
   {
-    slug: '/newsletter-sponsorships-and-content-syndication',
-    name: 'Newsletter Sponsorships & Syndication',
+    slug: '/content-syndication',
+    name: 'Content Syndication and Newsletter Sponsorships',
     description:
       'Drive qualified traffic to your gated assets and scale reach.',
   },
   {
     slug: '/evergreen-content-strategy',
-    name: 'Evergreen Content Strategy',
+    name: 'Evergreen Content Strategy to Drive Consistent Traffic',
     description: 'Build durable traffic that compounds over time.',
   },
   {
     slug: '/content-funnel',
-    name: 'Content Funnel',
+    name: 'Understanding the Content Funnel',
     description:
       'Map content to TOFU/MOFU/BOFU to move readers toward product.',
   },
@@ -311,7 +310,7 @@ export default function GatedContentPage() {
       </p>
 
       <Guides basePath={BASE_PATH} items={nextGuides} />
-      <Resources items={resources} />
+      {/* <Resources items={resources} /> */}
     </Page>
   )
 }

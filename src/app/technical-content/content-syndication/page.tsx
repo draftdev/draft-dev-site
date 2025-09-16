@@ -5,7 +5,6 @@ import {
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
-import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
@@ -88,7 +87,7 @@ const nextGuides = [
   },
   {
     slug: '/social-media-marketing-plan-template',
-    name: 'Social Media Marketing Plan',
+    name: 'Social Media Marketing Plan and Template',
     description: 'Channel playbooks and schedules for distribution.',
   },
   {
@@ -536,7 +535,7 @@ export default function NewsletterSponsorshipsSyndicationPage() {
       </div>
 
       <Guides basePath={BASE_PATH} items={nextGuides} />
-      <Resources items={resources} />
+      {/* <Resources items={resources} /> */}
     </Page>
   )
 }

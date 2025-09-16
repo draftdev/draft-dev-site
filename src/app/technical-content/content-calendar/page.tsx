@@ -6,7 +6,6 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import { Resources } from '@/components/page-components/mega-guide/Resources'
 import type {
   GuideLink,
   ResourceLink,
@@ -82,19 +81,20 @@ export const sections: Array<Section> = [
 
 const nextGuides: GuideLink[] = [
   {
-    slug: '/creating-evergreen-content-that-drives-traffic',
-    name: 'Evergreen Content',
+    slug: '/evergreen-content-strategy',
+    name: 'Evergreen Content Strategy to Drive Consistent Traffic',
     description: 'Plan clusters and publish SEO-ready, durable posts.',
   },
   {
-    slug: '/creating-viral-spiky-content',
-    name: 'Spiky Content',
+    slug: '/viral-content',
+    name: 'Creating Viral Content',
     description: 'Engineer shareable pieces and leverage the spike.',
   },
   {
-    slug: '/orchestrating-technical-content-through-the-funnel',
-    name: 'Orchestrating Through the Funnel',
-    description: 'Map content to stages and move people, not pixels.',
+    slug: '/content-funnel',
+    name: 'Understanding the Content Funnel',
+    description:
+      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
   },
 ]
 
@@ -384,7 +384,7 @@ export default function ContentCalendarsPage() {
 
       {/* 👇 Add these near the bottom */}
       <Guides basePath={BASE_PATH} items={nextGuides} />
-      <Resources items={resources} />
+      {/* <Resources items={resources} /> */}
     </Page>
   )
 }
