@@ -54,7 +54,7 @@ export default memo(function WhyUsPopover({
     <div className="relative">
       <button
         id="why-us-button"
-        className="flex items-center px-1 pt-1 text-sm font-medium whitespace-nowrap text-gray-700 hover:bg-gray-100/80 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
+        className="flex cursor-pointer items-center px-1 pt-1 text-sm font-medium whitespace-nowrap text-gray-700 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
         onClick={onToggle}
         aria-expanded={open}
         aria-haspopup="dialog"

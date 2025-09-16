@@ -7,6 +7,7 @@ import {
 import FAQ from '@/components/global/faq'
 import SinglePricingList from '@/components/global/single-price-list'
 import SinglePricing from '@/components/global/single-pricing'
+import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
 import SocialProof from '@/components/media/social-proof'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
 import Hero from '@/components/page-components/home/hero'
@@ -343,16 +344,7 @@ export default function Home() {
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
-
-          {/* <CaseStudyHome /> */}
-          {/* <Testimonial
-            quote="Having draft.dev source quality technical content for the Loft Labs blog has been a competitive advantage. It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published."
-            name="Rich Burroughs"
-            role="Developer Advocate"
-            company="Loft Labs"
-            imageSrc="/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg"
-            imageAlt="Rich Burroughs"
-          /> */}
+          <CaseStudiesFeatureHome />
         </main>
         <FAQ />
       </div>
