@@ -53,7 +53,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex w-full flex-col lg:w-96">
                     <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
-                      <h3 className="subheader-light flex items-baseline justify-center gap-x-2 text-center text-3xl">
+                      <h3 className="subheader-light flex items-baseline justify-center gap-x-2 text-center text-2xl">
                         Retainers and custom offers available upon request
                       </h3>
                       <Link
@@ -100,7 +100,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                       Let's talk about AI-enabled growth
                     </h3>
                     <p className="text-base lg:text-lg">
-                      Get started with our expert-vetted, non-BS growth engine
+                      Get started with our expert-vetted, compounding growth engine
                       approved by real engineers. A Draft.dev subscription
                       provides you with a Developer Content Strategy, Content
                       Creation & Review, Lead Magnets, Content Refreshes, and
