@@ -170,6 +170,7 @@ export default function Home() {
           <Hero />
           <Why
             title="AI-Powered Content That Technical Audiences Actually Respect And Trust"
+            subtitle="AI speed meets human expertise for content that performs and converts"
             features={[
               {
                 title: 'Vetted and approved by real engineers',
