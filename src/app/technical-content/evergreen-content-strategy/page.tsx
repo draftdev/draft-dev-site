@@ -5,11 +5,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -60,24 +56,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'what-makes-content-evergreen',
-    title: 'What Makes Content Evergreen',
-    offsetRem: 6,
-  },
-  {
-    id: 'evergreen-content-production',
-    title: 'Evergreen Content Production',
-    offsetRem: 8,
-  },
-  {
-    id: 'maintaining-evergreen-content',
-    title: 'Maintaining Evergreen Content',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/viral-content',
@@ -96,23 +74,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: 'https://draft.dev/learn',
-    name: 'Draft.dev Learn Library',
-    description: 'Developer-grade examples and guides.',
-  },
-  {
-    href: '/blog/evergreen-content-brief-template',
-    name: 'Evergreen Brief Template',
-    description: 'Handy template to standardize briefs.',
-  },
-  {
-    href: 'https://draft.dev/content-refreshes',
-    name: 'How to Run Content Refreshes',
-    description: '90–120 day refresh rhythm.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: 'https://draft.dev/learn',
+//     name: 'Draft.dev Learn Library',
+//     description: 'Developer-grade examples and guides.',
+//   },
+//   {
+//     href: '/blog/evergreen-content-brief-template',
+//     name: 'Evergreen Brief Template',
+//     description: 'Handy template to standardize briefs.',
+//   },
+//   {
+//     href: 'https://draft.dev/content-refreshes',
+//     name: 'How to Run Content Refreshes',
+//     description: '90–120 day refresh rhythm.',
+//   },
+// ]
 
 export default function EvergreenContentPage() {
   return (

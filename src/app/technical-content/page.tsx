@@ -2,7 +2,6 @@ import {
   Heading,
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -53,13 +52,6 @@ export const metadata: Metadata = {
     },
   },
 }
-
-export const sections: Array<Section> = [
-  { id: 'what-youll-learn', title: "What you'll learn", offsetRem: 6 },
-  { id: 'who-its-for', title: "Who it's for", offsetRem: 8 },
-  { id: 'how-to-use-this-guide', title: 'How to use this guide', offsetRem: 8 },
-  { id: 'chapters-at-a-glance', title: 'Chapters at a glance', offsetRem: 8 },
-]
 
 export default function GuideOverviewPage() {
   return (
@@ -122,7 +114,7 @@ export default function GuideOverviewPage() {
           retargeting so every post contributes signal. Start here:&nbsp;
           <Link
             className="underline"
-            href="/technical-content-marketing-in-the-age-of-ai/setting-up-your-technical-content-marketing-engine"
+            href="/technical-content/technical-content-marketing"
           >
             Setting Up Your Engine →
           </Link>
@@ -144,98 +136,111 @@ export default function GuideOverviewPage() {
       </ol>
 
       <Heading id="chapters-at-a-glance">Chapters at a glance</Heading>
-      <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div className="rounded-lg border border-gray-200 p-4">
-          <h3 className="font-semibold text-gray-900">Foundations & Setup</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/introduction-to-content-marketing"
-              >
-                An Introduction to Technical Content Marketing in the AI Era
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/technical-content-marketing"
-              >
-                Setting Up Your Technical Content Marketing Engine
-              </Link>
-            </li>
-          </ul>
+
+      {/* Foundations & Setup */}
+      <section className="mt-3">
+        <h3 className="font-semibold text-gray-900">Foundations &amp; Setup</h3>
+        <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {[
+            {
+              href: '/technical-content/introduction-to-content-marketing',
+              title:
+                'An Introduction to Technical Content Marketing in the AI Era',
+            },
+            {
+              href: '/technical-content/technical-content-marketing',
+              title: 'Setting Up Your Technical Content Marketing Engine',
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group block rounded-lg border border-gray-200 p-4 transition hover:shadow-sm"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="font-medium text-gray-900 group-hover:underline">
+                  {item.title}
+                </h4>
+              </div>
+            </Link>
+          ))}
         </div>
+      </section>
 
-        <div className="rounded-lg border border-gray-200 p-4">
-          <h3 className="font-semibold text-gray-900">Planning & Production</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/content-calendar"
-              >
-                Content Calendar Creation and Management
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/content-funnel"
-              >
-                Understanding the Content Funnel
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/evergreen-content-strategy"
-              >
-                Evergreen Content Strategy to Drive Consistent Traffic
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/viral-content"
-              >
-                Creating Viral Content
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/gated-content"
-              >
-                Gated Content That Converts
-              </Link>
-            </li>
-          </ul>
+      {/* Planning & Production */}
+      <section className="mt-6">
+        <h3 className="font-semibold text-gray-900">
+          Planning &amp; Production
+        </h3>
+        <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {[
+            {
+              href: '/technical-content/content-calendar',
+              title: 'Content Calendar Creation and Management',
+            },
+            {
+              href: '/technical-content/content-funnel',
+              title: 'Understanding the Content Funnel',
+            },
+            {
+              href: '/technical-content/evergreen-content-strategy',
+              title: 'Evergreen Content Strategy to Drive Consistent Traffic',
+            },
+            {
+              href: '/technical-content/viral-content',
+              title: 'Creating Viral Content',
+            },
+            {
+              href: '/technical-content/gated-content',
+              title: 'Gated Content That Converts',
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group block rounded-lg border border-gray-200 p-4 transition hover:shadow-sm"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="font-medium text-gray-900 group-hover:underline">
+                  {item.title}
+                </h4>
+              </div>
+            </Link>
+          ))}
         </div>
+      </section>
 
-        <div className="rounded-lg border border-gray-200 p-4">
-          <h3 className="font-semibold text-gray-900">Distribution</h3>
-          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/content-syndication"
-              >
-                Content Syndication and Newsletter Sponsorships
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="underline"
-                href="/technical-content/social-media-marketing-plan-template"
-              >
-                Social Media Marketing Plan and Template
-              </Link>
-            </li>
-          </ul>
+      {/* Distribution */}
+      <section className="mt-6">
+        <h3 className="font-semibold text-gray-900">Distribution</h3>
+        <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {[
+            {
+              href: '/technical-content/content-syndication',
+              title: 'Content Syndication and Newsletter Sponsorships',
+            },
+            {
+              href: '/technical-content/social-media-marketing-plan-template',
+              title: 'Social Media Marketing Plan and Template',
+            },
+          ].map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group block rounded-lg border border-gray-200 p-4 transition hover:shadow-sm"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <h4 className="font-medium text-gray-900 group-hover:underline">
+                  {item.title}
+                </h4>
+              </div>
+            </Link>
+          ))}
         </div>
+      </section>
 
+      {/* Start here */}
+      <section className="mt-6">
         <div className="rounded-lg border border-gray-200 p-4">
           <h3 className="font-semibold text-gray-900">Start here</h3>
           <p className="mt-2 text-sm text-gray-600">
@@ -251,7 +256,7 @@ export default function GuideOverviewPage() {
             </Link>
           </p>
         </div>
-      </div>
+      </section>
     </Page>
   )
 }

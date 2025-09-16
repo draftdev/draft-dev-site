@@ -5,11 +5,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -63,20 +59,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'platform-specific-content-promotion-strategies',
-    title: 'Platform-Specific Content Promotion Strategies',
-    offsetRem: 6,
-  },
-  {
-    id: 'content-mix-by-channel',
-    title: 'Content Mix by Channel',
-    offsetRem: 8,
-  },
-  { id: 'visual-platforms', title: 'Visual Platforms', offsetRem: 8 },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/content-calendar',
@@ -95,23 +77,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: '/blog/social-snippet-templates',
-    name: 'Social Post Snippet Templates',
-    description: 'Copy/paste formats that perform.',
-  },
-  {
-    href: '/blog/utm-builder',
-    name: 'UTM Builder Spreadsheet',
-    description: 'Track channel attribution cleanly.',
-  },
-  {
-    href: 'https://buffer.com/library/social-media-calendar/',
-    name: 'Social Calendar Tactics',
-    description: 'Useful patterns and cadence tips.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: '/blog/social-snippet-templates',
+//     name: 'Social Post Snippet Templates',
+//     description: 'Copy/paste formats that perform.',
+//   },
+//   {
+//     href: '/blog/utm-builder',
+//     name: 'UTM Builder Spreadsheet',
+//     description: 'Track channel attribution cleanly.',
+//   },
+//   {
+//     href: 'https://buffer.com/library/social-media-calendar/',
+//     name: 'Social Calendar Tactics',
+//     description: 'Useful patterns and cadence tips.',
+//   },
+// ]
 
 export default function SocialDistributionPage() {
   return (

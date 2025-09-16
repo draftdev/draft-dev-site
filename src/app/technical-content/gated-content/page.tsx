@@ -5,7 +5,6 @@ import {
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
 const BASE_PATH = '/technical-content'
@@ -58,20 +57,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'types-of-gated-content',
-    title: 'Types of Gated Content',
-    offsetRem: 6,
-  },
-  {
-    id: 'value-to-friction-ratio',
-    title: 'Value-to-Friction Ratio',
-    offsetRem: 8,
-  },
-  // remaining h3 subsections live inside these sections
-]
-
 const nextGuides = [
   {
     slug: '/content-syndication',
@@ -92,23 +77,23 @@ const nextGuides = [
   },
 ]
 
-const resources = [
-  {
-    href: 'https://draft.dev/resources',
-    name: 'Draft.dev Resources Library',
-    description: 'Technical content playbooks, templates, and examples.',
-  },
-  {
-    href: '/blog/technical-content-refresh-checklist',
-    name: 'Technical Content Refresh Checklist',
-    description: 'Keep top performers fresh for AI citations and rankings.',
-  },
-  {
-    href: '/blog/how-to-build-a-content-calendar',
-    name: 'How to Build a Content Calendar',
-    description: 'Plan predictable publishing and buffer management.',
-  },
-]
+// const resources = [
+//   {
+//     href: 'https://draft.dev/resources',
+//     name: 'Draft.dev Resources Library',
+//     description: 'Technical content playbooks, templates, and examples.',
+//   },
+//   {
+//     href: '/blog/technical-content-refresh-checklist',
+//     name: 'Technical Content Refresh Checklist',
+//     description: 'Keep top performers fresh for AI citations and rankings.',
+//   },
+//   {
+//     href: '/blog/how-to-build-a-content-calendar',
+//     name: 'How to Build a Content Calendar',
+//     description: 'Plan predictable publishing and buffer management.',
+//   },
+// ]
 
 export default function GatedContentPage() {
   return (

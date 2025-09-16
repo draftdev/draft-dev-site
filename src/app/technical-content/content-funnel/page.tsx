@@ -5,11 +5,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -60,21 +56,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'orchestrating-content-through-the-funnel',
-    title: 'Orchestrating Content Through the Funnel',
-    offsetRem: 6,
-  },
-  { id: 'content-mix-strategy', title: 'Content Mix Strategy', offsetRem: 8 },
-  {
-    id: 'analyzing-your-content-and-content-mix',
-    title: 'Analyzing your content and content mix',
-    offsetRem: 8,
-  },
-  { id: 'intent-mapping', title: 'Intent mapping', offsetRem: 8 },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/evergreen-content-strategy',
@@ -93,23 +74,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: '/blog/how-to-map-content-to-funnel-stages',
-    name: 'Mapping Content to Funnel Stages',
-    description: 'A practical worksheet.',
-  },
-  {
-    href: '/blog/internal-linking-for-funnel-movement',
-    name: 'Internal Linking to Nudge Intent',
-    description: 'Patterns that actually get clicks.',
-  },
-  {
-    href: 'https://draft.dev/case-studies',
-    name: 'Draft.dev Case Studies',
-    description: 'What a full-funnel program looks like in practice.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: '/blog/how-to-map-content-to-funnel-stages',
+//     name: 'Mapping Content to Funnel Stages',
+//     description: 'A practical worksheet.',
+//   },
+//   {
+//     href: '/blog/internal-linking-for-funnel-movement',
+//     name: 'Internal Linking to Nudge Intent',
+//     description: 'Patterns that actually get clicks.',
+//   },
+//   {
+//     href: 'https://draft.dev/case-studies',
+//     name: 'Draft.dev Case Studies',
+//     description: 'What a full-funnel program looks like in practice.',
+//   },
+// ]
 export default function OrchestratingThroughFunnelPage() {
   return (
     <Page

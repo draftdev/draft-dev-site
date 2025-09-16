@@ -8,6 +8,10 @@ export const NAV_GROUPS: Array<{ title: string; links: GuideLink[] }> = [
     title: 'Foundations & Setup',
     links: [
       {
+        name: 'Overview',
+        slug: '/',
+      },
+      {
         name: 'An Introduction to Technical Content Marketing in the AI Era',
         slug: '/introduction-to-content-marketing',
       },
@@ -18,7 +22,7 @@ export const NAV_GROUPS: Array<{ title: string; links: GuideLink[] }> = [
     ],
   },
   {
-    title: 'Planning and Production ',
+    title: 'Planning & Production ',
     links: [
       {
         name: 'Content Calendar Creation and Management',

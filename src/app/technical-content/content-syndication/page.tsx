@@ -5,7 +5,6 @@ import {
   Page,
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
-import type { Section } from '@/components/page-components/mega-guide/section-provider'
 import type { Metadata } from 'next'
 
 const BASE_PATH = '/technical-content'
@@ -61,24 +60,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'newsletter-sponsorship-strategy',
-    title: 'Newsletter Sponsorship Strategy',
-    offsetRem: 6,
-  },
-  {
-    id: 'content-syndication-platforms',
-    title: 'Content Syndication Platforms',
-    offsetRem: 8,
-  },
-  {
-    id: 'how-to-submit-to-hackernews-and-reddit',
-    title: 'How to Submit to Hacker News & Reddit',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides = [
   {
     slug: '/creating-gated-assets-that-convert',
@@ -97,23 +78,23 @@ const nextGuides = [
   },
 ]
 
-const resources = [
-  {
-    href: 'https://cooperpress.com/publications/',
-    name: 'CooperPress Developer Newsletters',
-    description: 'High-signal placements for reaching dev audiences.',
-  },
-  {
-    href: '/blog/canonical-tags-for-content-syndication',
-    name: 'Canonical Tags for Syndication',
-    description: 'Avoid duplicate content and consolidate link equity.',
-  },
-  {
-    href: 'https://draft.dev/resources',
-    name: 'Draft.dev Resources Library',
-    description: 'Technical content templates, guides, and examples.',
-  },
-]
+// const resources = [
+//   {
+//     href: 'https://cooperpress.com/publications/',
+//     name: 'CooperPress Developer Newsletters',
+//     description: 'High-signal placements for reaching dev audiences.',
+//   },
+//   {
+//     href: '/blog/canonical-tags-for-content-syndication',
+//     name: 'Canonical Tags for Syndication',
+//     description: 'Avoid duplicate content and consolidate link equity.',
+//   },
+//   {
+//     href: 'https://draft.dev/resources',
+//     name: 'Draft.dev Resources Library',
+//     description: 'Technical content templates, guides, and examples.',
+//   },
+// ]
 export default function NewsletterSponsorshipsSyndicationPage() {
   return (
     <Page

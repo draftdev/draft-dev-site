@@ -5,11 +5,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -62,29 +58,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'content-management-system-setup',
-    title: 'Content Management System Setup',
-    offsetRem: 6,
-  },
-  {
-    id: 'setting-up-analytics-and-tracking-implementation',
-    title: 'Setting up Analytics and Tracking Implementation',
-    offsetRem: 8,
-  },
-  {
-    id: 'setting-up-lead-collection-systems',
-    title: 'Setting up Lead Collection Systems',
-    offsetRem: 8,
-  },
-  {
-    id: 'setting-up-retargeting-infrastructure',
-    title: 'Setting up Retargeting Infrastructure',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/content-calendar',
@@ -103,23 +76,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: 'https://draft.dev/learn/free-stock-images',
-    name: 'Free Stock Images for Technical Blogs',
-    description: 'Sources that won’t look like clip-art.',
-  },
-  {
-    href: '/blog/nextjs-ga4-setup',
-    name: 'Add GA4 to Next.js in Minutes',
-    description: 'Practical snippet + event tips.',
-  },
-  {
-    href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide',
-    name: 'Google SEO Starter Guide',
-    description: 'The canonical basics straight from the source.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: 'https://draft.dev/learn/free-stock-images',
+//     name: 'Free Stock Images for Technical Blogs',
+//     description: 'Sources that won’t look like clip-art.',
+//   },
+//   {
+//     href: '/blog/nextjs-ga4-setup',
+//     name: 'Add GA4 to Next.js in Minutes',
+//     description: 'Practical snippet + event tips.',
+//   },
+//   {
+//     href: 'https://developers.google.com/search/docs/fundamentals/seo-starter-guide',
+//     name: 'Google SEO Starter Guide',
+//     description: 'The canonical basics straight from the source.',
+//   },
+// ]
 export default function SetupEnginePage() {
   return (
     <Page

@@ -68,7 +68,7 @@ export function Navigation({
               key={group.title}
               className={clsx('relative', groupIndex === 0 ? '' : 'mt-6')}
             >
-              <h2 className="text-xs font-semibold text-gray-700">
+              <h2 className="text-sm font-semibold text-gray-700">
                 {group.title}
               </h2>
               <div className="relative mt-3 pl-2">
@@ -76,7 +76,10 @@ export function Navigation({
                   className="absolute inset-y-0 left-2 w-px bg-gray-200"
                   aria-hidden
                 />
-                <ul role="list" className="border-l border-transparent">
+                <ul
+                  role="list"
+                  className="border-l border-transparent text-base"
+                >
                   {group.links.map((link) => {
                     const href = `${base}${link.slug}`
                     const active = pathname === href

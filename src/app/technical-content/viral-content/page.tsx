@@ -5,11 +5,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -60,24 +56,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'understanding-spiky-content',
-    title: 'Understanding Spiky Content',
-    offsetRem: 6,
-  },
-  {
-    id: 'creating-spiky-content',
-    title: 'Creating Spiky Content',
-    offsetRem: 8,
-  },
-  {
-    id: 'leveraging-traffic-spikes',
-    title: 'Leveraging Traffic Spikes',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/social-media-marketing-plan-template',
@@ -96,23 +74,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: '/blog/promo-checklist-for-spiky-posts',
-    name: 'Spiky Post Promo Checklist',
-    description: 'Everything to do in the first 48 hours.',
-  },
-  {
-    href: 'https://news.ycombinator.com/newest',
-    name: 'Where to Submit: HN',
-    description: 'If it fits the community—share wisely.',
-  },
-  {
-    href: 'https://ahrefs.com/blog/',
-    name: 'Backlink Prospecting Tactics',
-    description: 'Earn links, don’t beg for them.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: '/blog/promo-checklist-for-spiky-posts',
+//     name: 'Spiky Post Promo Checklist',
+//     description: 'Everything to do in the first 48 hours.',
+//   },
+//   {
+//     href: 'https://news.ycombinator.com/newest',
+//     name: 'Where to Submit: HN',
+//     description: 'If it fits the community—share wisely.',
+//   },
+//   {
+//     href: 'https://ahrefs.com/blog/',
+//     name: 'Backlink Prospecting Tactics',
+//     description: 'Earn links, don’t beg for them.',
+//   },
+// ]
 
 export default function SpikyContentPage() {
   return (

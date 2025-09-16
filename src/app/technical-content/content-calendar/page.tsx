@@ -6,11 +6,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -61,24 +57,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'why-content-calendars-matter',
-    title: 'Why Content Calendars Matter',
-    offsetRem: 6,
-  },
-  {
-    id: 'building-your-technical-content-calendar',
-    title: 'Building Your Technical Content Calendar',
-    offsetRem: 8,
-  },
-  {
-    id: 'content-calendar-in-action',
-    title: 'Content Calendar in Action',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/evergreen-content-strategy',
@@ -98,23 +76,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: 'https://draft.dev/content-marketing-engine',
-    name: 'eBook: Content Marketing Engine in the Age of AI',
-    description: 'A practical guide to building a predictable engine.',
-  },
-  {
-    href: '/blog/technical-content-refresh-checklist',
-    name: 'Technical Content Refresh Checklist',
-    description: 'Keep top performers fresh for AI citations.',
-  },
-  {
-    href: '/blog/how-to-build-a-content-calendar',
-    name: 'How to Build a Content Calendar',
-    description: 'Simple, spreadsheet-friendly setup you can copy.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: 'https://draft.dev/content-marketing-engine',
+//     name: 'eBook: Content Marketing Engine in the Age of AI',
+//     description: 'A practical guide to building a predictable engine.',
+//   },
+//   {
+//     href: '/blog/technical-content-refresh-checklist',
+//     name: 'Technical Content Refresh Checklist',
+//     description: 'Keep top performers fresh for AI citations.',
+//   },
+//   {
+//     href: '/blog/how-to-build-a-content-calendar',
+//     name: 'How to Build a Content Calendar',
+//     description: 'Simple, spreadsheet-friendly setup you can copy.',
+//   },
+// ]
 
 export default function ContentCalendarsPage() {
   return (

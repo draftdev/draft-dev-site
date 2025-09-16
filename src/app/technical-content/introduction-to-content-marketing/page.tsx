@@ -6,11 +6,7 @@ import {
 } from '@/components/page-components/mega-guide/doc-blocks'
 import { Guides } from '@/components/page-components/mega-guide/Guides'
 import { BASE_PATH } from '@/components/page-components/mega-guide/nav-data'
-import type {
-  GuideLink,
-  ResourceLink,
-  Section,
-} from '@/components/page-components/mega-guide/types'
+import type { GuideLink } from '@/components/page-components/mega-guide/types'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -65,19 +61,6 @@ export const metadata: Metadata = {
   },
 }
 
-export const sections: Array<Section> = [
-  {
-    id: 'content-marketing-in-the-age-of-ai',
-    title: 'Content Marketing in the Age of AI',
-    offsetRem: 6,
-  },
-  {
-    id: 'content-marketing-needs-to-drive-revenue',
-    title: 'Content Marketing Needs to Drive Revenue',
-    offsetRem: 8,
-  },
-]
-
 const nextGuides: GuideLink[] = [
   {
     slug: '/technical-content-marketing',
@@ -96,23 +79,23 @@ const nextGuides: GuideLink[] = [
   },
 ]
 
-const resources: ResourceLink[] = [
-  {
-    href: 'https://draft.dev/content-marketing-engine',
-    name: 'eBook: Content Marketing Engine in the Age of AI',
-    description: 'Systems, cadence, and measurement.',
-  },
-  {
-    href: '/blog/technical-content-refresh-checklist',
-    name: 'Technical Content Refresh Checklist',
-    description: 'Keep top performers fresh for AI citations.',
-  },
-  {
-    href: '/blog/how-to-build-a-content-calendar',
-    name: 'How to Build a Content Calendar',
-    description: 'Simple, spreadsheet-friendly setup.',
-  },
-]
+// const resources: ResourceLink[] = [
+//   {
+//     href: 'https://draft.dev/content-marketing-engine',
+//     name: 'eBook: Content Marketing Engine in the Age of AI',
+//     description: 'Systems, cadence, and measurement.',
+//   },
+//   {
+//     href: '/blog/technical-content-refresh-checklist',
+//     name: 'Technical Content Refresh Checklist',
+//     description: 'Keep top performers fresh for AI citations.',
+//   },
+//   {
+//     href: '/blog/how-to-build-a-content-calendar',
+//     name: 'How to Build a Content Calendar',
+//     description: 'Simple, spreadsheet-friendly setup.',
+//   },
+// ]
 
 export default function IntroToContentMarketingPage() {
   return (
