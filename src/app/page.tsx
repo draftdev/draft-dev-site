@@ -7,7 +7,6 @@ import {
 import FAQ from '@/components/global/faq'
 import SinglePricingList from '@/components/global/single-price-list'
 import SocialProof from '@/components/media/social-proof'
-import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
 import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
@@ -313,17 +312,17 @@ export default function Home() {
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
 
-          <CaseStudyHome />
-
           <Testimonials />
-          <Testimonial
+
+          <CaseStudyHome />
+          {/* <Testimonial
             quote="Having draft.dev source quality technical content for the Loft Labs blog has been a competitive advantage. It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published."
             name="Rich Burroughs"
             role="Developer Advocate"
             company="Loft Labs"
             imageSrc="/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg"
             imageAlt="Rich Burroughs"
-          />
+          /> */}
         </main>
         <FAQ />
       </div>
