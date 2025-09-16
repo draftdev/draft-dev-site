@@ -169,27 +169,27 @@ export default function Home() {
         <main>
           <Hero />
           <Why
-            title="What makes Draft.dev different?"
+            title="AI-Powered Content That Technical Audiences Actually Respect And Trust"
             features={[
               {
-                title: 'A sole focus on technical audiences',
+                title: 'Vetted and approved by real engineers',
                 description:
-                  'We work exclusively with companies that are trying to reach software developers, data engineers, and DevOps practitioners. Typically, our clients are Developer Relations or Developer Marketing teams at companies with 50+ employees or at least Series A funding.',
-                linkText: 'How we build trust with technical audiences',
+                  "We all know AI content can produce faulty output. Especially when it comes to code. Don't risk your reputation and sacrifice quality. Our 300+ practicing software engineers with 10+ years of average experience are your 'humans-in-the-loop', reviewing and approving every piece.",
+                linkText: 'Why we have engineers-in-the-loop',
                 linkHref: '/build-trust',
               },
               {
-                title: 'Technical expertise and Marketing excellence',
+                title: 'Fast turnaround times AND high-quality output',
                 description:
-                  'We specialize in producing technical content (mostly tutorials and blog posts), but we can also help you create a content plan, come up with suitable topics, or execute on one-time content projects like ebooks.',
-                linkText: 'How we predictably generate demand',
+                  'Get the best of both worlds: AI-enabled research and discovery, coupled with a production and review process that has been perfected over years. Our technical editors and copy editors are reviewing each output, making sure each piece is technically correct and authentic.',
+                linkText: 'See our process',
                 linkHref: '/drive-awareness',
               },
               {
-                title: 'Content You Can Count On',
+                title: 'Best-in-class SEO, AEO, and GEO performance',
                 description:
-                  'We create high-quality, technically-deep content. Subject-matter experts are assigned to each article, so every piece is detailed and authoritative. Our core team includes experienced engineers and editors who make sure that every piece of content comes to you ready to publish.',
-                linkText: 'What our clients say about our work',
+                  'We track and report your performance and conduct frequent content refreshed on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
+                linkText: 'Read our Case Studies',
                 linkHref: '/case-studies',
               },
             ]}
