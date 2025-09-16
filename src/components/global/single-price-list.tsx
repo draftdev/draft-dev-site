@@ -39,7 +39,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
   }
 
   return (
-    <div id="how-we-work" className="bg-gradient-brand sm:py-32" id="lead-generation-package">
+    <div id="how-we-work" className="bg-gradient-brand sm:py-32">
       <div className="mx-auto max-w-4xl px-6 py-12 sm:py-0 sm:pb-6 lg:max-w-4xl lg:text-center">
         <h2 className="subheader-light">See Our Process</h2>
 

@@ -43,7 +43,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   return (
     <div
       className="bg-gradient-brand py-24 sm:py-32"
-      id="lead-generation-package"
+      id="pricing"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className=" ">
