@@ -15,9 +15,9 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'The Leader in Technical Content - Draft.dev',
+  title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
   description:
-    'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
+    'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     url: 'https://draft.dev',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title: 'The Leader in Technical Content - Draft.dev',
+    title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
     description:
-      'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
+      'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'The Leader in Technical Content - Draft.dev',
+    title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
     description:
-      'We help Developer Marketing, Product, and Developer Relations teams drive business value through authentic, technical content.',
+      'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -176,21 +176,21 @@ export default function Home() {
                 description:
                   "We all know AI content can produce faulty output. Especially when it comes to code. Don't risk your reputation and sacrifice quality. Our 300+ practicing software engineers with 10+ years of average experience are your 'humans-in-the-loop', reviewing and approving every piece.",
                 linkText: 'Why we have engineers-in-the-loop',
-                linkHref: '/build-trust',
+                linkHref: '/draft-dev-vs-ai-gen-content',
               },
               {
                 title: 'Fast turnaround times AND high-quality output',
                 description:
                   'Get the best of both worlds: AI-enabled research and discovery, coupled with a production and review process that has been perfected over years. Our technical editors and copy editors are reviewing each output, making sure each piece is technically correct and authentic.',
                 linkText: 'See our process',
-                linkHref: '/drive-awareness',
+                linkHref: '/#how-we-work',
               },
               {
-                title: 'Best-in-class SEO, AEO, and GEO performance',
+                title: 'Proactive Content Refreshes, measurable results',
                 description:
-                  'We track and report your performance and conduct frequent content refreshed on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
-                linkText: 'Read our Case Studies',
-                linkHref: '/case-studies',
+                  'We track and report your performance and conduct frequent content refreshes on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
+                linkText: 'Learn about our Content Refreshes',
+                linkHref: '/content-refreshes',
               },
             ]}
           />
