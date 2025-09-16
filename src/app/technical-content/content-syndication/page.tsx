@@ -62,19 +62,20 @@ export const metadata: Metadata = {
 
 const nextGuides = [
   {
-    slug: '/creating-gated-assets-that-convert',
-    name: 'Creating Gated Assets That Convert',
-    description: 'Package implementation-grade value for lead capture.',
-  },
-  {
     slug: '/social-media-marketing-plan-template',
     name: 'Social Media Marketing Plan and Template',
     description: 'Channel playbooks and schedules for distribution.',
   },
   {
-    slug: '/content-funnel',
-    name: 'Content Funnel',
-    description: 'Balance TOFU/MOFU/BOFU and measure movement.',
+    slug: '/introduction-to-content-marketing',
+    name: 'An Introduction to Technical Content Marketing in the AI Era',
+    description:
+      'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
+  },
+  {
+    slug: '/technical-content-marketing',
+    name: 'Setting Up Your Technical Content Marketing Engine',
+    description: 'Launch a fast, structured, analytics-ready stack.',
   },
 ]
 

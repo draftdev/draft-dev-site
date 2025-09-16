@@ -52,7 +52,7 @@ export const NAV_GROUPS: Array<{ title: string; links: GuideLink[] }> = [
         slug: '/content-syndication',
       },
       {
-        name: 'Social Distribution Playbooks',
+        name: 'Social Media Marketing Plan and Template',
         slug: '/social-media-marketing-plan-template',
       },
     ],

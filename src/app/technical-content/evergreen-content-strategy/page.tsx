@@ -59,18 +59,20 @@ export const metadata: Metadata = {
 const nextGuides: GuideLink[] = [
   {
     slug: '/viral-content',
-    name: 'Viral Content Creation',
-    description: 'Balance spikes with durable compounding assets.',
+    name: 'Creating Viral Content',
+    description: 'Engineer shareable pieces and leverage the spike.',
   },
   {
-    slug: '/content-calendar',
-    name: 'Content Calendar Creation and Management',
-    description: 'Ship on time; keep a healthy buffer.',
+    slug: '/gated-content',
+    name: 'Gated Content that Converts',
+    description:
+      'Offer implementation-grade value—code, architecture, tools—so technical audiences gladly trade an email for access.',
   },
   {
-    slug: '/social-media-marketing-plan-template',
-    name: 'Social Media Marketing Plan and Template',
-    description: 'Distribute smartly across channels.',
+    slug: '/content-syndication',
+    name: 'Content Syndication and Newsletter Sponsorships',
+    description:
+      'Drive qualified traffic to your gated assets and scale reach.',
   },
 ]
 

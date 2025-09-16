@@ -10,10 +10,9 @@ import Testimonials from '@/components/media/testimonials/testimonials-group'
 import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
 import How from '@/components/page-components/how'
-import What from '@/components/page-components/what'
+import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 import HowImage from '/public/site/med-portrait/commit_draft_dev.webp'
-import WhatImage from '/public/site/med-portrait/pair_programming_draft_dev.webp'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -169,7 +168,34 @@ export default function Home() {
       <div className="overflow-hidden">
         <main>
           <Hero />
-          <What
+          <Why
+            title="What makes Draft.dev different?"
+            features={[
+              {
+                title: 'A sole focus on technical audiences',
+                description:
+                  'We work exclusively with companies that are trying to reach software developers, data engineers, and DevOps practitioners. Typically, our clients are Developer Relations or Developer Marketing teams at companies with 50+ employees or at least Series A funding.',
+                linkText: 'How we build trust with technical audiences',
+                linkHref: '/build-trust',
+              },
+              {
+                title: 'Technical expertise and Marketing excellence',
+                description:
+                  'We specialize in producing technical content (mostly tutorials and blog posts), but we can also help you create a content plan, come up with suitable topics, or execute on one-time content projects like ebooks.',
+                linkText: 'How we predictably generate demand',
+                linkHref: '/drive-awareness',
+              },
+              {
+                title: 'Content You Can Count On',
+                description:
+                  'We create high-quality, technically-deep content. Subject-matter experts are assigned to each article, so every piece is detailed and authoritative. Our core team includes experienced engineers and editors who make sure that every piece of content comes to you ready to publish.',
+                linkText: 'What our clients say about our work',
+                linkHref: '/case-studies',
+              },
+            ]}
+          />
+
+          {/* <What
             title="Stop begging your engineers to create content..."
             subtitleBold="Impress them"
             subtitleRegular="with the technical content you get from Draft.dev."
@@ -192,7 +218,7 @@ export default function Home() {
             ]}
             imageSrc={WhatImage.src}
             imageAlt="Technical content development"
-          />
+          /> */}
           <SocialProof />
 
           <div id="how-we-work">

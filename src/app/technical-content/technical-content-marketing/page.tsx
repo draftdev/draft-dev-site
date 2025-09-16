@@ -62,17 +62,18 @@ const nextGuides: GuideLink[] = [
   {
     slug: '/content-calendar',
     name: 'Content Calendar Creation and Management',
-    description: 'Buffers, cadence, and predictability.',
+    description: 'Plan cadence, buffers, and predictable output.',
+  },
+  {
+    slug: '/content-funnel',
+    name: 'Understanding the Content Funnel',
+    description:
+      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
   },
   {
     slug: '/evergreen-content-strategy',
-    name: 'Evergreen Content Strategy to drive consistent traffic',
-    description: 'Clusters, SEO, and refresh cycles.',
-  },
-  {
-    slug: '/viral-content',
-    name: 'Viral Content Creation',
-    description: 'Engineer spikes and turn them into compounding value.',
+    name: 'Evergreen Content Strategy to Drive Consistent Traffic',
+    description: 'Plan clusters and publish SEO-ready, durable posts.',
   },
 ]
 

@@ -61,19 +61,20 @@ export const metadata: Metadata = {
 
 const nextGuides: GuideLink[] = [
   {
+    slug: '/introduction-to-content-marketing',
+    name: 'An Introduction to Technical Content Marketing in the AI Era',
+    description:
+      'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
+  },
+  {
+    slug: '/technical-content-marketing',
+    name: 'Setting Up Your Technical Content Marketing Engine',
+    description: 'Launch a fast, structured, analytics-ready stack.',
+  },
+  {
     slug: '/content-calendar',
     name: 'Content Calendar Creation and Management',
-    description: 'Schedule campaigns with your publishing rhythm.',
-  },
-  {
-    slug: '/viral-content',
-    name: 'Viral Content Creation',
-    description: 'Design spikes; prep distribution.',
-  },
-  {
-    slug: '/evergreen-content-strategy',
-    name: 'Evergreen Content Strategy to drive consistent traffic',
-    description: 'Anchor social with durable resources.',
+    description: 'Plan cadence, buffers, and predictable output.',
   },
 ]
 

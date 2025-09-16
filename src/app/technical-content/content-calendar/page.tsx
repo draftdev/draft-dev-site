@@ -59,6 +59,12 @@ export const metadata: Metadata = {
 
 const nextGuides: GuideLink[] = [
   {
+    slug: '/content-funnel',
+    name: 'Understanding the Content Funnel',
+    description:
+      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
+  },
+  {
     slug: '/evergreen-content-strategy',
     name: 'Evergreen Content Strategy to Drive Consistent Traffic',
     description: 'Plan clusters and publish SEO-ready, durable posts.',
@@ -67,12 +73,6 @@ const nextGuides: GuideLink[] = [
     slug: '/viral-content',
     name: 'Creating Viral Content',
     description: 'Engineer shareable pieces and leverage the spike.',
-  },
-  {
-    slug: '/content-funnel',
-    name: 'Understanding the Content Funnel',
-    description:
-      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
   },
 ]
 

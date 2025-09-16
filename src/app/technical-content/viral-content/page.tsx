@@ -58,19 +58,21 @@ export const metadata: Metadata = {
 
 const nextGuides: GuideLink[] = [
   {
+    slug: '/gated-content',
+    name: 'Gated Content that Converts',
+    description:
+      'Offer implementation-grade value—code, architecture, tools—so technical audiences gladly trade an email for access.',
+  },
+  {
+    slug: '/content-syndication',
+    name: 'Content Syndication and Newsletter Sponsorships',
+    description:
+      'Drive qualified traffic to your gated assets and scale reach.',
+  },
+  {
     slug: '/social-media-marketing-plan-template',
     name: 'Social Media Marketing Plan and Template',
-    description: 'Amplify reach without being spammy.',
-  },
-  {
-    slug: '/evergreen-content-strategy',
-    name: 'Evergreen Content Strategy to drive consistent traffic',
-    description: 'Turn spikes into sustained growth.',
-  },
-  {
-    slug: '/content-funnel',
-    name: 'Understanding the Content Funnel',
-    description: 'Place spikes in a larger journey.',
+    description: 'Channel playbooks and schedules for distribution.',
   },
 ]
 

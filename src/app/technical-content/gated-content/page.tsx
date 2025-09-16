@@ -65,15 +65,15 @@ const nextGuides = [
       'Drive qualified traffic to your gated assets and scale reach.',
   },
   {
-    slug: '/evergreen-content-strategy',
-    name: 'Evergreen Content Strategy to Drive Consistent Traffic',
-    description: 'Build durable traffic that compounds over time.',
+    slug: '/social-media-marketing-plan-template',
+    name: 'Social Media Marketing Plan and Template',
+    description: 'Channel playbooks and schedules for distribution.',
   },
   {
-    slug: '/content-funnel',
-    name: 'Understanding the Content Funnel',
+    slug: '/introduction-to-content-marketing',
+    name: 'An Introduction to Technical Content Marketing in the AI Era',
     description:
-      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
+      'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
   },
 ]
 

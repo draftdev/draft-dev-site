@@ -75,7 +75,8 @@ const nextGuides: GuideLink[] = [
   {
     slug: '/content-funnel',
     name: 'Understanding the Content Funnel',
-    description: 'Move readers from awareness to product outcomes.',
+    description:
+      'Map content to TOFU/MOFU/BOFU to move readers toward product.',
   },
 ]
 
