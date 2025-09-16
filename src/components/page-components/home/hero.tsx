@@ -38,14 +38,17 @@ const Hero: React.FC = () => {
                   </Link>
                 </div>
 
-                <h1 className="font-code mb-4 py-2 text-left text-5xl leading-tight font-semibold text-white sm:text-6xl">
-                  The Leader in Technical Content
+                <h1 className="font-code mb-4 py-2 text-left text-4xl leading-tight font-semibold text-white sm:text-5xl">
+                  AI-powered Tech Marketing.{' '}
+                  <span className="mt-3 block">
+                    Vetted by Expert Engineers and Editors.
+                  </span>
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
-                  We help Developer Marketing, Product, and Developer Relations
-                  teams drive business value through authentic, technical
-                  content.
+                  We build growth marketing engines for the world's best tech
+                  companies, blending the speed of AI with the expertise of
+                  humans-in-the-loop.
                 </p>
 
                 <div className="mt-16 mb-6 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
