@@ -1,14 +1,8 @@
-import dynamic from 'next/dynamic'
+import { LogosFlex } from '@/components/media/logos-flex'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
 import heroImg from '/public/site/med-portrait/hero.webp'
-
-const LogosFlexLazy = dynamic(
-  () => import('@/components/media/logos-flex').then((m) => m.LogosFlex),
-  { ssr: false, loading: () => null },
-)
 
 const Hero: React.FC = () => {
   return (
@@ -39,7 +33,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 <h1 className="font-code mb-4 py-2 text-left text-4xl leading-tight font-semibold text-white sm:text-5xl">
-                  AI-powered Tech Marketing. Vetted by expert engineers and editors.{' '}
+                  AI-powered Tech Marketing. Vetted by expert engineers and
+                  editors.{' '}
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
@@ -89,7 +84,7 @@ const Hero: React.FC = () => {
 
             {/* Defer logos to avoid competing with LCP */}
             <div className="mt-12 text-center">
-              <LogosFlexLazy />
+              <LogosFlex />
             </div>
           </div>
         </div>

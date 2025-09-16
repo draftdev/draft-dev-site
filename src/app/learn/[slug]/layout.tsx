@@ -1,10 +1,5 @@
-// app/learn/[slug]/layout.tsx
+import type { ReactNode } from 'react'
 
-type BlogLayoutProps = {
-  children: React.ReactNode
-  params: { slug: string }
-}
-
-export default function BlogPostLayout({ children }: BlogLayoutProps) {
+export default function Layout({ children }: { children: ReactNode }) {
   return <>{children}</>
 }

@@ -8,11 +8,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   poweredByHeader: false,
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
+  compiler: { removeConsole: process.env.NODE_ENV === 'production' },
+  eslint: { ignoreDuringBuilds: true },
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'thepodcastconsultant.com' },

@@ -27,15 +27,6 @@
   /* radii */
   --radius-4xl: 2rem;
 
-  /* breakpoints (custom names allowed) */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 788px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-tablet: 1024px;
-  --breakpoint-laptop: 1024px;
-  --breakpoint-desktop: 1280px;
-
   /* app vars */
   --nav-height: 72px;
 
@@ -190,17 +181,6 @@ body {
 }
 
 /* ===== Buttons & helpers ===== */
-
-/* colors you already reference in markup */
-@utility bg-gradient-1 {
-  background-color: var(--color-gradient-1);
-}
-@utility bg-gradient-2 {
-  background-color: var(--color-gradient-2);
-}
-@utility bg-gradient-3 {
-  background-color: var(--color-gradient-3);
-}
 
 /* so focus-visible:outline-primary works */
 @utility outline-primary {
