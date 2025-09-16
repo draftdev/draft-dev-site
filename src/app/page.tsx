@@ -15,9 +15,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
+  title:
+    'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
   description:
-    'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
+    "We build growth marketing engines for the world's best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.",
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -25,9 +26,10 @@ export const metadata: Metadata = {
     url: 'https://draft.dev',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
+    title:
+      'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
     description:
-      'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
+      "We build growth marketing engines for the world's best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.",
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -40,9 +42,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
+    title:
+      'AI-powered tech marketing. Vetted by expert engineers and editors - Draft.dev',
     description:
-      'We build growth marketing engines for the world\'s best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.',
+      "We build growth marketing engines for the world's best tech companies, blending the speed of AI with the expertise of humans-in-the-loop.",
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -240,10 +243,10 @@ export default function Home() {
                 linkHref: '/draft-dev-vs-seo-agency',
               },
               {
-                title: 'Best-in-class SEO, AEO, and GEO performance',
+                title: 'Draft.dev vs. AI Content',
                 description:
-                  'We track and report your performance and conduct frequent content refreshed on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
-                linkText: 'Read our Case Studies',
+                  "AI content seems like a miracle. It can create instant articles for pennies. Unfortunately, for technical companies, developers can spot AI-gen content immediately. It's generic, lacks context, and offers no original insights. The hidden costs are devastating: search rankings collapse, domain authority erodes, developer trust evaporates, and recovery takes months, if not years. What seemed like savings becomes your most expensive mistake when you factor in lost traffic, damaged reputation, and the cost of replacing all of that worthless content.",
+                linkText: 'Compare us to AI Content tools',
                 linkHref: '/draft-dev-vs-ai-gen-content',
               },
             ]}
