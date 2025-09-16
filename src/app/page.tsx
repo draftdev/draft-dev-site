@@ -3,16 +3,15 @@ import {
   generateServiceSchema,
   generateWebSiteSchema,
 } from '@/app/lib/schema'
+
 import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
 import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
-import How from '@/components/page-components/how'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
-import HowImage from '/public/site/med-portrait/commit_draft_dev.webp'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -222,7 +221,35 @@ export default function Home() {
           /> */}
           <SocialProof />
 
-          <div id="how-we-work">
+          <Why
+            title="Why Draft.dev"
+            subtitle="How we compare to other solutions"
+            features={[
+              {
+                title: 'Draft.dev vs. Freelancers',
+                description:
+                  'Finding good technical writers is hard. Managing them is even harder. Freelancer quality varies wildly. One Freelancer delivers gold, another produces trash. Your content becomes a patchwork of different voices, depths, and quality levels. Draft.dev provides the benefits of Freelancers (specialized expertise and flexible capacity) without the chaos. Our managed services includes writer vetting and matching, quality control and editing, consistent voice and standards, guaranteed delivery schedules, and seamless scale.',
+                linkText: 'Compare us to a Freelancer setup',
+                linkHref: '/draft-dev-vs-freelancers',
+              },
+              {
+                title: 'Draft.dev vs. SEO Agencies',
+                description:
+                  "Generic content agencies treat technical content like any other B2B vertical: stuff it full of the right keywords, churn out 500-word posts, and hope for rankings. However, developers have the industry's best BS detectors. They spot shallow content immediately, mock it publicly, and blacklist brands that publish it. Technical accuracy isn't optional: it's table stakes. One wrong code example, outdated best practice, or fundemental misunderstanding destroys your credibility instantly. Generic agencies using 'technical' writers who took a coding bootcamp simply can't deliver the depth developers demand.",
+                linkText: 'Compare us to regular SEO agencies',
+                linkHref: '/draft-dev-vs-seo-agency',
+              },
+              {
+                title: 'Best-in-class SEO, AEO, and GEO performance',
+                description:
+                  'We track and report your performance and conduct frequent content refreshed on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
+                linkText: 'Read our Case Studies',
+                linkHref: '/draft-dev-vs-ai-gen-content',
+              },
+            ]}
+          />
+
+          {/* <div id="how-we-work">
             <How
               title="How We Work"
               subtitleBold="Our robust process ensures you get high-quality technical content you can count on every week."
@@ -250,7 +277,7 @@ export default function Home() {
               imageSrc={HowImage.src}
               imageAlt="Technical content development"
             />
-          </div>
+          </div> */}
 
           <CaseStudyHome />
 
