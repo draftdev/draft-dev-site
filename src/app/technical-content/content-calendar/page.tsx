@@ -15,9 +15,51 @@ import type {
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Creating and Managing Content Calendars',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Content Calendar Creation and Management - Draft.dev',
   description:
     'Why content calendars matter, how to build them for technical content, and how to manage buffers and cadence.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/content-calendar',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Content Calendar Creation and Management - Draft.dev',
+    description:
+      'Why content calendars matter, how to build them for technical content, and how to manage buffers and cadence.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/content_calendar_og_draftdev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Plan and manage content calendars for technical content.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Content Calendar Creation and Management - Draft.dev',
+    description:
+      'Why content calendars matter, how to build them for technical content, and how to manage buffers and cadence.',
+    images: ['/draft/og/mega-guide/content_calendar_og_draftdev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content-marketing/content-calendar',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [

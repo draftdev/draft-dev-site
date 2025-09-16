@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       'Evergreen vs spiky content, topic discovery, clusters, AI-era SEO, and refresh cycles for predictable growth.',
     images: [
       {
-        url: '/draft/og/mega-guide/evergreen-content-strategy.jpg',
+        url: '/draft/og/mega-guide/evergreen_content_strategy_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Evergreen technical content that compounds over time.',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Evergreen Content Strategy to Drive Consistent Traffic - Draft.dev',
     description:
       'Evergreen vs spiky content, topic discovery, clusters, AI-era SEO, and refresh cycles for predictable growth.',
-    images: ['/draft/og/mega-guide/evergreen-content-strategy.jpg'],
+    images: ['/draft/og/mega-guide/evergreen_content_strategy_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

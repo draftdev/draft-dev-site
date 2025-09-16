@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       'What spiky content is, how to create it responsibly, and how to leverage spikes for retargeting, backlinks, and brand lift.',
     images: [
       {
-        url: '/draft/og/mega-guide/viral-content-creation.jpg',
+        url: '/draft/og/mega-guide/viral_content_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Create spiky, viral content and harness traffic spikes.',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Viral Content Creation - Draft.dev',
     description:
       'What spiky content is, how to create it responsibly, and how to leverage spikes for retargeting, backlinks, and brand lift.',
-    images: ['/draft/og/mega-guide/viral-content-creationt.jpg'],
+    images: ['/draft/og/mega-guide/viral_content_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       'Map TOFU/MOFU/BOFU, build the right mix, and intentionally move readers toward product outcomes.',
     images: [
       {
-        url: '/draft/og/mega-guide/content-funnel.jpg',
+        url: '/draft/og/mega-guide/content_funnel_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Understand and orchestrate the content funnel.',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: 'Understanding the Content Funnel - Draft.dev',
     description:
       'Map TOFU/MOFU/BOFU, build the right mix, and intentionally move readers toward product outcomes.',
-    images: ['/draft/og/mega-guide/content-funnel.jpg'],
+    images: ['/draft/og/mega-guide/content_funnel_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

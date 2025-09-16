@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'CMS decisions, architecture, third-party platforms, analytics and AI metrics, lead collection, and retargeting.',
     images: [
       {
-        url: '/draft/og/mega-guide/technical-content-marketing.jpg',
+        url: '/draft/og/mega-guide/technical_content_marketing_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Set up a technical content marketing engine.',
@@ -40,7 +40,9 @@ export const metadata: Metadata = {
     title: 'Setting Up Your Technical Content Marketing Engine - Draft.dev',
     description:
       'CMS decisions, architecture, third-party platforms, analytics and AI metrics, lead collection, and retargeting.',
-    images: ['/draft/og/mega-guide/technical-content-marketing.jpg'],
+    images: [
+      '/draft/og/mega-guide/technical_content_marketing_og_draftdev.jpg',
+    ],
     creator: '@draftdev',
     site: '@draftdev',
   },

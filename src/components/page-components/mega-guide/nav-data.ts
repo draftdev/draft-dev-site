@@ -18,7 +18,7 @@ export const NAV_GROUPS: Array<{ title: string; links: GuideLink[] }> = [
     ],
   },
   {
-    title: 'Planning & Production',
+    title: 'Planning and Production ',
     links: [
       {
         name: 'Content Calendar Creation and Management',
@@ -36,21 +36,21 @@ export const NAV_GROUPS: Array<{ title: string; links: GuideLink[] }> = [
 
       {
         name: 'Gated Content That Converts',
-        slug: '/gated-content-that-converts',
+        slug: '/gated-content',
       },
     ],
   },
   {
     title: 'Distribution',
     links: [
-      // {
-      //   name: 'Newsletter Sponsorships & Syndication',
-      //   slug: '/newsletter-sponsorships-and-content-syndication',
-      // },
-      // {
-      //   name: 'Social Distribution Playbooks',
-      //   slug: '/technical-content-distribution-and-promotion-across-social-channels',
-      // },
+      {
+        name: 'Newsletter Sponsorships & Syndication',
+        slug: '/content-syndication',
+      },
+      {
+        name: 'Social Distribution Playbooks',
+        slug: '/social-media-marketing-plan-template',
+      },
     ],
   },
 ]

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/technical-content-marketing-in-the-age-of-ai/introduction',
+    url: 'https://draft.dev/technical-content/introduction-to-content-marketing',
     siteName: 'Draft.dev',
     locale: 'en_US',
     title:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
     images: [
       {
-        url: '/draft/og/mega-guide/introduction-technical-content-marketing-in-the-ai-era.jpg',
+        url: '/draft/og/mega-guide/introduction_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Introduction to technical content marketing in the AI era.',
@@ -45,9 +45,7 @@ export const metadata: Metadata = {
       'An Introduction to Technical Content Marketing in the AI Era - Draft.dev',
     description:
       'Foundational guide to building a predictable, AI-era-ready content marketing engine for technical audiences.',
-    images: [
-      '/draft/og/mega-guide/introduction-technical-content-marketing-in-the-ai-era.jpg',
-    ],
+    images: ['/draft/og/mega-guide/introduction_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

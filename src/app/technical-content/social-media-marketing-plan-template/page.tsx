@@ -14,9 +14,54 @@ import type {
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Social Media Marketing Plan and Template',
+  metadataBase: new URL('https://draft.dev'),
+  title: 'Social Media Marketing Plan and Template - Draft.dev',
   description:
     'Platform-specific strategies for Twitter/X, LinkedIn, Facebook, and visual platforms to promote technical content effectively.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/social-media-marketing-plan-template',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title: 'Social Media Marketing Plan and Template - Draft.dev',
+    description:
+      'Platform-specific strategies for Twitter/X, LinkedIn, Facebook, and visual platforms to promote technical content effectively.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/social_media_marketing_plan_template_og_draftdev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Distribute technical content across social channels.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Social Media Marketing Plan and Template - Draft.dev',
+    description:
+      'Platform-specific strategies for Twitter/X, LinkedIn, Facebook, and visual platforms to promote technical content effectively.',
+    images: [
+      '/draft/og/mega-guide/social_media_marketing_plan_template_og_draftdev.jpg',
+    ],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical:
+      'https://draft.dev/technical-content/social-media-marketing-plan-template',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [

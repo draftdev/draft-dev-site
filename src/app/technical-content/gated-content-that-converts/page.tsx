@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       'High-value technical lead magnets: whitepapers, implementation guides, interactive tools, and developer-friendly CTAs.',
     images: [
       {
-        url: '/draft/og/mega-guide/gated-content.jpg',
+        url: '/draft/og/mega-guide/gated_content_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Create gated content that technical audiences value.',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Gated Content That Converts - Draft.dev',
     description:
       'High-value technical lead magnets: whitepapers, implementation guides, interactive tools, and developer-friendly CTAs.',
-    images: ['/draft/og/mega-guide/gated-content.jpg'],
+    images: ['/draft/og/mega-guide/gated_content_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

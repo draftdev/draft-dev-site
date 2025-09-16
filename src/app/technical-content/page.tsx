@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       'A practical, opinionated playbook for building a predictable technical content engine that still wins in an AI-first search landscape.',
     images: [
       {
-        url: '/draft/og/mega-guide/technical-content.jpg',
+        url: '/draft/og/mega-guide/technical_content_og_draftdev.jpg',
         width: 1200,
         height: 630,
         alt: 'Technical Content Marketing — Guide overview.',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: 'Technical Content Marketing in the Age of AI - Draft.dev',
     description:
       'A practical, opinionated playbook for building a predictable technical content engine that still wins in an AI-first search landscape.',
-    images: ['/draft/og/mega-guide/technical-content.jpg'],
+    images: ['/draft/og/mega-guide/technical_content_og_draftdev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },

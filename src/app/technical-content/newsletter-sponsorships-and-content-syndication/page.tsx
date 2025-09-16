@@ -12,9 +12,54 @@ import type { Metadata } from 'next'
 const BASE_PATH = '/technical-content'
 
 export const metadata: Metadata = {
-  title: 'Newsletter Sponsorships & Content Syndication for Technical Content',
+  metadataBase: new URL('https://draft.dev'),
+  title:
+    'Content Syndication and Newsletter Sponsorships for Technical Content - Draft.dev',
   description:
     'Plan newsletter buys, calculate CPL, track attribution, and syndicate technical content with canonical best practices.',
+  authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
+  openGraph: {
+    type: 'website',
+    url: 'https://draft.dev/technical-content/content-syndication',
+    siteName: 'Draft.dev',
+    locale: 'en_US',
+    title:
+      'Content Syndication and Newsletter Sponsorships for Technical Content - Draft.dev',
+    description:
+      'Plan newsletter buys, calculate CPL, track attribution, and syndicate technical content with canonical best practices.',
+    images: [
+      {
+        url: '/draft/og/mega-guide/content_syndication_og_draftdev.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Content Syndication and Newsletter Sponsorships for Technical Content.',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title:
+      'Content Syndication and Newsletter Sponsorships for Technical Content - Draft.dev',
+    description:
+      'Plan newsletter buys, calculate CPL, track attribution, and syndicate technical content with canonical best practices.',
+    images: ['/draft/og/mega-guide/content_syndication_og_draftdev.jpg'],
+    creator: '@draftdev',
+    site: '@draftdev',
+  },
+  alternates: {
+    canonical: 'https://draft.dev/technical-content/content-syndication',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const sections: Array<Section> = [
@@ -73,7 +118,7 @@ const resources = [
 export default function NewsletterSponsorshipsSyndicationPage() {
   return (
     <Page
-      title="Newsletter Sponsorships and Content Syndication for Technical Content"
+      title="Content Syndication and Newsletters for Technical Content"
       lead="Reach targeted developer audiences efficiently and amplify evergreen pieces across the right platforms."
     >
       <p>
