@@ -189,7 +189,7 @@ export default function Home() {
                 linkHref: '/#how-we-work',
               },
               {
-                title: 'Proactive Refreshes, measurable results',
+                title: 'Proactive refreshes, measurable results',
                 description:
                   'We track and report your performance and conduct frequent content refreshes on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
                 linkText: 'Learn about our Content Refreshes',
