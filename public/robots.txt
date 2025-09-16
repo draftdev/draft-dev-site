@@ -27,3 +27,4 @@ Disallow: *.pdf
 
 Sitemap: https://draft.dev/main_sitemap.xml
 Sitemap: https://draft.dev/blog_sitemap.xml
+Sitemap: https://draft.dev/technical_content_sitemap.xml
