@@ -6,9 +6,9 @@ import {
 
 import FAQ from '@/components/global/faq'
 import SinglePricingList from '@/components/global/single-price-list'
+import SinglePricing from '@/components/global/single-pricing'
 import SocialProof from '@/components/media/social-proof'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
-import CaseStudyHome from '@/components/page-components/home/case-study-home'
 import Hero from '@/components/page-components/home/hero'
 import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
@@ -314,7 +314,37 @@ export default function Home() {
 
           <Testimonials />
 
-          <CaseStudyHome />
+          <SinglePricing
+            title="Lead Generation Package"
+            description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
+            callToActionURL="/call"
+            priceText="Generate qualified leads"
+            price="$10,000"
+            currency="/Month"
+            includedFeatures={[
+              {
+                leadText: 'Strategic Content Creation:',
+                text: 'Full-funnel technical content with demo apps, code samples, and social collateral.',
+              },
+              {
+                leadText: 'Comprehensive Campaign Strategy:',
+                text: 'Analysis of existing content, competitor research, and measurable goals.',
+              },
+              {
+                leadText: 'Lead Collection System:',
+                text: 'Downloadable assets with landing page copy optimized for MQL/SQL conversion.',
+              },
+              {
+                leadText: 'Performance Optimization:',
+                text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
+              },
+            ]}
+            disclaimerOne="Six Month Minimum"
+            disclaimerTwo="Delivery starts after initial planning period"
+            disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
+          />
+
+          {/* <CaseStudyHome /> */}
           {/* <Testimonial
             quote="Having draft.dev source quality technical content for the Loft Labs blog has been a competitive advantage. It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published."
             name="Rich Burroughs"
