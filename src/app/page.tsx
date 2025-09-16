@@ -177,19 +177,19 @@ export default function Home() {
               {
                 title: 'Vetted and approved by real engineers',
                 description:
-                  "We all know AI content can produce faulty output. Especially when it comes to code. Don't risk your reputation and sacrifice quality. Our 300+ practicing software engineers with 10+ years of average experience are your 'humans-in-the-loop', reviewing and approving every piece.",
+                  "We all know AI systems can produce faulty output. Especially when it comes to code. Don't get flagged for high AI signals, risk your reputation and sacrifice quality. Our 300+ practicing software engineers with 10+ years of average experience are your 'humans-in-the-loop', reviewing and approving every piece.",
                 linkText: 'Why we have engineers-in-the-loop',
                 linkHref: '/draft-dev-vs-ai-gen-content',
               },
               {
-                title: 'Fast turnaround times AND high-quality output',
+                title: 'Fast turnaround AND high-quality output',
                 description:
                   'Get the best of both worlds: AI-enabled research and discovery, coupled with a production and review process that has been perfected over years. Our technical editors and copy editors are reviewing each output, making sure each piece is technically correct and authentic.',
                 linkText: 'See our process',
                 linkHref: '/#how-we-work',
               },
               {
-                title: 'Proactive Content Refreshes, measurable results',
+                title: 'Proactive Refreshes, measurable results',
                 description:
                   'We track and report your performance and conduct frequent content refreshes on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
                 linkText: 'Learn about our Content Refreshes',
