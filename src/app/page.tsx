@@ -5,6 +5,7 @@ import {
 } from '@/app/lib/schema'
 
 import FAQ from '@/components/global/faq'
+import SinglePricingList from '@/components/global/single-price-list'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
@@ -281,6 +282,36 @@ export default function Home() {
               imageAlt="Technical content development"
             />
           </div> */}
+
+          <SinglePricingList
+            title="Lead Generation Package"
+            description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
+            callToActionURL="/call"
+            priceText="Generate qualified leads"
+            price="$10,000"
+            currency="/Month"
+            includedFeatures={[
+              {
+                leadText: 'Strategic Content Creation:',
+                text: 'Full-funnel technical content with demo apps, code samples, and social collateral.',
+              },
+              {
+                leadText: 'Comprehensive Campaign Strategy:',
+                text: 'Analysis of existing content, competitor research, and measurable goals.',
+              },
+              {
+                leadText: 'Lead Collection System:',
+                text: 'Downloadable assets with landing page copy optimized for MQL/SQL conversion.',
+              },
+              {
+                leadText: 'Performance Optimization:',
+                text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
+              },
+            ]}
+            disclaimerOne="Six Month Minimum"
+            disclaimerTwo="Delivery starts after initial planning period"
+            disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
+          />
 
           <CaseStudyHome />
 
