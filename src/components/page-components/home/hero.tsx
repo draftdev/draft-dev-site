@@ -39,10 +39,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 <h1 className="font-code mb-4 py-2 text-left text-4xl leading-tight font-semibold text-white sm:text-5xl">
-                  AI-powered Tech Marketing.{' '}
-                  <span className="mt-3 block">
-                    Vetted by Expert Engineers and Editors.
-                  </span>
+                  AI-powered Tech Marketing. Vetted by expert engineers and editors.{' '}
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
