@@ -64,6 +64,11 @@ const teamMembers: TeamMember[] = [
   },
 
   {
+    name: 'Robin Fussell',
+    description: 'Marketing Manager',
+    img: '/draft/team/robin_fussell_draft_dev.png',
+  },
+  {
     name: 'Aniket Bhattacharyea',
     description: 'Developer Advocate',
     img: '/draft/team/aniket_bhattacharyea_draft_dev.jpg',
@@ -89,7 +94,11 @@ const Team = () => {
   return (
     <div className="bg-gradient-brand py-12 text-center lg:py-32 lg:text-left">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="subheader-light">The team</h2>
+        <h2 className="subheader-light">Meet Our Team</h2>
+        <p className="paragraph-light max-w-3xl text-lg">
+          Our team is composed of dedicated professionals, each bringing unique
+          skills and expertise to drive our mission forward.
+        </p>
 
         <hr className="mt-6 border-t border-gray-200/20" />
         <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:mx-0 lg:grid-cols-4">

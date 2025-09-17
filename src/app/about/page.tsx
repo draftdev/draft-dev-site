@@ -11,9 +11,9 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'About us - Draft.dev',
+  title: 'About Us - Draft.dev',
   description:
-    'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+    'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+      'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a technical content marketing agency run by subject matter experts. Learn more about our mission to help tech companies create authentic technical content.',
+      'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -96,10 +96,8 @@ export default function About() {
       />
 
       <MedHeader
-        title="About Draft.dev"
-        descriptionOne="Draft.dev is a technical content marketing agency focused on
-          creating in-depth, technical content for companies in tech. We work
-          with subject matter experts from around the world."
+        title="What is Draft.dev?"
+        descriptionOne="Draft.dev is a technical content marketing agency dedicated to producing high-qaulity content tailored for the tech industry. We understand the unique challenges technical companies face in communicating complex ideas clearly and effectively."
         descriptionTwo="Let us create technical tutorials, video tutorials, blog posts, and e-books for you."
       />
 
@@ -107,19 +105,19 @@ export default function About() {
         <What />
         <Team />
         <Why
-          title="What makes Draft.dev different?"
+          title="What Makes Draft.dev Different?"
           features={[
             {
-              title: 'A sole focus on technical audiences',
+              title: 'A Sole Focus on Technical Audiences',
               description:
-                'We work exclusively with companies that are trying to reach software developers, data engineers, and DevOps practitioners. Typically, our clients are Developer Relations or Developer Marketing teams at companies with 50+ employees or at least Series A funding.',
+                'We work exclusively with companies aiming to reach software developers, data engineers, and DevOps practitioners. Our typical clients include Developer Relations or Developer Marketing teams at companies with 50 or more employees or those that have achieved at least Series A funding.',
               linkText: 'How we build trust with technical audiences',
               linkHref: '/build-trust',
             },
             {
-              title: 'Technical expertise and Marketing excellence',
+              title: 'Technical Expertise and Marketing Excellence',
               description:
-                'We specialize in producing technical content (mostly tutorials and blog posts), but we can also help you create a content plan, come up with suitable topics, or execute on one-time content projects like ebooks.',
+                'We specialize in producing high-quality technical content, primarily tutorials and blog posts. We offer additional services to help you create a comprehensive content plan, generate suitable topics, or execute on one-time content projects such as ebooks.',
               linkText: 'How we predictably generate demand',
               linkHref: '/drive-awareness',
             },
@@ -134,9 +132,9 @@ export default function About() {
         />
         <SocialProof />
         <How
-          title="How Draft.dev works with clients"
+          title="How Draft.dev Works with Clients"
           subtitleBold=""
-          subtitleRegular=""
+          subtitleRegular="At Draft.dev, we prioritize understanding your needs and ensuring a successful partnership. Below is a structured overview of our client engagement process, which outlines each step clearly and provides actionable outcomes."
           steps={[
             {
               number: '1',

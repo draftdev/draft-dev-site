@@ -12,21 +12,27 @@ const What = () => {
                 content
               </h2>
 
-              <dl className="paragraph-dark mt-6 max-w-xl space-y-8 lg:max-w-none">
+              <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    After spending 8 years as a CTO, building software
-                    engineering teams in venture-funded startups, Karl Hughes
-                    founded Draft.dev to help companies create authentic
-                    technical content that resonates with software developers.
+                    With over 8 years of experience as a CTO, Karl Hughes has a
+                    deep understanding of the challenges companies face in
+                    connecting with software developers. This expertise inspired
+                    him to found Draft.dev in 2020, with the mission of helping
+                    businesses create authentic technical content that not only
+                    engages but also educates their target audience.
                   </dd>
                 </div>
 
                 <div className="relative">
                   <dd className="my-2">
-                    Since founding the company in 2020, the team has grown to
-                    include marketers, editors, engineers, and over 300
-                    engineers who write content for us.
+                    Draft.dev has expanded its team to include skilled
+                    marketers, editors, and engineers, alongside a network of
+                    over 300 experienced engineers who contribute high-quality
+                    content. This diverse team ensures that our content is not
+                    only technically accurate but also resonates with the unique
+                    needs of software developers, bridging the gap between
+                    marketing and education.
                   </dd>
                 </div>
               </dl>
@@ -38,7 +44,7 @@ const What = () => {
               <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
-                    alt="Sofware developers coding."
+                    alt="Software developers coding."
                     src="/site/med-portrait/coding_draft_dev.jpg"
                     width={400}
                     height={500}
