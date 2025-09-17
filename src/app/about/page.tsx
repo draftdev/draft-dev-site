@@ -97,7 +97,7 @@ export default function About() {
 
       <MedHeader
         title="What is Draft.dev?"
-        descriptionOne="Draft.dev is a technical content marketing agency dedicated to producing high-qaulity content tailored for the tech industry. We understand the unique challenges technical companies face in communicating complex ideas clearly and effectively."
+        descriptionOne="Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience."
         descriptionTwo="Let us create technical tutorials, video tutorials, blog posts, and e-books for you."
       />
 
