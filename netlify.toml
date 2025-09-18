@@ -52,6 +52,12 @@ force = true
   status = 301
   force = true
 
+   [[redirects]]
+  from = "https://draft.dev/learn/technical-content"
+  to = "https://draft.dev/learn/technical-content-writing"
+  status = 301
+  force = true
+
     [[redirects]]
   from = "https://draft.dev/best"
   to = "https://draft.dev/learn"
