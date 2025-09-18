@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     site: '@draftdev',
   },
   alternates: {
-    canonical: 'https://draft.dev/technical-content-marketing/content-calendar',
+    canonical: 'https://draft.dev/technical-content/content-calendar',
   },
   robots: {
     index: true,
