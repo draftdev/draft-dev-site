@@ -10,11 +10,14 @@ export default function NewsletterSmall() {
               <div className="p-8">
                 <Link href="/newsletter" title="Newsletter">
                   <h2 className="text-3xl font-semibold tracking-tight text-white">
-                    Trusted by 100+ tech companies. Over 300 engineers writing your technical content.
+                    Trusted by 100+ tech companies. Over 300 engineers writing
+                    your technical content.
                   </h2>
                 </Link>
                 <div className="mt-6 text-base text-white/90">
-                  Join over 3,000 subscribers and get our resources, tips, and case studies to help you reach developers. Delivered to your inbox every month.
+                  Join over 3,000 subscribers and get our resources, tips, and
+                  case studies to help you reach developers. Delivered to your
+                  inbox every month.
                 </div>
 
                 <div className="mt-6">
