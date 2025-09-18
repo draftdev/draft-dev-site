@@ -47,6 +47,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
           We combine AI workflows with human expertise, ensuring fast turnaround
           and high-quality output.
         </h3>
+        <a className="paragraph-light text-lg underline" href="/technical-content-examples">Interested in what we produce? Check out content examples for 40+ different clients here.</a>
       </div>
 
       <div className="my-6">
