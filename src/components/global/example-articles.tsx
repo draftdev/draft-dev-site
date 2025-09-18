@@ -9,12 +9,14 @@ export default function ExampleArticlesList() {
           Browse through content examples we have produced for clients like Docker, JetBrains, Sinch, and others.
         </h3>
         <p className="paragraph-light text-sm py-6">
-          <a className="text-gray-700 bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-4" href="#">Tutorial</a>
+          <a className="text-gray-700 bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-4" href="#tutorial">Tutorial</a>
           <a className="text-gray-700 bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-4" href="#guide">Guide</a>
           <a className="text-gray-700 bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-4" href="#persuasion">Persuasion</a>
           <a className="text-gray-700 bg-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mx-4" href="#comparison">Comparison</a>
         </p>
       </div>
+
+            <div id="tutorial" className="subheader-light mx-auto text-center text-lg sm:text-4xl py-20">Technical Tutorials</div>
 
       <div id="tutorial" className="my-6">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -1494,9 +1496,10 @@ export default function ExampleArticlesList() {
       </a>
       </div>
       </div>
-
-
-      <div id="guide" className="my-6">
+      
+      <div id="guide" className="subheader-light mx-auto text-center text-lg sm:text-4xl py-20">Technical Guides</div>
+      
+      <div className="mb-6">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <a href="https://brightdata.com/blog/web-data/fetch-api-in-javascript">
       <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
@@ -2656,7 +2659,9 @@ An enterprise VPN service securely connects remote workers and devices. As a VPN
       </div>
       </div>
 
-      <div id="persuasion" className="my-6">
+      <div id="persuasion" className="subheader-light mx-auto text-center text-lg sm:text-4xl py-20">Persuasion Pieces</div>
+
+      <div className="my-6">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <a href="https://www.devstats.com/blog/improving-delivery-by-measuring-lead-time-for-changes">
       <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
@@ -3061,8 +3066,10 @@ An enterprise VPN service securely connects remote workers and devices. As a VPN
       </a>
       </div>
       </div>
+
+      <div id="comparison" className="subheader-light mx-auto text-center text-lg sm:text-4xl py-20">Technical Comparisons</div>
       
-      <div id="comparison" className="my-6">
+      <div className="my-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <a href="https://brightdata.com/blog/web-data/scrapy-vs-selenium">
         <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
