@@ -250,8 +250,7 @@ function DynamicNavbar() {
         </header>
       </div>
 
-      {/* Spacer equals total height of Banner + Navbar */}
-      <div aria-hidden="true" style={{ height: fixedBlockHeight }} />
+      <div aria-hidden="true" style={{ height: 120 }} />
     </>
   )
 }
