@@ -21,9 +21,11 @@
   --color-gradient-3: #6c5782;
 
   /* fonts */
-  --font-sans: var(--font-fira-sans), system-ui, sans-serif;
-  --font-code: var(--font-fira-code), monospace;
+  /* --font-sans: var(--font-fira-sans), system-ui, sans-serif;
+  --font-code: var(--font-fira-code), monospace; */
 
+  --font-sans: 'Fira Sans', system-ui, sans-serif;
+  --font-code: 'Fira Code', monospace;
   /* radii */
   --radius-4xl: 2rem;
 

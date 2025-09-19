@@ -12,6 +12,8 @@
     "prebuild": "npm run generate-sitemap"
   },
   "dependencies": {
+    "@fontsource/fira-code": "^5.2.7",
+    "@fontsource/fira-sans": "^5.2.7",
     "@headlessui/react": "^2.2.6",
     "@heroicons/react": "^2.2.0",
     "@next/third-parties": "^15.4.1",

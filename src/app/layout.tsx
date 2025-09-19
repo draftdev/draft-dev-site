@@ -1,8 +1,14 @@
 import Analytics from '@/components/analytics'
 import { Footer } from '@/components/global/footer'
 import '@/styles/tailwind.css'
+
+// Import Fontsource CSS files
+import '@fontsource/fira-code/500.css'
+import '@fontsource/fira-sans/400.css'
+import '@fontsource/fira-sans/500.css'
+import '@fontsource/fira-sans/700.css'
+
 import DynamicNavbar from '../components/global/nav/navbar-dynamic'
-import { firaCode, firaSans } from '../fonts/fonts'
 
 export default function RootLayout({
   children,
@@ -10,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${firaSans.variable} ${firaCode.variable}`}>
+    <html lang="en">
       <body className="bg-white antialiased">
         <DynamicNavbar />
         <div className="flex min-h-screen flex-col">
