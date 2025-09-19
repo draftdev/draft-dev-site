@@ -626,15 +626,7 @@ export default function SetupEnginePage() {
           form builder
         </a>{' '}
         to create a signup form at the bottom of each blog post you publish. Use
-        a{' '}
-        <a
-          href="mailchimp.com/help/about-double-opt-in/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          double opt-in
-        </a>{' '}
-        process to ensure high-quality leads.
+        a double opt-in process to ensure high-quality leads.
       </p>
       <p>
         For technical content marketing, implement contextual signup forms based
