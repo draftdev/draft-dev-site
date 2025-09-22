@@ -214,12 +214,10 @@ export default async function PostPage({ params }: Props) {
               fill
               className="rounded-lg object-cover"
               quality={75}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 700px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 672px, 400px"
               priority={isLCP}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-              referrerPolicy="no-referrer"
-              unoptimized
             />
           </div>
         </div>
