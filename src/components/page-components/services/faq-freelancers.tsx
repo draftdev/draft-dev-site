@@ -39,7 +39,7 @@ const faqs: FAQ[] = [
   },
 ]
 
-export default function FAQ(): JSX.Element {
+export default function FAQ() {
   return (
     <div id="faq" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function FAQ(): JSX.Element {
             </span>{' '}
             <Link
               href="https://draft.dev/call"
-              className="hover:text-gradient-brand font-semibold text-secondary underline"
+              className="hover:text-gradient-brand text-secondary font-semibold underline"
             >
               Book a discovery call
             </Link>{' '}
@@ -63,7 +63,7 @@ export default function FAQ(): JSX.Element {
 
           <p className="p-dark"></p>
           <div className="mt-12">
-            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-10">
+            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10">
               {faqs.map((faq) => (
                 <div key={faq.id}>
                   <dt className="text-lg font-semibold text-gray-600">

@@ -99,7 +99,7 @@ const posts: Post[] = [
   // More resources...
 ]
 
-export default function ResourceGrid(): JSX.Element {
+export default function ResourceGrid() {
   return (
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -119,9 +119,9 @@ export default function ResourceGrid(): JSX.Element {
                     src={post.imageUrl}
                     width={400}
                     height={210}
-                    className="sm:aspect-2/1 lg:aspect-3/2 aspect-video w-full rounded-2xl bg-gray-100 object-cover"
+                    className="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-2/1 lg:aspect-3/2"
                   />
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
                 </div>
                 <div className="max-w-xl">
                   <div className="group relative">

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ForMarketers(): JSX.Element {
+export default function ForMarketers() {
   return (
     <div>
       <ServiceHeader

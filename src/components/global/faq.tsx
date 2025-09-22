@@ -45,7 +45,7 @@ const faqs: FAQ[] = [
   },
 ]
 
-export default function FAQ(): JSX.Element {
+export default function FAQ() {
   return (
     <div id="faq" className="mb-24 py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
