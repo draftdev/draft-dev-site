@@ -190,33 +190,73 @@ export default async function PostPage({ params }: Props) {
 
   const transform = (domNode: DOMNode) => {
     if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
-      const { src, alt } = domNode.attribs
+      const { src, alt, width, height } = domNode.attribs
       if (!src) return undefined
 
       const imageUrl = getImageUrl(src)
-      const isLCP = isFirstImage // First image is likely LCP
-      isFirstImage = false // Subsequent images won't be prioritized
+      const isLCP = isFirstImage
+      isFirstImage = false
+
+      // Calculate aspect ratio from WordPress dimensions
+      const imgWidth = width ? parseInt(width) : 16
+      const imgHeight = height ? parseInt(height) : 9
+      const aspectRatio = (imgHeight / imgWidth) * 100
+
       return (
         <div className="my-6">
-          <Image
-            src={imageUrl}
-            alt={alt || 'Blog content image'}
-            width={768}
-            height={450}
-            className="mx-auto rounded-lg object-cover"
-            quality={75}
-            sizes="(max-width: 768px) 100vw, 700px"
-            priority={isLCP}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-            referrerPolicy="no-referrer"
-            unoptimized
-          />
+          <div
+            className="relative w-full overflow-hidden rounded-lg"
+            style={{ paddingBottom: `${aspectRatio}%` }}
+          >
+            <Image
+              src={imageUrl}
+              alt={alt || 'Blog content image'}
+              fill
+              className="rounded-lg object-cover"
+              quality={75}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 700px"
+              priority={isLCP}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+              referrerPolicy="no-referrer"
+              unoptimized
+            />
+          </div>
         </div>
       )
     }
     return undefined
   }
+
+  // const transform = (domNode: DOMNode) => {
+  //   if (domNode.type === 'tag' && domNode.name === 'img' && domNode.attribs) {
+  //     const { src, alt } = domNode.attribs
+  //     if (!src) return undefined
+
+  //     const imageUrl = getImageUrl(src)
+  //     const isLCP = isFirstImage // First image is likely LCP
+  //     isFirstImage = false // Subsequent images won't be prioritized
+  //     return (
+  //       <div className="my-6">
+  //         <Image
+  //           src={imageUrl}
+  //           alt={alt || 'Blog content image'}
+  //           width={768}
+  //           height={450}
+  //           className="mx-auto rounded-lg object-cover"
+  //           quality={75}
+  //           sizes="(max-width: 768px) 100vw, 700px"
+  //           priority={isLCP}
+  //           placeholder="blur"
+  //           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+  //           referrerPolicy="no-referrer"
+  //           unoptimized
+  //         />
+  //       </div>
+  //     )
+  //   }
+  //   return undefined
+  // }
 
   const displayAuthor =
     post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'

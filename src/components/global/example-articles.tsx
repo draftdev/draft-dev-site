@@ -964,7 +964,7 @@ export default function ExampleArticlesList() {
                         Learn to build and maintain custom Backstage plugins for
                         enhanced developer portal functionality and automation.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Developer Tools, Automation, Integrations
                       </p>
                       <div className="bg-gray-300" />
@@ -1000,7 +1000,7 @@ export default function ExampleArticlesList() {
                         workflows using plugins for seamless developer
                         experience.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Developer Tools, Automation, Integrations, Plugins
                       </p>
                       <div className="bg-gray-300" />
@@ -1036,7 +1036,7 @@ export default function ExampleArticlesList() {
                         Kubernetes cluster for efficient resource utilization
                         and management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes
                       </p>
                       <div className="bg-gray-300" />
@@ -1071,7 +1071,7 @@ export default function ExampleArticlesList() {
                         Kubernetes clusters to ensure data protection and
                         disaster recovery.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes, Backup
                       </p>
                       <div className="bg-gray-300" />
@@ -1105,7 +1105,7 @@ export default function ExampleArticlesList() {
                         Connect and interact with SharePoint API using Python
                         for document management and collaboration workflows.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: API, Integration, Python
                       </p>
                       <div className="bg-gray-300" />
@@ -1141,7 +1141,7 @@ export default function ExampleArticlesList() {
                         using Python and the Google Drive API for file
                         management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: REST API, Python, Flask
                       </p>
                       <div className="bg-gray-300" />
@@ -1177,7 +1177,7 @@ export default function ExampleArticlesList() {
                         controller using Helm charts for simplified traffic
                         management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes, Traefik
                       </p>
                       <div className="bg-gray-300" />
@@ -1215,9 +1215,7 @@ export default function ExampleArticlesList() {
                         the Payments Hub API for streamlined payment processing
                         setup.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
-                        Tags: Python
-                      </p>
+                      <p className="text-base text-gray-500">Tags: Python</p>
                       <div className="bg-gray-300" />
                     </div>
                   </div>
@@ -1254,7 +1252,7 @@ export default function ExampleArticlesList() {
                         the Payments Hub API for subscription and recurring
                         payment management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Web Development
                       </p>
                       <div className="bg-gray-300" />
@@ -1289,7 +1287,7 @@ export default function ExampleArticlesList() {
                         applications for AI-powered features and developer
                         productivity.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: ChatGPT, AI, Developer Tools, Productivity
                       </p>
                       <div className="bg-gray-300" />
@@ -1323,7 +1321,7 @@ export default function ExampleArticlesList() {
                         Build robust ELT pipelines using Argo Workflows and dbt
                         for scalable data transformation and orchestration.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Argo Workflows
                       </p>
                       <div className="bg-gray-300" />
@@ -1358,7 +1356,7 @@ export default function ExampleArticlesList() {
                         comprehensive metrics collection and alerting
                         capabilities.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Prometheus, Monitoring
                       </p>
                       <div className="bg-gray-300" />
@@ -1394,7 +1392,7 @@ export default function ExampleArticlesList() {
                         systems using Rapyd's API for global financial
                         transactions.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Payment, Websocket, Real-time, Node.js
                       </p>
                       <div className="bg-gray-300" />
@@ -1430,7 +1428,7 @@ export default function ExampleArticlesList() {
                         learn how Rapyd enables scalable partner payment
                         integrations.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Payments, Python
                       </p>
                       <div className="bg-gray-300" />
@@ -1465,7 +1463,7 @@ export default function ExampleArticlesList() {
                         streaming and analytics with seamless integration
                         patterns.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: MongoDB, Redpanda Connect, Integration, Real-time
                         streaming
                       </p>
@@ -1502,7 +1500,7 @@ export default function ExampleArticlesList() {
                         with Pinecone for vector search and machine learning
                         applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Redpanda Connect, PineCone, Real-time integration,
                         Vector databases
                       </p>
@@ -1538,7 +1536,7 @@ export default function ExampleArticlesList() {
                         spaces and recover important collaborative content
                         safely.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Data Backup, Confluence, Atlassian
                       </p>
                       <div className="bg-gray-300" />
@@ -1575,7 +1573,7 @@ export default function ExampleArticlesList() {
                         databases for immediate threat detection and automated
                         prevention.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Security, Streaming Databases, Real-time threat
                         detection
                       </p>
@@ -1611,7 +1609,7 @@ export default function ExampleArticlesList() {
                         Create automated shipping notification email workflows
                         using Mailgun API for enhanced customer communication.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Email Workflows, API
                       </p>
                       <div className="bg-gray-300" />
@@ -1647,7 +1645,7 @@ export default function ExampleArticlesList() {
                         Mailgun API for seamless e-commerce customer
                         experiences.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Email Workflows, API
                       </p>
                       <div className="bg-gray-300" />
@@ -1683,7 +1681,7 @@ export default function ExampleArticlesList() {
                         Docker images for PHP applications in production
                         environments.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: PHP, Docker
                       </p>
                       <div className="bg-gray-300" />
@@ -1718,7 +1716,7 @@ export default function ExampleArticlesList() {
                         traffic-driven approaches for comprehensive application
                         validation.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes, Testing, Speedscale
                       </p>
                       <div className="bg-gray-300" />
@@ -1754,7 +1752,7 @@ export default function ExampleArticlesList() {
                         Python Flask applications for enterprise security
                         integration.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Authentication, SSO, SAML, Python
                       </p>
                       <div className="bg-gray-300" />
@@ -1789,7 +1787,7 @@ export default function ExampleArticlesList() {
                         zero-trust network for simplified and secure remote
                         management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Tailscale, Kubernetes
                       </p>
                       <div className="bg-gray-300" />
@@ -1823,7 +1821,7 @@ export default function ExampleArticlesList() {
                         Learn multiple methods to establish SSH connections to
                         Raspberry Pi devices for remote access and management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Linux, Shell scripting
                       </p>
                       <div className="bg-gray-300" />
@@ -1865,7 +1863,7 @@ export default function ExampleArticlesList() {
                         HTTP requests, handling responses, and managing async
                         operations effectively.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Javascript, Proxies
                       </p>
                       <div className="bg-gray-300" />
@@ -1900,7 +1898,7 @@ export default function ExampleArticlesList() {
                         valuable insights from your data sources and improve
                         decision-making.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Data Discovery
                       </p>
                       <div className="bg-gray-300" />
@@ -1935,7 +1933,7 @@ export default function ExampleArticlesList() {
                         identity security best practices for financial
                         institutions and regulatory adherence.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: IAM, Compliance
                       </p>
                       <div className="bg-gray-300" />
@@ -1971,7 +1969,7 @@ export default function ExampleArticlesList() {
                         impact on IAM strategies for enhanced cybersecurity and
                         compliance management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: IAM, Cybersecurity
                       </p>
                       <div className="bg-gray-300" />
@@ -2007,7 +2005,7 @@ export default function ExampleArticlesList() {
                         software development workflows and improve delivery
                         performance tracking.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software Development, DevOps, Agile
                       </p>
                       <div className="bg-gray-300" />
@@ -2042,7 +2040,7 @@ export default function ExampleArticlesList() {
                         measure development efficiency and identify workflow
                         bottlenecks.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software Development, DevOps, Agile
                       </p>
                       <div className="bg-gray-300" />
@@ -2078,7 +2076,7 @@ export default function ExampleArticlesList() {
                         strategies for optimizing resources, reducing costs, and
                         improving performance.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Cloud, Infrastructure, Automation, DevOps
                       </p>
                       <div className="bg-gray-300" />
@@ -2113,7 +2111,7 @@ export default function ExampleArticlesList() {
                         better tools, streamlined workflows, and improved
                         productivity.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: DevOps, Platform Engineering
                       </p>
                       <div className="bg-gray-300" />
@@ -2148,7 +2146,7 @@ export default function ExampleArticlesList() {
                         teams, improving efficiency, and delivering better
                         software faster.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: DevOps, Developer Tools, Platform Engineering
                       </p>
                       <div className="bg-gray-300" />
@@ -2183,7 +2181,7 @@ export default function ExampleArticlesList() {
                         attack filtering and mitigation in network
                         infrastructure.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: BGP, Networking
                       </p>
                       <div className="bg-gray-300" />
@@ -2219,7 +2217,7 @@ export default function ExampleArticlesList() {
                         choose the optimal approach for your network
                         architecture and scalability needs.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: BGP, Networking, Infrastructure
                       </p>
                       <div className="bg-gray-300" />
@@ -2255,7 +2253,7 @@ export default function ExampleArticlesList() {
                         services for improved security, functionality, and user
                         experience.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Authentication, FusionAuth
                       </p>
                       <div className="bg-gray-300" />
@@ -2290,7 +2288,7 @@ export default function ExampleArticlesList() {
                         maintaining strong security through intelligent
                         authentication decisions.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Authentication, MFA
                       </p>
                       <div className="bg-gray-300" />
@@ -2326,7 +2324,7 @@ export default function ExampleArticlesList() {
                         techniques, tools, and implementation strategies for
                         secure code development.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: SAST, SDLC, CI/CD
                       </p>
                       <div className="bg-gray-300" />
@@ -2362,7 +2360,7 @@ export default function ExampleArticlesList() {
                         methods, tools, and best practices for runtime
                         vulnerability detection.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: DAST, Security
                       </p>
                       <div className="bg-gray-300" />
@@ -2397,7 +2395,7 @@ export default function ExampleArticlesList() {
                         tools and techniques for faster prototyping and
                         deployment.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: AI, Mobile Development
                       </p>
                       <div className="bg-gray-300" />
@@ -2432,7 +2430,7 @@ export default function ExampleArticlesList() {
                         NetFlow, and sFlow for comprehensive network visibility
                         and performance tracking.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Network, Observability, Performance Monitoring
                       </p>
                       <div className="bg-gray-300" />
@@ -2468,7 +2466,7 @@ export default function ExampleArticlesList() {
                         for better infrastructure visualization and
                         troubleshooting capabilities.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Network, Observability, Performance Monitoring
                       </p>
                       <div className="bg-gray-300" />
@@ -2503,7 +2501,7 @@ export default function ExampleArticlesList() {
                         for automated accounting, invoicing, and financial data
                         management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: FreshBooks, Unified API
                       </p>
                       <div className="bg-gray-300" />
@@ -2539,7 +2537,7 @@ export default function ExampleArticlesList() {
                         architecture, implementation, and optimization for
                         enhanced AI applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: RAG, Knowledge Base
                       </p>
                       <div className="bg-gray-300" />
@@ -2575,7 +2573,7 @@ export default function ExampleArticlesList() {
                         smooth, reliable Kubernetes deployments and container
                         orchestration success.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes
                       </p>
                       <div className="bg-gray-300" />
@@ -2611,7 +2609,7 @@ export default function ExampleArticlesList() {
                         organized deployments, efficient resource management,
                         and streamlined releases.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Kubernetes
                       </p>
                       <div className="bg-gray-300" />
@@ -2647,7 +2645,7 @@ export default function ExampleArticlesList() {
                         vulnerabilities with comprehensive best practices for
                         secure cloud computing.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Cybersecurity, Networking, DevOps
                       </p>
                       <div className="bg-gray-300" />
@@ -2682,7 +2680,7 @@ export default function ExampleArticlesList() {
                         solutions tailored for small to medium enterprises and
                         growing businesses.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Cybersecurity, Networking, VPN
                       </p>
                       <div className="bg-gray-300" />
@@ -2717,7 +2715,7 @@ export default function ExampleArticlesList() {
                         scalable, maintainable, and developer-friendly web
                         services and applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: API Development
                       </p>
                       <div className="bg-gray-300" />
@@ -2753,9 +2751,7 @@ export default function ExampleArticlesList() {
                         performance and improved search engine indexing of your
                         website content.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
-                        Tags: SEO
-                      </p>
+                      <p className="text-base text-gray-500">Tags: SEO</p>
                       <div className="bg-gray-300" />
                     </div>
                   </div>
@@ -2789,9 +2785,7 @@ export default function ExampleArticlesList() {
                         valuable SEO data, performance metrics, and search
                         analytics insights.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
-                        Tags: SEO
-                      </p>
+                      <p className="text-base text-gray-500">Tags: SEO</p>
                       <div className="bg-gray-300" />
                     </div>
                   </div>
@@ -2824,7 +2818,7 @@ export default function ExampleArticlesList() {
                         reliability, security, and robustness through
                         comprehensive error handling.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software testing
                       </p>
                       <div className="bg-gray-300" />
@@ -2859,7 +2853,7 @@ export default function ExampleArticlesList() {
                         methodologies, best practices, and key strategies for
                         quality assurance.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software testing
                       </p>
                       <div className="bg-gray-300" />
@@ -2895,7 +2889,7 @@ export default function ExampleArticlesList() {
                         technical foundations, capabilities, and transformative
                         potential for automation.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: AI, Autonomous Systems, Agentic AI
                       </p>
                       <div className="bg-gray-300" />
@@ -2930,7 +2924,7 @@ export default function ExampleArticlesList() {
                         Management for efficient issue tracking and workflow
                         management.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: JIRA, Project Management
                       </p>
                       <div className="bg-gray-300" />
@@ -2964,7 +2958,7 @@ export default function ExampleArticlesList() {
                         Learn how to restore deleted or lost issues in Bitbucket
                         for maintaining project continuity and data recovery.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: BitBucket, Git, Project Management
                       </p>
                       <div className="bg-gray-300" />
@@ -3000,7 +2994,7 @@ export default function ExampleArticlesList() {
                         management using Mailgun API for efficient, scalable
                         email campaigns.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Queues, Email delivery
                       </p>
                       <div className="bg-gray-300" />
@@ -3035,7 +3029,7 @@ export default function ExampleArticlesList() {
                         email provider including deliverability, scalability,
                         and integration features.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: API, email
                       </p>
                       <div className="bg-gray-300" />
@@ -3072,7 +3066,7 @@ export default function ExampleArticlesList() {
                         Laravel. You&#x27;ll also learn how to use Snyk to
                         detect this vulnerability in your code and dependencies.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Laravel, PHP, Code Security, Open Redirect
                       </p>
                       <div className="bg-gray-300" />
@@ -3110,7 +3104,7 @@ export default function ExampleArticlesList() {
                         real cause for concern? This article will help you
                         answer these questions.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Java Security, Snyk
                       </p>
                       <div className="bg-gray-300" />
@@ -3146,7 +3140,7 @@ export default function ExampleArticlesList() {
                         improves software quality through better testing and
                         development workflows.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Service mocking, QA
                       </p>
                       <div className="bg-gray-300" />
@@ -3182,7 +3176,7 @@ export default function ExampleArticlesList() {
                         engineering for better performance testing and system
                         optimization.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Platform Engineer, DevOps, API, Backend
                       </p>
                       <div className="bg-gray-300" />
@@ -3218,7 +3212,7 @@ export default function ExampleArticlesList() {
                         workers and devices. As a VPN solution, it lets network
                         admins easily manage access and permissions.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: VPN, Networking, Remote Work
                       </p>
                       <div className="bg-gray-300" />
@@ -3255,7 +3249,7 @@ export default function ExampleArticlesList() {
                         of SSH. Learn how to connect remote users to any of your
                         devices with zero configuration.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: VPN, Networking, Remote Work
                       </p>
                       <div className="bg-gray-300" />
@@ -3297,7 +3291,7 @@ export default function ExampleArticlesList() {
                         time for changes to identify bottlenecks and improve
                         deployment efficiency.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software Development
                       </p>
                       <div className="bg-gray-300" />
@@ -3333,7 +3327,7 @@ export default function ExampleArticlesList() {
                         software development efficiency and how it drives better
                         delivery outcomes.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software development, DORA
                       </p>
                       <div className="bg-gray-300" />
@@ -3369,7 +3363,7 @@ export default function ExampleArticlesList() {
                         dynamic content within content-heavy mobile and web
                         applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: GraphQL, Headless CMS
                       </p>
                       <div className="bg-gray-300" />
@@ -3404,7 +3398,7 @@ export default function ExampleArticlesList() {
                         proven techniques for better data preprocessing and
                         model optimization.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Data Science, Data Analysis
                       </p>
                       <div className="bg-gray-300" />
@@ -3440,7 +3434,7 @@ export default function ExampleArticlesList() {
                         apps to ensure seamless user experiences without
                         internet connectivity.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: User Experience, Mobile Development, REST, Offline
                       </p>
                       <div className="bg-gray-300" />
@@ -3475,7 +3469,7 @@ export default function ExampleArticlesList() {
                         engagement and how to create intuitive interfaces for
                         mobile applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: UI Design, User Experience, Mobile Development
                       </p>
                       <div className="bg-gray-300" />
@@ -3511,7 +3505,7 @@ export default function ExampleArticlesList() {
                         Chainguard to protect against vulnerabilities and
                         enhance deployment safety.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Container Image Registry, Security, Chainguard
                       </p>
                       <div className="bg-gray-300" />
@@ -3547,7 +3541,7 @@ export default function ExampleArticlesList() {
                         time management strategies to boost productivity and
                         code quality.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Developer Tools, Productivity
                       </p>
                       <div className="bg-gray-300" />
@@ -3582,7 +3576,7 @@ export default function ExampleArticlesList() {
                         and learn proper backup strategies for your development
                         projects.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Git, GitLab, GitHub, BitBucket
                       </p>
                       <div className="bg-gray-300" />
@@ -3617,7 +3611,7 @@ export default function ExampleArticlesList() {
                         privacy and security measures across various industry
                         applications.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Stream processing, Data security
                       </p>
                       <div className="bg-gray-300" />
@@ -3652,7 +3646,7 @@ export default function ExampleArticlesList() {
                         real-time machine learning applications with low latency
                         and high throughput.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Data Engineering, Data Science, Machine Learning
                       </p>
                       <div className="bg-gray-300" />
@@ -3688,7 +3682,7 @@ export default function ExampleArticlesList() {
                         analyzing whether slowdowns originate from database or
                         API components.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Performance, Speedscale
                       </p>
                       <div className="bg-gray-300" />
@@ -3724,7 +3718,7 @@ export default function ExampleArticlesList() {
                         testing benefits while minimizing risks in production
                         environments.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: Software Testing
                       </p>
                       <div className="bg-gray-300" />
@@ -3760,7 +3754,7 @@ export default function ExampleArticlesList() {
                         solutions for remote access and comprehensive network
                         security protocols.
                       </p>
-                      <p className="text-base text-sm text-gray-500">
+                      <p className="text-base text-gray-500">
                         Tags: VPN, Cybersecurity
                       </p>
                       <div className="bg-gray-300" />
