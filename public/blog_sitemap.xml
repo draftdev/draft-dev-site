@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/b2b-demand-generation</loc>
+    <lastmod>2025-09-19T15:09:25Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/aeo-geo-for-dev-tools</loc>
     <lastmod>2025-09-11T13:53:52Z</lastmod>
     <priority>0.8</priority>
@@ -847,7 +852,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/technical-content-writing</loc>
-    <lastmod>2025-09-17T11:54:53Z</lastmod>
+    <lastmod>2025-09-18T11:06:17Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>

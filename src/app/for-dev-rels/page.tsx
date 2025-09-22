@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ForDevRels(): JSX.Element {
+export default function ForDevRels() {
   return (
     <div>
       <ServiceHeader
