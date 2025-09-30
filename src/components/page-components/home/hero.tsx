@@ -7,7 +7,7 @@ import heroImg from '/public/site/med-portrait/hero.webp'
 const Hero: React.FC = () => {
   return (
     <div className="bg-gradient-brand">
-      <main className="relative isolate pb-16">
+      <main className="relative isolate py-16">
         <div className="overflow-hidden">
           <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between lg:gap-12">
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Right: hero image */}
-              <div className="mt-10 flex justify-center lg:mt-0 lg:justify-start">
+              <div className="mt-10 hidden justify-center lg:flex lg:justify-start">
                 <div className="inline-block shrink-0">
                   <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                     <div className="rounded-4xl p-2 shadow-md shadow-black/5">
@@ -71,8 +71,7 @@ const Hero: React.FC = () => {
                           fill
                           className="rounded-xl object-cover"
                           priority
-                          fetchPriority="high"
-                          sizes="(min-width:1280px) 400px, (min-width:1024px) 320px, 90vw"
+                          sizes="(min-width:1280px) 3050px, (min-width:1024px) 300px, 90vw"
                           placeholder="blur"
                         />
                       </div>
@@ -83,7 +82,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Defer logos to avoid competing with LCP */}
-            <div className="mt-12 text-center">
+            <div className="mt-18 text-center">
               <LogosFlex />
             </div>
           </div>
