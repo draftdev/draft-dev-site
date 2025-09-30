@@ -34,7 +34,7 @@ export default function ThankYou() {
                     browse through our resources library{' '}
                   </Link>
                 </strong>
-                and download our free podcasting guides and checklists!
+                and download our free guides!
               </p>
             </div>
           </div>
