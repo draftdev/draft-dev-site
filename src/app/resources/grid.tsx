@@ -31,16 +31,27 @@ const posts: Post[] = [
       'Learn how to build strategic content clusters around pillar content, nudge your readers down the funnel, and transform your expertise into valuable gated assets that convert visitors into leads.',
     imageUrl: '/site/med-landscape/orchestrate_thumb_draft_dev.jpg',
   },
+
   {
     id: 3,
+    title:
+      'Distributing Content on Social Media and Generating Leads from Gated Assets',
+    href: '/distributing-content-on-social-media',
+    description:
+      'This document will walk through a simple framework on how to utilize potentially existing downloadable assets and orchestrate some simple social media playbooks.',
+    imageUrl: '/draft/og/distributing_content_og_draft_dev.jpg',
+  },
+  {
+    id: 4,
     title: 'The Trello Content Calendar Template',
     href: '/trello-content-calendar-template',
     description:
       'Build a powerful Trello content calendar with automated workflows. Free template includes a 10-stage Kanban system and pre-built checklists.',
     imageUrl: '/site/med-landscape/trello_guide_og_draft_dev.jpg',
   },
+
   {
-    id: 4,
+    id: 5,
     title: 'The Asana Content Calendar Template',
     href: '/asana-content-calendar-template',
     description:
@@ -48,7 +59,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/asana_guide_og_draft_dev.jpg',
   },
   {
-    id: 5,
+    id: 6,
     title: 'The Airtable Content Calendar Template',
     href: '/airtable-content-calendar-template',
     description:
@@ -56,7 +67,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/airtable_guide_og_draft_dev.jpg',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
@@ -64,7 +75,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
   {
-    id: 7,
+    id: 8,
     title: 'How to run your own Keyword Audit and Creating Topic Clusters',
     href: '/keyword-audit-topic-clusters',
     description:
@@ -72,7 +83,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/keyword-audit-topic-clusters-draft-dev.jpg',
   },
   {
-    id: 8,
+    id: 9,
     title: "The Technical Content Manager's Playbook",
     href: '/playbook',
     description:
@@ -80,7 +91,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
   {
-    id: 9,
+    id: 10,
     title: 'The Content Engine Checklist',
     href: '/content-engine-checklist',
     description:
@@ -88,7 +99,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
   },
   {
-    id: 10,
+    id: 11,
     title: "50 Winning Ideas For Your Company's Blog",
     href: '/ideas',
     description:
