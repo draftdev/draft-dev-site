@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
+    <loc>https://draft.dev/learn/top-content-marketing-agencies</loc>
+    <lastmod>2025-10-01T16:21:03Z</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://draft.dev/learn/what-do-b2b-seo-agencies-do</loc>
     <lastmod>2025-09-25T13:37:17Z</lastmod>
     <priority>0.8</priority>
@@ -257,7 +262,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/what-is-a-head-of-growth</loc>
-    <lastmod>2025-09-05T15:04:56Z</lastmod>
+    <lastmod>2025-10-02T16:13:03Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -322,7 +327,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/what-is-a-technical-marketing-manager</loc>
-    <lastmod>2025-09-05T15:10:59Z</lastmod>
+    <lastmod>2025-10-03T10:30:45Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -557,7 +562,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/running-ghost-on-docker-for-your-developer-blog</loc>
-    <lastmod>2025-09-05T15:06:35Z</lastmod>
+    <lastmod>2025-10-02T16:30:20Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -847,7 +852,7 @@
   </url>
   <url>
     <loc>https://draft.dev/learn/creating-hugo-themes</loc>
-    <lastmod>2025-09-05T15:07:56Z</lastmod>
+    <lastmod>2025-10-03T09:59:12Z</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
