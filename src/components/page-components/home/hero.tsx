@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
                 </div>
 
                 <h1 className="font-code mb-4 py-2 text-left text-4xl leading-tight font-semibold text-white sm:text-5xl">
-                  AI-powered Tech Marketing. Vetted by expert engineers and
-                  editors.{' '}
+                  We Build Content-Powered Growth Engines for Developer
+                  Platforms
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
@@ -70,8 +70,7 @@ const Hero: React.FC = () => {
                           src={heroImg}
                           fill
                           className="rounded-xl object-cover"
-                          priority
-                          sizes="(min-width:1280px) 3050px, (min-width:1024px) 300px, 90vw"
+                          sizes="(max-width: 1023px) 0px, 400px"
                           placeholder="blur"
                         />
                       </div>
@@ -80,8 +79,6 @@ const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            {/* Defer logos to avoid competing with LCP */}
             <div className="mt-18 text-center">
               <LogosFlex />
             </div>
