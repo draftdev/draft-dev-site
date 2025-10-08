@@ -98,8 +98,8 @@ export default function Home() {
         <main>
           <Hero />
           <Why
-            title="AI-Powered Content That Technical Audiences Actually Respect And Trust"
-            subtitle="AI speed meets human expertise for content that performs and converts"
+            title="We blend the speed of AI with the expertise of humans-in-the-loop"
+            subtitle="Fast turnaround for content that technical audiences respect and trust"
             features={[
               {
                 title: 'Vetted and approved by real engineers',
