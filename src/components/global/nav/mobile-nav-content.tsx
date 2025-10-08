@@ -50,7 +50,6 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     [router, onNavigate],
   )
 
-  // Why Us dropdown data
   const whyUsUseCases = [
     { name: 'Build Trust', href: '/build-trust' },
     { name: 'Drive Awareness', href: '/drive-awareness' },
@@ -61,15 +60,23 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     { name: 'For DevRels', href: '/for-dev-rels' },
   ]
 
-  // Services dropdown data (using same structure as Services popover)
   const servicesUseCases = [
-    { name: 'Build Trust', href: '/build-trust' },
-    { name: 'Drive Awareness', href: '/drive-awareness' },
-    { name: 'Capture Leads', href: '/capture-leads' },
+    { name: 'Technical eBooks', href: '/learn/technical-ebooks' },
+    { name: 'Blog Content', href: '/blog-posts' },
+    { name: 'Content Refreshes', href: '/content-refreshes' },
+    { name: 'Video Tutorials', href: '/video-tutorials' },
+    { name: 'Developer Tutorials', href: '/tutorials' },
+    { name: 'Dev Content Strategy', href: '/dev-content-strategy' },
+    { name: 'AI Content Strategy', href: '/ai-content-strategy' },
+    { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
   ]
   const servicesWhoWeHelp = [
-    { name: 'For Marketers', href: '/for-marketers' },
-    { name: 'For DevRels', href: '/for-dev-rels' },
+    { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
+    { name: 'Draft.dev vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
+    {
+      name: 'Draft.dev vs. AI Gen Content',
+      href: '/draft-dev-vs-ai-gen-content',
+    },
   ]
 
   return (
@@ -151,7 +158,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
 
                 <div className="border-l border-gray-100 py-2 pl-4">
                   <h4 className="text-secondary py-1 text-sm font-medium">
-                    Who We Help
+                    Compare Us
                   </h4>
                   {servicesWhoWeHelp.map((item) => (
                     <Link
