@@ -38,8 +38,9 @@ const Hero: React.FC = () => {
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
-                  We are a tech content agency, building growth marketing engines for the world's best tech
-                  companies.
+                  We provide growth marketing services for the world's best tech
+                  companies, blending the speed of AI with the expertise of
+                  humans-in-the-loop.
                 </p>
 
                 <div className="mt-16 mb-6 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
