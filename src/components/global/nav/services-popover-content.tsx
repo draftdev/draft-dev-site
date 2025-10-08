@@ -25,6 +25,8 @@ const why = [
     name: 'Draft.dev vs. AI Gen Content',
     href: '/draft-dev-vs-ai-gen-content',
   },
+
+  { name: 'Draft.dev Blog', href: '/learn' },
 ]
 
 const recentPosts = [

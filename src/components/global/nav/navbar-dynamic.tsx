@@ -23,7 +23,6 @@ const NAVIGATION_CONFIG = {
     { href: '/services', label: 'Services' },
     { href: './#pricing', label: 'Pricing' },
     { href: '/case-studies', label: 'Case Studies' },
-    { href: '/learn', label: 'Blog' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'Company' },
     { href: '/call', label: 'Book Discovery Call' },
