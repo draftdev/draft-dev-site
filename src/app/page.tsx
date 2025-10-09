@@ -98,29 +98,29 @@ export default function Home() {
         <main>
           <Hero />
           <Why
-            title="We blend the speed of AI with the expertise of humans-in-the-loop"
-            subtitle="Fast turnaround for content that technical audiences respect and trust"
+            title="Turn developer content into a reliable growth driver"
+            subtitle="For teams launching, introducing new products, or scaling existing content engines"
             features={[
               {
-                title: 'Vetted and approved by real engineers',
+                title: 'From zero to growth',
                 description:
-                  "We all know AI systems can produce faulty output. Especially when it comes to code. Don't get flagged for high AI signals, risk your reputation and sacrifice quality. Our 300+ practicing software engineers with 10+ years of average experience are your 'humans-in-the-loop', reviewing and approving every piece.",
-                linkText: 'Why we have engineers-in-the-loop',
-                linkHref: '/draft-dev-vs-ai-gen-content',
-              },
-              {
-                title: 'Fast turnaround AND high-quality output',
-                description:
-                  'Get the best of both worlds: AI-enabled research and discovery, coupled with a production and review process that has been perfected over years. Our technical editors and copy editors are reviewing each output, making sure each piece is technically correct and authentic.',
+                  "No content team yet? No problem. We bring the strategy, production, and distribution across many content types: Blog posts, videos, social collateral, comparison pages, lead magnets, and more. Let us drive your first wave of developer signups. You build product, we build your developer audience.",
                 linkText: 'See our process',
                 linkHref: '/#how-we-work',
               },
               {
-                title: 'Proactive refreshes, measurable results',
+                title: 'Content strategies for new product releases',
                 description:
-                  'We track and report your performance and conduct frequent content refreshes on existing content. Nobody wants a potential buyer to get a result showing outdated information from a 2yr old blog post. We make sure your pieces stay relevant and perform well in AI results and traditional search engines.',
-                linkText: 'Learn about our Content Refreshes',
-                linkHref: '/content-refreshes',
+                  'Introduciong a new product or feature means educating a market that does not know it exists yet. We help you build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/GEO insights. ',
+                linkText: 'See how we drive awareness',
+                linkHref: '/drive-awareness',
+              },
+              {
+                title: 'Scale output without scaling headcount',
+                description:
+                  'More channels, more content. We integrate seamlessly with your existing team to expand content production across channels: on-site articles, guest posts, video content, newsletter campaigns, social distribution, and more. We analyze, refresh, and report on your content performance.',
+                linkText: 'See some of our technical content examples',
+                linkHref: '/technical-content-examples',
               },
             ]}
           />
