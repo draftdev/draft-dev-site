@@ -8,8 +8,9 @@ import FAQ from '@/components/global/faq'
 import SinglePricingList from '@/components/global/single-price-list'
 import SinglePricing from '@/components/global/single-pricing'
 import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
+import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
+
 import SocialProof from '@/components/media/social-proof'
-import Testimonial from '@/components/media/testimonials/testimonial'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
 import Hero from '@/components/page-components/home/hero'
 import Why from '@/components/page-components/why'
@@ -217,14 +218,15 @@ export default function Home() {
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
           <Testimonials />
-          <Testimonial
+          {/* <Testimonial
             quote="It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team."
             name="Adam Gordon Bell"
             role="Director of Developer Relations"
             company="Earthly"
             imageSrc="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
             imageAlt="Adam Gordon Bell"
-          />
+          /> */}
+          <MoreCaseStudies />
         </main>
         <FAQ />
       </div>

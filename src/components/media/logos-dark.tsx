@@ -8,7 +8,7 @@ export function LogosDark({
   const sinch = '/media/logos/sinch-logo.svg'
   const amadeus = '/media/logos/amadeus-logo.svg'
   const jetbrains = '/media/logos/jetbrains-logo.svg'
-  const equinix = '/media/logos/equinix-logo.svg'
+  const docker = '/media/logos/docker-logo.svg'
   const loft = '/media/logos/loft-logo.svg'
 
   return (
@@ -36,6 +36,20 @@ export function LogosDark({
             />
             <Image
               className="max-h-10 w-full object-contain"
+              src={jetbrains}
+              alt="JetBrains"
+              width={158}
+              height={48}
+            />
+            <Image
+              className="max-h-10 w-full object-contain"
+              src={docker}
+              alt="Docker"
+              width={158}
+              height={48}
+            />
+            <Image
+              className="max-h-10 w-full object-contain"
               src={sinch}
               alt="Sinch"
               width={158}
@@ -48,20 +62,7 @@ export function LogosDark({
               width={158}
               height={48}
             />
-            <Image
-              className="max-h-10 w-full object-contain"
-              src={jetbrains}
-              alt="JetBrains"
-              width={158}
-              height={48}
-            />
-            <Image
-              className="max-h-10 w-full object-contain"
-              src={equinix}
-              alt="Equinix"
-              width={158}
-              height={48}
-            />
+
             <Image
               className="max-h-10 w-full object-contain"
               src={loft}

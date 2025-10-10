@@ -6,10 +6,11 @@ type Props = React.ComponentPropsWithoutRef<'section'>
 export function LogosFlex({ className, ...rest }: Props) {
   const logos = [
     { src: '/media/logos/red-panda-logo.svg', alt: 'Redpanda' },
+    { src: '/media/logos/jetbrains-logo.svg', alt: 'JetBrains' },
+    { src: '/media/logos/docker-logo.svg', alt: 'Docker' },
     { src: '/media/logos/sinch-logo.svg', alt: 'Sinch' },
     { src: '/media/logos/amadeus-logo.svg', alt: 'Amadeus' },
-    { src: '/media/logos/jetbrains-logo.svg', alt: 'JetBrains' },
-    { src: '/media/logos/equinix-logo.svg', alt: 'Equinix' },
+
     { src: '/media/logos/loft-logo.svg', alt: 'Loft' },
   ]
 
