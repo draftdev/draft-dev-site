@@ -41,10 +41,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   }
 
   return (
-    <div
-      className="bg-gradient-brand py-24 sm:py-32"
-      id="pricing"
-    >
+    <div className="bg-gradient-brand py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className=" ">
           <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
@@ -97,14 +94,14 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h3 className="subheader-gradient text-3xl">
-                      Let's talk about AI-enabled growth
+                      Let’s talk about your growth engine
                     </h3>
                     <p className="text-base lg:text-lg">
-                      Get started with our expert-vetted, compounding growth engine
-                      approved by real engineers. A Draft.dev subscription
-                      provides you with a Developer Content Strategy, Content
-                      Creation & Review, Lead Magnets, Content Refreshes, and
-                      ongoing Analysis and Reporting.
+                      Get started with our expert-vetted, compounding growth
+                      engine approved by real engineers. A Draft.dev
+                      subscription provides you with a Developer Content
+                      Strategy, Content Creation & Review, Lead Magnets, Content
+                      Refreshes, and ongoing Analysis and Reporting.
                     </p>
                     <div className="my-8 h-px bg-gray-300" />
                     <ul className="grid grid-cols-1 gap-4 text-sm text-gray-600 sm:grid-cols-2">
