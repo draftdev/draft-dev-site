@@ -26,10 +26,7 @@ const HubSpotMeetings = () => {
 
   return (
     <>
-      <Script
-        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-        strategy="lazyOnload"
-      />
+      <Script src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js" />
       <div
         className="meetings-iframe-container"
         data-src="https://meetings-eu1.hubspot.com/karl-hughes?embed=true"
