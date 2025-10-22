@@ -57,9 +57,9 @@ export default function Call() {
   return (
     <>
       <MedHeader
-        title="Let's talk about AI-enabled growth"
-        descriptionOne="We build AI-enabled content engines for enterprise businesses and startups that want to consistently grow, attract, and convert traffic and leads."
-        descriptionTwo="Use the form below to schedule a discovery call. Can't find a time that works for you? Email sales@draft.dev to contact us directly."
+        title="Let's talk about your content growth engine"
+        descriptionOne="We plan, produce, publish, and promote your first pieces within weeks. Use the form below to schedule a discovery call. "
+        descriptionTwo="Can't find a time that works for you? Email sales@draft.dev to contact us directly."
       />
       <main className="overflow-hidden">
         <HubSpotMeetings />

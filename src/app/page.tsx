@@ -139,11 +139,11 @@ export default function Home() {
             includedFeatures={[
               {
                 leadText: 'Strategic Content Creation:',
-                text: 'Full-funnel technical content with demo apps, code samples, and social collateral.',
+                text: 'Full-funnel technical content, including landing pages, tutorials and demo apps, code samples, and social collateral.',
               },
               {
                 leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of existing content, competitor research, and measurable goals.',
+                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals',
               },
               {
                 leadText: 'Lead Collection System:',
@@ -170,11 +170,11 @@ export default function Home() {
             includedFeatures={[
               {
                 leadText: 'Strategic Content Creation:',
-                text: 'Full-funnel technical content with demo apps, code samples, and social collateral.',
+                text: 'Full-funnel technical content, including landing pages, tutorials and demo apps, code samples, and social collateral.',
               },
               {
                 leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of existing content, competitor research, and measurable goals.',
+                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals.',
               },
               {
                 leadText: 'Lead Collection System:',

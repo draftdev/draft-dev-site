@@ -96,9 +96,9 @@ export default function About() {
       />
 
       <MedHeader
-        title="What is Draft.dev?"
+        title="We help Developer Tools & Platforms grow and win"
         descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
-        descriptionTwo="Let us help you build your technical content growth engine."
+        descriptionTwo="Let us help you building your technical content growth engine."
       />
 
       <main className="overflow-hidden">

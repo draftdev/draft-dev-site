@@ -44,10 +44,9 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
         <h2 className="subheader-light">See Our Process</h2>
 
         <h3 className="paragraph-light py-3 text-lg">
-          We combine AI workflows with human expertise, ensuring fast turnaround
-          and high-quality output.
+          We plan, produce, publish, and promote your first pieces within weeks.
         </h3>
-        <a className="paragraph-light text-lg underline" href="/technical-content-examples">Interested in what we produce? Check out content examples for 40+ different clients here.</a>
+        <a className="paragraph-light text-lg underline" href="/technical-content-examples">Interested in what we can create for you? Check out content examples for 40+ different clients here.</a>
       </div>
 
       <div className="my-6">
@@ -64,13 +63,13 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      Clarity and Authenticity
+                      We get to know you and define a plan
                     </h4>
                     <p className="text-base sm:text-lg">
                       We analyze your industry, competitors, positioning,
                       product features, target audience, and make sure to
                       understand your brand and tone of voice, ensuring
-                      authentic output.
+                      authentic output. We conduct SEO and GEO research, assess your existing content, study your existing marketing funnel, and delivery a content strategy and roadmap for your feedback. 
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -90,18 +89,15 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 2:</span> Content Generation
+                      <span className="block">Step 2:</span> Content Production
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      Blending AI Efficiency and Human Accuracy
+                      We publish your first pieces within weeks
                     </h4>
                     <p className="text-base sm:text-lg">
-                      We build expert-crafted AI workflows customized to your
-                      unique situation. We provide content types like product
-                      tutorials, videos, comparisons, how-tos, guides, and much
-                      more.
+                      We create strategically relevant content pieces for you. These include blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets and more. To ensure fast turnaround times we use proven AI workflows to help draft your pieces. Each single piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience. We can manage publication of your content via all major CMSs.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -121,20 +117,15 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
                     <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 3:</span> Technical Experts
-                      Review
+                      <span className="block">Step 3:</span> Content Promotion
                     </h3>
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      Technical & Journalistic Expertise
+                      We help you get reach and click-throughss
                     </h4>
                     <p className="text-base sm:text-lg">
-                      We have over 300+ practicing software engineers reviewing
-                      your content. Our journalists and editors conduct copy
-                      edits and grammar edits to ensure your content is of the
-                      highest quality, technically correct, and authentic to
-                      your brand's voice.
+                      We help promoting your content on Reddit, LinkedIn, Twitter/X, and more. We create variations you can use for third-party syndication and assist in publishing and advertising your pieces niche publications and newsletters that are read by your target audience.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -145,7 +136,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
         </div>
       </div>
 
-      <div className="my-6">
+{/*       <div className="my-6">
         {' '}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
@@ -206,7 +197,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
