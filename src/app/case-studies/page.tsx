@@ -55,7 +55,7 @@ export default function CaseStudyIndexPage() {
   return (
     <>
       <MedHeader
-        title="Draft.dev Case Studies"
+        title="Delivering Results"
         descriptionOne="Leading tech companies achieve remarkable results with Draft.dev's technical content growth engines. From 346% traffic increase to significant conversion rate improvements, to top SEO and AI Search rankings."
         descriptionTwo="Learn how we drive results for our clients."
       />

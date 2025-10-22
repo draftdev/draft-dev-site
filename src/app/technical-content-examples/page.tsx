@@ -1,5 +1,4 @@
 import FAQ from '@/components/global/faq'
-import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import type { Metadata } from 'next'
 import ExampleArticlesList from '@/components/global/example-articles'

@@ -75,7 +75,7 @@ export default function CaseStudiesFeature() {
                   href="/#how-we-work"
                   className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-700 sm:my-0 sm:text-base"
                 >
-                  See how we work <span aria-hidden="true">→</span>
+                  See how we pubish within weeks <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>

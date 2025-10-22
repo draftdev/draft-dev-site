@@ -71,12 +71,12 @@ export default function CaseStudiesFeature() {
                 >
                   Read this case study
                 </Link>
-{/*                 <Link
-                  href="/case-studies"
+                <Link
+                  href="/#how-we-work"
                   className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-700 sm:my-0 sm:text-base"
                 >
-                  See more case studies <span aria-hidden="true">→</span>
-                </Link> */}
+                  See how we pubish within weeks <span aria-hidden="true">→</span>
+                </Link>
               </div>
             </div>
           </div>

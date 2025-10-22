@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
                 </h1>
 
                 <p className="mt-3 max-w-[60ch] text-base text-gray-100 sm:text-lg">
-                  We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.
+                  We build technical content systems that compound and resonate with developers, search engines and LLMs. Proven AI workflows and 300+ subject matter experts ensure fast turnaround times and high quality.
                 </p>
 
                 <div className="mt-16 mb-6 flex flex-col items-start gap-y-4 pl-3 sm:mb-0 sm:flex-row sm:items-center sm:gap-x-6 sm:gap-y-0 lg:pl-0">
