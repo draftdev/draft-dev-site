@@ -1,12 +1,12 @@
 import React from 'react'
 
-interface MedHeaderProps {
+interface MedHeaderBlogProps {
   title: string
   descriptionOne: string
   descriptionTwo: string
 }
 
-export const MedHeader: React.FC<MedHeaderProps> = ({
+export const MedHeaderBlog: React.FC<MedHeaderBlogProps> = ({
   title,
   descriptionOne,
   descriptionTwo,
@@ -31,6 +31,7 @@ export const MedHeader: React.FC<MedHeaderProps> = ({
                 <p className="sm:paragraph-light text-base font-semibold text-gray-100">
                   {descriptionTwo}
                 </p>
+                <div className="flex flex-col items-start gap-x-6 sm:mt-16 sm:flex-row sm:items-center"></div>
               </div>
             </div>
           </div>
