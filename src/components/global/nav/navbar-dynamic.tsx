@@ -21,7 +21,7 @@ const NAVIGATION_CONFIG = {
   links: [
     { href: '/why-us', label: 'Why Us?' },
     { href: '/services', label: 'Services' },
-    { href: './#pricing', label: 'Pricing' },
+    /* { href: './#pricing', label: 'Pricing' }, */
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/resources', label: 'Resources' },
     { href: '/about', label: 'Company' },
