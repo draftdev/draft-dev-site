@@ -10,6 +10,8 @@ export function LogosDark({
   const jetbrains = '/media/logos/jetbrains-logo.svg'
   const docker = '/media/logos/docker-logo.svg'
   const loft = '/media/logos/loft-logo.svg'
+  const brightdata = '/media/logos/brightdata-logo.svg'
+  const descope = '/media/logos/descope-logo.png'
 
   return (
     <div className="bg-gradient-brand py-16 sm:py-24">
@@ -23,7 +25,7 @@ export function LogosDark({
           <div
             className={clsx(
               className,
-              'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6',
+              'grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8',
               'items-center justify-items-center',
             )}
           >
@@ -31,43 +33,57 @@ export function LogosDark({
               className="max-h-10 w-full object-contain"
               src={docker}
               alt="Docker"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
             />
             <Image
               className="max-h-10 w-full object-contain"
               src={jetbrains}
               alt="JetBrains"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
             />
             <Image
               className="max-h-10 w-full object-contain"
               src={sinch}
               alt="Sinch"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
             />
             <Image
               className="max-h-10 w-full object-contain"
               src={redpanda}
               alt="Redpanda"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
             />
             <Image
               className="max-h-10 w-full object-contain"
               src={amadeus}
               alt="Amadeus"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
             />
             <Image
               className="max-h-10 w-full object-contain"
               src={loft}
               alt="Loft"
-              width={158}
-              height={48}
+              width={79}
+              height={24}
+            />
+            <Image
+              className="max-h-10 w-full object-contain"
+              src={brightdata}
+              alt="brightdata"
+              width={79}
+              height={24}
+            />
+            <Image
+              className="max-h-10 w-full object-contain"
+              src={descope}
+              alt="descope"
+              width={79}
+              height={24}
             />
           </div>
         </div>
