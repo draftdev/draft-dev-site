@@ -99,10 +99,7 @@ export default function Home() {
       <div className="overflow-hidden">
         <main>
           <Hero />
-          <CaseStudiesFeatureHome />
-
-          <SocialProof />
-          <Why
+           <Why
             title="Turn developer content into a reliable growth driver"
             subtitle="For teams launching, introducing new products, or scaling existing content engines"
             features={[
@@ -129,7 +126,11 @@ export default function Home() {
               },
             ]}
           />
+<SocialProof />
+          <CaseStudiesFeatureHome />
 
+          
+         
           <SinglePricingList
             title="Lead Generation Package"
             description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
@@ -160,6 +161,7 @@ export default function Home() {
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
 
+          {/*
           <Why
             title="Why Draft.dev"
             subtitle="How we compare to other solutions"
@@ -187,6 +189,8 @@ export default function Home() {
               },
             ]}
           />
+          */}
+        <Testimonials />
 
           <SinglePricing
             title="Lead Generation Package"
@@ -217,7 +221,7 @@ export default function Home() {
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
-          <Testimonials />
+                  <MoreCaseStudies />
           {/* <Testimonial
             quote="It's difficult to find an agency with enough high-quality subject matter expert writers to build up the content pipeline that Draft.dev gives you. It's a shortcut to building an in-house writing team."
             name="Adam Gordon Bell"
@@ -226,7 +230,7 @@ export default function Home() {
             imageSrc="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
             imageAlt="Adam Gordon Bell"
           /> */}
-          <MoreCaseStudies />
+          
         </main>
         <FAQ />
       </div>

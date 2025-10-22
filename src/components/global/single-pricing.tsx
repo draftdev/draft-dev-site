@@ -41,14 +41,14 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   }
 
   return (
-    <div className="bg-gradient-brand py-24 sm:py-32" id="pricing">
+    <div className="bg-white pt-0 pb-24 sm:pt-0 sm:pb-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className=" ">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
+        <div className="">
+          <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+            <div className="rounded-4xl p-2 shadow-md shadow-black/5">
+              <div className="overflow-hidden rounded-3xl bg-gray-50 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                 <div className="flex flex-col lg:flex-row">
-                  <div className="flex w-full flex-col lg:w-96">
+                  <div className="bg-gradient-brand flex w-full flex-col lg:w-96">
                     <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
                       <h3 className="subheader-light flex items-baseline justify-center gap-x-2 text-center text-2xl">
                         Retainers and custom offers available upon request
