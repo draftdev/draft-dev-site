@@ -9,39 +9,39 @@ type FAQ = {
 const faqs: FAQ[] = [
   {
     id: 1,
-    question: 'How quickly can we get started?',
+    question: 'What kind of content does Draft.dev actually produce?',
     answer:
-      'Typically, we conduct an initial strategy session to define the scope of work. Once approved, your first content pieces will be delivered to you within 2 weeks. After that, new content will be delivered every week based on your plan. You can see our whole process on our homepage.',
+      'We create a wide range of content focused on helping technical buyers evaluate, adopt, and grow with your product. This includes blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets, content refreshes and SEO-optimized pages, and more. We tailor content formats and tone based on your goals, audience, and funnel stage.',
   },
   {
     id: 2,
-    question: 'What if we want a custom package for content creation?',
+    question: 'Who writes the content? Are they technical enough?',
     answer:
-      'Not a problem. Our standard packages are just a starting point, but we have clients doing anywhere from 12-48 blog posts every quarter. Other clients simply want us to produce 1 content piece per week for them.',
+      'All content is created by our network of 300+ vetted engineer-writers and reviewed by subject matter experts and editors. We also use AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience.',
   },
   {
     id: 3,
-    question: 'What if we just want to try Draft.dev out?',
+    question: 'How soon do we see content after we start?',
     answer:
-      "We don't offer trials, but we have an extensive catalog of samples we can share. A few are available on our website ('Content Type We Produce'), but we can share many more upon request.",
+      "You’ll get your first pieces within 3 weeks of kickoff. We’ll spend the first 1–2 weeks aligning on goals, messaging, and the content roadmap so we’re not writing in a vacuum. After that, we aim for a consistent weekly publishing cadence. Publishing 2x weekly is the first core discipline of a successful content operation.",
   },
   {
     id: 4,
-    question: "What if we don't like an article you send us?",
+    question: "How much of my team’s time will this require?",
     answer:
-      "We stand by our satisfaction guarantee. If you're ever unsatisfied, we'll work with you to make it right. If we cannot fix the content within two rounds of revisions, we'll offer a complete rewrite or refund for the piece.",
+      " We’re built to minimize internal lift. You’ll typically need to attend a kickoff call, review and approve a quarterly roadmap, and provide occasional feedback on draft content (we handle the rest). We offer full CMS publishing, distribution, and social media asset creation, so you can focus on other growth initiatives and closing the leads we’re driving.",
   },
   {
     id: 5,
-    question: 'How do payments work?',
+    question: 'How do you measure success?',
     answer:
-      'You can opt to either pay a single invoice at the start of each quarter or create a monthly payment plan. Other payment options are available for an additional fee.',
+      ' Success depends on your goals, but we typically track traffic to key content, lead magnet downloads, demo or trial signups from content, engagement via newsletters, shares, or backlinks, and movement of content-informed leads down the funnel. We hold monthly analytics check-ins to evaluate what’s working and adjust the roadmap accordingly.',
   },
   {
     id: 6,
-    question: 'Do you accept bulk orders?',
+    question: 'Can we start small and scale up later?',
     answer:
-      'We do. The price per article depends on the volume and delivery speed required. Book a call with us to discuss your content needs.',
+      'Yes. Many of our clients start small as a test, adding in paid growth options over time. We offer plans starting at $7K/month with an initial minimum commitment of 3 months.',
   },
 ]
 

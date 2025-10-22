@@ -5,22 +5,21 @@ type Props = React.ComponentPropsWithoutRef<'section'>
 
 export function LogosFlex({ className, ...rest }: Props) {
   const logos = [
-    { src: '/media/logos/red-panda-logo.svg', alt: 'Redpanda' },
-    { src: '/media/logos/jetbrains-logo.svg', alt: 'JetBrains' },
     { src: '/media/logos/docker-logo.svg', alt: 'Docker' },
+    { src: '/media/logos/jetbrains-logo.svg', alt: 'JetBrains' },
     { src: '/media/logos/sinch-logo.svg', alt: 'Sinch' },
+    { src: '/media/logos/red-panda-logo.svg', alt: 'Redpanda' },
     { src: '/media/logos/amadeus-logo.svg', alt: 'Amadeus' },
-
     { src: '/media/logos/loft-logo.svg', alt: 'Loft' },
   ]
 
   return (
     <section
-      className={clsx('lg:pt-16', className)}
+      className={clsx('lg:pt-2', className)}
       aria-label="Trusted by 100+ tech companies"
       {...rest}
     >
-      <div className="mx-auto px-4 sm:px-6">
+      <div className="mx-auto">
         <h2 className="mb-6 hidden text-left text-sm font-medium text-white sm:text-base lg:mb-8 lg:block">
           Trusted by 100+ tech companies
         </h2>

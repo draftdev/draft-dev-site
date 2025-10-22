@@ -7,9 +7,9 @@ import heroImg from '/public/site/med-portrait/hero.webp'
 const Hero: React.FC = () => {
   return (
     <div className="bg-gradient-brand">
-      <main className="relative isolate py-16">
+      <main className="relative isolate py-10">
         <div className="overflow-hidden">
-          <div className="mx-auto max-w-7xl px-6 py-6 sm:py-16 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 py-2 sm:py-8 lg:px-8">
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between lg:gap-12">
               {/* Left: copy */}
               <div className="relative max-w-2xl lg:shrink-0">
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-18 text-center">
+            <div className="mt-4 text-center">
               <LogosFlex />
             </div>
           </div>

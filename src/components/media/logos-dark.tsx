@@ -29,8 +29,8 @@ export function LogosDark({
           >
             <Image
               className="max-h-10 w-full object-contain"
-              src={redpanda}
-              alt="Redpanda"
+              src={docker}
+              alt="Docker"
               width={158}
               height={48}
             />
@@ -43,15 +43,15 @@ export function LogosDark({
             />
             <Image
               className="max-h-10 w-full object-contain"
-              src={docker}
-              alt="Docker"
+              src={sinch}
+              alt="Sinch"
               width={158}
               height={48}
             />
             <Image
               className="max-h-10 w-full object-contain"
-              src={sinch}
-              alt="Sinch"
+              src={redpanda}
+              alt="Redpanda"
               width={158}
               height={48}
             />
@@ -62,7 +62,6 @@ export function LogosDark({
               width={158}
               height={48}
             />
-
             <Image
               className="max-h-10 w-full object-contain"
               src={loft}
