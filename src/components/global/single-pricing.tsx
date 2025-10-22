@@ -41,7 +41,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   }
 
   return (
-    <div className="bg-white pt-0 pb-24 sm:pt-0 sm:pb-32" id="pricing">
+    <div className="bg-white py24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="">
           <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">

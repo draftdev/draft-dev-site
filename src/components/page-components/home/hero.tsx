@@ -48,10 +48,10 @@ const Hero: React.FC = () => {
                     Book a Discovery Call
                   </Link>
                   <Link
-                    href="#how-we-work"
+                    href="#casestudymain"
                     className="inline-block font-semibold text-white hover:text-gray-200 sm:text-base"
                   >
-                    How We Work <span aria-hidden="true">→</span>
+                    What our clients say <span aria-hidden="true">→</span>
                   </Link>
                 </div>
               </div>

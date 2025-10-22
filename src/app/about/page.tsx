@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About Us - Draft.dev',
   description:
-    'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
+    'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
+      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience.',
+      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -97,8 +97,8 @@ export default function About() {
 
       <MedHeader
         title="What is Draft.dev?"
-        descriptionOne="Draft.dev is a technical content marketing agency run by subject matter experts. Our mission is to help tech companies create authentic technical content that resonates with their audience."
-        descriptionTwo="Let us create technical tutorials, video tutorials, blog posts, and e-books for you."
+        descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
+        descriptionTwo="Let us help you build your technical content growth engine."
       />
 
       <main className="overflow-hidden">
@@ -110,21 +110,21 @@ export default function About() {
             {
               title: 'A Sole Focus on Technical Audiences',
               description:
-                'We work exclusively with companies aiming to reach software developers, data engineers, and DevOps practitioners. Our typical clients include Developer Relations or Developer Marketing teams at companies with 50 or more employees or those that have achieved at least Series A funding.',
+                'We work exclusively with companies aiming to reach software developers, data engineers, and DevOps practitioners. Our typical clients include Developer Relations or Developer Marketing teams or companies and startups that that have achieved at least a Series A funding.',
               linkText: 'How we build trust with technical audiences',
               linkHref: '/build-trust',
             },
             {
               title: 'Technical Expertise and Marketing Excellence',
               description:
-                'We specialize in producing high-quality technical content, primarily tutorials and blog posts. We offer additional services to help you create a comprehensive content plan, generate suitable topics, or execute on one-time content projects such as ebooks.',
+                'We specialize in producing high-quality technical content, fast. From tutorials, to ebooks, landing pages, competitor comparisons, and more. We offer additional services to help you create a comprehensive content strategy and help building out your content roadmap.',
               linkText: 'How we predictably generate demand',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content You Can Count On',
               description:
-                'We create high-quality, technically-deep content. Subject-matter experts are assigned to each article, so every piece is detailed and authoritative. Our core team includes experienced engineers and editors who make sure that every piece of content comes to you ready to publish.',
+                'We create high-quality content engines. Fast turnaround times combined with subject-matter expert reviews ensure consistent output of expert technical content. Our core team includes experienced content marketers, software engineers and editors who make sure that every piece of content comes to you ready to publish.',
               linkText: 'What our clients say about our work',
               linkHref: '/case-studies',
             },

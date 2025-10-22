@@ -56,8 +56,8 @@ export default function CaseStudyIndexPage() {
     <>
       <MedHeader
         title="Draft.dev Case Studies"
-        descriptionOne="Discover how leading tech companies achieve remarkable results with Draft.dev's technical content marketing services. Our case studies showcase real client success stories, including traffic increases of 346%, conversion rate improvements, and top SEO rankings achieved through expert-written technical content."
-        descriptionTwo="Learn how our network of 300+ subject matter experts creates high-quality technical tutorials, blog posts, and developer-focused content that drives measurable business growth."
+        descriptionOne="Leading tech companies achieve remarkable results with Draft.dev's technical content growth engines. From 346% traffic increase to significant conversion rate improvements, to top SEO and AI Search rankings."
+        descriptionTwo="Learn how we drive results for our clients."
       />
       <CaseStudiesFeature />
 

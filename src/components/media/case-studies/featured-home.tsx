@@ -51,7 +51,7 @@ const moreCaseStudies: CaseLink[] = [
 
 export default function CaseStudiesFeature() {
   return (
-    <div className="bg-white py-16">
+    <div className="bg-white py-16" id="casestudymain">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto my-10 flex max-w-2xl flex-col items-center justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center">
           {/* LEFT: Title + Dek with Draft.dev text styles */}
@@ -71,12 +71,12 @@ export default function CaseStudiesFeature() {
                 >
                   Read this case study
                 </Link>
-                <Link
+{/*                 <Link
                   href="/case-studies"
                   className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-700 sm:my-0 sm:text-base"
                 >
                   See more case studies <span aria-hidden="true">→</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
