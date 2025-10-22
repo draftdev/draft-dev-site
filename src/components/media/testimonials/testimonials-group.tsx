@@ -6,6 +6,7 @@ import jenny from '/public/media/testimonials-sm/jenny_medeiros_redpanda_draft_d
 import randall from '/public/media/testimonials-sm/randall_degges_snyk_draft_dev.jpg'
 import rich from '/public/media/testimonials-sm/rich_burroughs_loft_labs_draft_dev.jpg'
 import robert from '/public/media/testimonials-sm/robert_gibb_fabric_draft_dev.jpg'
+import nicholas from '/public/media/testimonials-sm/nicholasdewald_prove_draft_dev.jpg'
 import tony from '/public/media/testimonials-sm/tony_chan_cloudforecast_draft_dev.jpg'
 
 type Testimonial = {
@@ -64,6 +65,14 @@ const testimonials: Testimonial[] = [
       name: 'Robert Gibb',
       company: 'fabric. Inc',
       imageUrl: robert.src,
+    },
+  },
+  {
+    body: 'Draft.dev has been instrumental in enabling us to generate the deep technical content we require, something we simply could not produce with our current internal bandwidth. Their capacity to deliver high-quality, specialized articles allows us to consistently engage our audience with valuable material, significantly enhancing our content marketing strategy.',
+    author: {
+      name: 'Nicholas DeWald',
+      company: 'Prove',
+      imageUrl: nicholas.src,
     },
   },
   {
