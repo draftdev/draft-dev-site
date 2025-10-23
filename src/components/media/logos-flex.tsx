@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Image from 'next/image'
 import React from 'react'
 
 type Props = React.ComponentPropsWithoutRef<'section'>
@@ -26,16 +27,16 @@ export function LogosFlex({ className, ...rest }: Props) {
           Trusted by 100+ tech companies
         </h2>
 
-        <div className="mx-auto mt-6 grid grid-cols-3 items-center gap-x-6 gap-y-6 rounded-lg bg-white/5 p-4 sm:mt-10 sm:grid-cols-8 sm:gap-x-8 sm:gap-y-8 sm:p-6 lg:p-8">
+        <div className="mx-auto mt-6 grid grid-cols-1 items-center gap-x-6 gap-y-6 rounded-lg bg-white/5 p-4 sm:mt-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-8 sm:p-6 md:grid-cols-3 lg:grid-cols-8 lg:p-8">
           {logos.map((logo) => (
             <div key={logo.alt} className="flex items-center justify-center">
-              <img
+              <Image
                 src={logo.src}
                 alt={logo.alt}
+                height={100}
+                width={100}
                 className="h-6 w-auto object-contain sm:h-8 md:h-10"
                 loading="lazy"
-                decoding="async"
-                draggable={false}
               />
             </div>
           ))}
