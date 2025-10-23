@@ -3,7 +3,8 @@ import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import HubSpotMeetings from '@/components/page-components/vendors/hubspot/hubspot-meetings'
+
+import CalendlyWidget from '@/components/page-components/vendors/calendly'
 
 import type { Metadata } from 'next'
 
@@ -62,7 +63,14 @@ export default function Call() {
         descriptionTwo="Can't find a time that works for you? Email sales@draft.dev to contact us directly."
       />
       <main className="overflow-hidden">
-        <HubSpotMeetings />
+        {/* Calendly embed replaces HubSpotMeetings */}
+        <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+          <CalendlyWidget
+            url="https://calendly.com/karlhughes/draft"
+            minWidth={320}
+            height={700}
+          />
+        </section>
 
         <SocialProof />
         <TestimonialsGroup />
