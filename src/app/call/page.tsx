@@ -68,7 +68,7 @@ export default function Call() {
           <CalendlyWidget
             url="https://calendly.com/karlhughes/draft"
             minWidth={320}
-            height={700}
+            height={1200}
           />
         </section>
 
