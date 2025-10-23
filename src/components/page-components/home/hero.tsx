@@ -1,5 +1,5 @@
 import { LogosFlex } from '@/components/media/logos-flex'
-import PodcastLPVideo from '../../../components/global/lp-video'
+import LPVideo from '../../../components/global/lp-video'
 
 const Hero: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
           <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-x-14">
             {/* Text content */}
 
-            <PodcastLPVideo
+            <LPVideo
               title="Content-Powered Growth Marketing for Developer Tools & Platforms"
               description="We build technical content engines that compound and resonate with developers, search engines and LLMs. Proven AI workflows and 300+ subject matter experts ensure fast turnaround times and high quality."
               downloadableAssetTitle="How to Set Up a Content Marketing Engine in the Age of AI"

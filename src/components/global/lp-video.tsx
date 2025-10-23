@@ -7,7 +7,7 @@ import React, { ReactNode } from 'react'
 
 type CTA2Mode = 'auto' | 'modal' | 'link'
 
-interface PodcastLPVideoProps {
+interface LPVideoProps {
   title: string
   description: string
   downloadableAssetTitle: string
@@ -29,7 +29,7 @@ function isAbsoluteHttpUrl(url?: string) {
   return /^https?:\/\//i.test(url)
 }
 
-const PodcastLPVideo: React.FC<PodcastLPVideoProps> = ({
+const LPVideo: React.FC<LPVideoProps> = ({
   title,
   description,
   downloadableAssetTitle,
@@ -139,4 +139,4 @@ const PodcastLPVideo: React.FC<PodcastLPVideoProps> = ({
   )
 }
 
-export default PodcastLPVideo
+export default LPVideo
