@@ -10,7 +10,7 @@ export function LogosDark({
   const jetbrains = '/media/logos/jetbrains-logo.svg'
   const docker = '/media/logos/docker-logo.svg'
   const loft = '/media/logos/loft-logo.svg'
-  const brightdata = '/media/logos/brightdata-logo.svg'
+  const brightdata = '/media/logos/brightdata-logo.png'
   const descope = '/media/logos/descope-logo.png'
 
   return (

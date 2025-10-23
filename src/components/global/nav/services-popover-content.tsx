@@ -8,20 +8,20 @@ import { Link } from '../link'
 type Props = { onClose: () => void }
 
 const services = [
-  { name: 'Technical eBooks', href: '/learn/technical-ebooks' },
-  { name: 'Technical Blog Content', href: '/blog-posts' },
-  { name: 'Technical Content Refresh', href: '/content-refreshes' },
-  { name: 'Video Tutorials', href: '/video-tutorials' },
+/*   { name: 'Content Strategy', href: '/content-strategy-services' },
+  { name: 'Content Production', href: '/content-production' },
+  { name: 'Content Distribution', href: '/content-distribution' },
+  { name: 'All Services', href: '/content-marketing-services' }, */
 
 
-/*   { name: 'Technical eBooks', href: '/learn/technical-ebooks' },
+  /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
   { name: 'Technical Blog Content', href: '/blog-posts' },
-  { name: 'Technical Content Refresh', href: '/content-refreshes' },
-  { name: 'Video Tutorials', href: '/video-tutorials' },
+  /* { name: 'Technical Content Refresh', href: '/content-refreshes' },
+  { name: 'Video Tutorials', href: '/video-tutorials' }, */
   { name: 'Developer Tutorials', href: '/tutorials' },
   { name: 'Developer Content Strategy', href: '/dev-content-strategy' },
   { name: 'AI Content Strategy', href: '/ai-content-strategy' },
-  { name: 'Paid Content Promotion', href: '/paid-content-promotion' }, */
+  { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
 ]
 
 /* const why = [
@@ -42,7 +42,7 @@ const recentPosts = [
     href: '/learn/whats-working-in-developer-marketing-today',
     imageUrl: '/draft/og/whats_working_in_developer_marketing_og_draft_dev.jpg',
     description:
-      'The foundation of strategic content orchestration starts with understanding where your readers are in their journey and adapting to new realities.',
+      'Industry leaders share insights on ROI-focused strategies, content marketing, AI tools, video marketing challenges, and emerging trends shaping Developer Marketing success.',
   },
 /*   {
     id: 2,
@@ -65,7 +65,7 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
   return (
     <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-0">
       {/* Left: nav sections - 50% on desktop */}
-      <div className="grid grid-cols-2 gap-x-6">
+      <div className="grid grid-cols-1 gap-x-6">
         <div>
           <h3 className="text-sm font-medium text-gray-500">
             Technical Content
