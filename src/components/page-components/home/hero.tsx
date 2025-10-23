@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
               cta2URL="#casestudymain"
               video={{
                 title: 'Service overview',
-                poster: '/videos/posterlp.jpg',
+                poster: '/videos/poster-play.jpg',
                 mp4Src: '/videos/lp_video_sm_2.mp4',
                 webmSrc: '',
                 tracks: [],
