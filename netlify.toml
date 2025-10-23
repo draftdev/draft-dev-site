@@ -1,4 +1,5 @@
 # netlify.toml
+
 [build]
   command = "npm run build"
   publish = ".next"
@@ -6,79 +7,65 @@
 [build.environment]
   NEXT_PUBLIC_IMAGE_DOMAIN_1 = "candid-cookie.flywheelsites.com"
   NEXT_PUBLIC_SITE_URL = "https://draft.dev"
-  NODE_VERSION = "20"
+  NODE_VERSION = "18"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [functions]
   node_bundler = "esbuild"
-  # Keep native modules out of the ZIP so Netlify's runtime provides them
-  external_node_modules = ["sharp"]
-  # Do NOT slurp your entire .next/server or public into function bundles
-  excluded_files = [
-    ".next/cache/**",
-    "public/videos/**",
-    "**/*.mp4",
-    "node_modules/puppeteer/**",
-    "node_modules/playwright/**",
-    "node_modules/@sparticuz/chromium/**",
-    "node_modules/chromium/**",
-    "node_modules/canvas/**",
-    "node_modules/aws-sdk/**"
-  ]
+  included_files = ["public/**/*", ".next/server/**/*"]
 
-# your redirects (unchanged) …
 [[redirects]]
 from = "https://glittery-faun-4426fe.netlify.app/*"
 to = "https://draft.dev/:splat"
 status = 301
 force = true
 
-[[redirects]]
-from = "https://draft.dev/team"
-to = "https://draft.dev/about"
-status = 301
-force = true
+  [[redirects]]
+  from = "https://draft.dev/team"
+  to = "https://draft.dev/about"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/case-study"
-to = "https://draft.dev/case-studies"
-status = 301
-force = true
+  [[redirects]]
+  from = "https://draft.dev/case-study"
+  to = "https://draft.dev/case-studies"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/learn/b2b-marketing"
-to = "https://draft.dev/learn/the-b2b-saas-marketing-guide"
-status = 301
-force = true
+  [[redirects]]
+  from = "https://draft.dev/learn/b2b-marketing"
+  to = "https://draft.dev/learn/the-b2b-saas-marketing-guide"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/lead-generation"
-to = "https://draft.dev/"
-status = 301
-force = true
+  [[redirects]]
+  from = "https://draft.dev/lead-generation"
+  to = "https://draft.dev/"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/learn/great-content-marketing-doesn-t-depend-on-luck"
-to = "https://draft.dev/learn/great-content-marketing-doesnt-depend-on-luck"
-status = 301
-force = true
+  [[redirects]]
+  from = "https://draft.dev/learn/great-content-marketing-doesn-t-depend-on-luck"
+  to = "https://draft.dev/learn/great-content-marketing-doesnt-depend-on-luck"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/learn/technical-content"
-to = "https://draft.dev/learn/technical-content-writing"
-status = 301
-force = true
+   [[redirects]]
+  from = "https://draft.dev/learn/technical-content"
+  to = "https://draft.dev/learn/technical-content-writing"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/best"
-to = "https://draft.dev/learn"
-status = 301
-force = true
+    [[redirects]]
+  from = "https://draft.dev/best"
+  to = "https://draft.dev/learn"
+  status = 301
+  force = true
 
-[[redirects]]
-from = "https://draft.dev/best/best-cybersecurity-blogs"
-to = "https://draft.dev/learn"
-status = 301
-force = true
+      [[redirects]]
+  from = "https://draft.dev/best/best-cybersecurity-blogs"
+  to = "https://draft.dev/learn"
+  status = 301
+  force = true
