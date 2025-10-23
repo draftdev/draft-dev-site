@@ -17,8 +17,11 @@ type Track = {
 
 export type HeroVideoConfig = {
   title: string
+  /** URL string from /public or https URL. Example: "/images/poster.jpg" */
   poster: string
+  /** URL string from /public or https URL. Example: "/videos/clip.mp4" */
   mp4Src: string
+  /** URL string from /public or https URL. Example: "/videos/clip.webm" */
   webmSrc?: string
   tracks?: Track[]
   /** Begin playback at this time (seconds). */
@@ -50,7 +53,19 @@ export default function HeroVideoPlayer({
 
   const labelId = useId()
 
-  // show/hide chrome with inactivity timeout
+  // Guard: don’t allow non-string sources (prevents accidental imports)
+  if (process.env.NODE_ENV !== 'production') {
+    const all = [poster, mp4Src, webmSrc, ...tracks.map((t) => t?.src)].filter(
+      Boolean,
+    )
+    if (all.some((v) => typeof v !== 'string')) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        'HeroVideoPlayer: All media props must be URL strings (e.g. "/videos/foo.mp4"). Do NOT import media.',
+      )
+    }
+  }
+
   const clearHideTimer = useCallback(() => {
     if (hideTimerRef.current !== null) {
       window.clearTimeout(hideTimerRef.current)
@@ -69,7 +84,7 @@ export default function HeroVideoPlayer({
     [clearHideTimer, showVol],
   )
 
-  // Lazy-add sources near viewport (preserves poster for LCP)
+  // Lazy-add sources near viewport (keeps poster for LCP)
   useEffect(() => {
     const el = videoRef.current
     if (!el) return
@@ -92,7 +107,7 @@ export default function HeroVideoPlayer({
     }
   }, [isInView, mp4Src, webmSrc])
 
-  // Sync state + apply startAt when metadata arrives
+  // Sync + apply startAt after metadata
   useEffect(() => {
     const el = videoRef.current
     if (!el) return
@@ -128,14 +143,12 @@ export default function HeroVideoPlayer({
     }
   }, [startAt])
 
-  // Apply volume to element
   useEffect(() => {
     const el = videoRef.current
     if (!el) return
     el.volume = Math.min(Math.max(volume, 0), 1)
   }, [volume])
 
-  // Keep chrome visible while volume popover is open
   useEffect(() => {
     if (showVol) {
       setControlsVisible(true)
@@ -145,27 +158,8 @@ export default function HeroVideoPlayer({
     }
   }, [showVol, isPlaying, clearHideTimer, pokeControls])
 
-  // Close volume panel on outside click / Esc
-  useEffect(() => {
-    const onDocClick = (e: MouseEvent) => {
-      if (!showVol) return
-      const t = e.target as Node
-      if (!volPanelRef.current?.contains(t)) setShowVol(false)
-    }
-    const onEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setShowVol(false)
-    }
-    document.addEventListener('mousedown', onDocClick)
-    document.addEventListener('keydown', onEsc)
-    return () => {
-      document.removeEventListener('mousedown', onDocClick)
-      document.removeEventListener('keydown', onEsc)
-    }
-  }, [showVol])
-
   useEffect(() => () => clearHideTimer(), [clearHideTimer])
 
-  // Play/pause. If click precedes metadata apply, re-apply startAt once.
   const togglePlay = () => {
     const el = videoRef.current
     if (!el) return
@@ -179,7 +173,6 @@ export default function HeroVideoPlayer({
           appliedStartRef.current = true
         }
       }
-      // Avoid unhandled promise rejection without empty catch blocks
       void el.play().catch(() => undefined)
     } else {
       el.pause()

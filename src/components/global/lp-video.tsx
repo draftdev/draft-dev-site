@@ -1,9 +1,9 @@
 // components/landing/PodcastLPVideo.tsx
-import Link from 'next/link'
-import React, { ReactNode } from 'react'
 import HeroVideoPlayer, {
   HeroVideoConfig,
-} from '../../components/global/hero-video-player'
+} from '@/components/global/hero-video-player'
+import Link from 'next/link'
+import React, { ReactNode } from 'react'
 
 type CTA2Mode = 'auto' | 'modal' | 'link'
 
@@ -12,18 +12,15 @@ interface PodcastLPVideoProps {
   description: string
   downloadableAssetTitle: string
   downloadableAssetURL: string
-
   cta1: string
   cta1URL: string
-
   cta2?: string
   cta2URL?: string
-
   dialogTitle?: ReactNode
   dialogContent?: string
   videoUrl?: string
   cta2As?: CTA2Mode
-
+  /** Pass URL strings only for video media. */
   video?: HeroVideoConfig
 }
 
@@ -122,9 +119,9 @@ const PodcastLPVideo: React.FC<PodcastLPVideoProps> = ({
                         {video && (
                           <HeroVideoPlayer
                             title={video.title}
-                            poster={video.poster}
-                            mp4Src={video.mp4Src}
-                            webmSrc={video.webmSrc}
+                            poster={video.poster} // "/images/lp_poster.jpg"
+                            mp4Src={video.mp4Src} // "/videos/lp_video_sm_2.mp4"
+                            webmSrc={video.webmSrc} // optional
                             tracks={video.tracks}
                             startAt={video.startAt}
                           />
