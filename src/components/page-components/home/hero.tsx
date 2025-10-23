@@ -1,8 +1,9 @@
+import { LogosFlex } from '@/components/media/logos-flex'
 import PodcastLPVideo from '../../../components/global/lp-video'
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-gradient-brand relative">
+    <section className="bg-gradient-brand relative sm:pb-24">
       <div className="relative isolate">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto flex flex-col lg:flex-row lg:items-center lg:gap-x-14">
@@ -28,6 +29,7 @@ const Hero: React.FC = () => {
               }}
             />
           </div>
+          <LogosFlex />
         </div>
       </div>
     </section>
