@@ -50,7 +50,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     [router, onNavigate],
   )
 
-  const whyUsUseCases = [
+/*   const whyUsUseCases = [
     { name: 'Build Trust', href: '/build-trust' },
     { name: 'Drive Awareness', href: '/drive-awareness' },
     { name: 'Capture Leads', href: '/capture-leads' },
@@ -58,31 +58,31 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
   const whyUsWhoWeHelp = [
     { name: 'For Marketers', href: '/for-marketers' },
     { name: 'For DevRels', href: '/for-dev-rels' },
-  ]
+  ] */
 
   const servicesUseCases = [
-    { name: 'Technical eBooks', href: '/learn/technical-ebooks' },
+    /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
     { name: 'Blog Content', href: '/blog-posts' },
-    { name: 'Content Refreshes', href: '/content-refreshes' },
-    { name: 'Video Tutorials', href: '/video-tutorials' },
+    /* { name: 'Content Refreshes', href: '/content-refreshes' },
+    { name: 'Video Tutorials', href: '/video-tutorials' }, */
     { name: 'Developer Tutorials', href: '/tutorials' },
     { name: 'Dev Content Strategy', href: '/dev-content-strategy' },
     { name: 'AI Content Strategy', href: '/ai-content-strategy' },
     { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
   ]
-  const servicesWhoWeHelp = [
+/*   const servicesWhoWeHelp = [
     { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
     { name: 'Draft.dev vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
     {
       name: 'Draft.dev vs. AI Gen Content',
       href: '/draft-dev-vs-ai-gen-content',
     },
-  ]
+  ] */
 
   return (
     <div className="flex flex-col py-2">
       {links.map(({ href, label }) => {
-        if (label === 'Why Us?') {
+        /* if (label === 'Why Us?') {
           return (
             <details key={label} className="group border-b border-gray-100">
               <summary className="flex w-full cursor-pointer list-none items-center justify-between px-6 py-3 text-base font-medium text-gray-900 hover:bg-gray-50">
@@ -127,7 +127,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
               </div>
             </details>
           )
-        }
+        } */
 
         if (label === 'Services') {
           return (
@@ -160,7 +160,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
                   <h4 className="text-secondary py-1 text-sm font-medium">
                     Compare Us
                   </h4>
-                  {servicesWhoWeHelp.map((item) => (
+{/*                   {servicesWhoWeHelp.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -169,7 +169,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
                     >
                       {item.name}
                     </Link>
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </details>
