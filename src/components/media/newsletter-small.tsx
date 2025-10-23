@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function NewsletterSmall() {
   return (
     <div className="py-6 sm:py-8">
-      <div className="max-w-md">
+      <div className="max-w-auto">
         <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
           <div className="p-2">
             <div className="overflow-hidden rounded-sm shadow-2xl">

@@ -53,7 +53,7 @@ function SitemapLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
 function Sitemap() {
   return (
     <>
-      <div>
+      {/* <div>
         <SitemapHeading>
           <span className="sitemap-heading">Services</span>
         </SitemapHeading>
@@ -77,8 +77,8 @@ function Sitemap() {
             Paid Content Promotion
           </SitemapLink>
         </SitemapLinks>
-      </div>
-      <div>
+      </div> */}
+{/*       <div>
         <SitemapHeading>
           <span className="sitemap-heading">Learn</span>
         </SitemapHeading>
@@ -100,30 +100,13 @@ function Sitemap() {
             Draft.dev vs. AI Generated Content
           </SitemapLink>
         </SitemapLinks>
-      </div>
+      </div> */}
       <div>
         <SitemapHeading>
-          <span className="sitemap-heading">Company</span>
+          <span className="sitemap-heading">Selected Resources</span>
         </SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
-
-          <SitemapLink href="/about">Our Team</SitemapLink>
-          <SitemapLink href="https://draft.dev/#testimonials">
-            Testimonials
-          </SitemapLink>
-          <SitemapLink href="/case-studies">Case Studies</SitemapLink>
-          <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="/#faq">Frequently Asked Questions</SitemapLink>
-          <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Resources</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/resources">Free Resources</SitemapLink>
+          <SitemapLink href="/distributing-content-on-social-media">Content Distribution Strategy</SitemapLink>
           <SitemapLink href="/trello-content-calendar-template">
             Trello Content Calendar Template
           </SitemapLink>
@@ -133,12 +116,28 @@ function Sitemap() {
           <SitemapLink href="/airtable-content-calendar-template">
             Airtable Content Calendar Template
           </SitemapLink>
-          <SitemapLink href="/content-engine-checklist">
+{/*           <SitemapLink href="/content-engine-checklist">
             The Content Engine Checklist
-          </SitemapLink>
+          </SitemapLink> */}
         </SitemapLinks>
       </div>
-      <div></div>
+      <div>
+        <SitemapHeading>
+          <span className="sitemap-heading">Company</span>
+        </SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/about">About</SitemapLink>
+          <SitemapLink href="/case-studies">Case Studies</SitemapLink>
+          <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
+{/*           <SitemapLink href="https://draft.dev/#testimonials">
+            Testimonials
+          </SitemapLink>
+
+          <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
+          <SitemapLink href="/#faq">Frequently Asked Questions</SitemapLink>
+          <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink> */}
+        </SitemapLinks>
+      </div>
     </>
   )
 }
@@ -235,11 +234,11 @@ export function Footer() {
                 priority
               />
             </Link> */}
-            <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-16">
+            <div className="grid grid-cols-3 gap-y-10 pb-6 lg:grid-cols-3 lg:gap-16">
               <div className="col-span-2">
                 <NewsletterSmall />
               </div>
-              <div className="col-span-2 grid grid-cols-2 gap-x-6 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-16">
+              <div className="col-span-1 grid grid-cols-2 gap-x-6 gap-y-12 lg:col-span-1 lg:grid-cols-2 lg:pt-16">
                 <Sitemap />
               </div>
             </div>
