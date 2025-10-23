@@ -277,7 +277,7 @@ export default function HeroVideoPlayer({
           <button
             type="button"
             onClick={togglePlay}
-            className="inline-flex items-center justify-center rounded-lg bg-[#544b84] px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-[#1f2937] focus:ring-2 focus:ring-[#1f2937]/50 focus:outline-none"
+            className="inline-flex items-center justify-center rounded-lg bg-[#544b84] px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
             aria-pressed={isPlaying}
             aria-label={isPlaying ? 'Pause video' : 'Play video'}
           >
@@ -297,7 +297,7 @@ export default function HeroVideoPlayer({
                 setShowVol((s) => !s)
                 pokeControls(4000)
               }}
-              className="flex items-center gap-2 rounded-lg bg-[#544b84] px-3 py-2 text-sm font-medium text-white shadow hover:bg-[#1f2937] focus:ring-2 focus:ring-[#1f2937]/50 focus:outline-none"
+              className="flex items-center gap-2 rounded-lg bg-[#544b84] px-3 py-2 text-sm font-medium text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
               aria-haspopup="true"
               aria-expanded={showVol}
               aria-label="Volume"
@@ -362,7 +362,7 @@ export default function HeroVideoPlayer({
           cursor: pointer;
         }
         .tpc-vert-range::-webkit-slider-runnable-track {
-          background: #1f2937;
+          background: #473d74;
           border-radius: 9999px;
           height: 100%;
         }
