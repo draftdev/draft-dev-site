@@ -19,7 +19,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title:
-    'Content-Powered Growth Engines for Developer Tools & Platforms - Draft.dev',
+    'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
   description:
     'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: 'Draft.dev',
     locale: 'en_US',
     title:
-      'Content-Powered Growth Engines for Developer Tools & Platforms - Draft.dev',
+      'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
     description:
       'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Content-Powered Growth Engines for Developer Tools & Platforms - Draft.dev',
+      'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
     description:
       'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
     images: ['/draft/og/main_og_draft_dev.jpg'],

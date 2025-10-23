@@ -7,16 +7,16 @@ import { Link } from '../link'
 
 type Props = { onClose: () => void }
 
-const useCases = [
-  { name: 'Build Trust', href: '/build-trust' },
-  { name: 'Drive Awareness', href: '/drive-awareness' },
-  { name: 'Capture Leads', href: '/capture-leads' },
+const resources = [
+  { name: 'Blog', href: '/learn' },
+  { name: 'Guides and Templates', href: '/resources' },
+  { name: 'Newsletter', href: '/newsletter' },
 ]
 
-const whoWeHelp = [
+/* const whoWeHelp = [
   { name: 'For Marketers', href: '/for-marketers' },
   { name: 'For DevRels', href: '/for-dev-rels' },
-]
+] */
 
 const recentPosts = [
   {
@@ -27,17 +27,17 @@ const recentPosts = [
     description:
       'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine.',
   },
-  {
+/*   {
     id: 2,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
     description:
       'This guide offers strategies and insights for effectively reaching and converting developer audiences through authentic, value-driven approaches.',
-  },
+  }, */
 ]
 
-export default memo(function WhyUsPopoverContent({ onClose }: Props) {
+export default memo(function ResourcesPopoverContent({ onClose }: Props) {
   const router = useRouter()
   const go = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
@@ -48,11 +48,11 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
   return (
     <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-0">
       {/* Left: nav sections - stacks on mobile, 1/3 on desktop */}
-      <div className="grid grid-cols-2 gap-x-6 lg:col-span-1">
+      <div className="grid grid-cols-1 gap-x-6 lg:col-span-1">
         <div>
-          <h3 className="text-sm font-medium text-gray-500">Use Cases</h3>
+          <h3 className="text-sm font-medium text-gray-500">Resources</h3>
           <div className="mt-4 space-y-2">
-            {useCases.map((item) => (
+            {resources.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -65,7 +65,7 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <h3 className="text-sm font-medium text-gray-500">Who We Help</h3>
           <div className="mt-4 space-y-2">
             {whoWeHelp.map((item) => (
@@ -79,11 +79,11 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Right: recent posts - stacks on mobile, 2/3 on desktop */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2">
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-1 lg:col-span-2">
         <h3 className="sr-only">Recent posts</h3>
         {recentPosts.map((post) => (
           <article key={post.id} className="relative flex flex-col gap-y-4">
@@ -92,8 +92,8 @@ export default memo(function WhyUsPopoverContent({ onClose }: Props) {
                 alt=""
                 src={post.imageUrl}
                 className="aspect-[2/1] w-full rounded-lg bg-gray-100 object-cover"
-                height={200}
-                width={300}
+                height={300}
+                width={450}
               />
               <div className="absolute inset-0 rounded-lg ring-1 ring-gray-900/10 ring-inset" />
             </div>

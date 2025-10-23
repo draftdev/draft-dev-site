@@ -239,7 +239,7 @@ body {
 .navbar-container > div {
   transition: top 0.3s ease-in-out;
 }
-#why-us-popover {
+#resources-popover {
   z-index: 60;
 }
 

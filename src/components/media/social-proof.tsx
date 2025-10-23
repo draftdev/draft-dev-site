@@ -12,10 +12,10 @@ export default function SocialProof() {
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
             <h2 className="lg:subheader-light subheader-mobile-light">
-              A proven track record of success
+              A content creation agency with a track record
             </h2>
             <p className="mt-4 text-lg text-gray-100 lg:leading-8">
-              Draft.dev has worked with hundreds of successful companies,
+              We have worked with hundreds of successful companies,
               including some of the most well-known in the tech industry.
             </p>
           </div>

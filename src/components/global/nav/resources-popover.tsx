@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import WhyUsPopoverContent from './why-us-popover-content'
+import ResourcesPopoverContent from './resources-popover-content'
 
 function ChevronDownIcon({
   className = 'h-4 w-4 ml-1',
@@ -41,7 +41,7 @@ function CloseIconInline({ className = 'h-5 w-5' }: { className?: string }) {
   )
 }
 
-export default memo(function WhyUsPopover({
+export default memo(function ResourcesPopover({
   open,
   onToggle,
   onClose,
@@ -53,20 +53,20 @@ export default memo(function WhyUsPopover({
   return (
     <div className="relative">
       <button
-        id="why-us-button"
+        id="resources-button"
         className="flex cursor-pointer items-center px-1 pt-1 text-sm font-medium whitespace-nowrap text-gray-700 md:px-2 md:text-base lg:px-3 lg:text-base xl:px-4 xl:text-lg"
         onClick={onToggle}
         aria-expanded={open}
         aria-haspopup="dialog"
       >
-        Why Us?
+        Resources
         <ChevronDownIcon />
       </button>
 
       {open && (
         <>
           <div
-            id="why-us-popover"
+            id="resources-popover"
             role="dialog"
             aria-modal="true"
             className="fixed top-30 left-1/2 z-50 w-[90vw] max-w-4xl -translate-x-1/2 overflow-y-auto rounded-xl bg-white shadow-lg ring-1 ring-black/5 sm:w-[85vw]"
@@ -82,7 +82,7 @@ export default memo(function WhyUsPopover({
               </button>
             </div>
             <div className="max-h-[calc(100vh-10rem)] overflow-y-auto p-4 sm:p-5 lg:p-6">
-              <WhyUsPopoverContent onClose={onClose} />
+              <ResourcesPopoverContent onClose={onClose} />
             </div>
           </div>
         </>

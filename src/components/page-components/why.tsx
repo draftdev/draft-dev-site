@@ -8,7 +8,7 @@ interface Feature {
   linkHref: string
 }
 
-interface WhyProps {
+interface ResourcesProps {
   title: string
   subtitle?: string
   subtitleBold?: string
@@ -16,7 +16,7 @@ interface WhyProps {
   className?: string
 }
 
-const Why: React.FC<WhyProps> = ({
+const Resources: React.FC<ResourcesProps> = ({
   title,
   subtitle,
   subtitleBold,
@@ -75,4 +75,4 @@ const Why: React.FC<WhyProps> = ({
   )
 }
 
-export default Why
+export default Resources
