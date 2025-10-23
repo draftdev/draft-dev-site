@@ -15,15 +15,17 @@ import Banner from '@/components/media/banner'
 
 import MobileNavContent from './mobile-nav-content'
 import ServicesPopover from './services-popover'
-import WhyUsPopover from './why-us-popover'
+import ResourcesPopover from './resources-popover'
 
 const NAVIGATION_CONFIG = {
   links: [
-    { href: '/why-us', label: 'Why Us?' },
     { href: '/services', label: 'Services' },
-    /* { href: './#pricing', label: 'Pricing' }, */
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/resources', label: 'Resources' },
+    
+    /* { href: './#pricing', label: 'Pricing' }, */
+    
+    /* { href: '/resources', label: 'Resources' }, */
     { href: '/about', label: 'Company' },
     { href: '/call', label: 'Book Discovery Call' },
   ],
@@ -74,7 +76,7 @@ function CloseIconInline({ className = 'h-5 w-5' }: { className?: string }) {
 
 function DynamicNavbar() {
   const pathname = usePathname()
-  const [isWhyUsOpen, setIsWhyUsOpen] = useState(false)
+  const [isResourcesOpen, setisResourcesOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   // Measure the entire fixed header (banner + nav)
@@ -99,23 +101,23 @@ function DynamicNavbar() {
 
   // Close popovers on route changes
   useEffect(() => {
-    setIsWhyUsOpen(false)
+    setisResourcesOpen(false)
     setIsServicesOpen(false)
   }, [pathname])
 
   // Close Why Us popover when clicking outside
   useEffect(() => {
-    if (!isWhyUsOpen) return
+    if (!isResourcesOpen) return
     const handleClickOutside = (event: MouseEvent) => {
-      const pop = document.getElementById('why-us-popover')
-      const btn = document.getElementById('why-us-button')
+      const pop = document.getElementById('resources-popover')
+      const btn = document.getElementById('resources-button')
       if (
         pop &&
         !pop.contains(event.target as Node) &&
         btn &&
         !btn.contains(event.target as Node)
       ) {
-        setIsWhyUsOpen(false)
+        setisResourcesOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside as EventListener)
@@ -124,7 +126,7 @@ function DynamicNavbar() {
         'mousedown',
         handleClickOutside as EventListener,
       )
-  }, [isWhyUsOpen])
+  }, [isResourcesOpen])
 
   // Close Services popover when clicking outside
   useEffect(() => {
@@ -154,15 +156,15 @@ function DynamicNavbar() {
       className={`hidden items-center justify-end space-x-1 md:space-x-2 lg:flex lg:space-x-3 ${STYLES.textColor}`}
     >
       {NAVIGATION_CONFIG.links.map(({ href, label }) =>
-        label === 'Why Us?' ? (
-          <WhyUsPopover
+        label === 'Resources' ? (
+          <ResourcesPopover
             key={label}
-            open={isWhyUsOpen}
+            open={isResourcesOpen}
             onToggle={() => {
-              setIsWhyUsOpen((v) => !v)
+              setisResourcesOpen((v) => !v)
               setIsServicesOpen(false)
             }}
-            onClose={() => setIsWhyUsOpen(false)}
+            onClose={() => setisResourcesOpen(false)}
           />
         ) : label === 'Services' ? (
           <ServicesPopover
@@ -170,7 +172,7 @@ function DynamicNavbar() {
             open={isServicesOpen}
             onToggle={() => {
               setIsServicesOpen((v) => !v)
-              setIsWhyUsOpen(false)
+              setisResourcesOpen(false)
             }}
             onClose={() => setIsServicesOpen(false)}
           />
