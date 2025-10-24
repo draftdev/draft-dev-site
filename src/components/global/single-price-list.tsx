@@ -46,7 +46,13 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
         <h3 className="paragraph-light py-3 text-lg">
           We plan, produce, publish, and promote your first pieces within weeks.
         </h3>
-        <a className="paragraph-light text-lg underline" href="/technical-content-examples">Interested in what we can create for you? Check out content examples for 40+ different clients here.</a>
+        <a
+          className="paragraph-light text-lg underline"
+          href="/technical-content-examples"
+        >
+          Interested in what we can create for you? Check out content examples
+          for 40+ different clients here.
+        </a>
       </div>
 
       <div className="my-6">
@@ -69,7 +75,10 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                       We analyze your industry, competitors, positioning,
                       product features, target audience, and make sure to
                       understand your brand and tone of voice, ensuring
-                      authentic output. We conduct SEO and GEO research, assess your existing content, study your existing marketing funnel, and delivery a content strategy and roadmap for your feedback. 
+                      authentic output. We conduct SEO and GEO research, assess
+                      your existing content, study your existing marketing
+                      funnel, and delivery a content strategy and roadmap for
+                      your feedback.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -97,7 +106,16 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                       We publish your first pieces within weeks
                     </h4>
                     <p className="text-base sm:text-lg">
-                      We create strategically relevant content pieces for you. These include blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets and more. To ensure fast turnaround times we use proven AI workflows to help draft your pieces. Each single piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience. We can manage publication of your content via all major CMSs.
+                      We create strategically relevant content pieces for you.
+                      These include blog posts and tutorials, comparison pages,
+                      landing pages and onboarding content, technical product
+                      guides and use case deep-dives, thought leadership pieces,
+                      lead magnets and gated assets and more. To ensure fast
+                      turnaround times we use proven AI workflows to help draft
+                      your pieces. Each single piece is reviewed by real
+                      developers and edited by professional technical editors to
+                      ensure accuracy, clarity, and value for your audience. We
+                      can manage publication of your content via all major CMSs.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -122,10 +140,14 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                   </div>
                   <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
                     <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      We help you get reach and click-throughss
+                      We help you get reach and click-throughs
                     </h4>
                     <p className="text-base sm:text-lg">
-                      We help promoting your content on Reddit, LinkedIn, Twitter/X, and more. We create variations you can use for third-party syndication and assist in publishing and advertising your pieces niche publications and newsletters that are read by your target audience.
+                      We help promoting your content on Reddit, LinkedIn,
+                      Twitter/X, and more. We create variations you can use for
+                      third-party syndication and assist in publishing and
+                      advertising your pieces niche publications and newsletters
+                      that are read by your target audience.
                     </p>
                     <div className="my-8 bg-gray-300" />
                   </div>
@@ -136,7 +158,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
         </div>
       </div>
 
-{/*       <div className="my-6">
+      {/*       <div className="my-6">
         {' '}
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
