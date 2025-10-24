@@ -67,7 +67,7 @@ export default function ForDevRels() {
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See how we pubish within weeks',
+          text: 'See how we publish within weeks',
           href: './#how-we-work',
         }}
       />
