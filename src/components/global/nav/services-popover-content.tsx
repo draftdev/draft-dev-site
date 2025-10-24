@@ -8,8 +8,8 @@ import { Link } from '../link'
 type Props = { onClose: () => void }
 
 const services = [
-/*   { name: 'Content Strategy', href: '/content-strategy-services' },
-  { name: 'Content Production', href: '/content-production' },
+  { name: 'Content Strategy', href: '/content-strategy-services' },
+/*. { name: 'Content Production', href: '/content-production' },
   { name: 'Content Distribution', href: '/content-distribution' },
   { name: 'All Services', href: '/content-marketing-services' }, */
 
