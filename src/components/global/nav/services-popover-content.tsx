@@ -19,8 +19,8 @@ const services = [
   /* { name: 'Technical Content Refresh', href: '/content-refreshes' },
   { name: 'Video Tutorials', href: '/video-tutorials' }, */
   { name: 'Developer Tutorials', href: '/tutorials' },
-  { name: 'Developer Content Strategy', href: '/dev-content-strategy' },
-  { name: 'AI Content Strategy', href: '/ai-content-strategy' },
+  /* { name: 'Developer Content Strategy', href: '/dev-content-strategy' }, */
+  /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
   { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
 ]
 
