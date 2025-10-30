@@ -6,7 +6,7 @@ import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import Why from '@/components/page-components/why'
-import What from '@/components/page-components/content-strategy-services/what'
+import What from '@/components/page-components/content-production/what'
 import ContentProductionList from '@/components/global/content-production-list'
 
 import type { Metadata } from 'next'
