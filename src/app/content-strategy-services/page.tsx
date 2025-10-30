@@ -80,7 +80,7 @@ export default function ForMarketers() {
             {
               title: 'From analysis to actionable strategy',
               description:
-                'Our engineers use your product, we analyze competitors, audit your site for gaps and opportunities, and make use of understanding the exact pieces, topics and search patterns that developers, search engines, and LLMs use when seeking and presenting solutions.',
+                'After your kickoff call, our engineers use your product, we analyze your competitors, audit your site for gaps and opportunities, conduct SEO/AEO visibility research, create a road map and execute on the exact pieces that developers, search engines, and LLMs use when seeking and presenting solutions.',
               linkText: 'How we turn content into growth',
               linkHref: '/drive-awareness',
             },
