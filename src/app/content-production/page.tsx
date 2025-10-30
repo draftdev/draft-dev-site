@@ -62,14 +62,14 @@ export default function ForMarketers() {
     <div>
       <ServiceHeader
         title="Content Production for Developer Tools & Platforms"
-        description="We help you drive consistency and maintain a cadence of high-quality technical content output. Based on SEO and AEO research, tailored to your needs and designed to reach developers at every stage of their journey."
+        description="We build technical content growth engines driving results. Based on SEO and AEO research, tailored to your needs and designed to reach developers at every stage of their journey."
         primaryCTA={{
           text: 'Book a Discovery Call',
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See how we publish within weeks',
-          href: './#how-we-work',
+          text: 'See what types of content we produce',
+          href: '#what-we-create',
         }}
       />
       <main>
@@ -79,25 +79,25 @@ export default function ForMarketers() {
           subtitleBold=""
           features={[
             {
-              title: 'From analysis to actionable strategy',
+              title: 'High quality technical content, delivered fast',
               description:
-                'After your kickoff call, our engineers use your product, we analyze your competitors, audit your site for gaps and opportunities, conduct SEO/AEO visibility research, create a road map and execute on the exact pieces that developers, search engines, and LLMs use when seeking and presenting solutions.',
+                'Proven AI workflows and our teams of writers, video producers, and subject matter experts ensure that every piece is technically accurate, meets quality standards, and has a consistent style. Combined, these pieces make up a content growth engine that compounds. We share progress in roadmap documents and adjust content output based on your goals.',
               linkText: 'How we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'A breadth of content types and pieces',
+              title: 'The right content mix for every stage',
               description:
-                'We provide you with thought leadership pieces, technical deep dives, comparison pages, ebooks, whitepapers, content refreshes, and social media posts, and align Technical content production with your product releases, ensuring new features get the technical content they deserve.',
-              linkText: 'See some of our content examples',
-              linkHref: '/technical-content-examples',
+                'Effective developer marketing strategies combine multiple content types to address different stages of the developer journey. Tutorials and guides build awareness and trust, while comparisons and persuasive pieces drive consideration and decisions. We create the optimal mix of content to engage your audience at every stage and get you visibilty on search engines and LLMs.',
+              linkText: 'See what we can create for you',
+              linkHref: '#what-we-create',
             },
             {
-              title: 'Measuring what matters',
+              title: 'Content you can count on',
               description:
-                'Vanity metrics don\'t pay the bills. We track what actually moves the needle. Our monthly strategy reviews go beyond spreadsheet reports. We provide actionable insights about what\'s resonating with your audience and adjust the roadmap based on real performance data.',
-              linkText: 'See how we helped clients like you',
-              linkHref: '/build-trust',
+                'Never worry about whether you\'ll have new content ready again. Marketing to developers can be tricky, but one of the best ways to build trust with them is to consistently provide value across many different channels. When you work with us, you get ready-to-publish content delivered every week. From landing pages, to blog posts, to lead magnets, to videos, to pieces we can syndicate.',
+              linkText: 'See some of our content examples',
+              linkHref: '/technical-content-examples',
             },
           ]}
         />

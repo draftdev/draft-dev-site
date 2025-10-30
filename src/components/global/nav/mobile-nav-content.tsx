@@ -62,12 +62,13 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
 
   const servicesUseCases = [
     /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
-    { name: 'Blog Content', href: '/blog-posts' },
+    /* { name: 'Blog Content', href: '/blog-posts' }, */
     /* { name: 'Content Refreshes', href: '/content-refreshes' },
     { name: 'Video Tutorials', href: '/video-tutorials' }, */
-    { name: 'Developer Tutorials', href: '/tutorials' },
-    { name: 'Dev Content Strategy', href: '/dev-content-strategy' },
-    { name: 'AI Content Strategy', href: '/ai-content-strategy' },
+    /* { name: 'Developer Tutorials', href: '/tutorials' }, */
+    { name: 'Content Strategy', href: '/content-strategy-services' },
+    { name: 'Content Production', href: '/content-production' },
+    /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
     { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
   ]
 /*   const servicesWhoWeHelp = [
@@ -142,7 +143,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
               <div className="pl-4">
                 <div className="border-l border-gray-100 py-2 pl-4">
                   <h4 className="text-secondary py-1 text-sm font-medium">
-                    Use Cases
+                    Technical Content Services
                   </h4>
                   {servicesUseCases.map((item) => (
                     <Link

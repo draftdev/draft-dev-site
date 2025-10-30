@@ -9,16 +9,16 @@ type Props = { onClose: () => void }
 
 const services = [
   { name: 'Content Strategy', href: '/content-strategy-services' },
-/*. { name: 'Content Production', href: '/content-production' },
-  { name: 'Content Distribution', href: '/content-distribution' },
+  { name: 'Content Production', href: '/content-production' },
+  /*.{ name: 'Content Distribution', href: '/content-distribution' },
   { name: 'All Services', href: '/content-marketing-services' }, */
 
 
   /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
-  { name: 'Technical Blog Content', href: '/blog-posts' },
+/*   { name: 'Technical Blog Content', href: '/blog-posts' }, */
   /* { name: 'Technical Content Refresh', href: '/content-refreshes' },
   { name: 'Video Tutorials', href: '/video-tutorials' }, */
-  { name: 'Developer Tutorials', href: '/tutorials' },
+  /* { name: 'Developer Tutorials', href: '/tutorials' }, */
   /* { name: 'Developer Content Strategy', href: '/dev-content-strategy' }, */
   /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
   { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
