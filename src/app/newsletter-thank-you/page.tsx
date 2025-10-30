@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     follow: false,
   },
   alternates: {
-    canonical: '/thank-you',
+    canonical: '/newsletter-thank-you',
   },
 }
 

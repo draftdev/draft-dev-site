@@ -4,7 +4,7 @@ import type { Section } from '@/components/page-components/mega-guide/types'
 import glob from 'fast-glob'
 import type { Metadata } from 'next'
 
-const BASE_PATH = '/technical-content' // matches nav-data.ts
+const BASE_PATH = '/technical-content'
 
 export const metadata: Metadata = {
   title: 'Technical Content Marketing in the Age of AI',
@@ -16,7 +16,7 @@ export default async function Layout({
   children: React.ReactNode
 }) {
   const pages = await glob('**/page.@(mdx|tsx)', {
-    cwd: 'src/app/technical-content', // <-- update
+    cwd: 'src/app/technical-content',
   })
 
   const entries = await Promise.all(
