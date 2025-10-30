@@ -100,11 +100,11 @@ export default function About() {
         descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
         descriptionTwo="Let us help you building your technical content growth engine."
       />
-
+      
       <main className="overflow-hidden">
         <What />
-        <Team />
-        <Why
+        <LogosDark />
+        {/* <Why
           title="What Makes Draft.dev Different?"
           features={[
             {
@@ -129,36 +129,36 @@ export default function About() {
               linkHref: '/case-studies',
             },
           ]}
-        />
-        <SocialProof />
+        /> */}
         <How
-          title="How Draft.dev Works with Clients"
+          title="How we work with you"
           subtitleBold=""
-          subtitleRegular="At Draft.dev, we prioritize understanding your needs and ensuring a successful partnership. Below is a structured overview of our client engagement process, which outlines each step clearly and provides actionable outcomes."
+          subtitleRegular="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to published content within weeks."
           steps={[
             {
               number: '1',
-              title: 'Discovery Call',
+              title: 'Discovery call',
               description:
-                "Before we begin working with a new client, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll ask you where your business is at, what your content goals are, and the type of content you're looking to produce.",
+                "Before we begin working with a new client, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll ask you where your business is at, what your content goals are, and walk you through our content strategy, production, and promotion processes.",
             },
             {
               number: '2',
-              title: 'Statement of Work and Timeline',
+              title: 'Kickoff call',
               description:
-                "We almost always have a backlog of new clients waiting to start, so once you're ready to reserve a spot in our production calendar, we'll send over an estimated timeline and statement of work. This allows us to ensure we have enough writers and editors ready to help maintain our rigorous quality standards, and that both parties are on the same page as far as the scope of work is concerned.",
+                "We have a call with your primary contact and try to schedule 1-on-1 interviews with someone on your leadership team to extract vision and thought leadership content ideas. We also talk through nice-to-have information like product description, brand guidelines, positioning, ICPs, competitors and ideally get access to your CMS and analytics, if feasible.",
             },
             {
               number: '3',
-              title: 'Topic Strategy and Intake',
+              title: 'Content strategy, production, and output within 3 weeks',
               description:
-                "During the topic strategy phase, we'll define your content goals, requirements, and the preferences of all stakeholders on your team. Your team will be able to provide examples of articles you like and any desired topic ideas you have in mind. All relevant information about your brand and content strategy is helpful to our Technical Content Specialists and can be incorporated into your content plan.",
+                "Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.",
             },
           ]}
           imageSrc="/site/med-portrait/developers_draft_dev.jpg"
           imageAlt="Technical content development"
         />
-        <LogosDark />
+        <Team />
+        <SocialProof />
         <FAQ />
       </main>
     </>

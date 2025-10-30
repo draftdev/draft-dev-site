@@ -8,31 +8,21 @@ const What = () => {
           <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
               <h2 className="sm:subheader-gradient subheader-mobile-gradient">
-                We believe great marketing content can also be educational
-                content
+                A developer content agency building growth engines for tech companies
               </h2>
 
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    With over 8 years of experience as a CTO, Karl Hughes has a
-                    deep understanding of the challenges companies face in
-                    connecting with software developers. This expertise inspired
-                    him to found Draft.dev in 2020, with the mission of helping
-                    businesses create authentic technical content that not only
-                    engages but also educates their target audience.
+                    Draft.dev delivers a breadth of authentic developer content backed by real engineering expertise. Founded in 2020 by former CTO Karl Hughes, we combine strategic marketing with hands-on technical knowledge to create content that performs.
+
+Our network of 300+ seasoned engineers produces technically accurate content that resonates with developer audiences, search and answer engines, and algorithms. Experienced marketers and editors ensure every piece is derived from strategic goals and drives results while maintaining the depth developers expect.
                   </dd>
                 </div>
 
                 <div className="relative">
                   <dd className="my-2">
-                    Draft.dev has expanded its team to include skilled
-                    marketers, editors, and engineers, alongside a network of
-                    over 300 experienced engineers who contribute high-quality
-                    content. This diverse team ensures that our content is not
-                    only technically accurate but also resonates with the unique
-                    needs of software developers, bridging the gap between
-                    marketing and education.
+                    <strong>From strategy, to production, to distribution within weeks.</strong> We handle the full content lifecycle: planning, production, and promotion. Proven AI workflows combined with hundreds of subject matter experts ensure fast turnaround times and high quality.
                   </dd>
                 </div>
               </dl>
