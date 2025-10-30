@@ -5,8 +5,8 @@ import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import Why from '@/components/page-components/why'
 import What from '@/components/page-components/content-strategy-services/what'
+import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/for-marketers',
+    url: 'https://draft.dev/dev-content-strategy',
     siteName: 'Draft.dev',
     locale: 'en_US',
     title: 'Content Strategy Services - Draft.dev',
@@ -26,10 +26,10 @@ export const metadata: Metadata = {
       'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
     images: [
       {
-        url: '/draft/og/marketers_og_draft_dev.jpg',
+        url: '/draft/og/content_strategy_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'Technical Content Marketing for Marketing Teams',
+        alt: 'Developer Content Strategies by Draft.dev',
       },
     ],
   },
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     title: 'Content Strategy Services - Draft.dev',
     description:
       'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
-    images: ['/draft/og/marketers_og_draft_dev.jpg'],
+    images: ['/draft/og/content_strategy_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
-  alternates: { canonical: 'https://draft.dev/for-marketers' },
+  alternates: { canonical: 'https://draft.dev/dev-content-strategy' },
   robots: {
     index: true,
     follow: true,
@@ -94,7 +94,7 @@ export default function ForMarketers() {
             {
               title: 'Measuring what matters',
               description:
-                'Vanity metrics don\'t pay the bills. We track what actually moves the needle. Our monthly strategy reviews go beyond spreadsheet reports. We provide actionable insights about what\'s resonating with your audience and adjust the roadmap based on real performance data.',
+                "Vanity metrics don't pay the bills. We track what actually moves the needle. Our monthly strategy reviews go beyond spreadsheet reports. We provide actionable insights about what's resonating with your audience and adjust the roadmap based on real performance data.",
               linkText: 'See how we helped clients like you',
               linkHref: '/build-trust',
             },

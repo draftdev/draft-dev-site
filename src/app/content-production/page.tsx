@@ -1,3 +1,4 @@
+import ContentProductionList from '@/components/global/content-production-list'
 import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header'
 import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
@@ -5,9 +6,8 @@ import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import Why from '@/components/page-components/why'
 import What from '@/components/page-components/content-production/what'
-import ContentProductionList from '@/components/global/content-production-list'
+import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
@@ -15,19 +15,19 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Production - Draft.dev',
   description:
-    'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
+    'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/for-marketers',
+    url: 'https://draft.dev/content-production',
     siteName: 'Draft.dev',
     locale: 'en_US',
     title: 'Technical Content Production - Draft.dev',
     description:
-      'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
+      'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
     images: [
       {
-        url: '/draft/og/marketers_og_draft_dev.jpg',
+        url: '/draft/og/content_production_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'Technical Content Marketing for Marketing Teams',
@@ -38,12 +38,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Technical Content Production - Draft.dev',
     description:
-      'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
-    images: ['/draft/og/marketers_og_draft_dev.jpg'],
+      'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
+    images: ['/draft/og/content_production_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
-  alternates: { canonical: 'https://draft.dev/for-marketers' },
+  alternates: { canonical: 'https://draft.dev/content-production' },
   robots: {
     index: true,
     follow: true,
@@ -95,7 +95,7 @@ export default function ForMarketers() {
             {
               title: 'Content you can count on',
               description:
-                'Never worry about whether you\'ll have new content ready again. Marketing to developers can be tricky, but one of the best ways to build trust with them is to consistently provide value across many different channels. When you work with us, you get ready-to-publish content delivered every week. From landing pages, to blog posts, to lead magnets, to videos, to pieces we can syndicate.',
+                "Never worry about whether you'll have new content ready again. Marketing to developers can be tricky, but one of the best ways to build trust with them is to consistently provide value across many different channels. When you work with us, you get ready-to-publish content delivered every week. From landing pages, to blog posts, to lead magnets, to videos, to pieces we can syndicate.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
