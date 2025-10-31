@@ -8,6 +8,7 @@ import rich from '/public/media/testimonials-sm/rich_burroughs_loft_labs_draft_d
 import robert from '/public/media/testimonials-sm/robert_gibb_fabric_draft_dev.jpg'
 import nicholas from '/public/media/testimonials-sm/nicholasdewald_prove_draft_dev.jpg'
 import tony from '/public/media/testimonials-sm/tony_chan_cloudforecast_draft_dev.jpg'
+import ravi from '/public/media/testimonials-sm/ravi_dehar_gusto_draft_dev.jpg'
 
 type Testimonial = {
   body: string
@@ -25,6 +26,14 @@ const testimonials: Testimonial[] = [
       name: 'Emily Blitstein',
       company: 'SINCH MAILGUN',
       imageUrl: emily.src,
+    },
+  },
+  {
+    body: "Draft.dev really accelerated our developer-focused marketing efforts. They really helped us build a competitive advantage as a developer-friendly platform without pulling away our internal technical teams to write that content.",
+    author: {
+      name: 'Ravi Dehar',
+      company: 'Gusto',
+      imageUrl: ravi.src,
     },
   },
   {
