@@ -14,22 +14,22 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Content Strategy Services - Draft.dev',
   description:
-    'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
+    'We combine deep technical expertise with product research and proven SEO and AI optimization methodologies to create content strategies that put your solution in front of the right developers at the right time.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/dev-content-strategy',
+    url: 'https://draft.dev/content-strategy-services',
     siteName: 'Draft.dev',
     locale: 'en_US',
     title: 'Content Strategy Services - Draft.dev',
     description:
-      'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
+      'We combine deep technical expertise with product research and proven SEO and AI optimization methodologies to create content strategies that put your solution in front of the right developers at the right time.',
     images: [
       {
         url: '/draft/og/content_strategy_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'Developer Content Strategies by Draft.dev',
+        alt: ' Content Strategies by Draft.dev',
       },
     ],
   },
@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Content Strategy Services - Draft.dev',
     description:
-      'From industry analysis, competitor research, SEO/GEO opportunities, brand assessment & marketing funnel review. Get your custom developer marketing strategy.',
+      'We combine deep technical expertise with product research and proven SEO and AI optimization methodologies to create content strategies that put your solution in front of the right developers at the right time.',
     images: ['/draft/og/content_strategy_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
-  alternates: { canonical: 'https://draft.dev/dev-content-strategy' },
+  alternates: { canonical: 'https://draft.dev/content-strategy-services' },
   robots: {
     index: true,
     follow: true,
