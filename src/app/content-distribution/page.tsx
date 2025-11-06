@@ -1,6 +1,6 @@
 import ContentProductionList from '@/components/global/content-production-list'
 import FAQ from '@/components/global/faq'
-import ServiceHeader from '@/components/global/headers/service-header'
+import ServiceHeader from '@/components/global/headers/service-header-content-distribution'
 import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
@@ -68,8 +68,8 @@ export default function ForMarketers() {
           href: '/call',
         }}
         secondaryCTA={{
-          text: 'See what types of content we produce',
-          href: '#what-we-create',
+          text: 'Learn about our content promotion strategy',
+          href: '/learn/orchestrate-content-promotion-waves',
         }}
       />
       <main>
