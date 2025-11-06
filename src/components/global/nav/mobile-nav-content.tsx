@@ -68,8 +68,9 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     /* { name: 'Developer Tutorials', href: '/tutorials' }, */
     { name: 'Content Strategy', href: '/content-strategy-services' },
     { name: 'Content Production', href: '/content-production' },
+    { name: 'Content Distribution', href: '/content-distribution' },
     /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
-    { name: 'Paid Content Promotion', href: '/paid-content-promotion' },
+     /*{ name: 'Paid Content Promotion', href: '/paid-content-promotion' },*/
   ]
 /*   const servicesWhoWeHelp = [
     { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
