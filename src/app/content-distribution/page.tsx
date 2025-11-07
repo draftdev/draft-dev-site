@@ -1,4 +1,3 @@
-import ContentProductionList from '@/components/global/content-production-list'
 import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header-content-distribution'
 import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
@@ -15,19 +14,19 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Technical Content Distribution - Draft.dev',
   description:
-    'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
+    'We turn your technical content into an awareness and lead generation machine through strategic promotion, syndication, and targeted placements in developer newsletters, communities, and highly relevant channels.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/content-production',
+    url: 'https://draft.dev/content-distribution',
     siteName: 'Draft.dev',
     locale: 'en_US',
     title: 'Technical Content Distribution - Draft.dev',
     description:
-      'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
+      'We turn your technical content into an awareness and lead generation machine through strategic promotion, syndication, and targeted placements in developer newsletters, communities, and highly relevant channels.',
     images: [
       {
-        url: '/draft/og/content_production_draft_dev.jpg',
+        url: '/draft/og/content_distribution_draft_dev.jpg',
         width: 1200,
         height: 630,
         alt: 'Technical Content Marketing for Marketing Teams',
@@ -38,12 +37,12 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Technical Content Distribution - Draft.dev',
     description:
-      'Get technical content that drives results. Our engineer-writers deliver tutorials, guides, and thought leadership that reach developers at every stage. 3000+ pieces published.',
-    images: ['/draft/og/content_production_draft_dev.jpg'],
+      'We turn your technical content into an awareness and lead generation machine through strategic promotion, syndication, and targeted placements in developer newsletters, communities, and highly relevant channels.',
+    images: ['/draft/og/content_distribution_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
-  alternates: { canonical: 'https://draft.dev/content-production' },
+  alternates: { canonical: 'https://draft.dev/content-distribution' },
   robots: {
     index: true,
     follow: true,
@@ -95,7 +94,7 @@ export default function ForMarketers() {
             {
               title: 'Sponsorships in Tech Publications',
               description:
-                "We leverage partnerships with developer newsletters and niche publications that your target audience actually reads. From CooperPress, to TLDR and Changelog to specialized technical newsletters, we place your content where developers actively seek information. We handle sponsorship booking, content optimization, and campaign management for maximum impact.",
+                'We leverage partnerships with developer newsletters and niche publications that your target audience actually reads. From CooperPress, to TLDR and Changelog to specialized technical newsletters, we place your content where developers actively seek information. We handle sponsorship booking, content optimization, and campaign management for maximum impact.',
               linkText: 'See a list of the best tech newsletters',
               linkHref: '/learn/the-ultimate-list-of-developer-newsletters',
             },
