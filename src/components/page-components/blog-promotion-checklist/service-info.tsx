@@ -9,8 +9,7 @@ const ServiceInfo = () => {
           <div className="lg:pt-4 lg:pr-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl">
               <h1 className="sm:subheader-gradient subheader-mobile-gradient px-8">
-                The Content Engine Checklist: A List of Implementation
-                Priorities
+                The Big Blog Promotion Checklist
               </h1>
               <FormBlogPromotionChecklist />
             </div>
@@ -22,7 +21,7 @@ const ServiceInfo = () => {
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
                   <Image
                     alt="In this free PDF checklist, we give you an overview on key aspects to consider when building a content engine and when starting and running the engine."
-                    src="/site/med-portrait/blog_promotion_checklist_draft_dev.jpg"
+                    src="/site/med-portrait/blog_promotion_checklist.jpg"
                     width={500}
                     height={650}
                     className="rounded-xl"
