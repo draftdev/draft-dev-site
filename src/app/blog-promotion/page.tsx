@@ -8,41 +8,38 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title:
-    'Distributing Content on Social Media and Generating Leads from Gated Assets - Draft.dev',
+  title: 'The Big Blog Promotion Checklist - Draft.dev',
   description:
-    'This document will walk through a simple framework on how to utilize potentially existing downloadable assets and orchestrate some simple social media playbooks.',
+    'While there are plenty of general promotional checklists for bloggers, not many are specifically built with a software engineering audience in mind. Here is the blog post promotion checklist we use at Draft.dev.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
-    url: 'https://draft.dev/distributing-content-on-social-media',
+    url: 'https://draft.dev/big-blog-promotion-checklist',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title:
-      'Distributing Content on Social Media and Generating Leads from Gated Assets - Draft.dev',
+    title: 'The Big Blog Promotion Checklist - Draft.dev',
     description:
-      'This document will walk through a simple framework on how to utilize potentially existing downloadable assets and orchestrate some simple social media playbooks.',
+      'While there are plenty of general promotional checklists for bloggers, not many are specifically built with a software engineering audience in mind. Here is the blog post promotion checklist we use at Draft.dev.',
     images: [
       {
-        url: '/draft/og/distributing_content_og_draft_dev.jpg',
+        url: '/site/med-landscape/blog_promotion_checklist_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'Distributing Content on Social Media and Generating Leads from Gated Assets Download',
+        alt: 'The Big Blog Promotion Checklist Download',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Distributing Content on Social Media and Generating Leads from Gated Assets - Draft.dev',
+    title: 'The Big Blog Promotion Checklist - Draft.dev',
     description:
-      'This document will walk through a simple framework on how to utilize potentially existing downloadable assets and orchestrate some simple social media playbooks.',
-    images: ['/draft/og/distributing_content_og_draft_dev.jpg'],
+      'While there are plenty of general promotional checklists for bloggers, not many are specifically built with a software engineering audience in mind. Here is the blog post promotion checklist we use at Draft.dev.',
+    images: ['/site/med-landscape/blog_promotion_checklist_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
   },
   alternates: {
-    canonical: 'https://draft.dev/distributing-content-on-social-media',
+    canonical: 'https://draft.dev/big-blog-promotion-checklist',
   },
   robots: {
     index: true,
@@ -57,7 +54,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function TrelloTemplate() {
+export default function BlogPromotion() {
   return (
     <>
       <ServiceInfo />

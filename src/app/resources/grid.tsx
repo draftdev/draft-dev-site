@@ -106,6 +106,14 @@ const posts: Post[] = [
       'Kickstart your content marketing efforts with this in-depth guide.',
     imageUrl: '/site/med-landscape/ideas_og_draft_dev.jpg',
   },
+  {
+    id: 12,
+    title: 'The Big Blog Promotion Checklist',
+    href: '/big-blog-promotion-checklist',
+    description:
+      'While there are plenty of general promotional checklists for bloggers, not many are specifically built with a software engineering audience in mind.',
+    imageUrl: '/site/med-landscape/blog_promotion_checklist_draft_dev.jpg',
+  },
 
   // More resources...
 ]
