@@ -2,7 +2,7 @@ import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import ServiceInfo from '@/components/page-components/distributing-content'
+import ServiceInfo from '@/components/page-components/blog-promotion-checklist/service-info'
 
 import type { Metadata } from 'next'
 
