@@ -23,13 +23,13 @@ const faqs: FAQ[] = [
     id: 3,
     question: 'How soon do we see content after we start?',
     answer:
-      "You’ll get your first pieces within 3 weeks of kickoff. We’ll spend the first 1–2 weeks aligning on goals, messaging, and the content roadmap so we’re not writing in a vacuum. After that, we aim for a consistent weekly publishing cadence. Publishing 2x weekly is the first core discipline of a successful content operation.",
+      'You’ll get your first pieces within 3 weeks of kickoff. We’ll spend the first 1–2 weeks aligning on goals, messaging, and the content roadmap so we’re not writing in a vacuum. After that, we aim for a consistent weekly publishing cadence. Publishing 2x weekly is the first core discipline of a successful content operation.',
   },
   {
     id: 4,
-    question: "How much of my team’s time will this require?",
+    question: 'How much of my team’s time will this require?',
     answer:
-      " We’re built to minimize internal lift. You’ll typically need to attend a kickoff call, review and approve a quarterly roadmap, and provide occasional feedback on draft content (we handle the rest). We offer full CMS publishing, distribution, and social media asset creation, so you can focus on other growth initiatives and closing the leads we’re driving.",
+      ' We’re built to minimize internal lift. You’ll typically need to attend a kickoff call, review and approve a quarterly roadmap, and provide occasional feedback on draft content (we handle the rest). We offer full CMS publishing, distribution, and social media asset creation, so you can focus on other growth initiatives and closing the leads we’re driving.',
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const faqs: FAQ[] = [
     id: 6,
     question: 'Can we start small and scale up later?',
     answer:
-      'Yes. Many of our clients start small as a test, adding in paid growth options over time. We offer plans starting at $7K/month with an initial minimum commitment of 3 months.',
+      'Yes. Many of our clients start small as a test, adding in paid growth options over time. We offer plans starting at $8K/month with an initial minimum commitment of 3 months.',
   },
 ]
 
