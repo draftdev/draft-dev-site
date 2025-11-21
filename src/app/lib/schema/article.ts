@@ -10,13 +10,21 @@ export function generatePersonAuthor(post: Post) {
     return { '@id': PUBLISHER_REF }
   }
 
+  const topics =
+    post.customFields?.targetKeywords
+      ?.slice(0, 3)
+      .map((t) => t.trim())
+      .filter(Boolean) || []
+
   const baseAuthor = {
     '@type': 'Person',
     name: authorName,
-    description: `Technical content expert specializing in ${post.customFields?.targetKeywords?.slice(0, 3).join(', ') || 'software development'}`,
     worksFor: { '@id': PUBLISHER_REF, '@type': 'Organization' },
     url: 'https://draft.dev/about',
-    knowsAbout: post.customFields?.targetKeywords?.slice(0, 3),
+    ...(topics.length > 0 && {
+      description: `Technical content specialist covering ${topics.join(', ')}`,
+      knowsAbout: topics,
+    }),
   }
 
   if (post.customFields?.authorLinkedIn) {
@@ -65,7 +73,11 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
     ? new Date(post.modified).toISOString()
     : publishedDate
 
-  const cleanDescription = stripHtmlTags(post.seoDesc || post.excerpt || '')
+  const cleanDescription = stripHtmlTags(
+    post.seoDesc ||
+      post.excerpt ||
+      (post.content ? `${stripHtmlTags(post.content).slice(0, 160)}…` : ''),
+  )
 
   const keywordList = post.customFields?.targetKeywords?.slice(0, 5)
   const keywords =

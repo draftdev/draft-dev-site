@@ -18,9 +18,9 @@ export const generateOrganizationSchema = cache(() => {
     logo: {
       '@type': 'ImageObject',
       '@id': 'https://draft.dev/#logo',
-      url: 'https://draft.dev/draft/logos/draftlogo_main_filled.svg',
-      width: 180,
-      height: 60,
+      url: 'https://draft.dev/draft/logos/draftlogo_badge_filled.svg',
+      width: 200,
+      height: 200,
     },
     image: {
       '@type': 'ImageObject',

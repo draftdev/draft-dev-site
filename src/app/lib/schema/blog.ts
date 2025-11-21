@@ -40,7 +40,11 @@ export const generateBlogSchema = cache((posts: Post[]) => {
         ...(post.date && {
           datePublished: new Date(post.date).toISOString(),
         }),
-        description: stripHtmlTags(post.seoDesc || post.excerpt || ''),
+        description: stripHtmlTags(
+          post.seoDesc ||
+            post.excerpt ||
+            (post.content ? `${stripHtmlTags(post.content).slice(0, 160)}…` : ''),
+        ),
         ...(keywords && { keywords }),
         image: {
           '@type': 'ImageObject',

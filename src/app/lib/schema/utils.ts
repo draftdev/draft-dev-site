@@ -1,7 +1,10 @@
 import { DEFAULT_IMAGE_URL, type Post } from './constants'
 
 export function makeAbsoluteUrl(relativeUrl: string): string {
-  if (relativeUrl.startsWith('http')) {
+  if (relativeUrl.startsWith('http://')) {
+    return relativeUrl.replace(/^http:\/\//i, 'https://')
+  }
+  if (relativeUrl.startsWith('https://')) {
     return relativeUrl
   }
   return `https://draft.dev${relativeUrl}`
