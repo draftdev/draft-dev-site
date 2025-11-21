@@ -71,16 +71,14 @@ export default function LoadMorePostsClient({
     setIsError(false)
 
     try {
-      const requestBody = {
+      const params = new URLSearchParams({
         after: pageInfo.endCursor,
-        first: 10,
-        currentPage: pageInfo.currentPage + 1,
-      }
+        first: '10',
+        currentPage: String(pageInfo.currentPage + 1),
+      })
 
-      const res = await fetch('/api/wordpress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody),
+      const res = await fetch(`/api/wordpress?${params.toString()}`, {
+        method: 'GET',
       })
 
       if (!res.ok) {

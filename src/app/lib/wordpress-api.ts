@@ -11,113 +11,24 @@ query AllPosts($first: Int, $after: String) {
       id
       slug
       title
+      excerpt(format: RENDERED)
+      date
       categories {
         nodes {
           id
           name
         }
       }
-      excerpt(format: RENDERED)
-      date
-      modified
       featuredImage {
         node {
           sourceUrl
           altText
-          id
-          title
         }
       }
-      author {
-        node {
-          name
-
-        }
-      }
-      originalAuthor: metaValue(key: "original_author")
-      # Yoast SEO fields
-      seoTitle: metaValue(key: "_yoast_wpseo_title")
-      seoDesc: metaValue(key: "_yoast_wpseo_metadesc")
-      seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
-      ogDesc: metaValue(key: "_yoast_wpseo_opengraph-description")
-      twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
-      # Enhanced custom fields for AI optimization
-      targetKeywords: metaValue(key: "target_keywords")
-      readingTime: metaValue(key: "reading_time")
-      videoUrl: metaValue(key: "video_url")
-      faqData: metaValue(key: "faq_questions")
     }
   }
 }
 `
-
-// Helper function to parse custom fields (duplicate from wordpress.ts for API use)
-function parseCustomFields(rawPost: any) {
-  const customFields: any = {}
-
-  // Parse target keywords (comma-separated string to array)
-  if (rawPost.targetKeywords) {
-    customFields.targetKeywords = rawPost.targetKeywords
-      .split(',')
-      .map((k: string) => k.trim())
-      .filter((k: string) => k.length > 0)
-  }
-
-  function tryParseJson<T>(jsonString: string, fallback: T, slug?: string): T {
-    try {
-      let s = jsonString.trim()
-      s = s.replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'")
-      s = s.replace(/<!--[\s\S]*?-->/g, '')
-      s = s.replace(/"([^"]*?)([?!.])(\s*,)/g, '"$1$2"$3')
-      s = s.replace(/,\s*([}\]])/g, '$1')
-      s = s.replace(/,\s*\]/g, ']')
-      s = s.replace(/,\s*\}/g, '}')
-
-      return JSON.parse(s) as T
-    } catch (e: any) {
-      try {
-        let s2 = jsonString.trim()
-        const quoteCount = (s2.match(/"/g) || []).length
-        if (quoteCount % 2 !== 0) {
-          s2 = s2.replace(/("question"\s*:\s*"[^"]*[?!.])\s*,/g, '$1",')
-          s2 = s2.replace(/("answer"\s*:\s*"[^"]*[.])\s*,/g, '$1",')
-        }
-        s2 = s2.replace(/[\u201C\u201D]/g, '"').replace(/[\u2018\u2019]/g, "'")
-
-        s2 = s2.replace(/,\s*([}\]])/g, '$1')
-
-        return JSON.parse(s2) as T
-      } catch (e2) {
-        if (process.env.NODE_ENV !== 'production') {
-          console.warn('❌ Failed to parse JSON:', e.message)
-          if (slug) {
-            console.warn('📝 Slug:', slug)
-            console.warn('📄 Raw string:', jsonString)
-          }
-        }
-        return fallback
-      }
-    }
-  }
-
-  if (rawPost.faqData) {
-    customFields.faqQuestions = tryParseJson(rawPost.faqData, [], rawPost.slug)
-  }
-
-  // Simple field mappings
-  if (rawPost.readingTime) {
-    const parsedTime = parseInt(rawPost.readingTime, 10)
-    if (!isNaN(parsedTime)) {
-      customFields.readingTime = parsedTime
-    }
-  }
-  if (rawPost.videoUrl) customFields.videoUrl = rawPost.videoUrl
-  if (rawPost.authorLinkedIn)
-    customFields.authorLinkedIn = rawPost.authorLinkedIn
-  if (rawPost.authorTwitter) customFields.authorTwitter = rawPost.authorTwitter
-
-  return Object.keys(customFields).length > 0 ? customFields : undefined
-}
 
 export async function getWpPostsForApi(
   first = 10,
@@ -145,30 +56,14 @@ export async function getWpPostsForApi(
       categories: post.categories?.nodes || [],
       excerpt: post.excerpt,
       date: post.date,
-      modified: post.modified,
       featuredImage: post.featuredImage
         ? {
             node: {
               sourceUrl: post.featuredImage.node.sourceUrl,
               altText: post.featuredImage.node.altText,
-              id: post.featuredImage.node.id,
-              title: post.featuredImage.node.title,
             },
           }
         : undefined,
-      author: post.author?.node
-        ? {
-            node: post.author.node,
-          }
-        : undefined,
-      originalAuthor: post.originalAuthor || null,
-      // Yoast SEO fields
-      seoTitle: post.seoTitle || null,
-      seoDesc: post.seoDesc || null,
-      seoKeyword: post.seoKeyword || null,
-      ogDesc: post.ogDesc || null,
-      twitterDesc: post.twitterDesc || null,
-      customFields: parseCustomFields(post),
     }))
 
     return {
