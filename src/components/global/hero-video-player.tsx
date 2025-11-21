@@ -353,8 +353,9 @@ export default function HeroVideoPlayer({
       {/* vertical slider styles */}
       <style jsx global>{`
         .tpc-vert-range {
-          appearance: slider-vertical;
-          writing-mode: bt-lr;
+          -webkit-appearance: none;
+          appearance: none;
+          writing-mode: vertical-lr;
           width: 22px;
           height: 180px;
           padding: 0;
@@ -377,7 +378,7 @@ export default function HeroVideoPlayer({
           margin: 0;
         }
         .tpc-vert-range::-moz-range-track {
-          background: #1f2937;
+          background: #473d74;
           border-radius: 9999px;
           width: 22px;
         }
@@ -390,7 +391,7 @@ export default function HeroVideoPlayer({
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         }
         .tpc-vert-range::-moz-range-progress {
-          background: #28536b;
+          background: #473d74;
         }
         .tpc-vert-range:focus-visible {
           outline: none;
