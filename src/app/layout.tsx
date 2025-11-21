@@ -1,11 +1,8 @@
 import Analytics from '@/components/analytics'
 import { Footer } from '@/components/global/footer'
 import '@/styles/tailwind.css'
-
-// Import Fontsource CSS files
-import '@fontsource/fira-code/500.css'
+// Load only the weights actually used: 400 for body, 700 for headings
 import '@fontsource/fira-sans/400.css'
-import '@fontsource/fira-sans/500.css'
 import '@fontsource/fira-sans/700.css'
 
 import DynamicNavbar from '../components/global/nav/navbar-dynamic'
