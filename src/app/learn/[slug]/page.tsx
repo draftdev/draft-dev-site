@@ -215,14 +215,15 @@ export default async function PostPage({ params }: Props) {
               fill
               className="rounded-lg object-cover"
               quality={75}
+              priority={isHeaderImage}
               // If it's the header image, treat mobile as 0px so we don't fetch a big file for hidden content.
               sizes={
                 isHeaderImage
                   ? '(max-width: 639px) 0px, (max-width: 1024px) 672px, 700px'
                   : '(max-width: 640px) 100vw, (max-width: 1024px) 672px, 400px'
               }
-              loading={isHeaderImage ? 'lazy' : 'lazy'}
-              fetchPriority={isHeaderImage ? 'auto' : 'auto'}
+              loading={isHeaderImage ? 'eager' : 'lazy'}
+              fetchPriority={isHeaderImage ? 'high' : 'auto'}
               placeholder="blur"
               blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               referrerPolicy="no-referrer"

@@ -80,14 +80,12 @@ const POSTS_PER_PAGE = 10
 const SCHEMA_POST_LIMIT = 10
 
 export default async function BlogPage() {
-  // Fetch initial posts for UI rendering
-  const { posts: initialPosts, pageInfo } = await getWpPosts(
-    POSTS_PER_PAGE,
-    null,
-    1,
-  )
-
-  const schemaPostsData = await getSchemaPostsData(SCHEMA_POST_LIMIT)
+  // Fetch initial posts + schema payload in parallel to reduce TTFB
+  const [postsResult, schemaPostsData] = await Promise.all([
+    getWpPosts(POSTS_PER_PAGE, null, 1),
+    getSchemaPostsData(SCHEMA_POST_LIMIT),
+  ])
+  const { posts: initialPosts, pageInfo } = postsResult
   const blogSchema = generateBlogSchema(schemaPostsData)
 
   return (
