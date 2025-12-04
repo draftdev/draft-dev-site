@@ -114,6 +114,14 @@ const posts: Post[] = [
       'While there are plenty of general promotional checklists for bloggers, not many are specifically built with a software engineering audience in mind.',
     imageUrl: '/site/med-landscape/blog_promotion_checklist_draft_dev.jpg',
   },
+  {
+    id: 13,
+    title: '8 Essential B2B Demand Generation Tactics',
+    href: '/8-essential-demand-generation-tactics',
+    description:
+      'This guide breaks down 8 demand generation tactics that actually work for B2B SaaS and AI companies.',
+    imageUrl: '/site/med-landscape/8_essential_tactics_og_draft_dev.jpg',
+  },
 
   // More resources...
 ]
