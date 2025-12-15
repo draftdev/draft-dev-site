@@ -7,7 +7,7 @@
 [build.environment]
   NEXT_PUBLIC_IMAGE_DOMAIN_1 = "candid-cookie.flywheelsites.com"
   NEXT_PUBLIC_SITE_URL = "https://draft.dev"
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
