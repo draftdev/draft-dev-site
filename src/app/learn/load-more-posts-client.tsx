@@ -62,23 +62,28 @@ export default function LoadMorePostsClient({
   const [pageInfo, setPageInfo] = useState<PageInfo>(initialPageInfo)
   const [isPending, startTransition] = useTransition()
   const [isError, setIsError] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   async function handleLoadMore() {
-    if (!pageInfo.hasNextPage || !pageInfo.endCursor) {
+    if (!pageInfo.hasNextPage || !pageInfo.endCursor || isLoading) {
       return
     }
 
     setIsError(false)
+    setIsLoading(true)
 
     try {
-      const params = new URLSearchParams({
-        after: pageInfo.endCursor,
-        first: '10',
-        currentPage: String(pageInfo.currentPage + 1),
-      })
-
-      const res = await fetch(`/api/wordpress?${params.toString()}`, {
-        method: 'GET',
+      const res = await fetch('/api/wordpress', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        cache: 'no-store',
+        body: JSON.stringify({
+          after: pageInfo.endCursor,
+          first: 10,
+          currentPage: pageInfo.currentPage + 1,
+        }),
       })
 
       if (!res.ok) {
@@ -111,6 +116,8 @@ export default function LoadMorePostsClient({
     } catch (error) {
       console.error('Error loading more posts:', error)
       setIsError(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -155,8 +162,8 @@ export default function LoadMorePostsClient({
                       {post.title}
                     </Link>
                   </h3>
-                  <p
-                    className="mt-4 line-clamp-3 max-w-2xl text-base text-gray-600"
+                  <div
+                    className="mt-4 line-clamp-3 max-w-2xl text-base text-gray-600 [&_p]:inline [&_p]:m-0"
                     dangerouslySetInnerHTML={{ __html: post.excerpt }}
                   />
                 </div>
@@ -170,10 +177,10 @@ export default function LoadMorePostsClient({
         <div className="mt-10 flex justify-center">
           <button
             onClick={handleLoadMore}
-            disabled={isPending}
+            disabled={isLoading || isPending}
             className="bg-gradient-brand hover:bg-gradient-1 rounded-md px-4 py-2 text-lg text-white disabled:opacity-50"
           >
-            {isPending ? 'Loading...' : 'Load More'}
+            {isLoading || isPending ? 'Loading...' : 'Load More'}
           </button>
         </div>
       )}
