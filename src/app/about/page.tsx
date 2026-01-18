@@ -6,7 +6,6 @@ import SocialProof from '@/components/media/social-proof'
 import Team from '@/components/page-components/company/team'
 import What from '@/components/page-components/company/what'
 import How from '@/components/page-components/how'
-import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -98,9 +97,9 @@ export default function About() {
       <MedHeader
         title="We help Developer Tools & Platforms grow and win"
         descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
-        descriptionTwo="Let us help you building your technical content growth engine."
+        descriptionTwo="Let us help you build your technical content growth engine."
       />
-      
+
       <main className="overflow-hidden">
         <What />
         <LogosDark />
@@ -145,13 +144,13 @@ export default function About() {
               number: '2',
               title: 'Kickoff call',
               description:
-                "We have a call with your primary contact and try to schedule 1-on-1 interviews with someone on your leadership team to extract vision and thought leadership content ideas. We also talk through nice-to-have information like product description, brand guidelines, positioning, ICPs, competitors and ideally get access to your CMS and analytics, if feasible.",
+                'We have a call with your primary contact and try to schedule 1-on-1 interviews with someone on your leadership team to extract vision and thought leadership content ideas. We also talk through nice-to-have information like product description, brand guidelines, positioning, ICPs, competitors and ideally get access to your CMS and analytics, if feasible.',
             },
             {
               number: '3',
               title: 'Content strategy, production, and output within 3 weeks',
               description:
-                "Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.",
+                'Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.',
             },
           ]}
           imageSrc="/site/med-portrait/developers_draft_dev.jpg"
