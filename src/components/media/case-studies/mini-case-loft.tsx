@@ -34,7 +34,7 @@ const MiniCaseLoft = () => {
                     width={1000}
                     priority
                     src="/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

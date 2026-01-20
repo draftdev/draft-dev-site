@@ -27,7 +27,7 @@ const recentPosts = [
     description:
       'This eBook will walk you through the exact process that you can use to set up a predictable, consistent content engine.',
   },
-/*   {
+  /*   {
     id: 2,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
@@ -91,7 +91,7 @@ export default memo(function ResourcesPopoverContent({ onClose }: Props) {
               <Image
                 alt=""
                 src={post.imageUrl}
-                className="aspect-[2/1] w-full rounded-lg bg-gray-100 object-cover"
+                className="aspect-2/1 w-full rounded-lg bg-gray-100 object-cover"
                 height={300}
                 width={450}
               />

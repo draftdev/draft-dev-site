@@ -30,7 +30,7 @@ const MiniCaseStatusHero = () => {
                     width={500}
                     priority
                     src="/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

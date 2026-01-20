@@ -61,7 +61,7 @@ const MedCaseEarthly = () => {
                     width={500}
                     priority
                     src="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

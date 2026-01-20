@@ -75,7 +75,8 @@ export default function CaseStudiesFeature() {
                   href="/#how-we-work"
                   className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-700 sm:my-0 sm:text-base"
                 >
-                  See how we publish within weeks <span aria-hidden="true">→</span>
+                  See how we publish within weeks{' '}
+                  <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
@@ -92,7 +93,7 @@ export default function CaseStudiesFeature() {
                     width={500}
                     priority
                     src="/media/testimonials-lg/em_sinch_mailgun.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

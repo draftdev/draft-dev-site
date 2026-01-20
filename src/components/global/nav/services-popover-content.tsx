@@ -11,17 +11,16 @@ const services = [
   { name: 'Content Strategy', href: '/content-strategy-services' },
   { name: 'Content Production', href: '/content-production' },
   { name: 'Content Distribution', href: '/content-distribution' },
-/*.  { name: 'All Services', href: '/content-marketing-services' }, */
-
+  /*.  { name: 'All Services', href: '/content-marketing-services' }, */
 
   /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
-/*   { name: 'Technical Blog Content', href: '/blog-posts' }, */
+  /*   { name: 'Technical Blog Content', href: '/blog-posts' }, */
   /* { name: 'Technical Content Refresh', href: '/content-refreshes' },
   { name: 'Video Tutorials', href: '/video-tutorials' }, */
   /* { name: 'Developer Tutorials', href: '/tutorials' }, */
   /* { name: 'Developer Content Strategy', href: '/dev-content-strategy' }, */
   /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
-/*   { name: 'Paid Content Promotion', href: '/paid-content-promotion' }, */
+  /*   { name: 'Paid Content Promotion', href: '/paid-content-promotion' }, */
 ]
 
 /* const why = [
@@ -44,7 +43,7 @@ const recentPosts = [
     description:
       'Industry leaders share insights on ROI-focused strategies, content marketing, AI tools, video marketing challenges, and emerging trends shaping Developer Marketing success.',
   },
-/*   {
+  /*   {
     id: 2,
     title: 'How Video Marketing Improves SEO Rankings in 2025',
     href: '/learn/how-video-marketing-improves-seo',
@@ -84,7 +83,7 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
           </div>
         </div>
 
-{/*         <div>
+        {/*         <div>
           <h3 className="text-sm font-medium text-gray-500">Why Draft.dev?</h3>
           <div className="mt-4 space-y-2">
             {why.map((item) => (
@@ -110,7 +109,7 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
               <Image
                 alt=""
                 src={post.imageUrl}
-                className="aspect-[2/1] w-full rounded-lg bg-gray-100 object-cover"
+                className="aspect-2/1 w-full rounded-lg bg-gray-100 object-cover"
                 height={300}
                 width={450}
               />

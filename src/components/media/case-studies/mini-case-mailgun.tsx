@@ -33,7 +33,7 @@ const MiniCaseMailgun = () => {
                     width={500}
                     priority
                     src="/media/testimonials-lg/em_sinch_mailgun.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

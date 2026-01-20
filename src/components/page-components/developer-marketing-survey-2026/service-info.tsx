@@ -1,9 +1,11 @@
+import Survey from '@/components/media/survey'
 import Image from 'next/image'
 import FormDeveloperMarketingSurvey2026 from '../vendors/hubspot/form-developer-marketing-survey-2026'
 
 const ServiceInfo = () => {
   return (
-    <div className="overflow-hidden bg-white py-14 sm:py-32">
+    <div className="overflow-hidden">
+      <Survey />
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
           <div className="lg:pt-4 lg:pr-4">

@@ -83,7 +83,7 @@ export default function MoreCaseStudies() {
                           alt={`${client.name}'s case study for ${client.company}`}
                           width={800}
                           height={800}
-                          className="aspect-[14/13] w-full object-cover"
+                          className="aspect-14/13 w-full object-cover"
                         />
                       </div>
                     </div>

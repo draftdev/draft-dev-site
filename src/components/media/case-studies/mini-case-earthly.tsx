@@ -34,7 +34,7 @@ const MiniCaseEarthly = () => {
                     width={1000}
                     priority
                     src="/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg"
-                    className="aspect-[2/3] w-full object-cover"
+                    className="aspect-2/3 w-full object-cover"
                   />
                 </div>
               </div>

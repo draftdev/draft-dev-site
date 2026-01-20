@@ -200,7 +200,7 @@ export default function HeroVideoPlayer({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[9/16] w-[280px] overflow-hidden sm:w-[300px] lg:w-[350px] xl:w-[400px]"
+      className="aspect-2/3sm:w-[300px] relative aspect-9/16 w-[280px] overflow-hidden lg:w-[350px] xl:w-[400px]"
       onMouseEnter={() => pokeControls(4000)}
       onMouseMove={() => pokeControls(4000)}
       onMouseLeave={() => setControlsVisible(false)}
@@ -239,7 +239,7 @@ export default function HeroVideoPlayer({
       {/* legibility gradient */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"
+        className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent"
       />
 
       {/* Controls (fade) */}
@@ -264,7 +264,7 @@ export default function HeroVideoPlayer({
             value={Number.isFinite(currentTime) ? currentTime : 0}
             onChange={(e) => setVideoTime(parseFloat(e.target.value))}
             onInput={() => pokeControls(4000)}
-            className="w-full accent-[#544b84]"
+            className="accent-primary w-full"
             aria-label="Seek video"
           />
           <span className="text-[11px] font-medium text-white/90 tabular-nums">
@@ -277,7 +277,7 @@ export default function HeroVideoPlayer({
           <button
             type="button"
             onClick={togglePlay}
-            className="inline-flex items-center justify-center rounded-lg bg-[#544b84] px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
+            className="bg-primary inline-flex items-center justify-center rounded-lg px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
             aria-pressed={isPlaying}
             aria-label={isPlaying ? 'Pause video' : 'Play video'}
           >
@@ -297,7 +297,7 @@ export default function HeroVideoPlayer({
                 setShowVol((s) => !s)
                 pokeControls(4000)
               }}
-              className="flex items-center gap-2 rounded-lg bg-[#544b84] px-3 py-2 text-sm font-medium text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
+              className="bg-primary flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-white shadow hover:bg-[#473d74] focus:ring-2 focus:ring-[#473d74]/50 focus:outline-none"
               aria-haspopup="true"
               aria-expanded={showVol}
               aria-label="Volume"
