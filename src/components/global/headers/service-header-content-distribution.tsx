@@ -12,6 +12,10 @@ interface ServiceHeaderProps {
     text: string
     href: string
   }
+  stats?: Array<{
+    label: string
+    value: string | number
+  }>
 }
 
 const ServiceHeader: React.FC<ServiceHeaderProps> = ({
@@ -19,7 +23,15 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
   description,
   primaryCTA,
   secondaryCTA,
+  stats,
 }) => {
+  const statsGridCols =
+    stats && stats.length >= 4
+      ? 'sm:grid-cols-4'
+      : stats && stats.length === 3
+        ? 'sm:grid-cols-3'
+        : 'sm:grid-cols-2'
+
   return (
     <div className="bg-gradient-brand py-16">
       <main className="relative isolate">
@@ -66,6 +78,25 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
                     </Link>
                   )}
                 </div>
+                {stats?.length ? (
+                  <dl
+                    className={`mt-10 grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl ${statsGridCols}`}
+                  >
+                    {stats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="flex flex-col bg-white/5 p-6 text-center"
+                      >
+                        <dt className="text-sm font-semibold text-gray-200">
+                          {stat.label}
+                        </dt>
+                        <dd className="font-code order-first text-2xl font-semibold text-white sm:text-3xl">
+                          {stat.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                ) : null}
               </div>
             </div>
           </div>

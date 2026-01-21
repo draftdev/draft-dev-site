@@ -56,6 +56,13 @@ export const metadata: Metadata = {
   },
 }
 
+const headerStats = [
+  { value: '300+', label: 'Subject Matter Experts' },
+  { value: '100+', label: 'Clients' },
+  { value: '3000+', label: 'Content Pieces Published' },
+  { value: '100%', label: 'Technical Audience' },
+]
+
 export default function ForMarketers() {
   return (
     <div>
@@ -70,6 +77,7 @@ export default function ForMarketers() {
           text: 'Learn about our content promotion strategy',
           href: '/learn/orchestrate-content-promotion-waves',
         }}
+        stats={headerStats}
       />
       <main>
         <Why

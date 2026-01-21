@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
       <body className="bg-white antialiased">
         <DynamicNavbar />
         <div className="flex min-h-screen flex-col">

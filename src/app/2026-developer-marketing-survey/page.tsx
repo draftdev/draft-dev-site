@@ -74,65 +74,40 @@
 //     </>
 //   )
 // }
-import SocialProof from '@/components/media/social-proof'
+import ServiceHeader from '@/components/global/headers/service-header'
+import { LogosDark } from '@/components/media/logos-dark'
 import FormDeveloperMarketingSurvey2026 from '@/components/page-components/vendors/hubspot/form-developer-marketing-survey-2026'
+import { CheckIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
-
-const stats = [
-  {
-    id: 1,
-    value: '62%',
-    label: 'Increasing budgets',
-    description: 'of teams are increasing dev marketing budgets for 2026',
-  },
-  {
-    id: 2,
-    value: '73%',
-    label: 'Investing in events',
-    description: 'are investing more in community and events this year',
-  },
-  {
-    id: 3,
-    value: '96%',
-    label: 'Have tried AI',
-    description: 'of dev marketers have experimented with generative AI',
-  },
-  {
-    id: 4,
-    value: '64%',
-    label: 'Events deliver ROI',
-    description: 'say community and events deliver their highest ROI',
-  },
-]
 
 const findings = [
   {
-    title: 'Events and Community Lead ROI',
+    title: 'Increasing dev marketing budgets for 2026',
+    description:
+      'Smaller companies are betting on content to earn attention, and larger companies invest in community, advocacy, and product experience to compound it.',
+    stat: '62%',
+    statLabel: 'of teams are increasing dev marketing budgets for 2026',
+  },
+  {
+    title: 'Increasing investment in content marketing and SEO',
+    description:
+      'Content remains a top ROI channel, but it was harder to win in 2025 than in previous years due to the emergence of zero-click AI summaries.',
+    stat: '51%',
+    statLabel: 'are increasing investment in content marketing and SEO',
+  },
+  {
+    title: 'Investing more in community and events',
     description:
       'Community and events are easier to measure than other channels. When you have a booth at a conference, you can scan badges, track conversations, and run drip campaigns with clear attribution.',
-    stat: '64%',
-    statLabel: 'cite as highest ROI',
+    stat: '73%',
+    statLabel: 'are investing more in community and events this year',
   },
   {
-    title: 'Content Marketing Still Works, but the Bar Is Higher',
+    title: 'Use AI primarily for content ideation and drafting',
     description:
-      'Nearly half of respondents cited content as a top ROI channel, but it was harder to win in 2025 than in previous years due to higher competition, longer time to see results, and the emergence of zero-click AI summaries.',
-    stat: '51%',
-    statLabel: 'increasing investment',
-  },
-  {
-    title: 'Video Is the Big Experiment',
-    description:
-      'Video ranks number one for experimentation but last for proven ROI. Teams are still trying to crack the format-distribution-measurement problem. Short-form gets views but low intent; long-form builds trust but reaches smaller audiences.',
-    stat: '59%',
-    statLabel: 'actively experimenting',
-  },
-  {
-    title: 'AI Accelerates, Does Not Replace',
-    description:
-      '85% use AI for ideation and first drafts, confirming AI is replacing blank-page work, not strategy. Only 7% call it "very useful" and heavily rely on it daily. Most still require humans in the loop.',
-    stat: '84%',
-    statLabel: 'use for drafting only',
+      'AI is replacing blank-page work, not strategy. Only 7% call it "very useful" and heavily rely on it daily. Most still require humans in the loop.',
+    stat: '85%',
+    statLabel: 'Have tried AI for content creation',
   },
 ]
 
@@ -148,44 +123,19 @@ const insideReport = [
 export default function DeveloperMarketingSurvey2026() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-brand relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
-          <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-2 lg:items-center">
-            {/* Left: Text Content */}
-            <div>
-              <h1 className="sm:header-light font-code mb-6 text-3xl font-semibold text-white">
-                Developer Marketing Survey 2026
-              </h1>
-
-              <p className="sm:paragraph-light text-base text-gray-100">
-                We surveyed developer marketing and DevRel leaders across the
-                industry to find out what is actually working in 2026. Inside,
-                you will discover where budgets are headed, which channels
-                deliver real ROI, and why the gap between AI hype and AI
-                usefulness keeps growing.
-              </p>
-
-              {/* Key stats row */}
-              <dl className="mt-10 grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl sm:grid-cols-4">
-                {stats.map((stat) => (
-                  <div
-                    key={stat.id}
-                    className="flex flex-col bg-white/5 p-6 text-center"
-                  >
-                    <dt className="text-sm font-semibold text-gray-200">
-                      {stat.label}
-                    </dt>
-                    <dd className="font-code order-first text-2xl font-semibold text-white sm:text-3xl">
-                      {stat.value}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceHeader
+        title="Developer Marketing Survey 2026"
+        description="We surveyed developer marketing and DevRel leaders across the
+              industry to find out what's actually working in 2026."
+        primaryCTA={{
+          text: 'Download Full Report',
+          href: '#download-report',
+        }}
+        secondaryCTA={{
+          text: 'Book a Discovery Call',
+          href: '/call',
+        }}
+      />
 
       {/* What's Inside Section */}
       <section className="bg-gray-50 py-16 sm:py-24">
@@ -211,20 +161,21 @@ export default function DeveloperMarketingSurvey2026() {
             {/* Content */}
             <div className="order-1 lg:order-2">
               <h2 className="subheader-mobile-gradient sm:subheader-gradient">
-                What's inside the report
+                What's Inside
               </h2>
               <p className="sm:paragraph-dark mt-4 text-base text-gray-600">
-                This report is based on interviews with developer marketing and
-                DevRel leaders from companies ranging from early-stage startups
-                to enterprises with 1,000+ employees.
+                This report is based on interviews conducted by Draft.dev with
+                developer marketing and DevRel leaders from companies ranging
+                from early-stage startups to enterprises with 1,000+ employees.
               </p>
               <ul className="mt-8 space-y-4 text-base text-gray-600 sm:text-lg">
                 {insideReport.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="bg-gradient-brand flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white">
-                      {index + 1}
-                    </span>
-                    <span>{item}</span>
+                  <li key={index} className="flex items-center gap-3">
+                    <CheckIcon
+                      className="text-primary h-5 w-5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span className="leading-snug">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -241,8 +192,8 @@ export default function DeveloperMarketingSurvey2026() {
               Key Findings
             </h2>
             <p className="sm:paragraph-dark mt-4 text-base text-gray-600">
-              Here is a preview of what developer marketing leaders told us
-              about what is working in 2026.
+              Here is what developer marketing leaders told us is working in
+              2026.
             </p>
           </div>
 
@@ -273,18 +224,21 @@ export default function DeveloperMarketingSurvey2026() {
       </section>
 
       {/* Stats Banner */}
-      <SocialProof />
+      <LogosDark />
 
       {/* Final CTA Section */}
-      <section className="bg-white py-16 sm:py-24">
+      <section
+        id="download-report"
+        className="scroll-mt-32 bg-white py-16 sm:py-24"
+      >
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient">
               Get the full report
             </h2>
             <p className="sm:paragraph-dark mt-4 text-base text-gray-600">
-              Download the complete Developer Marketing Survey 2026 to see all
-              the data, analysis, and actionable insights for your team.
+              Download the 2026 Developer Marketing Survey to see all the data,
+              analysis, and actionable insights for your team.
             </p>
           </div>
 
