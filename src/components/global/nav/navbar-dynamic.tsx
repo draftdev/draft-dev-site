@@ -14,17 +14,17 @@ import { Link } from '../link'
 import Banner from '@/components/media/banner'
 
 import MobileNavContent from './mobile-nav-content'
-import ServicesPopover from './services-popover'
 import ResourcesPopover from './resources-popover'
+import ServicesPopover from './services-popover'
 
 const NAVIGATION_CONFIG = {
   links: [
     { href: '/services', label: 'Services' },
     { href: '/case-studies', label: 'Case Studies' },
     { href: '/resources', label: 'Resources' },
-    
+
     /* { href: './#pricing', label: 'Pricing' }, */
-    
+
     /* { href: '/resources', label: 'Resources' }, */
     { href: '/about', label: 'Company' },
     { href: '/call', label: 'Book Discovery Call' },
@@ -197,8 +197,8 @@ function DynamicNavbar() {
         className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-[backdrop-filter]:bg-white/70"
       >
         <Banner
-          text="Download Our FREE eBook: How to Set Up a Content Marketing Engine in the Age of AI →"
-          link="https://draft.dev/content-marketing-engine"
+          text="The 2026 Developer Marketing Survey - How Technical Marketers Are Investing, Experimenting, and Measuring Success in 2026 →"
+          link="https://draft.dev/2026-developer-marketing-survey"
         />
 
         <header>
