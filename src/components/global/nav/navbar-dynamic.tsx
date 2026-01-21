@@ -197,7 +197,7 @@ function DynamicNavbar() {
         className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-[backdrop-filter]:bg-white/70"
       >
         <Banner
-          text="Download the 2026 Developer Marketing Survey - see how technical marketers are investing, experimenting, and measuring success in 2026 →"
+          text="Download the 2026 Developer Marketing Survey - see how technical marketers are investing and experimenting in 2026 →"
           link="https://draft.dev/2026-developer-marketing-survey"
         />
 
