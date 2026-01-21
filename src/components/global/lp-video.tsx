@@ -113,9 +113,9 @@ const LPVideo: React.FC<LPVideoProps> = ({
               {/* Right: hero video */}
               <div className="mt-10 hidden justify-center lg:flex lg:justify-start">
                 <div className="inline-block shrink-0">
-                  <div className="rounded-[2rem] bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+                  <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
                     <div className="rounded-[1.75rem] p-2 shadow-md shadow-black/5">
-                      <div className="overflow-hidden rounded-[1.5rem]">
+                      <div className="overflow-hidden rounded-3xl">
                         {video && (
                           <HeroVideoPlayer
                             title={video.title}
