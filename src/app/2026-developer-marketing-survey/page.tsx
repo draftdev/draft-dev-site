@@ -156,8 +156,10 @@ export default function DeveloperMarketingSurvey2026() {
       <section className="bg-gradient-brand py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="subheader-light">Key Findings</h2>
-            <p className="sm:paragraph-light mt-4 text-base">
+            <h2 className="subheader-light text-2xl sm:text-5xl">
+              Key Findings
+            </h2>
+            <p className="paragraph-light mt-4 text-lg sm:text-2xl">
               Here's what developer marketing leaders told us is working in
               2026.
             </p>
