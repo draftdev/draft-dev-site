@@ -1,5 +1,7 @@
 import { DEFAULT_IMAGE_URL, type Post } from './constants'
 
+export type JsonLd = Record<string, unknown>
+
 export function makeAbsoluteUrl(relativeUrl: string): string {
   if (relativeUrl.startsWith('http://')) {
     return relativeUrl.replace(/^http:\/\//i, 'https://')
@@ -38,10 +40,13 @@ export function estimateWordCount(content?: string): number {
   return words.length
 }
 
-export function validateSchemaSize(schema: any, name: string): void {
+export function validateSchemaSize(schema: JsonLd, name: string): void {
   if (process.env.NODE_ENV === 'development') {
     const schemaString = JSON.stringify(schema)
-    const sizeInKB = new Blob([schemaString]).size / 1024
+    const sizeInKB =
+      typeof Buffer !== 'undefined'
+        ? Buffer.byteLength(schemaString, 'utf8') / 1024
+        : new Blob([schemaString]).size / 1024
 
     if (sizeInKB > 50) {
       console.warn(
@@ -49,4 +54,12 @@ export function validateSchemaSize(schema: any, name: string): void {
       )
     }
   }
+}
+
+export function stringifySchema(schema: JsonLd): string {
+  return JSON.stringify(schema)
+}
+
+export function stringifySchemas(schemas: JsonLd[]): string[] {
+  return schemas.map((schema) => JSON.stringify(schema))
 }

@@ -1,4 +1,4 @@
-import { generateOrganizationSchema } from '@/app/lib/schema'
+import { generateAboutPageSchemas, stringifySchemas } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
 import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
@@ -55,44 +55,17 @@ export const metadata: Metadata = {
 }
 
 export default function About() {
-  // Generate schemas appropriate for About page
-  const organizationSchema = generateOrganizationSchema()
-
-  // You could also create a custom AboutPage schema
-  const aboutPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'AboutPage',
-    '@id': 'https://draft.dev/about#webpage',
-    url: 'https://draft.dev/about',
-    name: 'About Draft.dev',
-    description:
-      'Learn about Draft.dev, a technical content marketing agency run by subject matter experts.',
-    isPartOf: {
-      '@id': 'https://draft.dev/#website',
-    },
-    about: {
-      '@id': 'https://draft.dev/#organization',
-    },
-    mainEntity: {
-      '@id': 'https://draft.dev/#organization',
-    },
-  }
+  const schemaJsonLd = stringifySchemas(generateAboutPageSchemas())
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(aboutPageSchema),
-        }}
-      />
+      {schemaJsonLd.map((schema, index) => (
+        <script
+          key={`schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
+      ))}
 
       <MedHeader
         title="We help Developer Tools & Platforms grow and win"

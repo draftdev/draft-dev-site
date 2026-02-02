@@ -30,6 +30,7 @@ export interface Post {
       answer: string
     }>
     targetKeywords?: string[]
+    authorBio?: string
     readingTime?: number
     videoUrl?: string
     authorLinkedIn?: string

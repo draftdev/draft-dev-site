@@ -11,6 +11,13 @@ export {
   generateOrganizationSchema,
   generateServiceSchema,
 } from './organization'
+export {
+  generateAboutPageSchema,
+  generateAboutPageSchemas,
+  generateBlogListingSchemas,
+  generateBlogPostSchemas,
+  generateHomePageSchemas,
+} from './pages'
 export { generateTestimonialSchema } from './testimonial'
 export { generateVideoSchema } from './video'
 export { generateWebSiteSchema } from './website'

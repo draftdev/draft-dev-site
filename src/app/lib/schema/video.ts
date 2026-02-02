@@ -1,6 +1,6 @@
 import { cache } from 'react'
 import { DEFAULT_IMAGE_URL, PUBLISHER_REF } from './constants'
-import { stripHtmlTags } from './utils'
+import { stripHtmlTags, type JsonLd } from './utils'
 
 export function generateVideoSchema(
   videoUrl: string,
@@ -9,7 +9,7 @@ export function generateVideoSchema(
   uploadDate?: string,
   duration?: string,
   thumbnailUrl?: string,
-) {
+): JsonLd {
   function getVideoId(url: string): string | null {
     const youtubeRegex =
       /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/
@@ -27,7 +27,7 @@ export function generateVideoSchema(
   const videoId = getVideoId(videoUrl)
   const vimeoId = getVimeoId(videoUrl)
 
-  const schema: any = {
+  const schema: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
     name: title,

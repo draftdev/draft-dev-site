@@ -1,10 +1,6 @@
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
-import {
-  generateArticleSchema,
-  generateBreadcrumbSchema,
-  generateFAQSchema,
-} from '@/app/lib/schema'
-import { getWpPost } from '@/app/lib/wordpress'
+import { generateBlogPostSchemas, stringifySchemas } from '@/app/lib/schema'
+import { getWpPost, type Post as WpPost } from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -20,7 +16,7 @@ type Props = {
   params: Promise<{ slug: string }>
 }
 
-const processPostContent = cache(async (post: any) => {
+const processPostContent = cache(async (post: WpPost) => {
   const sanitizedContent = sanitizeHtml(post.content, {
     allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'iframe']),
     allowedAttributes: {
@@ -182,8 +178,7 @@ export default async function PostPage({ params }: Props) {
 
   // Process content with caching
   const { sanitizedContent, readingTime } = await processPostContent(post)
-  const articleSchema = generateArticleSchema(post, slug)
-  const breadcrumbSchema = generateBreadcrumbSchema(post.title, slug)
+  const schemaJsonLd = stringifySchemas(generateBlogPostSchemas(post, slug))
 
   let isFirstImage = true
 
@@ -279,37 +274,13 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <>
-      {/* INDIVIDUAL POST SCHEMAS ONLY */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleSchema),
-        }}
-      />
-
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-
-      {/* FAQ Schema */}
-      {post.customFields?.faqQuestions &&
-        post.customFields.faqQuestions.length > 0 && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'FAQPage',
-                '@id': `https://draft.dev/learn/${slug}#faq`,
-                mainEntity: generateFAQSchema(post.customFields.faqQuestions),
-              }),
-            }}
-          />
-        )}
+      {schemaJsonLd.map((schema, index) => (
+        <script
+          key={`schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
+      ))}
 
       <div className="bg-white">
         <div className="mx-auto max-w-4xl px-6 py-16 lg:px-8 lg:py-24">

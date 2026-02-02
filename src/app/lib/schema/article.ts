@@ -1,6 +1,11 @@
 import { cache } from 'react'
 import { PUBLISHER_REF, TECHNICAL_AUDIENCE, type Post } from './constants'
-import { estimateWordCount, getSchemaImageUrl, stripHtmlTags } from './utils'
+import {
+  estimateWordCount,
+  getSchemaImageUrl,
+  stripHtmlTags,
+  type JsonLd,
+} from './utils'
 import { generateVideoSchema } from './video'
 
 export function generatePersonAuthor(post: Post) {
@@ -51,7 +56,7 @@ export function generateFAQSchema(
   }))
 }
 
-export function generateFAQPageSchema(post: Post, slug: string) {
+export function generateFAQPageSchema(post: Post, slug: string): JsonLd | null {
   if (!post.customFields?.faqQuestions?.length) return null
 
   return {
@@ -91,7 +96,7 @@ export const generateArticleSchema = cache((post: Post, slug: string) => {
         }))
       : undefined
 
-  const articleSchema: any = {
+  const articleSchema: JsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     '@id': `https://draft.dev/learn/${slug}#article`,

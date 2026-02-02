@@ -1,5 +1,22 @@
 import { fetchGraphQL } from './wordpress'
 
+type ApiPostNode = {
+  id: string
+  slug: string
+  title: string
+  excerpt?: string | null
+  date?: string
+  categories?: { nodes?: Array<{ id: string; name: string }> }
+  featuredImage?: { node?: { sourceUrl?: string | null; altText?: string | null } }
+}
+
+type ApiPostsQueryData = {
+  posts?: {
+    nodes?: ApiPostNode[]
+    pageInfo?: { hasNextPage: boolean; endCursor: string | null }
+  }
+}
+
 const ALL_POSTS_QUERY_API = `
 query AllPosts($first: Int, $after: String) {
   posts(first: $first, after: $after, where: { status: PUBLISH }) {
@@ -36,7 +53,10 @@ export async function getWpPostsForApi(
   currentPage = 1,
 ) {
   try {
-    const data = await fetchGraphQL(ALL_POSTS_QUERY_API, { first, after })
+    const data = await fetchGraphQL<ApiPostsQueryData>(ALL_POSTS_QUERY_API, {
+      first,
+      after,
+    })
 
     if (!data?.posts?.nodes || !data.posts.pageInfo) {
       return {
@@ -49,18 +69,18 @@ export async function getWpPostsForApi(
       }
     }
 
-    const formattedPosts = data.posts.nodes.map((post: any) => ({
+    const formattedPosts = data.posts.nodes.map((post) => ({
       id: post.id,
       slug: post.slug,
       title: post.title,
       categories: post.categories?.nodes || [],
-      excerpt: post.excerpt,
-      date: post.date,
-      featuredImage: post.featuredImage
+      excerpt: post.excerpt || '',
+      date: post.date || '',
+      featuredImage: post.featuredImage?.node?.sourceUrl
         ? {
             node: {
               sourceUrl: post.featuredImage.node.sourceUrl,
-              altText: post.featuredImage.node.altText,
+              altText: post.featuredImage.node.altText || undefined,
             },
           }
         : undefined,

@@ -1,4 +1,4 @@
-import { generateBlogSchema } from '@/app/lib/schema'
+import { generateBlogListingSchemas, stringifySchemas } from '@/app/lib/schema'
 import { getSchemaPostsData, getWpPosts } from '@/app/lib/wordpress'
 import FAQ from '@/components/global/faq'
 import { MedHeaderBlog } from '@/components/global/headers/med-header-blog'
@@ -86,16 +86,19 @@ export default async function BlogPage() {
     getSchemaPostsData(SCHEMA_POST_LIMIT),
   ])
   const { posts: initialPosts, pageInfo } = postsResult
-  const blogSchema = generateBlogSchema(schemaPostsData)
+  const schemaJsonLd = stringifySchemas(
+    generateBlogListingSchemas(schemaPostsData),
+  )
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(blogSchema),
-        }}
-      />
+      {schemaJsonLd.map((schema, index) => (
+        <script
+          key={`schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
+      ))}
 
       <div className="overflow-hidden">
         <Header />
