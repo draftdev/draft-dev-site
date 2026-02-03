@@ -1,6 +1,10 @@
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import { generateBlogPostSchemas, stringifySchemas } from '@/app/lib/schema'
-import { getWpPost, type Post as WpPost } from '@/app/lib/wordpress'
+import {
+  getSchemaPostsData,
+  getWpPost,
+  type Post as WpPost,
+} from '@/app/lib/wordpress'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -11,6 +15,11 @@ import sanitizeHtml from 'sanitize-html'
 
 export const revalidate = 3600
 export const dynamicParams = true
+
+export async function generateStaticParams() {
+  const posts = await getSchemaPostsData(20)
+  return posts.map((post) => ({ slug: post.slug }))
+}
 
 type Props = {
   params: Promise<{ slug: string }>
