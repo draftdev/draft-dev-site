@@ -41,7 +41,7 @@ const faqs: FAQ[] = [
     id: 6,
     question: 'Can we start small and scale up later?',
     answer:
-      'Yes. Many of our clients start small as a test, adding in paid growth options over time. We offer plans starting at $8K/month with an initial minimum commitment of 3 months.',
+      'Yes. Many of our clients start small as a test, adding in paid growth options over time. We offer plans starting at $9K/month with an initial minimum commitment of 3 months.',
   },
 ]
 
