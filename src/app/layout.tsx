@@ -17,6 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
+      <head>
+        <link rel="preconnect" href="https://js.hsforms.net" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://forms.hsforms.com"
+          crossOrigin=""
+        />
+        <link
+          rel="preconnect"
+          href="https://static.hsappstatic.net"
+          crossOrigin=""
+        />
+      </head>
       <body className="bg-white antialiased">
         <DynamicNavbar />
         <div className="flex min-h-screen flex-col">

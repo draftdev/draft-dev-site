@@ -1,64 +1,114 @@
+type HubspotLoadErrorReason =
+  | 'script_load_failed'
+  | 'forms_api_unavailable'
+  | 'target_missing'
+  | 'forms_create_failed'
+
+type LoadHubspotScriptOptions = {
+  onFormReady?: () => void
+  onError?: (reason: HubspotLoadErrorReason) => void
+}
+
+const HUBSPOT_SCRIPT_ID = 'hs-script-shell'
+const HUBSPOT_SCRIPT_SRC = 'https://js.hsforms.net/forms/shell.js'
+
 const loadHubspotScript = (
-  formID: string,
+  formId: string,
   portalId: string,
   region: string,
+  options?: LoadHubspotScriptOptions,
 ) => {
-  const scriptId = `hs-script-${formID}`
-  const targetDivId = `hubspotForm-${formID}`
+  const targetDivId = `hubspotForm-${formId}`
 
-  // Check if HubSpot is already loaded
-  if (window['hbspt']) {
-    if (!document.getElementById(targetDivId)?.hasChildNodes()) {
-      window['hbspt'].forms.create({
-        region: region,
-        portalId: portalId,
-        formId: formID,
+  const createFormIfPossible = () => {
+    const targetElement = document.getElementById(targetDivId)
+    if (!targetElement) {
+      options?.onError?.('target_missing')
+      return false
+    }
+
+    if (targetElement.hasChildNodes()) {
+      options?.onFormReady?.()
+      return true
+    }
+
+    if (targetElement.dataset.hubspotCreating === '1') {
+      return true
+    }
+
+    if (!window.hbspt?.forms?.create) {
+      return false
+    }
+
+    targetElement.dataset.hubspotCreating = '1'
+
+    try {
+      window.hbspt.forms.create({
+        region,
+        portalId,
+        formId,
         target: `#${targetDivId}`,
+        onFormReady: () => {
+          delete targetElement.dataset.hubspotCreating
+          options?.onFormReady?.()
+        },
       })
+      return true
+    } catch {
+      delete targetElement.dataset.hubspotCreating
+      options?.onError?.('forms_create_failed')
+      return false
     }
-    return
   }
 
-  // Check if script is already being loaded
-  if (document.getElementById(scriptId)) {
-    // Wait for the script to load then create form
-    const checkHubSpot = () => {
-      if (window['hbspt']) {
-        window['hbspt'].forms.create({
-          region: region,
-          portalId: portalId,
-          formId: formID,
-          target: `#${targetDivId}`,
-        })
-      } else {
-        setTimeout(checkHubSpot, 100)
+  const waitForHubspotApi = () => {
+    let attempts = 0
+    const maxAttempts = 80
+
+    const check = () => {
+      if (createFormIfPossible()) {
+        return
       }
+
+      attempts += 1
+      if (attempts >= maxAttempts) {
+        options?.onError?.('forms_api_unavailable')
+        return
+      }
+
+      window.setTimeout(check, 100)
     }
-    checkHubSpot()
+
+    check()
+  }
+
+  if (createFormIfPossible()) {
     return
   }
 
-  const script = document.createElement('script')
-  script.id = scriptId
-  script.src = '//js.hsforms.net/forms/shell.js'
-  script.async = true
-
-  script.onerror = () => {
+  const handleScriptError = () => {
+    options?.onError?.('script_load_failed')
     console.error('Failed to load HubSpot forms script')
   }
 
-  document.head.appendChild(script)
+  const script = document.getElementById(HUBSPOT_SCRIPT_ID) as
+    | HTMLScriptElement
+    | null
 
-  script.onload = () => {
-    if (window['hbspt']) {
-      window['hbspt'].forms.create({
-        region: region,
-        portalId: portalId,
-        formId: formID,
-        target: `#${targetDivId}`,
-      })
-    }
+  if (script) {
+    script.addEventListener('load', waitForHubspotApi, { once: true })
+    script.addEventListener('error', handleScriptError, { once: true })
+    waitForHubspotApi()
+    return
   }
+
+  const nextScript = document.createElement('script')
+  nextScript.id = HUBSPOT_SCRIPT_ID
+  nextScript.src = HUBSPOT_SCRIPT_SRC
+  nextScript.async = true
+  nextScript.addEventListener('load', waitForHubspotApi, { once: true })
+  nextScript.addEventListener('error', handleScriptError, { once: true })
+  document.head.appendChild(nextScript)
 }
 
 export default loadHubspotScript
