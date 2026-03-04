@@ -1,0 +1,71 @@
+# Draft.dev
+
+> Draft.dev is a technical content marketing agency that helps B2B software companies reach developers through authentic, high-quality content. Founded in 2020 by former CTO Karl Hughes, Draft.dev combines 300+ vetted engineer-writers with AI-assisted workflows to deliver content strategy, creation, promotion, and analytics for developer tools and platforms.
+
+Draft.dev specializes in content for technical audiences — software developers, DevOps engineers, and technical decision-makers. All content is written by practicing engineers, reviewed by subject matter experts, and edited by professional editors. The company serves 100+ clients including Docker, JetBrains, Sinch, Redpanda, Loft Labs, Descope, and Snyk, with 3000+ published content pieces.
+
+Plans start at $9K/month with a 3-month minimum commitment. First content is delivered within 3 weeks of kickoff, with a consistent weekly publishing cadence after onboarding (typically 6–9 weeks from SOW to first article).
+
+## Core Services
+
+- [Content Strategy](https://draft.dev/content-strategy): Research, competitive analysis, SEO/GEO optimization, content audits, and quarterly content roadmaps tailored to your product and audience.
+- [Content Creation](https://draft.dev/content-creation): Blog posts, tutorials, comparison pages, landing pages, technical guides, thought leadership, lead magnets, ebooks, and whitepapers — all written by engineer-writers.
+- [Content Promotion](https://draft.dev/paid-content-promotion): Social distribution on Reddit, LinkedIn, and X. Newsletter placements through 50+ developer newsletters (TLDR, Pointer, Changelog). Syndication on Dev.to, HackerNews, and niche communities.
+- [Video Production](https://draft.dev/video-production): Product demos, tutorials, webinars, and technical explainer videos for developer audiences.
+- [Content Refreshes](https://draft.dev/content-creation): Updating and optimizing existing content for accuracy, SEO performance, and relevance.
+- [Lead Generation](https://draft.dev/lead-generation): Full-funnel content with landing pages, demo apps, downloadable assets, and CTAs optimized for MQL/SQL conversion.
+
+## Solutions by Role
+
+- [For Marketers](https://draft.dev/for-marketers): Technical content creation for non-technical marketing teams. Includes blog posts, ebooks, video tutorials, and a dedicated content strategist to drive ROI.
+- [For DevRel Teams](https://draft.dev/for-devrel): Scalable content to extend developer relations bandwidth — tutorials, documentation, community content, and training materials.
+- [Drive Awareness](https://draft.dev/drive-awareness): Coordinated content campaigns for new product launches across blogs, video, social, comparison pages, and lead magnets with competitive analysis and SEO/GEO insights.
+
+## How It Works
+
+- [Our Process](https://draft.dev/#how-we-work): Step 1: Research & Strategy (1–2 weeks) — product analysis, competitor research, SEO/GEO research, content audit, brand alignment, roadmap creation. Step 2: Content Production — AI-assisted drafting, SME review, professional editing, CMS publication. Step 3: Content Promotion — social media, newsletters, community engagement, syndication. Step 4: Analysis & Reporting — monthly analytics, performance tracking, cost per lead, roadmap adjustments.
+- [Technical Content Examples](https://draft.dev/technical-content-examples): Sample content across 40+ clients showing blog posts, tutorials, comparison pages, and other content types.
+
+## Case Studies
+
+- [Sinch Mailgun](https://draft.dev/case-studies/sinch-mailgun): Achieved 20–45% CTR rates, saved weeks of internal engineering time, expanded content initiatives with SME writers.
+- [Status Hero](https://draft.dev/case-studies/status-hero): 211% increase in blog traffic, improved trial conversion rate, consistent content flow.
+- [Earthly](https://draft.dev/case-studies/earthly): 346% increase in monthly blog visitors, content production scaled 4x.
+- [Loft Labs](https://draft.dev/case-studies/loft-labs): Scaled Kubernetes blog content, achieved top SEO rankings, most popular published posts on the blog.
+- [All Case Studies](https://draft.dev/case-studies): Full list of client success stories and testimonials.
+
+## Blog & Resources
+
+- [Technical Content Marketing Blog](https://draft.dev/learn): Expert insights on developer marketing, content strategy, SEO/AEO/GEO, DevRel, and technical writing.
+- [AEO/GEO for Dev Tools](https://draft.dev/learn/aeo-geo-for-dev-tools): How developer tools can optimize for AI-powered search engines using Answer Engine Optimization and Generative Engine Optimization.
+- [Scaling Developer Content](https://draft.dev/learn/scaling-developer-content): Guide to determining content volume, types, and publishing cadence for developer tools companies.
+- [Maximizing Content Marketing ROI](https://draft.dev/learn/maximizing-your-content-marketing-roi): 4-step framework for measuring and improving content marketing return on investment, including payback periods by content type.
+- [Top Technical Content Marketing Agencies](https://draft.dev/learn/top-technical-content-marketing-agencies): Comparison of technical content agencies for B2B software companies with pricing, services, and case studies.
+- [B2B Demand Generation Guide](https://draft.dev/learn/b2b-demand-generation): Proven strategies, tactics, and tools for filling your pipeline with scalable demand generation programs.
+- [B2B Copywriting for Demand](https://draft.dev/learn/b2b-copywriting-drives-demand): Techniques for writing persuasive content for technical audiences across channels and formats.
+- [Standing Out in Saturated Dev Tool Markets](https://draft.dev/learn/standing-out-in-saturated-dev-tool-markets): Differentiation strategies for developer tools in competitive niches.
+- [Content Promotion Waves](https://draft.dev/learn/orchestrate-content-promotion-waves): Multi-channel promotion strategies that generated 85,000 leads without spamming developer audiences.
+- [B2B SaaS Marketing Guide](https://draft.dev/learn/the-b2b-saas-marketing-guide): Comprehensive guide covering positioning, inbound marketing, content syndication, sponsorships, and event marketing.
+- [Technical Documentation Best Practices](https://draft.dev/learn/technical-documentation): Types of technical documentation, structuring strategies, and AI-era best practices for creating clear user-friendly guides.
+- [X Ads Quickstart for SaaS](https://draft.dev/learn/x-ads-quickstart-guide-saas): Step-by-step guide for launching X (Twitter) ad campaigns including pixel setup, conversion tracking, and targeting.
+- [AI Writing Tools for Technical Writers](https://draft.dev/learn/how-ai-writing-tools-support-technical-writers): How AI writing tools support rather than replace technical writers by handling repetitive tasks and improving consistency.
+
+## Free Resources & Templates
+
+- [2026 Developer Marketing Survey](https://draft.dev/2026-developer-marketing-survey): Annual survey on how technical marketers are investing and experimenting.
+- [Content Distribution Strategy](https://draft.dev/distributing-content-on-social-media): Guide to distributing technical content across social media channels.
+- [Trello Content Calendar Template](https://draft.dev/trello-content-calendar-template): Free Trello board template for organizing content production.
+- [Asana Content Calendar Template](https://draft.dev/asana-content-calendar-template): Free Asana template for content calendar management.
+- [Airtable Content Calendar Template](https://draft.dev/airtable-content-calendar-template): Free Airtable base template for content planning and tracking.
+- [Newsletter](https://draft.dev/newsletter): Monthly resources, tips, and case studies for reaching developers. 3,000+ subscribers.
+
+## Company
+
+- [About Draft.dev](https://draft.dev/about): Company background, founded in 2020 by Karl Hughes (former CTO). Named to 2025 Inc. Regionals: Midwest list.
+- [Book a Discovery Call](https://draft.dev/call): Schedule a call to discuss your content needs and explore how Draft.dev can help.
+
+## Optional
+
+- [How to Choose a Content Marketing Agency](https://draft.dev/learn/top-content-marketing-agencies): Evaluation criteria, pricing models, ROI benchmarks, and selection framework for B2B brands.
+- [What Do B2B SEO Agencies Do](https://draft.dev/learn/what-do-b2b-seo-agencies-do): Core services, costs ($5K–$25K/month), and ROI expectations for enterprise B2B SEO.
+- [Content Marketing Engine eBook](https://draft.dev/content-marketing-engine): How to set up a content marketing engine in the age of AI.
