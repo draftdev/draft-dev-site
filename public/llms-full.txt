@@ -1,0 +1,859 @@
+--------------------------------------------------------------------------------
+title: "Draft.dev - Company Overview"
+description: "Draft.dev is a content-powered growth marketing agency for developer tools and platforms."
+last_updated: "2026-03-04"
+source: "https://draft.dev/"
+--------------------------------------------------------------------------------
+
+# Draft.dev - Content-Powered Growth Marketing for Developer Tools & Platforms
+
+Draft.dev builds technical content engines that compound and resonate with developers, search engines, and LLMs. Founded in 2020 by former CTO Karl Hughes, the company combines strategic marketing with hands-on technical knowledge to create content that performs.
+
+Draft.dev is trusted by 100+ tech companies including Docker, JetBrains, Sinch, Redpanda, Amadeus, Loft Labs, Bright Data, and Descope.
+
+## Key Facts
+
+- Founded: 2020
+- Founder & CEO: Karl Hughes (former CTO)
+- Headquarters: Chicago, United States
+- Subject Matter Experts & Reviewers: 300+
+- Clients: 100+
+- Content Pieces Published: 3,000+
+- Target Audience: 100% technical
+
+## What Draft.dev Does
+
+Draft.dev delivers a breadth of authentic developer content backed by real engineering expertise. The network of 300+ seasoned engineers produces technically accurate content that resonates with developer audiences, search and answer engines, and algorithms. Experienced marketers and editors ensure every piece is derived from strategic goals and drives results while maintaining the depth developers expect.
+
+Draft.dev handles the full content lifecycle: planning, production, and promotion. From strategy, to production, to distribution within weeks.
+
+## Who Draft.dev Serves
+
+Draft.dev's clients are primarily developer tools companies, mostly Series A- and Series B-funded. These companies have funding and knowledge that content marketing works for their audience, and they want to scale production and ensure what they write resonates with developers.
+
+Draft.dev also serves:
+
+- [Marketers in tech companies](/for-marketers)
+- [Developer Relations professionals](/for-dev-rels)
+
+## Contact
+
+- [Book a Discovery Call](/call)
+- [Newsletter](/newsletter)
+- [Website](https://draft.dev/)
+
+--------------------------------------------------------------------------------
+title: "Services Overview"
+description: "Overview of all services Draft.dev provides to developer tools companies."
+last_updated: "2026-03-04"
+source: "https://draft.dev/"
+--------------------------------------------------------------------------------
+
+# Services Overview
+
+Draft.dev provides content-powered growth marketing services for developer tools and platforms. Services span three core areas: from zero to growth, content strategies for new product releases, and scaling output without scaling headcount.
+
+## From Zero to Growth
+
+For companies without a content team yet. Draft.dev brings the strategy, production, and distribution across many content types: blog posts, videos, social collateral, comparison pages, lead magnets, and more. Draft.dev drives the first wave of developer signups. You build product, they build your developer audience.
+
+## Content Strategies for New Product Releases
+
+Introducing a new product or feature means educating a market that does not know it exists yet. Draft.dev helps build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/GEO insights.
+
+- [How Draft.dev drives awareness](/drive-awareness)
+
+## Scale Output Without Scaling Headcount
+
+More channels, more content. Draft.dev integrates seamlessly with existing teams to expand content production across channels: on-site articles, guest posts, video content, newsletter campaigns, social distribution, and more. Draft.dev analyzes, refreshes, and reports on content performance.
+
+- [Technical content examples for 40+ clients](/technical-content-examples)
+
+## Subscription & Engagement Model
+
+A Draft.dev subscription provides:
+
+- Developer Content Strategy
+- Content Creation & Review
+- Lead Magnets
+- Content Refreshes
+- Ongoing Analysis and Reporting
+
+Retainers and custom offers are available upon request. Three-month minimum engagement. Delivery starts after an initial planning period.
+
+--------------------------------------------------------------------------------
+title: "Content Strategy Services"
+description: "How Draft.dev develops data-driven content strategies for developer tools companies."
+last_updated: "2026-03-04"
+source: "https://draft.dev/dev-content-strategy"
+--------------------------------------------------------------------------------
+
+# Content Strategy Services
+
+Draft.dev combines deep technical expertise with product research and proven SEO and AI optimization methodologies to create content strategies that put your solution in front of the right developers at the right time.
+
+## What's Included
+
+- **Industry & Competitor Analysis**: Draft.dev analyzes your industry, competitors, positioning, product features, target audience, and brand voice to ensure authentic output.
+- **SEO & GEO Research**: Comprehensive SEO and GEO research, assessment of existing content, and study of marketing funnels.
+- **Content Roadmap**: Delivery of a content strategy and roadmap tailored to your business.
+- **Stakeholder Alignment**: Unifying DevRel, marketing, and product teams with a cohesive content strategy.
+- **Content Audit**: Content audit and competitive analysis.
+- **Editorial Calendar & Workflow Design**: Planning for consistent publishing cadence.
+- **Content Templates & Style Guides**: Ensuring consistent quality.
+- **Measurement Framework & Dashboards**: Tracking cost per lead and content effectiveness.
+- **Monthly Analytics & Strategy Reviews**: Ongoing performance optimization.
+
+## Timeline
+
+Initial strategy development takes 2–4 weeks:
+
+- Weeks 1–2: Discovery and research
+- Weeks 3–4: Presentation and approval
+
+Ongoing support is provided to ensure successful execution.
+
+## Metrics Tracked
+
+- Traffic to key content
+- Lead magnet downloads
+- Demo or trial signups from content
+- Engagement via newsletters, shares, or backlinks
+- Movement of content-informed leads down the funnel
+
+Monthly analytics check-ins evaluate what's working and adjust the roadmap accordingly.
+
+- [Learn more about content strategy services](/dev-content-strategy)
+- [Developer marketing insights](/developer-marketing)
+
+--------------------------------------------------------------------------------
+title: "Content Types"
+description: "All types of technical content Draft.dev creates for developer audiences."
+last_updated: "2026-03-04"
+source: "https://draft.dev/content-types"
+--------------------------------------------------------------------------------
+
+# Content Types
+
+Draft.dev creates a wide range of content focused on helping technical buyers evaluate, adopt, and grow with your product. The most effective developer marketing strategies combine multiple content types to address different stages of the developer journey. Tutorials and guides build awareness and trust, while comparisons and persuasive pieces drive consideration and decisions.
+
+## Content Formats
+
+- **Blog Posts & Tutorials**: Step-by-step explanations for accomplishing specific engineering tasks, including code samples and screenshots. [Learn more](/tutorials)
+- **Comparison Pages**: Technical comparisons helping developers evaluate tools and make decisions.
+- **Landing Pages & Onboarding Content**: Product-focused content for conversion.
+- **Technical Product Guides & Use Case Deep-Dives**: In-depth exploration of product features and applications.
+- **Thought Leadership Pieces**: Expert perspectives on industry trends and best practices.
+- **Lead Magnets & Gated Assets**: Downloadable assets with landing page copy optimized for MQL/SQL conversion. [Learn more](/capture-leads)
+- **Content Refreshes**: Updating existing content to maintain relevance and performance. [Learn more](/content-refreshes)
+- **SEO-Optimized Pages**: Content optimized for search engine visibility.
+- **Video Tutorials**: Video content for developer audiences. [Learn more](/video-tutorials)
+- **Webinars**: Educational webinar content. [Learn more](/webinars)
+- **Social Collateral**: Content variations for social media distribution. [Learn more about social collateral](/learn/announcing-social-collateral-from-draft-dev)
+- **eBooks & Whitepapers**: Long-form gated content for lead generation. [Learn more](/learn/technical-ebooks)
+
+## Content Tailoring
+
+Content formats and tone are tailored based on your goals, audience, and funnel stage. Draft.dev focuses on content aimed at software developers, data engineers, technical leaders, and sysadmins.
+
+- [See content type examples](/content-types)
+- [See technical content examples](/technical-content-examples)
+
+--------------------------------------------------------------------------------
+title: "How Draft.dev Works - Process"
+description: "Draft.dev's process from research and strategy through content production and promotion."
+last_updated: "2026-03-04"
+source: "https://draft.dev/"
+--------------------------------------------------------------------------------
+
+# How Draft.dev Works
+
+Draft.dev plans, produces, publishes, and promotes first pieces within weeks.
+
+## Step 1: Research & Strategy
+
+Draft.dev gets to know your company and defines a plan. This includes:
+
+- Analyzing industry, competitors, positioning, product features, and target audience
+- Understanding brand and tone of voice for authentic output
+- Conducting SEO and GEO research
+- Assessing existing content
+- Studying existing marketing funnel
+- Delivering a content strategy and roadmap for feedback
+
+## Step 2: Content Production
+
+Draft.dev publishes first pieces within weeks. Content types include:
+
+- Blog posts and tutorials
+- Comparison pages
+- Landing pages and onboarding content
+- Technical product guides and use case deep-dives
+- Thought leadership pieces
+- Lead magnets and gated assets
+
+To ensure fast turnaround times, Draft.dev uses proven AI workflows to help draft pieces. Each piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for the audience. Draft.dev can manage publication via all major CMSs.
+
+## Step 3: Content Promotion
+
+Draft.dev helps promote content on Reddit, LinkedIn, Twitter/X, and more. They create variations for third-party syndication and assist in publishing and advertising pieces in niche publications and newsletters read by the target audience.
+
+- [Distributing content on social media](/distributing-content-on-social-media)
+
+## Timeline
+
+- First pieces published within 3 weeks of kickoff
+- Weeks 1–2: Aligning on goals, messaging, and content roadmap
+- After that: Consistent weekly publishing cadence (targeting 2x weekly)
+
+## Client Involvement
+
+Draft.dev is built to minimize internal lift. Clients typically need to:
+
+- Attend a kickoff call
+- Review and approve a quarterly roadmap
+- Provide occasional feedback on draft content
+
+Draft.dev handles the rest, including full CMS publishing, distribution, and social media asset creation.
+
+--------------------------------------------------------------------------------
+title: "Content Refreshes"
+description: "Draft.dev's content refresh service to combat content decay and improve existing content performance."
+last_updated: "2026-03-04"
+source: "https://draft.dev/content-refreshes"
+--------------------------------------------------------------------------------
+
+# Content Refreshes
+
+Best-performing content from 2–3 years ago is likely underperforming today. Version numbers change, search algorithms evolve, competitors publish newer content, and technical details become outdated.
+
+## Why Content Refreshes Matter
+
+- Content decay affects nearly 60% of blog posts within 12–24 months of publication
+- Most posts experience gradual ranking and traffic decline without updates
+- Content refresh strategies consistently outperform new content creation
+- Traffic increases of 200–500% for refreshed content
+- Requires 60–80% less investment than new content creation
+
+## How Draft.dev Identifies Content for Refreshing
+
+Draft.dev analyzes Google Analytics and Search Console data to identify pages with declining traffic, lost rankings, or high bounce rates.
+
+## Recommended Refresh Cadence
+
+- Technical content: Reviewed every 12–24 months
+- High-traffic pages: Checked more often if possible
+- Fast-moving topics (frameworks, cloud services): Every 6–12 months
+
+Draft.dev provides a refresh calendar based on content performance metrics and topic volatility.
+
+- [Learn more about content refreshes](/content-refreshes)
+- [Blog post: Refreshing blog posts](/learn/refreshing-blog-posts)
+
+--------------------------------------------------------------------------------
+title: "Case Studies"
+description: "Case studies showing how Draft.dev has helped developer tools companies grow."
+last_updated: "2026-03-04"
+source: "https://draft.dev/case-studies"
+--------------------------------------------------------------------------------
+
+# Case Studies
+
+Draft.dev has worked with hundreds of successful companies. Here are selected case studies demonstrating results.
+
+## Sinch Mailgun
+
+When internal engineering bandwidth was tight, Draft.dev delivered SME-written tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time. Achieved 20–45% CTR.
+
+- [Read the Sinch Mailgun case study](/case-studies/sinch-mailgun)
+
+## Status Hero
+
+Henry Poydar, Founder & CEO of Status Hero, shares how Draft.dev helped their technical content efforts.
+
+- [Read the Status Hero case study](/case-studies/status-hero)
+
+## Loft Labs
+
+Rahul Patwardhan, Senior Director of Demand Generation at Loft Labs, shares their experience with Draft.dev as a competitive advantage for sourcing quality technical content.
+
+- [Read the Loft Labs case study](/case-studies/loft-labs)
+
+## Earthly
+
+Adam Gordon Bell, Director of Developer Relations at Earthly, explains how Draft.dev supported their developer content strategy.
+
+- [Read the Earthly case study](/case-studies/earthly)
+
+## Notable Client Results
+
+- fabric. Inc: Referral traffic and organic keyword rankings increased by 3x. One post hit Hacker News resulting in 5 demo requests in a single day.
+- Loft Labs: Steadier flow of content, helped brand visibility, some posts became the most popular published.
+- Snyk: Instrumental in scaling content program and building educational materials for developer security.
+- Gusto: Accelerated developer-focused marketing efforts and built competitive advantage as a developer-friendly platform.
+- Descope: Accelerated technical content output while extending bandwidth of developer relations team.
+- Redpanda: Go-to for practical, well-written content that resonates with technical audiences.
+
+--------------------------------------------------------------------------------
+title: "Drive Awareness"
+description: "How Draft.dev helps developer tools companies drive awareness through content."
+last_updated: "2026-03-04"
+source: "https://draft.dev/drive-awareness"
+--------------------------------------------------------------------------------
+
+# Drive Awareness
+
+Draft.dev helps developer tools companies build awareness fast with coordinated content strategies. This is particularly important when introducing a new product or feature that requires educating a market that does not know it exists yet.
+
+## Approach
+
+- Coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets
+- Backed by competitive analysis and SEO/GEO insights
+- Full-funnel technical content including landing pages, tutorials and demo apps, code samples, and social collateral
+
+- [Learn more about driving awareness](/drive-awareness)
+
+--------------------------------------------------------------------------------
+title: "Capture Leads"
+description: "How Draft.dev helps developer tools companies capture leads through gated assets and lead magnets."
+last_updated: "2025-11-07"
+source: "https://draft.dev/capture-leads"
+--------------------------------------------------------------------------------
+
+# Capture Leads
+
+Draft.dev provides a lead collection system with downloadable assets and landing page copy optimized for MQL/SQL conversion. This includes:
+
+- Lead magnets and gated assets
+- Landing page copy
+- Performance optimization through monthly analytics reviews tracking cost per lead and content effectiveness
+
+- [Learn more about capturing leads](/capture-leads)
+
+--------------------------------------------------------------------------------
+title: "Build Trust"
+description: "How Draft.dev helps developer tools companies build trust with developer audiences."
+last_updated: "2026-03-04"
+source: "https://draft.dev/build-trust"
+--------------------------------------------------------------------------------
+
+# Build Trust
+
+Developers are a community that values technical accuracy over marketing speak and makes decisions based on hands-on experience. Draft.dev helps build trust with developer audiences through:
+
+- Content created by 300+ vetted engineer-writers
+- Review by subject matter experts and editors
+- AI-assisted research and drafts with human review for accuracy, clarity, and value
+- Authentic, technically accurate content that resonates with developer audiences
+
+- [Learn more about building trust](/build-trust)
+
+--------------------------------------------------------------------------------
+title: "Content Marketing Engine"
+description: "Draft.dev's guide on setting up a content marketing engine in the age of AI."
+last_updated: "2026-03-04"
+source: "https://draft.dev/content-marketing-engine"
+--------------------------------------------------------------------------------
+
+# Content Marketing Engine
+
+Draft.dev offers an eBook on how to set up a content marketing engine in the age of AI. This resource covers the foundational aspects of building a sustainable, compounding content operation for developer tools companies.
+
+- [Download the eBook: How to Set Up a Content Marketing Engine in the Age of AI](/content-marketing-engine)
+
+## Related Resources
+
+- [Content Engine Checklist](/content-engine-checklist)
+- [Blog post: Setting up a content marketing engine](/learn/setting-up-content-marketing-engine)
+- [Orchestrate technical content](/orchestrate-technical-content)
+
+--------------------------------------------------------------------------------
+title: "Resources & Templates"
+description: "Free resources, templates, and tools provided by Draft.dev."
+last_updated: "2026-03-04"
+source: "https://draft.dev/resources"
+--------------------------------------------------------------------------------
+
+# Resources & Templates
+
+Draft.dev provides various free resources for developer marketing teams.
+
+## Content Calendar Templates
+
+- [Trello Content Calendar Template](/trello-content-calendar-template)
+- [Asana Content Calendar Template](/asana-content-calendar-template)
+- [Airtable Content Calendar Template](/airtable-content-calendar-template)
+
+## Guides & eBooks
+
+- [Content Marketing Engine eBook](/content-marketing-engine)
+- [Content Engine Checklist](/content-engine-checklist)
+- [Developer Marketing Playbook](/playbook)
+- [Keyword Audit & Topic Clusters](/keyword-audit-topic-clusters)
+- [Content Idea Generator](/ideas)
+
+## Research
+
+- [2026 Developer Marketing Survey](https://draft.dev/2026-developer-marketing-survey)
+
+## Newsletter
+
+Stay up to date with developer marketing insights.
+
+- [Subscribe to the Draft.dev newsletter](/newsletter)
+
+--------------------------------------------------------------------------------
+title: "For Marketers"
+description: "How Draft.dev helps marketing teams in tech companies create authentic technical content."
+last_updated: "2026-03-04"
+source: "https://draft.dev/for-marketers"
+--------------------------------------------------------------------------------
+
+# For Marketers
+
+Draft.dev helps marketing teams in tech companies create authentic technical content that resonates with developers and drives business results. High-quality tech content is written and reviewed by experienced developers and edited by professional editors.
+
+## How It Works for Marketers
+
+1. **Discovery Call**: 30-minute introductory call to learn about your company and marketing strategy
+2. **Content Plan**: Customized content plan based on budget, goals, and marketing strategy
+3. **Content Delivery**: Tested and edited content ready to publish every 1–2 weeks
+
+- [Learn more about services for marketers](/for-marketers)
+
+--------------------------------------------------------------------------------
+title: "For Developer Relations"
+description: "How Draft.dev supports DevRel teams with technical content creation."
+last_updated: "2026-03-04"
+source: "https://draft.dev/for-dev-rels"
+--------------------------------------------------------------------------------
+
+# For Developer Relations
+
+Draft.dev supports Developer Relations teams by extending their bandwidth for technical content creation, allowing DevRel professionals to focus more on core product activities and community engagement.
+
+Draft.dev designs content strategies that balance community value with business metrics, ensuring every piece of content serves both developers and the bottom line. The comprehensive strategy includes:
+
+- Stakeholder alignment
+- Content audit and competitive analysis
+- Editorial calendar and workflow design
+- Content templates and style guides
+- Measurement framework and dashboards
+- Monthly analytics and strategy reviews
+
+- [Learn more about services for DevRel teams](/for-dev-rels)
+
+--------------------------------------------------------------------------------
+title: "Write for Draft.dev"
+description: "Information for technical writers interested in writing for Draft.dev."
+last_updated: "2026-03-04"
+source: "https://draft.dev/write"
+--------------------------------------------------------------------------------
+
+# Write for Draft.dev
+
+Draft.dev works with a network of 300+ subject matter experts, all professional software developers and engineers. Writers create content that resonates with developer audiences while being technically accurate.
+
+Draft.dev uses AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors.
+
+- [Apply to write for Draft.dev](/write)
+- [Open job listings on GitHub](https://github.com/draftdev/jobs)
+
+--------------------------------------------------------------------------------
+title: "About Draft.dev"
+description: "Company background, mission, and team information for Draft.dev."
+last_updated: "2026-03-04"
+source: "https://draft.dev/about"
+--------------------------------------------------------------------------------
+
+# About Draft.dev
+
+Draft.dev delivers a breadth of authentic developer content backed by real engineering expertise. Founded in 2020 by former CTO Karl Hughes, the company combines strategic marketing with hands-on technical knowledge to create content that performs.
+
+The network of 300+ seasoned engineers produces technically accurate content that resonates with developer audiences, search and answer engines, and algorithms. Experienced marketers and editors ensure every piece is derived from strategic goals and drives results while maintaining the depth developers expect.
+
+Draft.dev's work has generated hundreds of thousands of leads for clients across the developer tools industry.
+
+- [Learn more about Draft.dev](/about)
+
+--------------------------------------------------------------------------------
+title: "Draft.dev vs AI-Generated Content"
+description: "How Draft.dev's approach compares to purely AI-generated content."
+last_updated: "2026-03-04"
+source: "https://draft.dev/draft-dev-vs-ai-gen-content"
+--------------------------------------------------------------------------------
+
+# Draft.dev vs AI-Generated Content
+
+Draft.dev uses AI to speed up research and drafts as part of proven AI workflows, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for the audience.
+
+This human-in-the-loop approach ensures that content maintains the technical depth, accuracy, and authenticity that developer audiences expect—something that purely AI-generated content often lacks.
+
+- [Learn more about Draft.dev vs AI-generated content](/draft-dev-vs-ai-gen-content)
+- [How Draft.dev uses (and doesn't use) AI](/learn/how-we-re-using-and-not-using-ai-writing-at-draft-dev)
+
+--------------------------------------------------------------------------------
+title: "Blog - Content Marketing"
+description: "Draft.dev blog articles about content marketing strategies for developer tools companies."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn/content-marketing"
+--------------------------------------------------------------------------------
+
+# Blog - Content Marketing
+
+Draft.dev's blog covers content marketing strategies, developer marketing, technical writing, and growth tactics for developer tools companies. Below are key articles organized by topic.
+
+## Content Marketing Strategy
+
+- [Setting Up a Content Marketing Engine](/learn/setting-up-content-marketing-engine)
+- [A Complete Introduction to Technical Marketing](/learn/a-complete-introduction-to-technical-marketing)
+- [Content Marketing at Early-Stage Startups](/learn/content-marketing-at-early-stage-startups)
+- [Content Marketing for Bootstrapped Startups](/learn/content-marketing-for-bootstrapped-startups)
+- [Maximizing Your Content Marketing ROI](/learn/maximizing-your-content-marketing-roi)
+- [Great Content Marketing Doesn't Depend on Luck](/learn/great-content-marketing-doesnt-depend-on-luck)
+- [101 Content Marketing Tips and Resources](/learn/101-content-marketing-tips-and-resources)
+- [The B2B SaaS Marketing Guide](/learn/the-b2b-saas-marketing-guide)
+- [Content Plan](/learn/content-plan)
+- [Blog Launch Checklist](/learn/blog-launch-checklist)
+- [Content Calendar](/learn/content-calendar)
+- [Topic Clusters](/learn/topic-clusters)
+
+## Developer Marketing
+
+- [Developer Marketing](/learn/developer-marketing)
+- [What's Working in Developer Marketing Today](/learn/whats-working-in-developer-marketing-today)
+- [Everything I've Learned About DevTools Marketing](/learn/everything-ive-learned-about-devtools-marketing)
+- [B2D Marketing Tips](/learn/b2d-marketing-tips)
+- [Standing Out in Saturated Dev Tool Markets](/learn/standing-out-in-saturated-dev-tool-markets)
+- [Optimizing the Developer Journey](/learn/optimized-developer-journey)
+- [Developer Content Strategies That Work and Scale](/learn/developer-content-strategies-that-work-and-scale)
+- [Creating Organic Developer Content](/learn/creating-organic-developer-content)
+- [Interactive Content Strategies](/learn/interactive-content-strategies)
+- [Optimizing Developer Content for Success](/learn/optimizing-developer-content-for-success)
+- [Scaling Developer Content](/learn/scaling-developer-content)
+- [SEO Keyword Opportunities in Developer Marketing](/learn/seo-keyword-opportunities-in-developer-marketing)
+- [Product-Led Growth for Developer Tools Companies](/learn/product-led-growth-for-developer-tools-companies)
+- [Developer Content: The Cornerstone of Product-Led Growth](/learn/developer-content-the-cornerstone-of-product-led-growth)
+
+## B2B Marketing & SEO
+
+- [B2B SEO Strategy](/learn/b2b-seo-strategy)
+- [What Do B2B SEO Agencies Do](/learn/what-do-b2b-seo-agencies-do)
+- [Finding a B2B SEO Agency That Works for You](/learn/finding-a-b2b-seo-agency-that-works-for-you)
+- [B2B Demand Generation](/learn/b2b-demand-generation)
+- [B2B Demand Generation Services](/learn/b2b-demand-generation-services)
+- [B2B Demand Generation Tips and Tactics](/learn/b2b-demand-generation-tips-and-tactics)
+- [B2B Thought Leadership Demand](/learn/b2b-thought-leadership-demand)
+- [B2B Copywriting Drives Demand](/learn/b2b-copywriting-drives-demand)
+- [B2B Video Marketing](/learn/b2b-video-marketing)
+- [SEO Strategies and Best Practices for Technical Audiences](/learn/seo-strategies-and-best-practices-for-technical-audiences)
+- [AEO/GEO for Dev Tools](/learn/aeo-geo-for-dev-tools)
+- [Two Content Marketing Strategies for Early-Stage Startup SEO](/learn/two-content-marketing-strategies-for-early-stage-startup-seo)
+- [Breaking Down the Marketing Funnel in B2B](/learn/breaking-down-the-marketing-funnel-in-b2b)
+- [5 Successful B2B Go-to-Market Strategies Explained](/learn/5-successful-b2b-go-to-market-strategies-explained)
+- [The Case for Bottom-Up Marketing](/learn/the-case-for-bottom-up-marketing)
+
+## Content Promotion & Distribution
+
+- [Content Promotion](/learn/promotion)
+- [Orchestrate Content Promotion Waves](/learn/orchestrate-content-promotion-waves)
+- [Syndicating Developer Content](/learn/syndicating-developer-content)
+- [Distributing Content on Social Media](/distributing-content-on-social-media)
+- [How Video Marketing Improves SEO](/learn/how-video-marketing-improves-seo)
+
+## DevRel & Community
+
+- [DevRel, Marketing, and Sales](/learn/devrel-marketing-and-sales)
+- [Building a DevRel Dream Team](/learn/building-a-devrel-dream-team)
+- [Finding and Hiring Developer Relations Professionals](/learn/finding-and-hiring-developer-relations-professionals)
+- [Developer Relations Career Insights from 7 Industry Leaders](/learn/developer-relations-career-insights-from-7-industry-leaders)
+- [What is Developer Experience](/learn/what-is-developer-experience)
+- [What is a Developer Advocate](/learn/what-is-a-developer-advocate)
+- [Understanding the Role of a Developer Evangelist](/learn/understanding-the-role-of-a-developer-evangelist)
+- [Understanding the Role of Technology Evangelists](/learn/understanding-the-role-of-technology-evangelists)
+- [Cultivating a Thriving Developer Community](/learn/cultivating-a-thriving-developer-community)
+- [The Network Effect in DevRel](/learn/the-network-effect-in-devrel-how-community-centric-models-boost-software-adoption)
+- [Open Source and Product Advocacy](/learn/open-source-and-product-advocacy)
+- [Open Source Development as a Marketing Tool](/learn/open-source-development-as-a-marketing-tool)
+- [DevRel: Harnessing Community Feedback for Product Development](/learn/devrel-harnessing-the-power-of-community-feedback-for-product-development)
+- [Influencer Marketing: The Effective Use of Dev Evangelists](/learn/influencer-marketing-the-effective-use-of-dev-evangelists)
+- [Strategies for Business Growth Through Developer Ecosystems](/learn/strategies-for-business-growth-through-developer-ecosystems)
+- [The Power of Hackathons: Strategies for Planning & Execution](/learn/the-power-of-hackathons-strategies-for-planning-execution)
+- [DevRel Marketing Insights from AWS re:Invent 2024](/learn/devrel-marketing-insights-from-aws-re-invent-2024)
+- [DevRel Marketing Insights from KubeCon North America 2024](/learn/devrel-marketing-insights-from-kubecon-north-america-2024)
+- [Diverse Audiences in Technical Marketing](/learn/diverse-audiences-in-technical-marketing)
+
+--------------------------------------------------------------------------------
+title: "Blog - Technical Writing"
+description: "Draft.dev blog articles about technical writing, editing, and documentation."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn/writing"
+--------------------------------------------------------------------------------
+
+# Blog - Technical Writing
+
+Articles covering technical writing best practices, style guides, documentation, and career guidance for technical writers.
+
+## Writing Guides
+
+- [Ultimate Guide to Technical Writing](/learn/ultimate-guide-to-technical-writing)
+- [Technical Content Writing](/learn/technical-content-writing)
+- [Technical Writing for Engineers](/learn/technical-writing-for-engineers)
+- [How to Write Persuasive Technical Content](/learn/how-to-write-persuasive-technical-content)
+- [How to Write Technical Comparisons](/learn/how-to-write-technical-comparisons)
+- [How to Write Technical Guides](/learn/how-to-write-technical-guides)
+- [How to Write Technical Thought Leadership](/learn/how-to-write-technical-thought-leadership)
+- [Writing Technical Roundups](/learn/writing-technical-roundups)
+- [Great Technical Tutorials Address the Why and How](/learn/great-technical-tutorials-address-the-why-and-how)
+- [Technical Tutorials](/learn/technical-tutorials)
+- [Generating Content Ideas That Resonate with Software Developers](/learn/generating-content-ideas-that-will-resonate-with-software-developers)
+- [How to Use Markdown](/learn/how-to-use-markdown)
+- [How to Create Diagrams for Technical Blog Posts](/learn/how-to-create-diagrams-for-technical-blog-posts)
+- [B2B Writing](/learn/b2b-writing)
+- [Ghostwriting](/learn/ghostwriting)
+- [How to Become a Ghostwriter](/learn/how-to-become-a-ghostwriter)
+- [Finding Ghostwriters for Hire](/learn/finding-ghostwriters-for-hire)
+
+## Editing & Quality
+
+- [Technical Editing](/learn/technical-editing)
+- [5 Steps to a Quality Edit for Your Technical Blog](/learn/5-steps-to-a-quality-edit-for-your-technical-blog)
+- [Technical Writing Rubric](/learn/technical-writing-rubric)
+- [Draft.dev Style Guide](/learn/styleguide)
+- [Draft.dev Visual Style Guide](/learn/draft-dev-s-visual-style-guide)
+- [Technical Writer Style Guides](/learn/technical-writer-style-guides)
+- [Content Types and Deliverables: What Are They?](/learn/content-types-and-deliverables-what-are-they)
+
+## Documentation
+
+- [Technical Documentation: What It Is and How to Do It Well](/learn/technical-documentation-what-it-is-and-how-to-do-it-well)
+- [Documentation Best Practices for Developer Tools](/learn/documentation-best-practices-for-developer-tools)
+- [Mastering the Art of Product Documentation Education](/learn/mastering-the-art-of-product-documentation-education)
+- [12 Documentation Examples Every Developer Tool Can Learn From](/learn/12-documentation-examples-every-developer-tool-can-learn-from)
+
+## Technical Writer Career
+
+- [Technical Writer for Hire](/learn/technical-writer-for-hire)
+- [Becoming a Remote Technical Writer](/learn/becoming-a-remote-technical-writer)
+- [Finding Opportunities as an Entry-Level Technical Writer](/learn/finding-opportunities-as-an-entry-level-technical-writer)
+- [How to Be Asked to Write More Technical Articles](/learn/how-to-be-asked-to-write-more-technical-articles)
+- [Tips and Examples for Your First Technical Writer Cover Letter](/learn/tips-and-examples-for-your-first-technical-writer-cover-letter)
+- [Red Flags on a Technical Writer Resume](/learn/red-flags-on-a-technical-writer-resume)
+- [5 Technical Writing Services Compared](/learn/5-technical-writing-services-compared)
+- [Finding and Motivating Writers](/learn/finding-motivating-writers)
+- [Matching Writers](/learn/matching-writers)
+
+## AI & Writing
+
+- [How AI Writing Tools Support Technical Writers](/learn/how-ai-writing-tools-support-technical-writers)
+- [How Draft.dev Uses (and Doesn't Use) AI Writing](/learn/how-we-re-using-and-not-using-ai-writing-at-draft-dev)
+- [The Best AI Writing Software](/learn/the-best-ai-writing-software-in-2022)
+
+--------------------------------------------------------------------------------
+title: "Blog - Technical Blogs & Platforms"
+description: "Draft.dev blog articles about technical blogging platforms and curated lists of developer blogs."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn/technical-blogs"
+--------------------------------------------------------------------------------
+
+# Blog - Technical Blogs & Platforms
+
+Curated lists of technical blogs and guides to blogging platforms for developer audiences.
+
+## Developer Blog Roundups
+
+- [Technical Blogs](/learn/technical-blogs)
+- [Engineering Blogs](/learn/engineering-blogs)
+- [Software Development Blogs](/learn/software-development-blogs)
+- [DevOps Blogs](/learn/devops-blogs)
+- [Computer Science Blogs](/learn/computer-science-blogs)
+- [Python Blogs](/learn/python-blogs)
+- [JavaScript Blogs](/learn/javascript-blogs)
+- [PHP Blogs](/learn/php-blogs)
+- [Ruby Blogs](/learn/ruby-blogs)
+- [Golang Blogs](/learn/golang-blogs)
+- [C# Blogs](/learn/c-sharp-blogs)
+- [SaaS Bloggers](/learn/saas-bloggers)
+- [Best Cybersecurity Blogs](/learn/best-cybersecurity-blogs)
+- [Best Crypto and Cryptocurrency Blogs](/learn/best-crypto-and-cryptocurrency-blogs)
+- [Best Product Management Blogs](/learn/best-product-management-blogs)
+- [The Best Technical Writing Blogs](/learn/the-best-technical-writing-blogs)
+
+## Blogging Platforms & Tools
+
+- [Technical Blog Platforms](/learn/technical-blog-platforms)
+- [Startup Blogging Platforms](/learn/startup-blogging-platforms)
+- [Complete Guide to Blogging Platforms](/learn/complete-guide-to-blogging-platforms)
+- [Hugo vs Jekyll](/learn/hugo-vs-jekyll)
+- [Hugo vs Gatsby](/learn/hugo-vs-gatsby)
+- [Jekyll vs WordPress](/learn/jekyll-vs-wordpress)
+- [Next.js vs Gatsby](/learn/next-js-vs-gatsby)
+- [React vs Vue: A Modern Comparison](/learn/react-vs-vue-a-modern-comparison)
+- [Publii Static Site Generator](/learn/publii-static-site-generator)
+- [Creating Hugo Themes](/learn/creating-hugo-themes)
+- [Creating Gatsby Starters](/learn/creating-gatsby-starters)
+- [Using Ghost as a Headless CMS](/learn/using-ghost-as-a-headless-cms)
+- [Running Ghost on Docker for Your Developer Blog](/learn/running-ghost-on-docker-for-your-developer-blog)
+- [GitHub Pages 404](/learn/github-pages-404)
+- [How to Use React DevTools in Safari](/learn/how-to-use-react-devtools-in-safari)
+- [Getting Started with WordPress Development](/learn/getting-started-with-wordpress-development-a-developers-guide)
+
+## Podcasts & Newsletters
+
+- [The Ultimate List of Developer Podcasts](/learn/the-ultimate-list-of-developer-podcasts)
+- [The Ultimate List of Developer Newsletters](/learn/the-ultimate-list-of-developer-newsletters)
+
+--------------------------------------------------------------------------------
+title: "Blog - Marketing Roles & Careers"
+description: "Draft.dev blog articles about marketing roles, titles, and career paths."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn/marketing-titles"
+--------------------------------------------------------------------------------
+
+# Blog - Marketing Roles & Careers
+
+Articles covering marketing and technical roles, responsibilities, and career paths.
+
+- [Marketing Titles](/learn/marketing-titles)
+- [What is a Head of Content](/learn/what-is-a-head-of-content)
+- [What is a Head of Growth](/learn/what-is-a-head-of-growth)
+- [What is a Head of Marketing](/learn/what-is-a-head-of-marketing)
+- [What is a Content Marketing Manager](/learn/what-is-a-content-marketing-manager)
+- [What is a Director of Product Marketing](/learn/what-is-a-director-of-product-marketing)
+- [What is a Product Marketing Specialist](/learn/what-is-a-product-marketing-specialist)
+- [What is a Technical Marketing Manager](/learn/what-is-a-technical-marketing-manager)
+- [What is a Technical SEO Specialist](/learn/what-is-a-technical-seo-specialist)
+- [What is a Documentation Manager](/learn/what-is-a-documentation-manager)
+- [What is a Product Manager](/learn/what-is-a-product-manager)
+- [What is a User Interface Designer](/learn/what-is-a-user-interface-designer)
+- [What is a User Experience Designer](/learn/what-is-a-user-experience-designer)
+
+--------------------------------------------------------------------------------
+title: "Blog - Tools & Resources"
+description: "Draft.dev blog articles about marketing tools, content tools, and startup resources."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn/tools"
+--------------------------------------------------------------------------------
+
+# Blog - Tools & Resources
+
+Articles covering tools and resources for content marketing, startups, and developer marketing.
+
+- [Tools Roundup](/learn/tools)
+- [Content Calendar (Trello)](/learn/trello-content-calendar)
+- [Content Calendar (Asana)](/learn/asana-content-calendar)
+- [Content Calendar (Airtable)](/learn/airtable-content-calendar)
+- [Competition Research Tools](/learn/competition-research-tools)
+- [Social Media Automation](/learn/social-media-automation)
+- [Course Creation Tools](/learn/course-creation-tools)
+- [Customer Chat Tools](/learn/customer-chat-tools)
+- [CRM for Startups](/learn/crm-startups)
+- [Press Release Tools](/learn/press-release-tools)
+- [Free Stock Images](/learn/free-stock-images)
+- [Remote Work Tools Every Distributed Team Needs](/learn/remote-work-tools-every-distributed-team-needs)
+- [Low-Cost Marketing Ideas](/learn/low-cost-marketing-ideas)
+- [Marketing Checklist](/learn/marketing-checklist)
+
+--------------------------------------------------------------------------------
+title: "Blog - Agency & Industry Guides"
+description: "Draft.dev blog articles about content marketing agencies and industry comparisons."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn"
+--------------------------------------------------------------------------------
+
+# Blog - Agency & Industry Guides
+
+Articles covering the content marketing agency landscape and how to evaluate providers.
+
+- [Top Content Marketing Agencies](/learn/top-content-marketing-agencies)
+- [Top Technical Content Marketing Agencies](/learn/top-technical-content-marketing-agencies)
+- [Best Content Creation Agencies](/learn/best-content-creation-agencies)
+- [Best B2B Content Marketing Agencies by Vertical](/learn/best-b2b-content-marketing-agencies-by-vertical)
+- [Content Creation Agency](/learn/content-creation-agency)
+- [What to Look for in a Startup Marketing Agency](/learn/what-to-look-for-in-a-startup-marketing-agency)
+- [Dealbreakers When Working with a SaaS Marketing Agency](/learn/dealbreakers-when-working-with-an-saas-marketing-agency)
+- [Selling and Marketing Unsought Products](/learn/selling-and-marketing-unsought-products)
+- [Brand and Content Alignment Strategies for Early-Stage Startups](/learn/brand-and-content-alignment-strategies-for-early-stage-startups)
+- [X Ads Quickstart Guide for SaaS](/learn/x-ads-quickstart-guide-saas)
+
+--------------------------------------------------------------------------------
+title: "Blog - Webinars & Events"
+description: "Draft.dev webinar summaries, conference recaps, and speaking resources."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn"
+--------------------------------------------------------------------------------
+
+# Blog - Webinars & Events
+
+Webinar summaries, conference recaps, and resources for public speaking.
+
+- [How to Create Effective Video Content for Developers](/learn/how-to-create-effective-video-content-for-developers)
+- [Introducing Video Tutorials at Draft.dev](/learn/introducing-video-tutorials-at-draft-dev)
+- [How Startups Build Lean Developer Education Programs (Webinar Summary)](/learn/how-startups-build-lean-developer-education-programs-appsembler-webinar-summary)
+- [The Fundamentals of Speaking at Technology Conferences](/learn/the-fundamentals-of-speaking-at-technology-conferences)
+
+--------------------------------------------------------------------------------
+title: "Blog - Company News"
+description: "Draft.dev company news and announcements."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn"
+--------------------------------------------------------------------------------
+
+# Blog - Company News
+
+- [2025 Inc. Regionals: Draft.dev](/learn/2025-inc-regionals-draft-dev)
+- [Client Onboarding](/learn/client-onboarding)
+- [Announcing Social Collateral from Draft.dev](/learn/announcing-social-collateral-from-draft-dev)
+- [How Draft.dev Uses (and Doesn't Use) AI Writing](/learn/how-we-re-using-and-not-using-ai-writing-at-draft-dev)
+- [Three Questions](/learn/three-questions)
+
+--------------------------------------------------------------------------------
+title: "Blog Category Pages"
+description: "Index pages for Draft.dev blog categories."
+last_updated: "2026-03-04"
+source: "https://draft.dev/learn"
+--------------------------------------------------------------------------------
+
+# Blog Category Pages
+
+Draft.dev organizes its blog content into the following categories:
+
+- [All Articles](/learn)
+- [Content Marketing](/learn/content-marketing)
+- [Technical Writing](/learn/writing)
+- [Technical Blogs](/learn/technical-blogs)
+- [Tools & Platforms](/learn/tools)
+- [Platforms](/learn/platforms)
+
+--------------------------------------------------------------------------------
+title: "FAQ"
+description: "Frequently asked questions about working with Draft.dev."
+last_updated: "2026-03-04"
+source: "https://draft.dev/"
+--------------------------------------------------------------------------------
+
+# Frequently Asked Questions
+
+## What kind of content does Draft.dev actually produce?
+
+Draft.dev creates a wide range of content focused on helping technical buyers evaluate, adopt, and grow with your product. This includes blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets, content refreshes and SEO-optimized pages, and more. Content formats and tone are tailored based on goals, audience, and funnel stage.
+
+## Who writes the content? Are they technical enough?
+
+All content is created by Draft.dev's network of 300+ vetted engineer-writers and reviewed by subject matter experts and editors. Draft.dev also uses AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for the audience.
+
+## How quickly can Draft.dev start delivering content?
+
+First pieces are published within 3 weeks of kickoff. The first 1–2 weeks are spent aligning on goals, messaging, and the content roadmap. After that, Draft.dev targets a consistent weekly publishing cadence, with 2x weekly publishing as the first core discipline of a successful content operation.
+
+## How much internal lift is required?
+
+Draft.dev is built to minimize internal lift. Clients typically need to attend a kickoff call, review and approve a quarterly roadmap, and provide occasional feedback on draft content. Draft.dev handles the rest, including full CMS publishing, distribution, and social media asset creation.
+
+## What is the minimum engagement?
+
+Three-month minimum engagement. Delivery starts after an initial planning period. Retainers and custom offers are available upon request. Many clients start small as a test, adding in paid growth options over time.
+
+## How does Draft.dev measure success?
+
+Success depends on goals, but Draft.dev typically tracks traffic to key content, lead magnet downloads, demo or trial signups from content, engagement via newsletters, shares, or backlinks, and movement of content-informed leads down the funnel. Monthly analytics check-ins evaluate what's working and adjust the roadmap accordingly.
