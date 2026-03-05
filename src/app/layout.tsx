@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className="bg-white antialiased">
         <DynamicNavbar />
         <div className="flex min-h-screen flex-col">
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </div>
         <Analytics />
