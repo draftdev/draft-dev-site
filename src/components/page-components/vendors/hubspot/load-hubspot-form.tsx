@@ -41,23 +41,8 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
       }
     }
 
-    const observer = new MutationObserver(() => {
-      if (document.getElementById(targetId)?.hasChildNodes()) {
-        markReady()
-      }
-    })
-
-    if (target) {
-      observer.observe(target, {
-        childList: true,
-        subtree: true,
-      })
-    }
-
     const timeoutId = window.setTimeout(() => {
-      if (!document.getElementById(targetId)?.hasChildNodes()) {
-        markFallback()
-      }
+      markFallback()
     }, FORM_LOAD_TIMEOUT_MS)
 
     loadHubspotScript(formId, portalId, region, {
@@ -67,7 +52,6 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
 
     return () => {
       mounted = false
-      observer.disconnect()
       window.clearTimeout(timeoutId)
     }
   }, [attempt, formId, portalId, region, targetId])

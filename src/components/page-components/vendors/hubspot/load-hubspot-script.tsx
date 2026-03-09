@@ -27,11 +27,6 @@ const loadHubspotScript = (
       return false
     }
 
-    if (targetElement.hasChildNodes()) {
-      options?.onFormReady?.()
-      return true
-    }
-
     if (targetElement.dataset.hubspotCreating === '1') {
       return true
     }
