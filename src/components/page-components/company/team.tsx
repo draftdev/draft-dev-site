@@ -48,20 +48,24 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/manuel_weiss_draft_dev.jpg',
   },
   {
+    name: 'Jakkie Koekemoer',
+    description: 'Engineering Manager',
+    img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
+  },
+  {
     name: 'Annika Puura',
     description: 'Operations Manager',
     img: '/draft/team/annika_puura_draft_dev.jpg',
   },
   {
-    name: 'Jakkie Koekemoer',
-    description: 'Engineering Manager',
-    img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
-  },
-
-  {
     name: 'Robin Fussell',
     description: 'Marketing Manager',
     img: '/draft/team/robin_fussell_draft_dev.png',
+  },
+  {
+    name: 'Kevin Graham',
+    description: 'Content Strategist',
+    img: '/draft/team/kevin_graham_draft_dev.jpg',
   },
   {
     name: 'Aniket Bhattacharyea',
