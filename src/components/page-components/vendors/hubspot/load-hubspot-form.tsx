@@ -20,6 +20,7 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
 
   useEffect(() => {
     let mounted = true
+    let formReady = false
     const target = document.getElementById(targetId)
 
     if (target) {
@@ -31,12 +32,13 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
 
     const markReady = () => {
       if (mounted) {
+        formReady = true
         setStatus('ready')
       }
     }
 
     const markFallback = () => {
-      if (mounted) {
+      if (mounted && !formReady) {
         setStatus('fallback')
       }
     }
