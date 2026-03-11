@@ -3,8 +3,7 @@ import { MedHeader } from '@/components/global/headers/med-header'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-
-import CalendlyWidget from '@/components/page-components/vendors/calendly'
+import ServiceInfo from '@/components/page-components/call-inquiry/service-info'
 
 import type { Metadata } from 'next'
 
@@ -59,17 +58,19 @@ export default function Call() {
     <>
       <MedHeader
         title="Let's talk about your content growth engine"
-        descriptionOne="We plan, produce, publish, and promote your first pieces within weeks. Use the form below to schedule a discovery call. "
-        descriptionTwo="Can't find a time that works for you? Email sales@draft.dev to contact us directly."
+        descriptionOne="We plan, produce, publish, and promote your first pieces within weeks."
+        descriptionTwo="Fill out the form and we'll be in touch soon."
       />
       <main className="overflow-hidden">
         {/* Calendly embed replaces HubSpotMeetings */}
         <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-          <CalendlyWidget
+          {/* <CalendlyWidget
             url="https://calendly.com/karlhughes/draft-discovery"
             minWidth={320}
             height={1200}
-          />
+          /> */}
+
+          <ServiceInfo />
         </section>
 
         <SocialProof />

@@ -1,7 +1,3 @@
-import FAQ from '@/components/global/faq'
-import { LogosDark } from '@/components/media/logos-dark'
-import SocialProof from '@/components/media/social-proof'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import ServiceInfo from '@/components/page-components/call-inquiry/service-info'
 import { Metadata } from 'next'
 
@@ -55,10 +51,6 @@ export default function CallInquiry() {
   return (
     <>
       <ServiceInfo />
-      <SocialProof />
-      <TestimonialsGroup />
-      <LogosDark />
-      <FAQ />
     </>
   )
 }
