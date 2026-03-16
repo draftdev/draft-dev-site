@@ -165,21 +165,6 @@ query AllPosts($first: Int, $after: String) {
           name
         }
       }
-      originalAuthor: metaValue(key: "original_author")
-      # Yoast SEO fields
-      seoTitle: metaValue(key: "_yoast_wpseo_title")
-      seoDesc: metaValue(key: "_yoast_wpseo_metadesc")
-      seoKeyword: metaValue(key: "_yoast_wpseo_focuskw")
-      ogDesc: metaValue(key: "_yoast_wpseo_opengraph-description")
-      twitterDesc: metaValue(key: "_yoast_wpseo_twitter-description")
-      # Enhanced custom fields for AI optimization
-      targetKeywords: metaValue(key: "target_keywords")
-      authorBio: metaValue(key: "author_bio")
-      readingTime: metaValue(key: "reading_time")
-      videoUrl: metaValue(key: "video_url")
-      authorLinkedIn: metaValue(key: "author_linkedin")
-      authorTwitter: metaValue(key: "author_twitter")
-      faqData: metaValue(key: "faq_questions")
     }
   }
 }
@@ -417,14 +402,6 @@ export async function getWpPosts(
               node: post.author.node,
             }
           : undefined,
-        originalAuthor: post.originalAuthor || null,
-        seo: {
-          metaDesc: post.seoDesc || undefined,
-          focuskw: post.seoKeyword || undefined,
-          opengraphDescription: post.ogDesc || undefined,
-          twitterDescription: post.twitterDesc || undefined,
-        },
-        customFields: parseCustomFields(post),
       })),
       pageInfo: {
         hasNextPage: data.posts.pageInfo.hasNextPage,

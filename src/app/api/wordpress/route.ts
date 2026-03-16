@@ -1,8 +1,7 @@
 import { getWpPostsForApi } from '@/app/lib/wordpress-api'
 import { NextRequest, NextResponse } from 'next/server'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+export const revalidate = 300
 
 function parsePagingParams(
   input: { after: string | null; first?: string | number; currentPage?: string | number },
