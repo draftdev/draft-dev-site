@@ -5,6 +5,7 @@ import {
   getWpPost,
   type Post as WpPost,
 } from '@/app/lib/wordpress'
+import YouTubeEmbed from '@/components/global/youtube-embed'
 import parse, { type DOMNode } from 'html-react-parser'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -242,17 +243,14 @@ export default async function PostPage({ params }: Props) {
     }
 
     if (domNode.type === 'tag' && domNode.name === 'iframe' && domNode.attribs) {
-      const { src, allow, allowfullscreen, frameborder } = domNode.attribs
+      const { src, allow, allowfullscreen } = domNode.attribs
       if (!src) return undefined
       return (
         <div className="my-6 aspect-video w-full overflow-hidden rounded-lg">
-          <iframe
+          <YouTubeEmbed
             src={src}
             allow={allow}
             allowFullScreen={allowfullscreen !== undefined}
-            frameBorder={frameborder || '0'}
-            loading="lazy"
-            className="h-full w-full"
           />
         </div>
       )

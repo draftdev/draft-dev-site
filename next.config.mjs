@@ -22,6 +22,7 @@ const nextConfig = {
       { protocol: 'https', hostname: 'imgur.com' },
       { protocol: 'https', hostname: '*.wp.com' },
       { protocol: 'https', hostname: 'secure.gravatar.com' },
+      { protocol: 'https', hostname: 'i.ytimg.com' },
     ],
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 86400,
