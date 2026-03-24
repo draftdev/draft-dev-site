@@ -73,6 +73,10 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
 
   return (
     <div className="hubspot-form-container max-w-7xl">
+      {/* Preconnect hints hoisted to <head> by React 19 — only on pages with HubSpot forms */}
+      <link rel="preconnect" href="https://js.hsforms.net" crossOrigin="" />
+      <link rel="preconnect" href="https://forms.hsforms.com" crossOrigin="" />
+      <link rel="preconnect" href="https://static.hsappstatic.net" crossOrigin="" />
       {status === 'loading' ? (
         <div className="mb-4 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
           Loading secure form...

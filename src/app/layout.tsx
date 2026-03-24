@@ -18,17 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
       <head>
-        <link rel="preconnect" href="https://js.hsforms.net" crossOrigin="" />
-        <link
-          rel="preconnect"
-          href="https://forms.hsforms.com"
-          crossOrigin=""
-        />
-        <link
-          rel="preconnect"
-          href="https://static.hsappstatic.net"
-          crossOrigin=""
-        />
+        <link rel="preconnect" href="https://candid-cookie.flywheelsites.com" />
       </head>
       <body className="bg-white antialiased">
         <DynamicNavbar />
