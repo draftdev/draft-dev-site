@@ -29,7 +29,7 @@ function PageViewTracker() {
   return null
 }
 
-function useDeferredGtmLoad(delayMs = 4000) {
+function useDeferredGtmLoad(delayMs = 6000) {
   const [shouldLoad, setShouldLoad] = useState(false)
 
   useEffect(() => {
