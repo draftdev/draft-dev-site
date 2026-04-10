@@ -16,7 +16,6 @@ const DEFAULT_CHARTS = [
   { metric: 'SEO Keywords (Position 1-3)', type: 'line', title: 'SEO Keywords (Position 1-3)', showPrevious: false, description: 'Keywords ranking in top 3 positions', size: 'small' },
   { metric: 'SEO Keywords (Position 4-10)', type: 'line', title: 'SEO Keywords (Position 4-10)', showPrevious: false, description: 'Keywords ranking in positions 4-10', size: 'small' },
   { metric: 'LLM Response Presence', type: 'line', title: 'LLM Response Presence', showPrevious: false, description: 'Percentage of LLM responses that include the website', size: 'medium' },
-  { metric: 'Citations of Website', type: 'bar', title: 'Website Citations in LLMs', showPrevious: false, description: 'Number of citations from the website appearing in LLM outputs', size: 'medium' },
 ]
 
 const DEFAULT_CONFIG = {

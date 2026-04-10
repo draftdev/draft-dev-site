@@ -22,7 +22,6 @@ const DEFAULT_METRIC_MAPPINGS: Record<
 > = {
   'LLM Response Presence': { name: 'LLM Response Presence', category: 'ai-visibility', isPercentage: true, absoluteChange: true },
   'Citations from own website': { name: 'Citations from Website', category: 'ai-visibility' },
-  'Citations of Website': { name: 'Citations of Website', category: 'ai-visibility' },
   'Citation Consistency': { name: 'Citation Consistency', category: 'ai-visibility', isPercentage: true, absoluteChange: true },
   'Domain Rating': { name: 'Domain Rating', category: 'seo', absoluteChange: true },
   'SEO keywords position 1-3': { name: 'SEO Keywords (Position 1-3)', category: 'seo', absoluteChange: true },
