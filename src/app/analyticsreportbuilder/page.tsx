@@ -12,11 +12,13 @@ export default function AnalyticsReportBuilder() {
     return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
   })
   const [isDragging, setIsDragging] = useState(false)
+  const [isLogoDragging, setIsLogoDragging] = useState(false)
   const [isGenerating, setIsGenerating] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null)
   const [downloadName, setDownloadName] = useState('')
   const xlsxInputRef = useRef<HTMLInputElement>(null)
+  const logoInputRef = useRef<HTMLInputElement>(null)
 
   const acceptFile = useCallback((file: File) => {
     if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
@@ -176,15 +178,41 @@ export default function AnalyticsReportBuilder() {
               Client Logo{' '}
               <span className="font-normal text-gray-400">(optional)</span>
             </label>
-            <input
-              type="file"
-              accept="image/*"
-              className="text-sm text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-medium file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 cursor-pointer"
-              onChange={e => setLogoFile(e.target.files?.[0] || null)}
-            />
-            {logoFile && (
-              <p className="mt-1 text-xs text-green-600">{logoFile.name}</p>
-            )}
+            <div
+              role="button"
+              tabIndex={0}
+              onDragOver={e => { e.preventDefault(); setIsLogoDragging(true) }}
+              onDragLeave={e => { e.preventDefault(); setIsLogoDragging(false) }}
+              onDrop={e => {
+                e.preventDefault()
+                setIsLogoDragging(false)
+                const file = e.dataTransfer.files[0]
+                if (file) setLogoFile(file)
+              }}
+              onClick={() => logoInputRef.current?.click()}
+              onKeyDown={e => e.key === 'Enter' && logoInputRef.current?.click()}
+              className={[
+                'border-2 border-dashed rounded-lg px-4 py-3 text-center cursor-pointer transition-colors select-none',
+                isLogoDragging
+                  ? 'border-purple-400 bg-purple-50'
+                  : logoFile
+                  ? 'border-green-400 bg-green-50'
+                  : 'border-gray-300 bg-white hover:border-gray-400',
+              ].join(' ')}
+            >
+              <input
+                ref={logoInputRef}
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={e => setLogoFile(e.target.files?.[0] || null)}
+              />
+              {logoFile ? (
+                <p className="text-xs font-medium text-green-700">{logoFile.name} <span className="font-normal text-gray-400">— click or drop to replace</span></p>
+              ) : (
+                <p className="text-xs text-gray-500">Drop an image here or <span className="text-purple-600 font-medium">click to browse</span></p>
+              )}
+            </div>
           </div>
         </div>
 
