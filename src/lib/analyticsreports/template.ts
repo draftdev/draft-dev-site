@@ -24,6 +24,10 @@ export const REPORT_TEMPLATE = String.raw`<!DOCTYPE html>
     @media print {
       .page-break { page-break-before: always; }
       .no-print { display: none !important; }
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
     }
   </style>
 </head>
