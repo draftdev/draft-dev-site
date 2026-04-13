@@ -107,12 +107,12 @@ export default function ForMarketers() {
         </div>
         <What />
         <Testimonial
-          quote="Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials. We’re constantly iterating to build the best educational materials for developer security and Draft.dev has been instrumental in helping us."
-          name="Randall Degges"
-          role="Head of Developer & Security Relations"
-          company="snyk"
-          imageSrc="/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg"
-          imageAlt="Randall Degges"
+          quote="Having previously worked with draft.dev, I reached out to them within weeks of starting to help us accelerate our content creation. Our first pieces were published within weeks and ranked within the first month. What impressed me the most was that as traffic grew, I was expecting a slight drop in  conversion rates from visitors to signups, surprisingly it stayed consistent at 10-15%. Helping us not only hit our goals but exceed them."
+          name="Dawn Parzych"
+          role="Head of Marketing"
+          company="Shorebird"
+          imageSrc="/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg"
+          imageAlt="Dawn Parzych"
         />
         <MedCaseEarthly />
         <LogosDark />

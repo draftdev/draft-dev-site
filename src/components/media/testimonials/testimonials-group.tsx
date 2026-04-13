@@ -1,14 +1,15 @@
 import Image from 'next/image'
 
 import abhishek from '/public/media/testimonials-sm/abhishek_iyer_descope_draft_dev.png'
+import dawn from '/public/media/testimonials-sm/dawn_parzych_shorebird_draft_dev.jpg'
 import emily from '/public/media/testimonials-sm/emily_blitstein_sinch_mailgun_draft_dev.png'
 import jenny from '/public/media/testimonials-sm/jenny_medeiros_redpanda_draft_dev.png'
+import nicholas from '/public/media/testimonials-sm/nicholasdewald_prove_draft_dev.jpg'
 import randall from '/public/media/testimonials-sm/randall_degges_snyk_draft_dev.jpg'
+import ravi from '/public/media/testimonials-sm/ravi_dehar_gusto_draft_dev.jpg'
 import rich from '/public/media/testimonials-sm/rich_burroughs_loft_labs_draft_dev.jpg'
 import robert from '/public/media/testimonials-sm/robert_gibb_fabric_draft_dev.jpg'
-import nicholas from '/public/media/testimonials-sm/nicholasdewald_prove_draft_dev.jpg'
 import tony from '/public/media/testimonials-sm/tony_chan_cloudforecast_draft_dev.jpg'
-import ravi from '/public/media/testimonials-sm/ravi_dehar_gusto_draft_dev.jpg'
 
 type Testimonial = {
   body: string
@@ -29,7 +30,7 @@ const testimonials: Testimonial[] = [
     },
   },
   {
-    body: "Draft.dev really accelerated our developer-focused marketing efforts. They really helped us build a competitive advantage as a developer-friendly platform without pulling away our internal technical teams to write that content.",
+    body: 'Draft.dev really accelerated our developer-focused marketing efforts. They really helped us build a competitive advantage as a developer-friendly platform without pulling away our internal technical teams to write that content.',
     author: {
       name: 'Ravi Dehar',
       company: 'Gusto',
@@ -42,6 +43,14 @@ const testimonials: Testimonial[] = [
       name: 'Abhishek Iyer',
       company: 'Descope',
       imageUrl: abhishek.src,
+    },
+  },
+  {
+    body: 'Having previously worked with draft.dev, I reached out to them within weeks of starting to help us accelerate our content creation. Our first pieces were published within weeks and ranked within the first month. What impressed me the most was that as traffic grew, I was expecting a slight drop in  conversion rates from visitors to signups, surprisingly it stayed consistent at 10-15%. Helping us not only hit our goals but exceed them.',
+    author: {
+      name: 'Dawn Parzych',
+      company: 'Shorebird',
+      imageUrl: dawn.src,
     },
   },
   {
