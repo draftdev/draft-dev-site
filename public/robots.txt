@@ -6,6 +6,7 @@ Disallow: /portal/
 Disallow: /assets/
 Disallow: /categories/
 Disallow: /posts/
+Disallow: /analyticsreportbuilder
 Disallow: *.pdf
 
 User-agent: GPTBot
@@ -23,6 +24,7 @@ Disallow: /portal/
 Disallow: /assets/
 Disallow: /categories/
 Disallow: /posts/
+Disallow: /analyticsreportbuilder
 Disallow: *.pdf
 
 Sitemap: https://draft.dev/main_sitemap.xml
