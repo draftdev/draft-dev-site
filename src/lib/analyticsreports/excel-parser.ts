@@ -39,7 +39,7 @@ export async function parseExcel(
   month: string,
   options: { metricsSheet?: string; reviewSheet?: string; metricMappings?: Record<string, unknown> } = {}
 ): Promise<ExcelParseResult> {
-  const workbook = XLSX.read(buffer, { type: 'buffer', cellDates: true })
+  const workbook = XLSX.read(buffer, { type: 'buffer' })
   const sheetNames = workbook.SheetNames
 
   const metricsSheetName = options.metricsSheet || findMetricsSheet(sheetNames)
@@ -62,7 +62,7 @@ export async function parseExcel(
 }
 
 export function getAvailableMonths(buffer: Buffer): string[] {
-  const workbook = XLSX.read(buffer, { type: 'buffer', cellDates: true })
+  const workbook = XLSX.read(buffer, { type: 'buffer' })
   const metricsSheetName = findMetricsSheet(workbook.SheetNames)
   const sheet = workbook.Sheets[metricsSheetName]
   const data = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: null })
@@ -210,10 +210,19 @@ function parseMetricsSheet(
 function parseDateFromString(dateValue: unknown): string | null {
   if (dateValue === null || dateValue === undefined) return null
 
-  // Handle JavaScript Date objects (returned by xlsx when cellDates: true)
+  // Handle JavaScript Date objects
   if (dateValue instanceof Date) {
-    const m = dateValue.getMonth() + 1
-    const y = dateValue.getFullYear()
+    const m = dateValue.getUTCMonth() + 1
+    const y = dateValue.getUTCFullYear()
+    return `${y}-${String(m).padStart(2, '0')}-01`
+  }
+
+  // Handle Excel serial date numbers (e.g., 46395 for April 21, 2026)
+  // These appear when a cell has a date format but cellDates is not enabled
+  if (typeof dateValue === 'number') {
+    const date = new Date((dateValue - 25569) * 86400 * 1000)
+    const m = date.getUTCMonth() + 1
+    const y = date.getUTCFullYear()
     return `${y}-${String(m).padStart(2, '0')}-01`
   }
 
