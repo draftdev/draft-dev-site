@@ -68,23 +68,14 @@ export function getAvailableMonths(buffer: Buffer): string[] {
   const data = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: null })
 
   const months: string[] = []
-  const monthPattern = /([A-Za-z]+)\s*\d*[,\s-]*(\d{4})/
-
   for (const row of data) {
-    const dateStr = String(row['Date'] || '')
-    const match = dateStr.match(monthPattern)
-    if (match) {
-      const abbr = match[1].substring(0, 3)
-      const year = match[2]
-      const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      const monthNum = monthNames.findIndex(m => m.toLowerCase() === abbr.toLowerCase()) + 1
-      if (monthNum > 0) {
-        const key = `${year}-${String(monthNum).padStart(2, '0')}`
-        if (!months.includes(key)) months.push(key)
-      }
+    if (row['Date'] === null || row['Date'] === undefined) continue
+    const parsed = parseDateFromString(row['Date'])
+    if (parsed) {
+      const key = parsed.substring(0, 7) // "YYYY-MM"
+      if (!months.includes(key)) months.push(key)
     }
   }
-
   return months
 }
 
@@ -134,17 +125,14 @@ function parseMetricsSheet(
   }
 
   const [year, monthNum] = month.split('-')
-  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  const monthName = monthNames[parseInt(monthNum) - 1]
+  const targetPrefix = `${year}-${monthNum.padStart(2, '0')}`
 
   // Find last row that matches current month
   let currentMonthIndex = -1
   let inlineNote: string | null = null
   for (let i = 0; i < data.length; i++) {
-    const dateStr = String(data[i]['Date'] || '')
-    const matches =
-      dateStr.toLowerCase().includes(monthName.toLowerCase()) && dateStr.toLowerCase().includes(year)
-    if (matches) {
+    const parsed = parseDateFromString(data[i]['Date'])
+    if (parsed && parsed.startsWith(targetPrefix)) {
       currentMonthIndex = i
       if (data[i]['Notes']) inlineNote = String(data[i]['Notes'])
     }
@@ -154,10 +142,9 @@ function parseMetricsSheet(
 
   for (let i = 0; i < data.length; i++) {
     const row = data[i]
-    const dateStr = String(row['Date'] || '')
-    if (!dateStr) continue
+    if (row['Date'] === null || row['Date'] === undefined) continue
 
-    const parsedDate = parseDateFromString(dateStr)
+    const parsedDate = parseDateFromString(row['Date'])
     if (!parsedDate) continue
 
     const isCurrentMonth = i === currentMonthIndex
@@ -220,8 +207,26 @@ function parseMetricsSheet(
   return result
 }
 
-function parseDateFromString(dateStr: string): string | null {
+function parseDateFromString(dateValue: unknown): string | null {
+  if (dateValue === null || dateValue === undefined) return null
+
+  // Handle JavaScript Date objects (returned by xlsx when cellDates: true)
+  if (dateValue instanceof Date) {
+    const m = dateValue.getMonth() + 1
+    const y = dateValue.getFullYear()
+    return `${y}-${String(m).padStart(2, '0')}-01`
+  }
+
+  const dateStr = String(dateValue).trim()
   if (!dateStr) return null
+
+  // Handle M/D/YYYY or MM/DD/YYYY numeric format (e.g., "3/18/2026", "4/14/2026")
+  const numericMatch = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/)
+  if (numericMatch) {
+    const monthNum = parseInt(numericMatch[1], 10)
+    return `${numericMatch[3]}-${String(monthNum).padStart(2, '0')}-01`
+  }
+
   const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   const patterns = [
     /([A-Za-z]+)\s+\d+(?:st|nd|rd|th)?,?\s+(\d{4})/,
