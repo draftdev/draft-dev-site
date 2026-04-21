@@ -2,6 +2,90 @@
 
 import { useState, useCallback, useRef } from 'react'
 
+// Strips xl/media/ files that belong only to OTHER months' sheets, keeping the
+// target month's embedded screenshots. This keeps the upload under Netlify's
+// ~4.5 MB binary request limit without losing the images we actually need.
+async function slimXlsxForMonth(file: File, targetMonth: string): Promise<File> {
+  const { unzipSync, strFromU8, zipSync } = await import('fflate')
+
+  const [year, monthNum] = targetMonth.split('-')
+  const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+  const monthName = MONTH_NAMES[parseInt(monthNum) - 1]
+
+  let entries: ReturnType<typeof unzipSync>
+  try {
+    entries = unzipSync(new Uint8Array(await file.arrayBuffer()))
+  } catch {
+    return file // not a valid ZIP — pass through unchanged
+  }
+
+  // 1. Find the review sheet for the target month in workbook.xml
+  const wbXmlEntry = entries['xl/workbook.xml']
+  if (!wbXmlEntry) return file
+  const wbXml = strFromU8(wbXmlEntry)
+  const sheetList = [...wbXml.matchAll(/<sheet\s[^>]*name="([^"]*)"[^>]*r:id="([^"]*)"/g)]
+
+  let targetRId: string | null = null
+  for (const [, name, rId] of sheetList) {
+    const l = name.toLowerCase()
+    if (
+      name === targetMonth ||
+      (l.includes(monthName.toLowerCase()) && l.includes(year)) ||
+      (l.includes('review') && l.includes(monthName.toLowerCase()))
+    ) {
+      targetRId = rId
+      break
+    }
+  }
+  if (!targetRId) return file // sheet not found — pass through
+
+  // 2. Map rId → worksheet file via workbook.xml.rels
+  const wbRelsEntry = entries['xl/_rels/workbook.xml.rels']
+  if (!wbRelsEntry) return file
+  const wbRels = strFromU8(wbRelsEntry)
+  const rIdToFile: Record<string, string> = {}
+  for (const m of wbRels.matchAll(/Id="([^"]*)"[^>]*Target="([^"]*)"/g)) {
+    rIdToFile[m[1]] = m[2]
+  }
+  const sheetFile = rIdToFile[targetRId] // e.g. "worksheets/sheet3.xml"
+  if (!sheetFile) return file
+
+  const sheetNum = sheetFile.match(/sheet(\d+)\.xml$/)?.[1]
+  if (!sheetNum) return file
+
+  // 3. Find the drawing for that sheet via its rels file
+  const sheetRelsKey = `xl/worksheets/_rels/sheet${sheetNum}.xml.rels`
+  const sheetRelsEntry = entries[sheetRelsKey]
+  const keepMedia = new Set<string>()
+  if (sheetRelsEntry) {
+    const sheetRels = strFromU8(sheetRelsEntry)
+    const drawingMatch = sheetRels.match(/Target="[^"]*drawings\/drawing(\d+)\.xml"/)
+    if (drawingMatch) {
+      // 4. Collect media files referenced by that drawing
+      const drawRelsKey = `xl/drawings/_rels/drawing${drawingMatch[1]}.xml.rels`
+      const drawRelsEntry = entries[drawRelsKey]
+      if (drawRelsEntry) {
+        const drawRels = strFromU8(drawRelsEntry)
+        for (const m of drawRels.matchAll(/Target="[^"]*\/media\/([^"]+)"/g)) {
+          keepMedia.add(`xl/media/${m[1]}`)
+        }
+      }
+    }
+  }
+
+  // 5. Rebuild ZIP keeping only the media files we want
+  const slim: typeof entries = {}
+  for (const [path, data] of Object.entries(entries)) {
+    if (path.startsWith('xl/media/') && !keepMedia.has(path)) continue
+    slim[path] = data
+  }
+
+  const packed = zipSync(slim)
+  return new File([packed.buffer as ArrayBuffer], file.name, {
+    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  })
+}
+
 export default function AnalyticsReportBuilder() {
   const [xlsxFile, setXlsxFile] = useState<File | null>(null)
   const [logoFile, setLogoFile] = useState<File | null>(null)
@@ -62,24 +146,15 @@ export default function AnalyticsReportBuilder() {
     setDownloadUrl(null)
 
     // Netlify functions have a ~4.5 MB binary request limit (6 MB base64-encoded).
-    // Large xlsx files balloon because of embedded screenshots in xl/media/.
-    // Re-serialising through the xlsx library strips those binary blobs while
-    // keeping all cell values, reducing a 4-5 MB file to under 200 KB.
+    // Large xlsx files balloon because of screenshots embedded across many month tabs.
+    // Strip media from all sheets EXCEPT the target month so uploads stay small while
+    // preserving the screenshots that actually appear in the report.
     let fileToUpload: File = xlsxFile
     if (xlsxFile.size > 3.5 * 1024 * 1024) {
       try {
-        const XLSX = (await import('xlsx')).default
-        const ab = await xlsxFile.arrayBuffer()
-        const wb = XLSX.read(ab, { type: 'array' })
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const out: any = XLSX.write(wb, { bookType: 'xlsx', type: 'array' })
-        fileToUpload = new File(
-          [out as ArrayBuffer],
-          xlsxFile.name,
-          { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
-        )
+        fileToUpload = await slimXlsxForMonth(xlsxFile, month)
       } catch {
-        // fall back to original file; the server may still error on very large files
+        // pass through; server will likely 500 on very large files but we tried
       }
     }
 

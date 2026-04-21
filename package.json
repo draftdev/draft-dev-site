@@ -25,6 +25,7 @@
     "dayjs": "^1.11.13",
     "ejs": "^5.0.1",
     "feed": "^5.1.0",
+    "fflate": "^0.8.2",
     "framer-motion": "^12.23.11",
     "html-react-parser": "^5.2.6",
     "lucide-react": "^0.544.0",
