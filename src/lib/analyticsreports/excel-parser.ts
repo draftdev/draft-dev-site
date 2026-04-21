@@ -363,11 +363,17 @@ function extractImagesFromExcel(buffer: Buffer, sheetNumber: number): Record<str
     const zip = new AdmZip(buffer)
     const entries = zip.getEntries()
 
+    // Cap total embedded image data to ~2MB (raw bytes) to stay within Netlify's 6MB response limit.
+    // Base64 encoding adds ~33% overhead, so 2MB raw → ~2.7MB in HTML.
+    const MAX_MEDIA_BYTES = 2 * 1024 * 1024
+    let totalMediaBytes = 0
     const mediaFiles: Record<string, { data: string; name: string }> = {}
     for (const entry of entries) {
       if (entry.entryName.startsWith('xl/media/')) {
         const name = path.basename(entry.entryName)
         const imageData = entry.getData()
+        if (totalMediaBytes + imageData.length > MAX_MEDIA_BYTES) continue
+        totalMediaBytes += imageData.length
         const ext = path.extname(name).toLowerCase().slice(1)
         const mime = ext === 'png' ? 'image/png' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : `image/${ext}`
         mediaFiles[name] = { data: `data:${mime};base64,${imageData.toString('base64')}`, name }

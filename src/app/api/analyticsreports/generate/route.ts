@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { createHash } from 'crypto'
 import { generateReport } from '@/lib/analyticsreports/generator'
 
+export const maxDuration = 60
+
 const SALT = '-draft-analytics-tool-2025'
 
 function verifyAuth(request: NextRequest): boolean {
