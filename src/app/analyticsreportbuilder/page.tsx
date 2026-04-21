@@ -61,8 +61,30 @@ export default function AnalyticsReportBuilder() {
     setError(null)
     setDownloadUrl(null)
 
+    // Netlify functions have a ~4.5 MB binary request limit (6 MB base64-encoded).
+    // Large xlsx files balloon because of embedded screenshots in xl/media/.
+    // Re-serialising through the xlsx library strips those binary blobs while
+    // keeping all cell values, reducing a 4-5 MB file to under 200 KB.
+    let fileToUpload: File = xlsxFile
+    if (xlsxFile.size > 3.5 * 1024 * 1024) {
+      try {
+        const XLSX = (await import('xlsx')).default
+        const ab = await xlsxFile.arrayBuffer()
+        const wb = XLSX.read(ab, { type: 'array' })
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const out: any = XLSX.write(wb, { bookType: 'xlsx', type: 'array' })
+        fileToUpload = new File(
+          [out as ArrayBuffer],
+          xlsxFile.name,
+          { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
+        )
+      } catch {
+        // fall back to original file; the server may still error on very large files
+      }
+    }
+
     const fd = new FormData()
-    fd.append('file', xlsxFile)
+    fd.append('file', fileToUpload)
     fd.append('month', month)
     fd.append('clientName', clientName || 'Client')
     if (logoFile) fd.append('logo', logoFile)
