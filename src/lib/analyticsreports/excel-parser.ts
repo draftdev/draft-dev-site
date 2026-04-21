@@ -39,7 +39,7 @@ export async function parseExcel(
   month: string,
   options: { metricsSheet?: string; reviewSheet?: string; metricMappings?: Record<string, unknown> } = {}
 ): Promise<ExcelParseResult> {
-  const workbook = XLSX.read(buffer, { type: 'buffer' })
+  const workbook = XLSX.read(buffer, { type: 'buffer', cellDates: true })
   const sheetNames = workbook.SheetNames
 
   const metricsSheetName = options.metricsSheet || findMetricsSheet(sheetNames)
@@ -62,7 +62,7 @@ export async function parseExcel(
 }
 
 export function getAvailableMonths(buffer: Buffer): string[] {
-  const workbook = XLSX.read(buffer, { type: 'buffer' })
+  const workbook = XLSX.read(buffer, { type: 'buffer', cellDates: true })
   const metricsSheetName = findMetricsSheet(workbook.SheetNames)
   const sheet = workbook.Sheets[metricsSheetName]
   const data = XLSX.utils.sheet_to_json<Record<string, unknown>>(sheet, { defval: null })
