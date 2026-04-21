@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= clientName %> - Analytics Report <%= reportMonth %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    <%= tailwindCSS %>
+  </style>
+  <style>
+    /* Custom styles */
+    :root {
+      --brand-color: <%= brandColor || '#654B73' %>;
+    }
+
+    body {
+      font-family: 'Fira Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .brand-bg {
+      background-color: var(--brand-color);
+    }
+
+    .brand-text {
+      color: var(--brand-color);
+    }
+
+    .brand-border {
+      border-color: var(--brand-color);
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    @media print {
+      .page-break {
+        page-break-before: always;
+      }
+      .previous-reports-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-50 min-h-screen">
+  <%- include('partials/header', {
+    clientName: clientName,
+    reportMonth: reportMonth,
+    generatedDate: generatedDate
+  }) %>
+
+  <main class="max-w-7xl mx-auto px-6">
+    <% if (sections.includes('metrics') && metricsByCategory && Object.keys(metricsByCategory).length > 0) { %>
+      <%- include('partials/metrics-summary', {
+        metricsByCategory: metricsByCategory
+      }) %>
+    <% } %>
+
+    <% if (notes && notes.length > 0) { %>
+      <%- include('partials/highlights-lowlights', {
+        notes: notes,
+        screenshots: screenshots
+      }) %>
+    <% } %>
+
+    <% if (sections.includes('charts') && charts && charts.length > 0) { %>
+      <%- include('partials/charts', {
+        charts: charts
+      }) %>
+    <% } %>
+
+    <% if (sections.includes('screenshots') && notes && notes.length > 0) { %>
+      <%- include('partials/screenshots-notes', {
+        notes: notes,
+        screenshots: screenshots
+      }) %>
+    <% } %>
+  </main>
+
+  <%- include('partials/footer', {
+    clientName: clientName,
+    reportMonth: reportMonth
+  }) %>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "analyticsreports",
+  "version": "1.0.0",
+  "description": "CLI tool that generates standalone HTML reports from CSV data and screenshots",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "generate": "node src/index.js generate",
+    "new-client": "node src/index.js new-client",
+    "list-clients": "node src/index.js list-clients",
+    "build:css": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --minify"
+  },
+  "bin": {
+    "analyticsreports": "./src/index.js"
+  },
+  "keywords": [
+    "analytics",
+    "reports",
+    "csv",
+    "charts",
+    "html"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "commander": "^12.0.0",
+    "ejs": "^3.1.9",
+    "papaparse": "^5.4.1",
+    "puppeteer": "^24.15.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

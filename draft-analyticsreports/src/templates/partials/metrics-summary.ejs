@@ -1,0 +1,138 @@
+<section class="py-10">
+  <h2 class="brand-section-title mb-8">Key Metrics</h2>
+
+  <%
+    // Flatten all metrics from all categories into a single array
+    const allMetrics = [];
+    Object.keys(metricsByCategory).forEach(function(category) {
+      metricsByCategory[category].forEach(function(metric) {
+        allMetrics.push(metric);
+      });
+    });
+
+    // Define the desired order of metrics
+    const metricOrder = [
+      'Pieces Delivered',
+      'Pieces Published',
+      'Avg. Time to Publish (days)',
+      'Monthly Users',
+      'Backlinks',
+      'LLM Response Presence',
+      'Citations of Website',
+      'Citation Consistency',
+      'Domain Rating',
+      'SEO Keywords (Position 1-3)',
+      'SEO Keywords (Position 4-10)',
+      'Page Health Score'
+    ];
+
+    // Sort metrics according to the defined order
+    allMetrics.sort(function(a, b) {
+      const indexA = metricOrder.indexOf(a.metricName);
+      const indexB = metricOrder.indexOf(b.metricName);
+
+      // If metric not in order list, put it at the end
+      const orderA = indexA === -1 ? 999 : indexA;
+      const orderB = indexB === -1 ? 999 : indexB;
+
+      return orderA - orderB;
+    });
+  %>
+
+  <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.5rem;">
+    <% allMetrics.forEach(function(metric) { %>
+      <div class="brand-card p-3 hover:shadow-md transition-shadow duration-200" style="position: relative; overflow: visible;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <p class="text-xs font-medium text-brand-500 leading-tight"><%= metric.metricName %></p>
+          <% if (metric.metricName === 'LLM Response Presence') { %>
+            <div style="position: relative; display: inline-block; margin-left: 4px;">
+              <svg
+                onmouseenter="document.getElementById('llm-tooltip').style.display='block';"
+                onmouseleave="document.getElementById('llm-tooltip').style.display='none';"
+                style="width: 14px; height: 14px; cursor: help; color: #9CA3AF;"
+                fill="currentColor"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+              <div
+                id="llm-tooltip"
+                onmouseenter="this.style.display='block';"
+                onmouseleave="this.style.display='none';"
+                style="display: none; position: absolute; bottom: calc(100% + 8px); right: -10px; padding: 8px 12px; background-color: #1F2937; color: white; font-size: 12px; line-height: 1.4; border-radius: 6px; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 240px;">
+                Measures how often a specific brand or content appears anywhere within an AI-generated answer.
+                <div style="position: absolute; top: 100%; right: 20px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #1F2937;"></div>
+              </div>
+            </div>
+          <% } %>
+          <% if (metric.metricName === 'Citations of Website') { %>
+            <div style="position: relative; display: inline-block; margin-left: 4px;">
+              <svg
+                onmouseenter="document.getElementById('citations-tooltip').style.display='block';"
+                onmouseleave="document.getElementById('citations-tooltip').style.display='none';"
+                style="width: 14px; height: 14px; cursor: help; color: #9CA3AF;"
+                fill="currentColor"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+              <div
+                id="citations-tooltip"
+                onmouseenter="this.style.display='block';"
+                onmouseleave="this.style.display='none';"
+                style="display: none; position: absolute; bottom: calc(100% + 8px); right: -10px; padding: 8px 12px; background-color: #1F2937; color: white; font-size: 12px; line-height: 1.4; border-radius: 6px; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 240px;">
+                Tracks instances where the LLM provides a direct reference or link to the original source, acknowledging its use.
+                <div style="position: absolute; top: 100%; right: 20px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #1F2937;"></div>
+              </div>
+            </div>
+          <% } %>
+          <% if (metric.metricName === 'Citation Consistency') { %>
+            <div style="position: relative; display: inline-block; margin-left: 4px;">
+              <svg
+                onmouseenter="document.getElementById('consistency-tooltip').style.display='block';"
+                onmouseleave="document.getElementById('consistency-tooltip').style.display='none';"
+                style="width: 14px; height: 14px; cursor: help; color: #9CA3AF;"
+                fill="currentColor"
+                viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+              <div
+                id="consistency-tooltip"
+                onmouseenter="this.style.display='block';"
+                onmouseleave="this.style.display='none';"
+                style="display: none; position: absolute; bottom: calc(100% + 8px); right: -10px; padding: 8px 12px; background-color: #1F2937; color: white; font-size: 12px; line-height: 1.4; border-radius: 6px; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 280px;">
+                The percentage of responses that have cited the source. This is calculated by dividing the number of responses that have cited the source by the total number of responses (that cited any source).
+                <div style="position: absolute; top: 100%; right: 20px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 6px solid #1F2937;"></div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+        <div class="mt-1 flex items-baseline flex-wrap">
+          <p class="text-lg font-bold text-brand-900">
+            <%= typeof metric.value === 'number' ? metric.value.toLocaleString() : metric.value %><%= metric.isPercentage ? '%' : '' %>
+          </p>
+          <% if (metric.change && metric.change.direction !== 'neutral') { %>
+            <%
+              // For metrics where lower is better, invert the color logic
+              const isGood = metric.lowerIsBetter ? metric.change.direction === 'down' : metric.change.direction === 'up';
+              const colorClass = isGood ? 'text-emerald-600' : 'text-rose-600';
+            %>
+            <span class="ml-1 text-xs font-medium <%= colorClass %>">
+              <% if (metric.change.direction === 'up') { %>
+                <svg class="inline w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                </svg>
+              <% } else { %>
+                <svg class="inline w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              <% } %>
+              <%= metric.change.formatted %>
+            </span>
+          <% } %>
+        </div>
+        <% if (metric.previousValue) { %>
+          <p class="mt-1 text-xs text-brand-400">Prev: <%= typeof metric.previousValue === 'number' ? metric.previousValue.toLocaleString() : metric.previousValue %><%= metric.isPercentage ? '%' : '' %></p>
+        <% } %>
+      </div>
+    <% }); %>
+  </div>
+</section>

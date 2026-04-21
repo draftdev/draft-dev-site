@@ -1,0 +1,83 @@
+<%
+  // Group charts by size for layout
+  const largeCharts = charts.filter(c => c.size === 'large');
+  const smallCharts = charts.filter(c => c.size === 'small');
+  const mediumCharts = charts.filter(c => c.size === 'medium');
+%>
+
+<% if (charts && charts.length > 0) { %>
+<section class="py-10">
+  <h2 class="brand-section-title mb-8">Charts</h2>
+
+  <!-- Row 1: Large chart + 4 small charts in 2x2 grid -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+    <!-- Large chart (left side, 1/2 width) -->
+    <% if (largeCharts.length > 0) { %>
+      <div>
+        <div class="brand-card p-6">
+          <div style="height: 400px;">
+            <canvas id="<%= largeCharts[0].id %>"></canvas>
+          </div>
+          <% if (largeCharts[0].description) { %>
+            <p class="mt-4 text-sm" style="color: #8B7BA8; font-style: italic;"><%= largeCharts[0].description %></p>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+
+    <!-- Small charts (right side, 1/2 width, arranged in 2x2 grid) -->
+    <% if (smallCharts.length > 0) { %>
+      <div>
+        <div class="grid grid-cols-2 gap-3">
+          <% smallCharts.forEach(function(chart) { %>
+            <div class="brand-card flex flex-col" style="padding: 1.22rem;">
+              <div style="height: 180px;">
+                <canvas id="<%= chart.id %>"></canvas>
+              </div>
+              <% if (chart.description) { %>
+                <p class="mt-1 text-[10px] leading-tight" style="color: #8B7BA8; font-style: italic;"><%= chart.description %></p>
+              <% } %>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- Row 2: Medium charts (2 tiles, 1/2 width each) -->
+  <% if (mediumCharts.length > 0) { %>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <% mediumCharts.forEach(function(chart) { %>
+        <div class="brand-card p-6">
+          <div style="height: 300px;">
+            <canvas id="<%= chart.id %>"></canvas>
+          </div>
+          <% if (chart.description) { %>
+            <p class="mt-4 text-sm" style="color: #8B7BA8; font-style: italic;"><%= chart.description %></p>
+          <% } %>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Register the datalabels plugin
+    Chart.register(ChartDataLabels);
+
+    <% charts.forEach(function(chart) { %>
+      new Chart(
+        document.getElementById('<%= chart.id %>'),
+        <%- JSON.stringify(chart.config) %>
+      );
+    <% }); %>
+
+    // Signal that all charts have been initialized
+    // Used by PDF generator to ensure charts are fully rendered
+    window.__chartsReady = true;
+  });
+</script>
+<% } %>

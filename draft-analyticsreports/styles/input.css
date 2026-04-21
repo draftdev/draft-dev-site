@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .brand-gradient-bg {
+    background: linear-gradient(135deg, #8B7399 0%, #6B5478 50%, #4A3857 100%);
+  }
+
+  .brand-gradient-cta {
+    background: linear-gradient(135deg, #7B6488 0%, #5B4468 100%);
+  }
+
+  .brand-card {
+    @apply bg-white rounded-xl shadow-sm border border-brand-100;
+  }
+
+  .brand-card-hover {
+    @apply brand-card transition-all duration-200 hover:shadow-md hover:border-brand-200;
+  }
+
+  .brand-section-title {
+    @apply text-2xl font-semibold text-brand-900;
+  }
+
+  .brand-btn {
+    @apply px-6 py-2.5 rounded-lg font-medium text-white transition-all duration-200;
+    background: linear-gradient(135deg, #7B6488 0%, #5B4468 100%);
+  }
+
+  .brand-btn:hover {
+    background: linear-gradient(135deg, #8B7498 0%, #6B5478 100%);
+    @apply shadow-md;
+  }
+}

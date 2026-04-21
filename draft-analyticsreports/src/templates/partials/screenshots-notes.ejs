@@ -1,0 +1,138 @@
+<%
+  // Filter out highlights and lowlights (handled by highlights-lowlights.ejs)
+  const filteredNotes = (notes || []).filter(note =>
+    note.section !== 'highlights' && note.section !== 'lowlights'
+  );
+
+  // Helper function to convert URLs to clickable links
+  function convertUrlsToLinks(text) {
+    if (!text) return '';
+    // Match URLs (http, https, and www)
+    const urlPattern = /(https?:\/\/[^\s<>"']+|www\.[^\s<>"']+)/g;
+    return text.replace(urlPattern, function(url) {
+      // Add https:// to www links
+      const href = url.startsWith('www.') ? 'https://' + url : url;
+      return `<a href="${href}" target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-700 underline">${url}</a>`;
+    });
+  }
+
+  // Helper function to format text with bullet points
+  function formatTextWithBullets(text) {
+    if (!text) return '';
+
+    // Split by newlines to check if we have multiple lines
+    const lines = text.split(/\n+/).map(line => line.trim()).filter(line => line.length > 0);
+
+    // Convert URLs to links in each line
+    const linesWithLinks = lines.map(line => convertUrlsToLinks(line));
+
+    // If there's only one line, return it as-is (with links)
+    if (linesWithLinks.length === 1) {
+      return linesWithLinks[0];
+    }
+
+    // Multiple lines - convert to a bullet list
+    return '<ul class="list-disc list-inside space-y-1">' +
+           linesWithLinks.map(line => `<li>${line}</li>`).join('') +
+           '</ul>';
+  }
+%>
+<% if (filteredNotes && filteredNotes.length > 0) { %>
+<section class="py-10">
+  <h2 class="brand-section-title mb-8">Notes & Questions</h2>
+
+  <!-- Lightbox Modal for Notes & Questions -->
+  <div id="lightbox-overlay-notes" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden items-center justify-center" onclick="closeLightboxNotes(event)">
+    <button onclick="closeLightboxNotes(event)" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-gray-300 z-10">&times;</button>
+    <img id="lightbox-image-notes" src="" alt="Screenshot" class="max-w-full max-h-full object-contain" onclick="event.stopPropagation()" />
+  </div>
+
+  <script>
+    function openLightboxNotes(imageSrc) {
+      const overlay = document.getElementById('lightbox-overlay-notes');
+      const image = document.getElementById('lightbox-image-notes');
+      image.src = imageSrc;
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightboxNotes(event) {
+      const overlay = document.getElementById('lightbox-overlay-notes');
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightboxNotes(event);
+      }
+    });
+  </script>
+
+  <%
+    // Group notes by section
+    const notesBySection = filteredNotes.reduce((acc, note) => {
+      const section = note.section || 'general';
+      if (!acc[section]) acc[section] = [];
+      acc[section].push(note);
+      return acc;
+    }, {});
+  %>
+
+  <% Object.keys(notesBySection).forEach(function(section) { %>
+    <div class="mb-10">
+      <div class="space-y-6">
+        <% notesBySection[section].forEach(function(note) { %>
+          <div class="brand-card overflow-hidden">
+            <!-- Text content first -->
+            <div class="p-6">
+              <div class="flex items-start justify-between">
+                <div>
+                  <% if (note.title) { %>
+                    <h4 class="text-lg font-semibold text-brand-900"><%= note.title %></h4>
+                  <% } %>
+                  <% if (note.date) { %>
+                    <p class="text-sm text-brand-400 mt-1"><%= note.date %></p>
+                  <% } %>
+                </div>
+              </div>
+              <% if (note.note) { %>
+                <div class="mt-3 text-brand-700 leading-relaxed"><%- formatTextWithBullets(note.note) %></div>
+              <% } %>
+            </div>
+            <!-- Screenshot(s) below text -->
+            <% if (note.screenshotFile && screenshots[note.screenshotFile]) { %>
+              <div class="bg-brand-50 border-t border-brand-100">
+                <img
+                  src="<%= screenshots[note.screenshotFile] %>"
+                  alt="<%= note.title %>"
+                  class="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity"
+                  style="object-fit: cover;"
+                  onclick="openLightboxNotes('<%= screenshots[note.screenshotFile] %>')"
+                />
+              </div>
+            <% } %>
+            <!-- Additional screenshots (if available) -->
+            <% if (note.screenshots && note.screenshots.length > 1) { %>
+              <% for (let i = 1; i < note.screenshots.length; i++) { %>
+                <div class="bg-brand-50 border-t border-brand-100">
+                  <img
+                    src="<%= note.screenshots[i].data %>"
+                    alt="<%= note.title %>"
+                    class="w-full h-auto cursor-pointer hover:opacity-95 transition-opacity"
+                    style="object-fit: cover;"
+                    onclick="openLightboxNotes('<%= note.screenshots[i].data %>')"
+                  />
+                </div>
+              <% } %>
+            <% } %>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  <% }); %>
+</section>
+<% } %>
