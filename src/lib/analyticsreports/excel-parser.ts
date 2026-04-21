@@ -1,6 +1,7 @@
 import * as XLSX from 'xlsx'
 import AdmZip from 'adm-zip'
 import path from 'path'
+import sharp from 'sharp'
 import type { MetricData, NoteData, ChangeData } from './csv-parser'
 
 interface ImageData {
@@ -52,7 +53,7 @@ export async function parseExcel(
   const notes = reviewSheet ? parseReviewSheet(reviewSheet, month) : []
 
   const sheetIndex = reviewSheetName ? sheetNames.indexOf(reviewSheetName) : -1
-  const images = sheetIndex >= 0 ? extractImagesFromExcel(buffer, sheetIndex + 1) : {}
+  const images = sheetIndex >= 0 ? await extractImagesFromExcel(buffer, sheetIndex + 1) : {}
 
   if (Object.keys(images).length > 0) {
     associateImagesWithNotes(notes, images)
@@ -357,27 +358,35 @@ function generateTitle(text: string): string {
   return fallback.trim() || words.slice(0, 5).join(' ')
 }
 
-function extractImagesFromExcel(buffer: Buffer, sheetNumber: number): Record<string, ImageData> {
+async function extractImagesFromExcel(buffer: Buffer, sheetNumber: number): Promise<Record<string, ImageData>> {
   const images: Record<string, ImageData> = {}
   try {
     const zip = new AdmZip(buffer)
     const entries = zip.getEntries()
 
-    // Cap total embedded image data to ~2MB (raw bytes) to stay within Netlify's 6MB response limit.
-    // Base64 encoding adds ~33% overhead, so 2MB raw → ~2.7MB in HTML.
-    const MAX_MEDIA_BYTES = 2 * 1024 * 1024
-    let totalMediaBytes = 0
+    // Compress each image with sharp (resize to max 1200px wide, JPEG at 75% quality).
+    // Falls back to original data if sharp can't handle the format (e.g. EMF/WMF).
+    // Cap total compressed payload at 3MB to stay well under Netlify's 6MB response limit.
+    const MAX_TOTAL_BYTES = 3 * 1024 * 1024
+    let totalBytes = 0
     const mediaFiles: Record<string, { data: string; name: string }> = {}
     for (const entry of entries) {
-      if (entry.entryName.startsWith('xl/media/')) {
-        const name = path.basename(entry.entryName)
-        const imageData = entry.getData()
-        if (totalMediaBytes + imageData.length > MAX_MEDIA_BYTES) continue
-        totalMediaBytes += imageData.length
-        const ext = path.extname(name).toLowerCase().slice(1)
-        const mime = ext === 'png' ? 'image/png' : ext === 'jpg' || ext === 'jpeg' ? 'image/jpeg' : `image/${ext}`
-        mediaFiles[name] = { data: `data:${mime};base64,${imageData.toString('base64')}`, name }
+      if (!entry.entryName.startsWith('xl/media/')) continue
+      const name = path.basename(entry.entryName)
+      const raw = entry.getData()
+      let compressed: Buffer
+      try {
+        compressed = await sharp(raw)
+          .resize(1200, 1200, { fit: 'inside', withoutEnlargement: true })
+          .jpeg({ quality: 75 })
+          .toBuffer()
+      } catch {
+        // Non-raster formats (EMF, WMF, SVG) — skip them
+        continue
       }
+      if (totalBytes + compressed.length > MAX_TOTAL_BYTES) continue
+      totalBytes += compressed.length
+      mediaFiles[name] = { data: `data:image/jpeg;base64,${compressed.toString('base64')}`, name }
     }
 
     // Find drawing rels for this sheet
