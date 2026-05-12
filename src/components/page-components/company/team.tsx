@@ -63,9 +63,9 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/robin_fussell_draft_dev.png',
   },
   {
-    name: 'Kevin Graham',
+    name: 'Ofer Prossner',
     description: 'Content Strategist',
-    img: '/draft/team/kevin_graham_draft_dev.jpg',
+    img: '/draft/team/ofer_prossner_draft_dev.jpg',
   },
   {
     name: 'Aniket Bhattacharyea',
