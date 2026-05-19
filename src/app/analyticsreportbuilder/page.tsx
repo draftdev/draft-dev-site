@@ -2,9 +2,35 @@
 
 import { useState, useCallback, useRef } from 'react'
 
-// Strips xl/media/ files that belong only to OTHER months' sheets, keeping the
-// target month's embedded screenshots. This keeps the upload under Netlify's
-// ~4.5 MB binary request limit without losing the images we actually need.
+// Compress a raster image using the browser Canvas API (returns JPEG bytes).
+// Falls back to the original data if the image can't be decoded.
+async function compressImageInBrowser(data: Uint8Array): Promise<Uint8Array> {
+  return new Promise((resolve) => {
+    const blob = new Blob([data as BlobPart])
+    const url = URL.createObjectURL(blob)
+    const img = new Image()
+    img.onload = () => {
+      URL.revokeObjectURL(url)
+      const MAX = 1200
+      const scale = Math.min(1, MAX / img.naturalWidth, MAX / img.naturalHeight)
+      const canvas = document.createElement('canvas')
+      canvas.width = Math.round(img.naturalWidth * scale)
+      canvas.height = Math.round(img.naturalHeight * scale)
+      const ctx = canvas.getContext('2d')
+      if (!ctx) { resolve(data); return }
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+      canvas.toBlob(async (b) => {
+        if (b) resolve(new Uint8Array(await b.arrayBuffer()))
+        else resolve(data)
+      }, 'image/jpeg', 0.75)
+    }
+    img.onerror = () => { URL.revokeObjectURL(url); resolve(data) }
+    img.src = url
+  })
+}
+
+// Strips xl/media/ files that belong only to OTHER months' sheets AND compresses
+// the kept images client-side so the upload stays under Netlify's ~4.5 MB limit.
 async function slimXlsxForMonth(file: File, targetMonth: string): Promise<File> {
   const { unzipSync, strFromU8, zipSync } = await import('fflate')
 
@@ -73,15 +99,20 @@ async function slimXlsxForMonth(file: File, targetMonth: string): Promise<File> 
     }
   }
 
-  // 5. Rebuild ZIP keeping only the media files we want
+  // 5. Rebuild ZIP: strip other months' media and compress kept images
   const slim: typeof entries = {}
   for (const [path, data] of Object.entries(entries)) {
-    if (path.startsWith('xl/media/') && !keepMedia.has(path)) continue
-    slim[path] = data
+    if (path.startsWith('xl/media/')) {
+      if (!keepMedia.has(path)) continue
+      // Compress raster images so the upload stays under Netlify's size limit
+      slim[path] = await compressImageInBrowser(data)
+    } else {
+      slim[path] = data
+    }
   }
 
   const packed = zipSync(slim)
-  return new File([packed.buffer as ArrayBuffer], file.name, {
+  return new File([packed as BlobPart], file.name, {
     type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   })
 }
@@ -147,14 +178,13 @@ export default function AnalyticsReportBuilder() {
 
     // Netlify functions have a ~4.5 MB binary request limit (6 MB base64-encoded).
     // Large xlsx files balloon because of screenshots embedded across many month tabs.
-    // Strip media from all sheets EXCEPT the target month so uploads stay small while
-    // preserving the screenshots that actually appear in the report.
+    // Slim + compress images client-side so the upload stays under the limit.
     let fileToUpload: File = xlsxFile
-    if (xlsxFile.size > 3.5 * 1024 * 1024) {
+    if (xlsxFile.size > 1 * 1024 * 1024) {
       try {
         fileToUpload = await slimXlsxForMonth(xlsxFile, month)
       } catch {
-        // pass through; server will likely 500 on very large files but we tried
+        // pass through original; server may 500 on very large files
       }
     }
 
