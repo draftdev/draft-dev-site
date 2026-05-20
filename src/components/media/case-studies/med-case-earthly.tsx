@@ -14,7 +14,7 @@ const MedCaseEarthly = () => {
                   Earthly
                 </span>{' '}
                 increased its monthly blog visitors by{' '}
-                <span className="bg-gradient-brand px-2 text-white">346%</span>
+                <span className="bg-gradient-brand px-2 text-white">346% </span>
                 with Draft.dev
               </h2>
 

@@ -88,7 +88,7 @@ export default function ForMarketers() {
             {
               title: 'The right content mix for every stage',
               description:
-                'Effective developer marketing strategies combine multiple content types to address different stages of the developer journey. Tutorials and guides build awareness and trust, while comparisons and persuasive pieces drive consideration and decisions. We create the optimal mix of content to engage your audience at every stage and get you visibilty on search engines and LLMs.',
+                'Effective developer marketing strategies combine multiple content types to address different stages of the developer journey. Tutorials and guides build awareness and trust, while comparisons and persuasive pieces drive consideration and decisions. We create the optimal mix of content to engage your audience at every stage and get you visibility on search engines and LLMs.',
               linkText: 'See what we can create for you',
               linkHref: '#what-we-create',
             },

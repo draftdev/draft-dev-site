@@ -77,7 +77,7 @@ const SinglePricingList: React.FC<SinglePricingListProps> = ({
                       understand your brand and tone of voice, ensuring
                       authentic output. We conduct SEO and GEO research, assess
                       your existing content, study your existing marketing
-                      funnel, and delivery a content strategy and roadmap for
+                      funnel, and deliver a content strategy and roadmap for
                       your feedback.
                     </p>
                     <div className="my-8 bg-gray-300" />
