@@ -94,7 +94,7 @@ export default function Home() {
               {
                 title: 'Content strategies for new product releases',
                 description:
-                  'Introduciong a new product or feature means educating a market that does not know it exists yet. We help you build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/GEO insights. ',
+                  'Introducing a new product or feature means educating a market that does not know it exists yet. We help you build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/GEO insights. ',
                 linkText: 'See how we drive awareness',
                 linkHref: '/drive-awareness',
               },
