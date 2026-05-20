@@ -122,6 +122,13 @@ const posts: Post[] = [
       'This guide breaks down 8 demand generation tactics that actually work for B2B SaaS and AI companies.',
     imageUrl: '/site/med-landscape/8_essential_tactics_og_draft_dev.jpg',
   },
+  // {
+  //   id: 14,
+  //   title: 'AEO and GEO for DevTools',
+  //   href: '/aeo-geo-for-devtools',
+  //   description: 'Learn how to implement AEO and GEO strategies for DevTools.',
+  //   imageUrl: '/draft/og/aeo_geo_og_draft_dev.jpg',
+  // },
 
   // More resources...
 ]
