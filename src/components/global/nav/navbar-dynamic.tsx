@@ -194,7 +194,7 @@ function DynamicNavbar() {
     <>
       <div
         ref={wrapperRef}
-        className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-[backdrop-filter]:bg-white/70"
+        className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-backdrop-filter:bg-white/70"
       >
         <Banner
           text="Download the AEO & GEO Guide for DevTools - What AEO & GEO actually mean for developer marketing →"
