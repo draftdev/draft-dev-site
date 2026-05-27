@@ -17,6 +17,22 @@ interface Post {
 const posts: Post[] = [
   {
     id: 1,
+    title: 'AEO and GEO for DevTools',
+    href: '/aeo-geo-for-devtools',
+    description: 'Learn how to implement AEO and GEO strategies for DevTools.',
+    imageUrl: '/draft/og/aeo_geo_og_draft_dev.jpg',
+  },
+  {
+    id: 2,
+    title: 'Developer Marketing Survey 2026',
+    href: '/2026-developer-marketing-survey',
+    description:
+      "We surveyed developer marketing and DevRel leaders across the industry to find out what's actually working.",
+    imageUrl:
+      '/site/med-landscape/2026_developer_marketing_survey_og_draftdev.jpg',
+  },
+  {
+    id: 3,
     title: 'How to Set Up a Content Marketing Engine in the Age of AI',
     href: '/content-marketing-engine',
     description:
@@ -24,7 +40,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content_marketing_engine_og_draft_dev.jpg',
   },
   {
-    id: 2,
+    id: 4,
     title: 'How to Orchestrate Technical Content to Drive Business',
     href: '/orchestrate-technical-content',
     description:
@@ -33,7 +49,7 @@ const posts: Post[] = [
   },
 
   {
-    id: 3,
+    id: 5,
     title:
       'Distributing Content on Social Media and Generating Leads from Gated Assets',
     href: '/distributing-content-on-social-media',
@@ -42,7 +58,7 @@ const posts: Post[] = [
     imageUrl: '/draft/og/distributing_content_og_draft_dev.jpg',
   },
   {
-    id: 4,
+    id: 6,
     title: 'The Trello Content Calendar Template',
     href: '/trello-content-calendar-template',
     description:
@@ -51,7 +67,7 @@ const posts: Post[] = [
   },
 
   {
-    id: 5,
+    id: 7,
     title: 'The Asana Content Calendar Template',
     href: '/asana-content-calendar-template',
     description:
@@ -59,7 +75,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/asana_guide_og_draft_dev.jpg',
   },
   {
-    id: 6,
+    id: 8,
     title: 'The Airtable Content Calendar Template',
     href: '/airtable-content-calendar-template',
     description:
@@ -67,7 +83,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/airtable_guide_og_draft_dev.jpg',
   },
   {
-    id: 7,
+    id: 9,
     title: 'Building and Scaling Developer Marketing',
     href: '/developer-marketing',
     description:
@@ -75,7 +91,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/developer_marketing_og_draft_dev.jpg',
   },
   {
-    id: 8,
+    id: 10,
     title: 'How to run your own Keyword Audit and Creating Topic Clusters',
     href: '/keyword-audit-topic-clusters',
     description:
@@ -83,7 +99,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/keyword-audit-topic-clusters-draft-dev.jpg',
   },
   {
-    id: 9,
+    id: 11,
     title: "The Technical Content Manager's Playbook",
     href: '/playbook',
     description:
@@ -91,7 +107,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/playbook_og_draft_dev.jpg',
   },
   {
-    id: 10,
+    id: 12,
     title: 'The Content Engine Checklist',
     href: '/content-engine-checklist',
     description:
@@ -99,7 +115,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/content-engine-checklist-draft-dev.jpg',
   },
   {
-    id: 11,
+    id: 13,
     title: "50 Winning Ideas For Your Company's Blog",
     href: '/ideas',
     description:
@@ -107,7 +123,7 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/ideas_og_draft_dev.jpg',
   },
   {
-    id: 12,
+    id: 14,
     title: 'The Big Blog Promotion Checklist',
     href: '/big-blog-promotion-checklist',
     description:
@@ -115,20 +131,13 @@ const posts: Post[] = [
     imageUrl: '/site/med-landscape/blog_promotion_checklist_draft_dev.jpg',
   },
   {
-    id: 13,
+    id: 15,
     title: '8 Essential B2B Demand Generation Tactics',
     href: '/8-essential-demand-generation-tactics',
     description:
       'This guide breaks down 8 demand generation tactics that actually work for B2B SaaS and AI companies.',
     imageUrl: '/site/med-landscape/8_essential_tactics_og_draft_dev.jpg',
   },
-  // {
-  //   id: 14,
-  //   title: 'AEO and GEO for DevTools',
-  //   href: '/aeo-geo-for-devtools',
-  //   description: 'Learn how to implement AEO and GEO strategies for DevTools.',
-  //   imageUrl: '/draft/og/aeo_geo_og_draft_dev.jpg',
-  // },
 
   // More resources...
 ]
