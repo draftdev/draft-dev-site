@@ -72,7 +72,7 @@ export default function Call() {
         {/* Calendly embed replaces HubSpotMeetings */}
         <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
           <CalendlyWidget
-            url="https://calendly.com/karlhughes/draft-discovery"
+            url="https://calendly.com/mushfiq-draft/draft-dev-discovery-call"
             minWidth={320}
             height={1200}
           />

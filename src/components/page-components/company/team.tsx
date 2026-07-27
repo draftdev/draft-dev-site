@@ -38,13 +38,18 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
+    name: 'Mushfiq Sarker',
+    description: 'CEO',
+    img: '/draft/team/mushfiq_sarker_draft_dev.jpg',
+  },
+  {
     name: 'Karl Hughes',
-    description: 'Founder, CEO',
+    description: 'Founder',
     img: '/draft/team/karl_hughes_draft_dev.jpg',
   },
   {
     name: 'Manuel Weiss',
-    description: 'Co-owner',
+    description: 'COO',
     img: '/draft/team/manuel_weiss_draft_dev.jpg',
   },
   {
