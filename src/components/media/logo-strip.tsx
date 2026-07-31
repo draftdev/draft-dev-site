@@ -9,56 +9,77 @@ import Image from 'next/image'
 const DEFAULT_SIZE = 'h-6 sm:h-8 md:h-10'
 
 // `size` overrides exist because a logo's box says nothing about how big it
-// *looks*: the artwork letterboxes inside it. These values were set by
-// measuring rendered ink height/area against the original eight logos
-// (~30px tall, ~1480px² of ink) and matching them.
+// *looks*: the artwork letterboxes inside it, and a 10:1 wordmark reads far
+// heavier than a compact mark at the same height.
+//
+// These values are measured, not eyeballed. Each logo was rasterised at its
+// rendered size in the 390px mobile grid and its opaque pixels counted, giving
+// an ink area per logo; the override scales the cap by sqrt(target/area) so
+// every logo carries the same optical mass. Target is the roster median,
+// sqrt(area) ~= 22 at the h-6 mobile cap. Re-measure before eyeballing a new
+// value — the spread was 16.7-30.7 by eye and is 20-24 measured.
 export const logos = [
-  { src: '/media/logos/docker-logo.svg', alt: 'Docker' },
+  { src: '/media/logos/docker-logo.svg', alt: 'Docker', size: 'h-8 sm:h-10 md:h-12' },
   // Compact circular mark: needs extra height to carry the same optical
   // weight as the wordmarks around it.
   { src: '/media/logos/hp-logo.svg', alt: 'HP', size: 'h-8 sm:h-10 md:h-12' },
-  // No overrides needed: measured at the default cap these land at 36/28/28px
-  // of ink against a roster median of 32px, well inside the existing spread.
-  // Qualcomm and Supabase are wide wordmarks that hit the 150px cell first,
-  // same as Graphite and Auth0.
-  { src: '/media/logos/cloudflare-logo.svg', alt: 'Cloudflare' },
-  { src: '/media/logos/qualcomm-logo.svg', alt: 'Qualcomm' },
-  { src: '/media/logos/supabase-logo.svg', alt: 'Supabase' },
+  { src: '/media/logos/cloudflare-logo.svg', alt: 'Cloudflare', size: 'h-7 sm:h-9 md:h-11' },
+  // Wide, densely-set wordmarks: heaviest on the strip at the default cap
+  // (ink area 942 and 817 against a median of 506), so they come down hardest.
+  { src: '/media/logos/qualcomm-logo.svg', alt: 'Qualcomm', size: 'h-4 sm:h-6 md:h-7' },
+  { src: '/media/logos/supabase-logo.svg', alt: 'Supabase', size: 'h-5 sm:h-6 md:h-8' },
   { src: '/media/logos/jetbrains-logo.svg', alt: 'JetBrains' },
-  { src: '/media/logos/sinch-logo.svg', alt: 'Sinch' },
-  { src: '/media/logos/red-panda-logo.svg', alt: 'Redpanda' },
+  { src: '/media/logos/sinch-logo.svg', alt: 'Sinch', size: 'h-7 sm:h-9 md:h-11' },
+  { src: '/media/logos/red-panda-logo.svg', alt: 'Redpanda', size: 'h-5 sm:h-7 md:h-9' },
   { src: '/media/logos/amadeus-logo.svg', alt: 'Amadeus' },
-  { src: '/media/logos/loft-logo.svg', alt: 'Loft' },
+  // Short, light wordmark — the lightest on the strip, so it scales up most.
+  { src: '/media/logos/loft-logo.svg', alt: 'Loft', size: 'h-8 sm:h-10 md:h-12' },
   { src: '/media/logos/brightdata-logo.png', alt: 'brightdata' },
   { src: '/media/logos/descope-logo.png', alt: 'descope' },
-  { src: '/media/logos/graphite.com.svg', alt: 'Graphite' },
-  { src: '/media/logos/name.com.svg', alt: 'Name.com' },
+  { src: '/media/logos/graphite.com.svg', alt: 'Graphite', size: 'h-5 sm:h-7 md:h-9' },
+  // Bold, and at ~9.7:1 it fills the mobile cell edge to edge, so its height
+  // cap never binds — the width cap is what brings its mass down to the median.
   {
-    src: '/media/logos/foxit-logo.svg',
-    alt: 'Foxit',
+    src: '/media/logos/name.com.svg',
+    alt: 'Name.com',
     size: 'h-5 sm:h-6 md:h-8',
+    maxW: 'max-w-[110px] sm:max-w-full',
   },
-  { src: '/media/logos/auth0-okta-logo.svg', alt: 'Auth0 by Okta' },
-  {
-    // Stacked icon + two-line lockup, so its lettering reads far smaller
-    // than the box height suggests.
-    src: '/media/logos/control-plane-logo.svg',
-    alt: 'Control Plane',
-    size: 'h-7 sm:h-9 md:h-11',
-  },
+  { src: '/media/logos/foxit-logo.svg', alt: 'Foxit', size: 'h-6 sm:h-7 md:h-9' },
+  { src: '/media/logos/auth0-okta-logo.svg', alt: 'Auth0 by Okta', size: 'h-7 sm:h-9 md:h-11' },
+  // Mark + wordmark lockup at ~4.4:1, so like the other wide marks it hits the
+  // cell width before the height cap.
+  { src: '/media/logos/wordpress-logo.svg', alt: 'WordPress', size: 'h-7 sm:h-9 md:h-11' },
+  { src: '/media/logos/control-plane-logo.svg', alt: 'Control Plane', size: 'h-7 sm:h-9 md:h-11' },
 ]
 
 const EDGE_FADE =
   'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
 
-function Logo({ src, alt, size }: { src: string; alt: string; size?: string }) {
+function Logo({
+  src,
+  alt,
+  size,
+  maxW,
+}: {
+  src: string
+  alt: string
+  size?: string
+  maxW?: string
+}) {
   return (
     <Image
       src={src}
       alt={alt}
       height={100}
       width={100}
-      className={clsx('w-auto max-w-full object-contain', size ?? DEFAULT_SIZE)}
+      className={clsx(
+        'w-auto object-contain',
+        size ?? DEFAULT_SIZE,
+        // A logo wide enough to hit the cell width is sized by that width, not
+        // by its height cap, so `maxW` is the only lever that can shrink it.
+        maxW ?? 'max-w-full',
+      )}
       loading="lazy"
     />
   )
