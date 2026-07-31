@@ -3,7 +3,7 @@ import React from 'react'
 interface MedHeaderProps {
   title: string
   descriptionOne: string
-  descriptionTwo: string
+  descriptionTwo: React.ReactNode
 }
 
 export const MedHeader: React.FC<MedHeaderProps> = ({

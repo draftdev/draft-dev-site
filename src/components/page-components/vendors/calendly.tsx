@@ -20,20 +20,35 @@ export default function CalendlyWidget({
     setMounted(true)
   }, [])
 
-  if (!mounted) return null
-
   return (
     <>
-      <div
-        className="calendly-inline-widget"
-        data-url={url}
-        style={{
-          minWidth: `${minWidth}px`,
-          width: '100%',
-          height: `${height}px`,
-        }}
+      {/*
+        Hoisted to <head> by React 19. These sit outside the `mounted` gate on
+        purpose: they ship with the SSR response, so the browser opens the
+        connections and fetches widget.js while React is still hydrating,
+        instead of starting from cold once the widget mounts.
+      */}
+      <link rel="preconnect" href="https://assets.calendly.com" />
+      <link rel="preconnect" href="https://calendly.com" />
+      <link
+        rel="preload"
+        as="script"
+        href="https://assets.calendly.com/assets/external/widget.js"
       />
-      <Script src="https://assets.calendly.com/assets/external/widget.js" />
+      {mounted ? (
+        <>
+          <div
+            className="calendly-inline-widget"
+            data-url={url}
+            style={{
+              minWidth: `${minWidth}px`,
+              width: '100%',
+              height: `${height}px`,
+            }}
+          />
+          <Script src="https://assets.calendly.com/assets/external/widget.js" />
+        </>
+      ) : null}
     </>
   )
 }

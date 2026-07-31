@@ -38,7 +38,7 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Mushfiq Sarker',
+    name: 'Mushfiq Sarker, PhD',
     description: 'CEO',
     img: '/draft/team/mushfiq_sarker_draft_dev.jpg',
   },
@@ -54,7 +54,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Jakkie Koekemoer',
-    description: 'Engineering Manager',
+    description: 'Director of Engineering',
     img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
   },
   {
@@ -63,9 +63,9 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/annika_puura_draft_dev.jpg',
   },
   {
-    name: 'Robin Fussell',
-    description: 'Marketing Manager',
-    img: '/draft/team/robin_fussell_draft_dev.png',
+    name: 'Saswata Baksi',
+    description: 'Discoverability Lead (SEO & GEO)',
+    img: '/draft/team/saswata_baksi_draft_dev.png',
   },
   {
     name: 'Ofer Prossner',
@@ -81,11 +81,6 @@ const teamMembers: TeamMember[] = [
     name: 'Kumar Harsh',
     description: 'Developer Advocate',
     img: '/draft/team/kumar_harsh_draft_dev.jpg',
-  },
-  {
-    name: 'Kirstin Spivey',
-    description: 'Developmental Editor',
-    img: '/draft/team/kirstin_spivey_draft_dev.jpg',
   },
   {
     name: 'Shane Cullen',

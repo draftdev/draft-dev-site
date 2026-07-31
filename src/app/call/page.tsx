@@ -4,6 +4,7 @@ import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import CalendlyWidget from '@/components/page-components/vendors/calendly'
+import FormInquiry from '@/components/page-components/vendors/hubspot/form-inquiry'
 
 import type { Metadata } from 'next'
 
@@ -66,18 +67,45 @@ export default function Call() {
       <MedHeader
         title="Let's talk about your content growth engine"
         descriptionOne="We plan, produce, publish, and promote your first pieces within weeks."
-        descriptionTwo="Can't find a time that works for you? Email sales@draft.dev to contact us directly."
+        descriptionTwo={
+          <>
+            Can&apos;t find a time that works for you?{' '}
+            <a href="#inquiry-form" className="underline underline-offset-4">
+              Fill out the form
+            </a>{' '}
+            or email{' '}
+            <a
+              href="mailto:sales@draft.dev"
+              className="underline underline-offset-4"
+            >
+              sales@draft.dev
+            </a>{' '}
+            directly. We reply within 24 hours.
+          </>
+        }
       />
       <main className="overflow-hidden">
         {/* Calendly embed replaces HubSpotMeetings */}
-        <section className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-3xl px-4 pt-8 sm:px-6 lg:px-8">
           <CalendlyWidget
             url="https://calendly.com/mushfiq-draft/draft-dev-discovery-call"
             minWidth={320}
             height={1200}
           />
+        </section>
 
-          {/* <ServiceInfo /> */}
+        <section
+          id="inquiry-form"
+          className="mx-auto max-w-3xl scroll-mt-24 px-4 pb-16 sm:px-6 lg:px-8"
+        >
+          <h2 className="sm:subheader-gradient subheader-mobile-gradient">
+            Prefer to send a message?
+          </h2>
+          <p className="paragraph-dark pt-4 pb-8">
+            Tell us about your content goals and we&apos;ll get back to you
+            within 24 hours.
+          </p>
+          <FormInquiry />
         </section>
 
         <SocialProof />

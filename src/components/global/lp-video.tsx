@@ -68,7 +68,7 @@ const LPVideo: React.FC<LPVideoProps> = ({
             <div className="mx-auto w-full lg:flex lg:items-center lg:justify-between lg:gap-12">
               {/* Left: copy */}
               <div className="relative max-w-2xl lg:shrink-0">
-                <div className="py-3 lg:mt-16">
+                <div className="pt-6 pb-3 sm:pt-3 lg:mt-16">
                   <Link
                     href={downloadableAssetURL}
                     className="text-primary ring-primary-40 mr-3 inline-block rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-inset"

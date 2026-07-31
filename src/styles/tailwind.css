@@ -45,6 +45,22 @@
     var(--color-primary)
   );
   --bg-gradient-text: linear-gradient(to bottom right, #916c7c, #916c7c);
+
+  /* continuous horizontal scroll for the logo strip. The track holds two
+     identical copies, so -50% lands exactly on the seam and loops invisibly.
+     Duration is distance/speed: the track grows with the roster, so adding
+     logos at a fixed duration silently speeds the strip up. 17 logos at 65s
+     scrolls ~16% slower than the previous 14 at 45s. */
+  --animate-marquee: marquee 65s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 /* ===== Base reset ===== */

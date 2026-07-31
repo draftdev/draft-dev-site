@@ -19,6 +19,17 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
       <head>
         <link rel="preconnect" href="https://candid-cookie.flywheelsites.com" />
+        {/* Privacy-friendly analytics by Plausible */}
+        <script
+          async
+          src="https://plausible.io/js/pa-6cBLshVt6Tazaoqfe3wHC.js"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()`,
+          }}
+        />
       </head>
       <body className="bg-white antialiased">
         <DynamicNavbar />

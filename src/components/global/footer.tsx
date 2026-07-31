@@ -5,11 +5,11 @@ import { Button } from './button'
 
 function CallToAction() {
   return (
-    <div className="-mx-4 -mt-34 pb-20 md:pb-22 lg:-mx-8">
+    <div className="-mt-34 px-4 pb-20 md:pb-22 lg:-mx-8 lg:px-0">
       <div className="mx-auto max-w-7xl">
         <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
           <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-            <div className="bg-gradient-brand overflow-hidden rounded-3xl p-12 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
+            <div className="bg-gradient-brand overflow-hidden rounded-3xl p-8 shadow-2xl outline-1 -outline-offset-1 outline-black/10 sm:p-12">
               <hgroup>
                 <h2 className="header-light my-6 text-center text-3xl tracking-tight sm:text-5xl">
                   Want to learn more about how we work?
@@ -234,11 +234,11 @@ export function Footer() {
                 priority
               />
             </Link> */}
-            <div className="grid grid-cols-3 gap-y-10 pb-6 lg:grid-cols-3 lg:gap-16">
-              <div className="col-span-2">
+            <div className="grid grid-cols-1 gap-y-10 pb-6 lg:grid-cols-3 lg:gap-16">
+              <div className="lg:col-span-2">
                 <NewsletterSmall />
               </div>
-              <div className="col-span-1 grid grid-cols-2 gap-x-6 gap-y-12 lg:col-span-1 lg:grid-cols-2 lg:pt-16">
+              <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:col-span-1 lg:pt-16">
                 <Sitemap />
               </div>
             </div>

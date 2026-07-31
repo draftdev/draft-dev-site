@@ -17,6 +17,9 @@ import MobileNavContent from './mobile-nav-content'
 import ResourcesPopover from './resources-popover'
 import ServicesPopover from './services-popover'
 
+// Used for the spacer until the header is measured on the client (and for SSR).
+const FALLBACK_NAV_HEIGHT = 120
+
 const NAVIGATION_CONFIG = {
   links: [
     { href: '/services', label: 'Services' },
@@ -79,19 +82,25 @@ function DynamicNavbar() {
   const [isResourcesOpen, setisResourcesOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
-  // Measure the entire fixed header (banner + nav)
+  // Measure the fixed header (banner + logo row) so the spacer below it always
+  // matches. The mobile drawer is deliberately excluded — it overlays content
+  // instead of pushing it down.
   const wrapperRef = useRef<HTMLDivElement | null>(null)
-  const [fixedBlockHeight, setFixedBlockHeight] = useState(0)
+  const bannerRef = useRef<HTMLDivElement | null>(null)
+  const navRowRef = useRef<HTMLDivElement | null>(null)
+  const [fixedBlockHeight, setFixedBlockHeight] = useState(FALLBACK_NAV_HEIGHT)
 
   useLayoutEffect(() => {
-    const el = wrapperRef.current
-    if (!el) return
-
-    const measure = () => setFixedBlockHeight(el.getBoundingClientRect().height)
+    const measure = () => {
+      const banner = bannerRef.current?.getBoundingClientRect().height ?? 0
+      const row = navRowRef.current?.getBoundingClientRect().height ?? 0
+      if (row) setFixedBlockHeight(Math.round(banner + row))
+    }
     measure()
 
     const ro = new ResizeObserver(measure)
-    ro.observe(el)
+    if (bannerRef.current) ro.observe(bannerRef.current)
+    if (navRowRef.current) ro.observe(navRowRef.current)
     window.addEventListener('resize', measure)
     return () => {
       ro.disconnect()
@@ -196,17 +205,22 @@ function DynamicNavbar() {
         ref={wrapperRef}
         className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-backdrop-filter:bg-white/70"
       >
-        <Banner
-          text="Download the AEO & GEO Guide for DevTools - What AEO & GEO actually mean for developer marketing →"
-          link="https://draft.dev/aeo-geo-for-devtools"
-        />
+        <div ref={bannerRef}>
+          <Banner
+            text="Download the AEO & GEO Guide for DevTools - What AEO & GEO actually mean for developer marketing →"
+            link="https://draft.dev/aeo-geo-for-devtools"
+          />
+        </div>
 
         <header>
           <Disclosure as="div" className="w-full">
             {({ open, close }) => (
               <>
                 <div className="mx-auto max-w-7xl px-2">
-                  <div className="flex items-center justify-between py-6">
+                  <div
+                    ref={navRowRef}
+                    className="flex items-center justify-between py-4 sm:py-6"
+                  >
                     {/* Logo */}
                     <div className="flex items-center">
                       <Link href="/" title="Home">
@@ -251,7 +265,7 @@ function DynamicNavbar() {
         </header>
       </div>
 
-      <div aria-hidden="true" style={{ height: 120 }} />
+      <div aria-hidden="true" style={{ height: fixedBlockHeight }} />
     </>
   )
 }
