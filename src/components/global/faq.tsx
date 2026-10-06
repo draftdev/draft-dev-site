@@ -45,7 +45,17 @@ const faqs: FAQ[] = [
   },
 ]
 
-export default function FAQ() {
+type FAQProps = {
+  // Page-specific questions, shown above the standard ones
+  pageFaqs?: Omit<FAQ, 'id'>[]
+}
+
+export default function FAQ({ pageFaqs = [] }: FAQProps) {
+  const allFaqs = [
+    ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
+    ...faqs,
+  ]
+
   return (
     <div id="faq" className="mb-24 py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -70,7 +80,7 @@ export default function FAQ() {
           <p className="p-dark"></p>
           <div className="mt-12">
             <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10">
-              {faqs.map((faq) => (
+              {allFaqs.map((faq) => (
                 <div key={faq.id}>
                   <dt className="text-lg font-semibold text-gray-600">
                     {faq.question}

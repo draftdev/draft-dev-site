@@ -16,6 +16,11 @@ interface ServiceHeaderProps {
     label: string
     value: string | number
   }>
+  leadMagnet?: {
+    badge: string
+    text: string
+    href: string
+  }
 }
 
 const ServiceHeader: React.FC<ServiceHeaderProps> = ({
@@ -24,6 +29,11 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
   primaryCTA,
   secondaryCTA,
   stats,
+  leadMagnet = {
+    badge: 'Free eBook',
+    text: 'Building and Scaling Developer Marketing',
+    href: '/developer-marketing',
+  },
 }) => {
   const statsGridCols =
     stats && stats.length >= 4
@@ -41,16 +51,16 @@ const ServiceHeader: React.FC<ServiceHeaderProps> = ({
               <div className="relative w-full lg:shrink-0 xl:max-w-3xl">
                 <div className="mt-24 py-3 sm:mt-32 lg:mt-16">
                   <span className="text-primary ring-primary-40 mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-inset">
-                    <Link href="/developer-marketing" className="">
-                      Free eBook
+                    <Link href={leadMagnet.href} className="">
+                      {leadMagnet.badge}
                     </Link>
                   </span>
                   <Link
-                    href="/developer-marketing"
+                    href={leadMagnet.href}
                     className="inline-flex"
                   >
                     <span className="inline-flex items-center text-sm text-white">
-                      Building and Scaling Developer Marketing
+                      {leadMagnet.text}
                     </span>
                   </Link>
                 </div>
