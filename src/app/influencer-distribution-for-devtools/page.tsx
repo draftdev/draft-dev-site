@@ -16,7 +16,7 @@ const description =
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title:
-    'Developer Influencer Distribution for Developer Tools & Platforms - Draft.dev',
+    'Influencer Distribution for Developer Tools & Platforms - Draft.dev',
   description,
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
@@ -25,21 +25,21 @@ export const metadata: Metadata = {
     siteName: 'Draft.dev',
     locale: 'en_US',
     title:
-      'Developer Influencer Distribution for Developer Tools & Platforms - Draft.dev',
+      'Influencer Distribution for Developer Tools & Platforms - Draft.dev',
     description,
     images: [
       {
         url: '/draft/og/distributing_content_og_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'Developer Influencer Distribution by Draft.dev',
+        alt: 'Influencer Distribution by Draft.dev',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     title:
-      'Developer Influencer Distribution for Developer Tools & Platforms - Draft.dev',
+      'Influencer Distribution for Developer Tools & Platforms - Draft.dev',
     description,
     images: ['/draft/og/distributing_content_og_draft_dev.jpg'],
     creator: '@draftdev',
@@ -65,7 +65,7 @@ export default function InfluencerDistribution() {
   return (
     <div>
       <ServiceHeader
-        title="Developer Influencer Distribution for Developer Tools & Platforms"
+        title="Influencer Distribution for Developer Tools & Platforms"
         description={description}
         leadMagnet={{
           badge: 'Free Guide',
