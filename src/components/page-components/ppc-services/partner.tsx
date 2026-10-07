@@ -14,14 +14,14 @@ const Partner = () => {
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    Most developer marketing teams have tried paid and come away
-                    skeptical. Developers use ad blockers at 3x the average
-                    rate, ignore banner ads, and distrust marketing messages.
-                    But the people who approve the purchase search for
-                    comparisons and alternatives, and the engineer who hit a
-                    wall in your documentation is one click from a trial. Paid
-                    works on this audience when it captures demand that already
-                    exists, and wastes money when it tries to create it.
+                    Most developer marketing teams have tried paid ads and
+                    weren't impressed. Developers use ad blockers 3x more than
+                    average, ignore banner ads, and don't trust marketing
+                    messages. But the people who approve the purchase search
+                    for comparisons and alternatives. And an engineer who gets
+                    stuck in your docs is one click away from a trial. Paid ads
+                    work when they reach people who are already looking. They
+                    waste money when they try to interrupt people who aren't.
                   </dd>
                 </div>
                 <div className="relative">
@@ -31,19 +31,18 @@ const Partner = () => {
                     marketing speak, and make decisions based on hands-on
                     experience. We analyze your industry, competitors,
                     positioning, product features, target audience, and brand
-                    voice to ensure authentic output, then write your landing
-                    pages with the same vetted engineer-writers who create your
-                    technical content.
+                    voice to ensure authentic output. Then the same vetted
+                    engineer-writers who create your technical content write
+                    your landing pages.
                   </dd>
                 </div>
                 <div className="relative">
                   <dd className="my-2">
-                    After the account structure is agreed, we run the
-                    campaigns, build and test the landing pages, and report
-                    monthly on cost per lead and cost per signup. We provide
-                    actionable insights about which searches are producing
-                    pipeline, not just vanity metrics, and shift budget based
-                    on real performance data.
+                    Once we agree on the account setup, we run the campaigns,
+                    build and test the landing pages, and report every month on
+                    cost per lead and cost per signup. We show you which
+                    searches bring in pipeline, not just vanity metrics, and
+                    move budget based on real results.
                   </dd>
                 </div>
               </dl>
