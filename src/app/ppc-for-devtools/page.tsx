@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We run paid search for technical products. Campaigns built around high-intent searches, landing pages written by vetted engineer-writers, and reporting that tracks cost per signup, not cost per click.'
+  'We run paid search ads for technical products. We target people who are already searching for tools like yours, send them to landing pages written by vetted engineers, and track cost per signup, not just cost per click.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -84,27 +84,27 @@ export default function PPCServices() {
         </div>
         <Why
           title="Paid Search That Reaches Buyers, Not Ad Blockers"
-          subtitle="Budget spent where intent is already high, not on interrupting engineers"
+          subtitle="We spend your budget on people who are already looking, not on interrupting engineers"
           subtitleBold=""
           features={[
             {
-              title: 'Campaigns built around intent',
+              title: 'Ads for people already looking',
               description:
-                'After your kickoff call, our engineers use your product. We audit your existing ad accounts, then build campaigns around the searches where buyers are already looking: your brand name, competitor names, category and comparison terms, and the integration and migration searches that signal an active evaluation.',
+                'After your kickoff call, our engineers use your product. We review your current ad accounts. Then we build campaigns around searches from people who are already looking: your brand name, competitor names, comparisons, and integration or migration searches. These show that someone is actively choosing a tool.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Landing pages written by engineers',
               description:
-                'A paid click is wasted on a page a developer does not trust. One of our 300+ vetted engineer-writers writes your landing page, with real configuration, honest comparisons and code where it helps, and we build variations to test against each other. The same subject matter experts who write your technical content write the page the ad points to.',
+                "A paid click is wasted if the page doesn't earn a developer's trust. So one of our 300+ vetted engineer-writers writes your landing page, with real setup steps, honest comparisons and code where it helps. We also build different versions to test which one works best.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Retargeting and reporting',
+              title: 'Retargeting your docs readers',
               description:
-                'Your highest-intent audience is the people already reading your documentation. We group them by the pages they visited and match the ad to what they were trying to do, with frequency caps so it never becomes noise. Monthly reporting covers cost per lead, cost per signup, and which campaigns produce pipeline, not just clicks.',
+                'People already reading your documentation are your best audience. We show them ads that match the pages they read, and we limit how often they see them so it never gets annoying. Every month you see cost per lead, cost per signup, and which campaigns bring in real pipeline, not just clicks.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
@@ -137,19 +137,19 @@ export default function PPCServices() {
       <FAQ
         pageFaqs={[
           {
-            question: 'Does paid search actually work on developers?',
+            question: 'Do paid search ads really work on developers?',
             answer:
-              'On the right searches, yes. Developers use ad blockers at 3x the average rate and ignore display ads. But the people approving the purchase search for comparisons and alternatives, and engineers who hit a wall in your docs respond well to retargeting. Paid captures demand that already exists. It is a poor way to create it.',
+              "On the right searches, yes. Developers use ad blockers 3x more than average and ignore display ads. But buyers search for comparisons and alternatives, and engineers who get stuck in your docs respond well to retargeting. Paid ads work best when people are already looking. They don't work well for creating interest from scratch.",
           },
           {
             question: 'What budget do we need to start?',
             answer:
-              'Enough to gather signal on your highest-intent searches, which varies by category and competition. We will give you a number on the discovery call based on your market, not a standard package.',
+              "Enough to learn which of your most important searches work. That depends on your market and competition. We'll give you a number on the discovery call, based on your market, not a standard package.",
           },
           {
             question: 'Do you build the landing pages?',
             answer:
-              'Yes. They are written by the same vetted engineer-writers who create your technical content, with variations built to test against each other.',
+              'Yes. The same vetted engineer-writers who create your technical content write them, and we build different versions to test which one works best.',
           },
         ]}
       />
