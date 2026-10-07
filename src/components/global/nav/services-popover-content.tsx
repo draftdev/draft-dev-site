@@ -11,6 +11,7 @@ const services = [
   { name: 'Content Strategy', href: '/content-strategy-services' },
   { name: 'Content Production', href: '/content-production' },
   { name: 'Content Distribution', href: '/content-distribution' },
+  { name: 'SEO', href: '/seo-services-for-devtools' },
   { name: 'AEO & GEO', href: '/aeo-geo-services-for-devtools' },
   /*.  { name: 'All Services', href: '/content-marketing-services' }, */
 
