@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We create technical videos that show developers exactly how your product solves their problems. Scripts by vetted engineer-writers, production handled end to end, and publishing optimized so your videos keep getting found long after launch.'
+  'We create technical videos that show developers exactly how your product solves their problems. Our vetted engineer-writers write the scripts, we handle all the production, and we publish your videos so people keep finding them long after launch.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -84,27 +84,27 @@ export default function VideoMarketing() {
         </div>
         <Why
           title="Video Developers Watch to the End"
-          subtitle="Scripted by engineers, produced end to end, and built to keep earning attention after launch"
+          subtitle="Scripted by engineers, fully produced by us, and published so people keep finding them"
           subtitleBold=""
           features={[
             {
               title: 'Scripted by subject matter experts',
               description:
-                'After your kickoff call, our engineers use your product. We find the features that are hardest to explain in writing, choose the right format, and write the script with one of our 300+ vetted engineer-writers. Every script is reviewed for technical accuracy before recording, because a demo that gets a command wrong loses developers immediately.',
+                'After your kickoff call, our engineers use your product. We find the features that are hardest to explain in writing and pick the right video format. Then one of our 300+ vetted engineer-writers writes the script. Every script is checked for technical accuracy before recording, because one wrong command in a demo loses developers right away.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Production without the internal lift',
+              title: 'Production without extra work for your team',
               description:
-                'We handle screen recording, editing, voiceover, video graphics and captions. Your team joins a kickoff call, reviews the script and gives occasional feedback, the same as any other content we create. We produce quick-start guides, feature demos, integration tutorials, use case walkthroughs and social micro-clips.',
+                'We handle screen recording, editing, voiceover, video graphics and captions. Your team only joins a kickoff call, reviews the script and gives occasional feedback. We produce quick-start guides, feature demos, integration tutorials, use case walkthroughs and short clips for social media.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
             {
-              title: 'Publishing, repurposing and reach',
+              title: 'Publishing and reuse',
               description:
-                'One recording becomes a library of content. We publish to YouTube with titles, descriptions, chapters and transcripts, embed videos on the pages where they answer your visitors’ questions, and cut micro-clips and social posts your team can use for months. Search engines and LLMs read the text around a video, not the video itself, so transcripts and metadata are part of every delivery.',
+                'One recording becomes many pieces of content. We publish to YouTube with titles, descriptions, chapters and transcripts. We add the video to the pages on your site where it answers a visitor’s question. And we cut short clips and social posts your team can use for months. Search engines and AI tools read the text around a video, not the video itself, so every video comes with a transcript and metadata.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
@@ -149,7 +149,7 @@ export default function VideoMarketing() {
           {
             question: 'What do we need to provide?',
             answer:
-              'Product access, a kickoff call, and a script review. We handle the rest, including recording, editing, captions, publishing and social micro-clips.',
+              'Product access, a kickoff call, and a script review. We handle the rest, including recording, editing, captions, publishing and short clips for social media.',
           },
         ]}
       />

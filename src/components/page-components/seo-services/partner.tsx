@@ -14,14 +14,14 @@ const Partner = () => {
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    Most developer marketing teams face the same problem: the
-                    engineers who could write authoritative content are busy
-                    building the product. And your blog has to serve two
-                    different readers. Engineers find you through error
-                    messages, setup problems and integration questions. The
-                    people who approve the purchase find you through
-                    comparisons and alternatives. Both need content, and most
-                    SEO agencies only plan for one.
+                    Most developer marketing teams face the same problem. The
+                    engineers who could write great content are busy building
+                    the product. And your blog has two kinds of readers.
+                    Engineers find you by searching for error messages, setup
+                    problems and integrations. The people who approve the
+                    purchase find you through comparisons and alternatives. You
+                    need content for both, and most SEO agencies only plan for
+                    one.
                   </dd>
                 </div>
                 <div className="relative">
@@ -32,17 +32,16 @@ const Partner = () => {
                     experience. We analyze your industry, competitors,
                     positioning, product features, target audience, and brand
                     voice to ensure authentic output. Our vetted writers are
-                    practitioners who have shipped with the tools they write
-                    about.
+                    engineers who have used the tools they write about.
                   </dd>
                 </div>
                 <div className="relative">
                   <dd className="my-2">
-                    After the roadmap is approved, we write, edit and publish
-                    your pages and refresh the ones losing ground. In monthly
-                    analytics reviews we report on rankings, traffic and the
-                    signups that came through content, and adjust the roadmap
-                    based on real performance data, not vanity metrics.
+                    Once you approve the roadmap, we write, edit and publish
+                    your pages, and update the ones losing ground. Every month
+                    we report on rankings, traffic and the signups that came
+                    from content, not just vanity metrics. Then we adjust the
+                    roadmap based on real results.
                   </dd>
                 </div>
               </dl>
