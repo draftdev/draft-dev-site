@@ -115,12 +115,12 @@ export default function VideoMarketing() {
         </div>
         <Partner />
         <Testimonial
-          quote="Draft.dev is our go-to for practical, well-written content that actually resonates with technical audiences and helps us inspire the developer community."
-          name="Jenny Medeiros"
-          role="TODO: role"
-          company="Redpanda"
-          imageSrc="/media/testimonials-sm/jenny_medeiros_redpanda_draft_dev.png"
-          imageAlt="Jenny Medeiros"
+          quote="Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials. We’re constantly iterating to build the best educational materials for developer security and Draft.dev has been instrumental in helping us."
+          name="Randall Degges"
+          role="Head of Developer & Security Relations"
+          company="snyk"
+          imageSrc="/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg"
+          imageAlt="Randall Degges"
         />
         <MedCaseEarthly />
         <LogosDark />
