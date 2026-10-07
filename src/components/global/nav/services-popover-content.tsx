@@ -14,6 +14,7 @@ const services = [
   { name: 'SEO', href: '/seo-services-for-devtools' },
   { name: 'AEO & GEO', href: '/aeo-geo-services-for-devtools' },
   { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
+  { name: 'PPC', href: '/ppc-for-devtools' },
   /*.  { name: 'All Services', href: '/content-marketing-services' }, */
 
   /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
