@@ -14,13 +14,12 @@ const Partner = () => {
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    Most developer marketing teams know video belongs in the
-                    mix, but get stuck on the same two problems. The engineers
-                    who could explain the product are busy building it, and a
-                    general video production company can make something
-                    polished without understanding what it shows. The result is
-                    either no video at all, or a video developers close after
-                    fifteen seconds.
+                    Most developer marketing teams know they need video, but get
+                    stuck on two problems. The engineers who could explain the
+                    product are busy building it. And a general video company
+                    can make a polished video without understanding what it
+                    shows. So teams end up with no video at all, or a video
+                    developers close after fifteen seconds.
                   </dd>
                 </div>
                 <div className="relative">
@@ -28,22 +27,20 @@ const Partner = () => {
                     Unlike generic video agencies, we understand that developers
                     trust peer-written content, value technical accuracy over
                     marketing speak, and make decisions based on hands-on
-                    experience. Our scripts are written by vetted practitioners
-                    who have shipped with the tools they demonstrate, and
-                    reviewed by a subject matter expert before production
-                    starts. We analyze your industry, competitors, positioning,
+                    experience. Our scripts are written by vetted engineers who
+                    have used the tools they show, and checked by a subject
+                    matter expert before production starts. We analyze your industry, competitors, positioning,
                     product features, target audience, and brand voice to
                     ensure authentic output.
                   </dd>
                 </div>
                 <div className="relative">
                   <dd className="my-2">
-                    After the script is approved, we produce and publish the
-                    video, then turn the footage into micro-clips and social
-                    collateral that extend its reach. In monthly analytics
-                    reviews we report on watch time, the pages where video
-                    lifts conversion, and which topics are worth filming next,
-                    and adjust the roadmap based on real performance data.
+                    Once you approve the script, we produce and publish the
+                    video, then turn it into short clips and social posts that
+                    reach more people. Every month we report on watch time, the
+                    pages where video helps conversions, and which topics to
+                    film next. Then we adjust the plan based on real results.
                   </dd>
                 </div>
               </dl>
