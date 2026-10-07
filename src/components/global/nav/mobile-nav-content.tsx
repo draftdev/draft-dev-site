@@ -71,6 +71,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     { name: 'Content Distribution', href: '/content-distribution' },
     { name: 'SEO', href: '/seo-services-for-devtools' },
     { name: 'AEO & GEO', href: '/aeo-geo-services-for-devtools' },
+    { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
     /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
      /*{ name: 'Paid Content Promotion', href: '/paid-content-promotion' },*/
   ]
