@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We build SEO content engines for technical products. Our 300+ vetted engineer-writers research how developers actually search, create content that resonates with developers and search engines, and publish it straight into your CMS.'
+  'We build SEO content engines that help developers find your product on Google. Our 300+ vetted engineer-writers find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -78,28 +78,28 @@ export default function SEOServices() {
           <SocialProof showHeading={false} />
         </div>
         <Why
-          title="Technical SEO That Reaches Engineers and the People Who Buy"
+          title="SEO That Reaches Engineers and the People Who Buy"
           subtitle="Built on how your buyers actually search, not guesswork"
           subtitleBold=""
           features={[
             {
               title: 'From research to an SEO roadmap',
               description:
-                'After your kickoff call, our engineers use your product. We audit your existing pages, research the error messages, setup questions, integration searches and comparison terms your buyers search for, and analyze where competitors rank instead of you. You get a topical map, a content calendar with clear deliverables, and a list of quick wins we can publish first.',
+                'After your kickoff call, our engineers use your product. We review your existing pages and find what your buyers search for: error messages, setup questions, integrations and comparisons. We also check where competitors rank above you. You get a map of topics to cover, a content calendar with clear deliverables, and a list of quick wins we can publish first.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content written by vetted engineers',
               description:
-                'Developers trust peer-written content and can tell within a paragraph whether the writer has used the tool. Every piece is planned by a strategist, written by one of our 300+ vetted engineer-writers, and edited by a professional technical editor. We create tutorials, how-to guides, integration pages, comparison and alternative pages, and technical deep dives.',
+                'Developers trust content written by other developers, and they can tell quickly if the writer has never used the tool. Every piece is planned by a strategist, written by one of our 300+ vetted engineer-writers, and edited by a professional technical editor. We write tutorials, how-to guides, integration pages, comparison pages and technical deep dives.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Publishing and content refreshes',
               description:
-                'We publish directly into your CMS with headings, internal links, metadata, schema and images, so nothing sits in a doc waiting for your team. Content decay affects nearly 60% of blog posts within 12 to 24 months as version numbers change and technical details go out of date, so we also refresh the pages that are slipping.',
+                'We publish straight into your CMS, with headings, internal links, metadata, schema markup and images, so nothing sits waiting for your team. Content decay affects nearly 60% of blog posts within 12 to 24 months, as version numbers change and details go out of date. So we also update the pages that are slipping.',
               linkText: 'See our approach to content refreshes',
               linkHref: '/content-refreshes',
             },
@@ -134,17 +134,17 @@ export default function SEOServices() {
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
-              'Most SEO agencies can run an audit and build a keyword list. Few can write a technical tutorial that a platform engineer will read to the end. We do both, and our vetted writers are working engineers, not generalists briefed on your category.',
+              'Most SEO agencies can run an audit and build a keyword list. Few can write a technical tutorial that an engineer will read to the end. We do both, and our vetted writers are working engineers, not generalists.',
           },
           {
             question: 'What about our documentation? Should it rank too?',
             answer:
-              'Often, yes. But your docs and your blog often compete for the same search. We audit both together and decide what belongs where, so they stop working against each other.',
+              'Often, yes. But your docs and your blog can end up competing for the same search. We review both together and decide what belongs where, so they stop competing.',
           },
           {
             question: 'Do you do link building?',
             answer:
-              'Not as a standalone service. We earn links by publishing content worth linking to, and we place guest posts on developer publications when it fits your strategy.',
+              'Not as a separate service. We earn links by publishing content worth linking to, and we place guest posts on developer publications when it fits your strategy.',
           },
         ]}
       />
