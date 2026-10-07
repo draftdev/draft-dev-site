@@ -17,6 +17,7 @@ const services = [
   { name: 'PPC', href: '/ppc-for-devtools' },
   { name: 'Reddit Marketing', href: '/reddit-marketing-for-devtools' },
   { name: 'Influencer Distribution', href: '/influencer-distribution-for-devtools' },
+  { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
   /*.  { name: 'All Services', href: '/content-marketing-services' }, */
 
   /* { name: 'Technical eBooks', href: '/learn/technical-ebooks' }, */
