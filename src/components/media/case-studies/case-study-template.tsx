@@ -52,6 +52,7 @@ export default function CaseStudyTemplate({
   stats,
   highlights,
   miniCaseSlot,
+  afterHighlightsSlot,
   relatedCaseStudies,
   ctas = [], // render up to 2
   statsCols, // optional override (3 or 4)
@@ -62,6 +63,7 @@ export default function CaseStudyTemplate({
   stats: Stat[]
   highlights: HighlightGroup[]
   miniCaseSlot?: React.ReactNode
+  afterHighlightsSlot?: React.ReactNode
   relatedCaseStudies: RelatedCase[]
   ctas?: CTA[]
   statsCols?: 3 | 4
@@ -185,6 +187,9 @@ export default function CaseStudyTemplate({
           )}
         </div>
       </div>
+
+      {/* Optional extra sections, e.g. a detailed "how we helped" */}
+      {afterHighlightsSlot}
 
       {/* More Case Studies */}
       <div

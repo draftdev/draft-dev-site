@@ -1,6 +1,6 @@
 import FAQ from '@/components/global/faq'
 import ServiceHeader from '@/components/global/headers/service-header-content-strategy'
-import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
+import MedCaseGpuCloud from '@/components/media/case-studies/med-case-gpu-cloud'
 import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
@@ -122,7 +122,7 @@ export default function AEOGEOServices() {
           imageSrc="/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg"
           imageAlt="Dawn Parzych"
         />
-        <MedCaseEarthly />
+        <MedCaseGpuCloud />
         <LogosDark />
         <TestimonialsGroup />
         <Testimonial
