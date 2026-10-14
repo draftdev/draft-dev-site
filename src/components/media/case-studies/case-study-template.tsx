@@ -121,7 +121,7 @@ export default function CaseStudyTemplate({
                 {stats.map((stat, index) => (
                   <div
                     key={index}
-                    className="mx-auto flex max-w-lg flex-col-reverse gap-y-3 rounded-xl bg-white/5 px-8 py-4 text-center"
+                    className={`mx-auto flex max-w-lg flex-col-reverse gap-y-3 rounded-xl bg-white/5 px-8 py-4 text-center ${stat.value ? 'justify-end' : ''}`}
                   >
                     <dt className="font-code text-lg font-bold text-gray-300">
                       {stat.label}

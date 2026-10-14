@@ -1,50 +1,52 @@
+import { CheckIcon } from '@heroicons/react/24/solid'
+
 const sprints = [
   {
-    title: 'Audit, competitor analysis and roadmap',
+    title: 'Audit and roadmap',
     items: [
-      'Reviewed every existing page to separate what ranks from what had gone stale.',
-      'Studied competitors to find gaps in keywords, content and search intent.',
-      'Built a roadmap mapped to the funnel, with dated deliverables.',
+      'Separated pages that rank from pages that had gone stale',
+      'Found keyword, content and intent gaps against competitors',
+      'Built a funnel-mapped roadmap with dated deliverables',
     ],
   },
   {
-    title: 'Flagship guides and legacy recovery',
+    title: 'Flagship guides and refreshes',
     items: [
-      'Launched a flagship guide on inference optimization, with a matching lead magnet.',
-      'Published an industry report to build authority at the top of the funnel.',
-      'Refreshed three legacy pages on model serving, managed ML platforms and multi-GPU training.',
+      'Flagship inference optimization guide, with a lead magnet',
+      'Industry report to build top-of-funnel authority',
+      'Refreshed 3 legacy pages: model serving, managed ML platforms and multi-GPU training',
     ],
   },
   {
-    title: 'Comparison pages for buyers',
+    title: 'Comparison pages',
     items: [
-      'Wrote head-to-head comparisons against three competing GPU cloud platforms.',
-      'Focused on specific technical detail instead of feature grids.',
-      'Published a roundup of providers to capture category-level searches.',
+      'Head-to-head comparisons against 3 competing GPU clouds',
+      'Specific technical detail, not feature grids',
+      'A provider roundup for category-level searches',
     ],
   },
   {
-    title: 'Category education and topical authority',
+    title: 'Category guides',
     items: [
-      'Published in-depth guides on inference engines, GPU cloud servers and cluster architecture.',
-      'Broke every piece into self-contained sections with clear definitions that AI assistants can quote.',
-      'Paired each guide with a deployment tutorial on the same technology.',
+      'In-depth guides on inference engines, GPU cloud servers and cluster architecture',
+      'Self-contained sections with clear definitions AI assistants can quote',
+      'A matching deployment tutorial for each guide',
     ],
   },
   {
-    title: 'Integration guides for agent frameworks',
+    title: 'Agent framework integrations',
     items: [
-      'Found fast-growing agent frameworks whose users need GPU compute.',
-      'Published six integration guides in two months, from multi-agent orchestration to remote server hosting.',
-      'Added content on GPU cluster rental and distributed training for buyers ready to choose hardware.',
+      'Targeted fast-growing agent frameworks whose users need GPU compute',
+      '6 integration guides in 2 months, from multi-agent orchestration to remote server hosting',
+      'Cluster rental and distributed training content for hardware buyers',
     ],
   },
   {
-    title: 'Syndication, measurement and ongoing optimization',
+    title: 'Syndication and measurement',
     items: [
-      'Republish adapted versions of flagship guides on external developer communities.',
-      'Track organic, direct and AI assistant traffic every month.',
-      'Monitor AI citations and feed the results back into the roadmap.',
+      'Adapted flagship guides republished on developer communities',
+      'Monthly tracking of organic, direct and AI assistant traffic',
+      'AI citations monitored and fed back into the roadmap',
     ],
   },
 ]
@@ -64,25 +66,34 @@ const HowWeHelpedGpuCloud = () => {
             ready to choose a provider.
           </p>
         </div>
-        <dl className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-x-8 gap-y-12 sm:mt-16 lg:max-w-none lg:grid-cols-3">
+        <ol className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-6 sm:mt-16 lg:max-w-none lg:grid-cols-3">
           {sprints.map((sprint, index) => (
-            <div key={sprint.title} className="flex flex-col">
-              <p className="font-code text-gradient-3 text-sm font-semibold">
-                Sprint {index + 1}
-              </p>
-              <dt className="text-secondary mt-1 text-lg font-semibold">
-                {sprint.title}
-              </dt>
-              <dd className="mt-3">
-                <ul className="list-disc space-y-2 pl-4 text-base text-gray-600">
-                  {sprint.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </dd>
-            </div>
+            <li
+              key={sprint.title}
+              className="flex flex-col rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200"
+            >
+              <div className="flex items-baseline gap-x-4">
+                <span className="font-code text-gradient-3 text-3xl font-semibold">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="text-secondary text-lg font-semibold">
+                  {sprint.title}
+                </h3>
+              </div>
+              <ul className="mt-6 space-y-3 text-base text-gray-600">
+                {sprint.items.map((item) => (
+                  <li key={item} className="flex gap-x-3">
+                    <CheckIcon
+                      className="text-primary mt-1 h-5 w-5 shrink-0"
+                      aria-hidden="true"
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </li>
           ))}
-        </dl>
+        </ol>
       </div>
     </div>
   )
