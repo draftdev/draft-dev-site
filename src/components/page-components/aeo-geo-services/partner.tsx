@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 const Partner = () => {
   return (
-    <div className="overflow-hidden bg-white py-14 sm:py-32">
+    <div className="overflow-hidden bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
-          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+          <div className="px-6 lg:px-0 lg:pr-4">
             <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
               <h2 className="sm:subheader-gradient subheader-mobile-gradient">
-                An AI search partner with measurable results
+                A growth partner with measurable results
               </h2>
 
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
@@ -33,12 +33,13 @@ const Partner = () => {
                 </div>
                 <div className="relative">
                   <dd className="my-2">
-                    After the roadmap is approved, we create and publish
-                    citation-ready content and earn mentions on the sources AI
-                    tools trust. In monthly analytics reviews we track your AI
-                    mentions and citations alongside traffic and leads, and
-                    adjust the roadmap based on what is actually earning
-                    citations.
+                    We create and publish citation-ready content, then share it
+                    on developer platforms that AI tools cite and through our
+                    Influencer Distribution Network, so your product shows up
+                    in more of the places AI tools learn from. In monthly
+                    analytics reviews we track your AI mentions and citations
+                    alongside traffic and leads, and adjust the roadmap based
+                    on what is actually earning citations.
                   </dd>
                 </div>
               </dl>

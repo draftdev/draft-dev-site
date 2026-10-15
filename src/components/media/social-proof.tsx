@@ -7,8 +7,10 @@ const stats = [
 
 export default function SocialProof({
   showHeading = true,
+  title = 'A content creation agency with a track record',
 }: {
   showHeading?: boolean
+  title?: string
 }) {
   return (
     <div className="bg-gradient-brand py-16">
@@ -17,7 +19,7 @@ export default function SocialProof({
           {showHeading && (
             <div className="text-center">
               <h2 className="lg:subheader-light subheader-mobile-light">
-                A content creation agency with a track record
+                {title}
               </h2>
               <p className="mt-4 text-lg text-gray-100 lg:leading-8">
                 We have worked with hundreds of successful companies,

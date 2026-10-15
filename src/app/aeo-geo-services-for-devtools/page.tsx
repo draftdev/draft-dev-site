@@ -1,21 +1,22 @@
 import FAQ from '@/components/global/faq'
-import ServiceHeader from '@/components/global/headers/service-header-content-strategy'
-import MedCaseGpuCloud from '@/components/media/case-studies/med-case-gpu-cloud'
-import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
 import Testimonial from '@/components/media/testimonials/testimonial'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
+import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
+import BookCall from '@/components/page-components/aeo-geo-services/book-call'
+import CaseStudy from '@/components/page-components/aeo-geo-services/case-study'
+import Features from '@/components/page-components/aeo-geo-services/features'
+import Hero from '@/components/page-components/aeo-geo-services/hero'
 import Partner from '@/components/page-components/aeo-geo-services/partner'
-import Why from '@/components/page-components/why'
 
 import type { Metadata } from 'next'
 
 const description =
-  'We build AEO and GEO content engines that help your developer tool get cited in AI answers. Proven AI workflows and 300+ vetted subject matter experts create content that resonates with developers, search engines and LLMs.'
+  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ vetted subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'AEO and GEO Services for Developer Tools & Platforms - Draft.dev',
+  title: 'AEO & GEO Services for Developer Tools & Platforms - Draft.dev',
   description,
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
@@ -23,20 +24,20 @@ export const metadata: Metadata = {
     url: 'https://draft.dev/aeo-geo-services-for-devtools',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title: 'AEO and GEO Services for Developer Tools & Platforms - Draft.dev',
+    title: 'AEO & GEO Services for Developer Tools & Platforms - Draft.dev',
     description,
     images: [
       {
         url: '/site/med-landscape/aeo_geo_og_draft_dev.jpg',
         width: 1200,
         height: 630,
-        alt: 'AEO and GEO Services by Draft.dev',
+        alt: 'AEO & GEO Services by Draft.dev',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AEO and GEO Services for Developer Tools & Platforms - Draft.dev',
+    title: 'AEO & GEO Services for Developer Tools & Platforms - Draft.dev',
     description,
     images: ['/site/med-landscape/aeo_geo_og_draft_dev.jpg'],
     creator: '@draftdev',
@@ -61,70 +62,107 @@ export const metadata: Metadata = {
 export default function AEOGEOServices() {
   return (
     <div>
-      <ServiceHeader
-        title="AEO and GEO Services for Developer Tools & Platforms"
+      <Hero
+        title="AEO & GEO Services for Developer Tools & Platforms"
         description={description}
-        leadMagnet={{
-          badge: 'Free Guide',
-          text: 'AEO & GEO Guide for DevTools',
-          href: '/aeo-geo-for-devtools',
-        }}
-        primaryCTA={{
-          text: 'Book a Discovery Call',
-          href: '/call',
-        }}
+        primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         secondaryCTA={{
-          text: 'Learn what AEO and GEO mean for developer marketing',
+          text: 'Learn what AEO & GEO mean for developer marketing',
           href: '/aeo-geo-for-devtools',
+        }}
+        guide={{
+          badge: 'Free Guide',
+          title: 'AEO & GEO Guide for DevTools',
+          href: '/aeo-geo-for-devtools',
+          imageSrc: '/site/med-portrait/aeo-geo-for-devtools_draftdev.jpg',
         }}
       />
       <main>
-        <div className="bg-gradient-brand">
-          <SocialProof showHeading={false} />
-        </div>
-        <Why
+        <Features
           title="Get Your Product Into AI Answers"
           subtitle="Content and strategy built to earn AI mentions and citations, not guesswork"
-          subtitleBold=""
           features={[
             {
               title: 'A content strategy built for AI answers',
               description:
-                'After your kickoff call, our engineers use your product. We analyze your competitors, audit your existing content for gaps and opportunities, and conduct SEO and GEO research. Then we build a roadmap of content designed to earn mentions and citations in AI answers.',
+                'Our engineers use your product. We analyze your competitors, audit your existing content for gaps and opportunities, and conduct SEO and GEO research. Then we build a roadmap of content designed to earn mentions and citations in AI answers.',
               linkText: 'See how we turn content into citations',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. Our vetted engineer-writers refresh your existing content and create new explainers, definitions, tutorials and code samples that hold up on their own. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. Our vetted engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Mentions on the sources AI trusts',
               description:
-                'Most of what an LLM knows about you comes from other sites. We earn mentions where developers and AI tools look: guest posts in developer publications, helpful answers on Reddit and Quora, placements in reviews and roundups, and Wikipedia where your product qualifies.',
+                'Most of what an LLM knows about you comes from other sites. We distribute your content on developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion. Our Influencer Distribution Network of developer micro-influencers also shares it, giving your product more chances to be mentioned and cited.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
           ]}
         />
-        <div className="bg-gradient-brand">
-          <SocialProof />
-        </div>
+        <SocialProof title="A growth agency with a track record" />
         <Partner />
-        <Testimonial
-          quote="Having previously worked with draft.dev, I reached out to them within weeks of starting to help us accelerate our content creation. Our first pieces were published within weeks and ranked within the first month."
-          name="Dawn Parzych"
-          role="Head of Marketing"
-          company="Shorebird"
-          imageSrc="/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg"
-          imageAlt="Dawn Parzych"
+        <TestimonialCarousel
+          testimonials={[
+            {
+              quote:
+                'Having previously worked with draft.dev, I reached out to them within weeks of starting to help us accelerate our content creation. Our first pieces were published within weeks and ranked within the first month.',
+              name: 'Dawn Parzych',
+              role: 'Head of Marketing',
+              company: 'Shorebird',
+              imageSrc:
+                '/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg',
+            },
+            {
+              quote:
+                'Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials.',
+              name: 'Randall Degges',
+              role: 'Head of Developer & Security Relations',
+              company: 'snyk',
+              imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
+            },
+            {
+              quote:
+                "It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published.",
+              name: 'Rich Burroughs',
+              role: 'Developer Advocate',
+              company: 'Loft Labs',
+              imageSrc:
+                '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
+            },
+            {
+              quote:
+                'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
+              name: 'Robert Gibb',
+              role: 'Content Marketing Manager',
+              company: 'Fabric',
+              imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
+            },
+            {
+              quote:
+                'They have helped us double our audience, attract more trial users, and increase our trial conversion rate.',
+              name: 'Henry Poydar',
+              role: 'Founder & CEO',
+              company: 'Status Hero',
+              imageSrc:
+                '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+            },
+          ]}
         />
-        <MedCaseGpuCloud />
-        <LogosDark />
-        <TestimonialsGroup />
+        <CaseStudy />
+        <TestimonialsCarousel
+          exclude={[
+            'Dawn Parzych',
+            'Randall Degges',
+            'Rich Burroughs',
+            'Robert Gibb',
+          ]}
+        />
         <Testimonial
           quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
           name="Em Blitstein"
@@ -133,13 +171,14 @@ export default function AEOGEOServices() {
           imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
           imageAlt="Em Blitstein"
         />
+        <BookCall />
       </main>
       <FAQ
         pageFaqs={[
           {
-            question: 'Is AEO and GEO just SEO with a new name?',
+            question: 'Is AEO & GEO just SEO with a new name?',
             answer:
-              'No. They overlap, but they do different jobs. SEO gets you ranked in a list of links. AEO and GEO get you quoted inside an AI answer. That depends on how easy your content is to quote, and how often your brand shows up on the sites AI trusts. A page can rank well and still never get quoted.',
+              'No. They overlap, but they do different jobs. SEO gets you ranked in a list of links. AEO & GEO get you quoted inside an AI answer. That depends on how easy your content is to quote, and how often your brand shows up on the sites AI trusts. A page can rank well and still never get quoted.',
           },
           {
             question: 'How do you measure whether it is working?',
@@ -149,7 +188,7 @@ export default function AEOGEOServices() {
           {
             question: 'How long before we see citations?',
             answer:
-              'It depends on where you start. One client with a brand-new domain got clicks from two major AI tools about eight weeks after publishing. Sites that already have content usually move faster, because we can improve existing pages as well as add new ones.',
+              'It depends on where you start. One client with a brand-new domain started getting clicks from two major AI tools within weeks of publishing. Sites that already have content usually move faster, because we can improve existing pages as well as add new ones.',
           },
         ]}
       />
