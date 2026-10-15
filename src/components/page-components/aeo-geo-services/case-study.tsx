@@ -1,57 +1,69 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+const stats = [
+  { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
+  { value: '3 of 3', label: 'Major AI assistants citing one article' },
+  { value: '29', label: 'Pieces published in under 5 months' },
+]
+
 const CaseStudy = () => {
   return (
-    <section className="relative isolate my-12 sm:my-16">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-xl gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
-          <div className="relative w-full lg:max-w-xl lg:shrink-0">
-            <p className="font-code text-gradient-3 text-base font-semibold tracking-wide uppercase">
+        <div className="bg-gradient-brand overflow-hidden rounded-4xl shadow-xl lg:grid lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="p-8 sm:p-12">
+            <p className="font-code text-sm font-semibold tracking-widest text-amber-300 uppercase">
               Case Study
             </p>
-            <h2 className="subheader-case-study text-gradient-3 mt-3 mb-6 pb-4 font-semibold">
-              How a GPU cloud platform's new content earned 10x the AI traffic
-              of its legacy pages
+            <h2 className="font-code mt-4 text-2xl leading-tight font-semibold text-white sm:text-4xl">
+              How a GPU cloud platform&apos;s new content earned 10x the AI
+              traffic of its legacy pages
             </h2>
+            <p className="mt-5 max-w-2xl text-lg text-gray-100">
+              Original content outperformed refreshed legacy pages that started
+              with more authority. One article was cited by all three major AI
+              assistants in a single month.
+            </p>
 
-            <div className="relative max-w-xl py-8 pl-8">
-              <div className="absolute top-0 left-0 h-full w-1 bg-gray-300" />
-              <p className="font-code text-2xl font-semibold text-gray-600 sm:text-3xl">
-                Original content outperformed refreshed legacy pages that
-                started with more authority. One article was cited by all three
-                major AI assistants in a single month.
-              </p>
-            </div>
+            <dl className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {stats.map((stat) => (
+                <div
+                  key={stat.value}
+                  className="flex flex-col-reverse justify-end gap-y-1 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15"
+                >
+                  <dt className="text-sm text-gray-200">{stat.label}</dt>
+                  <dd className="font-code text-3xl font-semibold text-white">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
 
-            <div className="mt-8 flex flex-col items-start gap-6 sm:mt-12 sm:flex-row sm:items-center">
+            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
               <Link
                 href="/case-studies/gpu-cloud-platform"
-                className="bg-gradient-brand rounded-md px-6 py-3.5 text-base font-semibold text-white shadow-md hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-lg"
+                className="rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 sm:text-lg"
               >
                 Read the full case study
               </Link>
               <Link
                 href="/case-studies"
-                className="text-base font-semibold text-gray-600 hover:text-gray-800 sm:text-lg"
+                className="text-base font-semibold text-white hover:text-gray-200 sm:text-lg"
               >
                 View other case studies <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
 
-          <div className="m-auto hidden lg:block lg:w-[400px]">
-            <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-              <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                <Image
-                  alt="Engineer working on code across two screens"
-                  height={500}
-                  width={500}
-                  src="/site/med-portrait/code_session_draft_dev.jpg"
-                  className="aspect-2/3 w-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="relative hidden lg:block">
+            <Image
+              alt="Engineer working on code across two screens"
+              src="/site/med-portrait/code_session_draft_dev.jpg"
+              fill
+              sizes="360px"
+              className="object-cover"
+            />
           </div>
         </div>
       </div>
