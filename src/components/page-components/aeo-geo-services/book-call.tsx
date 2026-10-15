@@ -1,14 +1,18 @@
 import CalendlyWidget from '@/components/page-components/vendors/calendly'
 import FormInquiry from '@/components/page-components/vendors/hubspot/form-inquiry'
+import {
+  CalendarDaysIcon,
+  EnvelopeIcon,
+} from '@heroicons/react/24/outline'
 
 // The /call page's booking options, embedded so visitors can book without
-// leaving the page.
+// leaving the page: Calendly on the left, the inquiry form on the right.
 const BookCall = () => {
   return (
     // Extra bottom padding: the footer CTA overlaps the last section by ~136px.
     <section
       id="book-a-call"
-      className="scroll-mt-32 bg-white pt-16 pb-48 sm:pt-20"
+      className="scroll-mt-32 bg-gray-50 pt-16 pb-48 sm:pt-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -21,27 +25,60 @@ const BookCall = () => {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-4xl">
-          <CalendlyWidget
-            url="https://calendly.com/mushfiq-draft/draft-dev-discovery-call"
-            minWidth={320}
-            height={760}
-          />
-          <div id="inquiry-form" className="mx-auto mt-12 max-w-3xl scroll-mt-32">
-            <h3 className="text-secondary font-code text-xl font-semibold sm:text-2xl">
-              Prefer to send a message?
-            </h3>
-            <p className="pt-3 pb-8 text-base text-gray-600">
-              Tell us about your goals, or email{' '}
-              <a
-                href="mailto:sales@draft.dev"
-                className="text-secondary font-semibold underline underline-offset-4"
-              >
-                sales@draft.dev
-              </a>{' '}
-              directly.
-            </p>
-            <FormInquiry />
+        <div className="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+          <div className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200">
+            <div className="flex items-center gap-x-4 border-b border-gray-100 px-6 py-5 sm:px-8">
+              <span className="bg-gradient-brand flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
+                <CalendarDaysIcon
+                  className="h-6 w-6 text-white"
+                  aria-hidden="true"
+                />
+              </span>
+              <div>
+                <h3 className="text-secondary font-code text-lg font-semibold sm:text-xl">
+                  Schedule a call
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Choose a time on our calendar.
+                </p>
+              </div>
+            </div>
+            <CalendlyWidget
+              url="https://calendly.com/mushfiq-draft/draft-dev-discovery-call"
+              minWidth={320}
+              height={700}
+            />
+          </div>
+
+          <div
+            id="inquiry-form"
+            className="scroll-mt-32 rounded-3xl bg-white shadow-sm ring-1 ring-gray-200"
+          >
+            <div className="flex items-center gap-x-4 border-b border-gray-100 px-6 py-5 sm:px-8">
+              <span className="bg-gradient-brand flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
+                <EnvelopeIcon
+                  className="h-6 w-6 text-white"
+                  aria-hidden="true"
+                />
+              </span>
+              <div>
+                <h3 className="text-secondary font-code text-lg font-semibold sm:text-xl">
+                  Send a message
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Or email{' '}
+                  <a
+                    href="mailto:sales@draft.dev"
+                    className="text-secondary font-semibold underline underline-offset-4"
+                  >
+                    sales@draft.dev
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="px-6 py-6 sm:px-8">
+              <FormInquiry />
+            </div>
           </div>
         </div>
       </div>

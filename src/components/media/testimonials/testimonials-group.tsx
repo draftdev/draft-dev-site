@@ -20,7 +20,7 @@ type Testimonial = {
   }
 }
 
-const testimonials: Testimonial[] = [
+export const testimonials: Testimonial[] = [
   {
     body: "I was thoroughly impressed by the smooth onboarding and ability to adapt to our product suite. Draft.dev's attention to detail and dedication to aligning content with our brand have significantly impacted our developer-focused content strategy. The high-quality technical blog posts have been well-received internally, and we're excited to see the full impact on our content program.",
     author: {

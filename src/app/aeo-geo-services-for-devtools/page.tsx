@@ -1,7 +1,7 @@
 import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
+import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
 import BookCall from '@/components/page-components/aeo-geo-services/book-call'
 import CaseStudy from '@/components/page-components/aeo-geo-services/case-study'
 import Features from '@/components/page-components/aeo-geo-services/features'
@@ -137,7 +137,15 @@ export default function AEOGEOServices() {
           ]}
         />
         <CaseStudy />
-        <TestimonialsGroup title="100+ Growing Clients" />
+        <TestimonialsCarousel
+          exclude={[
+            'Dawn Parzych',
+            'Randall Degges',
+            'Rich Burroughs',
+            'Robert Gibb',
+            'Emily Blitstein',
+          ]}
+        />
         <TestimonialCarousel
           testimonials={[
             {
