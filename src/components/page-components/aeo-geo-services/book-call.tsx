@@ -12,7 +12,7 @@ const BookCall = () => {
     // Extra bottom padding: the footer CTA overlaps the last section by ~136px.
     <section
       id="book-a-call"
-      className="scroll-mt-32 bg-gray-50 pt-16 pb-48 sm:pt-20"
+      className="scroll-mt-32 bg-gray-50 pt-14 pb-48 sm:pt-16"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">

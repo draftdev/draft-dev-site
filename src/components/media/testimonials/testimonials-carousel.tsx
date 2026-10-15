@@ -55,7 +55,7 @@ export default function TestimonialsCarousel({
 
   return (
     <section
-      className="bg-white py-16 lg:py-24"
+      className="bg-white pt-10 pb-14 lg:pt-12 lg:pb-16"
       id="testimonials"
       aria-roledescription="carousel"
       aria-label={title}

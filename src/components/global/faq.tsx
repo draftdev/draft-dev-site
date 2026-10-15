@@ -48,16 +48,22 @@ const faqs: FAQ[] = [
 type FAQProps = {
   // Page-specific questions, shown above the standard ones
   pageFaqs?: Omit<FAQ, 'id'>[]
+  // Outer spacing. The default leaves room for the footer CTA, which overlaps
+  // the section above it; pass tighter spacing when FAQ isn't the last section.
+  className?: string
 }
 
-export default function FAQ({ pageFaqs = [] }: FAQProps) {
+export default function FAQ({
+  pageFaqs = [],
+  className = 'mb-24 py-16',
+}: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
     ...faqs,
   ]
 
   return (
-    <div id="faq" className="mb-24 py-16">
+    <div id="faq" className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
           <h2 className="subheader-gradient scroll-mt-32" id="faq">

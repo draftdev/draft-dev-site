@@ -104,7 +104,7 @@ export default function AEOGEOServices() {
             },
           ]}
         />
-        <SocialProof title="A growth agency with a track record" />
+        <SocialProof title="A growth agency with a track record" compact />
         <Partner />
         <TestimonialCarousel
           testimonials={[
@@ -177,6 +177,7 @@ export default function AEOGEOServices() {
         />
       </main>
       <FAQ
+        className="pt-14 pb-8"
         pageFaqs={[
           {
             question: 'Is AEO & GEO just SEO with a new name?',

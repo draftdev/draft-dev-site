@@ -8,12 +8,15 @@ const stats = [
 export default function SocialProof({
   showHeading = true,
   title = 'A content creation agency with a track record',
+  compact = false,
 }: {
   showHeading?: boolean
   title?: string
+  // Tighter spacing for pages that pack sections closer together
+  compact?: boolean
 }) {
   return (
-    <div className="bg-gradient-brand py-16">
+    <div className={`bg-gradient-brand ${compact ? 'py-12' : 'py-16'}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           {showHeading && (
@@ -27,7 +30,7 @@ export default function SocialProof({
               </p>
             </div>
           )}
-          <dl className={`${showHeading ? 'my-16' : 'my-0'} grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4`}
+          <dl className={`${!showHeading ? 'my-0' : compact ? 'mt-10 mb-0' : 'my-16'} grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4`}
           >
             {stats.map((stat) => (
               <div key={stat.id} className="flex flex-col bg-white/5 p-8">

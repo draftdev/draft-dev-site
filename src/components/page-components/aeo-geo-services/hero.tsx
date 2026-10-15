@@ -22,7 +22,7 @@ const Hero = ({
   guide,
 }: HeroProps) => {
   return (
-    <section className="bg-gradient-brand pt-12 pb-16 sm:pt-16">
+    <section className="bg-gradient-brand pt-12 pb-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16">
           <div>

@@ -17,7 +17,7 @@ interface FeaturesProps {
 // real H3 headings for each feature.
 const Features = ({ title, subtitle, features }: FeaturesProps) => {
   return (
-    <section className="overflow-hidden bg-white py-14 sm:py-20">
+    <section className="overflow-hidden bg-white pt-12 pb-12 sm:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">

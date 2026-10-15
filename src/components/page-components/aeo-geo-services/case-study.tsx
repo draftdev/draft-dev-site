@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const CaseStudy = () => {
   return (
-    <section className="relative isolate my-20 sm:my-24">
+    <section className="relative isolate my-12 sm:my-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl gap-x-12 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
           <div className="relative w-full lg:max-w-xl lg:shrink-0">
