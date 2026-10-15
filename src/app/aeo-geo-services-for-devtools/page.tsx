@@ -1,8 +1,7 @@
 import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
-import Testimonial from '@/components/media/testimonials/testimonial'
 import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
-import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
+import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
 import BookCall from '@/components/page-components/aeo-geo-services/book-call'
 import CaseStudy from '@/components/page-components/aeo-geo-services/case-study'
 import Features from '@/components/page-components/aeo-geo-services/features'
@@ -135,6 +134,20 @@ export default function AEOGEOServices() {
               imageSrc:
                 '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
             },
+          ]}
+        />
+        <CaseStudy />
+        <TestimonialsGroup title="100+ Growing Clients" />
+        <TestimonialCarousel
+          testimonials={[
+            {
+              quote:
+                'Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate.',
+              name: 'Em Blitstein',
+              role: 'Senior Content Marketing Manager',
+              company: 'Sinch Mailgun',
+              imageSrc: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+            },
             {
               quote:
                 'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
@@ -154,24 +167,6 @@ export default function AEOGEOServices() {
             },
           ]}
         />
-        <CaseStudy />
-        <TestimonialsCarousel
-          exclude={[
-            'Dawn Parzych',
-            'Randall Degges',
-            'Rich Burroughs',
-            'Robert Gibb',
-          ]}
-        />
-        <Testimonial
-          quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
-          name="Em Blitstein"
-          role="Senior Content Marketing Manager"
-          company="Sinch Mailgun"
-          imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
-          imageAlt="Em Blitstein"
-        />
-        <BookCall />
       </main>
       <FAQ
         pageFaqs={[
@@ -192,6 +187,7 @@ export default function AEOGEOServices() {
           },
         ]}
       />
+      <BookCall />
     </div>
   )
 }

@@ -5,7 +5,11 @@ import FormInquiry from '@/components/page-components/vendors/hubspot/form-inqui
 // leaving the page.
 const BookCall = () => {
   return (
-    <section id="book-a-call" className="scroll-mt-32 bg-white py-16 sm:py-20">
+    // Extra bottom padding: the footer CTA overlaps the last section by ~136px.
+    <section
+      id="book-a-call"
+      className="scroll-mt-32 bg-white pt-16 pb-48 sm:pt-20"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
