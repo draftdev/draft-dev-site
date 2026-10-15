@@ -25,8 +25,8 @@ const BookCall = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
-          <div className="overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200">
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <div className="flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-gray-200">
             <div className="flex items-center gap-x-4 border-b border-gray-100 px-6 py-5 sm:px-8">
               <span className="bg-gradient-brand flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
                 <CalendarDaysIcon
@@ -46,13 +46,13 @@ const BookCall = () => {
             <CalendlyWidget
               url="https://calendly.com/mushfiq-draft/draft-dev-discovery-call"
               minWidth={320}
-              height={700}
+              height={900}
             />
           </div>
 
           <div
             id="inquiry-form"
-            className="scroll-mt-32 rounded-3xl bg-white shadow-sm ring-1 ring-gray-200"
+            className="flex scroll-mt-32 flex-col rounded-3xl bg-white shadow-sm ring-1 ring-gray-200"
           >
             <div className="flex items-center gap-x-4 border-b border-gray-100 px-6 py-5 sm:px-8">
               <span className="bg-gradient-brand flex h-11 w-11 shrink-0 items-center justify-center rounded-xl">
@@ -76,7 +76,7 @@ const BookCall = () => {
                 </p>
               </div>
             </div>
-            <div className="px-6 py-6 sm:px-8">
+            <div className="flex-1 px-6 py-6 sm:px-8">
               <FormInquiry />
             </div>
           </div>
