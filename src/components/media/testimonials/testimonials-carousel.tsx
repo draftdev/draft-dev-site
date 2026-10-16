@@ -75,37 +75,41 @@ export default function TestimonialsCarousel({
         <div
           ref={trackRef}
           onScroll={measure}
-          className="mt-10 flex snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] sm:-mx-4 lg:mt-14 [&::-webkit-scrollbar]:hidden"
+          // Vertical padding keeps card shadows from being clipped by the
+          // horizontal scroll container.
+          className="mt-8 flex snap-x snap-mandatory overflow-x-auto py-4 [scrollbar-width:none] sm:-mx-3 lg:mt-10 [&::-webkit-scrollbar]:hidden"
         >
           {items.map((t) => (
             <div
               key={t.author.name}
-              className="flex w-full shrink-0 snap-start pt-2 sm:w-1/2 sm:px-4 lg:w-1/3"
+              className="flex w-full shrink-0 snap-start px-1 sm:w-1/2 sm:px-3 lg:w-1/3"
             >
-              <div className="bg-gradient-brand/15 flex w-full rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="flex w-full rounded-4xl p-2 shadow-md shadow-black/5">
-                  <figure className="flex w-full flex-col justify-between overflow-hidden rounded-3xl bg-gray-50 p-8 text-base shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                    <blockquote className="text-gray-900">
-                      <p>{`"${t.body}"`}</p>
-                    </blockquote>
-                    <figcaption className="mt-6 flex items-center gap-x-4">
-                      <Image
-                        alt={`${t.author.name}'s profile`}
-                        src={t.author.imageUrl}
-                        width={100}
-                        height={100}
-                        className="h-10 w-10 rounded-full bg-gray-50"
-                      />
-                      <div>
-                        <div className="font-semibold text-gray-900">
-                          {t.author.name}
-                        </div>
-                        <div className="text-gray-600">{`@${t.author.company}`}</div>
-                      </div>
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
+              <figure className="flex w-full flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-gray-200 transition hover:shadow-md">
+                <span
+                  aria-hidden="true"
+                  className="font-code text-gradient-3 text-4xl leading-none font-semibold"
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 flex-1 text-base leading-7 text-gray-700">
+                  <p>{t.body}</p>
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-x-4 border-t border-gray-100 pt-5">
+                  <Image
+                    alt={`${t.author.name}'s profile`}
+                    src={t.author.imageUrl}
+                    width={100}
+                    height={100}
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-gray-100"
+                  />
+                  <div>
+                    <div className="font-semibold text-gray-900">
+                      {t.author.name}
+                    </div>
+                    <div className="text-sm text-gray-500">{`@${t.author.company}`}</div>
+                  </div>
+                </figcaption>
+              </figure>
             </div>
           ))}
         </div>
