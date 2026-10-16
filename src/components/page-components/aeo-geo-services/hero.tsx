@@ -6,7 +6,6 @@ interface HeroProps {
   title: string
   description: string
   primaryCTA: { text: string; href: string }
-  secondaryCTA: { text: string; href: string }
   guide: { badge: string; title: string; href: string; imageSrc: string }
 }
 
@@ -18,7 +17,6 @@ const Hero = ({
   title,
   description,
   primaryCTA,
-  secondaryCTA,
   guide,
 }: HeroProps) => {
   return (
@@ -32,25 +30,21 @@ const Hero = ({
             <Link href={guide.href} className="inline-flex">
               <span className="text-sm text-white">{guide.title}</span>
             </Link>
-            <h1 className="sm:header-light font-code mt-6 pb-4 text-3xl font-semibold text-white">
+            {/* Sized so the title sits on two lines on desktop */}
+            <h1 className="font-code mt-6 pb-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-3xl xl:text-[2.75rem]">
               {title}
             </h1>
             <p className="sm:paragraph-light text-base text-gray-100">
               {description}
             </p>
-            <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-              <Link
+            <div className="mt-10">
+              {/* Plain anchor: jumps to the booking section on this page */}
+              <a
                 href={primaryCTA.href}
-                className="rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 sm:text-lg"
+                className="inline-block rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 sm:text-lg"
               >
                 {primaryCTA.text}
-              </Link>
-              <Link
-                href={secondaryCTA.href}
-                className="text-base font-semibold text-white hover:text-gray-200"
-              >
-                {secondaryCTA.text} <span aria-hidden="true">→</span>
-              </Link>
+              </a>
             </div>
           </div>
 

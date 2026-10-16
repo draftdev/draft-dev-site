@@ -51,11 +51,15 @@ type FAQProps = {
   // Outer spacing. The default leaves room for the footer CTA, which overlaps
   // the section above it; pass tighter spacing when FAQ isn't the last section.
   className?: string
+  // Where "Book a discovery call" points; pages with an on-page booking
+  // section can pass a jump link instead
+  callHref?: string
 }
 
 export default function FAQ({
   pageFaqs = [],
   className = 'mb-24 py-16',
+  callHref = 'https://draft.dev/call',
 }: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
@@ -75,7 +79,7 @@ export default function FAQ({
               for?
             </span>{' '}
             <Link
-              href="https://draft.dev/call"
+              href={callHref}
               className="hover:text-gradient-brand text-secondary font-semibold underline"
             >
               Book a discovery call

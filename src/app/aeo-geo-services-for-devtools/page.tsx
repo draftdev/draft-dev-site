@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/aeo-geo-services/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ vetted subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
+  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -65,10 +65,6 @@ export default function AEOGEOServices() {
         title="AEO & GEO Services for Developer Tools & Platforms"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
-        secondaryCTA={{
-          text: 'Learn what AEO & GEO mean for developer marketing',
-          href: '/aeo-geo-for-devtools',
-        }}
         guide={{
           badge: 'Free Guide',
           title: 'AEO & GEO Guide for DevTools',
@@ -116,6 +112,8 @@ export default function AEOGEOServices() {
               company: 'Shorebird',
               imageSrc:
                 '/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg',
+              facePosition: '50% 38%',
+              faceZoom: 1.9,
             },
             {
               quote:
@@ -124,6 +122,8 @@ export default function AEOGEOServices() {
               role: 'Head of Developer & Security Relations',
               company: 'snyk',
               imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
+              facePosition: '50% 12%',
+              faceZoom: 1.6,
             },
             {
               quote:
@@ -133,6 +133,8 @@ export default function AEOGEOServices() {
               company: 'Loft Labs',
               imageSrc:
                 '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
+              facePosition: '50% 28%',
+              faceZoom: 1.4,
             },
           ]}
         />
@@ -155,6 +157,8 @@ export default function AEOGEOServices() {
               role: 'Senior Content Marketing Manager',
               company: 'Sinch Mailgun',
               imageSrc: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+              facePosition: '50% 40%',
+              faceZoom: 1.15,
             },
             {
               quote:
@@ -163,6 +167,8 @@ export default function AEOGEOServices() {
               role: 'Content Marketing Manager',
               company: 'Fabric',
               imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
+              facePosition: '50% 35%',
+              faceZoom: 1.3,
             },
             {
               quote:
@@ -172,12 +178,15 @@ export default function AEOGEOServices() {
               company: 'Status Hero',
               imageSrc:
                 '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+              facePosition: '50% 32%',
+              faceZoom: 1.4,
             },
           ]}
         />
       </main>
       <FAQ
         className="pt-14 pb-8"
+        callHref="#book-a-call"
         pageFaqs={[
           {
             question: 'Is AEO & GEO just SEO with a new name?',

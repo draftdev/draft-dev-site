@@ -10,11 +10,16 @@ export interface CarouselTestimonial {
   role: string
   company: string
   imageSrc: string
+  // Where the face sits in the portrait (CSS object-position), so the round
+  // thumbnail can zoom in on it. Defaults suit a head-and-shoulders shot.
+  facePosition?: string
+  // How far the round thumbnail zooms in on the face (1 = no zoom)
+  faceZoom?: number
 }
 
 const INTERVAL_MS = 7000
 
-// Same look as the single Testimonial block, cycling through several quotes.
+// Centred quote with a round face thumbnail, cycling through several quotes.
 // Autoplay pauses on hover or keyboard focus and is off for reduced motion.
 export default function TestimonialCarousel({
   testimonials,
@@ -44,52 +49,49 @@ export default function TestimonialCarousel({
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="mx-auto max-w-4xl px-8 lg:max-w-7xl">
+      <div className="mx-auto max-w-4xl px-6 lg:px-8">
         <div className="grid">
           {testimonials.map((t, i) => (
-            <div
+            <figure
               key={t.name}
               aria-hidden={i !== index}
-              className={`col-start-1 row-start-1 grid grid-cols-1 items-center transition-opacity duration-700 lg:grid-cols-[384px_1fr] ${
+              className={`col-start-1 row-start-1 flex flex-col items-center text-center transition-opacity duration-700 ${
                 i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
-              <div className="hidden lg:block">
-                <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                  <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                    <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                      <Image
-                        alt={t.name}
-                        src={t.imageSrc}
-                        width={400}
-                        height={600}
-                        className="aspect-2/3 w-full rounded-xl object-cover"
-                      />
-                    </div>
-                  </div>
+              <blockquote>
+                <p className="sm:testimonial-light subheader-mobile-light">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-x-4 text-left">
+                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-white/40 sm:h-20 sm:w-20">
+                  <Image
+                    alt={t.name}
+                    src={t.imageSrc}
+                    fill
+                    sizes="80px"
+                    className="object-cover"
+                    style={{
+                      objectPosition: t.facePosition ?? '50% 20%',
+                      transformOrigin: t.facePosition ?? '50% 20%',
+                      transform: `scale(${t.faceZoom ?? 1.5})`,
+                    }}
+                  />
                 </div>
-              </div>
-              <div className="flex lg:pl-20">
-                <figure className="mx-auto flex max-w-full flex-col gap-4 max-lg:text-center">
-                  <blockquote>
-                    <p className="sm:testimonial-light subheader-mobile-light relative text-left">
-                      "{t.quote}"
-                    </p>
-                  </blockquote>
-                  <figcaption>
-                    <p className="font-medium text-white">{t.name}</p>
-                    <p className="text-gray-100">
-                      {t.role}, {t.company}
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
+                <div>
+                  <p className="font-semibold text-white">{t.name}</p>
+                  <p className="text-sm text-gray-100">
+                    {t.role}, {t.company}
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
           ))}
         </div>
 
         {count > 1 && (
-          <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-end">
+          <div className="mt-10 flex items-center justify-center gap-x-6">
             <button
               type="button"
               onClick={() => go(index - 1)}

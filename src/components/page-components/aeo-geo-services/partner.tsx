@@ -33,13 +33,11 @@ const Partner = () => {
                 </div>
                 <div className="relative">
                   <dd className="my-2">
-                    We create and publish citation-ready content, then share it
-                    on developer platforms that AI tools cite and through our
-                    Influencer Distribution Network, so your product shows up
-                    in more of the places AI tools learn from. In monthly
-                    analytics reviews we track your AI mentions and citations
-                    alongside traffic and leads, and adjust the roadmap based
-                    on what is actually earning citations.
+                    We create and publish citation-ready content. Then we share
+                    it on developer platforms that AI tools cite, and through
+                    our Influencer Distribution Network. Each month, we track
+                    your AI mentions and citations alongside traffic and leads,
+                    and adjust the roadmap based on what is working.
                   </dd>
                 </div>
               </dl>
