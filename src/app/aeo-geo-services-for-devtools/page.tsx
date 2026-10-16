@@ -112,8 +112,8 @@ export default function AEOGEOServices() {
               company: 'Shorebird',
               imageSrc:
                 '/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg',
-              facePosition: '50% 38%',
-              faceZoom: 1.9,
+              facePosition: '50% 34%',
+              faceZoom: 1.6,
             },
             {
               quote:
@@ -122,8 +122,8 @@ export default function AEOGEOServices() {
               role: 'Head of Developer & Security Relations',
               company: 'snyk',
               imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
-              facePosition: '50% 12%',
-              faceZoom: 1.6,
+              facePosition: '50% 10%',
+              faceZoom: 1.45,
             },
             {
               quote:
@@ -133,8 +133,8 @@ export default function AEOGEOServices() {
               company: 'Loft Labs',
               imageSrc:
                 '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
-              facePosition: '50% 28%',
-              faceZoom: 1.4,
+              facePosition: '50% 26%',
+              faceZoom: 1.05,
             },
           ]}
         />
@@ -157,8 +157,8 @@ export default function AEOGEOServices() {
               role: 'Senior Content Marketing Manager',
               company: 'Sinch Mailgun',
               imageSrc: '/media/testimonials-lg/em_sinch_mailgun.jpg',
-              facePosition: '50% 40%',
-              faceZoom: 1.15,
+              facePosition: '50% 36%',
+              faceZoom: 1,
             },
             {
               quote:
@@ -167,8 +167,8 @@ export default function AEOGEOServices() {
               role: 'Content Marketing Manager',
               company: 'Fabric',
               imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
-              facePosition: '50% 35%',
-              faceZoom: 1.3,
+              facePosition: '50% 30%',
+              faceZoom: 1.05,
             },
             {
               quote:
@@ -178,8 +178,8 @@ export default function AEOGEOServices() {
               company: 'Status Hero',
               imageSrc:
                 '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
-              facePosition: '50% 32%',
-              faceZoom: 1.4,
+              facePosition: '50% 30%',
+              faceZoom: 1.1,
             },
           ]}
         />

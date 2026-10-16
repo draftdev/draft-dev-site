@@ -65,12 +65,12 @@ export default function TestimonialCarousel({
                 </p>
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-x-4 text-left">
-                <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full ring-2 ring-white/40 sm:h-20 sm:w-20">
+                <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full ring-2 ring-white/40 sm:h-28 sm:w-28">
                   <Image
                     alt={t.name}
                     src={t.imageSrc}
                     fill
-                    sizes="80px"
+                    sizes="112px"
                     className="object-cover"
                     style={{
                       objectPosition: t.facePosition ?? '50% 20%',
