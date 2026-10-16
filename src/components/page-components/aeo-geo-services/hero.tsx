@@ -1,4 +1,4 @@
-import { LogosFlex } from '@/components/media/logos-flex'
+import { LogoGrid, LogoMarquee } from '@/components/media/logo-strip'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -22,7 +22,7 @@ const Hero = ({
   return (
     <section className="bg-gradient-brand pt-12 pb-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_290px] lg:gap-16">
           <div>
             <span className="text-primary ring-primary-40 mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-inset">
               <Link href={guide.href}>{guide.badge}</Link>
@@ -32,7 +32,16 @@ const Hero = ({
             </Link>
             {/* Sized so the title sits on two lines on desktop */}
             <h1 className="font-code mt-6 pb-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-3xl xl:text-[2.75rem]">
-              {title}
+              {/* Break after "for" on desktop so the two lines read naturally */}
+              {title.includes(' for ') ? (
+                <>
+                  {title.slice(0, title.indexOf(' for ') + 4)}
+                  <br className="hidden lg:block" />{' '}
+                  {title.slice(title.indexOf(' for ') + 5)}
+                </>
+              ) : (
+                title
+              )}
             </h1>
             <p className="sm:paragraph-light text-base text-gray-100">
               {description}
@@ -50,9 +59,10 @@ const Hero = ({
 
           <Link
             href={guide.href}
-            className="group mx-auto block w-full max-w-sm rounded-4xl bg-white/10 p-3 ring-1 ring-white/20 transition hover:bg-white/15"
+            // Compact row with a thumbnail on mobile, full cover card on desktop
+            className="group flex w-full items-center gap-4 rounded-3xl bg-white/10 p-3 ring-1 ring-white/20 transition hover:bg-white/15 lg:mx-auto lg:block lg:max-w-sm lg:rounded-4xl"
           >
-            <div className="overflow-hidden rounded-3xl bg-white">
+            <div className="w-24 shrink-0 overflow-hidden rounded-2xl bg-white sm:w-28 lg:w-auto lg:rounded-3xl">
               <Image
                 src={guide.imageSrc}
                 alt={`${guide.title} preview`}
@@ -62,11 +72,11 @@ const Hero = ({
                 className="w-full transition group-hover:scale-[1.02]"
               />
             </div>
-            <div className="px-3 pt-4 pb-2">
+            <div className="min-w-0 lg:px-3 lg:pt-4 lg:pb-2">
               <p className="text-sm font-semibold tracking-wide text-amber-300 uppercase">
                 {guide.badge}
               </p>
-              <p className="font-code mt-1 text-lg font-semibold text-white">
+              <p className="font-code mt-1 text-base font-semibold text-white lg:text-lg">
                 {guide.title}
               </p>
               <p className="mt-2 text-sm font-semibold text-white group-hover:text-gray-200">
@@ -76,7 +86,15 @@ const Hero = ({
           </Link>
         </div>
 
-        <LogosFlex className="mt-16" />
+        {/* Same logos as the homepage strip, with a plain-text label that also
+            shows on mobile */}
+        <div className="mt-8 sm:mt-10">
+          <p className="text-sm font-medium text-white sm:text-base">
+            Trusted by 100+ tech companies
+          </p>
+          <LogoGrid className="mt-4" />
+          <LogoMarquee className="mt-4" />
+        </div>
       </div>
     </section>
   )

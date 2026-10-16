@@ -54,12 +54,16 @@ type FAQProps = {
   // Where "Book a discovery call" points; pages with an on-page booking
   // section can pass a jump link instead
   callHref?: string
+  title?: string
+  headingClassName?: string
 }
 
 export default function FAQ({
   pageFaqs = [],
   className = 'mb-24 py-16',
   callHref = 'https://draft.dev/call',
+  title = 'Frequently asked questions',
+  headingClassName = 'subheader-gradient',
 }: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
@@ -70,8 +74,8 @@ export default function FAQ({
     <div id="faq" className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className="subheader-gradient scroll-mt-32" id="faq">
-            Frequently asked questions
+          <h2 className={`${headingClassName} scroll-mt-32`} id="faq">
+            {title}
           </h2>
           <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
             <span className="font-semibold">

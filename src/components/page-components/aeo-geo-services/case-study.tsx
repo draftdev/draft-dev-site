@@ -49,7 +49,7 @@ const CaseStudy = () => {
               </Link>
               <Link
                 href="/case-studies"
-                className="text-base font-semibold text-white hover:text-gray-200 sm:text-lg"
+                className="py-2 text-base font-semibold text-white hover:text-gray-200 sm:text-lg"
               >
                 View other case studies <span aria-hidden="true">→</span>
               </Link>

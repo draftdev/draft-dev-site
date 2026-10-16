@@ -101,7 +101,7 @@ export default function TestimonialCarousel({
             >
               <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
             </button>
-            <div className="flex gap-x-2">
+            <div className="flex">
               {testimonials.map((t, i) => (
                 <button
                   key={t.name}
@@ -109,10 +109,15 @@ export default function TestimonialCarousel({
                   onClick={() => go(i)}
                   aria-label={`Show testimonial from ${t.name}`}
                   aria-current={i === index}
-                  className={`h-2.5 rounded-full transition-all ${
-                    i === index ? 'w-8 bg-white' : 'w-2.5 bg-white/40'
-                  }`}
-                />
+                  // Large tap area around a small visual dot
+                  className="flex h-10 items-center px-1"
+                >
+                  <span
+                    className={`block h-2.5 rounded-full transition-all ${
+                      i === index ? 'w-8 bg-white' : 'w-2.5 bg-white/40'
+                    }`}
+                  />
+                </button>
               ))}
             </div>
             <button

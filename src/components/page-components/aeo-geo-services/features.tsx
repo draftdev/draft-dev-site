@@ -39,7 +39,7 @@ const Features = ({ title, subtitle, features }: FeaturesProps) => {
               <p className="mt-4">
                 <Link
                   href={feature.linkHref}
-                  className="text-gradient-3 text-base font-semibold hover:text-gray-700"
+                  className="text-gradient-3 inline-block py-2 text-base font-semibold hover:text-gray-700"
                 >
                   {feature.linkText}
                   <span aria-hidden="true"> →</span>
