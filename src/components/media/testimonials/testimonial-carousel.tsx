@@ -41,7 +41,7 @@ export default function TestimonialCarousel({
 
   return (
     <section
-      className="bg-gradient-brand py-16"
+      className="bg-gradient-brand py-10 sm:py-12"
       aria-roledescription="carousel"
       aria-label="Client testimonials"
       onMouseEnter={() => setPaused(true)}
@@ -55,7 +55,7 @@ export default function TestimonialCarousel({
             <figure
               key={t.name}
               aria-hidden={i !== index}
-              className={`col-start-1 row-start-1 flex flex-col items-center text-center transition-opacity duration-700 ${
+              className={`col-start-1 row-start-1 flex flex-col items-center justify-center text-center transition-opacity duration-700 ${
                 i === index ? 'opacity-100' : 'pointer-events-none opacity-0'
               }`}
             >
@@ -64,13 +64,14 @@ export default function TestimonialCarousel({
                   &ldquo;{t.quote}&rdquo;
                 </p>
               </blockquote>
-              <figcaption className="mt-8 flex items-center gap-x-4 text-left">
+              <figcaption className="mt-6 flex items-center gap-x-4 text-left">
                 <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full ring-2 ring-white/40 sm:h-28 sm:w-28">
                   <Image
                     alt={t.name}
                     src={t.imageSrc}
                     fill
-                    sizes="112px"
+                    sizes="224px"
+                    quality={90}
                     className="object-cover"
                     style={{
                       objectPosition: t.facePosition ?? '50% 20%',
@@ -91,7 +92,7 @@ export default function TestimonialCarousel({
         </div>
 
         {count > 1 && (
-          <div className="mt-10 flex items-center justify-center gap-x-6">
+          <div className="mt-6 flex items-center justify-center gap-x-6">
             <button
               type="button"
               onClick={() => go(index - 1)}

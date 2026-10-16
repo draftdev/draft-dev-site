@@ -112,8 +112,8 @@ export default function AEOGEOServices() {
               company: 'Shorebird',
               imageSrc:
                 '/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg',
-              facePosition: '50% 34%',
-              faceZoom: 1.6,
+              facePosition: '50% 20%',
+              faceZoom: 1,
             },
             {
               quote:
@@ -122,8 +122,8 @@ export default function AEOGEOServices() {
               role: 'Head of Developer & Security Relations',
               company: 'snyk',
               imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
-              facePosition: '50% 10%',
-              faceZoom: 1.45,
+              facePosition: '50% 0%',
+              faceZoom: 1,
             },
             {
               quote:
@@ -134,7 +134,7 @@ export default function AEOGEOServices() {
               imageSrc:
                 '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
               facePosition: '50% 26%',
-              faceZoom: 1.05,
+              faceZoom: 1,
             },
           ]}
         />
@@ -168,7 +168,7 @@ export default function AEOGEOServices() {
               company: 'Fabric',
               imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
               facePosition: '50% 30%',
-              faceZoom: 1.05,
+              faceZoom: 1,
             },
             {
               quote:
@@ -179,7 +179,7 @@ export default function AEOGEOServices() {
               imageSrc:
                 '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
               facePosition: '50% 30%',
-              faceZoom: 1.1,
+              faceZoom: 1,
             },
           ]}
         />
