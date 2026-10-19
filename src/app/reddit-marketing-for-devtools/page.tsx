@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We get your product mentioned in the Reddit threads your buyers already read. Our engineers write every comment, and these threads also show up in Google and in AI answers.'
+  'We get your product mentioned in the Reddit threads your buyers already read. Our engineers write helpful comments that name your product where it fits.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -75,27 +75,27 @@ export default function RedditMarketing() {
       />
       <main>
         <Features
-          title="Get Mentioned in Reddit Threads That Already Rank"
-          subtitle="Helpful answers from real engineers, in the threads your buyers read"
+          title="Get Mentioned Where Developers Ask for Advice"
+          subtitle="Helpful answers from engineers, in the threads your buyers read"
           features={[
             {
               title: 'Find the right threads',
               description:
-                "Our engineers use your product first. Then we find the threads where people ask about tools like yours, and pick the ones that already show up in Google. We don't start threads, run AMAs (Ask Me Anything posts) or buy Reddit ads.",
+                'Our engineers use your product. Then we find the Reddit threads where people ask about tools like yours, starting with the ones that already show up in Google and AI answers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Mentions written by subject matter experts',
               description:
-                'Reddit removes anything that looks like an ad, and developers spot it right away. So each comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question first and has no link.',
+                'Developers ignore anything that sounds like an ad. So each comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question first and mentions your product where it helps.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Measure what matters, not clicks',
+              title: 'Reports on what changed',
               description:
-                "The comments have no links, so we don't count clicks. We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month you see what changed.",
+                'We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month, you see what changed.',
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
@@ -105,9 +105,9 @@ export default function RedditMarketing() {
         <Partner
           title="A distribution partner that understands technical communities"
           paragraphs={[
-            'Developers talk about tools like yours on Reddit every day. Those threads often rank above your own website, in Google and in AI answers. But subreddits remove anything that looks like marketing, so most teams stay away.',
-            "So we take part the way an engineer would. We follow each subreddit's rules, never buy upvotes, and only comment when we can answer the question.",
-            'You approve the threads, we post the comments, and we watch how each thread does. Every month, we show you which threads help people find you and update the list.',
+            'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
+            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why our comments are written by engineers who have used tools like yours, and follow each subreddit's rules.",
+            'Before anything goes live, you approve the threads. Every month, we report where your product was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
         <TestimonialCarousel
@@ -219,17 +219,17 @@ export default function RedditMarketing() {
           {
             question: 'Will this get us banned?',
             answer:
-              "We follow each subreddit's rules. We don't start threads, run AMAs, buy ads, or post where the rules don't allow it. Every comment is helpful even without your product name in it.",
+              "We follow each subreddit's rules and only comment where we can help. Every comment is useful even without your product name in it.",
           },
           {
-            question: "Why don't the comments include a link?",
+            question: 'Which threads do you comment on?',
             answer:
-              'Subreddits often remove comments with links. A mention without a link still works, because these threads show up in Google and in AI answers when people are choosing a tool.',
+              'Threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers. You approve the list before we post.',
           },
           {
-            question: 'How do you measure results without clicks?',
+            question: 'How do you measure results?',
             answer:
-              'We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. You see the before and after every month.',
+              'We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. You get a report every month.',
           },
         ]}
       />
