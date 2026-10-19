@@ -79,21 +79,21 @@ export default function RedditMarketing() {
           subtitle="Helpful answers, checked by engineers, in the threads your buyers read"
           features={[
             {
-              title: 'Find the right threads',
+              title: 'Thread research',
               description:
                 'Our engineers use your product. Then we find existing Reddit threads where people ask about tools like yours, starting with the ones that already show up in Google and AI answers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Mentions checked by subject matter experts',
+              title: 'Brand mentions',
               description:
                 'Developers ignore anything that sounds like an ad. So every comment is checked by one of our 300+ engineers who has used tools like yours. It answers the question first and mentions your brand, without a link.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Reports on what changed',
+              title: 'Monthly reporting',
               description:
                 "These are unlinked brand mentions, so we don't count clicks. We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month, you see what changed.",
               linkText: 'See our approach to AEO and GEO',
