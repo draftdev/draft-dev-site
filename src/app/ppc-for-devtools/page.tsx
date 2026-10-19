@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We run paid search ads that reach developers who are already looking for a tool like yours. Our engineers write the landing pages, and we track the signups each ad brings in.'
+  'We run paid search ads that reach developers who are already looking for a tool like yours. Engineers check every landing page for accuracy, and we track the signups each ad brings in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -85,9 +85,9 @@ export default function PPCServices() {
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Landing pages written by engineers',
+              title: 'Landing pages checked by engineers',
               description:
-                "A click is wasted if the page doesn't earn a developer's trust. So one of our 300+ engineer-writers writes your landing page, with real setup steps, honest comparisons and code. We test different versions to see which works best.",
+                "A click is wasted if the page doesn't earn a developer's trust. So every landing page has real setup steps, honest comparisons and code, and one of our 300+ engineers checks it for accuracy. We test different versions to see which works best.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +105,7 @@ export default function PPCServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams have tried paid ads with developers and been let down. Developers block ads and tune out marketing. But some people are worth reaching: buyers comparing tools, and engineers stuck in your docs. They are already looking, and that is when paid ads work.',
-            'Reaching them is only half the job. The page they land on has to earn their trust, so the same engineer-writers who create your technical content write your landing pages.',
+            'Reaching them is only half the job. The page they land on has to earn their trust, so the same engineers who review your technical content check your landing pages.',
             'Once campaigns are live, we test your pages and watch the numbers. Every month, we report cost per lead and cost per signup, and move budget to the searches that bring in pipeline.',
           ]}
         />
@@ -148,7 +148,7 @@ export default function PPCServices() {
         />
         <CaseStudy
           title="How Status Hero grew blog traffic by 211% and increased its trial conversion rate with Draft.dev"
-          summary="Status Hero wanted more trial users. Our content plan, keyword research and industry-insider writers grew its traffic, its trial users and its trial conversion rate, and saved the team 40 hours a week."
+          summary="Status Hero wanted more trial users. Our content plan, keyword research and industry-insider expertise grew its traffic, its trial users and its trial conversion rate, and saved the team 40 hours a week."
           stats={[
             { value: '211%', label: 'Increase in blog visitors' },
             { value: '50x', label: 'Growth in Medium audience' },
@@ -212,11 +212,27 @@ export default function PPCServices() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'Do paid search ads work on developers?',
             answer:
               'On the right searches, yes. Developers block most ads, but buyers search for comparisons, and engineers stuck in your docs respond to retargeting. Paid ads work best when people are already looking.',
+          },
+          {
+            question: 'Which searches do you target?',
+            answer:
+              'Searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
+          },
+          {
+            question: 'Can you work with our existing ad accounts?',
+            answer:
+              'Yes. We review your current ad accounts before we build new campaigns.',
+          },
+          {
+            question: 'How do you report results?',
+            answer:
+              'Every month, you see cost per lead, cost per signup and which campaigns bring in pipeline. Then we move budget to the searches that work.',
           },
           {
             question: 'What budget do we need to start?',
@@ -226,7 +242,7 @@ export default function PPCServices() {
           {
             question: 'Do you build the landing pages?',
             answer:
-              'Yes. The same engineer-writers who create your technical content write them, and we test different versions to see which works best.',
+              'Yes. The same engineers who review your technical content check them for accuracy, and we test different versions to see which works best.',
           },
         ]}
       />
