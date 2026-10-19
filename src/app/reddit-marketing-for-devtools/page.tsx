@@ -88,7 +88,7 @@ export default function RedditMarketing() {
             {
               title: 'Mentions that help',
               description:
-                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. A subject matter expert who knows tools like yours reviews every comment, and we follow subreddit rules.',
+                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. A subject matter expert who knows tools like yours reviews every comment before it goes live.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
