@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We find the Reddit threads your buyers already read and leave helpful comments with unlinked brand mentions. An engineer who knows the topic checks every comment.'
+  'We find the Reddit threads your buyers already read and leave helpful comments with unlinked brand mentions. Our engineers review every comment.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
