@@ -103,7 +103,7 @@ export default function RedditMarketing() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A distribution partner that understands technical communities"
+          title="A growth partner that understands technical communities"
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
             "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why our comments are written by engineers who have used tools like yours, and follow each subreddit's rules.",
