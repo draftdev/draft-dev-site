@@ -17,7 +17,7 @@ const faqs: FAQ[] = [
     id: 2,
     question: 'Can I find specialized freelancers for my technical topics?',
     answer:
-      'Finding one great freelancer is possible. Finding 10 who are equally good, reliable, and available is nearly impossible. Our network includes 300+ pre-vetted technical writers covering every major technology, framework, and platform. We match the right expert to each piece while maintaining consistent quality standards across all content.',
+      'Finding one great freelancer is possible. Finding 10 who are equally good, reliable, and available is nearly impossible. Our network includes 300+ technical writers covering every major technology, framework, and platform. We match the right expert to each piece while maintaining consistent quality standards across all content.',
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const faqs: FAQ[] = [
     id: 4,
     question: 'How does Draft.dev maintain quality across so many writers?',
     answer:
-      'Every writer is technically vetted and each piece goes through our 5-step quality process: expert writer matching, technical review by subject matter experts, professional editing for clarity and voice, SEO optimization, and final quality check. Your content manager reviews one polished piece, not multiple rough drafts. This systematic approach ensures consistency regardless of the individual writer.',
+      'Every piece goes through our 5-step quality process: expert writer matching, technical review by subject matter experts, professional editing for clarity and voice, SEO optimization, and final quality check. Your content manager reviews one polished piece, not multiple rough drafts. This systematic approach ensures consistency regardless of the individual writer.',
   },
   {
     id: 5,

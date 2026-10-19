@@ -17,7 +17,7 @@ const faqs: FAQ[] = [
     id: 2,
     question: 'Who writes the content? Are they technical enough?',
     answer:
-      'All content is created by our network of 300+ vetted engineer-writers and reviewed by subject matter experts and editors. We also use AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience.',
+      'All content is created by our network of 300+ engineer-writers and reviewed by subject matter experts and editors. We also use AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience.',
   },
   {
     id: 3,

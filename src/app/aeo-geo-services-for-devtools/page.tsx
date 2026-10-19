@@ -87,7 +87,7 @@ export default function AEOGEOServices() {
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. Our vetted engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. Our engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +105,7 @@ export default function AEOGEOServices() {
           title="A growth partner with measurable results"
           paragraphs={[
             "Developers increasingly ask an AI assistant before they open a search tab, and most developer marketing teams can't tell whether that answer names their product or a competitor's. A page can rank well on Google and still never be cited.",
-            'Unlike agencies that simply renamed SEO as GEO, we treat it as two jobs: making your own pages easy for LLMs to quote, and earning mentions on the third-party sources they trust. Both need vetted writers who know your category, because developers, and the AI tools they use, ignore generic content.',
+            'Unlike agencies that simply renamed SEO as GEO, we treat it as two jobs: making your own pages easy for LLMs to quote, and earning mentions on the third-party sources they trust. Both need writers who know your category, because developers, and the AI tools they use, ignore generic content.',
             'We create and publish citation-ready content. Then we share it on developer platforms that AI tools cite, and through our Influencer Distribution Network. Each month, we track your AI mentions and citations alongside traffic and leads, and adjust the roadmap based on what is working.',
           ]}
         />

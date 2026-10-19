@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We get your product mentioned on Reddit, in the threads your buyers already read. Each comment is written by a vetted engineer who knows the topic. These threads already show up in Google and in AI answers.'
+  'We get your product mentioned on Reddit, in the threads your buyers already read. Each comment is written by an engineer who knows the topic. These threads already show up in Google and in AI answers.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -97,7 +97,7 @@ export default function RedditMarketing() {
             {
               title: 'Mentions written by subject matter experts',
               description:
-                "Reddit removes ads and self-promotion, and developers spot it right away. So every comment is written by one of our 300+ vetted engineer-writers who has used tools like yours. It answers the question and doesn't include a link. A comment only lasts if it is helpful on its own.",
+                "Reddit removes ads and self-promotion, and developers spot it right away. So every comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question and doesn't include a link. A comment only lasts if it is helpful on its own.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
