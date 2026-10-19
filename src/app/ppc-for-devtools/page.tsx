@@ -80,21 +80,21 @@ export default function PPCServices() {
             {
               title: 'Ads for active buyers',
               description:
-                'We start by reviewing your current ad accounts. Then we build campaigns around searches that show someone is choosing a tool: your brand, your competitors, comparisons and migrations. Your budget goes to people already looking.',
+                'We review your current ad accounts, then build campaigns around searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations. Your budget goes to people already looking.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Pages developers trust',
               description:
-                "Each ad leads to a landing page with real setup steps, honest comparisons and code, because a click is wasted if the page doesn't earn trust. An engineer checks every page, and we test versions to see which works best.",
+                "Each ad leads to a landing page with real setup steps, honest comparisons and code, because a click is wasted if the page doesn't earn trust. An engineer checks every page, and we test versions to see what works.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Retargeting docs readers',
               description:
-                'People reading your docs are your best audience, so we show them ads that match what they read, without showing them too often. Every month, you see cost per lead, cost per signup and pipeline, and we move budget to what works.',
+                'People reading your docs are your best audience, so we show them ads that match what they read. Every month, you see cost per lead, cost per signup and pipeline, and we move budget to what works.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
