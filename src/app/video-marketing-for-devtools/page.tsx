@@ -75,12 +75,12 @@ export default function VideoMarketing() {
       <main>
         <Features
           title="Video Developers Watch to the End"
-          subtitle="Checked by engineers, produced and published by us"
+          subtitle="Reviewed by technical experts, produced and published by us"
           features={[
             {
               title: 'Research-backed scripts',
               description:
-                'We pick the features that are hardest to explain in writing and script them around real developer workflows. An engineer checks every script, because one wrong command in a demo loses developers fast.',
+                'We pick the features that are hardest to explain in writing and script them around real developer workflows. Our technical experts review every script, because one wrong command in a demo loses developers fast.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
@@ -105,7 +105,7 @@ export default function VideoMarketing() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams know they need video, but get stuck in two places. The engineers who could explain your product are busy building it. And general video agencies can make a polished video without understanding what it shows. Developers close those videos within seconds.',
-            "That's why every script is checked by an engineer who has used tools like yours before we record, so the video shows your product the way developers really use it.",
+            "That's why a technical expert who knows tools like yours reviews every script before we record, so the video shows your product the way developers really use it.",
             'Once a video is live, we turn it into short clips and social posts so it keeps reaching people. Every month, we report on watch time and which topics to film next, and use that to plan the next video.',
           ]}
           image={{
@@ -224,7 +224,7 @@ export default function VideoMarketing() {
           {
             question: 'Do our engineers need to be on camera?',
             answer:
-              'No. We make screen recording and voiceover videos, and a subject matter expert checks every script, so your team never needs to be on camera.',
+              'No. We make screen recording and voiceover videos, and a subject matter expert reviews every script, so your team never needs to be on camera.',
           },
           {
             question: 'What kinds of videos do you make?',
