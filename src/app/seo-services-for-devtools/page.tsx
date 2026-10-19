@@ -81,14 +81,14 @@ export default function SEOServices() {
             {
               title: 'Roadmap from research',
               description:
-                'We study your product, your competitors and the content you already have. Then we research what your buyers search for, like error messages, setup questions and comparisons. You get a content roadmap, starting with quick wins.',
+                'We study your product, competitors and existing content, then research what your buyers search for, like error messages, setup questions and comparisons. You get a content roadmap that starts with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content engineers trust',
               description:
-                'We create the tutorials, how-to guides, integration pages and comparisons on that roadmap. An engineer who knows the subject checks every piece and tests the code, and a technical editor polishes it to your brand guidelines.',
+                'We create the tutorials, how-to guides, integration pages and comparisons on that roadmap. An engineer who knows the subject checks every piece and tests the code, then a technical editor polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
