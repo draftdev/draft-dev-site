@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We find the Reddit threads your buyers already read and leave helpful comments with unlinked brand mentions. Our engineers write every comment.'
+  'We find the Reddit threads your buyers already read and leave helpful comments with unlinked brand mentions. An engineer who knows the topic checks every comment.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -76,7 +76,7 @@ export default function RedditMarketing() {
       <main>
         <Features
           title="Get Mentioned Where Developers Ask for Advice"
-          subtitle="Helpful answers from engineers, in the threads your buyers read"
+          subtitle="Helpful answers, checked by engineers, in the threads your buyers read"
           features={[
             {
               title: 'Find the right threads',
@@ -86,9 +86,9 @@ export default function RedditMarketing() {
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Mentions written by subject matter experts',
+              title: 'Mentions checked by subject matter experts',
               description:
-                'Developers ignore anything that sounds like an ad. So each comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question first and mentions your brand, without a link.',
+                'Developers ignore anything that sounds like an ad. So every comment is checked by one of our 300+ engineers who has used tools like yours. It answers the question first and mentions your brand, without a link.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -106,7 +106,7 @@ export default function RedditMarketing() {
           title="A growth partner that understands developers"
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
-            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why our comments are written by engineers who have used tools like yours. They follow each subreddit's rules and mention your brand without a link.",
+            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is checked by an engineer who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
             'Before anything goes live, you approve the threads. Every month, we report where your product was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
@@ -216,6 +216,7 @@ export default function RedditMarketing() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'Will this get us banned?',
@@ -226,6 +227,16 @@ export default function RedditMarketing() {
             question: "Why don't the comments include a link?",
             answer:
               'Links often get comments removed. A mention without a link still works, because people read these threads in Google and in AI answers when they choose a tool.',
+          },
+          {
+            question: 'Who checks the comments?',
+            answer:
+              'One of our 300+ engineers who has used tools like yours checks every comment before it goes live.',
+          },
+          {
+            question: 'Do we approve what gets posted?',
+            answer:
+              'Yes. You approve the list of threads before anything goes live.',
           },
           {
             question: 'Which threads do you comment on?',
