@@ -9,9 +9,10 @@ import Hero from '@/components/page-components/service-landing/hero'
 import Partner from '@/components/page-components/service-landing/partner'
 
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 const description =
-  'We help your developer tool rank for what your buyers search. Our 300+ subject matter experts write content that brings in traffic and signups.'
+  'We create SEO content that ranks for what engineers and buyers search, and turns that traffic into signups. Our AI engine drafts it, and our 300+ engineers review every piece for technical accuracy.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -80,14 +81,14 @@ export default function SEOServices() {
             {
               title: 'From research to an SEO roadmap',
               description:
-                'Our engineers use your product. Then we find what your buyers search for, like error messages, setup questions and comparisons, and where competitors outrank you. You get a clear content plan, starting with quick wins.',
+                'Our engineers use your product. Then we find what your buyers search for, like error messages, setup questions and comparisons, and where competitors outrank you. You get a clear content roadmap, starting with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Content written by engineers',
+              title: 'Content reviewed by engineers',
               description:
-                'Developers can tell when a writer has never used the tool. So every piece is planned by a strategist, written by one of our 300+ engineer-writers, and edited by a technical editor. We write tutorials, how-to guides, integration pages and comparisons.',
+                'Developers can tell when content gets the details wrong. Our AI engine drafts each piece. Then one of our 300+ engineers, who are subject matter experts, reviews it for technical accuracy, and a technical editor polishes it. We create tutorials, how-to guides, integration pages and comparisons.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +106,7 @@ export default function SEOServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only write for one of them. We write for both.',
-            "Writing for engineers starts with knowing the tools. That's why our writers are engineers, not generalists. Before they write, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
+            "Content for engineers has to get the technical details right. That's why every piece is reviewed by an engineer who knows the subject, not a generalist. Before we start, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
             'Once a piece is ready, we edit it and publish it for you. Every month, we report on your rankings, traffic and the signups your content brings in, and use what we learn to plan what comes next.',
           ]}
         />
@@ -148,7 +149,7 @@ export default function SEOServices() {
         />
         <CaseStudy
           title="How Earthly increased its monthly blog visitors by 346% with Draft.dev"
-          summary="Earthly needed technical content but lacked SEO know-how. Our engineer-writers and keyword research grew its blog to 1,500 visitors per workday."
+          summary="Earthly needed technical content but lacked SEO know-how. Our keyword research and technical content grew its blog to 1,500 visitors per workday."
           stats={[
             { value: '346%', label: 'Increase in monthly blog visitors' },
             { value: '1,500', label: 'Blog visitors per workday' },
@@ -156,8 +157,8 @@ export default function SEOServices() {
           ]}
           href="/case-studies/earthly"
           image={{
-            src: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
-            alt: 'Adam Gordon Bell, Director of Developer Relations, Earthly',
+            src: '/site/med-portrait/commit_draft_dev.jpg',
+            alt: 'Engineer working on code across a laptop and monitor',
           }}
         />
         <TestimonialsCarousel
@@ -216,7 +217,7 @@ export default function SEOServices() {
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
-              'Most SEO agencies can build a keyword list. Few can write a tutorial an engineer will read to the end. We do both, because our writers are engineers.',
+              'Most SEO agencies can build a keyword list. Few can produce a tutorial an engineer will read to the end. We do both, because every piece is reviewed by an engineer who knows the subject.',
           },
           {
             question: 'Should our documentation rank too?',
@@ -225,8 +226,19 @@ export default function SEOServices() {
           },
           {
             question: 'Do you do link building?',
-            answer:
-              'Not as a separate service. We earn links with content worth linking to. Then we share it on developer platforms like Dev.to and Hashnode, and through our Influencer Distribution Network.',
+            answer: (
+              <>
+                Yes, as an add-on service. We can also share your content on
+                Dev.to, and through our{' '}
+                <Link
+                  href="/influencer-distribution-for-devtools"
+                  className="text-secondary font-semibold underline"
+                >
+                  Influencer Distribution Network
+                </Link>
+                .
+              </>
+            ),
           },
         ]}
       />
