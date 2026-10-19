@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We make technical videos that show developers how your product works. An engineer who knows your space checks every script, and we handle everything else.'
+  'We create technical videos that show developers exactly how your product solves their problems. Our engineers review every script, and we handle the production and publishing.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
