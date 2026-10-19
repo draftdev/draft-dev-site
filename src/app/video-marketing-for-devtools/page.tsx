@@ -152,19 +152,20 @@ export default function VideoMarketing() {
           ]}
         />
         <CaseStudy
-          title="How Sinch Mailgun revived its developer-first content strategy and achieved 20–45% CTR with Draft.dev"
-          summary="Sinch Mailgun's engineers had no time to create content. Our subject matter experts took over tutorials and testing content, which reached a 20–45% click-through rate and saved the team weeks of internal time."
+          title="How Loft Labs scaled its Kubernetes blog by 4x and achieved top SEO rankings with Draft.dev"
+          summary="Loft Labs had no time to create content for Kubernetes engineers. Our writers with Kubernetes experience delivered steady, ready-to-publish content. Blog traffic grew 4x in one year, and one article alone has brought in over 70,000 visitors."
           stats={[
+            { value: '4x', label: 'Growth in blog traffic in one year' },
             {
-              value: '20–45%',
-              label: 'Click-through rate on developer content',
+              value: '70,000+',
+              label: 'Visitors to one article since publishing',
             },
-            { value: 'Weeks', label: 'Of internal engineering time saved' },
+            { value: '#1', label: 'Ranking in search results' },
           ]}
-          href="/case-studies/sinch-mailgun"
+          href="/case-studies/loft-labs"
           image={{
-            src: '/site/med-portrait/tutorials_draft_dev.jpg',
-            alt: 'Developers working through a tutorial together',
+            src: '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
+            alt: 'Rahul Patwardhan, Senior Director, Demand Generation, Loft Labs',
           }}
         />
         <TestimonialsCarousel
