@@ -87,7 +87,7 @@ export default function AEOGEOServices() {
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. We create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece starts with deep research, is checked by one of our 300+ engineers for technical accuracy, and is polished by a technical editor, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. We create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece starts with deep research, is reviewed for technical accuracy by one of our 300+ technical experts, and is polished by a technical editor, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -233,9 +233,9 @@ export default function AEOGEOServices() {
               'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point.',
           },
           {
-            question: 'Who checks that the content is accurate?',
+            question: 'Who reviews the content for accuracy?',
             answer:
-              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+              'Our technical experts, a network of 300+ engineers and subject matter experts. They review the technical details, build and test the code, and read each piece the way a developer would. A technical editor then polishes it to your brand guidelines.',
           },
           {
             question: 'Where do you share our content?',
