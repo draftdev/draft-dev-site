@@ -87,7 +87,7 @@ export default function PPCServices() {
             {
               title: 'Pages developers trust',
               description:
-                "Each ad leads to a landing page with real setup steps, honest comparisons and code, because a click is wasted if the page doesn't earn trust. An engineer checks every page, and we test versions to see what works.",
+                "Each ad leads to a landing page with real setup steps, honest comparisons and code, because a click is wasted if the page doesn't earn trust. Our technical experts review every page, and we test versions to see what works.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +105,7 @@ export default function PPCServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams have tried paid ads with developers and been let down. Developers block ads and tune out marketing. But some people are worth reaching: buyers comparing tools, and engineers stuck in your docs. They are already looking, and that is when paid ads work.',
-            'Reaching them is only half the job. The page they land on has to earn their trust, so an engineer checks every landing page for accuracy.',
+            'Reaching them is only half the job. The page they land on has to earn their trust, so a technical expert reviews every landing page for accuracy.',
             'Once campaigns are live, we test your pages and watch the numbers. Every month, we report cost per lead and cost per signup, and move budget to the searches that bring in pipeline.',
           ]}
         />
@@ -242,7 +242,7 @@ export default function PPCServices() {
           {
             question: 'Do you build the landing pages?',
             answer:
-              'Yes. An engineer checks every landing page for accuracy, and we test different versions to see which works best.',
+              'Yes. A subject matter expert verifies every landing page, and we test different versions to see which works best.',
           },
         ]}
       />
