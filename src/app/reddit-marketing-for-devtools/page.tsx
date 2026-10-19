@@ -81,21 +81,21 @@ export default function RedditMarketing() {
             {
               title: 'Threads buyers read',
               description:
-                'We find existing Reddit threads where people ask about tools like yours, starting with ones that show up in Google and AI answers.',
+                'We find existing Reddit threads where people ask about tools like yours. We start with the threads that already show up in Google and AI answers, because that is where your buyers keep finding them.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Mentions that help',
               description:
-                'In each thread, we leave a helpful comment with an unlinked brand mention. An engineer who has used tools like yours checks every comment first.',
+                "In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. An engineer who has used tools like yours checks every comment, and we follow each subreddit's rules.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Monthly reports',
               description:
-                'Every month, you see where your brand was mentioned, how those threads rank and how often AI tools name you. That tells us which threads to pick next.',
+                'Every month, you see where your brand was mentioned, how those threads rank in Google and how often AI tools name you. We use what we learn to pick the next threads.',
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
