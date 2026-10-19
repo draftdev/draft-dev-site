@@ -87,7 +87,7 @@ export default function VideoMarketing() {
             {
               title: 'Production done for you',
               description:
-                'With the script approved, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
+                'With the script ready, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
@@ -249,7 +249,7 @@ export default function VideoMarketing() {
           {
             question: 'What do we need to provide?',
             answer:
-              'Product access, a kickoff call and a script review. We handle the rest: recording, editing, captions, publishing and social clips.',
+              'Product access and a kickoff call. We handle the rest: scripting, recording, editing, captions, publishing and social clips.',
           },
         ]}
       />
