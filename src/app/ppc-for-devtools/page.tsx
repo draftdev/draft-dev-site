@@ -74,8 +74,8 @@ export default function PPCServices() {
       />
       <main>
         <Features
-          title="Paid Search That Reaches Buyers, Not Ad Blockers"
-          subtitle="Your budget goes to people already looking, not to interrupting engineers"
+          title="Paid Search That Reaches Buyers"
+          subtitle="Your budget goes to people already looking"
           features={[
             {
               title: 'Ads for buyers already searching',
