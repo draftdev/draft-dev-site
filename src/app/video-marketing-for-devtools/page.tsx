@@ -152,17 +152,19 @@ export default function VideoMarketing() {
           ]}
         />
         <CaseStudy
-          title="How Earthly increased its monthly blog visitors by 346% with Draft.dev"
-          summary="Earthly needed technical content but lacked SEO know-how. Our engineer-writers and keyword research grew its blog to 1,500 visitors per workday."
+          title="How Sinch Mailgun revived its developer-first content strategy and achieved 20–45% CTR with Draft.dev"
+          summary="Sinch Mailgun's engineers had no time to create content. Our subject matter experts took over tutorials and testing content, which reached a 20–45% click-through rate and saved the team weeks of internal time."
           stats={[
-            { value: '346%', label: 'Increase in monthly blog visitors' },
-            { value: '1,500', label: 'Blog visitors per workday' },
-            { value: '6%', label: 'Conversion rate on blog content' },
+            {
+              value: '20–45%',
+              label: 'Click-through rate on developer content',
+            },
+            { value: 'Weeks', label: 'Of internal engineering time saved' },
           ]}
-          href="/case-studies/earthly"
+          href="/case-studies/sinch-mailgun"
           image={{
-            src: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
-            alt: 'Adam Gordon Bell, Director of Developer Relations, Earthly',
+            src: '/site/med-portrait/tutorials_draft_dev.jpg',
+            alt: 'Developers working through a tutorial together',
           }}
         />
         <TestimonialsCarousel

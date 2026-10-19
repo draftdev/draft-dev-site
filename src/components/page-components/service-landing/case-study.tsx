@@ -23,7 +23,11 @@ const CaseStudy = ({ title, summary, stats, href, image }: CaseStudyProps) => {
             </h2>
             <p className="mt-5 max-w-2xl text-lg text-gray-100">{summary}</p>
 
-            <dl className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <dl
+              className={`mt-8 grid grid-cols-1 gap-4 ${
+                stats.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-3'
+              }`}
+            >
               {stats.map((stat) => (
                 <div
                   key={stat.value}
