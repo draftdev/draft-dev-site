@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
+  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Every piece is checked for technical accuracy by one of our 300+ subject matter experts, so developers, search engines and LLMs can trust it.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -87,7 +87,7 @@ export default function AEOGEOServices() {
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. Our engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. We create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece starts with deep research, is checked by one of our 300+ engineers for technical accuracy, and is polished by a technical editor, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +105,7 @@ export default function AEOGEOServices() {
           title="A growth partner with measurable results"
           paragraphs={[
             "Developers increasingly ask an AI assistant before they open a search tab, and most developer marketing teams can't tell whether that answer names their product or a competitor's. A page can rank well on Google and still never be cited.",
-            'Unlike agencies that simply renamed SEO as GEO, we treat it as two jobs: making your own pages easy for LLMs to quote, and earning mentions on the third-party sources they trust. Both need writers who know your category, because developers, and the AI tools they use, ignore generic content.',
+            'Unlike agencies that simply renamed SEO as GEO, we treat it as two jobs: making your own pages easy for LLMs to quote, and earning mentions on the third-party sources they trust. Both need people who know your category, because developers, and the AI tools they use, ignore generic content.',
             'We create and publish citation-ready content. Then we share it on developer platforms that AI tools cite, and through our Influencer Distribution Network. Each month, we track your AI mentions and citations alongside traffic and leads, and adjust the roadmap based on what is working.',
           ]}
         />
@@ -215,6 +215,7 @@ export default function AEOGEOServices() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'Is AEO & GEO just SEO with a new name?',
@@ -225,6 +226,36 @@ export default function AEOGEOServices() {
             question: 'How do you measure whether it is working?',
             answer:
               'We track your AI mentions and citations alongside traffic and leads. In our monthly analytics reviews you see which articles are getting cited and how that is trending, and we adjust the roadmap based on what is earning citations.',
+          },
+          {
+            question: 'Do we still need SEO?',
+            answer:
+              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point, and we work on both.',
+          },
+          {
+            question: 'Who checks that the content is accurate?',
+            answer:
+              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+          },
+          {
+            question: 'Where do you share our content?',
+            answer:
+              'On developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion, and through our Influencer Distribution Network of developer micro-influencers.',
+          },
+          {
+            question: 'Do we still need SEO?',
+            answer:
+              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point, and we work on both.',
+          },
+          {
+            question: 'Who checks that the content is accurate?',
+            answer:
+              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+          },
+          {
+            question: 'Where do you share our content?',
+            answer:
+              'On developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion, and through our Influencer Distribution Network of developer micro-influencers.',
           },
           {
             question: 'How long before we see citations?',
