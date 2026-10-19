@@ -81,14 +81,14 @@ export default function RedditMarketing() {
             {
               title: 'Threads buyers read',
               description:
-                'We find existing Reddit threads where people ask about tools like yours, starting with ones that show up in Google and AI answers. You approve the list.',
+                'We find existing Reddit threads where people ask about tools like yours, starting with ones that show up in Google and AI answers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Mentions that help',
               description:
-                'In each approved thread, we leave a helpful comment with an unlinked brand mention. An engineer who has used tools like yours checks every comment first.',
+                'In each thread, we leave a helpful comment with an unlinked brand mention. An engineer who has used tools like yours checks every comment first.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -107,7 +107,7 @@ export default function RedditMarketing() {
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
             "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is checked by an engineer who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
-            'Before anything goes live, you approve the threads. Every month, we report where your product was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
+            'Every month, we report where your brand was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
         <TestimonialCarousel
@@ -232,11 +232,6 @@ export default function RedditMarketing() {
             question: 'Who checks the comments?',
             answer:
               'One of our 300+ engineers who has used tools like yours checks every comment before it goes live.',
-          },
-          {
-            question: 'Do we approve what gets posted?',
-            answer:
-              'Yes. You approve the list of threads before anything goes live.',
           },
           {
             question: 'Which threads do you comment on?',
