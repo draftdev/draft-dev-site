@@ -81,21 +81,21 @@ export default function SEOServices() {
             {
               title: 'SEO roadmap for your buyers',
               description:
-                'Our engineers use your product and research what your buyers search for. You get a content roadmap, starting with quick wins.',
+                'We start with your product, your competitors and your current content. Then we research what your buyers search for and build a content roadmap, starting with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content engineers trust',
               description:
-                'We create tutorials, how-to guides, integration pages and comparisons. One of our engineers checks each piece and tests the code. A technical editor then polishes it.',
+                'From that roadmap, we create tutorials, how-to guides, integration pages and comparisons. An engineer who knows the subject checks every piece and tests the code, and a technical editor polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Pages that keep ranking',
               description:
-                'We publish straight into your CMS, then refresh older pages when their rankings slip.',
+                'We publish each piece straight into your CMS. Every month, we report on rankings, traffic and signups, and refresh older pages when they slip.',
               linkText: 'See how we publish within weeks',
               linkHref: '/#how-we-work',
             },

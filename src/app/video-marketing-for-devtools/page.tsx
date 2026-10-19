@@ -87,14 +87,14 @@ export default function VideoMarketing() {
             {
               title: 'Production handled for you',
               description:
-                'We handle recording, editing, voiceover, graphics and captions. Your team only reviews the script.',
+                'Once you approve the script, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
             {
               title: 'Videos where developers look',
               description:
-                'We publish to YouTube with chapters and transcripts, add videos to your site, and cut short clips for social.',
+                'We publish each video to YouTube with chapters and transcripts, add it to the right pages on your site, and cut short clips for social. Every month, we report on watch time.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
