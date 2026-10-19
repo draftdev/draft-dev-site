@@ -88,7 +88,7 @@ export default function RedditMarketing() {
             {
               title: 'Mentions that help',
               description:
-                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. A technical expert who knows tools like yours reviews every comment, and we follow subreddit rules.',
+                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. A subject matter expert who knows tools like yours reviews every comment, and we follow subreddit rules.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -106,7 +106,7 @@ export default function RedditMarketing() {
           title="A growth partner that understands developers"
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
-            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is reviewed by a subject matter expert who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
+            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is reviewed by an engineer who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
             'Every month, we report where your brand was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
