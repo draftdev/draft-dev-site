@@ -100,7 +100,7 @@ export default function InfluencerDistribution() {
             {
               title: 'Briefs written by subject matter experts',
               description:
-                "Developers can tell when a creator is reading marketing copy, which is why good creators refuse scripts. Instead, one of our 300+ vetted engineer-writers writes a brief: what your product does, what's hard about the problem it solves, and what not to claim. The creator explains it in their own words. We handle the negotiation, sponsorship disclosure and scheduling.",
+                "Developers can tell when a creator is reading marketing copy, which is why good creators refuse scripts. Instead, one of our 300+ engineer-writers writes a brief: what your product does, what's hard about the problem it solves, and what not to claim. The creator explains it in their own words. We handle the negotiation, sponsorship disclosure and scheduling.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
