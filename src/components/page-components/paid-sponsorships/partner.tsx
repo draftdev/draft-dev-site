@@ -32,7 +32,7 @@ const Partner = () => {
                     traffic and which content formats resonate with technical
                     audiences. We analyze your industry, competitors,
                     positioning, product features, target audience, and brand
-                    voice to ensure authentic output. Then the same vetted
+                    voice to ensure authentic output. Then the same
                     engineer-writers who create your technical content write
                     your sponsor copy.
                   </dd>

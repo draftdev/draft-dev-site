@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'Why Choose Draft.dev Over Freelancers - Draft.dev',
   description:
-    'Skip the freelancer lottery. Get consistent, high-quality technical content from vetted experts with guaranteed delivery, unified quality standards, and scalable production.',
+    'Skip the freelancer lottery. Get consistent, high-quality technical content from experts with guaranteed delivery, unified quality standards, and scalable production.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Why Choose Draft.dev Over Freelancers - Draft.dev',
     description:
-      'Skip the freelancer lottery. Get consistent, high-quality technical content from vetted experts with guaranteed delivery, unified quality standards, and scalable production.',
+      'Skip the freelancer lottery. Get consistent, high-quality technical content from experts with guaranteed delivery, unified quality standards, and scalable production.',
     images: [
       {
         url: '/draft/og/services/freelancers_og_draft_dev.jpg',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Why Choose Draft.dev Over Freelancers - Draft.dev',
     description:
-      'Skip the freelancer lottery. Get consistent, high-quality technical content from vetted experts with guaranteed delivery, unified quality standards, and scalable production.',
+      'Skip the freelancer lottery. Get consistent, high-quality technical content from experts with guaranteed delivery, unified quality standards, and scalable production.',
     images: ['/draft/og/services/freelancers_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -128,7 +128,7 @@ export default function DraftDevVsFreelancers() {
           text: 'See which content types we support',
           href: '/content-types',
         }}
-        description="Stop gambling on freelancer quality. Get predictable, scalable technical content from a managed team of 300+ vetted experts."
+        description="Stop gambling on freelancer quality. Get predictable, scalable technical content from a managed team of 300+ experts."
       />
 
       <ServiceInfo />
