@@ -244,7 +244,7 @@ export default function VideoMarketing() {
           {
             question: 'How long does a video take?',
             answer:
-              'Usually 3-6 weeks per video, depending on what source material you already have. After onboarding, you get a ready-to-publish video every 2 weeks.',
+              'Scripting and review take about a week, and production and editing another one to two weeks, depending on the format. Your first video arrives within three weeks.',
           },
           {
             question: 'What do we need to provide?',
