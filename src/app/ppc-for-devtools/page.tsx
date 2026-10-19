@@ -105,7 +105,7 @@ export default function PPCServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams have tried paid ads with developers and been let down. Developers block ads and tune out marketing. But some people are worth reaching: buyers comparing tools, and engineers stuck in your docs. They are already looking, and that is when paid ads work.',
-            'Reaching them is only half the job. The page they land on has to earn their trust, so a technical expert reviews every landing page for accuracy.',
+            'Reaching them is only half the job. The page they land on has to earn their trust, so an engineer reviews every landing page for accuracy.',
             'Once campaigns are live, we test your pages and watch the numbers. Every month, we report cost per lead and cost per signup, and move budget to the searches that bring in pipeline.',
           ]}
         />
