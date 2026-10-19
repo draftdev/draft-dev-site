@@ -165,6 +165,7 @@ export default function RedditMarketing() {
         />
         <TestimonialsCarousel
           exclude={[
+            'Dawn Parzych',
             'Emily Blitstein',
             'Robert Gibb',
             'Rich Burroughs',
