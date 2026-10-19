@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We run paid search ads that reach developers who are already looking for a tool like yours. Engineers check every landing page for accuracy, and we track the signups each ad brings in.'
+  'We run paid search ads that reach developers who are already looking for a tool like yours. Our engineers review the landing pages, and we track the signups each ad brings in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
