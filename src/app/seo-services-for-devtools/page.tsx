@@ -1,17 +1,17 @@
 import FAQ from '@/components/global/faq'
-import ServiceHeader from '@/components/global/headers/service-header-content-strategy'
-import MedCaseEarthly from '@/components/media/case-studies/med-case-earthly'
-import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
-import Testimonial from '@/components/media/testimonials/testimonial'
-import TestimonialsGroup from '@/components/media/testimonials/testimonials-group'
-import Partner from '@/components/page-components/seo-services/partner'
-import Why from '@/components/page-components/why'
+import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
+import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
+import BookCall from '@/components/page-components/service-landing/book-call'
+import CaseStudy from '@/components/page-components/service-landing/case-study'
+import Features from '@/components/page-components/service-landing/features'
+import Hero from '@/components/page-components/service-landing/hero'
+import Partner from '@/components/page-components/service-landing/partner'
 
 import type { Metadata } from 'next'
 
 const description =
-  'We build SEO content engines that help developers find your product on Google. Our 300+ vetted engineer-writers find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
+  'We build SEO content engines that help developers find your product on Google. Our 300+ subject matter experts find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -61,31 +61,26 @@ export const metadata: Metadata = {
 export default function SEOServices() {
   return (
     <div>
-      <ServiceHeader
+      <Hero
         title="SEO Services for Developer Tools & Platforms"
         description={description}
-        primaryCTA={{
-          text: 'Book a Discovery Call',
-          href: '/call',
-        }}
-        secondaryCTA={{
-          text: 'See how we publish within weeks',
-          href: '/#how-we-work',
+        primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
+        guide={{
+          badge: 'Free eBook',
+          title: 'Building and Scaling Developer Marketing',
+          href: '/developer-marketing',
+          imageSrc: '/site/med-portrait/developer_marketing_draft_dev.jpg',
         }}
       />
       <main>
-        <div className="bg-gradient-brand">
-          <SocialProof showHeading={false} />
-        </div>
-        <Why
+        <Features
           title="SEO That Reaches Engineers and the People Who Buy"
           subtitle="Built on how your buyers actually search, not guesswork"
-          subtitleBold=""
           features={[
             {
               title: 'From research to an SEO roadmap',
               description:
-                'After your kickoff call, our engineers use your product. We review your existing pages and find what your buyers search for: error messages, setup questions, integrations and comparisons. We also check where competitors rank above you. You get a map of topics to cover, a content calendar with clear deliverables, and a list of quick wins we can publish first.',
+                'Our engineers use your product. We review your existing pages and find what your buyers search for: error messages, setup questions, integrations and comparisons. We also check where competitors rank above you. You get a map of topics to cover, a content calendar with clear deliverables, and a list of quick wins we can publish first.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
@@ -97,39 +92,125 @@ export default function SEOServices() {
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Publishing and content refreshes',
+              title: 'Publishing straight into your CMS',
               description:
-                'We publish straight into your CMS, with headings, internal links, metadata, schema markup and images, so nothing sits waiting for your team. Content decay affects nearly 60% of blog posts within 12 to 24 months, as version numbers change and details go out of date. So we also update the pages that are slipping.',
-              linkText: 'See our approach to content refreshes',
-              linkHref: '/content-refreshes',
+                'We publish straight into your CMS, with headings, internal links, metadata, schema markup and images, so nothing sits waiting for your team. When older pages start slipping as versions change, we can refresh them too.',
+              linkText: 'See how we publish within weeks',
+              linkHref: '/#how-we-work',
             },
           ]}
         />
-        <div className="bg-gradient-brand">
-          <SocialProof />
-        </div>
-        <Partner />
-        <Testimonial
-          quote="In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!"
-          name="Robert Gibb"
-          role="Content Marketing Manager"
-          company="Fabric"
-          imageSrc="/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg"
-          imageAlt="Robert Gibb"
+        <SocialProof title="A growth agency with a track record" compact />
+        <Partner
+          title="A growth partner that understands technical audiences"
+          paragraphs={[
+            'Most developer marketing teams face the same problem. The engineers who could write great content are busy building the product. And your blog has two kinds of readers. Engineers find you by searching for error messages, setup problems and integrations. The people who approve the purchase find you through comparisons and alternatives. You need content for both, and most SEO agencies only plan for one.',
+            'Unlike generic SEO agencies, we understand that developers trust peer-written content, value technical accuracy over marketing speak, and make decisions based on hands-on experience. We analyze your industry, competitors, positioning, product features, target audience, and brand voice to ensure authentic output. Our vetted writers are engineers who have used the tools they write about.',
+            'We write, edit and publish your pages, and refresh the ones losing ground when needed. Every month we report on rankings, traffic and the signups that came from content, not just vanity metrics. Then we adjust the roadmap based on real results.',
+          ]}
         />
-        <MedCaseEarthly />
-        <LogosDark />
-        <TestimonialsGroup />
-        <Testimonial
-          quote="Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate."
-          name="Em Blitstein"
-          role="Senior Content Marketing Manager"
-          company="Sinch Mailgun"
-          imageSrc="/media/testimonials-lg/em_sinch_mailgun.jpg"
-          imageAlt="Em Blitstein"
+        <TestimonialCarousel
+          testimonials={[
+            {
+              quote:
+                'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
+              name: 'Robert Gibb',
+              role: 'Content Marketing Manager',
+              company: 'Fabric',
+              imageSrc:
+                '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
+              facePosition: '50% 30%',
+              faceZoom: 1,
+            },
+            {
+              quote:
+                'Having previously worked with draft.dev, I reached out to them within weeks of starting to help us accelerate our content creation. Our first pieces were published within weeks and ranked within the first month.',
+              name: 'Dawn Parzych',
+              role: 'Head of Marketing',
+              company: 'Shorebird',
+              imageSrc:
+                '/media/testimonials-lg/dawn_parzych_shorebird_draft_dev.jpeg',
+              facePosition: '50% 20%',
+              faceZoom: 1,
+            },
+            {
+              quote:
+                "It's given us a steadier flow of content, which has helped our brand's visibility, and some of the posts are among the most popular ones we've published.",
+              name: 'Rich Burroughs',
+              role: 'Developer Advocate',
+              company: 'Loft Labs',
+              imageSrc:
+                '/media/testimonials-lg/rich_burroughs_loft_labs_draft_dev.jpg',
+              facePosition: '50% 26%',
+              faceZoom: 1,
+            },
+          ]}
+        />
+        <CaseStudy
+          title="How Earthly increased its monthly blog visitors by 346% with Draft.dev"
+          summary="Earthly needed high-quality technical content but lacked in-house SEO knowledge. Our subject matter expert writers and keyword research grew its blog to 1,500 visitors per workday."
+          stats={[
+            { value: '346%', label: 'Increase in monthly blog visitors' },
+            { value: '1,500', label: 'Blog visitors per workday' },
+            { value: '6%', label: 'Conversion rate on blog content' },
+          ]}
+          href="/case-studies/earthly"
+          image={{
+            src: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
+            alt: 'Adam Gordon Bell, Director of Developer Relations, Earthly',
+          }}
+        />
+        <TestimonialsCarousel
+          exclude={[
+            'Robert Gibb',
+            'Dawn Parzych',
+            'Rich Burroughs',
+            'Randall Degges',
+            'Emily Blitstein',
+          ]}
+        />
+        <TestimonialCarousel
+          testimonials={[
+            {
+              quote:
+                'Anyone tasked with marketing to developers knows that they are a community that can smell B.S. from a mile away. Having a dedicated technical resource available is a great support for creating content that both matters to our users and is also useful and accurate.',
+              name: 'Em Blitstein',
+              role: 'Senior Content Marketing Manager',
+              company: 'Sinch Mailgun',
+              imageSrc: '/media/testimonials-lg/em_sinch_mailgun.jpg',
+              facePosition: '50% 36%',
+              faceZoom: 1,
+            },
+            {
+              quote:
+                'Draft.dev has been an amazing partner, helping us scale our content program by creating thoughtful and technically-sound developer content and training materials.',
+              name: 'Randall Degges',
+              role: 'Head of Developer & Security Relations',
+              company: 'snyk',
+              imageSrc:
+                '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
+              facePosition: '50% 0%',
+              faceZoom: 1,
+            },
+            {
+              quote:
+                'They have helped us double our audience, attract more trial users, and increase our trial conversion rate.',
+              name: 'Henry Poydar',
+              role: 'Founder & CEO',
+              company: 'Status Hero',
+              imageSrc:
+                '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+              facePosition: '50% 30%',
+              faceZoom: 1,
+            },
+          ]}
         />
       </main>
       <FAQ
+        className="pt-14 pb-8"
+        callHref="#book-a-call"
+        title="Common Questions We Get Asked"
+        headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         pageFaqs={[
           {
             question: 'How is this different from a regular SEO agency?',
@@ -144,10 +225,11 @@ export default function SEOServices() {
           {
             question: 'Do you do link building?',
             answer:
-              'Not as a separate service. We earn links by publishing content worth linking to, and we place guest posts on developer publications when it fits your strategy.',
+              'Not as a separate service. We earn links by publishing content worth linking to, then sharing it on developer platforms like Dev.to and Hashnode and through our Influencer Distribution Network.',
           },
         ]}
       />
+      <BookCall />
     </div>
   )
 }
