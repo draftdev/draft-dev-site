@@ -80,21 +80,21 @@ export default function VideoMarketing() {
             {
               title: 'Research-backed scripts',
               description:
-                'We pick the features that are hardest to explain in writing and script them. An engineer checks every script before we record.',
+                'We pick the features that are hardest to explain in writing, then script them around how developers actually use your product. An engineer checks every script before we record, because one wrong command in a demo loses developers fast.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Production done for you',
               description:
-                'With the script ready, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
+                'With the script ready, we handle screen recording, editing, voiceover, graphics and captions. We make quick-start guides, feature demos, integration tutorials and use case walkthroughs. No one on your team needs to be on camera.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
             {
               title: 'Videos on every channel',
               description:
-                'Each finished video goes to YouTube with chapters and transcripts, onto your site, and into short clips for social. Every month, we report on watch time.',
+                'Each finished video goes to YouTube with chapters and transcripts, onto the right pages of your site, and into short clips for social. Every month, we report on watch time and which topics to film next.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
