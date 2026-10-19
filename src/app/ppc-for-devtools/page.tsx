@@ -78,23 +78,23 @@ export default function PPCServices() {
           subtitle="Your budget goes to people already looking, not to interrupting engineers"
           features={[
             {
-              title: 'Campaign strategy',
+              title: 'Ads for buyers already searching',
               description:
-                'Our engineers use your product and review your current ad accounts. Then we build campaigns around searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
+                'We review your ad accounts and target searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Landing pages',
+              title: 'Landing pages developers trust',
               description:
-                "A click is wasted if the page doesn't earn a developer's trust. So every landing page has real setup steps, honest comparisons and code, and one of our 300+ engineers checks it for accuracy. We test different versions to see which works best.",
+                'Every landing page has real setup steps and code. One of our engineers checks it, and we test versions to see which works best.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Retargeting and reporting',
+              title: 'Retargeting your docs readers',
               description:
-                'People reading your docs are your best audience. We show them ads that match what they read, and limit how often they see them. Every month you see cost per lead, cost per signup and which campaigns bring in pipeline.',
+                'We show ads to people reading your docs. Every month, you see cost per lead, cost per signup and which campaigns bring in pipeline.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },

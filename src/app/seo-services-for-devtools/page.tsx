@@ -79,23 +79,23 @@ export default function SEOServices() {
           subtitle="Content built around what your buyers search, not guesswork"
           features={[
             {
-              title: 'Research and roadmap',
+              title: 'SEO roadmap for your buyers',
               description:
-                'Our engineers use your product. Then we find what your buyers search for, like error messages, setup questions and comparisons, and where competitors outrank you. You get a clear content roadmap, starting with quick wins.',
+                'Our engineers use your product and research what your buyers search for. You get a content roadmap, starting with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Technical content',
+              title: 'Content engineers trust',
               description:
-                'Developers can tell when content gets the details wrong. So every piece starts with deep research. Then one of our 300+ engineers checks the technical accuracy, builds and tests the code, and reads the whole piece as a developer would. A technical editor polishes it to match your brand guidelines.',
+                'We create tutorials, how-to guides, integration pages and comparisons. One of our engineers checks each piece and tests the code. A technical editor then polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Publishing and refreshes',
+              title: 'Pages that keep ranking',
               description:
-                'We publish straight into your CMS, with headings, links, metadata and images, so your team does not have to. When older pages start to slip, we refresh them too.',
+                'We publish straight into your CMS, then refresh older pages when their rankings slip.',
               linkText: 'See how we publish within weeks',
               linkHref: '/#how-we-work',
             },
