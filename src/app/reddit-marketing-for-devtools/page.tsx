@@ -81,21 +81,21 @@ export default function RedditMarketing() {
             {
               title: 'Threads your buyers read',
               description:
-                'We find existing Reddit threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers.',
+                'We start by finding existing Reddit threads where people ask about tools like yours, focusing on the ones that show up in Google and AI answers. You approve the list.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Mentions that actually help',
               description:
-                'We leave helpful comments with unlinked brand mentions. One of our engineers checks every comment before it goes live.',
+                'We leave a helpful comment in each thread with an unlinked brand mention. An engineer who has used tools like yours checks every comment before it goes live.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Reports on your mentions',
               description:
-                'Every month, you see where your brand was mentioned, how those threads rank in Google, and how often AI tools name you.',
+                'Every month, you see where your brand was mentioned, how those threads rank in Google, and how often AI tools name you. Then we pick the next threads.',
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
@@ -241,7 +241,7 @@ export default function RedditMarketing() {
           {
             question: 'Which threads do you comment on?',
             answer:
-              'Threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers. You approve the list before we post.',
+              'Threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers.',
           },
           {
             question: 'How do you measure results?',
