@@ -12,7 +12,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const description =
-  'We create SEO content that ranks for what engineers and buyers search, and turns that traffic into signups. Our 300+ engineers review every piece for technical accuracy.'
+  'We build SEO content engines that help your product show up when engineers and buyers search. Our 300+ subject matter experts create technically accurate content that ranks on Google and turns readers into signups.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
