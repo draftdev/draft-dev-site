@@ -2,11 +2,11 @@ import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
 import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
-import BookCall from '@/components/page-components/aeo-geo-services/book-call'
-import CaseStudy from '@/components/page-components/aeo-geo-services/case-study'
-import Features from '@/components/page-components/aeo-geo-services/features'
-import Hero from '@/components/page-components/aeo-geo-services/hero'
-import Partner from '@/components/page-components/aeo-geo-services/partner'
+import BookCall from '@/components/page-components/service-landing/book-call'
+import CaseStudy from '@/components/page-components/service-landing/case-study'
+import Features from '@/components/page-components/service-landing/features'
+import Hero from '@/components/page-components/service-landing/hero'
+import Partner from '@/components/page-components/service-landing/partner'
 
 import type { Metadata } from 'next'
 
@@ -101,7 +101,14 @@ export default function AEOGEOServices() {
           ]}
         />
         <SocialProof title="A growth agency with a track record" compact />
-        <Partner />
+        <Partner
+          title="A growth partner with measurable results"
+          paragraphs={[
+            "Developers increasingly ask an AI assistant before they open a search tab, and most developer marketing teams can't tell whether that answer names their product or a competitor's. A page can rank well on Google and still never be cited.",
+            'Unlike agencies that simply renamed SEO as GEO, we treat it as two jobs: making your own pages easy for LLMs to quote, and earning mentions on the third-party sources they trust. Both need vetted writers who know your category, because developers, and the AI tools they use, ignore generic content.',
+            'We create and publish citation-ready content. Then we share it on developer platforms that AI tools cite, and through our Influencer Distribution Network. Each month, we track your AI mentions and citations alongside traffic and leads, and adjust the roadmap based on what is working.',
+          ]}
+        />
         <TestimonialCarousel
           testimonials={[
             {
@@ -121,7 +128,8 @@ export default function AEOGEOServices() {
               name: 'Randall Degges',
               role: 'Head of Developer & Security Relations',
               company: 'snyk',
-              imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
+              imageSrc:
+                '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
               facePosition: '50% 0%',
               faceZoom: 1,
             },
@@ -138,7 +146,23 @@ export default function AEOGEOServices() {
             },
           ]}
         />
-        <CaseStudy />
+        <CaseStudy
+          title="How a GPU cloud platform's new content earned 10x the AI traffic of its legacy pages"
+          summary="Original content outperformed refreshed legacy pages that started with more authority. One article was cited by all three major AI assistants in a single month."
+          stats={[
+            { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
+            {
+              value: '3 of 3',
+              label: 'Major AI assistants citing one article',
+            },
+            { value: '29', label: 'Pieces published in under 5 months' },
+          ]}
+          href="/case-studies/gpu-cloud-platform"
+          image={{
+            src: '/site/med-portrait/code_session_draft_dev.jpg',
+            alt: 'Engineer working on code across two screens',
+          }}
+        />
         <TestimonialsCarousel
           exclude={[
             'Dawn Parzych',
@@ -166,7 +190,8 @@ export default function AEOGEOServices() {
               name: 'Robert Gibb',
               role: 'Content Marketing Manager',
               company: 'Fabric',
-              imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
+              imageSrc:
+                '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
               facePosition: '50% 30%',
               faceZoom: 1,
             },
