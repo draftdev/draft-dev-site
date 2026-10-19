@@ -66,11 +66,10 @@ export default function VideoMarketing() {
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
-          badge: 'Free Guide',
-          title: 'How to Orchestrate Technical Content to Drive Business',
-          href: '/orchestrate-technical-content',
-          imageSrc:
-            '/site/med-portrait/orchestrate-technical-content_draftdev.jpg',
+          badge: 'Free eBook',
+          title: '8 Essential B2B Demand Generation Tactics',
+          href: '/8-essential-demand-generation-tactics',
+          imageSrc: '/site/med-portrait/demand-generation-tactics_draftdev.jpg',
         }}
       />
       <main>
