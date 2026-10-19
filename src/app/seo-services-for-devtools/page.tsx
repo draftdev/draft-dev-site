@@ -76,7 +76,7 @@ export default function SEOServices() {
       <main>
         <Features
           title="SEO That Reaches Engineers and the People Who Buy"
-          subtitle="Content built around what your buyers search, not guesswork"
+          subtitle="Content built around what your buyers search"
           features={[
             {
               title: 'SEO roadmap for your buyers',
