@@ -80,21 +80,21 @@ export default function PPCServices() {
             {
               title: 'Ads for buyers already searching',
               description:
-                'We review your ad accounts and target searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
+                'We start by reviewing your ad accounts. Then we build campaigns around searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Landing pages developers trust',
               description:
-                'Every landing page has real setup steps and code. One of our engineers checks it, and we test versions to see which works best.',
+                'Each ad leads to a landing page with real setup steps and code. An engineer checks every page for accuracy, and we test versions to see which works best.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Retargeting your docs readers',
               description:
-                'We show ads to people reading your docs. Every month, you see cost per lead, cost per signup and which campaigns bring in pipeline.',
+                'We also show ads to people reading your docs. Every month, you see cost per lead, cost per signup and which campaigns bring in pipeline, and we move budget to what works.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
@@ -105,7 +105,7 @@ export default function PPCServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams have tried paid ads with developers and been let down. Developers block ads and tune out marketing. But some people are worth reaching: buyers comparing tools, and engineers stuck in your docs. They are already looking, and that is when paid ads work.',
-            'Reaching them is only half the job. The page they land on has to earn their trust, so the same engineers who review your technical content check your landing pages.',
+            'Reaching them is only half the job. The page they land on has to earn their trust, so an engineer checks every landing page for accuracy.',
             'Once campaigns are live, we test your pages and watch the numbers. Every month, we report cost per lead and cost per signup, and move budget to the searches that bring in pipeline.',
           ]}
         />
@@ -242,7 +242,7 @@ export default function PPCServices() {
           {
             question: 'Do you build the landing pages?',
             answer:
-              'Yes. The same engineers who review your technical content check them for accuracy, and we test different versions to see which works best.',
+              'Yes. An engineer checks every landing page for accuracy, and we test different versions to see which works best.',
           },
         ]}
       />
