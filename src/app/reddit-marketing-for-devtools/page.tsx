@@ -79,23 +79,23 @@ export default function RedditMarketing() {
           subtitle="Helpful answers, checked by engineers, in the threads your buyers read"
           features={[
             {
-              title: 'Thread research',
+              title: 'Threads your buyers read',
               description:
-                'Our engineers use your product. Then we find existing Reddit threads where people ask about tools like yours, starting with the ones that already show up in Google and AI answers.',
+                'We find existing Reddit threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Brand mentions',
+              title: 'Mentions that actually help',
               description:
-                'Developers ignore anything that sounds like an ad. So every comment is checked by one of our 300+ engineers who has used tools like yours. It answers the question first and mentions your brand, without a link.',
+                'We leave helpful comments with unlinked brand mentions. One of our engineers checks every comment before it goes live.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Monthly reporting',
+              title: 'Reports on your mentions',
               description:
-                "These are unlinked brand mentions, so we don't count clicks. We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month, you see what changed.",
+                'Every month, you see where your brand was mentioned, how those threads rank in Google, and how often AI tools name you.',
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
