@@ -67,7 +67,7 @@ export default function PPCServices() {
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
           badge: 'Free eBook',
-          title: 'How to Set Up a Content Marketing Engine in the Age of AI',
+          title: 'Content Marketing in the Age of AI',
           href: '/content-marketing-engine',
           imageSrc: '/site/med-portrait/content-marketing-engine_draftdev.jpg',
         }}
