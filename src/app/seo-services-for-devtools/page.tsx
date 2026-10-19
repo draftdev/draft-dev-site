@@ -70,6 +70,7 @@ export default function SEOServices() {
           title: 'Building and Scaling Developer Marketing',
           href: '/developer-marketing',
           imageSrc: '/site/med-portrait/developer_marketing_draft_dev.jpg',
+          isCover: true,
         }}
       />
       <main>

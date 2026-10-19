@@ -6,7 +6,15 @@ interface HeroProps {
   title: string
   description: string
   primaryCTA: { text: string; href: string }
-  guide: { badge: string; title: string; href: string; imageSrc: string }
+  guide: {
+    badge: string
+    title: string
+    href: string
+    imageSrc: string
+    // A flat cover image is shown as a tilted book on a white panel, so it
+    // reads like the mockup-style guide images
+    isCover?: boolean
+  }
 }
 
 // AEO & GEO page hero. Unlike the shared service header, the free guide sits
@@ -63,14 +71,32 @@ const Hero = ({
             className="group flex w-full items-center gap-4 rounded-3xl bg-white/10 p-3 ring-1 ring-white/20 transition hover:bg-white/15 lg:mx-auto lg:block lg:max-w-sm lg:rounded-4xl"
           >
             <div className="w-24 shrink-0 overflow-hidden rounded-2xl bg-white sm:w-28 lg:w-auto lg:rounded-3xl">
-              <Image
-                src={guide.imageSrc}
-                alt={`${guide.title} preview`}
-                width={680}
-                height={680}
-                priority
-                className="w-full transition group-hover:scale-[1.02]"
-              />
+              {guide.isCover ? (
+                <div className="flex aspect-square items-center justify-center p-2 lg:p-6">
+                  <div className="relative w-[70%] transition group-hover:scale-[1.03]">
+                    {/* Two blank pages fanned out behind the cover */}
+                    <div className="absolute inset-0 translate-x-[9%] rotate-[8deg] rounded-sm bg-gray-100 shadow-md ring-1 ring-black/5" />
+                    <div className="absolute inset-0 translate-x-[4%] rotate-[4deg] rounded-sm bg-gray-50 shadow-md ring-1 ring-black/5" />
+                    <Image
+                      src={guide.imageSrc}
+                      alt={`${guide.title} preview`}
+                      width={600}
+                      height={750}
+                      priority
+                      className="relative w-full -rotate-2 rounded-sm shadow-xl ring-1 ring-black/10"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <Image
+                  src={guide.imageSrc}
+                  alt={`${guide.title} preview`}
+                  width={680}
+                  height={680}
+                  priority
+                  className="w-full transition group-hover:scale-[1.02]"
+                />
+              )}
             </div>
             <div className="min-w-0 lg:px-3 lg:pt-4 lg:pb-2">
               <p className="text-sm font-semibold tracking-wide text-amber-300 uppercase">
