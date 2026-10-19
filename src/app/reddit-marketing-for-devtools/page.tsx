@@ -76,7 +76,7 @@ export default function RedditMarketing() {
       <main>
         <Features
           title="Get Mentioned Where Developers Ask for Advice"
-          subtitle="Helpful answers, checked by engineers, in the threads your buyers read"
+          subtitle="Helpful answers, reviewed by technical experts, in the threads your buyers read"
           features={[
             {
               title: 'Threads buyers read',
@@ -88,7 +88,7 @@ export default function RedditMarketing() {
             {
               title: 'Mentions that help',
               description:
-                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. An engineer who has used tools like yours checks every comment, and we follow subreddit rules.',
+                'In each thread, we leave a helpful comment that answers the question first and mentions your brand without a link. A technical expert who knows tools like yours reviews every comment, and we follow subreddit rules.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -106,7 +106,7 @@ export default function RedditMarketing() {
           title="A growth partner that understands developers"
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
-            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is checked by an engineer who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
+            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why every comment is reviewed by a subject matter expert who has used tools like yours. We follow each subreddit's rules and mention your brand without a link.",
             'Every month, we report where your brand was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
@@ -229,14 +229,19 @@ export default function RedditMarketing() {
               'Links often get comments removed. A mention without a link still works, because people read these threads in Google and in AI answers when they choose a tool.',
           },
           {
-            question: 'Who checks the comments?',
+            question: 'Who reviews the comments?',
             answer:
-              'One of our 300+ engineers who has used tools like yours checks every comment before it goes live.',
+              'One of our 300+ technical experts who has used tools like yours reviews every comment before it goes live.',
           },
           {
             question: 'Which threads do you comment on?',
             answer:
               'Threads where people ask about tools like yours, starting with the ones that show up in Google and AI answers.',
+          },
+          {
+            question: 'Which AI tools do you track?',
+            answer:
+              "We run your buyers' questions across ChatGPT, Claude, Perplexity and Google AI Mode, and track how often they name your brand.",
           },
           {
             question: 'How do you measure results?',
