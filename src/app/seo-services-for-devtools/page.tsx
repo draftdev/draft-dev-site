@@ -69,8 +69,8 @@ export default function SEOServices() {
           badge: 'Free eBook',
           title: 'Building and Scaling Developer Marketing',
           href: '/developer-marketing',
-          imageSrc: '/site/med-portrait/developer_marketing_draft_dev.jpg',
-          isCover: true,
+          imageSrc:
+            '/site/med-portrait/building-scaling-developer-marketing_draftdev.jpg',
         }}
       />
       <main>
