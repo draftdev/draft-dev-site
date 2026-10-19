@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We make technical videos that show developers how your product works. Our engineers write the scripts, and we handle everything else.'
+  'We make technical videos that show developers how your product works. An engineer who knows your space checks every script, and we handle everything else.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -75,12 +75,12 @@ export default function VideoMarketing() {
       <main>
         <Features
           title="Video Developers Watch to the End"
-          subtitle="Scripted by engineers, produced and published by us"
+          subtitle="Checked by engineers, produced and published by us"
           features={[
             {
-              title: 'Scripted by subject matter experts',
+              title: 'Scripts checked by subject matter experts',
               description:
-                'Our engineers use your product and find the features that are hardest to explain in writing. Then one of our 300+ engineer-writers writes the script. Every script is checked for accuracy before recording, because one wrong command in a demo loses developers fast.',
+                'Our engineers use your product and find the features that are hardest to explain in writing. Every script starts with deep research, and one of our 300+ engineers checks it for accuracy before recording, because one wrong command in a demo loses developers fast.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
@@ -105,7 +105,7 @@ export default function VideoMarketing() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Most teams know they need video, but get stuck in two places. The engineers who could explain your product are busy building it. And general video agencies can make a polished video without understanding what it shows. Developers close those videos within seconds.',
-            "That's why our scripts are written by engineers who have used tools like yours. A subject matter expert checks every script before we record, so the video shows your product the way developers really use it.",
+            "That's why every script is checked by an engineer who has used tools like yours before we record, so the video shows your product the way developers really use it.",
             'Once a video is live, we turn it into short clips and social posts so it keeps reaching people. Every month, we report on watch time and which topics to film next, and use that to plan the next video.',
           ]}
           image={{
@@ -152,7 +152,7 @@ export default function VideoMarketing() {
         />
         <CaseStudy
           title="How Loft Labs scaled its Kubernetes blog by 4x and achieved top SEO rankings with Draft.dev"
-          summary="Loft Labs had no time to create content for Kubernetes engineers. Our writers with Kubernetes experience delivered steady, ready-to-publish content. Blog traffic grew 4x in one year, and one article alone has brought in over 70,000 visitors."
+          summary="Loft Labs had no time to create content for Kubernetes engineers. We delivered steady, ready-to-publish content backed by Kubernetes expertise. Blog traffic grew 4x in one year, and one article alone has brought in over 70,000 visitors."
           stats={[
             { value: '4x', label: 'Growth in blog traffic in one year' },
             {
@@ -219,11 +219,27 @@ export default function VideoMarketing() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'Do our engineers need to be on camera?',
             answer:
-              'No. We make screen recording and voiceover videos. An engineer-writer scripts them and a subject matter expert reviews them, so your team never needs to be on camera.',
+              'No. We make screen recording and voiceover videos, and a subject matter expert checks every script, so your team never needs to be on camera.',
+          },
+          {
+            question: 'What kinds of videos do you make?',
+            answer:
+              'Quick-start guides, feature demos, integration tutorials, use case walkthroughs and short social clips.',
+          },
+          {
+            question: 'Where do the videos get published?',
+            answer:
+              'On YouTube with chapters and transcripts, on the right pages of your site, and as short clips for social.',
+          },
+          {
+            question: 'How do you measure results?',
+            answer:
+              'Every month, we report on watch time and which topics to film next, and use that to plan the next video.',
           },
           {
             question: 'How long does a video take?',
