@@ -67,10 +67,9 @@ export default function SEOServices() {
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
           badge: 'Free eBook',
-          title: 'Building and Scaling Developer Marketing',
-          href: '/developer-marketing',
-          imageSrc:
-            '/site/med-portrait/building-scaling-developer-marketing_draftdev.jpg',
+          title: 'Keyword Audit & Topic Clusters',
+          href: '/keyword-audit-topic-clusters',
+          imageSrc: '/site/med-portrait/keyword-audit-guide_draftdev.jpg',
         }}
       />
       <main>
