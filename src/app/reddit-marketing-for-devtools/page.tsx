@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We get your product mentioned in the Reddit threads your buyers already read. Our engineers write helpful comments that name your product, without a link.'
+  'We find the Reddit threads your buyers already read and leave helpful comments with unlinked brand mentions. Our engineers write every comment.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -81,21 +81,21 @@ export default function RedditMarketing() {
             {
               title: 'Find the right threads',
               description:
-                'Our engineers use your product. Then we find the Reddit threads where people ask about tools like yours, starting with the ones that already show up in Google and AI answers.',
+                'Our engineers use your product. Then we find existing Reddit threads where people ask about tools like yours, starting with the ones that already show up in Google and AI answers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Mentions written by subject matter experts',
               description:
-                'Developers ignore anything that sounds like an ad. So each comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question first and names your product, without a link.',
+                'Developers ignore anything that sounds like an ad. So each comment is written by one of our 300+ engineer-writers who has used tools like yours. It answers the question first and mentions your brand, without a link.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Reports on what changed',
               description:
-                "These are unlinked mentions, so we don't count clicks. We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month, you see what changed.",
+                "These are unlinked brand mentions, so we don't count clicks. We track where your product is mentioned, how those threads rank in Google, and how often AI tools name you. Every month, you see what changed.",
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
@@ -106,7 +106,7 @@ export default function RedditMarketing() {
           title="A growth partner that understands developers"
           paragraphs={[
             'Developers ask Reddit before they choose a tool. They post questions, compare options and share what worked. Those threads often show up above your own website, in Google and in AI answers.',
-            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why our comments are written by engineers who have used tools like yours. They follow each subreddit's rules and name your product without a link.",
+            "But Reddit doesn't welcome marketing. Comments that sound like an ad get removed, and developers stop listening. That's why our comments are written by engineers who have used tools like yours. They follow each subreddit's rules and mention your brand without a link.",
             'Before anything goes live, you approve the threads. Every month, we report where your product was mentioned and how those threads are doing, and use what we learn to pick the next ones.',
           ]}
         />
