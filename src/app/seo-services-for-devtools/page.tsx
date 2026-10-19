@@ -12,7 +12,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const description =
-  'We create SEO content that ranks for what engineers and buyers search, and turns that traffic into signups. Our AI engine drafts it, and our 300+ engineers review every piece for technical accuracy.'
+  'We create SEO content that ranks for what engineers and buyers search, and turns that traffic into signups. Our 300+ engineers review every piece for technical accuracy.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -88,7 +88,7 @@ export default function SEOServices() {
             {
               title: 'Content reviewed by engineers',
               description:
-                'Developers can tell when content gets the details wrong. Our AI engine drafts each piece. Then one of our 300+ engineers, who are subject matter experts, reviews it for technical accuracy, and a technical editor polishes it. We create tutorials, how-to guides, integration pages and comparisons.',
+                'Developers can tell when content gets the details wrong. So every piece starts with deep research. Then one of our 300+ engineers checks the technical accuracy, builds and tests the code, and reads the whole piece as a developer would. A technical editor polishes it to match your brand guidelines.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -105,7 +105,7 @@ export default function SEOServices() {
         <Partner
           title="A growth partner that understands technical audiences"
           paragraphs={[
-            'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only write for one of them. We write for both.',
+            'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only focus on one of them. We create content for both.',
             "Content for engineers has to get the technical details right. That's why every piece is reviewed by an engineer who knows the subject, not a generalist. Before we start, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
             'Once a piece is ready, we edit it and publish it for you. Every month, we report on your rankings, traffic and the signups your content brings in, and use what we learn to plan what comes next.',
           ]}
@@ -213,11 +213,22 @@ export default function SEOServices() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
               'Most SEO agencies can build a keyword list. Few can produce a tutorial an engineer will read to the end. We do both, because every piece is reviewed by an engineer who knows the subject.',
+          },
+          {
+            question: 'Who checks that the content is accurate?',
+            answer:
+              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+          },
+          {
+            question: 'What kind of SEO content do you create?',
+            answer:
+              'Tutorials, how-to guides, integration pages, comparisons and alternatives pages. We also refresh older pages when their rankings start to slip.',
           },
           {
             question: 'Should our documentation rank too?',
@@ -239,6 +250,11 @@ export default function SEOServices() {
                 .
               </>
             ),
+          },
+          {
+            question: 'How do you measure results?',
+            answer:
+              'Every month, we report on your rankings, traffic and the signups your content brings in. Then we use what we learn to plan what comes next.',
           },
         ]}
       />
