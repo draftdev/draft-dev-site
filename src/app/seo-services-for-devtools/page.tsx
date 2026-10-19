@@ -105,9 +105,9 @@ export default function SEOServices() {
         <Partner
           title="A growth partner that understands technical audiences"
           paragraphs={[
-            'Your blog has two kinds of readers. Engineers search for error messages, setup help and integrations. Buyers search for comparisons and alternatives. You need content for both, and most SEO agencies only plan for one.',
-            'Developers trust content from people who have used the tools. That is why our writers are engineers, not generalists. We study your product, competitors and audience, so every piece sounds like it came from your team.',
-            'We write, edit and publish your pages. Every month we report on rankings, traffic and signups from content, then adjust the plan based on what is working.',
+            'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only write for one of them. We write for both.',
+            "Writing for engineers starts with knowing the tools. That's why our writers are engineers, not generalists. Before they write, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
+            'Once a piece is ready, we edit it and publish it for you. Every month, we report on your rankings, traffic and the signups your content brings in, and use what we learn to plan what comes next.',
           ]}
         />
         <TestimonialCarousel
