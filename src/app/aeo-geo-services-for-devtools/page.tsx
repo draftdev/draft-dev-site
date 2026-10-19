@@ -75,7 +75,7 @@ export default function AEOGEOServices() {
       <main>
         <Features
           title="Get Your Product Into AI Answers"
-          subtitle="Content and strategy built to earn AI mentions and citations, not guesswork"
+          subtitle="Content and strategy built to earn AI mentions and citations"
           features={[
             {
               title: 'A content strategy built for AI answers',
