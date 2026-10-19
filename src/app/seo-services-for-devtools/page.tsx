@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We build SEO content engines that help developers find your product on Google. Our 300+ subject matter experts find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
+  'We help your developer tool rank for what your buyers search. Our 300+ subject matter experts write content that brings in traffic and signups.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
