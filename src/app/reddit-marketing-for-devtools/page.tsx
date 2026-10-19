@@ -79,23 +79,23 @@ export default function RedditMarketing() {
           subtitle="Helpful answers, checked by engineers, in the threads your buyers read"
           features={[
             {
-              title: 'Threads your buyers read',
+              title: 'Threads buyers read',
               description:
-                'We start by finding existing Reddit threads where people ask about tools like yours, focusing on the ones that show up in Google and AI answers. You approve the list.',
+                'We find existing Reddit threads where people ask about tools like yours, starting with ones that show up in Google and AI answers. You approve the list.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Mentions that actually help',
+              title: 'Mentions that help',
               description:
-                'We leave a helpful comment in each thread with an unlinked brand mention. An engineer who has used tools like yours checks every comment before it goes live.',
+                'In each approved thread, we leave a helpful comment with an unlinked brand mention. An engineer who has used tools like yours checks every comment first.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Reports on your mentions',
+              title: 'Monthly reports',
               description:
-                'Every month, you see where your brand was mentioned, how those threads rank in Google, and how often AI tools name you. Then we pick the next threads.',
+                'Every month, you see where your brand was mentioned, how those threads rank and how often AI tools name you. That tells us which threads to pick next.',
               linkText: 'See our approach to AEO and GEO',
               linkHref: '/aeo-geo-services-for-devtools',
             },
