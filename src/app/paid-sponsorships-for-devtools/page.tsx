@@ -97,7 +97,7 @@ export default function PaidSponsorships() {
             {
               title: 'Sponsor copy written by subject matter experts',
               description:
-                'Most sponsorships fail because of the copy, not the placement. Publishers send a template, someone fills it in, and it reads like an ad. Developers notice and skip it. Instead, one of our 300+ vetted engineer-writers writes your copy so it fits the publication and is worth reading to the end.',
+                'Most sponsorships fail because of the copy, not the placement. Publishers send a template, someone fills it in, and it reads like an ad. Developers notice and skip it. Instead, one of our 300+ engineer-writers writes your copy so it fits the publication and is worth reading to the end.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },

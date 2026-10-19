@@ -86,7 +86,7 @@ export default function SEOServices() {
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Content written by vetted engineers',
+              title: 'Content written by engineers',
               description:
                 'Developers can tell when a writer has never used the tool. So every piece is planned by a strategist, written by one of our 300+ engineer-writers, and edited by a technical editor. We write tutorials, how-to guides, integration pages and comparisons.',
               linkText: 'See some of our content examples',

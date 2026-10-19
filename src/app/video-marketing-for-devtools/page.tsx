@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We create technical videos that show developers exactly how your product solves their problems. Our vetted engineer-writers write the scripts, we handle all the production, and we publish your videos so people keep finding them long after launch.'
+  'We create technical videos that show developers exactly how your product solves their problems. Our engineer-writers write the scripts, we handle all the production, and we publish your videos so people keep finding them long after launch.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -90,7 +90,7 @@ export default function VideoMarketing() {
             {
               title: 'Scripted by subject matter experts',
               description:
-                'After your kickoff call, our engineers use your product. We find the features that are hardest to explain in writing and pick the right video format. Then one of our 300+ vetted engineer-writers writes the script. Every script is checked for technical accuracy before recording, because one wrong command in a demo loses developers right away.',
+                'After your kickoff call, our engineers use your product. We find the features that are hardest to explain in writing and pick the right video format. Then one of our 300+ engineer-writers writes the script. Every script is checked for technical accuracy before recording, because one wrong command in a demo loses developers right away.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
@@ -139,7 +139,7 @@ export default function VideoMarketing() {
           {
             question: 'Do our engineers need to be on camera?',
             answer:
-              'No. We create screen recording and voiceover videos, scripted by a vetted engineer-writer and reviewed by a subject matter expert. Your team never needs to step in front of a camera.',
+              'No. We create screen recording and voiceover videos, scripted by an engineer-writer and reviewed by a subject matter expert. Your team never needs to step in front of a camera.',
           },
           {
             question: 'How long does a video take?',

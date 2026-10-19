@@ -28,7 +28,7 @@ const Partner = () => {
                   <dd className="my-2">
                     Some agencies sell upvotes and post lots of comments. We
                     don't. We follow each subreddit's rules and write like a
-                    helpful engineer, not a marketer. Our vetted writers only
+                    helpful engineer, not a marketer. Our writers only
                     comment where they can actually answer the question.
                   </dd>
                 </div>

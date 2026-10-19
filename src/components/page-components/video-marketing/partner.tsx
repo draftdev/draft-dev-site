@@ -27,7 +27,7 @@ const Partner = () => {
                     Unlike generic video agencies, we understand that developers
                     trust peer-written content, value technical accuracy over
                     marketing speak, and make decisions based on hands-on
-                    experience. Our scripts are written by vetted engineers who
+                    experience. Our scripts are written by engineers who
                     have used the tools they show, and checked by a subject
                     matter expert before production starts. We analyze your industry, competitors, positioning,
                     product features, target audience, and brand voice to
