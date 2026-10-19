@@ -88,7 +88,7 @@ export default function SEOServices() {
             {
               title: 'Content engineers trust',
               description:
-                'We create the tutorials, guides, integration pages and comparisons on that roadmap. An engineer checks each piece and tests the code, and a technical editor polishes it.',
+                'We create the tutorials, guides and comparisons on that roadmap. An engineer checks each piece and tests the code, and a technical editor polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
