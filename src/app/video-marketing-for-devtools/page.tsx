@@ -78,14 +78,14 @@ export default function VideoMarketing() {
           subtitle="Checked by engineers, produced and published by us"
           features={[
             {
-              title: 'Scripts checked by subject matter experts',
+              title: 'Script and research',
               description:
                 'Our engineers use your product and find the features that are hardest to explain in writing. Every script starts with deep research, and one of our 300+ engineers checks it for accuracy before recording, because one wrong command in a demo loses developers fast.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Production without extra work for your team',
+              title: 'Production',
               description:
                 'We handle screen recording, editing, voiceover, graphics and captions. Your team only reviews the script. We make quick-start guides, feature demos, integration tutorials, use case walkthroughs and short social clips.',
               linkText: 'See what we can create for you',
