@@ -230,7 +230,7 @@ export default function AEOGEOServices() {
           {
             question: 'Do we still need SEO?',
             answer:
-              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point, and we work on both.',
+              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point.',
           },
           {
             question: 'Who checks that the content is accurate?',
