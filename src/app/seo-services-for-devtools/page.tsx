@@ -86,7 +86,7 @@ export default function SEOServices() {
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Content',
+              title: 'Technical content',
               description:
                 'Developers can tell when content gets the details wrong. So every piece starts with deep research. Then one of our 300+ engineers checks the technical accuracy, builds and tests the code, and reads the whole piece as a developer would. A technical editor polishes it to match your brand guidelines.',
               linkText: 'See some of our content examples',
