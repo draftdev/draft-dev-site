@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
+  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ subject matter experts, backed by an AI-assisted process, create content that resonates with developers, search engines and LLMs.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
