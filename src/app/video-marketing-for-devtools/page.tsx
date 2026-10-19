@@ -78,23 +78,23 @@ export default function VideoMarketing() {
           subtitle="Checked by engineers, produced and published by us"
           features={[
             {
-              title: 'Script and research',
+              title: 'Scripts built on research',
               description:
-                'Our engineers use your product and find the features that are hardest to explain in writing. Every script starts with deep research, and one of our 300+ engineers checks it for accuracy before recording, because one wrong command in a demo loses developers fast.',
+                'Our engineers use your product and pick the features that are hardest to explain in writing. One of our engineers checks every script before we record.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Production',
+              title: 'Production handled for you',
               description:
-                'We handle screen recording, editing, voiceover, graphics and captions. Your team only reviews the script. We make quick-start guides, feature demos, integration tutorials, use case walkthroughs and short social clips.',
+                'We handle recording, editing, voiceover, graphics and captions. Your team only reviews the script.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
             {
-              title: 'Publishing and reuse',
+              title: 'Videos where developers look',
               description:
-                'One recording becomes many pieces of content. We publish it to YouTube with chapters and transcripts, add it to the right pages on your site, and cut short clips for social. The transcripts also help search engines and AI tools understand your video.',
+                'We publish to YouTube with chapters and transcripts, add videos to your site, and cut short clips for social.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
