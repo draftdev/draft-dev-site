@@ -76,26 +76,26 @@ export default function SEOServices() {
       <main>
         <Features
           title="SEO That Reaches Engineers and the People Who Buy"
-          subtitle="Built on how your buyers actually search, not guesswork"
+          subtitle="Content built around what your buyers search, not guesswork"
           features={[
             {
               title: 'From research to an SEO roadmap',
               description:
-                'Our engineers use your product. We review your existing pages and find what your buyers search for: error messages, setup questions, integrations and comparisons. We also check where competitors rank above you. You get a map of topics to cover, a content calendar with clear deliverables, and a list of quick wins we can publish first.',
+                'Our engineers use your product. Then we find what your buyers search for, like error messages, setup questions and comparisons, and where competitors outrank you. You get a clear content plan, starting with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content written by vetted engineers',
               description:
-                'Developers trust content written by other developers, and they can tell quickly if the writer has never used the tool. Every piece is planned by a strategist, written by one of our 300+ vetted engineer-writers, and edited by a professional technical editor. We write tutorials, how-to guides, integration pages, comparison pages and technical deep dives.',
+                'Developers can tell when a writer has never used the tool. So every piece is planned by a strategist, written by one of our 300+ engineer-writers, and edited by a technical editor. We write tutorials, how-to guides, integration pages and comparisons.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Publishing straight into your CMS',
               description:
-                'We publish straight into your CMS, with headings, internal links, metadata, schema markup and images, so nothing sits waiting for your team. When older pages start slipping as versions change, we can refresh them too.',
+                'We publish straight into your CMS, with headings, links, metadata and images, so your team does not have to. When older pages start to slip, we refresh them too.',
               linkText: 'See how we publish within weeks',
               linkHref: '/#how-we-work',
             },
@@ -105,9 +105,9 @@ export default function SEOServices() {
         <Partner
           title="A growth partner that understands technical audiences"
           paragraphs={[
-            'Most developer marketing teams face the same problem. The engineers who could write great content are busy building the product. And your blog has two kinds of readers. Engineers find you by searching for error messages, setup problems and integrations. The people who approve the purchase find you through comparisons and alternatives. You need content for both, and most SEO agencies only plan for one.',
-            'Unlike generic SEO agencies, we understand that developers trust peer-written content, value technical accuracy over marketing speak, and make decisions based on hands-on experience. We analyze your industry, competitors, positioning, product features, target audience, and brand voice to ensure authentic output. Our vetted writers are engineers who have used the tools they write about.',
-            'We write, edit and publish your pages, and refresh the ones losing ground when needed. Every month we report on rankings, traffic and the signups that came from content, not just vanity metrics. Then we adjust the roadmap based on real results.',
+            'Your blog has two kinds of readers. Engineers search for error messages, setup help and integrations. Buyers search for comparisons and alternatives. You need content for both, and most SEO agencies only plan for one.',
+            'Developers trust content from people who have used the tools. That is why our writers are engineers, not generalists. We study your product, competitors and audience, so every piece sounds like it came from your team.',
+            'We write, edit and publish your pages. Every month we report on rankings, traffic and signups from content, then adjust the plan based on what is working.',
           ]}
         />
         <TestimonialCarousel
@@ -149,7 +149,7 @@ export default function SEOServices() {
         />
         <CaseStudy
           title="How Earthly increased its monthly blog visitors by 346% with Draft.dev"
-          summary="Earthly needed high-quality technical content but lacked in-house SEO knowledge. Our subject matter expert writers and keyword research grew its blog to 1,500 visitors per workday."
+          summary="Earthly needed technical content but lacked SEO know-how. Our engineer-writers and keyword research grew its blog to 1,500 visitors per workday."
           stats={[
             { value: '346%', label: 'Increase in monthly blog visitors' },
             { value: '1,500', label: 'Blog visitors per workday' },
@@ -216,17 +216,17 @@ export default function SEOServices() {
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
-              'Most SEO agencies can run an audit and build a keyword list. Few can write a technical tutorial that an engineer will read to the end. We do both, and our vetted writers are working engineers, not generalists.',
+              'Most SEO agencies can build a keyword list. Few can write a tutorial an engineer will read to the end. We do both, because our writers are engineers.',
           },
           {
-            question: 'What about our documentation? Should it rank too?',
+            question: 'Should our documentation rank too?',
             answer:
-              'Often, yes. But your docs and your blog can end up competing for the same search. We review both together and decide what belongs where, so they stop competing.',
+              'Often, yes. But your docs and your blog can compete for the same search. We look at both and decide what belongs where.',
           },
           {
             question: 'Do you do link building?',
             answer:
-              'Not as a separate service. We earn links by publishing content worth linking to, then sharing it on developer platforms like Dev.to and Hashnode and through our Influencer Distribution Network.',
+              'Not as a separate service. We earn links with content worth linking to. Then we share it on developer platforms like Dev.to and Hashnode, and through our Influencer Distribution Network.',
           },
         ]}
       />
