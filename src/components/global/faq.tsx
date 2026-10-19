@@ -56,6 +56,8 @@ type FAQProps = {
   callHref?: string
   title?: string
   headingClassName?: string
+  // Two flowing columns, so a short answer next to a long one leaves no gap
+  masonry?: boolean
 }
 
 export default function FAQ({
@@ -64,6 +66,7 @@ export default function FAQ({
   callHref = 'https://draft.dev/call',
   title = 'Frequently asked questions',
   headingClassName = 'subheader-gradient',
+  masonry = false,
 }: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
@@ -93,9 +96,18 @@ export default function FAQ({
 
           <p className="p-dark"></p>
           <div className="mt-12">
-            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10">
+            <dl
+              className={
+                masonry
+                  ? 'space-y-10 sm:columns-2 sm:gap-x-10 sm:space-y-0 lg:gap-x-14'
+                  : 'space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10'
+              }
+            >
               {allFaqs.map((faq) => (
-                <div key={faq.id}>
+                <div
+                  key={faq.id}
+                  className={masonry ? 'break-inside-avoid sm:mb-10' : undefined}
+                >
                   <dt className="text-lg font-semibold text-gray-600">
                     {faq.question}
                   </dt>

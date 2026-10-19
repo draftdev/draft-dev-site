@@ -189,6 +189,7 @@ export default function AEOGEOServices() {
         callHref="#book-a-call"
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
+        masonry
         pageFaqs={[
           {
             question: 'Is AEO & GEO just SEO with a new name?',
