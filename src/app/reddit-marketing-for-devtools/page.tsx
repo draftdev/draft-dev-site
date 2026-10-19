@@ -221,7 +221,7 @@ export default function RedditMarketing() {
           {
             question: 'Will this get us banned?',
             answer:
-              "We follow each subreddit's rules and only comment where we can help. Every comment is useful even without your product name in it.",
+              "No. We follow each subreddit's rules and only comment where we can help. Every comment is useful even without your brand name in it.",
           },
           {
             question: "Why don't the comments include a link?",
