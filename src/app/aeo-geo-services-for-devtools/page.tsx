@@ -243,21 +243,6 @@ export default function AEOGEOServices() {
               'On developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion, and through our Influencer Distribution Network of developer micro-influencers.',
           },
           {
-            question: 'Do we still need SEO?',
-            answer:
-              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point, and we work on both.',
-          },
-          {
-            question: 'Who checks that the content is accurate?',
-            answer:
-              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
-          },
-          {
-            question: 'Where do you share our content?',
-            answer:
-              'On developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion, and through our Influencer Distribution Network of developer micro-influencers.',
-          },
-          {
             question: 'How long before we see citations?',
             answer:
               'It depends on where you start. One client with a brand-new domain started getting clicks from two major AI tools within weeks of publishing. Sites that already have content usually move faster, because we can improve existing pages as well as add new ones.',
