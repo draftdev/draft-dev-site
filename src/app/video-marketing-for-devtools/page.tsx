@@ -80,7 +80,7 @@ export default function VideoMarketing() {
             {
               title: 'Scripts built on research',
               description:
-                'Our engineers use your product and pick the features that are hardest to explain in writing. One of our engineers checks every script before we record.',
+                'We pick the features that are hardest to explain in writing, then script them. An engineer checks every script before we record.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
