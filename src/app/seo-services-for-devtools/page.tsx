@@ -212,6 +212,7 @@ export default function SEOServices() {
         callHref="#book-a-call"
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
+        masonry
         pageFaqs={[
           {
             question: 'How is this different from a regular SEO agency?',
