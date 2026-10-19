@@ -14,11 +14,10 @@ const Partner = () => {
               <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
                 <div className="relative">
                   <dd className="my-2">
-                    Developers increasingly ask an AI assistant before they
-                    open a search tab, and most developer marketing teams can't
-                    tell whether that answer names their product or a
-                    competitor's. A page can rank well on Google and still
-                    never be cited.
+                    Developers increasingly ask an AI assistant before they open
+                    a search tab, and most developer marketing teams can't tell
+                    whether that answer names their product or a competitor's. A
+                    page can rank well on Google and still never be cited.
                   </dd>
                 </div>
                 <div className="relative">
@@ -26,9 +25,8 @@ const Partner = () => {
                     Unlike agencies that simply renamed SEO as GEO, we treat it
                     as two jobs: making your own pages easy for LLMs to quote,
                     and earning mentions on the third-party sources they trust.
-                    Both need writers who know your category, because
-                    developers, and the AI tools they use, ignore generic
-                    content.
+                    Both need people who know your category, because developers,
+                    and the AI tools they use, ignore generic content.
                   </dd>
                 </div>
                 <div className="relative">

@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/aeo-geo-services/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Our 300+ subject matter experts, backed by a proven AI-assisted process, create content that resonates with developers, search engines and LLMs.'
+  'We build AEO & GEO content engines that get your developer tool cited in AI answers. Every piece is checked for technical accuracy by one of our 300+ subject matter experts, so developers, search engines and LLMs can trust it.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -87,7 +87,7 @@ export default function AEOGEOServices() {
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. Our engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. We create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece starts with deep research, is checked by one of our 300+ engineers for technical accuracy, and is polished by a technical editor, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -121,7 +121,8 @@ export default function AEOGEOServices() {
               name: 'Randall Degges',
               role: 'Head of Developer & Security Relations',
               company: 'snyk',
-              imageSrc: '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
+              imageSrc:
+                '/media/testimonials-lg/randall_degges_snyk_draft_dev.jpg',
               facePosition: '50% 0%',
               faceZoom: 1,
             },
@@ -166,7 +167,8 @@ export default function AEOGEOServices() {
               name: 'Robert Gibb',
               role: 'Content Marketing Manager',
               company: 'Fabric',
-              imageSrc: '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
+              imageSrc:
+                '/media/testimonials-lg/robert_gibb_fabric_draft_dev.jpg',
               facePosition: '50% 30%',
               faceZoom: 1,
             },
@@ -190,6 +192,7 @@ export default function AEOGEOServices() {
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
         masonry
+        standardFaqs={false}
         pageFaqs={[
           {
             question: 'Is AEO & GEO just SEO with a new name?',
@@ -200,6 +203,21 @@ export default function AEOGEOServices() {
             question: 'How do you measure whether it is working?',
             answer:
               'We track your AI mentions and citations alongside traffic and leads. In our monthly analytics reviews you see which articles are getting cited and how that is trending, and we adjust the roadmap based on what is earning citations.',
+          },
+          {
+            question: 'Do we still need SEO?',
+            answer:
+              'Yes. AEO & GEO build on SEO, not replace it. AI answers draw on the same search systems, so strong SEO is still the starting point, and we work on both.',
+          },
+          {
+            question: 'Who checks that the content is accurate?',
+            answer:
+              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+          },
+          {
+            question: 'Where do you share our content?',
+            answer:
+              'On developer platforms that AI tools cite heavily, like Dev.to, Hashnode and Coder Legion, and through our Influencer Distribution Network of developer micro-influencers.',
           },
           {
             question: 'How long before we see citations?',
