@@ -77,7 +77,7 @@ export default function CaseStudyGpuCloudPlatform() {
       name: 'Solution',
       description: [
         'A roadmap mapped to every stage of the funnel',
-        'Guides, tutorials and comparisons written by vetted engineers',
+        'Guides, tutorials and comparisons written by engineers',
         'Every piece structured so AI assistants can quote it',
         'Monthly tracking of search and AI traffic',
       ],

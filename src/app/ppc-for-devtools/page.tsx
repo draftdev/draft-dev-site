@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We run paid search ads for technical products. We target people who are already searching for tools like yours, send them to landing pages written by vetted engineers, and track cost per signup, not just cost per click.'
+  'We run paid search ads for technical products. We target people who are already searching for tools like yours, send them to landing pages written by engineers, and track cost per signup, not just cost per click.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -97,7 +97,7 @@ export default function PPCServices() {
             {
               title: 'Landing pages written by engineers',
               description:
-                "A paid click is wasted if the page doesn't earn a developer's trust. So one of our 300+ vetted engineer-writers writes your landing page, with real setup steps, honest comparisons and code where it helps. We also build different versions to test which one works best.",
+                "A paid click is wasted if the page doesn't earn a developer's trust. So one of our 300+ engineer-writers writes your landing page, with real setup steps, honest comparisons and code where it helps. We also build different versions to test which one works best.",
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -149,7 +149,7 @@ export default function PPCServices() {
           {
             question: 'Do you build the landing pages?',
             answer:
-              'Yes. The same vetted engineer-writers who create your technical content write them, and we build different versions to test which one works best.',
+              'Yes. The same engineer-writers who create your technical content write them, and we build different versions to test which one works best.',
           },
         ]}
       />

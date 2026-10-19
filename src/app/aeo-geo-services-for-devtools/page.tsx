@@ -87,7 +87,7 @@ export default function AEOGEOServices() {
             {
               title: 'Content LLMs can quote',
               description:
-                'AI tools quote passages, not pages. Our vetted engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
+                'AI tools quote passages, not pages. Our engineer-writers create new explainers, definitions, tutorials and code samples that hold up on their own, and refresh existing pages when needed. Every piece is reviewed by real developers and edited by professional technical editors, so it is accurate enough to be cited.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },

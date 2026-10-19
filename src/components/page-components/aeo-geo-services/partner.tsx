@@ -26,7 +26,7 @@ const Partner = () => {
                     Unlike agencies that simply renamed SEO as GEO, we treat it
                     as two jobs: making your own pages easy for LLMs to quote,
                     and earning mentions on the third-party sources they trust.
-                    Both need vetted writers who know your category, because
+                    Both need writers who know your category, because
                     developers, and the AI tools they use, ignore generic
                     content.
                   </dd>
