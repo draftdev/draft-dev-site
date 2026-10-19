@@ -88,7 +88,7 @@ export default function SEOServices() {
             {
               title: 'Content engineers trust',
               description:
-                'We create the tutorials, how-to guides, integration pages and comparisons on that roadmap. An engineer who knows the subject checks every piece and tests the code, then a technical editor polishes it.',
+                'We create the tutorials, how-to guides, integration pages and comparisons on that roadmap. A subject matter expert reviews every piece and tests the code, then a technical editor polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -106,7 +106,7 @@ export default function SEOServices() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only focus on one of them. We create content for both.',
-            "Content for engineers has to get the technical details right. That's why every piece is reviewed by an engineer who knows the subject, not a generalist. Before we start, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
+            "Content for engineers has to get the technical details right. That's why every piece is reviewed by a technical expert in your space, not a generalist. Before we start, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",
             'Once a piece is ready, we edit it and publish it for you. Every month, we report on your rankings, traffic and the signups your content brings in, and use what we learn to plan what comes next.',
           ]}
         />
@@ -218,12 +218,12 @@ export default function SEOServices() {
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
-              'Most SEO agencies can build a keyword list. Few can produce a tutorial an engineer will read to the end. We do both, because every piece is reviewed by an engineer who knows the subject.',
+              'Most SEO agencies can build a keyword list. Few can produce a tutorial an engineer will read to the end. We do both, because our technical experts review every piece.',
           },
           {
-            question: 'Who checks that the content is accurate?',
+            question: 'Who reviews the content?',
             answer:
-              'One of our 300+ engineers, who are subject matter experts. They check the technical details, build and test the code, and read the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
+              'One of our 300+ subject matter experts verifies the technical details, builds and tests the code, and reads the piece as a developer would. A technical editor then polishes it to your brand guidelines.',
           },
           {
             question: 'What kind of SEO content do you create?',
