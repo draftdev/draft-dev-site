@@ -1,9 +1,11 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 type FAQ = {
   id: number
   question: string
-  answer: string
+  // Page FAQs can pass JSX, for example an answer with a link
+  answer: ReactNode
 }
 
 const faqs: FAQ[] = [
@@ -17,7 +19,7 @@ const faqs: FAQ[] = [
     id: 2,
     question: 'Who writes the content? Are they technical enough?',
     answer:
-      'All content is created by our network of 300+ engineer-writers and reviewed by subject matter experts and editors. We also use AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience.',
+      'Every piece starts with deep research. Then one of our 300+ engineers, who are subject matter experts, checks the technical accuracy, builds and tests the code, and reads the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
   },
   {
     id: 3,
@@ -58,6 +60,9 @@ type FAQProps = {
   headingClassName?: string
   // Two flowing columns, so a short answer next to a long one leaves no gap
   masonry?: boolean
+  // Service pages turn this off and pass only their own questions, since
+  // the standard ones (pricing included) are about technical content
+  standardFaqs?: boolean
 }
 
 export default function FAQ({
@@ -67,10 +72,11 @@ export default function FAQ({
   title = 'Frequently asked questions',
   headingClassName = 'subheader-gradient',
   masonry = false,
+  standardFaqs = true,
 }: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
-    ...faqs,
+    ...(standardFaqs ? faqs : []),
   ]
 
   return (
@@ -99,14 +105,16 @@ export default function FAQ({
             <dl
               className={
                 masonry
-                  ? 'space-y-10 sm:columns-2 sm:gap-x-10 sm:space-y-0 lg:gap-x-14'
+                  ? 'space-y-10 sm:columns-2 sm:space-y-0 sm:gap-x-10 lg:gap-x-14'
                   : 'space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10'
               }
             >
               {allFaqs.map((faq) => (
                 <div
                   key={faq.id}
-                  className={masonry ? 'break-inside-avoid sm:mb-10' : undefined}
+                  className={
+                    masonry ? 'break-inside-avoid sm:mb-10' : undefined
+                  }
                 >
                   <dt className="text-lg font-semibold text-gray-600">
                     {faq.question}
