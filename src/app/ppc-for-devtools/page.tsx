@@ -78,23 +78,23 @@ export default function PPCServices() {
           subtitle="Your budget goes to people already looking"
           features={[
             {
-              title: 'Ads for buyers already searching',
+              title: 'Ads for active buyers',
               description:
-                'We start by reviewing your ad accounts. Then we build campaigns around searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
+                'We review your ad accounts and target searches that show someone is choosing a tool: your brand, competitors, comparisons and migrations.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Landing pages developers trust',
+              title: 'Pages developers trust',
               description:
-                'Each ad leads to a landing page with real setup steps and code. An engineer checks every page for accuracy, and we test versions to see which works best.',
+                'Each ad leads to a landing page with real setup steps and code. An engineer checks every page, and we test versions to see which works best.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Retargeting your docs readers',
+              title: 'Retargeting docs readers',
               description:
-                'We also show ads to people reading your docs. Every month, you see cost per lead, cost per signup and which campaigns bring in pipeline, and we move budget to what works.',
+                'People who read your docs see ads that match what they read. Every month, you see cost per lead, cost per signup and pipeline, and we move budget to what works.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },

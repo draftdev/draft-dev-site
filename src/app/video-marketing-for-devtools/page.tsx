@@ -78,23 +78,23 @@ export default function VideoMarketing() {
           subtitle="Checked by engineers, produced and published by us"
           features={[
             {
-              title: 'Scripts built on research',
+              title: 'Research-backed scripts',
               description:
-                'We pick the features that are hardest to explain in writing, then script them. An engineer checks every script before we record.',
+                'We pick the features that are hardest to explain in writing and script them. An engineer checks every script before we record.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Production handled for you',
+              title: 'Production done for you',
               description:
-                'Once you approve the script, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
+                'With the script approved, we handle recording, editing, voiceover, graphics and captions. No one on your team needs to be on camera.',
               linkText: 'See what we can create for you',
               linkHref: '/content-types',
             },
             {
-              title: 'Videos where developers look',
+              title: 'Videos on every channel',
               description:
-                'We publish each video to YouTube with chapters and transcripts, add it to the right pages on your site, and cut short clips for social. Every month, we report on watch time.',
+                'Each finished video goes to YouTube with chapters and transcripts, onto your site, and into short clips for social. Every month, we report on watch time.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },

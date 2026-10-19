@@ -79,23 +79,23 @@ export default function SEOServices() {
           subtitle="Content built around what your buyers search"
           features={[
             {
-              title: 'SEO roadmap for your buyers',
+              title: 'Roadmap from research',
               description:
-                'We start with your product, your competitors and your current content. Then we research what your buyers search for and build a content roadmap, starting with quick wins.',
+                'We study your product, competitors and current content, and research what your buyers search for. You get a content roadmap, starting with quick wins.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
               title: 'Content engineers trust',
               description:
-                'From that roadmap, we create tutorials, how-to guides, integration pages and comparisons. An engineer who knows the subject checks every piece and tests the code, and a technical editor polishes it.',
+                'We create the tutorials, guides, integration pages and comparisons on that roadmap. An engineer checks each piece and tests the code, and a technical editor polishes it.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
               title: 'Pages that keep ranking',
               description:
-                'We publish each piece straight into your CMS. Every month, we report on rankings, traffic and signups, and refresh older pages when they slip.',
+                'Each finished piece goes straight into your CMS. Every month, we report on rankings, traffic and signups, and refresh pages that start to slip.',
               linkText: 'See how we publish within weeks',
               linkHref: '/#how-we-work',
             },
