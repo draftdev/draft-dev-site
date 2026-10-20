@@ -36,7 +36,7 @@ export default function SocialProof({
             {stats.map((stat) => (
               <div
                 key={stat.id}
-                className={`flex flex-col bg-white/5 ${compact ? 'px-3 py-8' : 'p-8'}`}
+                className={`flex flex-col bg-white/5 ${compact ? 'px-2 py-8 xl:px-3' : 'p-8'}`}
               >
                 {/* Compact (service pages): keep each label on one line on
                     desktop, with slightly smaller text on narrow desktops */}
