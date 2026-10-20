@@ -167,7 +167,7 @@ export default function CaseStudyTemplate({
         <div className="mx-auto max-w-7xl px-6 pt-12 pb-12 sm:pt-16 sm:pb-16 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-16">
             <div>
-              <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
+              <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider text-white uppercase ring-1 ring-white/20">
                 <span className="text-amber-300">Case Study</span>
                 <span aria-hidden="true" className="text-white/40">
                   ·
