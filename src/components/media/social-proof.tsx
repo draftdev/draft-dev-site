@@ -25,16 +25,24 @@ export default function SocialProof({
                 {title}
               </h2>
               <p className="mt-4 text-lg text-gray-100 lg:leading-8">
-                We have worked with hundreds of successful companies,
-                including some of the most well-known in the tech industry.
+                We have worked with hundreds of successful companies, including
+                some of the most well-known in the tech industry.
               </p>
             </div>
           )}
-          <dl className={`${!showHeading ? 'my-0' : compact ? 'mt-10 mb-0' : 'my-16'} grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4`}
+          <dl
+            className={`${!showHeading ? 'my-0' : compact ? 'mt-10 mb-0' : 'my-16'} grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4`}
           >
             {stats.map((stat) => (
-              <div key={stat.id} className="flex flex-col bg-white/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-300">
+              <div
+                key={stat.id}
+                className={`flex flex-col bg-white/5 ${compact ? 'px-3 py-8' : 'p-8'}`}
+              >
+                {/* Compact (service pages): keep each label on one line on
+                    desktop, with slightly smaller text on narrow desktops */}
+                <dt
+                  className={`text-sm leading-6 font-semibold text-gray-300 ${compact ? 'lg:text-[13px] lg:whitespace-nowrap xl:text-sm' : ''}`}
+                >
                   {stat.name}
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-white">
