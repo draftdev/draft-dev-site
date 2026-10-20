@@ -71,7 +71,6 @@ export default function TestimonialCarousel({
                     src={t.imageSrc}
                     fill
                     sizes="224px"
-                    quality={90}
                     className="object-cover"
                     style={{
                       objectPosition: t.facePosition ?? '50% 20%',

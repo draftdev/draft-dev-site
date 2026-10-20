@@ -6,7 +6,12 @@ interface HeroProps {
   title: string
   description: string
   primaryCTA: { text: string; href: string }
-  guide: { badge: string; title: string; href: string; imageSrc: string }
+  guide: {
+    badge: string
+    title: string
+    href: string
+    imageSrc: string
+  }
 }
 
 // AEO & GEO page hero. Unlike the shared service header, the free guide sits
@@ -32,16 +37,21 @@ const Hero = ({
             </Link>
             {/* Sized so the title sits on two lines on desktop */}
             <h1 className="font-code mt-6 pb-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-3xl xl:text-[2.75rem]">
-              {/* Break after "for" on desktop so the two lines read naturally */}
-              {title.includes(' for ') ? (
-                <>
-                  {title.slice(0, title.indexOf(' for ') + 4)}
-                  <br className="hidden lg:block" />{' '}
-                  {title.slice(title.indexOf(' for ') + 5)}
-                </>
-              ) : (
-                title
-              )}
+              {/* Desktop line break: after "for" by default, or wherever the
+                  title has "\n" for titles where that reads better */}
+              {(() => {
+                const at = title.includes('\n')
+                  ? title.indexOf('\n')
+                  : title.indexOf(' for ') + 4
+                if (at < 4) return title
+                return (
+                  <>
+                    {title.slice(0, at).trim()}
+                    <br className="hidden lg:block" />{' '}
+                    {title.slice(at).trim()}
+                  </>
+                )
+              })()}
             </h1>
             <p className="sm:paragraph-light text-base text-gray-100">
               {description}
