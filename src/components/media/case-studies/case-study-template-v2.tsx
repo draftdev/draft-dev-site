@@ -55,7 +55,8 @@ export type CaseStudyProps = {
   stats: Stat[]
   challenge: string[]
   solution: string[]
-  results: string[]
+  // Results lead with a number, e.g. { value: '40%', label: '...' }
+  results: Stat[]
   quote?: { text: string; name: string; role: string; imageSrc: string }
   // Optional snapshot row, e.g. client type, industry, timeline
   details?: { label: string; value: string }[]
@@ -133,6 +134,34 @@ function StoryCard({
           </li>
         ))}
       </ul>
+    </div>
+  )
+}
+
+function ResultsCard({ items }: { items: Stat[] }) {
+  return (
+    <div className="bg-gradient-brand relative flex flex-col overflow-hidden rounded-3xl p-8 text-white shadow-xl">
+      <div className="flex items-center justify-between">
+        <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15">
+          <ChartBarIcon aria-hidden="true" className="h-6 w-6 text-amber-300" />
+        </span>
+        <span className="font-code text-4xl font-semibold text-white/20">
+          03
+        </span>
+      </div>
+      <h3 className="font-code mt-6 text-2xl font-semibold text-white">
+        The results
+      </h3>
+      <dl className="mt-5 space-y-4">
+        {items.map((r) => (
+          <div key={r.label}>
+            <dt className="font-code text-3xl font-semibold text-amber-300">
+              {r.value}
+            </dt>
+            <dd className="text-base text-white">{r.label}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   )
 }
@@ -260,13 +289,7 @@ export default function CaseStudyTemplate({
               items={solution}
               Icon={WrenchScrewdriverIcon}
             />
-            <StoryCard
-              step="03"
-              title="The results"
-              items={results}
-              Icon={ChartBarIcon}
-              highlight
-            />
+            <ResultsCard items={results} />
           </div>
         </div>
       </section>
