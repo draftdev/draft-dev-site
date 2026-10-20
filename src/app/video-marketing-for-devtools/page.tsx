@@ -163,8 +163,8 @@ export default function VideoMarketing() {
           ]}
           href="/case-studies/loft-labs"
           image={{
-            src: '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
-            alt: 'Rahul Patwardhan, Senior Director, Demand Generation, Loft Labs',
+            src: '/site/med-portrait/video_tutorials_draft_dev.jpg',
+            alt: 'Developer watching a video tutorial on a laptop',
           }}
         />
         <TestimonialsCarousel
