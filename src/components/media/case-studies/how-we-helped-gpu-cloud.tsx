@@ -28,7 +28,7 @@ const steps = [
 
 const HowWeHelpedGpuCloud = () => {
   return (
-    <section className="bg-white py-12 sm:py-16">
+    <section className="bg-white pt-10 pb-12 sm:pt-12 sm:pb-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
           How We Did It

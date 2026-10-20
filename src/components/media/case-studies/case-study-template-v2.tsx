@@ -4,6 +4,8 @@ import {
   WrenchScrewdriverIcon,
 } from '@heroicons/react/24/outline'
 import { CheckIcon } from '@heroicons/react/24/solid'
+
+import BookCall from '@/components/page-components/service-landing/book-call'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -146,7 +148,8 @@ export default function CaseStudyTemplate({
   results,
   quote,
   details,
-  ctas = [{ label: 'Book a Discovery Call', href: '/call' }],
+  // Jumps to the booking section (Calendly and contact form) at the bottom
+  ctas = [{ label: 'Book a Discovery Call', href: '#book-a-call' }],
   heroVisual,
   afterStorySlot,
 }: CaseStudyProps) {
@@ -179,11 +182,17 @@ export default function CaseStudyTemplate({
               </p>
               {ctas.length > 0 && (
                 <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-                  {ctas[0] && (
-                    <Link href={ctas[0].href} className={primaryCta}>
-                      {ctas[0].label}
-                    </Link>
-                  )}
+                  {ctas[0] &&
+                    (ctas[0].href.startsWith('#') ? (
+                      // Plain anchor: jumps to the booking section on this page
+                      <a href={ctas[0].href} className={primaryCta}>
+                        {ctas[0].label}
+                      </a>
+                    ) : (
+                      <Link href={ctas[0].href} className={primaryCta}>
+                        {ctas[0].label}
+                      </Link>
+                    ))}
                   {ctas[1] && (
                     <Link
                       href={ctas[1].href}
@@ -233,7 +242,7 @@ export default function CaseStudyTemplate({
       )}
 
       {/* The story in three steps */}
-      <section className="bg-gray-50 py-12 sm:py-16">
+      <section className="bg-gray-50 pt-12 pb-10 sm:pt-16 sm:pb-12">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
             The Story in Three Parts
@@ -264,7 +273,7 @@ export default function CaseStudyTemplate({
 
       {/* Client quote */}
       {quote && (
-        <section className="bg-white py-12 sm:py-16">
+        <section className="bg-white pt-10 pb-12 sm:pt-12 sm:pb-14">
           <figure className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 px-6 sm:grid-cols-[auto_1fr] sm:gap-12 lg:px-8">
             <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full shadow-lg ring-4 ring-amber-300 sm:h-36 sm:w-36">
               <Image
@@ -301,7 +310,7 @@ export default function CaseStudyTemplate({
       {/* More case studies: headline numbers instead of portraits */}
       <section
         id="more-case-studies"
-        className="mx-auto max-w-7xl scroll-mt-32 px-6 pt-12 pb-32 sm:pt-16 lg:px-8"
+        className="mx-auto max-w-7xl scroll-mt-32 px-6 pt-10 pb-14 sm:pt-12 sm:pb-16 lg:px-8"
       >
         <h2 className="subheader-mobile-gradient sm:subheader-gradient">
           More Case Studies
@@ -330,6 +339,8 @@ export default function CaseStudyTemplate({
           ))}
         </ul>
       </section>
+
+      <BookCall />
     </main>
   )
 }
