@@ -107,7 +107,7 @@ export default function InfluencerDistribution() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             "Many teams have content that deserves an audience but can't find one. Developers ignore banner ads and tune out marketing. But they will watch a long video from a creator they trust and take that creator's advice seriously.",
-            "Some influencer platforms sell reach by the thousand. We don't. Through our Influencer Distribution Network of developer micro-influencers, we pick creators for technical credibility and only recommend those whose audience matches your buyers.",
+            "Some influencer platforms sell reach by the thousand. We don't. Through our Influencer Distribution Network of developer micro-influencers, we pick creators for technical credibility and only recommend those whose audience matches your buyers, and every share gives your product another chance to be mentioned and cited.",
             'We handle outreach, negotiation, briefs and scheduling. Every month, we show you which creators are driving pipeline, not just views, and update the list based on real results.',
           ]}
         />
@@ -222,11 +222,6 @@ export default function InfluencerDistribution() {
               "We start with creators whose audience matches your buyers. Then we check their technical credibility: what they've built, how they respond when corrected, how much sponsored content they already do, and whether their audience engages. Follower count comes last.",
           },
           {
-            question: 'What is the Influencer Distribution Network?',
-            answer:
-              'Our network of developer micro-influencers who share technical content with their audiences. We match your content to the creators whose audience fits your buyers.',
-          },
-          {
             question: 'Who prepares the creator brief?',
             answer:
               'Our subject matter experts. Each brief covers what your product does, what is hard about the problem it solves, and what not to claim.',
@@ -235,6 +230,11 @@ export default function InfluencerDistribution() {
             question: 'Do creators read a script?',
             answer:
               'No. Good creators refuse scripts, and developers can tell when someone reads marketing copy. Creators get a brief and explain your product in their own voice.',
+          },
+          {
+            question: 'What is the Influencer Distribution Network?',
+            answer:
+              'Our network of developer micro-influencers who share your content with their audiences. We also distribute it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily, so your product gets more chances to be mentioned and cited.',
           },
           {
             question: 'Do you handle contracts and disclosure?',
