@@ -80,9 +80,9 @@ export default function CaseStudyGpuCloudPlatform() {
         'Content shaped so LLMs can quote it',
       ]}
       results={[
-        'Content library grew 40% in one month',
-        'One comparison article drove 34.2% of organic traffic',
-        '284 of 862 monthly users came from organic search',
+        'The content library grew by 40% in a single month',
+        'One comparison article brought in over a third of all organic traffic',
+        'New pages outperformed older ones that had more authority',
       ]}
       heroVisual={<ResultsPanelGpuCloud />}
       afterStorySlot={<HowWeHelpedGpuCloud />}
