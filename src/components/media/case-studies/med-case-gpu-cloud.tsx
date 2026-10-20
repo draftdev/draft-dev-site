@@ -25,7 +25,7 @@ const MedCaseGpuCloud = () => {
                 <p className="font-code text-3xl font-semibold text-gray-600">
                   Original content outperformed refreshed legacy pages that
                   started with more authority. One article was cited by all
-                  three major AI assistants in a single month.
+                  three major LLMs in a single month.
                 </p>
               </div>
 
