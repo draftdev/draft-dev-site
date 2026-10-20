@@ -11,7 +11,7 @@ import Why from '@/components/page-components/why'
 import type { Metadata } from 'next'
 
 const description =
-  'We build SEO content engines that help developers find your product on Google. Our 300+ vetted engineer-writers find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
+  'We build SEO content engines that help developers find your product on Google. Our 300+ engineer-writers find what your buyers search for, write content that answers it, and publish it straight into your CMS.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -90,9 +90,9 @@ export default function SEOServices() {
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Content written by vetted engineers',
+              title: 'Content written by engineers',
               description:
-                'Developers trust content written by other developers, and they can tell quickly if the writer has never used the tool. Every piece is planned by a strategist, written by one of our 300+ vetted engineer-writers, and edited by a professional technical editor. We write tutorials, how-to guides, integration pages, comparison pages and technical deep dives.',
+                'Developers trust content written by other developers, and they can tell quickly if the writer has never used the tool. Every piece is planned by a strategist, written by one of our 300+ engineer-writers, and edited by a professional technical editor. We write tutorials, how-to guides, integration pages, comparison pages and technical deep dives.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -134,7 +134,7 @@ export default function SEOServices() {
           {
             question: 'How is this different from a regular SEO agency?',
             answer:
-              'Most SEO agencies can run an audit and build a keyword list. Few can write a technical tutorial that an engineer will read to the end. We do both, and our vetted writers are working engineers, not generalists.',
+              'Most SEO agencies can run an audit and build a keyword list. Few can write a technical tutorial that an engineer will read to the end. We do both, and our writers are working engineers, not generalists.',
           },
           {
             question: 'What about our documentation? Should it rank too?',

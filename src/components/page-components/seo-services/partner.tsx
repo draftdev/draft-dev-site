@@ -31,7 +31,7 @@ const Partner = () => {
                     marketing speak, and make decisions based on hands-on
                     experience. We analyze your industry, competitors,
                     positioning, product features, target audience, and brand
-                    voice to ensure authentic output. Our vetted writers are
+                    voice to ensure authentic output. Our writers are
                     engineers who have used the tools they write about.
                   </dd>
                 </div>

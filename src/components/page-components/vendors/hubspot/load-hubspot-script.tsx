@@ -31,6 +31,13 @@ const loadHubspotScript = (
       return true
     }
 
+    // A form is already rendered here (e.g. React re-ran the effect in dev),
+    // so don't create a second one.
+    if (targetElement.querySelector('iframe, form')) {
+      options?.onFormReady?.()
+      return true
+    }
+
     if (!window.hbspt?.forms?.create) {
       return false
     }

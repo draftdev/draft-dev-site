@@ -31,7 +31,7 @@ const Partner = () => {
                     marketing speak, and make decisions based on hands-on
                     experience. We analyze your industry, competitors,
                     positioning, product features, target audience, and brand
-                    voice to ensure authentic output. Then the same vetted
+                    voice to ensure authentic output. Then the same
                     engineer-writers who create your technical content write
                     your landing pages.
                   </dd>

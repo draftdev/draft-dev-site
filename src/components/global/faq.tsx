@@ -1,9 +1,11 @@
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 type FAQ = {
   id: number
   question: string
-  answer: string
+  // Page FAQs can pass JSX, for example an answer with a link
+  answer: ReactNode
 }
 
 const faqs: FAQ[] = [
@@ -17,7 +19,7 @@ const faqs: FAQ[] = [
     id: 2,
     question: 'Who writes the content? Are they technical enough?',
     answer:
-      'All content is created by our network of 300+ vetted engineer-writers and reviewed by subject matter experts and editors. We also use AI to speed up research and drafts, but every piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience.',
+      'Every piece starts with deep research. Then one of our 300+ engineers, who are subject matter experts, checks the technical accuracy, builds and tests the code, and reads the whole piece as a developer would. A technical editor then polishes it to match your brand guidelines.',
   },
   {
     id: 3,
@@ -48,20 +50,41 @@ const faqs: FAQ[] = [
 type FAQProps = {
   // Page-specific questions, shown above the standard ones
   pageFaqs?: Omit<FAQ, 'id'>[]
+  // Outer spacing. The default leaves room for the footer CTA, which overlaps
+  // the section above it; pass tighter spacing when FAQ isn't the last section.
+  className?: string
+  // Where "Book a discovery call" points; pages with an on-page booking
+  // section can pass a jump link instead
+  callHref?: string
+  title?: string
+  headingClassName?: string
+  // Two flowing columns, so a short answer next to a long one leaves no gap
+  masonry?: boolean
+  // Service pages turn this off and pass only their own questions, since
+  // the standard ones (pricing included) are about technical content
+  standardFaqs?: boolean
 }
 
-export default function FAQ({ pageFaqs = [] }: FAQProps) {
+export default function FAQ({
+  pageFaqs = [],
+  className = 'mb-24 py-16',
+  callHref = 'https://draft.dev/call',
+  title = 'Frequently asked questions',
+  headingClassName = 'subheader-gradient',
+  masonry = false,
+  standardFaqs = true,
+}: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
-    ...faqs,
+    ...(standardFaqs ? faqs : []),
   ]
 
   return (
-    <div id="faq" className="mb-24 py-16">
+    <div id="faq" className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className="subheader-gradient scroll-mt-32" id="faq">
-            Frequently asked questions
+          <h2 className={`${headingClassName} scroll-mt-32`} id="faq">
+            {title}
           </h2>
           <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
             <span className="font-semibold">
@@ -69,7 +92,7 @@ export default function FAQ({ pageFaqs = [] }: FAQProps) {
               for?
             </span>{' '}
             <Link
-              href="https://draft.dev/call"
+              href={callHref}
               className="hover:text-gradient-brand text-secondary font-semibold underline"
             >
               Book a discovery call
@@ -79,9 +102,20 @@ export default function FAQ({ pageFaqs = [] }: FAQProps) {
 
           <p className="p-dark"></p>
           <div className="mt-12">
-            <dl className="space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10">
+            <dl
+              className={
+                masonry
+                  ? 'space-y-10 sm:columns-2 sm:space-y-0 sm:gap-x-10 lg:gap-x-14'
+                  : 'space-y-12 sm:grid sm:grid-cols-2 sm:space-y-0 sm:gap-x-6 sm:gap-y-10 lg:gap-x-10'
+              }
+            >
               {allFaqs.map((faq) => (
-                <div key={faq.id}>
+                <div
+                  key={faq.id}
+                  className={
+                    masonry ? 'break-inside-avoid sm:mb-10' : undefined
+                  }
+                >
                   <dt className="text-lg font-semibold text-gray-600">
                     {faq.question}
                   </dt>
