@@ -148,17 +148,20 @@ export default function PaidSponsorships() {
           ]}
         />
         <CaseStudy
-          title="How Earthly increased its monthly blog visitors by 346% with Draft.dev"
-          summary="Earthly needed technical content that reached developers. Our keyword research and technical content grew its blog to 1,500 visitors per workday, with a 6% conversion rate."
+          title="How Loft Labs scaled its Kubernetes blog by 4x and achieved top SEO rankings with Draft.dev"
+          summary="Loft Labs had no time to create content for Kubernetes engineers. We delivered steady, ready-to-publish content backed by Kubernetes expertise. Blog traffic grew 4x in one year, and one article alone has brought in over 70,000 visitors."
           stats={[
-            { value: '346%', label: 'Increase in monthly blog visitors' },
-            { value: '1,500', label: 'Blog visitors per workday' },
-            { value: '6%', label: 'Conversion rate on blog content' },
+            { value: '4x', label: 'Growth in blog traffic in one year' },
+            {
+              value: '70,000+',
+              label: 'Visitors to one article since publishing',
+            },
+            { value: '#1', label: 'Ranking in search results' },
           ]}
-          href="/case-studies/earthly"
+          href="/case-studies/loft-labs"
           image={{
-            src: '/site/med-portrait/laptop_draft_dev.jpg',
-            alt: 'Developer working on a laptop',
+            src: '/site/med-portrait/review_draft_dev.jpg',
+            alt: 'Developers reviewing work together on a laptop',
           }}
         />
         <TestimonialsCarousel
