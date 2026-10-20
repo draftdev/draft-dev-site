@@ -29,7 +29,7 @@ const sprints = [
     title: 'Category guides',
     items: [
       'In-depth guides on inference engines, GPU cloud servers and cluster architecture',
-      'Self-contained sections with clear definitions AI assistants can quote',
+      'Self-contained sections with clear definitions LLMs can quote',
       'A matching deployment tutorial for each guide',
     ],
   },
@@ -45,7 +45,7 @@ const sprints = [
     title: 'Syndication and measurement',
     items: [
       'Adapted flagship guides republished on developer communities',
-      'Monthly tracking of organic, direct and AI assistant traffic',
+      'Monthly tracking of organic, direct and LLM traffic',
       'AI citations monitored and fed back into the roadmap',
     ],
   },
@@ -53,15 +53,15 @@ const sprints = [
 
 const HowWeHelpedGpuCloud = () => {
   return (
-    <div className="bg-white py-14 sm:py-24">
+    <div className="bg-white pt-14 pb-8 sm:pt-24 sm:pb-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl lg:text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
             How We Helped the Platform Grow
           </h2>
           <p className="sm:paragraph-dark py-3 text-lg text-gray-600">
-            We built a roadmap around content developers would read to the end
-            and AI assistants would cite. Each month we ran two or three
+            We built a roadmap around content that software developers would
+            read to the end and LLMs would cite. Each month we ran two or three
             workstreams at once, building authority while also reaching buyers
             ready to choose a provider.
           </p>
