@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 const description =
-  'See how Draft.dev helped a GPU cloud platform publish 29 articles, guides and refreshes in under five months, earning citations from all three major AI assistants and 10x the AI traffic of its refreshed legacy pages.'
+  'See how Draft.dev helped a GPU cloud platform publish 29 articles, guides and refreshes in under five months, earning citations from all three major LLMs and 10x the AI traffic of its refreshed legacy pages.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -56,10 +56,10 @@ import MiniCaseGpuCloud from '@/components/media/case-studies/mini-case-gpu-clou
 export default function CaseStudyGpuCloudPlatform() {
   const stats = [
     { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
-    { value: '3 of 3', label: 'Major AI assistants citing a single article' },
+    { value: '3 of 3', label: 'Major LLMs citing a single article' },
     {
       value: '29',
-      label: 'Articles, guides and refreshes published in under 5 months',
+      label: 'Pieces published in under 5 months',
     },
   ]
 
@@ -67,9 +67,8 @@ export default function CaseStudyGpuCloudPlatform() {
     {
       name: 'Challenges',
       description: [
-        'A crowded market where developers compare four or five providers before signing up',
-        'Older pages with strong authority had gone stale and earned almost no AI citations',
-        'Publishing regularly meant pulling infrastructure engineers off roadmap work',
+        'Developers compare four or five providers before signing up',
+        'Strong older pages had gone stale and earned few AI citations',
         'Competitors owned the comparison and alternatives searches',
       ],
     },
@@ -77,19 +76,16 @@ export default function CaseStudyGpuCloudPlatform() {
       name: 'Solution',
       description: [
         'A roadmap mapped to every stage of the funnel',
-        'Guides, tutorials and comparisons written by engineers',
-        'Every piece structured so AI assistants can quote it',
-        'Monthly tracking of search and AI traffic',
+        'Guides, tutorials and comparisons reviewed by engineers',
+        'Every piece structured so LLMs can quote it',
       ],
     },
     {
       name: 'Results',
       description: [
         'Live content library grew 40% in a single month',
-        '284 of 862 monthly users came from organic search',
-        'One new comparison article brought 97 organic users, 34.2% of all organic traffic',
-        'New content beat refreshed legacy pages that started with more authority',
-        '38-piece pipeline: 29 published, 9 more ready, in review or in planning',
+        'One new comparison article drove 34.2% of all organic traffic',
+        'New content beat older pages that had more authority',
       ],
     },
   ]
@@ -124,8 +120,10 @@ export default function CaseStudyGpuCloudPlatform() {
   return (
     <CaseStudyPage
       title={
-        "How a GPU Cloud Platform's New Content Earned 10x the AI Traffic of Its Legacy Pages with Draft.dev"
+        "How a GPU Cloud Platform's New Content Earned 10x the AI Traffic of Its Legacy Pages"
       }
+      heroLayout="split"
+      summary="We helped a GPU cloud platform publish 29 articles, guides and refreshes in under five months. Its new content was cited by all three major LLMs and beat refreshed legacy pages."
       titleHighlights={['GPU Cloud Platform', '10x']}
       stats={stats}
       highlights={highlights}
