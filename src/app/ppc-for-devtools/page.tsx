@@ -156,8 +156,8 @@ export default function PPCServices() {
           ]}
           href="/case-studies/status-hero"
           image={{
-            src: '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
-            alt: 'Henry Poydar, Founder & CEO, Status Hero',
+            src: '/site/med-portrait/product_draft_dev.jpg',
+            alt: 'Developer at a desk reviewing work on a tablet',
           }}
         />
         <TestimonialsCarousel
