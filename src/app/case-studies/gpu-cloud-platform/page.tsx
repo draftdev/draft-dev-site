@@ -84,10 +84,6 @@ export default function CaseStudyGpuCloudPlatform() {
         'One comparison brought in over a third of organic traffic',
         'New pages beat older, stronger ones',
       ]}
-      ctas={[
-        { label: 'Book a Discovery Call', href: '/call' },
-        { label: 'See how we work', href: '/#how-we-work' },
-      ]}
       heroVisual={<ResultsPanelGpuCloud />}
       afterStorySlot={<HowWeHelpedGpuCloud />}
     />
