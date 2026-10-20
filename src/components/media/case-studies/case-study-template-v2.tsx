@@ -1,3 +1,8 @@
+import {
+  ChartBarIcon,
+  PuzzlePieceIcon,
+  WrenchScrewdriverIcon,
+} from '@heroicons/react/24/outline'
 import { CheckIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,7 +14,7 @@ const caseStudies = [
     slug: 'gpu-cloud-platform',
     company: 'GPU cloud platform',
     stat: '10x',
-    label: 'AI traffic vs. refreshed legacy pages',
+    label: 'More AI traffic than its older pages',
   },
   {
     slug: 'earthly',
@@ -53,6 +58,8 @@ export type CaseStudyProps = {
   // Optional snapshot row, e.g. client type, industry, timeline
   details?: { label: string; value: string }[]
   ctas?: CTA[]
+  // Optional visual for the right side of the hero; stat cards otherwise
+  heroVisual?: React.ReactNode
   // Optional extra section after the story, e.g. a detailed process
   afterStorySlot?: React.ReactNode
 }
@@ -64,36 +71,50 @@ function StoryCard({
   step,
   title,
   items,
+  Icon,
   highlight = false,
 }: {
   step: string
   title: string
   items: string[]
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
   highlight?: boolean
 }) {
   return (
     <div
-      className={`flex flex-col rounded-3xl p-8 ${
+      className={`relative flex flex-col overflow-hidden rounded-3xl p-8 ${
         highlight
           ? 'bg-gradient-brand text-white shadow-xl'
-          : 'bg-gray-50 ring-1 ring-gray-200'
+          : 'bg-white shadow-md ring-1 ring-gray-200'
       }`}
     >
-      <p
-        className={`font-code text-sm font-semibold tracking-widest uppercase ${
-          highlight ? 'text-amber-300' : 'text-gradient-3'
-        }`}
-      >
-        {step}
-      </p>
+      <div className="flex items-center justify-between">
+        <span
+          className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+            highlight ? 'bg-white/15' : 'bg-gradient-brand'
+          }`}
+        >
+          <Icon
+            aria-hidden="true"
+            className={`h-6 w-6 ${highlight ? 'text-amber-300' : 'text-white'}`}
+          />
+        </span>
+        <span
+          className={`font-code text-4xl font-semibold ${
+            highlight ? 'text-white/20' : 'text-gray-200'
+          }`}
+        >
+          {step}
+        </span>
+      </div>
       <h3
-        className={`font-code mt-2 text-2xl font-semibold ${
+        className={`font-code mt-6 text-2xl font-semibold ${
           highlight ? 'text-white' : 'text-secondary'
         }`}
       >
         {title}
       </h3>
-      <ul className="mt-6 space-y-4">
+      <ul className="mt-5 space-y-3">
         {items.map((item) => (
           <li key={item} className="flex gap-x-3">
             <CheckIcon
@@ -126,6 +147,7 @@ export default function CaseStudyTemplate({
   quote,
   details,
   ctas = [{ label: 'Book a Discovery Call', href: '/call' }],
+  heroVisual,
   afterStorySlot,
 }: CaseStudyProps) {
   const others = caseStudies.filter((c) => c.slug !== slug).slice(0, 3)
@@ -133,17 +155,32 @@ export default function CaseStudyTemplate({
   return (
     <main>
       {/* Hero: story on the left, results on the right */}
-      <div className="bg-gradient-brand">
-        <div className="mx-auto max-w-7xl px-6 pt-12 pb-12 sm:pt-16 sm:pb-16 lg:px-8">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
+      <div className="bg-gradient-brand relative isolate overflow-hidden">
+        {/* Soft glow and grid pattern for depth */}
+        <div
+          aria-hidden="true"
+          className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.07]"
+        />
+        <div className="mx-auto max-w-7xl px-6 pt-12 pb-14 sm:pt-16 sm:pb-20 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-16">
             <div>
-              <p className="font-code text-sm font-semibold tracking-widest text-amber-300 uppercase">
-                Case Study · {company}
+              <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
+                <span className="text-amber-300">Case Study</span>
+                <span aria-hidden="true" className="text-white/40">
+                  ·
+                </span>
+                {company}
               </p>
-              <h1 className="font-code mt-4 text-3xl leading-tight font-semibold text-white sm:text-4xl xl:text-[2.75rem]">
+              <h1 className="font-code mt-6 text-3xl leading-tight font-semibold text-white sm:text-4xl xl:text-5xl">
                 {title}
               </h1>
-              <p className="mt-6 text-lg text-gray-100">{summary}</p>
+              <p className="mt-6 max-w-2xl text-lg text-gray-100 sm:text-xl">
+                {summary}
+              </p>
               {ctas.length > 0 && (
                 <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
                   {ctas[0] && (
@@ -162,19 +199,21 @@ export default function CaseStudyTemplate({
                 </div>
               )}
             </div>
-            <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="flex flex-col-reverse justify-end gap-y-1 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15"
-                >
-                  <dt className="text-sm text-gray-200">{stat.label}</dt>
-                  <dd className="font-code text-4xl font-semibold text-white">
-                    {stat.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            {heroVisual ?? (
+              <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                {stats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="flex flex-col-reverse justify-end gap-y-1 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15"
+                  >
+                    <dt className="text-sm text-gray-200">{stat.label}</dt>
+                    <dd className="font-code text-4xl font-semibold text-white">
+                      {stat.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
           </div>
         </div>
       </div>
@@ -184,11 +223,13 @@ export default function CaseStudyTemplate({
         <div className="border-b border-gray-200 bg-white">
           <dl className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 py-8 sm:grid-cols-3 lg:px-8">
             {details.map((d) => (
-              <div key={d.label}>
+              <div key={d.label} className="border-l-4 border-amber-400 pl-4">
                 <dt className="text-sm font-semibold tracking-wide text-gray-500 uppercase">
                   {d.label}
                 </dt>
-                <dd className="mt-1 text-lg text-gray-900">{d.value}</dd>
+                <dd className="mt-1 text-lg font-medium text-gray-900">
+                  {d.value}
+                </dd>
               </div>
             ))}
           </dl>
@@ -196,18 +237,29 @@ export default function CaseStudyTemplate({
       )}
 
       {/* The story in three steps */}
-      <section className="bg-white py-14 sm:py-20">
+      <section className="bg-gray-50 py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
             At a Glance
           </h2>
           <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-            <StoryCard step="01" title="The challenge" items={challenge} />
-            <StoryCard step="02" title="What we did" items={solution} />
+            <StoryCard
+              step="01"
+              title="The challenge"
+              items={challenge}
+              Icon={PuzzlePieceIcon}
+            />
+            <StoryCard
+              step="02"
+              title="What we did"
+              items={solution}
+              Icon={WrenchScrewdriverIcon}
+            />
             <StoryCard
               step="03"
               title="The results"
               items={results}
+              Icon={ChartBarIcon}
               highlight
             />
           </div>
@@ -216,9 +268,9 @@ export default function CaseStudyTemplate({
 
       {/* Client quote */}
       {quote && (
-        <section className="bg-gray-50 py-14 sm:py-20">
+        <section className="bg-white py-14 sm:py-20">
           <figure className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 px-6 sm:grid-cols-[auto_1fr] sm:gap-12 lg:px-8">
-            <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full shadow-lg ring-4 ring-white sm:h-36 sm:w-36">
+            <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full shadow-lg ring-4 ring-amber-300 sm:h-36 sm:w-36">
               <Image
                 src={quote.imageSrc}
                 alt={quote.name}
@@ -263,18 +315,18 @@ export default function CaseStudyTemplate({
             <li key={c.slug}>
               <Link
                 href={`/case-studies/${c.slug}`}
-                className="group flex h-full flex-col rounded-3xl bg-gray-50 p-8 ring-1 ring-gray-200 transition hover:-translate-y-1 hover:shadow-lg"
+                className="group bg-gradient-brand flex h-full flex-col rounded-3xl p-8 shadow-lg transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <p className="font-code text-sm font-semibold tracking-widest text-gray-500 uppercase">
+                <p className="text-sm font-semibold tracking-widest text-amber-300 uppercase">
                   {c.company}
                 </p>
-                <p className="font-code text-gradient-3 mt-4 text-5xl font-semibold">
+                <p className="font-code mt-4 text-5xl font-semibold text-white">
                   {c.stat}
                 </p>
-                <p className="mt-2 flex-auto text-lg text-gray-600">
+                <p className="mt-2 flex-auto text-lg text-gray-100">
                   {c.label}
                 </p>
-                <p className="text-secondary mt-6 text-base font-semibold group-hover:text-gray-900">
+                <p className="mt-6 text-base font-semibold text-white group-hover:text-amber-300">
                   Read the case study <span aria-hidden="true">→</span>
                 </p>
               </Link>

@@ -50,14 +50,15 @@ export const metadata: Metadata = {
 
 import CaseStudyTemplate from '@/components/media/case-studies/case-study-template-v2'
 import HowWeHelpedGpuCloud from '@/components/media/case-studies/how-we-helped-gpu-cloud'
+import ResultsPanelGpuCloud from '@/components/media/case-studies/results-panel-gpu-cloud'
 
 export default function CaseStudyGpuCloudPlatform() {
   return (
     <CaseStudyTemplate
       slug="gpu-cloud-platform"
       company="GPU cloud platform"
-      title="How a GPU Cloud Platform's New Content Earned 10x the AI Traffic of Its Legacy Pages"
-      summary="29 pieces in under five months. The new content was cited by all three major LLMs and outperformed older, stronger pages."
+      title="How a GPU Cloud Platform Got 10x More AI Traffic"
+      summary="In under five months, we published 29 pieces. One article got cited by all three major LLMs."
       stats={[
         { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
         { value: '3 of 3', label: 'Major LLMs citing a single article' },
@@ -70,23 +71,24 @@ export default function CaseStudyGpuCloudPlatform() {
       ]}
       challenge={[
         'Buyers compare four or five providers',
-        'Older pages had gone stale',
-        'Competitors owned comparison searches',
+        'Strong older pages had gone stale',
+        'Rivals owned the comparison searches',
       ]}
       solution={[
-        'A roadmap for every funnel stage',
+        'A clear plan for every buyer stage',
         'Guides and comparisons reviewed by engineers',
-        'Content structured for LLMs to quote',
+        'Content shaped so LLMs can quote it',
       ]}
       results={[
-        'Content library grew 40% in one month',
-        'One comparison drove 34.2% of organic traffic',
+        'Content library grew 40% in a month',
+        'One comparison brought in over a third of organic traffic',
         'New pages beat older, stronger ones',
       ]}
       ctas={[
         { label: 'Book a Discovery Call', href: '/call' },
         { label: 'See how we work', href: '/#how-we-work' },
       ]}
+      heroVisual={<ResultsPanelGpuCloud />}
       afterStorySlot={<HowWeHelpedGpuCloud />}
     />
   )

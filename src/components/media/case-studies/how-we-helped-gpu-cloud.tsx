@@ -28,7 +28,7 @@ const steps = [
 
 const HowWeHelpedGpuCloud = () => {
   return (
-    <section className="bg-gray-50 py-14 sm:py-20">
+    <section className="bg-white py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
           How We Did It
@@ -36,9 +36,12 @@ const HowWeHelpedGpuCloud = () => {
         <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
           Two or three workstreams each month, from audit to syndication.
         </p>
-        <ol className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => (
-            <li key={step.title} className="flex gap-x-5">
+            <li
+              key={step.title}
+              className="flex gap-x-5 rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200 transition hover:-translate-y-0.5 hover:shadow-md"
+            >
               <span className="bg-gradient-brand font-code flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-lg font-semibold text-white shadow-md">
                 {String(index + 1).padStart(2, '0')}
               </span>
