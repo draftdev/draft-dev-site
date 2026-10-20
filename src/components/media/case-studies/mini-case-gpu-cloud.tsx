@@ -6,7 +6,7 @@ const details = [
 
 const goals = [
   'Win the comparison, alternatives and deployment searches developers make right before they choose a provider.',
-  'Build enough topical authority to become the answer developers get from both search engines and AI assistants.',
+  'Build enough topical authority to become the answer developers get from both search engines and LLMs.',
 ]
 
 const MiniCaseGpuCloud = () => {
@@ -19,9 +19,9 @@ const MiniCaseGpuCloud = () => {
               <div className="absolute top-0 left-0 h-full w-1 bg-gray-300" />
               <p className="bg-gradient-brand font-code text-gradient text-2xl font-semibold sm:text-3xl">
                 We helped a GPU cloud platform publish 29 articles, guides and
-                refreshes in under five months. Its new content earned
-                citations from all three major AI assistants and outperformed
-                refreshed legacy pages.
+                refreshes in under five months. Its new content earned citations
+                from all three major LLMs and outperformed refreshed legacy
+                pages.
               </p>
               <dl className="mt-8 space-y-3 text-gray-600">
                 {details.map((item) => (
