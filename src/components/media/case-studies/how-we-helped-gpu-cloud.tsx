@@ -1,101 +1,58 @@
-import { CheckIcon } from '@heroicons/react/24/solid'
-
-const sprints = [
+// The GPU cloud workstreams, one short line each
+const steps = [
   {
     title: 'Audit and roadmap',
-    items: [
-      'Separated pages that rank from pages that had gone stale',
-      'Found keyword, content and intent gaps against competitors',
-      'Built a funnel-mapped roadmap with dated deliverables',
-    ],
+    text: 'Found stale pages and content gaps, then built a dated roadmap.',
   },
   {
-    title: 'Flagship guides and refreshes',
-    items: [
-      'Flagship inference optimization guide, with a lead magnet',
-      'Industry report to build top-of-funnel authority',
-      'Refreshed 3 legacy pages: model serving, managed ML platforms and multi-GPU training',
-    ],
+    title: 'Flagship guides',
+    text: 'An inference optimization guide, an industry report and 3 refreshes.',
   },
   {
     title: 'Comparison pages',
-    items: [
-      'Head-to-head comparisons against 3 competing GPU clouds',
-      'Specific technical detail, not feature grids',
-      'A provider roundup for category-level searches',
-    ],
+    text: 'Head-to-head comparisons against 3 competing GPU clouds.',
   },
   {
     title: 'Category guides',
-    items: [
-      'In-depth guides on inference engines, GPU cloud servers and cluster architecture',
-      'Self-contained sections with clear definitions LLMs can quote',
-      'A matching deployment tutorial for each guide',
-    ],
+    text: 'Deep guides on inference engines, GPU servers and clusters.',
   },
   {
-    title: 'Agent framework integrations',
-    items: [
-      'Targeted fast-growing agent frameworks whose users need GPU compute',
-      '6 integration guides in 2 months, from multi-agent orchestration to remote server hosting',
-      'Cluster rental and distributed training content for hardware buyers',
-    ],
+    title: 'Agent integrations',
+    text: '6 integration guides in 2 months for fast-growing agent frameworks.',
   },
   {
-    title: 'Syndication and measurement',
-    items: [
-      'Adapted flagship guides republished on developer communities',
-      'Monthly tracking of organic, direct and LLM traffic',
-      'AI citations monitored and fed back into the roadmap',
-    ],
+    title: 'Syndication and tracking',
+    text: 'Republished on developer communities, with monthly AI citation tracking.',
   },
 ]
 
 const HowWeHelpedGpuCloud = () => {
   return (
-    <div className="bg-white pt-14 pb-8 sm:pt-24 sm:pb-10">
+    <section className="bg-gray-50 py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl lg:text-center">
-          <h2 className="subheader-mobile-gradient sm:subheader-gradient">
-            How We Helped the Platform Grow
-          </h2>
-          <p className="sm:paragraph-dark py-3 text-lg text-gray-600">
-            We built a roadmap around content that software developers would
-            read to the end and LLMs would cite. Each month we ran two or three
-            workstreams at once, building authority while also reaching buyers
-            ready to choose a provider.
-          </p>
-        </div>
-        <ol className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-6 sm:mt-16 lg:max-w-none lg:grid-cols-3">
-          {sprints.map((sprint, index) => (
-            <li
-              key={sprint.title}
-              className="flex flex-col rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200"
-            >
-              <div className="flex items-baseline gap-x-4">
-                <span className="font-code text-gradient-3 text-3xl font-semibold">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h3 className="text-secondary text-lg font-semibold">
-                  {sprint.title}
+        <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+          How We Did It
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+          Two or three workstreams each month, from audit to syndication.
+        </p>
+        <ol className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {steps.map((step, index) => (
+            <li key={step.title} className="flex gap-x-5">
+              <span className="bg-gradient-brand font-code flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-lg font-semibold text-white shadow-md">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div>
+                <h3 className="text-secondary font-code text-lg font-semibold">
+                  {step.title}
                 </h3>
+                <p className="mt-1 text-base text-gray-600">{step.text}</p>
               </div>
-              <ul className="mt-6 space-y-3 text-base text-gray-600">
-                {sprint.items.map((item) => (
-                  <li key={item} className="flex gap-x-3">
-                    <CheckIcon
-                      className="text-primary mt-1 h-5 w-5 shrink-0"
-                      aria-hidden="true"
-                    />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </li>
           ))}
         </ol>
       </div>
-    </div>
+    </section>
   )
 }
 

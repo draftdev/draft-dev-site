@@ -48,90 +48,46 @@ export const metadata: Metadata = {
   },
 }
 
-import CaseStudyPage from '../../../components/media/case-studies/case-study-template'
-
+import CaseStudyTemplate from '@/components/media/case-studies/case-study-template-v2'
 import HowWeHelpedGpuCloud from '@/components/media/case-studies/how-we-helped-gpu-cloud'
-import MiniCaseGpuCloud from '@/components/media/case-studies/mini-case-gpu-cloud'
 
 export default function CaseStudyGpuCloudPlatform() {
-  const stats = [
-    { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
-    { value: '3 of 3', label: 'Major LLMs citing a single article' },
-    {
-      value: '29',
-      label: 'Pieces published in under 5 months',
-    },
-  ]
-
-  const highlights = [
-    {
-      name: 'Challenges',
-      description: [
-        'Developers compare four or five providers before signing up',
-        'Strong older pages had gone stale and earned few AI citations',
-        'Competitors owned the comparison and alternatives searches',
-      ],
-    },
-    {
-      name: 'Solution',
-      description: [
-        'A roadmap mapped to every stage of the funnel',
-        'Guides, tutorials and comparisons reviewed by engineers',
-        'Every piece structured so LLMs can quote it',
-      ],
-    },
-    {
-      name: 'Results',
-      description: [
-        'Live content library grew 40% in a single month',
-        'One new comparison article drove 34.2% of all organic traffic',
-        'New content beat older pages that had more authority',
-      ],
-    },
-  ]
-
-  const relatedCaseStudies = [
-    {
-      name: 'Em Blitstein',
-      role: 'Senior Content Marketing Manager',
-      imageUrl: '/media/testimonials-lg/em_sinch_mailgun.jpg',
-      company: 'Sinch Mailgun',
-    },
-    {
-      name: 'Rahul Patwardhan',
-      role: 'Senior Director, Demand Generation',
-      imageUrl:
-        '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
-      company: 'Loft Labs',
-    },
-    {
-      name: 'Adam Gordon Bell',
-      role: 'Director of Developer Relations',
-      imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
-      company: 'Earthly',
-    },
-  ]
-
-  const ctas = [
-    { label: 'Book a Discovery Call', href: '/call' },
-    { label: 'See how we work', href: '/#how-we-work' },
-  ]
-
   return (
-    <CaseStudyPage
-      title={
-        "How a GPU Cloud Platform's New Content Earned 10x the AI Traffic of Its Legacy Pages"
-      }
-      heroLayout="split"
-      summary="We helped a GPU cloud platform publish 29 articles, guides and refreshes in under five months. Its new content was cited by all three major LLMs and beat refreshed legacy pages."
-      titleHighlights={['GPU Cloud Platform', '10x']}
-      stats={stats}
-      highlights={highlights}
-      miniCaseSlot={<MiniCaseGpuCloud />}
-      afterHighlightsSlot={<HowWeHelpedGpuCloud />}
-      relatedCaseStudies={relatedCaseStudies}
-      ctas={ctas}
-      statsCols={3}
+    <CaseStudyTemplate
+      slug="gpu-cloud-platform"
+      company="GPU cloud platform"
+      title="How a GPU Cloud Platform's New Content Earned 10x the AI Traffic of Its Legacy Pages"
+      summary="29 pieces in under five months. The new content was cited by all three major LLMs and outperformed older, stronger pages."
+      stats={[
+        { value: '10x', label: 'AI traffic vs. refreshed legacy pages' },
+        { value: '3 of 3', label: 'Major LLMs citing a single article' },
+        { value: '29', label: 'Pieces published in under 5 months' },
+      ]}
+      details={[
+        { label: 'Client', value: 'GPU cloud infrastructure platform (AI/ML)' },
+        { label: 'Industry', value: 'AI infrastructure / GPU cloud' },
+        { label: 'Timeline', value: 'February 2026 – present (ongoing)' },
+      ]}
+      challenge={[
+        'Buyers compare four or five providers',
+        'Older pages had gone stale',
+        'Competitors owned comparison searches',
+      ]}
+      solution={[
+        'A roadmap for every funnel stage',
+        'Guides and comparisons reviewed by engineers',
+        'Content structured for LLMs to quote',
+      ]}
+      results={[
+        'Content library grew 40% in one month',
+        'One comparison drove 34.2% of organic traffic',
+        'New pages beat older, stronger ones',
+      ]}
+      ctas={[
+        { label: 'Book a Discovery Call', href: '/call' },
+        { label: 'See how we work', href: '/#how-we-work' },
+      ]}
+      afterStorySlot={<HowWeHelpedGpuCloud />}
     />
   )
 }
