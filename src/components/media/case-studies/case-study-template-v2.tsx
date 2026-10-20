@@ -156,16 +156,12 @@ export default function CaseStudyTemplate({
     <main>
       {/* Hero: story on the left, results on the right */}
       <div className="bg-gradient-brand relative isolate overflow-hidden">
-        {/* Soft glow and grid pattern for depth */}
+        {/* Soft glow for depth */}
         <div
           aria-hidden="true"
           className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:40px_40px] opacity-[0.07]"
-        />
-        <div className="mx-auto max-w-7xl px-6 pt-12 pb-14 sm:pt-16 sm:pb-20 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 pt-12 pb-12 sm:pt-16 sm:pb-16 lg:px-8">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-16">
             <div>
               <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-semibold text-white ring-1 ring-white/20">
@@ -237,12 +233,12 @@ export default function CaseStudyTemplate({
       )}
 
       {/* The story in three steps */}
-      <section className="bg-gray-50 py-14 sm:py-20">
+      <section className="bg-gray-50 py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
-            At a Glance
+            The Story in Three Parts
           </h2>
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-3">
             <StoryCard
               step="01"
               title="The challenge"
@@ -268,7 +264,7 @@ export default function CaseStudyTemplate({
 
       {/* Client quote */}
       {quote && (
-        <section className="bg-white py-14 sm:py-20">
+        <section className="bg-white py-12 sm:py-16">
           <figure className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-8 px-6 sm:grid-cols-[auto_1fr] sm:gap-12 lg:px-8">
             <div className="relative mx-auto h-28 w-28 overflow-hidden rounded-full shadow-lg ring-4 ring-amber-300 sm:h-36 sm:w-36">
               <Image
@@ -305,12 +301,12 @@ export default function CaseStudyTemplate({
       {/* More case studies: headline numbers instead of portraits */}
       <section
         id="more-case-studies"
-        className="mx-auto max-w-7xl scroll-mt-32 px-6 pt-14 pb-24 sm:pt-20 lg:px-8"
+        className="mx-auto max-w-7xl scroll-mt-32 px-6 pt-12 pb-32 sm:pt-16 lg:px-8"
       >
         <h2 className="subheader-mobile-gradient sm:subheader-gradient">
           More Case Studies
         </h2>
-        <ul className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
+        <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {others.map((c) => (
             <li key={c.slug}>
               <Link
