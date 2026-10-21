@@ -82,7 +82,7 @@ export default function InfluencerDistribution() {
             {
               title: 'Everyday developers',
               description:
-                'Our network is 7,000+ developers with day jobs and side projects. They are not big-name influencers, just real developers whose peers pay attention to what they share.',
+                'Our network is 7,000+ working developers with day jobs and side projects. Their peers pay attention to what they share, so every post reaches real developers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
@@ -96,7 +96,7 @@ export default function InfluencerDistribution() {
             {
               title: 'Every share on record',
               description:
-                'We collect and check every live link, so you see exactly where your content was shared. For one product launch, 25+ developers placed it 60+ times across 7 platforms.',
+                'We collect and check every live link, then send you the full list. You see exactly where your content was shared, across every platform.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
@@ -108,7 +108,7 @@ export default function InfluencerDistribution() {
           paragraphs={[
             'A launch only works if developers see it. Ads get ignored, and a single post from one influencer reaches one audience, once.',
             'Our Influencer Distribution Network spreads your content through thousands of real developers at the same time. Each share reaches a different group of peers, so your content shows up across many communities at once. We also republish it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily.',
-            'For one product launch, we invited 300 developers from the network. More than 25 of them shared it, with 60+ placements across LinkedIn, X, Hacker News, Dev.to and more. We collected and checked every link.',
+            'Once the shares are live, we collect and check every link. You get the full list, so you can see exactly where your content appeared.',
           ]}
         />
         <TestimonialCarousel
@@ -222,9 +222,9 @@ export default function InfluencerDistribution() {
               '7,000+ working developers with day jobs and side projects, who share content with their own peers.',
           },
           {
-            question: 'Are these influencers?',
+            question: 'Why share through everyday developers?',
             answer:
-              'No. They are everyday developers, not big-name creators. The reach comes from many real developers sharing at once, not from one large audience.',
+              'Developers trust what their peers share. Many real developers sharing at once puts your content in front of more communities than any single post can.',
           },
           {
             question: 'Which platforms do they share on?',
