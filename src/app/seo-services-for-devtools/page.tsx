@@ -63,7 +63,7 @@ export default function SEOServices() {
   return (
     <div>
       <Hero
-        title="SEO Services for Developer Tools & Platforms"
+        title="SEO Services for Developer Tools"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
