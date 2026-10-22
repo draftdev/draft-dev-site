@@ -62,7 +62,7 @@ export default function AEOGEOServices() {
   return (
     <div>
       <Hero
-        title="AEO & GEO Services for Developer Tools & Platforms"
+        title="AEO & GEO Services for Developer Tools"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
