@@ -62,7 +62,7 @@ export default function RedditMarketing() {
   return (
     <div>
       <Hero
-        title="Reddit Marketing for Developer Tools & Platforms"
+        title="Reddit Marketing for Developer Tools"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
