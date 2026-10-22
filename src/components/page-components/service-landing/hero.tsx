@@ -36,7 +36,7 @@ const Hero = ({
               <span className="text-sm text-white">{guide.title}</span>
             </Link>
             {/* Sized so the title sits on two lines on desktop */}
-            <h1 className="font-code mt-6 pb-4 text-3xl leading-tight font-semibold text-white sm:text-4xl lg:text-3xl xl:text-[2.75rem]">
+            <h1 className="font-code sm:header-light mt-6 mb-2 pb-4 text-3xl leading-tight font-semibold text-white">
               {/* Desktop line break: after "for" by default, or wherever the
                   title has "\n" for titles where that reads better */}
               {(() => {
