@@ -1,14 +1,16 @@
 import Analytics from '@/components/analytics'
-import { Footer } from '@/components/global/footer'
+import SiteFooter from '@/components/sections/site-footer'
 import '@/styles/tailwind.css'
 
 // Import Fontsource CSS files
-import '@fontsource/fira-code/500.css'
-import '@fontsource/fira-sans/400.css'
-import '@fontsource/fira-sans/500.css'
-import '@fontsource/fira-sans/700.css'
+// Inter: all text - JetBrains Mono: mono accents
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/700.css'
+import '@fontsource/jetbrains-mono/500.css'
+import '@fontsource/jetbrains-mono/600.css'
 
-import DynamicNavbar from '../components/global/nav/navbar-dynamic'
+import SiteHeader from '@/components/sections/site-header'
 
 export default function RootLayout({
   children,
@@ -16,7 +18,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth motion-reduce:scroll-auto">
+    // suppressHydrationWarning: browser extensions (e.g. GA opt-out) add
+    // attributes to <html> before React hydrates; only this element's
+    // attribute mismatches are suppressed.
+    <html
+      lang="en"
+      className="scroll-smooth motion-reduce:scroll-auto"
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://candid-cookie.flywheelsites.com" />
         {/* Privacy-friendly analytics by Plausible */}
@@ -32,10 +41,10 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white antialiased">
-        <DynamicNavbar />
+        <SiteHeader />
         <div className="flex min-h-screen flex-col">
           <main className="grow">{children}</main>
-          <Footer />
+          <SiteFooter />
         </div>
         <Analytics />
       </body>
