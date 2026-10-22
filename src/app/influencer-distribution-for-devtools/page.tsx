@@ -64,7 +64,7 @@ export default function InfluencerDistribution() {
   return (
     <div>
       <Hero
-        title={'Influencer Distributionnfor Developer Tools'}
+        title={'Influencer Distribution\nfor Developer Tools'}
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
