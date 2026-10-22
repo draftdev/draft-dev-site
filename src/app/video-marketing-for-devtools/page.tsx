@@ -62,7 +62,7 @@ export default function VideoMarketing() {
   return (
     <div>
       <Hero
-        title="Video Marketing for Developer Tools & Platforms"
+        title="Video Marketing for Developer Tools"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
