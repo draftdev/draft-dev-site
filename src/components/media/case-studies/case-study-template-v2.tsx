@@ -174,7 +174,7 @@ export default function CaseStudyTemplate({
                 </span>
                 {company}
               </p>
-              <h1 className="font-code mt-6 text-3xl leading-tight font-semibold text-white sm:text-4xl xl:text-5xl">
+              <h1 className="font-code sm:header-light mt-6 text-3xl leading-tight font-semibold text-white">
                 {title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-gray-100 sm:text-xl">
