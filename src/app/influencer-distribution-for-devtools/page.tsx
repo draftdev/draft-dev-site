@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We get your technical content in front of developers through creators they already trust. Our subject matter experts shape every brief, and we track the signups each partnership brings in.'
+  'We get your content shared across developer communities at scale. Our network of 7,000+ working developers posts it on LinkedIn, X, Dev.to, Hacker News and more.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -64,7 +64,7 @@ export default function InfluencerDistribution() {
   return (
     <div>
       <Hero
-        title="Influencer Distribution for Developer Tools & Platforms"
+        title={'Influencer Distribution\nfor Developer Tools'}
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
@@ -76,27 +76,27 @@ export default function InfluencerDistribution() {
       />
       <main>
         <Features
-          title="Reach Developers Through Creators They Already Trust"
-          subtitle="Creators picked for technical credibility, measured by signups"
+          title="Grassroots Reach Through Real Developers"
+          subtitle="Thousands of everyday developers sharing your content where their peers already are"
           features={[
             {
-              title: 'Creators buyers trust',
+              title: 'Everyday developers',
               description:
-                'We look for creators whose audience matches your buyers, then check what they have built, how they handle corrections and whether their audience engages. A smaller, engaged developer audience beats a big, passive one.',
+                'Our network is 7,000+ working developers with day jobs and side projects. Their peers pay attention to what they share, so every post reaches real developers.',
               linkText: 'See how we turn content into growth',
               linkHref: '/drive-awareness',
             },
             {
-              title: 'Briefs, not scripts',
+              title: 'Shared at mass scale',
               description:
-                'Good creators refuse scripts, so we give them a brief. Our subject matter experts cover what your product does, what is hard about the problem and what not to claim. We handle negotiation, disclosure and scheduling.',
+                'For each launch or piece of content, we invite developers from the network to share it. They post, repost, comment on and republish it across LinkedIn, X, Dev.to, Hashnode, Medium and more.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
             {
-              title: 'Tracking real returns',
+              title: 'Every share on record',
               description:
-                'Every partnership gets its own landing page and tracked links, and we watch branded search and signups around each post. Every month, you see cost per signup by creator, so budget goes where it worked.',
+                'We collect and check every live link, then send you the full list. You see exactly where your content was shared, across every platform.',
               linkText: 'See our approach to content distribution',
               linkHref: '/content-distribution',
             },
@@ -106,9 +106,9 @@ export default function InfluencerDistribution() {
         <Partner
           title="A growth partner that understands technical audiences"
           paragraphs={[
-            "Many teams have content that deserves an audience but can't find one. Developers ignore banner ads and tune out marketing. But they will watch a long video from a creator they trust and take that creator's advice seriously.",
-            "Some influencer platforms sell reach by the thousand. We don't. Through our Influencer Distribution Network of developer micro-influencers, we pick creators for technical credibility and only recommend those whose audience matches your buyers, and every share gives your product another chance to be mentioned and cited.",
-            'We handle outreach, negotiation, briefs and scheduling. Every month, we show you which creators are driving pipeline, not just views, and update the list based on real results.',
+            'A launch only works if developers see it. Ads get ignored, and a single post from one influencer reaches one audience, once.',
+            'Our Influencer Distribution Network spreads your content through thousands of real developers at the same time. Each share reaches a different group of peers, so your content shows up across many communities at once. We also republish it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily.',
+            'Once the shares are live, we collect and check every link. You get the full list, so you can see exactly where your content appeared.',
           ]}
         />
         <TestimonialCarousel
@@ -217,34 +217,34 @@ export default function InfluencerDistribution() {
         standardFaqs={false}
         pageFaqs={[
           {
-            question: 'How do you choose creators?',
+            question: 'Who is in the network?',
             answer:
-              "We start with creators whose audience matches your buyers. Then we check their technical credibility: what they've built, how they respond when corrected, how much sponsored content they already do, and whether their audience engages. Follower count comes last.",
+              '7,000+ working developers with day jobs and side projects, who share content with their own peers.',
           },
           {
-            question: 'Who prepares the creator brief?',
+            question: 'Why share through everyday developers?',
             answer:
-              'Our subject matter experts. Each brief covers what your product does, what is hard about the problem it solves, and what not to claim.',
+              'Developers trust what their peers share. Many real developers sharing at once puts your content in front of more communities than any single post can.',
           },
           {
-            question: 'Do creators read a script?',
+            question: 'Which platforms do they share on?',
             answer:
-              'No. Good creators refuse scripts, and developers can tell when someone reads marketing copy. Creators get a brief and explain your product in their own voice.',
+              'LinkedIn, X, Hacker News, Dev.to, Medium, Hashnode, Coder Legion and more, depending on the content.',
           },
           {
-            question: 'What is the Influencer Distribution Network?',
+            question: 'What kind of content can be shared?',
             answer:
-              'Our network of developer micro-influencers who share your content with their audiences. We also distribute it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily, so your product gets more chances to be mentioned and cited.',
+              'Product launches, blog posts, tutorials and guides. Developers post, repost, comment on and republish it.',
           },
           {
-            question: 'Do you handle contracts and disclosure?',
+            question: 'How many developers share each piece?',
             answer:
-              'Yes. We handle outreach, negotiation, sponsorship disclosure and scheduling, so your team does not have to.',
+              'It depends on the content. For one product launch, we invited 300 developers, and 25+ of them shared it, with 60+ placements in total.',
           },
           {
-            question: 'How do you track results if someone signs up later?',
+            question: 'How do you report results?',
             answer:
-              'Every partnership gets its own landing page and tracked links. We also watch branded search and signups in the days around each post, and we tell you when a number is an estimate rather than an exact count.',
+              'You get a list of every live link, checked by our team, so you can see exactly where your content was shared.',
           },
         ]}
       />

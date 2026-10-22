@@ -62,7 +62,7 @@ export default function PaidSponsorships() {
   return (
     <div>
       <Hero
-        title="Paid Sponsorships for Developer Tools & Platforms"
+        title="Paid Sponsorships for Developer Tools"
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
