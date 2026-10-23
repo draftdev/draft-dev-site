@@ -21,8 +21,8 @@ const caseStudies = [
   {
     slug: 'developer-api-platform',
     company: 'Developer API platform',
-    stat: '56%',
-    label: 'Of AI citations traced to our articles',
+    stat: '72%',
+    label: "Of the site's AI citations come from our articles",
   },
   {
     slug: 'earthly',

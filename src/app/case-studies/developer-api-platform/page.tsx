@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 const description =
-  'See how Draft.dev published 26 pieces for a developer API platform in under five months. More than half of the AI citations we tracked now point to them.'
+  'See how Draft.dev published 23 new articles and refreshed 3 for a developer API platform in seven months. Our articles now earn 72% of the AI citations to the site and bring in 9 of every 10 blog views.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -56,18 +56,18 @@ export default function CaseStudyDeveloperApiPlatform() {
     <CaseStudyTemplate
       slug="developer-api-platform"
       company="Developer API platform"
-      title="How a Developer API Platform Won 56% of Its AI Citations"
-      summary="In under five months, we published 26 pieces. More than half of the AI citations we tracked now point to them."
+      title="How a Developer API Platform Won 72% of Its AI Citations"
+      summary="In seven months, we published 23 new articles and refreshed 3 older ones. Our articles now earn 72% of the AI citations to the site and bring in 9 of every 10 blog views."
       stats={[
         {
-          value: '56%',
-          label: 'Of tracked AI citations point to our articles',
+          value: '72%',
+          label: "Of the site's AI citations come from our articles",
         },
         {
-          value: '50',
-          label: 'AI citations in one month, across 13 questions',
+          value: '10x',
+          label: 'Blog views in seven months, from 138 to 1,418',
         },
-        { value: '26', label: 'Pieces published in under 5 months' },
+        { value: '17 of 22', label: "Our articles on Google's first page" },
       ]}
       details={[
         { label: 'Client', value: 'Developer API platform' },
@@ -85,13 +85,13 @@ export default function CaseStudyDeveloperApiPlatform() {
         'Paid promotion to bring in early readers',
       ]}
       results={[
-        'AI citations grew by 22% from the first week to the last',
-        'The articles drew 1,382 readers in a single month',
-        'One rewritten page won back its AI citations',
+        'The share of AI answers citing the brand rose 3.5x, from 1.5% to 5.2%',
+        'Unpaid views of our articles grew 4x, from 122 to 508 a month',
+        "Our articles earn 91% of the blog's Google impressions",
       ]}
       afterStorySlot={
         <HowWeDidIt
-          subtitle="Six workstreams, from question research to weekly tracking."
+          subtitle="Six workstreams, from question research to AI citation tracking."
           steps={[
             {
               title: 'Question research',
@@ -107,7 +107,7 @@ export default function CaseStudyDeveloperApiPlatform() {
             },
             {
               title: 'Page rewrites',
-              text: 'Turned 3 older pages into short, direct answers.',
+              text: 'Refreshed 3 older articles into short, direct answers.',
             },
             {
               title: 'AI agent content',
@@ -115,7 +115,7 @@ export default function CaseStudyDeveloperApiPlatform() {
             },
             {
               title: 'Promotion and tracking',
-              text: '3 months of paid promotion, with weekly AI citation tracking.',
+              text: 'Paid newsletter placements since May, with AI citation tracking across ChatGPT, Claude, Perplexity and Google AI Overviews.',
             },
           ]}
         />
