@@ -25,12 +25,6 @@ const caseStudies = [
     label: 'Of AI citations traced to our articles',
   },
   {
-    slug: 'business-banking-platform',
-    company: 'Business banking platform',
-    stat: '8 weeks',
-    label: 'To first AI citations on a new blog',
-  },
-  {
     slug: 'earthly',
     company: 'Earthly',
     stat: '346%',
