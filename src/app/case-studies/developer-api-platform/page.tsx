@@ -56,7 +56,7 @@ export default function CaseStudyDeveloperApiPlatform() {
     <CaseStudyTemplate
       slug="developer-api-platform"
       company="Developer API platform"
-      title="How a Developer API Platform Got 56% of Its AI Citations From Our Content"
+      title="How a Developer API Platform Won 56% of Its AI Citations"
       summary="In under five months, we built a full content library, from plain explainers to working tutorials. More than half the AI citations we tracked now point at our articles."
       stats={[
         { value: '56%', label: 'Of AI citations traced to our articles' },
