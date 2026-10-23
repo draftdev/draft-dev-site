@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 const description =
-  'See how Draft.dev built a developer API platform a full content library in under five months, from plain explainers to working tutorials. More than half the AI citations we tracked now point at our articles.'
+  'See how Draft.dev published 26 pieces for a developer API platform in under five months. More than half of the AI citations we tracked now point to them.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -57,10 +57,16 @@ export default function CaseStudyDeveloperApiPlatform() {
       slug="developer-api-platform"
       company="Developer API platform"
       title="How a Developer API Platform Won 56% of Its AI Citations"
-      summary="In under five months, we built a full content library, from plain explainers to working tutorials. More than half the AI citations we tracked now point at our articles."
+      summary="In under five months, we published 26 pieces. More than half of the AI citations we tracked now point to them."
       stats={[
-        { value: '56%', label: 'Of AI citations traced to our articles' },
-        { value: '50', label: 'AI citations across 13 questions in a month' },
+        {
+          value: '56%',
+          label: 'Of tracked AI citations point to our articles',
+        },
+        {
+          value: '50',
+          label: 'AI citations in one month, across 13 questions',
+        },
         { value: '26', label: 'Pieces published in under 5 months' },
       ]}
       details={[
@@ -69,19 +75,19 @@ export default function CaseStudyDeveloperApiPlatform() {
         { label: 'Timeline', value: 'March 2026 – present (ongoing)' },
       ]}
       challenge={[
-        'The docs explained how to use the product, not why to choose it',
-        'Developers looking for APIs found competitors first',
-        'Nobody knew whether AI assistants named the platform or a rival',
+        'The docs explained how to use the product, not why to pick it',
+        'Competitors showed up first when developers searched',
+        'No one tracked what AI assistants said about the brand',
       ]}
       solution={[
-        'Research into the questions developers ask AI assistants',
-        'A content ladder from plain explainers to working code',
-        'Paid promotion so the content had readers before it ranked',
+        'Research into what developers ask AI assistants',
+        'Simple guides first, then working tutorials',
+        'Paid promotion to bring in early readers',
       ]}
       results={[
         'AI citations grew by 22% from the first week to the last',
-        'The live library drew 1,382 readers in a single month',
-        'One rewritten page returned to AI citations after going quiet',
+        'The articles drew 1,382 readers in a single month',
+        'One rewritten page won back its AI citations',
       ]}
       afterStorySlot={
         <HowWeDidIt
@@ -89,27 +95,27 @@ export default function CaseStudyDeveloperApiPlatform() {
           steps={[
             {
               title: 'Question research',
-              text: 'Listed the questions developers ask AI assistants and found where competitors were named instead.',
+              text: 'Listed what developers ask AI assistants and where competitors were named.',
             },
             {
               title: 'Plain explainers',
-              text: 'Guides on document generation, file conversion and workflow automation, each easy for AI to quote.',
+              text: 'Simple guides on document generation, file conversion and automation.',
             },
             {
               title: 'Quickstart tutorials',
-              text: 'A tutorial behind every guide, from a blank template to working output in minutes.',
+              text: 'A tutorial for each guide, from a blank template to working output.',
             },
             {
               title: 'Page rewrites',
-              text: 'Rewrote three older pages into short, direct answers to win citations back.',
+              text: 'Turned 3 older pages into short, direct answers.',
             },
             {
               title: 'AI agent content',
-              text: 'Guides on connecting AI agents to the APIs, plus tutorials for three workflow tools.',
+              text: 'Guides on connecting AI agents to the APIs, plus tutorials for 3 workflow tools.',
             },
             {
               title: 'Promotion and tracking',
-              text: 'Three months of paid promotion in developer newsletters and communities, with weekly citation tracking.',
+              text: '3 months of paid promotion, with weekly AI citation tracking.',
             },
           ]}
         />
