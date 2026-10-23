@@ -115,7 +115,7 @@ export default function CaseStudyDeveloperApiPlatform() {
             },
             {
               title: 'Promotion and tracking',
-              text: 'Paid newsletter placements since May, with AI citation tracking across ChatGPT, Claude, Perplexity and Google AI Overviews.',
+              text: 'Paid newsletter placements since May, with tracking across 4 AI assistants.',
             },
           ]}
         />
