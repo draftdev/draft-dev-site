@@ -19,6 +19,12 @@ const caseStudies = [
     label: 'More AI traffic than its older pages',
   },
   {
+    slug: 'developer-api-platform',
+    company: 'Developer API platform',
+    stat: '56%',
+    label: 'Of AI citations traced to our articles',
+  },
+  {
     slug: 'earthly',
     company: 'Earthly',
     stat: '346%',
@@ -205,13 +211,14 @@ export default function CaseStudyTemplate({
               )}
             </div>
             {heroVisual ?? (
-              <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              // Same card as the approved GPU case study: one row per result
+              <dl className="divide-y divide-white/15 rounded-3xl bg-white/10 px-6 shadow-2xl ring-1 ring-white/20 sm:px-8">
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="flex flex-col-reverse justify-end gap-y-1 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15"
+                    className="flex flex-col-reverse justify-end gap-y-1 py-5"
                   >
-                    <dt className="text-sm text-gray-200">{stat.label}</dt>
+                    <dt className="text-base text-gray-200">{stat.label}</dt>
                     <dd className="font-code text-4xl font-semibold text-white">
                       {stat.value}
                     </dd>
