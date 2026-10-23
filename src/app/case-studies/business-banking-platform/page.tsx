@@ -59,11 +59,10 @@ export default function CaseStudyBusinessBankingPlatform() {
       title="How a Business Banking Platform Got AI Citations in 8 Weeks"
       summary="We published 22 new articles in under four months. Two were getting clicks from AI assistants within eight weeks, on a brand new blog."
       stats={[
-        { value: '8 weeks', label: 'From publishing to first AI citations' },
-        { value: '2', label: 'Major AI assistants sending clicks' },
-        { value: '26', label: 'Pieces planned through August 2026' },
+        { value: '8 weeks', label: 'To first clicks from two AI assistants' },
+        { value: '22', label: 'Pieces published in under 4 months' },
+        { value: '103', label: 'Active users across 13 live pages' },
       ]}
-      heavyStats
       details={[
         { label: 'Client', value: 'AI-native business banking platform' },
         { label: 'Industry', value: 'Fintech / B2B SaaS' },

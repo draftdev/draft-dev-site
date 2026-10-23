@@ -6,7 +6,6 @@ import {
 import { CheckIcon } from '@heroicons/react/24/solid'
 
 import BookCall from '@/components/page-components/service-landing/book-call'
-import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -75,8 +74,6 @@ export type CaseStudyProps = {
   ctas?: CTA[]
   // Optional visual for the right side of the hero; stat cards otherwise
   heroVisual?: React.ReactNode
-  // Larger, bolder numbers in the hero card
-  heavyStats?: boolean
   // Optional extra section after the story, e.g. a detailed process
   afterStorySlot?: React.ReactNode
 }
@@ -166,7 +163,6 @@ export default function CaseStudyTemplate({
   // Jumps to the booking section (Calendly and contact form) at the bottom
   ctas = [{ label: 'Book a Discovery Call', href: '#book-a-call' }],
   heroVisual,
-  heavyStats = false,
   afterStorySlot,
 }: CaseStudyProps) {
   const others = caseStudies.filter((c) => c.slug !== slug).slice(0, 3)
@@ -226,28 +222,10 @@ export default function CaseStudyTemplate({
                 {stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className={clsx(
-                      'flex flex-col-reverse justify-end gap-y-1',
-                      heavyStats ? 'py-6' : 'py-5',
-                    )}
+                    className="flex flex-col-reverse justify-end gap-y-1 py-5"
                   >
-                    <dt
-                      className={clsx(
-                        heavyStats
-                          ? 'text-lg font-medium text-white'
-                          : 'text-base text-gray-200',
-                      )}
-                    >
-                      {stat.label}
-                    </dt>
-                    <dd
-                      className={clsx(
-                        'font-code text-white',
-                        heavyStats
-                          ? 'text-5xl font-bold sm:text-6xl'
-                          : 'text-4xl font-semibold',
-                      )}
-                    >
+                    <dt className="text-base text-gray-200">{stat.label}</dt>
+                    <dd className="font-code text-4xl font-semibold text-white">
                       {stat.value}
                     </dd>
                   </div>
