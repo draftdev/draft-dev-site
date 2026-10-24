@@ -64,7 +64,7 @@ export default function InfluencerDistribution() {
   return (
     <div>
       <Hero
-        title="Influencer Distribution for Developer Tools & Platforms"
+        title={'Influencer Distribution\nfor Developer Tools'}
         description={description}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{
@@ -77,7 +77,7 @@ export default function InfluencerDistribution() {
       <main>
         <Features
           title="Grassroots Reach Through Real Developers"
-          subtitle="Thousands of everyday developers sharing your content where their peers already are"
+          subtitle="Everyday developers sharing your content where their peers already are"
           features={[
             {
               title: 'Everyday developers',
@@ -89,7 +89,7 @@ export default function InfluencerDistribution() {
             {
               title: 'Shared at mass scale',
               description:
-                'For each launch or piece of content, we invite developers from the network to share it. They post, repost, comment on and republish it across LinkedIn, X, Dev.to, Hashnode, Medium and more.',
+                'For each launch or piece of content, we shortlist 300 to 500 developers whose interests match it. They post, repost, comment on and republish it across LinkedIn, X, Dev.to, Hashnode, Medium and more.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -107,7 +107,7 @@ export default function InfluencerDistribution() {
           title="A growth partner that understands technical audiences"
           paragraphs={[
             'A launch only works if developers see it. Ads get ignored, and a single post from one influencer reaches one audience, once.',
-            'Our Influencer Distribution Network spreads your content through thousands of real developers at the same time. Each share reaches a different group of peers, so your content shows up across many communities at once. We also republish it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily.',
+            'Our Influencer Distribution Network spreads your content through many real developers at the same time. Each share reaches a different group of peers, so your content shows up across many communities at once. We also republish it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily.',
             'Once the shares are live, we collect and check every link. You get the full list, so you can see exactly where your content appeared.',
           ]}
         />
@@ -239,7 +239,7 @@ export default function InfluencerDistribution() {
           {
             question: 'How many developers share each piece?',
             answer:
-              'It depends on the content. For one product launch, we invited 300 developers, and 25+ of them shared it, with 60+ placements in total.',
+              "We shortlist 300 to 500 developers from our network of 7,000+, based on what's being shared. We expect at least 25 of them to share it, and we push for more. For one product launch, that meant 60+ placements in total.",
           },
           {
             question: 'How do you report results?',
