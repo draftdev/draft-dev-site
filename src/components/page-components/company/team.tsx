@@ -58,19 +58,14 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
   },
   {
-    name: 'Annika Puura',
-    description: 'Operations Manager',
-    img: '/draft/team/annika_puura_draft_dev.jpg',
-  },
-  {
     name: 'Saswata Baksi',
     description: 'Discoverability Lead (SEO & GEO)',
     img: '/draft/team/saswata_baksi_draft_dev.png',
   },
   {
-    name: 'Ofer Prossner',
-    description: 'Content Strategist',
-    img: '/draft/team/ofer_prossner_draft_dev.jpg',
+    name: 'Sthitapragyan Mohanty',
+    description: 'Head of Growth',
+    img: '/draft/team/sthitapragyan_mohanty_draft_dev.jpg',
   },
   {
     name: 'Aniket Bhattacharyea',

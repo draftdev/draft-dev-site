@@ -23,7 +23,10 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
     let formReady = false
     const target = document.getElementById(targetId)
 
-    if (target) {
+    // Only wipe the target on a manual retry. On the first run, a form may
+    // already be rendered or still being created (React runs effects twice in
+    // dev), and clearing it then is what led to two forms on the page.
+    if (target && attempt > 0) {
       target.innerHTML = ''
       delete target.dataset.hubspotCreating
     }
@@ -51,7 +54,9 @@ const LoadHubSpotForm = ({ portalId, formId, region }: HubSpotFormProps) => {
       }
     })
 
-    if (target) {
+    if (target?.querySelector('iframe, form')) {
+      markReady()
+    } else if (target) {
       observer.observe(target, { childList: true, subtree: true })
     }
 

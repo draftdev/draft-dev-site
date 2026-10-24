@@ -5,24 +5,44 @@ const stats = [
   { id: 4, name: 'Technical Audience', value: '100%' },
 ]
 
-export default function SocialProof() {
+export default function SocialProof({
+  showHeading = true,
+  title = 'A content creation agency with a track record',
+  compact = false,
+}: {
+  showHeading?: boolean
+  title?: string
+  // Tighter spacing for pages that pack sections closer together
+  compact?: boolean
+}) {
   return (
-    <div className="bg-gradient-brand py-16">
+    <div className={`bg-gradient-brand ${compact ? 'py-12' : 'py-16'}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
-          <div className="text-center">
-            <h2 className="lg:subheader-light subheader-mobile-light">
-              A content creation agency with a track record
-            </h2>
-            <p className="mt-4 text-lg text-gray-100 lg:leading-8">
-              We have worked with hundreds of successful companies,
-              including some of the most well-known in the tech industry.
-            </p>
-          </div>
-          <dl className="my-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+          {showHeading && (
+            <div className="text-center">
+              <h2 className="lg:subheader-light subheader-mobile-light">
+                {title}
+              </h2>
+              <p className="mt-4 text-lg text-gray-100 lg:leading-8">
+                We have worked with hundreds of successful companies, including
+                some of the most well-known in the tech industry.
+              </p>
+            </div>
+          )}
+          <dl
+            className={`${!showHeading ? 'my-0' : compact ? 'mt-10 mb-0' : 'my-16'} grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4`}
+          >
             {stats.map((stat) => (
-              <div key={stat.id} className="flex flex-col bg-white/5 p-8">
-                <dt className="text-sm font-semibold leading-6 text-gray-300">
+              <div
+                key={stat.id}
+                className={`flex flex-col bg-white/5 ${compact ? 'px-2 py-8 xl:px-3' : 'p-8'}`}
+              >
+                {/* Compact (service pages): keep each label on one line on
+                    desktop, with slightly smaller text on narrow desktops */}
+                <dt
+                  className={`text-sm leading-6 font-semibold text-gray-300 ${compact ? 'lg:text-[13px] lg:whitespace-nowrap xl:text-sm' : ''}`}
+                >
                   {stat.name}
                 </dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-white">

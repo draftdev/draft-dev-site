@@ -52,88 +52,156 @@ export default function CaseStudyTemplate({
   stats,
   highlights,
   miniCaseSlot,
+  afterHighlightsSlot,
   relatedCaseStudies,
   ctas = [], // render up to 2
   statsCols, // optional override (3 or 4)
   uppercaseTitle = true,
+  heroLayout = 'centered',
+  summary,
+  highlightsTitle = 'At a Glance',
 }: {
   title: string
   titleHighlights?: TitleHighlight[]
   stats: Stat[]
   highlights: HighlightGroup[]
   miniCaseSlot?: React.ReactNode
+  afterHighlightsSlot?: React.ReactNode
   relatedCaseStudies: RelatedCase[]
   ctas?: CTA[]
   statsCols?: 3 | 4
   uppercaseTitle?: boolean
+  // 'split': left-aligned title, summary and CTAs like the service page hero,
+  // with the result stats stacked on the right
+  heroLayout?: 'centered' | 'split'
+  summary?: string
+  highlightsTitle?: string
 }) {
   const inferredCols: 3 | 4 = statsCols ?? (stats.length >= 4 ? 4 : 3)
   const statsGridCols = inferredCols === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3' // mobile stays 1 / sm:2
 
+  const primaryCta =
+    'rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300 sm:text-lg'
+
   return (
     <main>
-      {/* Header + Title */}
-      <div className="bg-gradient-brand relative isolate">
-        <div className="relative isolate py-16 sm:py-24">
-          <div className="px-6 lg:px-8">
-            <div
-              className={`mx-auto max-w-4xl text-center ${uppercaseTitle ? 'uppercase' : ''}`}
-            >
-              <h1
-                className="subheader-light pt-16"
-                style={{ lineHeight: '1.3' }}
-              >
-                {renderTitle(title, titleHighlights)}
-              </h1>
+      {heroLayout === 'split' ? (
+        <div className="bg-gradient-brand">
+          <div className="mx-auto max-w-7xl px-6 pt-12 pb-12 sm:pt-16 sm:pb-16 lg:px-8">
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-16">
+              <div>
+                <p className="font-code text-sm font-semibold tracking-widest text-amber-300 uppercase">
+                  Case Study
+                </p>
+                <h1 className="font-code mt-4 text-3xl leading-tight font-semibold text-white sm:text-4xl xl:text-[2.75rem]">
+                  {title}
+                </h1>
+                {summary && (
+                  <p className="mt-6 text-lg text-gray-100">{summary}</p>
+                )}
+                {ctas.length > 0 && (
+                  <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+                    {ctas[0] && (
+                      <Link href={ctas[0].href} className={primaryCta}>
+                        {ctas[0].label}
+                      </Link>
+                    )}
+                    {ctas[1] && (
+                      <Link
+                        href={ctas[1].href}
+                        className="py-2 text-base font-semibold text-white hover:text-gray-200 sm:text-lg"
+                      >
+                        {ctas[1].label} <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
+                  </div>
+                )}
+              </div>
+              {stats.length > 0 && (
+                <dl className="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                  {stats.map((stat, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col-reverse justify-end gap-y-1 rounded-2xl bg-white/10 p-5 ring-1 ring-white/15"
+                    >
+                      <dt className="text-sm text-gray-200">{stat.label}</dt>
+                      {stat.value ? (
+                        <dd className="font-code text-4xl font-semibold text-white">
+                          {stat.value}
+                        </dd>
+                      ) : null}
+                    </div>
+                  ))}
+                </dl>
+              )}
             </div>
           </div>
-
-          {/* Optional CTAs (top) */}
-          {ctas.length > 0 && (
-            <div className="mt-12 mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:flex-row">
-              {ctas[0] && (
-                <Link
-                  href={ctas[0].href}
-                  className="focus-visible:outline-primary my-2 rounded-sm px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white hover:bg-white hover:text-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
-                >
-                  {ctas[0].label}
-                </Link>
-              )}
-              {ctas[1] && (
-                <Link
-                  href={ctas[1].href}
-                  className="my-2 text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
-                >
-                  {ctas[1].label} <span aria-hidden="true">→</span>
-                </Link>
-              )}
-            </div>
-          )}
-
-          {/* Stats Grid */}
-          {stats.length > 0 && (
-            <div className="mx-auto max-w-2xl lg:max-w-5xl">
-              <dl
-                className={`grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 ${statsGridCols}`}
-              >
-                {stats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="mx-auto flex max-w-lg flex-col-reverse gap-y-3 rounded-xl bg-white/5 px-8 py-4 text-center"
-                  >
-                    <dt className="font-code text-lg font-bold text-gray-300">
-                      {stat.label}
-                    </dt>
-                    {stat.value ? (
-                      <dd className="header-light text-center">{stat.value}</dd>
-                    ) : null}
-                  </div>
-                ))}
-              </dl>
-            </div>
-          )}
         </div>
-      </div>
+      ) : (
+        <div className="bg-gradient-brand relative isolate">
+          <div className="relative isolate py-16 sm:py-24">
+            <div className="px-6 lg:px-8">
+              <div
+                className={`mx-auto max-w-4xl text-center ${uppercaseTitle ? 'uppercase' : ''}`}
+              >
+                <h1
+                  className="subheader-light pt-16"
+                  style={{ lineHeight: '1.3' }}
+                >
+                  {renderTitle(title, titleHighlights)}
+                </h1>
+              </div>
+            </div>
+
+            {/* Optional CTAs (top) */}
+            {ctas.length > 0 && (
+              <div className="mt-12 mb-12 flex flex-col items-center justify-center gap-x-6 sm:mb-24 sm:flex-row">
+                {ctas[0] && (
+                  <Link
+                    href={ctas[0].href}
+                    className={`my-2 sm:my-0 ${primaryCta}`}
+                  >
+                    {ctas[0].label}
+                  </Link>
+                )}
+                {ctas[1] && (
+                  <Link
+                    href={ctas[1].href}
+                    className="my-2 text-sm font-semibold text-white hover:text-gray-200 sm:my-0 sm:text-base"
+                  >
+                    {ctas[1].label} <span aria-hidden="true">→</span>
+                  </Link>
+                )}
+              </div>
+            )}
+
+            {/* Stats Grid */}
+            {stats.length > 0 && (
+              <div className="mx-auto max-w-2xl lg:max-w-5xl">
+                <dl
+                  className={`grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 ${statsGridCols}`}
+                >
+                  {stats.map((stat, index) => (
+                    <div
+                      key={index}
+                      className={`mx-auto flex max-w-lg flex-col-reverse gap-y-3 rounded-xl bg-white/5 px-8 py-4 text-center ${stat.value ? 'justify-end' : ''}`}
+                    >
+                      <dt className="font-code text-lg font-bold text-gray-300">
+                        {stat.label}
+                      </dt>
+                      {stat.value ? (
+                        <dd className="header-light text-center">
+                          {stat.value}
+                        </dd>
+                      ) : null}
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* MiniCase slot */}
       {miniCaseSlot}
@@ -141,13 +209,16 @@ export default function CaseStudyTemplate({
       {/* Highlights */}
       <div className="bg-gradient-brand py-12 sm:py-22">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <dl className="mx-auto grid justify-center justify-items-start gap-8 py-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
+          <h2 className="font-code pt-12 text-center text-2xl font-semibold text-white sm:text-4xl">
+            {highlightsTitle}
+          </h2>
+          <dl className="mx-auto grid justify-center justify-items-start gap-8 pt-10 pb-16 text-base/7 text-white sm:grid-cols-2 sm:justify-items-center lg:grid-cols-3">
             {highlights.map((h) => (
               <div key={h.name} className="relative rounded-xl bg-white/5 p-10">
                 <dt>
-                  <span className="font-code text-xl font-semibold sm:text-3xl">
+                  <h3 className="font-code text-xl font-semibold sm:text-2xl">
                     {h.name}
-                  </span>
+                  </h3>
                 </dt>
                 <dd>
                   <ul className="list-disc space-y-2 pt-8 pl-4">
@@ -166,10 +237,7 @@ export default function CaseStudyTemplate({
           {ctas.length > 0 && (
             <div className="flex items-center justify-center gap-x-6 sm:my-10">
               {ctas[0] && (
-                <Link
-                  href={ctas[0].href}
-                  className="font-code hover:text-gradient-2 focus-visible:outline-primary rounded-sm px-3.5 py-2.5 text-base font-semibold text-white shadow-sm ring-2 ring-white hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2"
-                >
+                <Link href={ctas[0].href} className={primaryCta}>
                   {ctas[0].label}
                 </Link>
               )}
@@ -186,9 +254,12 @@ export default function CaseStudyTemplate({
         </div>
       </div>
 
+      {/* Optional extra sections, e.g. a detailed "how we helped" */}
+      {afterHighlightsSlot}
+
       {/* More Case Studies */}
       <div
-        className="mx-auto my-24 max-w-7xl scroll-mt-32 px-6 lg:px-8"
+        className={`mx-auto mb-24 max-w-7xl scroll-mt-32 px-6 lg:px-8 ${afterHighlightsSlot ? 'mt-4' : 'mt-24'}`}
         id="more-case-studies"
       >
         <div className="mx-auto">

@@ -72,6 +72,21 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
      /*{ name: 'Paid Content Promotion', href: '/paid-content-promotion' },*/
   ]
+  const servicesMarketing = [
+    { name: 'Search Engine Optimization', href: '/seo-services-for-devtools' },
+    {
+      name: 'Generative Engine Optimization',
+      href: '/aeo-geo-services-for-devtools',
+    },
+    { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
+    { name: 'Pay-Per-Click Advertising', href: '/ppc-for-devtools' },
+    { name: 'Reddit Marketing', href: '/reddit-marketing-for-devtools' },
+    {
+      name: 'Influencer Distribution',
+      href: '/influencer-distribution-for-devtools',
+    },
+    { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
+  ]
 /*   const servicesWhoWeHelp = [
     { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
     { name: 'Draft.dev vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
@@ -147,6 +162,22 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
                     Technical Content Services
                   </h4>
                   {servicesUseCases.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center gap-2 px-6 py-2 text-sm text-gray-900 hover:bg-gray-50 hover:text-[color:var(--color-primary)]"
+                      onClick={(e) => handleClick(e, item.href)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="border-l border-gray-100 py-2 pl-4">
+                  <h4 className="text-secondary py-1 text-sm font-medium">
+                    Marketing Services
+                  </h4>
+                  {servicesMarketing.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}

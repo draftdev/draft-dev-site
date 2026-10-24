@@ -97,7 +97,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                       Let’s talk about your growth engine
                     </h3>
                     <p className="text-base lg:text-lg">
-                      Get started with our expert-vetted, compounding growth
+                      Get started with our compounding growth
                       engine approved by real engineers. A Draft.dev
                       subscription provides you with a Developer Content
                       Strategy, Content Creation & Review, Lead Magnets, Content

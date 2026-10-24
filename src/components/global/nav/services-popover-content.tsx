@@ -23,6 +23,22 @@ const services = [
   /*   { name: 'Paid Content Promotion', href: '/paid-content-promotion' }, */
 ]
 
+const marketingServices = [
+  { name: 'Search Engine Optimization', href: '/seo-services-for-devtools' },
+  {
+    name: 'Generative Engine Optimization',
+    href: '/aeo-geo-services-for-devtools',
+  },
+  { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
+  { name: 'Pay-Per-Click Advertising', href: '/ppc-for-devtools' },
+  { name: 'Reddit Marketing', href: '/reddit-marketing-for-devtools' },
+  {
+    name: 'Influencer Distribution',
+    href: '/influencer-distribution-for-devtools',
+  },
+  { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
+]
+
 /* const why = [
   { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
   { name: 'Draft.dev vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
@@ -71,6 +87,22 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
           </h3>
           <div className="mt-4 space-y-2">
             {services.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="block py-1 text-sm font-semibold text-gray-700 hover:text-gray-800"
+                onClick={(e) => go(e, item.href)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          <h3 className="mt-8 text-sm font-medium text-gray-500">
+            Marketing Services
+          </h3>
+          <div className="mt-4 space-y-2">
+            {marketingServices.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}

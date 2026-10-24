@@ -20,7 +20,7 @@ type Testimonial = {
   }
 }
 
-const testimonials: Testimonial[] = [
+export const testimonials: Testimonial[] = [
   {
     body: "I was thoroughly impressed by the smooth onboarding and ability to adapt to our product suite. Draft.dev's attention to detail and dedication to aligning content with our brand have significantly impacted our developer-focused content strategy. The high-quality technical blog posts have been well-received internally, and we're excited to see the full impact on our content program.",
     author: {
@@ -104,15 +104,21 @@ const testimonials: Testimonial[] = [
   // Add more testimonials here...
 ]
 
-export default function TestimonialsGroup() {
+export default function TestimonialsGroup({
+  title = 'Testimonials',
+  subtitle = 'What our clients are saying',
+}: {
+  title?: string
+  subtitle?: string
+}) {
   return (
     <div className="bg-white py-16 lg:py-32" id="testimonials">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="subheader-mobile-gradient lg:subheader-gradient">
-            Testimonials
+            {title}
           </h2>
-          <h3 className="lg:lead-dark text-lg">What our clients are saying</h3>
+          <h3 className="lg:lead-dark text-lg">{subtitle}</h3>
         </div>
         <div className="mx-auto mt-8 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:mt-16 lg:max-w-none">
           <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">

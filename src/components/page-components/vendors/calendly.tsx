@@ -1,12 +1,23 @@
 'use client'
 
 import Script from 'next/script'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 type CalendlyWidgetProps = {
   url: string
   minWidth?: number
   height?: number
+}
+
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: {
+        url: string
+        parentElement: HTMLElement
+      }) => void
+    }
+  }
 }
 
 export default function CalendlyWidget({
@@ -15,10 +26,24 @@ export default function CalendlyWidget({
   height = 1200,
 }: CalendlyWidgetProps) {
   const [mounted, setMounted] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // widget.js only scans the page for embeds once, when it first loads. If it
+  // is already on the page (client-side navigation, or React re-running
+  // effects in dev), a new embed would stay blank, so start it explicitly.
+  const initWidget = useCallback(() => {
+    const el = containerRef.current
+    if (!el || !window.Calendly || el.querySelector('iframe')) return
+    window.Calendly.initInlineWidget({ url, parentElement: el })
+  }, [url])
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (mounted) initWidget()
+  }, [mounted, initWidget])
 
   return (
     <>
@@ -38,15 +63,17 @@ export default function CalendlyWidget({
       {mounted ? (
         <>
           <div
-            className="calendly-inline-widget"
-            data-url={url}
+            ref={containerRef}
             style={{
               minWidth: `${minWidth}px`,
               width: '100%',
               height: `${height}px`,
             }}
           />
-          <Script src="https://assets.calendly.com/assets/external/widget.js" />
+          <Script
+            src="https://assets.calendly.com/assets/external/widget.js"
+            onReady={initWidget}
+          />
         </>
       ) : null}
     </>
