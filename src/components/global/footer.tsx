@@ -1,6 +1,7 @@
 import { Container } from '@/components/global/container'
 import { Link } from '@/components/global/link'
 import { MapPinIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx'
 import Image from 'next/image'
 import { Button } from './button'
 
@@ -93,13 +94,26 @@ const offices = ['Chicago, IL', 'Naperville, IL']
 
 function Sitemap() {
   return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4">
+    <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
       {sitemap.map((column) => (
-        <div key={column.title}>
+        <div
+          key={column.title}
+          // The long services list spans two columns and splits in half
+          className={clsx(
+            column.title === 'Services' &&
+              'col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-2',
+          )}
+        >
           <h3 className="font-code text-sm/6 font-semibold text-white">
             {column.title}
           </h3>
-          <ul className="mt-4 space-y-2.5 text-sm/6">
+          <ul
+            className={clsx(
+              'mt-4 space-y-2.5 text-sm/6',
+              column.title === 'Services' &&
+                'grid grid-cols-2 space-y-0 gap-x-8 gap-y-2.5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-2',
+            )}
+          >
             {column.links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -113,23 +127,26 @@ function Sitemap() {
           </ul>
         </div>
       ))}
+      <Offices />
     </div>
   )
 }
 
 function NewsletterSignup() {
   return (
-    <div className="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20">
-      <h3 className="font-code text-base font-semibold text-white">
-        Get our monthly newsletter
-      </h3>
-      <p className="mt-2 text-sm/6 text-white/75">
-        Resources, tips and case studies to help you reach developers. Join
-        3,000+ subscribers.
-      </p>
+    <div className="flex w-full flex-col gap-4 rounded-2xl bg-white/10 px-6 py-5 ring-1 ring-white/20 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:max-w-2xl">
+      <div>
+        <h3 className="font-code text-base font-semibold text-white">
+          Get our monthly newsletter
+        </h3>
+        <p className="mt-1 text-sm/6 text-white/75">
+          Resources, tips and case studies to help you reach developers. Join
+          3,000+ subscribers.
+        </p>
+      </div>
       <Link
         href="/newsletter"
-        className="mt-4 inline-block rounded-md bg-amber-400 px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
+        className="shrink-0 self-start rounded-md bg-amber-400 px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300 sm:self-center"
       >
         Subscribe
       </Link>
@@ -141,7 +158,7 @@ function Offices() {
   return (
     <div>
       <h3 className="font-code text-sm/6 font-semibold text-white">Offices</h3>
-      <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm/6 text-white/75">
+      <ul className="mt-4 space-y-2.5 text-sm/6 text-white/75">
         {offices.map((office) => (
           <li key={office} className="flex items-center gap-x-1.5">
             <MapPinIcon aria-hidden="true" className="size-4 text-amber-300" />
@@ -238,28 +255,25 @@ export function Footer() {
         <Container className="relative text-white">
           <div className="pt-24">
             <hr className="mt-16 border-t border-white/20" />
-            <div className="grid grid-cols-1 gap-12 pt-12 pb-12 xl:grid-cols-12 xl:gap-16">
-              {/* Brand, email list and offices */}
-              <div className="max-w-md space-y-8 xl:col-span-4 xl:max-w-none">
-                <div>
-                  <Link href="/" title="Home" className="inline-block">
-                    <Image
-                      src="/draft/logos/draftlogo_clean_white.svg"
-                      alt="Draft.dev"
-                      width={150}
-                      height={60}
-                    />
-                  </Link>
-                  <p className="mt-4 max-w-xs text-sm/6 text-white/75">
-                    Technical content and growth marketing for developer tools.
-                  </p>
-                </div>
-                <NewsletterSignup />
-                <Offices />
+            {/* Brand and email list side by side */}
+            <div className="flex flex-col gap-8 pt-12 lg:flex-row lg:items-center lg:justify-between">
+              <div>
+                <Link href="/" title="Home" className="inline-block">
+                  <Image
+                    src="/draft/logos/draftlogo_clean_white.svg"
+                    alt="Draft.dev"
+                    width={150}
+                    height={60}
+                  />
+                </Link>
+                <p className="mt-4 max-w-xs text-sm/6 text-white/75">
+                  Technical content and growth marketing for developer tools.
+                </p>
               </div>
-              <div className="xl:col-span-8">
-                <Sitemap />
-              </div>
+              <NewsletterSignup />
+            </div>
+            <div className="pt-12 pb-12">
+              <Sitemap />
             </div>
           </div>
         </Container>
