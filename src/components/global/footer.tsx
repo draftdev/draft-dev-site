@@ -21,13 +21,13 @@ function CallToAction() {
         <div className="mt-6 flex flex-wrap gap-3 lg:mt-0 lg:shrink-0">
           <Link
             href="/call"
-            className="rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300"
+            className="rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
           >
             Book a Discovery Call
           </Link>
           <a
             href="mailto:support@draft.dev"
-            className="rounded-md px-5 py-3 text-base font-semibold text-white ring-1 ring-white/60 transition hover:bg-white/10"
+            className="rounded-md px-5 py-3 text-base font-semibold text-white ring-1 ring-white/60 transition ring-inset hover:bg-white/10"
           >
             Email us
           </a>
