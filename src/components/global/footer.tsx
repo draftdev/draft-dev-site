@@ -1,6 +1,6 @@
 import { Container } from '@/components/global/container'
 import { Link } from '@/components/global/link'
-import { MapPinIcon } from '@heroicons/react/24/outline'
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
 import { Button } from './button'
@@ -127,7 +127,7 @@ function Sitemap() {
           </ul>
         </div>
       ))}
-      <Offices />
+      <Contact />
     </div>
   )
 }
@@ -154,11 +154,24 @@ function NewsletterSignup() {
   )
 }
 
-function Offices() {
+// Contact email first, then the office locations
+function Contact() {
   return (
     <div>
-      <h3 className="font-code text-sm/6 font-semibold text-white">Offices</h3>
+      <h3 className="font-code text-sm/6 font-semibold text-white">Contact</h3>
       <ul className="mt-4 space-y-2.5 text-sm/6 text-white/75">
+        <li>
+          <a
+            href="mailto:support@draft.dev"
+            className="flex items-center gap-x-1.5 transition hover:text-white"
+          >
+            <EnvelopeIcon
+              aria-hidden="true"
+              className="size-4 text-amber-300"
+            />
+            support@draft.dev
+          </a>
+        </li>
         {offices.map((office) => (
           <li key={office} className="flex items-center gap-x-1.5">
             <MapPinIcon aria-hidden="true" className="size-4 text-amber-300" />
