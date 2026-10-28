@@ -1,7 +1,6 @@
 import { Container } from '@/components/global/container'
 import { Link } from '@/components/global/link'
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
-import clsx from 'clsx'
 import Image from 'next/image'
 
 // CTA card at the top of the footer: the same discovery call prompt on every page
@@ -39,22 +38,34 @@ function CallToAction() {
 
 // Footer link columns: service landing pages first, then navigation
 const sitemap = [
+  // Same groups and labels as the Services menu in the nav
   {
-    title: 'Services',
+    title: 'Technical Content',
     links: [
-      { name: 'SEO', href: '/seo-services-for-devtools' },
-      { name: 'AEO & GEO', href: '/aeo-geo-services-for-devtools' },
+      { name: 'Content Strategy', href: '/content-strategy-services' },
+      { name: 'Content Production', href: '/content-production' },
+      { name: 'Content Distribution', href: '/content-distribution' },
+    ],
+  },
+  {
+    title: 'Marketing Services',
+    links: [
+      {
+        name: 'Search Engine Optimization',
+        href: '/seo-services-for-devtools',
+      },
+      {
+        name: 'Generative Engine Optimization',
+        href: '/aeo-geo-services-for-devtools',
+      },
       { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
-      { name: 'Paid Search', href: '/ppc-for-devtools' },
+      { name: 'Pay-Per-Click Advertising', href: '/ppc-for-devtools' },
       { name: 'Reddit Marketing', href: '/reddit-marketing-for-devtools' },
       {
         name: 'Influencer Distribution',
         href: '/influencer-distribution-for-devtools',
       },
       { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
-      { name: 'Content Strategy', href: '/content-strategy-services' },
-      { name: 'Content Production', href: '/content-production' },
-      { name: 'Content Distribution', href: '/content-distribution' },
     ],
   },
   {
@@ -97,26 +108,14 @@ const offices = ['Chicago, IL', 'Naperville, IL']
 
 function Sitemap() {
   return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+    // On wide screens the columns size to their longest link, so none wrap
+    <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:justify-between xl:gap-x-6">
       {sitemap.map((column) => (
-        <div
-          key={column.title}
-          // The long services list spans two columns and splits in half
-          className={clsx(
-            column.title === 'Services' &&
-              'col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-2',
-          )}
-        >
+        <div key={column.title}>
           <h3 className="font-code text-base/6 font-semibold text-white">
             {column.title}
           </h3>
-          <ul
-            className={clsx(
-              'mt-4 space-y-2.5 text-[15px]/6',
-              column.title === 'Services' &&
-                'grid grid-cols-2 space-y-0 gap-x-8 gap-y-2.5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-2',
-            )}
-          >
+          <ul className="mt-4 space-y-2.5 text-[15px]/6 xl:whitespace-nowrap">
             {column.links.map((link) => (
               <li key={link.href}>
                 <Link
