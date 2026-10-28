@@ -4,31 +4,35 @@ import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-// Top band of the footer: the same discovery call prompt on every page
+// CTA card at the top of the footer: the same discovery call prompt on every page
 function CallToAction() {
   return (
-    <div className="flex flex-col gap-8 py-16 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
-      <div className="max-w-2xl">
-        <h2 className="font-code text-3xl/tight font-semibold text-white sm:text-4xl/tight lg:text-5xl/tight">
-          Want to learn more about how we work?
-        </h2>
-        <p className="mt-4 text-lg text-white/80">
-          Book a discovery call, or email us at{' '}
+    <div className="pt-14 sm:pt-16">
+      <div className="relative isolate overflow-hidden rounded-3xl bg-white/10 px-6 py-8 shadow-2xl ring-1 ring-white/20 sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-24 -left-16 -z-10 h-64 w-64 rounded-full bg-amber-300/20 blur-3xl"
+        />
+        <div>
+          <h2 className="font-code text-2xl/tight font-semibold text-balance text-white sm:text-3xl/tight">
+            Want to learn more about how we work?
+          </h2>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3 lg:mt-0 lg:shrink-0">
+          <Link
+            href="/call"
+            className="rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300"
+          >
+            Book a Discovery Call
+          </Link>
           <a
             href="mailto:support@draft.dev"
-            className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+            className="rounded-md px-5 py-3 text-base font-semibold text-white ring-1 ring-white/60 transition hover:bg-white/10"
           >
-            support@draft.dev
+            Email us
           </a>
-          .
-        </p>
+        </div>
       </div>
-      <Link
-        href="/call"
-        className="shrink-0 self-start rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 sm:text-lg lg:self-center"
-      >
-        Book a Discovery Call
-      </Link>
     </div>
   )
 }
@@ -268,9 +272,12 @@ export function Footer() {
       />
       <Container className="relative">
         <CallToAction />
-        <div className="border-t border-white/20">
-          {/* Brand and email list side by side */}
-          <div className="flex flex-col gap-8 pt-14 lg:flex-row lg:items-center lg:justify-between">
+        <div className="pt-14 pb-14">
+          <Sitemap />
+        </div>
+        {/* Brand and email list side by side */}
+        <div className="border-t border-white/20 pt-12 pb-12">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <Link href="/" title="Home" className="inline-block">
                 <Image
@@ -285,9 +292,6 @@ export function Footer() {
               </p>
             </div>
             <NewsletterSignup />
-          </div>
-          <div className="pt-14 pb-14">
-            <Sitemap />
           </div>
         </div>
       </Container>
