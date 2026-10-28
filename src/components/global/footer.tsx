@@ -3,33 +3,32 @@ import { Link } from '@/components/global/link'
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { Button } from './button'
 
+// Top band of the footer: the same discovery call prompt on every page
 function CallToAction() {
   return (
-    <div className="-mt-34 px-4 pb-20 md:pb-22 lg:-mx-8 lg:px-0">
-      <div className="mx-auto max-w-7xl">
-        <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-          <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-            <div className="bg-gradient-brand overflow-hidden rounded-3xl p-8 shadow-2xl outline-1 -outline-offset-1 outline-black/10 sm:p-12">
-              <hgroup>
-                <h2 className="header-light my-6 text-center text-3xl tracking-tight sm:text-5xl">
-                  Want to learn more about how we work?
-                </h2>
-              </hgroup>
-
-              <div className="mt-12 text-center">
-                <Button
-                  className="w-full bg-transparent text-white ring-2 ring-white hover:bg-white hover:text-gray-600 sm:w-auto"
-                  href="/call"
-                >
-                  Book a Discovery Call
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col gap-8 py-16 sm:py-20 lg:flex-row lg:items-center lg:justify-between">
+      <div className="max-w-2xl">
+        <h2 className="font-code text-3xl/tight font-semibold text-white sm:text-4xl/tight lg:text-5xl/tight">
+          Want to learn more about how we work?
+        </h2>
+        <p className="mt-4 text-lg text-white/80">
+          Book a discovery call, or email us at{' '}
+          <a
+            href="mailto:support@draft.dev"
+            className="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white"
+          >
+            support@draft.dev
+          </a>
+          .
+        </p>
       </div>
+      <Link
+        href="/call"
+        className="shrink-0 self-start rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 sm:text-lg lg:self-center"
+      >
+        Book a Discovery Call
+      </Link>
     </div>
   )
 }
@@ -104,12 +103,12 @@ function Sitemap() {
               'col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-2',
           )}
         >
-          <h3 className="font-code text-sm/6 font-semibold text-white">
+          <h3 className="font-code text-base/6 font-semibold text-white">
             {column.title}
           </h3>
           <ul
             className={clsx(
-              'mt-4 space-y-2.5 text-sm/6',
+              'mt-4 space-y-2.5 text-[15px]/6',
               column.title === 'Services' &&
                 'grid grid-cols-2 space-y-0 gap-x-8 gap-y-2.5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-2',
             )}
@@ -139,7 +138,7 @@ function NewsletterSignup() {
         <h3 className="font-code text-base font-semibold text-white">
           Get our monthly newsletter
         </h3>
-        <p className="mt-1 text-sm/6 text-white/75">
+        <p className="mt-1 text-[15px]/6 text-white/75">
           Resources, tips and case studies to help you reach developers. Join
           3,000+ subscribers.
         </p>
@@ -158,8 +157,10 @@ function NewsletterSignup() {
 function Contact() {
   return (
     <div>
-      <h3 className="font-code text-sm/6 font-semibold text-white">Contact</h3>
-      <ul className="mt-4 space-y-2.5 text-sm/6 text-white/75">
+      <h3 className="font-code text-base/6 font-semibold text-white">
+        Contact
+      </h3>
+      <ul className="mt-4 space-y-2.5 text-[15px]/6 text-white/75">
         <li>
           <a
             href="mailto:support@draft.dev"
@@ -259,54 +260,53 @@ function SocialLinks() {
 
 export function Footer() {
   return (
-    <>
-      <div className="relative z-10 mt-16">
+    <footer className="bg-gradient-brand relative isolate overflow-hidden text-white">
+      {/* Soft glow for depth, same as the case study hero */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-40 -right-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-amber-300/15 blur-3xl"
+      />
+      <Container className="relative">
         <CallToAction />
-      </div>
-
-      <footer className="bg-gradient-brand relative -mt-64 pt-36">
-        <Container className="relative text-white">
-          <div className="pt-24">
-            <hr className="mt-16 border-t border-white/20" />
-            {/* Brand and email list side by side */}
-            <div className="flex flex-col gap-8 pt-12 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <Link href="/" title="Home" className="inline-block">
-                  <Image
-                    src="/draft/logos/draftlogo_clean_white.svg"
-                    alt="Draft.dev"
-                    width={150}
-                    height={60}
-                  />
-                </Link>
-                <p className="mt-4 max-w-xs text-sm/6 text-white/75">
-                  Technical content and growth marketing for developer tools.
-                </p>
-              </div>
-              <NewsletterSignup />
+        <div className="border-t border-white/20">
+          {/* Brand and email list side by side */}
+          <div className="flex flex-col gap-8 pt-14 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <Link href="/" title="Home" className="inline-block">
+                <Image
+                  src="/draft/logos/draftlogo_clean_white.svg"
+                  alt="Draft.dev"
+                  width={160}
+                  height={64}
+                />
+              </Link>
+              <p className="mt-4 max-w-xs text-[15px]/6 text-white/75">
+                Technical content and growth marketing for developer tools.
+              </p>
             </div>
-            <div className="pt-12 pb-12">
-              <Sitemap />
-            </div>
+            <NewsletterSignup />
+          </div>
+          <div className="pt-14 pb-14">
+            <Sitemap />
+          </div>
+        </div>
+      </Container>
+      <div className="border-t border-white/20">
+        <Container>
+          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
+            <p className="text-sm/6 text-white/75">
+              &copy; {new Date().getFullYear()} Draft.dev ·{' '}
+              <Link
+                href="/privacy-policy"
+                className="transition hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </p>
+            <SocialLinks />
           </div>
         </Container>
-        <div className="border-t border-white/20">
-          <Container>
-            <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
-              <p className="text-sm/6 text-white/75">
-                &copy; {new Date().getFullYear()} Draft.dev ·{' '}
-                <Link
-                  href="/privacy-policy"
-                  className="transition hover:text-white"
-                >
-                  Privacy Policy
-                </Link>
-              </p>
-              <SocialLinks />
-            </div>
-          </Container>
-        </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   )
 }
