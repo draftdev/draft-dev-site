@@ -4,10 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type CaseLink = {
-  name: string
-  role: string
-  imageUrl: string
   company: string
+  title: string
+  stat: string
+  statLabel: string
   slug: string
 }
 
@@ -25,26 +25,48 @@ const featured = {
   secondaryHref: '/#how-we-work',
 }
 
+// Cards lead with each case study's headline result.
 const moreCaseStudies: CaseLink[] = [
   {
-    name: 'Henry Poydar',
-    role: 'Founder & CEO',
-    imageUrl: '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
+    company: 'GPU cloud platform',
+    title: 'How a GPU Cloud Platform Got 10x More AI Traffic',
+    stat: '10x',
+    statLabel: 'AI traffic vs. refreshed legacy pages',
+    slug: 'gpu-cloud-platform',
+  },
+  {
+    company: 'Developer API platform',
+    title: 'How a Developer API Platform Won 72% of Its AI Citations',
+    stat: '72%',
+    statLabel: "Of the site's AI citations come from our articles",
+    slug: 'developer-api-platform',
+  },
+  {
+    company: 'Business banking platform',
+    title: 'How a Business Banking Platform Got AI Citations in 8 Weeks',
+    stat: '8 weeks',
+    statLabel: 'To AI citations, with zero domain history',
+    slug: 'business-banking-platform',
+  },
+  {
     company: 'Status Hero',
+    title: 'How Status Hero Grew Blog Traffic by 211%',
+    stat: '211%',
+    statLabel: 'Increase in blog traffic',
     slug: 'status-hero',
   },
   {
-    name: 'Rahul Patwardhan',
-    role: 'Senior Director, Demand Generation',
-    imageUrl: '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
     company: 'Loft Labs',
+    title: 'How Loft Labs Scaled Its Kubernetes Blog by 4x',
+    stat: '4x',
+    statLabel: 'Growth in blog traffic in one year',
     slug: 'loft-labs',
   },
   {
-    name: 'Adam Gordon Bell',
-    role: 'Director of Developer Relations',
-    imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
     company: 'Earthly',
+    title: 'How Earthly Grew Monthly Blog Visitors by 346%',
+    stat: '346%',
+    statLabel: 'Increase in monthly readers',
     slug: 'earthly',
   },
 ]
@@ -117,33 +139,27 @@ export default function CaseStudiesFeature() {
 
           <ul
             role="list"
-            className="mx-auto mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-3 lg:mx-0"
+            className="mx-auto mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3 lg:mx-0"
           >
-            {moreCaseStudies.map((client) => (
-              <li key={client.slug}>
+            {moreCaseStudies.map((study) => (
+              <li key={study.slug}>
                 <Link
-                  href={`/case-studies/${client.slug}`}
-                  className="group block"
+                  href={`/case-studies/${study.slug}`}
+                  className="group flex h-full flex-col rounded-3xl bg-white/10 p-8 shadow-sm ring-1 ring-white/20 transition-transform duration-300 hover:scale-[1.02]"
                 >
-                  <div className="rounded-4xl bg-white/5 p-1 shadow-sm ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
-                    <div className="rounded-4xl p-1 shadow-md shadow-black/20">
-                      <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-white/10">
-                        <Image
-                          src={client.imageUrl}
-                          alt={`${client.name}'s case study for ${client.company}`}
-                          width={800}
-                          height={800}
-                          className="aspect-14/13 w-full object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="pt-8 text-gray-100 group-hover:text-white">
+                  <p className="font-code text-5xl font-semibold text-white">
+                    {study.stat}
+                  </p>
+                  <p className="mt-3 text-sm text-gray-100">
+                    {study.statLabel}
+                  </p>
+                  <div className="mt-8 flex flex-1 flex-col border-t border-white/20 pt-6 text-gray-100 group-hover:text-white">
                     <p className="case-study-small font-semibold">
-                      {client.name}
+                      {study.title}
                     </p>
-                    <p className="case-study-small">
-                      {client.role}, {client.company}
+                    <p className="case-study-small">{study.company}</p>
+                    <p className="mt-auto pt-6 text-sm font-semibold text-white">
+                      Read the case study <span aria-hidden="true">→</span>
                     </p>
                   </div>
                 </Link>
