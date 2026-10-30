@@ -105,7 +105,7 @@ export default function ContentProductionServices() {
         <WhatWeCreate />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A content partner that understands developers"
+          title="A growth partner that understands developers"
           paragraphs={[
             "Developers can tell when content wasn't made with them in mind. They trust content that is technically accurate, shows real code and respects their time.",
             "That's why every piece goes through our engineers before it reaches you. They check the facts, test the code and read it the way your users will.",
