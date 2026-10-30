@@ -71,10 +71,6 @@ const sitemap = [
       { name: 'Blog', href: '/learn' },
       { name: 'Guides and Templates', href: '/resources' },
       { name: 'Newsletter', href: '/newsletter' },
-      {
-        name: 'Developer Marketing Survey 2026',
-        href: '/2026-developer-marketing-survey',
-      },
       { name: 'For Marketers', href: '/for-marketers' },
       { name: 'For DevRels', href: '/for-dev-rels' },
     ],
