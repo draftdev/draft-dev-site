@@ -1,6 +1,7 @@
 import { Container } from '@/components/global/container'
 import { Link } from '@/components/global/link'
 import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 // CTA card at the top of the footer: the same discovery call prompt on every page
@@ -38,18 +39,14 @@ function CallToAction() {
 
 // Footer link columns: service landing pages first, then navigation
 const sitemap = [
-  // Same groups and labels as the Services menu in the nav
+  // Content services first, then marketing, with the same labels as the nav
   {
-    title: 'Technical Content',
+    title: 'DevTool Services',
+    split: true,
     links: [
       { name: 'Content Strategy', href: '/content-strategy-services' },
       { name: 'Content Production', href: '/content-production' },
       { name: 'Content Distribution', href: '/content-distribution' },
-    ],
-  },
-  {
-    title: 'Marketing Services',
-    links: [
       {
         name: 'Search Engine Optimization',
         href: '/seo-services-for-devtools',
@@ -111,11 +108,22 @@ function Sitemap() {
     // On wide screens the columns size to their longest link, so none wrap
     <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:justify-between xl:gap-x-6">
       {sitemap.map((column) => (
-        <div key={column.title}>
+        <div
+          key={column.title}
+          // The services list runs in two lists of five under one heading
+          className={clsx('split' in column && 'col-span-2')}
+        >
           <h3 className="font-code text-base/6 font-semibold text-white">
             {column.title}
           </h3>
-          <ul className="mt-4 space-y-2.5 text-[15px]/6 xl:whitespace-nowrap">
+          <ul
+            className={clsx(
+              'mt-4 text-[15px]/6 xl:whitespace-nowrap',
+              'split' in column
+                ? 'space-y-2.5 sm:grid sm:grid-flow-col sm:grid-rows-5 sm:space-y-0 sm:gap-x-8 sm:gap-y-2.5'
+                : 'space-y-2.5',
+            )}
+          >
             {column.links.map((link) => (
               <li key={link.href}>
                 <Link

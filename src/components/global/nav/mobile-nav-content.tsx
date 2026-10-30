@@ -50,7 +50,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     [router, onNavigate],
   )
 
-/*   const whyUsUseCases = [
+  /*   const whyUsUseCases = [
     { name: 'Build Trust', href: '/build-trust' },
     { name: 'Drive Awareness', href: '/drive-awareness' },
     { name: 'Capture Leads', href: '/capture-leads' },
@@ -70,7 +70,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     { name: 'Content Production', href: '/content-production' },
     { name: 'Content Distribution', href: '/content-distribution' },
     /* { name: 'AI Content Strategy', href: '/ai-content-strategy' }, */
-     /*{ name: 'Paid Content Promotion', href: '/paid-content-promotion' },*/
+    /*{ name: 'Paid Content Promotion', href: '/paid-content-promotion' },*/
   ]
   const servicesMarketing = [
     { name: 'Search Engine Optimization', href: '/seo-services-for-devtools' },
@@ -87,7 +87,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
     },
     { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
   ]
-/*   const servicesWhoWeHelp = [
+  /*   const servicesWhoWeHelp = [
     { name: 'Draft.dev vs. Freelancers', href: '/draft-dev-vs-freelancers' },
     { name: 'Draft.dev vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
     {
@@ -159,7 +159,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
               <div className="pl-4">
                 <div className="border-l border-gray-100 py-2 pl-4">
                   <h4 className="text-secondary py-1 text-sm font-medium">
-                    Technical Content Services
+                    DevTool Technical Content
                   </h4>
                   {servicesUseCases.map((item) => (
                     <Link
@@ -175,7 +175,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
 
                 <div className="border-l border-gray-100 py-2 pl-4">
                   <h4 className="text-secondary py-1 text-sm font-medium">
-                    Marketing Services
+                    DevTool Marketing
                   </h4>
                   {servicesMarketing.map((item) => (
                     <Link
@@ -193,7 +193,7 @@ function MobileNavContent({ links, onNavigate }: MobileNavProps) {
                   <h4 className="text-secondary py-1 text-sm font-medium">
                     Compare Us
                   </h4>
-{/*                   {servicesWhoWeHelp.map((item) => (
+                  {/*                   {servicesWhoWeHelp.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
