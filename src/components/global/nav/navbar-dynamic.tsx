@@ -5,6 +5,7 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from '@headlessui/react'
+import clsx from 'clsx'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { memo, useEffect, useLayoutEffect, useRef, useState } from 'react'
@@ -19,6 +20,10 @@ import ServicesPopover from './services-popover'
 
 // Used for the spacer until the header is measured on the client (and for SSR).
 const FALLBACK_NAV_HEIGHT = 120
+
+// Past this scroll depth the header compacts: the banner slides away and the
+// logo row shrinks, so less of the page sits under the fixed header.
+const COMPACT_AFTER_PX = 24
 
 const NAVIGATION_CONFIG = {
   links: [
@@ -89,10 +94,36 @@ function DynamicNavbar() {
   const bannerRef = useRef<HTMLDivElement | null>(null)
   const navRowRef = useRef<HTMLDivElement | null>(null)
   const [fixedBlockHeight, setFixedBlockHeight] = useState(FALLBACK_NAV_HEIGHT)
+  const [compact, setCompact] = useState(false)
+  const compactRef = useRef(false)
+  // When the header last changed size; measuring mid-animation would be wrong
+  const lastToggleRef = useRef(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const next = window.scrollY > COMPACT_AFTER_PX
+      if (next !== compactRef.current) {
+        compactRef.current = next
+        lastToggleRef.current = Date.now()
+        setCompact(next)
+      }
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useLayoutEffect(() => {
     const measure = () => {
-      const banner = bannerRef.current?.getBoundingClientRect().height ?? 0
+      // Keep the spacer at the full header height. Measuring the compact
+      // header would shrink the spacer and make the page jump.
+      if (compactRef.current) return
+      if (Date.now() - lastToggleRef.current < 400) {
+        window.setTimeout(measure, 400)
+        return
+      }
+      // scrollHeight is the banner's natural height, even while it animates
+      const banner = bannerRef.current?.scrollHeight ?? 0
       const row = navRowRef.current?.getBoundingClientRect().height ?? 0
       if (row) setFixedBlockHeight(Math.round(banner + row))
     }
@@ -203,13 +234,26 @@ function DynamicNavbar() {
     <>
       <div
         ref={wrapperRef}
-        className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur transition-[background-color,backdrop-filter] duration-300 hover:bg-white hover:backdrop-blur-none supports-backdrop-filter:bg-white/70"
+        className={clsx(
+          'fixed inset-x-0 top-0 z-50 border-b border-black/5 transition-[background-color,box-shadow] duration-300',
+          compact
+            ? 'bg-white shadow-sm'
+            : 'bg-white/90 backdrop-blur hover:bg-white supports-backdrop-filter:bg-white/70',
+        )}
       >
-        <div ref={bannerRef}>
-          <Banner
-            text="Download the AEO & GEO Guide for DevTools - What AEO & GEO actually mean for developer marketing →"
-            link="https://draft.dev/aeo-geo-for-devtools"
-          />
+        {/* Banner collapses to zero height once the page is scrolled */}
+        <div
+          className={clsx(
+            'grid transition-[grid-template-rows] duration-300',
+            compact ? 'grid-rows-[0fr]' : 'grid-rows-[1fr]',
+          )}
+        >
+          <div ref={bannerRef} className="overflow-hidden">
+            <Banner
+              text="Download the AEO & GEO Guide for DevTools - What AEO & GEO actually mean for developer marketing →"
+              link="https://draft.dev/aeo-geo-for-devtools"
+            />
+          </div>
         </div>
 
         <header>
@@ -219,7 +263,10 @@ function DynamicNavbar() {
                 <div className="mx-auto max-w-7xl px-2">
                   <div
                     ref={navRowRef}
-                    className="flex items-center justify-between py-4 sm:py-6"
+                    className={clsx(
+                      'flex items-center justify-between transition-[padding] duration-300',
+                      compact ? 'py-2' : 'py-4 sm:py-6',
+                    )}
                   >
                     {/* Logo */}
                     <div className="flex items-center">
@@ -231,7 +278,10 @@ function DynamicNavbar() {
                           height={64}
                           priority
                           fetchPriority="high"
-                          className="h-auto max-h-[45px] w-auto"
+                          className={clsx(
+                            'h-auto w-auto transition-[max-height] duration-300',
+                            compact ? 'max-h-[36px]' : 'max-h-[45px]',
+                          )}
                         />
                       </Link>
                     </div>

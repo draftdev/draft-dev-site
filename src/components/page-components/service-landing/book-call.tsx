@@ -1,9 +1,6 @@
 import CalendlyWidget from '@/components/page-components/vendors/calendly'
 import FormInquiry from '@/components/page-components/vendors/hubspot/form-inquiry'
-import {
-  CalendarDaysIcon,
-  EnvelopeIcon,
-} from '@heroicons/react/24/outline'
+import { CalendarDaysIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
 
 // The /call page's booking options, embedded so visitors can book without
 // leaving the page: Calendly on the left, the inquiry form on the right.
@@ -12,7 +9,7 @@ const BookCall = () => {
     // Extra bottom padding: the footer CTA overlaps the last section by ~136px.
     <section
       id="book-a-call"
-      className="scroll-mt-32 bg-gray-50 pt-14 pb-48 sm:pt-16"
+      className="scroll-mt-32 bg-gray-50 pt-14 pb-16 sm:pt-16 sm:pb-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">

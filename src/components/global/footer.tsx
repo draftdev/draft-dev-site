@@ -1,144 +1,193 @@
 import { Container } from '@/components/global/container'
 import { Link } from '@/components/global/link'
-import NewsletterSmall from '../media/newsletter-small'
-import { Button } from './button'
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline'
+import clsx from 'clsx'
+import Image from 'next/image'
 
+// CTA card at the top of the footer: the same discovery call prompt on every page
 function CallToAction() {
   return (
-    <div className="-mt-34 px-4 pb-20 md:pb-22 lg:-mx-8 lg:px-0">
-      <div className="mx-auto max-w-7xl">
-        <div className="-m-2 rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-          <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-            <div className="bg-gradient-brand overflow-hidden rounded-3xl p-8 shadow-2xl outline-1 -outline-offset-1 outline-black/10 sm:p-12">
-              <hgroup>
-                <h2 className="header-light my-6 text-center text-3xl tracking-tight sm:text-5xl">
-                  Want to learn more about how we work?
-                </h2>
-              </hgroup>
-
-              <div className="mt-12 text-center">
-                <Button
-                  className="w-full bg-transparent text-white ring-2 ring-white hover:bg-white hover:text-gray-600 sm:w-auto"
-                  href="/call"
-                >
-                  Book a Discovery Call
-                </Button>
-              </div>
-            </div>
-          </div>
+    <div className="pt-14 sm:pt-16">
+      <div className="relative isolate overflow-hidden rounded-3xl bg-white/10 px-6 py-8 shadow-2xl ring-1 ring-white/20 sm:px-10 sm:py-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-24 -left-16 -z-10 h-64 w-64 rounded-full bg-amber-300/20 blur-3xl"
+        />
+        <div>
+          <h2 className="font-code text-2xl/tight font-semibold text-balance text-white sm:text-3xl/tight">
+            Want to learn more about how we work?
+          </h2>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3 lg:mt-0 lg:shrink-0">
+          <Link
+            href="/call"
+            className="rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
+          >
+            Book a Discovery Call
+          </Link>
+          <a
+            href="mailto:support@draft.dev"
+            className="rounded-md px-5 py-3 text-base font-semibold text-white ring-1 ring-white/60 transition ring-inset hover:bg-white/10"
+          >
+            Email us
+          </a>
         </div>
       </div>
     </div>
   )
 }
-function SitemapHeading({ children }: { children: React.ReactNode }) {
-  return <h3 className="text-sm/6 font-bold text-white">{children}</h3>
-}
 
-function SitemapLinks({ children }: { children: React.ReactNode }) {
-  return <ul className="mt-6 space-y-2 text-sm/6">{children}</ul>
-}
+// Footer link columns: service landing pages first, then navigation
+const sitemap = [
+  // Content services first, then marketing, with the same labels as the nav
+  {
+    title: 'DevTool Services',
+    split: true,
+    links: [
+      { name: 'Content Strategy', href: '/content-strategy-services' },
+      { name: 'Content Production', href: '/content-production' },
+      { name: 'Content Distribution', href: '/content-distribution' },
+      {
+        name: 'Search Engine Optimization',
+        href: '/seo-services-for-devtools',
+      },
+      {
+        name: 'Generative Engine Optimization',
+        href: '/aeo-geo-services-for-devtools',
+      },
+      { name: 'Video Marketing', href: '/video-marketing-for-devtools' },
+      { name: 'Pay-Per-Click Advertising', href: '/ppc-for-devtools' },
+      { name: 'Reddit Marketing', href: '/reddit-marketing-for-devtools' },
+      {
+        name: 'Influencer Distribution',
+        href: '/influencer-distribution-for-devtools',
+      },
+      { name: 'Paid Sponsorships', href: '/paid-sponsorships-for-devtools' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { name: 'Blog', href: '/learn' },
+      { name: 'Guides and Templates', href: '/resources' },
+      { name: 'Newsletter', href: '/newsletter' },
+      { name: 'For Marketers', href: '/for-marketers' },
+      { name: 'For DevRels', href: '/for-dev-rels' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { name: 'About', href: '/about' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Write for Draft.dev', href: '/write' },
+      { name: 'Book a Discovery Call', href: '/call' },
+    ],
+  },
+  {
+    title: 'Compare',
+    links: [
+      { name: 'vs. Freelancers', href: '/draft-dev-vs-freelancers' },
+      { name: 'vs. SEO Agencies', href: '/draft-dev-vs-seo-agency' },
+      {
+        name: 'vs. AI Generated Content',
+        href: '/draft-dev-vs-ai-gen-content',
+      },
+    ],
+  },
+]
 
-function SitemapLink(props: React.ComponentPropsWithoutRef<typeof Link>) {
-  return (
-    <li>
-      <Link
-        {...props}
-        className="font-medium text-white data-[hover]:text-gray-300"
-      />
-    </li>
-  )
-}
+const offices = ['Chicago, IL', 'Naperville, IL']
 
 function Sitemap() {
   return (
-    <>
-      {/* <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Services</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/learn/technical-ebooks">
-            Technical E-Books
-          </SitemapLink>
-          <SitemapLink href="/blog-posts">Technical Blog Content</SitemapLink>
-          <SitemapLink href="/content-refreshes">
-            Technical Content Refreshes
-          </SitemapLink>
-          <SitemapLink href="/video-tutorials">Video Tutorials</SitemapLink>
-          <SitemapLink href="/tutorials">Tutorials</SitemapLink>
-          <SitemapLink href="/dev-content-strategy">
-            Developer Content Strategy
-          </SitemapLink>
-          <SitemapLink href="/ai-content-strategy">
-            AI Content Strategy
-          </SitemapLink>
-          <SitemapLink href="/paid-content-promotion">
-            Paid Content Promotion
-          </SitemapLink>
-        </SitemapLinks>
-      </div> */}
-{/*       <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Learn</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/learn">Draft.dev Blog</SitemapLink>
-          <SitemapLink href="/newsletter">Draft.dev Newsletter</SitemapLink>
-          <SitemapLink href="/webinars">Draft.dev Webinars</SitemapLink>
-          <SitemapLink href="/content-types">
-            Content Types We Produce
-          </SitemapLink>
+    // On wide screens the columns size to their longest link, so none wrap
+    <div className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:justify-between xl:gap-x-6">
+      {sitemap.map((column) => (
+        <div
+          key={column.title}
+          // The services list runs in two lists of five under one heading
+          className={clsx('split' in column && 'col-span-2')}
+        >
+          <h3 className="font-code text-base/6 font-semibold text-white">
+            {column.title}
+          </h3>
+          <ul
+            className={clsx(
+              'mt-4 text-[15px]/6 xl:whitespace-nowrap',
+              'split' in column
+                ? 'space-y-2.5 sm:grid sm:grid-flow-col sm:grid-rows-5 sm:space-y-0 sm:gap-x-8 sm:gap-y-2.5'
+                : 'space-y-2.5',
+            )}
+          >
+            {column.links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-white/75 transition hover:text-white"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <Contact />
+    </div>
+  )
+}
 
-          <SitemapLink href="/draft-dev-vs-freelancers">
-            Draft.dev vs. Freelancers
-          </SitemapLink>
-          <SitemapLink href="/draft-dev-vs-seo-agency">
-            Draft.dev vs. SEO Agency
-          </SitemapLink>
-          <SitemapLink href="/draft-dev-vs-ai-gen-content">
-            Draft.dev vs. AI Generated Content
-          </SitemapLink>
-        </SitemapLinks>
-      </div> */}
+function NewsletterSignup() {
+  return (
+    <div className="flex w-full flex-col gap-4 rounded-2xl bg-white/10 px-6 py-5 ring-1 ring-white/20 sm:flex-row sm:items-center sm:justify-between sm:gap-8 lg:max-w-2xl">
       <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Selected Resources</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/distributing-content-on-social-media">Content Distribution Strategy</SitemapLink>
-          <SitemapLink href="/trello-content-calendar-template">
-            Trello Content Calendar Template
-          </SitemapLink>
-          <SitemapLink href="/asana-content-calendar-template">
-            Asana Content Calendar Template
-          </SitemapLink>
-          <SitemapLink href="/airtable-content-calendar-template">
-            Airtable Content Calendar Template
-          </SitemapLink>
-{/*           <SitemapLink href="/content-engine-checklist">
-            The Content Engine Checklist
-          </SitemapLink> */}
-        </SitemapLinks>
+        <h3 className="font-code text-base font-semibold text-white">
+          Get our monthly newsletter
+        </h3>
+        <p className="mt-1 text-[15px]/6 text-white/75">
+          Resources, tips and case studies to help you reach developers. Join
+          3,000+ subscribers.
+        </p>
       </div>
-      <div>
-        <SitemapHeading>
-          <span className="sitemap-heading">Company</span>
-        </SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="/about">About</SitemapLink>
-          <SitemapLink href="/case-studies">Case Studies</SitemapLink>
-          <SitemapLink href="/call">Book a Discovery Call</SitemapLink>
-{/*           <SitemapLink href="https://draft.dev/#testimonials">
-            Testimonials
-          </SitemapLink>
+      <Link
+        href="/newsletter"
+        className="shrink-0 self-start rounded-md bg-amber-400 px-5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300 sm:self-center"
+      >
+        Subscribe
+      </Link>
+    </div>
+  )
+}
 
-          <SitemapLink href="/write">Write for Draft.dev</SitemapLink>
-          <SitemapLink href="/#faq">Frequently Asked Questions</SitemapLink>
-          <SitemapLink href="/privacy-policy">Privacy Policy</SitemapLink> */}
-        </SitemapLinks>
-      </div>
-    </>
+// Contact email first, then the office locations
+function Contact() {
+  return (
+    <div>
+      <h3 className="font-code text-base/6 font-semibold text-white">
+        Contact
+      </h3>
+      <ul className="mt-4 space-y-2.5 text-[15px]/6 text-white/75">
+        <li>
+          <a
+            href="mailto:support@draft.dev"
+            className="flex items-center gap-x-1.5 transition hover:text-white"
+          >
+            <EnvelopeIcon
+              aria-hidden="true"
+              className="size-4 text-amber-300"
+            />
+            support@draft.dev
+          </a>
+        </li>
+        {offices.map((office) => (
+          <li key={office} className="flex items-center gap-x-1.5">
+            <MapPinIcon aria-hidden="true" className="size-4 text-amber-300" />
+            {office}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
@@ -170,84 +219,101 @@ function SocialIconLinkedIn(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function SocialLinks() {
+function SocialIconYouTube(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
-    <>
-      <Link
-        href="https://www.facebook.com/draftdev/"
-        target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-white data-[hover]:text-gray-300"
-      >
-        <SocialIconFacebook className="size-4" />
-      </Link>
-      <Link
-        href="https://x.com/draftdev"
-        target="_blank"
-        aria-label="Visit us on X"
-        className="text-white data-[hover]:text-gray-300"
-      >
-        <SocialIconX className="size-4" />
-      </Link>
-      <Link
-        href="https://www.linkedin.com/company/draft-dev"
-        target="_blank"
-        aria-label="Visit us on LinkedIn"
-        className="text-white data-[hover]:text-gray-300"
-      >
-        <SocialIconLinkedIn className="size-4" />
-      </Link>
-    </>
+    <svg viewBox="0 0 16 16" fill="currentColor" {...props}>
+      <path d="M15.665 4.124a2.01 2.01 0 0 0-1.415-1.423C13.003 2.364 8 2.364 8 2.364s-5.003 0-6.25.337A2.01 2.01 0 0 0 .335 4.124C0 5.380 0 8 0 8s0 2.620.335 3.876a2.010 2.010 0 0 0 1.415 1.423c1.247.337 6.250.337 6.250.337s5.003 0 6.250-.337a2.010 2.010 0 0 0 1.415-1.423C16 10.620 16 8 16 8s0-2.620-.335-3.876zM6.364 10.380V5.620L10.545 8l-4.181 2.380z" />
+    </svg>
   )
 }
 
-function Copyright() {
+const socials = [
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/draft-dev',
+    Icon: SocialIconLinkedIn,
+  },
+  { name: 'X', href: 'https://x.com/draftdev', Icon: SocialIconX },
+  {
+    name: 'YouTube',
+    href: 'https://www.youtube.com/@Draftdev',
+    Icon: SocialIconYouTube,
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/draftdev/',
+    Icon: SocialIconFacebook,
+  },
+]
+
+function SocialLinks() {
   return (
-    <div className="bg-white/15 py-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-      <div className="shadow-md shadow-black/5">
-        <div className="text-center text-sm/6 text-white">
-          &copy; {new Date().getFullYear()} Draft.dev
-        </div>
-      </div>
+    <div className="flex items-center gap-x-5">
+      {socials.map(({ name, href, Icon }) => (
+        <Link
+          key={name}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Visit us on ${name}`}
+          className="text-white/75 transition hover:text-white"
+        >
+          <Icon className="size-5" />
+        </Link>
+      ))}
     </div>
   )
 }
 
 export function Footer() {
   return (
-    <>
-      <div className="relative z-10 mt-16">
+    <footer className="bg-gradient-brand relative isolate overflow-hidden text-white">
+      {/* Soft glow for depth, same as the case study hero */}
+      <div
+        aria-hidden="true"
+        className="absolute -top-40 -right-40 -z-10 h-[32rem] w-[32rem] rounded-full bg-amber-300/15 blur-3xl"
+      />
+      <Container className="relative">
         <CallToAction />
-      </div>
-
-      {/* Actual footer content */}
-      <footer className="bg-gradient-brand relative -mt-64 pt-36">
-        <Container className="relative text-white">
-          <div className="pt-24 pb-16">
-            <hr className="mt-16 border-t border-gray-200/20" />
-            {/* <Link href="/" title="Home">
-              <Image
-                src="/draft/logos/draftlogo_clean_white.svg"
-                alt="Logo"
-                width={180}
-                height={72}
-                priority
-              />
-            </Link> */}
-            <div className="grid grid-cols-1 gap-y-10 pb-6 lg:grid-cols-3 lg:gap-16">
-              <div className="lg:col-span-2">
-                <NewsletterSmall />
-              </div>
-              <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:col-span-1 lg:pt-16">
-                <Sitemap />
-              </div>
+        <div className="pt-14 pb-14">
+          <Sitemap />
+        </div>
+        {/* Brand and email list side by side */}
+        <div className="border-t border-white/20 pt-12 pb-12">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+              <Link href="/" title="Home" className="inline-block">
+                <Image
+                  src="/draft/logos/draftlogo_clean_white.svg"
+                  alt="Draft.dev"
+                  width={160}
+                  height={64}
+                />
+              </Link>
+              <p className="mt-4 max-w-xs text-[15px]/6 text-white/75">
+                Technical content and growth marketing for developer tools.
+              </p>
             </div>
+            <NewsletterSignup />
+          </div>
+        </div>
+      </Container>
+      <div className="border-t border-white/20">
+        <Container>
+          <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
+            <p className="text-sm/6 text-white/75">
+              &copy; {new Date().getFullYear()} Draft.dev ·{' '}
+              <Link
+                href="/privacy-policy"
+                className="transition hover:text-white"
+              >
+                Privacy Policy
+              </Link>
+            </p>
+            <SocialLinks />
           </div>
         </Container>
-        <div className="bg-gradient-brand">
-          <Copyright />
-        </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   )
 }

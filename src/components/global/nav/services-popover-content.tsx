@@ -83,7 +83,7 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
       <div className="grid grid-cols-1 gap-x-6">
         <div>
           <h3 className="text-sm font-medium text-gray-500">
-            Technical Content
+            DevTool Technical Content
           </h3>
           <div className="mt-4 space-y-2">
             {services.map((item) => (
@@ -99,7 +99,7 @@ export default memo(function ServicesPopoverContent({ onClose }: Props) {
           </div>
 
           <h3 className="mt-8 text-sm font-medium text-gray-500">
-            Marketing Services
+            DevTool Marketing
           </h3>
           <div className="mt-4 space-y-2">
             {marketingServices.map((item) => (
