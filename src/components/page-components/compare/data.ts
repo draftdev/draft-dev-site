@@ -90,10 +90,7 @@ export type Competitor = {
   slug: string
   name: string
   // Section on the hub page
-  category:
-    | 'Technical content agencies'
-    | 'DevTool content and marketing agencies'
-    | 'AEO agencies'
+  category: 'DevTool content and marketing agencies' | 'Other agencies'
   // One line for the hub card
   tagline: string
   // One-sentence verdict under the H1
@@ -133,7 +130,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'literally-dev',
     name: 'Literally.dev',
-    category: 'AEO agencies',
+    category: 'DevTool content and marketing agencies',
     tagline: 'A Literally.dev alternative for devtool companies',
     verdict:
       'Pick Literally.dev for a fixed-price, 90-day AEO sprint. Pick Draft.dev for a full content and marketing team, with 300+ engineers checking the work.',
@@ -350,7 +347,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'ritza',
     name: 'Ritza',
-    category: 'Technical content agencies',
+    category: 'DevTool content and marketing agencies',
     tagline: 'A Ritza alternative for devtool companies',
     verdict:
       'Pick Ritza for documentation and engineering-heavy work like demos and proofs of concept. Pick Draft.dev for content plus SEO, AEO and distribution, with monthly AI citation tracking.',
@@ -416,7 +413,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'animalz',
     name: 'Animalz',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'An Animalz alternative for devtool companies',
     verdict:
       'Pick Animalz for brand and thought-leadership content from a large, long-running team. Pick Draft.dev for developer content checked by 300+ engineers, plus paid and community distribution.',
@@ -486,7 +483,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'discovered-labs',
     name: 'Discovered Labs',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'A Discovered Labs alternative for devtool companies',
     verdict:
       'Pick Discovered Labs for a published-price SEO and AEO retainer on month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
@@ -555,7 +552,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'ercule',
     name: 'ércule',
-    category: 'AEO agencies',
+    category: 'DevTool content and marketing agencies',
     tagline: 'An ércule alternative for devtool companies',
     verdict:
       'Pick ércule for SEO and GEO tied closely to analytics and content engineering. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
@@ -619,7 +616,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'first-page-sage',
     name: 'First Page Sage',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'A First Page Sage alternative for devtool companies',
     verdict:
       'Pick First Page Sage for long-running SEO and GEO programs with in-house writers and month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
@@ -691,7 +688,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'graphite',
     name: 'Graphite',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'A Graphite alternative for devtool companies',
     verdict:
       'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
@@ -759,7 +756,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'nogood',
     name: 'NoGood',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'A NoGood alternative for devtool companies',
     verdict:
       'Pick NoGood for full-funnel growth marketing, from paid social to AEO, with a large premium team. Pick Draft.dev for developer content checked by 300+ engineers and a 7,000+ developer distribution network.',
@@ -827,7 +824,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'omniscient-digital',
     name: 'Omniscient Digital',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'An Omniscient Digital alternative for devtool companies',
     verdict:
       'Pick Omniscient Digital for SEO and AEO programs focused on pipeline, with digital PR and link building. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
@@ -894,7 +891,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'optimist',
     name: 'Optimist',
-    category: 'AEO agencies',
+    category: 'Other agencies',
     tagline: 'An Optimist alternative for devtool companies',
     verdict:
       'Pick Optimist for founder-led SEO and AEO consulting on month-to-month terms. Pick Draft.dev when you want a team to create the content and run distribution for you.',
@@ -1083,6 +1080,136 @@ export const competitors: Competitor[] = [
       'https://www.wizardondemand.com/services/technical-content-marketing-and-technical-writing',
       'https://www.wizardondemand.com/services/paid-media-services-for-devtools-companies-and-startups',
       'https://www.wizardondemand.com/technical-writing-agency',
+    ],
+    checked,
+  },
+  {
+    slug: 'argot',
+    name: 'Argot',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'An Argot alternative for devtool companies',
+    verdict:
+      'Pick Argot for a small team of developer-writers who run every line of code. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Argot is a technical content marketing agency for developer tools and AI products. Its developer-writers build with your product before writing, and it offers writing, editing and strategy.',
+    },
+    facts: {
+      who: 'Developers who write, building with your product first',
+      network: 'Smaller than Draft.dev, it says (no number given)',
+      based: null,
+      builtFor: 'Developer tools and AI companies',
+      content: null,
+      docs: null,
+      video: null,
+      aeo: null,
+      aiTracking: null,
+      paid: null,
+      distribution: null,
+      pricing: 'Not published; scoped to your budget',
+      minTerm: null,
+      start: null,
+      revisions: 'Revised until the content is right',
+    },
+    pickThem: [
+      'You want a small team of developer-writers.',
+      'You want every code sample run before you see the draft.',
+      'You want editing for drafts your team or AI wrote.',
+    ],
+    pickDraft: [
+      'You want SEO, AEO and monthly AI citation tracking alongside your content.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Argot?',
+        answer:
+          'Argot is a smaller team focused on writing, editing and strategy. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Argot cost?',
+        answer:
+          'Argot does not publish pricing; it scopes each engagement to your budget. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://argot.dev/',
+      'https://argot.dev/work-with-us',
+      'https://argot.dev/work-for-us',
+      'https://argot.dev/best-developer-content-agencies',
+    ],
+    checked,
+  },
+  {
+    slug: 'infrasity',
+    name: 'Infrasity',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'An Infrasity alternative for devtool companies',
+    verdict:
+      'Both cover devtool content, docs, video and AEO. Pick Infrasity for an early-stage startup focus and Reddit programs. Pick Draft.dev for 300+ engineers checking every piece, unlimited revisions and sponsorships.',
+    summary: {
+      draft: draftSummary,
+      them: 'Infrasity is a developer marketing and technical content agency for DevTool startups, with a team of 15+ in New Delhi. It covers technical content, documentation, video, AEO and Reddit marketing.',
+    },
+    facts: {
+      who: 'In-house engineers',
+      network: '15+ team members',
+      based: 'New Delhi, India',
+      builtFor: 'DevTool startups',
+      content: '4 long-form technical blogs a month on the starter plan',
+      docs: 'Yes, including API and SDK docs',
+      video: 'Yes',
+      aeo: 'Yes',
+      aiTracking:
+        'A baseline, then citations and share of voice across ChatGPT, Claude, Perplexity, Gemini and AI Overviews',
+      paid: 'Reddit ad campaigns, when suitable',
+      distribution: 'Reddit marketing',
+      pricing: 'Not published',
+      minTerm: null,
+      start: null,
+      revisions: 'Up to 2 revisions per post',
+    },
+    pickThem: [
+      'You are an early-stage DevTool startup.',
+      'You want Reddit marketing, including ad campaigns.',
+      'You want an in-house team working from one office.',
+    ],
+    pickDraft: [
+      'You want unlimited revisions.',
+      'You want 300+ engineers and subject matter experts checking every piece.',
+      'You want paid search plus newsletter, podcast and community sponsorships.',
+      'You want your content shared by a 7,000+ developer network.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Infrasity?',
+        answer:
+          'Both cover devtool content, docs, video and AEO. Infrasity has an in-house team of 15+ focused on startups. Draft.dev has 300+ engineers and subject matter experts, unlimited revisions, paid search, sponsorships and a 7,000+ developer network.',
+      },
+      {
+        question: 'How much does Infrasity cost?',
+        answer:
+          'Infrasity does not publish prices; its plans list deliverables only. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.infrasity.com/faq',
+      'https://www.infrasity.com/careers',
+      'https://www.infrasity.com/pricing',
+      'https://www.infrasity.com/services/ai-geo-optimization-agency',
+      'https://www.infrasity.com/services/technical-writing-services',
+      'https://www.infrasity.com/services/tech-video-production',
+      'https://www.infrasity.com/services/reddit-marketing-agency',
     ],
     checked,
   },

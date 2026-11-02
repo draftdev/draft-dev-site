@@ -91,17 +91,13 @@ const byApproach = [
   },
 ]
 
-const categoryOrder: Competitor['category'][] = [
-  'DevTool content and marketing agencies',
-  'Technical content agencies',
-  'AEO agencies',
-]
+const isDevtool = (c: Competitor) =>
+  c.category === 'DevTool content and marketing agencies'
 
 export default function Compare() {
-  const sorted = [...competitors].sort(
-    (a, b) =>
-      categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category),
-  )
+  // Direct competitors first; general agencies in a smaller section below
+  const devtool = competitors.filter(isDevtool)
+  const others = competitors.filter((c) => !isDevtool(c))
 
   return (
     <div>
@@ -143,6 +139,23 @@ export default function Compare() {
       </div>
 
       <main>
+        {/* Direct competitors */}
+        <section className="bg-[#f4f1f8] py-12 sm:py-14">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+              DevTool Content &amp; Marketing Agencies
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+              The agencies that specialize in developer tools, like we do
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {devtool.map((c) => (
+                <CompareCard key={c.slug} competitor={c} />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Buyer's guide */}
         <section className="bg-white py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -171,18 +184,35 @@ export default function Compare() {
           </div>
         </section>
 
-        {/* Comparisons by company, sorted by category */}
+        {/* General agencies buyers also look at */}
         <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
-              Compare by Company
+              Other Agencies Buyers Compare Us With
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
-              The agencies developer tool companies weigh us against
+              General B2B content, SEO and growth agencies
             </p>
-            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {sorted.map((c) => (
-                <CompareCard key={c.slug} competitor={c} showCategory />
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {others.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={`/compare/${c.slug}`}
+                  className="group flex items-center justify-between rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span>
+                    <span className="font-code text-secondary block text-xs font-semibold">
+                      Draft.dev vs
+                    </span>
+                    <span className="font-code text-lg font-semibold text-gray-900">
+                      {c.name}
+                    </span>
+                  </span>
+                  <ArrowRightIcon
+                    aria-hidden="true"
+                    className="text-secondary size-5 shrink-0 transition group-hover:translate-x-1"
+                  />
+                </Link>
               ))}
             </div>
           </div>

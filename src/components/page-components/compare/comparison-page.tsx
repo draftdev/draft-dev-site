@@ -109,8 +109,12 @@ const PickList = ({
 )
 
 const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
+  // Suggest DevTool specialists first
+  const devtoolFirst = (c: Competitor) =>
+    c.category === 'DevTool content and marketing agencies' ? 0 : 1
   const others = competitors
     .filter((c) => c.slug !== competitor.slug)
+    .sort((a, b) => devtoolFirst(a) - devtoolFirst(b))
     .slice(0, 3)
 
   return (
