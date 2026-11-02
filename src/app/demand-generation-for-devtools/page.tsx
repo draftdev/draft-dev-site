@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We combine engineer-reviewed content, SEO and AEO, paid search, newsletter sponsorships and distribution into one program, with cost per signup on paid channels.'
+  'B2B demand generation agency for developer tools. We combine engineer-reviewed content, SEO, AEO, paid search, sponsorships and distribution, tracked to cost per signup.'
 
 const heroDescription =
   'We run demand generation for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We track the signups each channel brings in.'
@@ -110,7 +110,7 @@ export default function DemandGenerationServices() {
         <Partner
           title="A growth partner that understands developers"
           paragraphs={[
-            "Most demand generation programs are built for buyers who respond to cold emails and gated ebooks. Developers don't. They research on their own, trust their peers and tune out anything that reads like a sales pitch.",
+            "Most B2B demand generation agencies build programs for buyers who respond to cold emails and gated ebooks. Developers don't. They research on their own, trust their peers and tune out anything that reads like a sales pitch.",
             'So we start with content that helps them, then use search, paid ads, sponsorships and community distribution to put it in front of the right people at the right time.',
             'Every month, we report traffic, signups and cost per signup by channel, and move budget to what works.',
           ]}
@@ -227,7 +227,7 @@ export default function DemandGenerationServices() {
           },
           {
             question:
-              'How is this different from a typical demand generation agency?',
+              'How is Draft.dev different from other B2B demand generation agencies?',
             answer:
               'Most agencies are built for general B2B buyers. We work with developer tools and technical companies, and every piece is checked by an engineer, so it holds up with technical readers.',
           },
