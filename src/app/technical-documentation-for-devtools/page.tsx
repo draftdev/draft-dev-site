@@ -14,7 +14,7 @@ const description =
   'Technical documentation services for developer tools. We create documentation, product guides and tested code samples, each reviewed by a subject matter expert.'
 
 const heroDescription =
-  'Technical documentation services that help developers get started faster. We create docs, product guides and code samples. An engineer tests every sample. A subject matter expert reviews every page.'
+  'Our technical documentation services help developers get started faster. We create docs, product guides and code samples, with every sample tested by an engineer and every page reviewed by a subject matter expert.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -84,7 +84,7 @@ export default function TechnicalDocumentationServices() {
             {
               title: 'Getting-started guides',
               description:
-                'We create getting-started guides, how-tos and product guides that take developers from sign-up to a working result. Each one follows the steps a new user would take.',
+                'We create quickstarts, how-tos and product guides that take developers from sign-up to a working result, in the same order a new user would follow.',
               linkText: 'See some of our content examples',
               linkHref: '/technical-content-examples',
             },
@@ -109,8 +109,8 @@ export default function TechnicalDocumentationServices() {
           title="A growth partner that understands developers"
           paragraphs={[
             'Developers judge a product by its docs. If a quickstart breaks or a guide skips a step, they move on to the next tool.',
-            "Many teams know their docs need work but can't spare engineers to write them. Technical documentation outsourcing solves that without lowering the bar.",
-            'Every page goes through an engineer and a subject matter expert before it reaches you, so your docs stay accurate as your product grows.',
+            "Many teams know their docs need work but can't spare engineers to write them. That's where technical documentation outsourcing helps, as long as the quality holds up.",
+            'Every page goes through an engineer and a subject matter expert before it reaches you, so every page you publish is accurate.',
           ]}
         />
         <TestimonialCarousel
@@ -152,7 +152,7 @@ export default function TechnicalDocumentationServices() {
         />
         <CaseStudy
           title="How a developer API platform won 72% of its AI citations with Draft.dev"
-          summary="A developer API platform needed content developers could find and trust. In seven months, we published 23 new articles and refreshed 3, and they now bring in 9 of every 10 blog views."
+          summary="A developer API platform needed guides and quickstart tutorials developers could follow. In seven months, we published 23 new articles and refreshed 3, and they now bring in 9 of every 10 blog views."
           stats={[
             {
               value: '72%',
