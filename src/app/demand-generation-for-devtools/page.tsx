@@ -14,7 +14,7 @@ const description =
   'B2B demand generation agency for developer tools. We combine engineer-reviewed content, SEO, AEO, paid search, sponsorships and distribution, tracked to cost per signup.'
 
 const heroDescription =
-  'We run demand generation for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We track the signups each channel brings in.'
+  'We run demand generation for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We report the signups your paid channels bring in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -110,8 +110,8 @@ export default function DemandGenerationServices() {
         <Partner
           title="A growth partner that understands developers"
           paragraphs={[
-            "Most B2B demand generation agencies build programs for buyers who respond to cold emails and gated ebooks. Developers don't. They research on their own, trust their peers and tune out anything that reads like a sales pitch.",
-            'So we start with content that helps them, then use search, paid ads, sponsorships and community distribution to put it in front of the right people at the right time.',
+            "Most B2B demand generation agencies build programs for buyers who respond to cold emails and sales calls. Developers don't. They research on their own, trust their peers and tune out anything that reads like a sales pitch.",
+            'So we start with content that helps them, then use search, paid ads, sponsorships and community distribution to put it in front of developers who are already looking.',
             'Every month, we report traffic, signups and cost per signup by channel, and move budget to what works.',
           ]}
         />

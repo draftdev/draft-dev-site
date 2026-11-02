@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'Content audit services for developer tools. We review your technical content against competitors and SEO and AEO data, then map the gaps to fill and the posts to refresh first.'
+  'Content audit services for developer tools. We review your technical content against competitors plus SEO and AEO data, then map the gaps to fill and the posts to refresh first.'
 
 const heroDescription =
   'We review your technical content against competitors, search data and AI answers. You get a clear list of the gaps worth filling and the older posts to refresh first.'
@@ -81,7 +81,7 @@ export default function ContentAuditServices() {
       <main>
         <Features
           title="Audits Built on Real Data"
-          subtitle="See where your content stands, then fix what matters most"
+          subtitle="See where your content stands and what to fix first"
           features={[
             {
               title: 'Content inventory',
@@ -228,7 +228,7 @@ export default function ContentAuditServices() {
           {
             question: 'What do we get at the end?',
             answer:
-              'A ranked list of actions: new pieces to create, older posts to refresh, with the reason behind each one.',
+              'A list of actions in priority order: new pieces to create, older posts to refresh, with the reason behind each one.',
           },
           {
             question: 'Does the audit cover AI search?',
