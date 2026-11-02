@@ -14,7 +14,7 @@ const description =
   'Content audit services for developer tools. We review your technical content against competitors plus SEO and AEO data, then map the gaps to fill and the posts to refresh first.'
 
 const heroDescription =
-  'We review your technical content against competitors, search data and AI answers. You get a clear list of the gaps worth filling and the older posts to refresh first.'
+  'Our content audit services show you what to fix first. We review your technical content against competitors, search data and AI answers, then map the gaps worth filling and the older posts to refresh.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
