@@ -1,9 +1,48 @@
 import FAQ from '@/components/global/faq'
 import BookCall from '@/components/page-components/service-landing/book-call'
-import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowRightIcon,
+  ChartBarIcon,
+  CheckIcon,
+  CurrencyDollarIcon,
+  DocumentTextIcon,
+  MegaphoneIcon,
+  RocketLaunchIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import ComparisonTable from './comparison-table'
-import { competitors, draftFacts, type Competitor } from './data'
+import ComparisonTable, { FactValue } from './comparison-table'
+import {
+  competitors,
+  draftFacts,
+  type Competitor,
+  type FactKey,
+  type Facts,
+} from './data'
+
+// The rows that matter most, shown as cards above the full table
+const keyDifferences: {
+  key: FactKey
+  label: string
+  Icon: typeof CheckIcon
+}[] = [
+  { key: 'who', label: 'Who creates the content', Icon: UserGroupIcon },
+  { key: 'aiTracking', label: 'AI visibility', Icon: ChartBarIcon },
+  { key: 'distribution', label: 'Distribution', Icon: MegaphoneIcon },
+  { key: 'docs', label: 'Technical documentation', Icon: DocumentTextIcon },
+  { key: 'start', label: 'Time to first pieces', Icon: RocketLaunchIcon },
+  { key: 'pricing', label: 'Pricing', Icon: CurrencyDollarIcon },
+]
+
+// Up to three short facts for each side of the hero matchup
+const quickFacts = (
+  facts: Facts,
+  keys: FactKey[] = ['network', 'content', 'pricing', 'start', 'based'],
+) =>
+  keys
+    .filter((k) => facts[k])
+    .slice(0, 3)
+    .map((k) => facts[k] as string)
 
 // Real Draft.dev outcomes, from the published case studies
 const results = [
@@ -58,6 +97,14 @@ const PickList = ({
         </li>
       ))}
     </ul>
+    {highlight && (
+      <a
+        href="#book-a-call"
+        className="mt-8 inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
+      >
+        Book a Discovery Call
+      </a>
+    )}
   </div>
 )
 
@@ -68,54 +115,145 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
 
   return (
     <div>
-      {/* Hero: verdict, then one summary card per side */}
+      {/* Hero: verdict, then the two companies face to face */}
       <div className="bg-gradient-brand relative isolate overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl"
         />
-        <div className="mx-auto max-w-7xl px-6 pt-12 pb-14 sm:pt-16 sm:pb-16 lg:px-8">
-          <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider text-white uppercase ring-1 ring-white/20">
-            <span className="text-amber-300">Compare</span>
-            <span aria-hidden="true" className="text-white/40">
-              ·
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-40 -left-32 -z-10 h-[24rem] w-[24rem] rounded-full bg-white/10 blur-3xl"
+        />
+        <div className="mx-auto max-w-7xl px-6 pt-12 pb-14 sm:pt-16 sm:pb-20 lg:px-8">
+          <div className="text-center">
+            <p className="inline-flex items-center gap-x-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold tracking-wider text-white uppercase ring-1 ring-white/20">
+              <span className="text-amber-300">Compare</span>
+              <span aria-hidden="true" className="text-white/40">
+                ·
+              </span>
+              {competitor.name} alternative
+            </p>
+            <h1 className="font-code sm:header-light mt-6 text-4xl leading-tight font-semibold text-white">
+              Draft.dev <span className="text-amber-300">vs</span>{' '}
+              {competitor.name}
+            </h1>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-white/90 sm:text-xl">
+              {competitor.verdict}
+            </p>
+          </div>
+
+          <div className="relative mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
+            {/* VS badge between the two cards */}
+            <span
+              aria-hidden="true"
+              className="font-code absolute top-1/2 left-1/2 z-10 hidden size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-amber-400 text-xl font-bold text-gray-900 shadow-xl ring-8 ring-white/15 md:flex"
+            >
+              VS
             </span>
-            {competitor.name} alternative
-          </p>
-          <h1 className="font-code sm:header-light mt-6 text-4xl leading-tight font-semibold text-white">
-            Draft.dev vs {competitor.name}
-          </h1>
-          <p className="mt-4 max-w-3xl text-lg text-white/90 sm:text-xl">
-            {competitor.verdict}
-          </p>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="rounded-3xl bg-white p-8 shadow-2xl">
-              <p className="text-secondary text-xs font-semibold tracking-wider uppercase">
+            <div className="flex flex-col rounded-3xl bg-white p-8 shadow-2xl">
+              <p className="font-code text-secondary text-2xl font-semibold">
                 Draft.dev
               </p>
-              <p className="mt-3 text-lg text-gray-800">
+              <p className="mt-3 text-base text-gray-700 sm:text-lg">
                 {competitor.summary.draft}
               </p>
-              <a
-                href="#book-a-call"
-                className="mt-6 inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
-              >
-                Book a Discovery Call
-              </a>
+              <ul className="mt-6 space-y-2">
+                {quickFacts(draftFacts, ['network', 'content', 'start']).map(
+                  (fact) => (
+                    <li
+                      key={fact}
+                      className="flex items-start gap-x-2 text-sm font-medium text-gray-800"
+                    >
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-secondary mt-0.5 size-4 shrink-0"
+                      />
+                      {fact}
+                    </li>
+                  ),
+                )}
+              </ul>
+              <div className="mt-auto pt-8">
+                <a
+                  href="#book-a-call"
+                  className="inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
+                >
+                  Book a Discovery Call
+                </a>
+              </div>
             </div>
-            <div className="rounded-3xl bg-white/10 p-8 ring-1 ring-white/20">
-              <p className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
+            <div className="flex flex-col rounded-3xl bg-white/10 p-8 ring-1 ring-white/20">
+              <p className="font-code text-2xl font-semibold text-white">
                 {competitor.name}
               </p>
-              <p className="mt-3 text-lg text-white/90">
+              <p className="mt-3 text-base text-white/90 sm:text-lg">
                 {competitor.summary.them}
               </p>
+              <ul className="mt-6 space-y-2">
+                {quickFacts(competitor.facts).map((fact) => (
+                  <li
+                    key={fact}
+                    className="flex items-start gap-x-2 text-sm font-medium text-white/90"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber-300"
+                    />
+                    {fact}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
       <main>
+        <section className="bg-white pt-14 sm:pt-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+              Key Differences
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+              The six things buyers ask about most
+            </p>
+            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {keyDifferences.map(({ key, label, Icon }) => (
+                <div
+                  key={key}
+                  className="flex flex-col rounded-3xl bg-gray-50 p-6 ring-1 ring-gray-200"
+                >
+                  <div className="flex items-center gap-x-3">
+                    <span className="bg-gradient-brand flex size-10 items-center justify-center rounded-xl text-white shadow-md">
+                      <Icon aria-hidden="true" className="size-5" />
+                    </span>
+                    <h3 className="font-code text-secondary text-lg font-semibold">
+                      {label}
+                    </h3>
+                  </div>
+                  <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-[#5e5285]/20">
+                    <p className="text-secondary text-xs font-semibold tracking-wider uppercase">
+                      Draft.dev
+                    </p>
+                    <p className="mt-1 text-base text-gray-900">
+                      <FactValue value={draftFacts[key]} />
+                    </p>
+                  </div>
+                  <div className="mt-3 px-4">
+                    <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                      {competitor.name}
+                    </p>
+                    <p className="mt-1 text-base text-gray-700">
+                      <FactValue value={competitor.facts[key]} />
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <ComparisonTable
           name={competitor.name}
           draft={draftFacts}

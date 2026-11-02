@@ -1,14 +1,43 @@
+import {
+  ChartBarIcon,
+  CheckIcon,
+  DocumentTextIcon,
+  HandRaisedIcon,
+  MegaphoneIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/outline'
 import { rowGroups, type Facts } from './data'
 
-// Side-by-side facts. Draft.dev's column is tinted; a dash means "not stated".
-const Value = ({ value }: { value: string | null }) =>
-  value ? (
-    <span>{value}</span>
-  ) : (
-    <span className="text-gray-400" aria-label="Not stated">
-      —
-    </span>
-  )
+const groupIcons: Record<string, typeof CheckIcon> = {
+  Team: UserGroupIcon,
+  Content: DocumentTextIcon,
+  'AI visibility': ChartBarIcon,
+  'Marketing and distribution': MegaphoneIcon,
+  'Working together': HandRaisedIcon,
+}
+
+// "Yes" answers get a check badge; a missing fact shows as "Not stated"
+export const FactValue = ({ value }: { value: string | null }) => {
+  if (!value) {
+    return (
+      <span className="inline-flex rounded-full bg-gray-100 px-2.5 py-0.5 text-sm text-gray-500">
+        Not stated
+      </span>
+    )
+  }
+  const yes = value.match(/^Yes(?:,\s*(.*))?$/)
+  if (yes) {
+    return (
+      <span className="inline-flex items-start gap-x-2">
+        <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
+          <CheckIcon aria-hidden="true" className="size-3.5" strokeWidth={3} />
+        </span>
+        <span>{yes[1] ? `Yes, ${yes[1]}` : 'Yes'}</span>
+      </span>
+    )
+  }
+  return <span>{value}</span>
+}
 
 const ComparisonTable = ({
   name,
@@ -28,13 +57,13 @@ const ComparisonTable = ({
           Side by Side
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
-          Facts from each company&apos;s own site. A dash means they don&apos;t
-          say, not that the answer is no.
+          Every fact, from each company&apos;s own site. &quot;Not stated&quot;
+          means they don&apos;t say, not that the answer is no.
         </p>
 
-        {/* Desktop and tablet: one table, Draft.dev column highlighted */}
-        <div className="mt-10 hidden overflow-hidden rounded-3xl shadow-sm ring-1 ring-gray-200 md:block">
-          <table className="w-full table-fixed text-left text-base">
+        {/* Tablet and up: one table, Draft.dev column highlighted */}
+        <div className="mt-10 hidden rounded-3xl shadow-sm ring-1 ring-gray-200 md:block">
+          <table className="w-full table-fixed border-separate border-spacing-0 text-left text-base">
             <colgroup>
               <col className="w-[28%]" />
               <col className="w-[36%]" />
@@ -42,74 +71,84 @@ const ComparisonTable = ({
             </colgroup>
             <thead>
               <tr>
-                <th className="bg-gray-50 px-6 py-5" />
+                <th className="rounded-tl-3xl bg-white px-6 py-5" />
                 <th className="bg-gradient-brand font-code px-6 py-5 text-lg font-semibold text-white">
                   Draft.dev
                 </th>
-                <th className="font-code text-secondary bg-gray-50 px-6 py-5 text-lg font-semibold">
+                <th className="font-code text-secondary rounded-tr-3xl border-b border-gray-200 bg-white px-6 py-5 text-lg font-semibold">
                   {name}
                 </th>
               </tr>
             </thead>
-            {rowGroups.map((group) => (
-              <tbody key={group.title}>
-                <tr>
-                  <th
-                    colSpan={3}
-                    className="bg-gray-50 px-6 pt-6 pb-2 text-xs font-semibold tracking-wider text-gray-500 uppercase"
-                  >
-                    {group.title}
-                  </th>
-                </tr>
-                {group.rows.map((row) => (
-                  <tr key={row.key} className="border-t border-gray-100">
-                    <th className="px-6 py-4 align-top font-medium text-gray-900">
-                      {row.label}
+            {rowGroups.map((group) => {
+              const Icon = groupIcons[group.title]
+              return (
+                <tbody key={group.title}>
+                  <tr>
+                    <th
+                      colSpan={3}
+                      className="border-t border-gray-200 bg-gray-50 px-6 py-3"
+                    >
+                      <span className="text-secondary inline-flex items-center gap-x-2 text-sm font-semibold">
+                        {Icon && <Icon aria-hidden="true" className="size-4" />}
+                        {group.title}
+                      </span>
                     </th>
-                    <td className="bg-[#5e5285]/5 px-6 py-4 align-top text-gray-800">
-                      <Value value={draft[row.key]} />
-                    </td>
-                    <td className="px-6 py-4 align-top text-gray-700">
-                      <Value value={them[row.key]} />
-                    </td>
                   </tr>
-                ))}
-              </tbody>
-            ))}
+                  {group.rows.map((row) => (
+                    <tr key={row.key}>
+                      <th className="border-t border-gray-100 px-6 py-4 align-top font-medium text-gray-900">
+                        {row.label}
+                      </th>
+                      <td className="border-t border-[#5e5285]/10 bg-[#5e5285]/5 px-6 py-4 align-top text-gray-900">
+                        <FactValue value={draft[row.key]} />
+                      </td>
+                      <td className="border-t border-gray-100 px-6 py-4 align-top text-gray-700">
+                        <FactValue value={them[row.key]} />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              )
+            })}
           </table>
         </div>
 
         {/* Phone: one card per row */}
         <div className="mt-8 space-y-8 md:hidden">
-          {rowGroups.map((group) => (
-            <div key={group.title}>
-              <h3 className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
-                {group.title}
-              </h3>
-              <dl className="mt-3 space-y-3">
-                {group.rows.map((row) => (
-                  <div
-                    key={row.key}
-                    className="rounded-2xl p-4 ring-1 ring-gray-200"
-                  >
-                    <dt className="font-medium text-gray-900">{row.label}</dt>
-                    <dd className="mt-2 rounded-xl bg-[#5e5285]/5 p-3 text-gray-800">
-                      <span className="text-secondary block text-xs font-semibold uppercase">
-                        Draft.dev
-                      </span>
-                      <Value value={draft[row.key]} />
-                    </dd>
-                    <dd className="mt-2 p-3 pt-1 text-gray-700">
-                      <span className="block text-xs font-semibold text-gray-500 uppercase">
-                        {name}
-                      </span>
-                      <Value value={them[row.key]} />
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          ))}
+          {rowGroups.map((group) => {
+            const Icon = groupIcons[group.title]
+            return (
+              <div key={group.title}>
+                <h3 className="text-secondary inline-flex items-center gap-x-2 text-sm font-semibold">
+                  {Icon && <Icon aria-hidden="true" className="size-4" />}
+                  {group.title}
+                </h3>
+                <dl className="mt-3 space-y-3">
+                  {group.rows.map((row) => (
+                    <div
+                      key={row.key}
+                      className="rounded-2xl p-4 ring-1 ring-gray-200"
+                    >
+                      <dt className="font-medium text-gray-900">{row.label}</dt>
+                      <dd className="mt-2 rounded-xl bg-[#5e5285]/5 p-3 text-gray-900">
+                        <span className="text-secondary block text-xs font-semibold uppercase">
+                          Draft.dev
+                        </span>
+                        <FactValue value={draft[row.key]} />
+                      </dd>
+                      <dd className="mt-2 p-3 pt-1 text-gray-700">
+                        <span className="block text-xs font-semibold text-gray-500 uppercase">
+                          {name}
+                        </span>
+                        <FactValue value={them[row.key]} />
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )
+          })}
         </div>
 
         <p className="mt-6 text-center text-sm text-gray-500">
