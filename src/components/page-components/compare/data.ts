@@ -111,6 +111,12 @@ export type Competitor = {
 
 const checked = 'November 2, 2026'
 
+// Shared Draft.dev copy, reused across comparison pages
+const draftSummary =
+  'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.'
+const draftDocsAnswer =
+  'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.'
+
 // Shared answers about Draft.dev, reused across comparison FAQs
 const draftAiAnswer = {
   question: 'Does Draft.dev measure AI visibility?',
@@ -404,6 +410,348 @@ export const competitors: Competitor[] = [
       'https://ritza.co/',
       'https://ritza.co/100-guarantee.html',
       'https://ritza.co/handbook/roles/general-application/',
+    ],
+    checked,
+  },
+  {
+    slug: 'animalz',
+    name: 'Animalz',
+    category: 'AEO agencies',
+    tagline: 'An Animalz alternative for devtool companies',
+    verdict:
+      'Pick Animalz for brand and thought-leadership content from a large, long-running team. Pick Draft.dev for developer content checked by 300+ engineers, plus paid and community distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Animalz is a content marketing and SEO agency for B2B SaaS, founded in New York in 2015 and now remote. It offers content production, SEO and AEO, research reports and content operations.',
+    },
+    facts: {
+      who: 'Writers, strategists and editors, with an AI-assisted process',
+      network: 'About 130 writers, strategists and editors',
+      based: 'Remote; founded in New York City',
+      builtFor: 'B2B SaaS and tech companies',
+      content: null,
+      docs: null,
+      video: 'Video snippets and podcasts',
+      aeo: 'Yes, a dedicated AEO service',
+      aiTracking:
+        'AI visibility, brand mentions and revenue impact across Google AI Overviews, ChatGPT, Perplexity and Gemini',
+      paid: null,
+      distribution: 'Citation outreach, Reddit engagement and LinkedIn outreach',
+      pricing: 'Not published (research reports average $25k)',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want brand and thought-leadership content for a B2B SaaS company.',
+      'You want survey-driven research reports.',
+      'You want help running AI content workflows in AirOps.',
+      'You want a large team with a long case-study track record.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
+      'You need technical documentation.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Animalz?',
+        answer:
+          'Animalz serves B2B SaaS broadly, with a focus on brand and thought leadership. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does Animalz cost?',
+        answer:
+          'Animalz does not publish general pricing. Its site says research reports average $25k. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.animalz.co/',
+      'https://www.animalz.co/about',
+      'https://www.animalz.co/services',
+      'https://www.animalz.co/services/answer-engine-optimization',
+      'https://www.animalz.co/services/whitepapers',
+      'https://www.animalz.co/agency-buyer-guides/b2b-saas-content-marketing-agencies',
+    ],
+    checked,
+  },
+  {
+    slug: 'discovered-labs',
+    name: 'Discovered Labs',
+    category: 'AEO agencies',
+    tagline: 'A Discovered Labs alternative for devtool companies',
+    verdict:
+      'Pick Discovered Labs for a published-price SEO and AEO retainer on month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Discovered Labs is an organic search agency for B2B SaaS that combines SEO and AEO. It publishes its prices, works month to month and tracks AI visibility with its own tool.',
+    },
+    facts: {
+      who: 'An in-house editorial team, with AI used in research and drafting',
+      network: null,
+      based: null,
+      builtFor: 'Series A+ B2B SaaS companies',
+      content: 'Up to 20 pieces a month on the entry plan',
+      docs: null,
+      video: null,
+      aeo: 'Yes, the core service',
+      aiTracking:
+        'Own AI Visibility Tracker across ChatGPT, Claude, Perplexity, Google AI Overviews and Gemini, reported monthly',
+      paid: null,
+      distribution: 'Digital PR, link building and Reddit mentions',
+      pricing: 'From €6,995 a month on a 6-month commitment (published)',
+      minTerm: "Month to month, with 30 days' notice",
+      start: 'Content publishing by day 10',
+      revisions: null,
+    },
+    pickThem: [
+      'You want published prices before the first call.',
+      'You want month-to-month terms.',
+      'You want content publishing within 10 days.',
+      'You want AI visibility tracked with the agency’s own tool.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
+      'You need technical documentation or video.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Discovered Labs?',
+        answer:
+          'Discovered Labs focuses on SEO and AEO for B2B SaaS. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run paid search, sponsorships, documentation and developer distribution.',
+      },
+      {
+        question: 'How much does Discovered Labs cost?',
+        answer:
+          'Discovered Labs publishes plans from €6,995 a month on a 6-month commitment, or month to month at a higher rate. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'How fast can each one start?',
+        answer:
+          'Discovered Labs says content starts publishing by day 10. Draft.dev delivers first pieces about 3 weeks after kickoff.',
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://discoveredlabs.com/',
+      'https://discoveredlabs.com/llms.txt',
+      'https://discoveredlabs.com/pricing',
+      'https://discoveredlabs.com/methodology',
+      'https://discoveredlabs.com/technology/ai-visibility-tracker',
+    ],
+    checked,
+  },
+  {
+    slug: 'ercule',
+    name: 'ércule',
+    category: 'AEO agencies',
+    tagline: 'An ércule alternative for devtool companies',
+    verdict:
+      'Pick ércule for SEO and GEO tied closely to analytics and content engineering. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'ércule is an organic growth agency for B2B and developer-focused companies. It ties SEO and GEO, content production, content engineering and analytics together, and also sells an analytics app.',
+    },
+    facts: {
+      who: 'Its writers, with LLM-assisted research and first drafts',
+      network: null,
+      based: null,
+      builtFor: 'B2B and developer-focused companies',
+      content: 'Weekly search-optimized outlines',
+      docs: 'Yes',
+      video: null,
+      aeo: 'Yes, an SEO and GEO service',
+      aiTracking:
+        'Starts with an LLM coverage report; covers Google, ChatGPT, Perplexity and Gemini',
+      paid: null,
+      distribution: 'LinkedIn, Reddit and email',
+      pricing: 'Agency pricing not published (analytics app from $59 a month)',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want SEO and GEO tied to analytics and content engineering.',
+      'You want help with product marketing, such as positioning and launches.',
+      'You want a self-serve analytics app for your content.',
+    ],
+    pickDraft: [
+      'You want ready-to-publish content every week, checked by 300+ engineers and subject matter experts.',
+      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
+      'You want monthly AI citation tracking with a report.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from ércule?',
+        answer:
+          'ércule focuses on SEO, GEO and the analytics behind them. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does ércule cost?',
+        answer:
+          'ércule does not publish agency pricing. Its analytics app starts at $59 a month. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.ercule.com/',
+      'https://www.ercule.com/services/seo-and-geo',
+      'https://www.ercule.com/services/content-production',
+      'https://www.ercule.com/services/content-engineering',
+      'https://www.ercule.com/services/content-systems',
+      'https://www.ercule.com/pricing',
+    ],
+    checked,
+  },
+  {
+    slug: 'first-page-sage',
+    name: 'First Page Sage',
+    category: 'AEO agencies',
+    tagline: 'A First Page Sage alternative for devtool companies',
+    verdict:
+      'Pick First Page Sage for long-running SEO and GEO programs with in-house writers and month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'First Page Sage is a US SEO and GEO agency with in-house writers and a fully remote team. It works month to month and delivers 6–7 pieces of content a month.',
+    },
+    facts: {
+      who: 'In-house writers, briefed by your team each week',
+      network: null,
+      based: 'Fully remote across the US',
+      builtFor: 'Mostly midsized B2B companies, with B2B SaaS the largest group',
+      content: '6–7 pieces a month',
+      docs: null,
+      video: null,
+      aeo: 'Yes, a GEO service launched in 2023',
+      aiTracking:
+        'A baseline at kickoff, then tracked prompts across the major AI platforms',
+      paid: 'Paid search management',
+      distribution: 'Outside PR placements and an AI Authority Exchange',
+      pricing:
+        'No pricing page; its own research gives $6,000–$12,000 a month',
+      minTerm: 'Month to month',
+      start: 'Strategy in month one, content from month two',
+      revisions: null,
+    },
+    pickThem: [
+      'You want in-house writers rather than a network.',
+      'You want month-to-month terms.',
+      'You want long-running SEO and GEO with paid search in one program.',
+      'You are a midsized B2B company.',
+    ],
+    pickDraft: [
+      'You want ready-to-publish content every week, with first pieces about 3 weeks after kickoff.',
+      'You want 300+ engineers and subject matter experts checking accuracy and testing code.',
+      'You want sponsorships, Reddit and a 7,000+ developer network alongside your content.',
+      'You need technical documentation.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from First Page Sage?',
+        answer:
+          'First Page Sage runs SEO and GEO programs for B2B companies broadly. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run sponsorships, documentation and developer distribution.',
+      },
+      {
+        question: 'How much does First Page Sage cost?',
+        answer:
+          'First Page Sage has no pricing page. Its own pricing research gives a range of $6,000 to $12,000 a month. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'How fast can each one start?',
+        answer:
+          'First Page Sage spends month one on strategy and technical SEO, with content from month two. Draft.dev delivers first pieces about 3 weeks after kickoff.',
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://firstpagesage.com/seo-services/',
+      'https://firstpagesage.com/company/',
+      'https://firstpagesage.com/our-culture/',
+      'https://firstpagesage.com/b2b-saas-seo-geo-agency/',
+      'https://firstpagesage.com/software-development-seo-company/',
+      'https://firstpagesage.com/generative-engine-optimization/',
+      'https://firstpagesage.com/seo-blog/geo-aeo-pricing-statistics/',
+    ],
+    checked,
+  },
+  {
+    slug: 'graphite',
+    name: 'Graphite',
+    category: 'AEO agencies',
+    tagline: 'A Graphite alternative for devtool companies',
+    verdict:
+      'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
+    summary: {
+      draft: draftSummary,
+      them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands.',
+    },
+    facts: {
+      who: 'Writers who specialize in your category, or planning only',
+      network: '120+ team members',
+      based: 'San Francisco, with a team in 15+ countries',
+      builtFor: 'Category-leading brands',
+      content: null,
+      docs: null,
+      video: null,
+      aeo: 'Yes, a full-service AEO team',
+      aiTracking:
+        'Share of voice across ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews',
+      paid: null,
+      distribution:
+        'Offsite placements in publications and communities, plus Reddit',
+      pricing: 'Not published',
+      minTerm: 'Twelve months minimum for SEO',
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You are a large brand and want research-led SEO and AEO.',
+      'You want an in-house research team running statistical tests.',
+      'You want programmatic SEO or help recovering from an AI content penalty.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
+      'You need technical documentation or video.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Graphite?',
+        answer:
+          'Graphite runs research-led SEO and AEO for large brands across industries. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does Graphite cost?',
+        answer:
+          'Graphite does not publish pricing, and its SEO work has a twelve-month minimum. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://graphite.io/',
+      'https://graphite.io/aeo',
+      'https://graphite.io/seo',
+      'https://graphite.io/careers',
+      'https://graphite.io/privacy-policy',
     ],
     checked,
   },
