@@ -1213,4 +1213,128 @@ export const competitors: Competitor[] = [
     ],
     checked,
   },
+  {
+    slug: 'dev-spotlight',
+    name: 'Dev Spotlight',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'A Dev Spotlight alternative for devtool companies',
+    verdict:
+      'Pick Dev Spotlight for long-form technical content for large enterprises, with a happiness guarantee. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Dev Spotlight is a technical content agency for enterprise companies, writing for developers, engineers and IT leaders. It creates blogs, tutorials, whitepapers, eBooks and case studies.',
+    },
+    facts: {
+      who: null,
+      network: null,
+      based: 'Avon, Indiana (mailing address)',
+      builtFor: 'Enterprise companies reaching developers and IT leaders',
+      content: 'From a single piece to hundreds',
+      docs: null,
+      video: null,
+      aeo: null,
+      aiTracking: null,
+      paid: null,
+      distribution: null,
+      pricing: 'Not published; quote on request',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You are a large enterprise that needs whitepapers, eBooks and long-form technical content.',
+      'You need content on AI, DevOps, cloud, data or APIs at scale.',
+      'You want a 100% happiness guarantee.',
+    ],
+    pickDraft: [
+      'You want SEO, AEO and monthly AI citation tracking alongside your content.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Dev Spotlight?',
+        answer:
+          'Dev Spotlight focuses on technical content for large enterprises. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Dev Spotlight cost?',
+        answer:
+          'Dev Spotlight does not publish pricing; it quotes each project. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.devspotlight.com/',
+      'https://www.devspotlight.com/get-a-quote',
+    ],
+    checked,
+  },
+  {
+    slug: 'campfire-labs',
+    name: 'Campfire Labs',
+    category: 'Other agencies',
+    tagline: 'A Campfire Labs alternative for devtool companies',
+    verdict:
+      'Pick Campfire Labs for research reports and earned media for B2B SaaS, at published prices. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Campfire Labs is a B2B content agency with 12 full-time employees. It offers content strategy, content creation, market research reports and earned media, with published retainer prices.',
+    },
+    facts: {
+      who: 'Senior strategists, ex-journalists and writers',
+      network: '12 full-time employees',
+      based: 'Distributed team; founder in Boulder, Colorado',
+      builtFor: 'B2B software companies',
+      content: '2, 4 or 6 pieces a month, by plan',
+      docs: null,
+      video: null,
+      aeo: 'Yes, SEO and AEO strategy',
+      aiTracking: 'AI-citation and visibility tracking on the top plan',
+      paid: null,
+      distribution: 'Earned media placements, depending on plan',
+      pricing: 'Retainers from $5k to $15k a month (published)',
+      minTerm: 'Three months',
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want original research reports.',
+      'You want earned media and byline placements.',
+      'You want published retainer prices.',
+      'You are a B2B SaaS company outside developer tools.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Campfire Labs?',
+        answer:
+          'Campfire Labs serves B2B SaaS broadly, with research reports and earned media. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does Campfire Labs cost?',
+        answer:
+          'Campfire Labs publishes retainers from $5k to $15k a month, with a three-month minimum. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.campfirelabs.co/',
+      'https://www.campfirelabs.co/services',
+      'https://www.campfirelabs.co/company',
+    ],
+    checked,
+  },
 ]
