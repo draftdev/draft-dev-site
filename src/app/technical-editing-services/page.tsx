@@ -11,10 +11,10 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'Technical editing services for developer tools. An engineer tests the code, an SME checks the accuracy, and a technical editor polishes it to your brand voice.'
+  'Technical editing services for developer tools. An engineer tests the code, an SME checks the accuracy, and a technical editor polishes each piece to your brand voice.'
 
 const heroDescription =
-  'Technical editing services for developer content. Every piece gets its code tested by an engineer and its facts checked by a subject matter expert. A technical editor polishes it to your brand voice.'
+  'Our technical editing services make sure every piece is accurate before developers see it. An engineer tests the code, while a subject matter expert checks the facts. A technical editor polishes it to your brand voice.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -110,7 +110,7 @@ export default function TechnicalEditingServices() {
           paragraphs={[
             'Developers notice small mistakes. One broken code sample or outdated version number is enough for them to stop trusting the whole piece, and your product with it.',
             "That's why editing at Draft.dev is more than proofreading. Every piece passes through an engineer, a subject matter expert and a technical editor before it reaches you.",
-            "You get content that's accurate, consistent and ready to publish, so your team spends less time on reviews.",
+            "You get content that's ready to publish, so your team spends less time on reviews.",
           ]}
         />
         <TestimonialCarousel
@@ -228,7 +228,7 @@ export default function TechnicalEditingServices() {
           {
             question: 'Who edits the content?',
             answer:
-              'A technical editor, working with one of our 300+ engineers who checks the code and facts.',
+              'A technical editor does the final edit. Before that, one of our engineers tests the code and a subject matter expert checks the technical details.',
           },
           {
             question: 'Is editing included in content production?',
