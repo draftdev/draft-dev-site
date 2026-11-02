@@ -44,25 +44,27 @@ const ComparisonTable = ({
   draft,
   them,
   checked,
+  sources = [],
 }: {
   name: string
   draft: Facts
   them: Facts
   checked: string
+  sources?: string[]
 }) => {
   return (
-    <section className="bg-white py-14 sm:py-16">
+    <section className="bg-white py-12 sm:py-14">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
           Side by Side
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+        <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
           Every fact, from each company&apos;s own site. &quot;Not stated&quot;
           means they don&apos;t say, not that the answer is no.
         </p>
 
         {/* Tablet and up: one table, Draft.dev column highlighted */}
-        <div className="mt-10 hidden rounded-3xl shadow-sm ring-1 ring-gray-200 md:block">
+        <div className="mt-8 hidden overflow-hidden rounded-3xl shadow-lg ring-1 ring-[#5e5285]/15 md:block">
           <table className="w-full table-fixed border-separate border-spacing-0 text-left text-base">
             <colgroup>
               <col className="w-[28%]" />
@@ -71,11 +73,11 @@ const ComparisonTable = ({
             </colgroup>
             <thead>
               <tr>
-                <th className="rounded-tl-3xl bg-white px-6 py-5" />
-                <th className="bg-gradient-brand font-code px-6 py-5 text-lg font-semibold text-white">
+                <th className="bg-[#f4f1f8] px-6 py-4" />
+                <th className="bg-gradient-brand font-code px-6 py-4 text-lg font-semibold text-white">
                   Draft.dev
                 </th>
-                <th className="font-code text-secondary rounded-tr-3xl border-b border-gray-200 bg-white px-6 py-5 text-lg font-semibold">
+                <th className="font-code text-secondary bg-[#f4f1f8] px-6 py-4 text-lg font-semibold">
                   {name}
                 </th>
               </tr>
@@ -87,7 +89,7 @@ const ComparisonTable = ({
                   <tr>
                     <th
                       colSpan={3}
-                      className="border-t border-gray-200 bg-gray-50 px-6 py-3"
+                      className="border-t border-[#5e5285]/10 bg-[#5e5285]/[0.08] px-6 py-2.5"
                     >
                       <span className="text-secondary inline-flex items-center gap-x-2 text-sm font-semibold">
                         {Icon && <Icon aria-hidden="true" className="size-4" />}
@@ -97,13 +99,13 @@ const ComparisonTable = ({
                   </tr>
                   {group.rows.map((row) => (
                     <tr key={row.key}>
-                      <th className="border-t border-gray-100 px-6 py-4 align-top font-medium text-gray-900">
+                      <th className="border-t border-gray-100 px-6 py-3.5 align-top font-medium text-gray-900">
                         {row.label}
                       </th>
-                      <td className="border-t border-[#5e5285]/10 bg-[#5e5285]/5 px-6 py-4 align-top text-gray-900">
+                      <td className="border-t border-[#5e5285]/10 bg-[#5e5285]/[0.12] px-6 py-3.5 align-top font-medium text-gray-900">
                         <FactValue value={draft[row.key]} />
                       </td>
-                      <td className="border-t border-gray-100 px-6 py-4 align-top text-gray-700">
+                      <td className="border-t border-gray-100 px-6 py-3.5 align-top text-gray-700">
                         <FactValue value={them[row.key]} />
                       </td>
                     </tr>
@@ -151,10 +153,28 @@ const ComparisonTable = ({
           })}
         </div>
 
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-5 text-center text-sm text-gray-500">
           Checked against {name}&apos;s published pages on {checked}. Details
           change, so check their site before you decide.
         </p>
+        {sources.length > 0 && (
+          <p className="mt-2 text-center text-xs break-all text-gray-400">
+            Sources:{' '}
+            {sources.map((src, i) => (
+              <span key={src}>
+                {i > 0 && ' · '}
+                <a
+                  href={src}
+                  rel="nofollow noopener"
+                  target="_blank"
+                  className="hover:text-gray-600"
+                >
+                  {src.replace(/^https?:\/\/(www\.)?/, '')}
+                </a>
+              </span>
+            ))}
+          </p>
+        )}
       </div>
     </section>
   )

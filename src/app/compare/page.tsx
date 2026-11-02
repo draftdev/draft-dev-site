@@ -144,7 +144,7 @@ export default function Compare() {
 
       <main>
         {/* Buyer's guide */}
-        <section className="bg-white py-14 sm:py-16">
+        <section className="bg-white py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               What to Check Before You Choose
@@ -152,11 +152,11 @@ export default function Compare() {
             <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
               Four questions to ask any agency, including us
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {guide.map(({ title, text, Icon }) => (
                 <div
                   key={title}
-                  className="rounded-3xl bg-gray-50 p-7 ring-1 ring-gray-200"
+                  className="rounded-3xl bg-[#f4f1f8] p-7 ring-1 ring-[#5e5285]/10"
                 >
                   <span className="bg-gradient-brand flex size-11 items-center justify-center rounded-xl text-white shadow-md">
                     <Icon aria-hidden="true" className="size-6" />
@@ -172,7 +172,7 @@ export default function Compare() {
         </section>
 
         {/* Comparisons by company, sorted by category */}
-        <section className="bg-gray-50 py-14 sm:py-16">
+        <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               Compare by Company
@@ -180,7 +180,7 @@ export default function Compare() {
             <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
               The agencies developer tool companies weigh us against
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {sorted.map((c) => (
                 <CompareCard key={c.slug} competitor={c} showCategory />
               ))}
@@ -189,12 +189,12 @@ export default function Compare() {
         </section>
 
         {/* Comparisons by type of provider */}
-        <section className="bg-gradient-brand py-14 sm:py-16">
+        <section className="bg-gradient-brand py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="lg:subheader-light subheader-mobile-light text-center">
               Compare by Approach
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
               {byApproach.map((item) => (
                 <Link
                   key={item.href}

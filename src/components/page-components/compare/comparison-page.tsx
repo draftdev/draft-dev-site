@@ -76,7 +76,7 @@ const PickList = ({
     className={
       highlight
         ? 'bg-gradient-brand rounded-3xl p-8 text-white shadow-xl'
-        : 'rounded-3xl bg-white p-8 ring-1 ring-gray-200'
+        : 'rounded-3xl bg-white p-8 shadow-sm ring-1 ring-[#5e5285]/10'
     }
   >
     <h3
@@ -210,37 +210,38 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
       </div>
 
       <main>
-        <section className="bg-white pt-14 sm:pt-16">
+        {/* Key differences on a soft lavender band */}
+        <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               Key Differences
             </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+            <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
               The six things buyers ask about most
             </p>
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {keyDifferences.map(({ key, label, Icon }) => (
                 <div
                   key={key}
-                  className="flex flex-col rounded-3xl bg-gray-50 p-6 ring-1 ring-gray-200"
+                  className="flex flex-col rounded-3xl bg-white p-5 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
                 >
                   <div className="flex items-center gap-x-3">
-                    <span className="bg-gradient-brand flex size-10 items-center justify-center rounded-xl text-white shadow-md">
+                    <span className="flex size-10 items-center justify-center rounded-xl bg-amber-400 text-gray-900 shadow-sm">
                       <Icon aria-hidden="true" className="size-5" />
                     </span>
                     <h3 className="font-code text-secondary text-lg font-semibold">
                       {label}
                     </h3>
                   </div>
-                  <div className="mt-5 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-[#5e5285]/20">
-                    <p className="text-secondary text-xs font-semibold tracking-wider uppercase">
+                  <div className="bg-gradient-brand mt-4 rounded-2xl p-4 text-white shadow-md">
+                    <p className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
                       Draft.dev
                     </p>
-                    <p className="mt-1 text-base text-gray-900">
+                    <p className="mt-1 text-base">
                       <FactValue value={draftFacts[key]} />
                     </p>
                   </div>
-                  <div className="mt-3 px-4">
+                  <div className="mt-3 px-1">
                     <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
                       {competitor.name}
                     </p>
@@ -259,15 +260,16 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
           draft={draftFacts}
           them={competitor.facts}
           checked={competitor.checked}
+          sources={competitor.sources}
         />
 
         {/* Who should pick which */}
-        <section className="bg-gray-50 py-14 sm:py-16">
+        <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               Who Should Pick Which
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
               <PickList
                 title={`Pick ${competitor.name} if`}
                 items={competitor.pickThem}
@@ -282,23 +284,27 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
         </section>
 
         {/* Results from real Draft.dev clients */}
-        <section className="bg-gradient-brand py-14 sm:py-16">
+        <section className="bg-gradient-brand relative isolate overflow-hidden py-12 sm:py-14">
+          <div
+            aria-hidden="true"
+            className="absolute -top-24 -left-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
+          />
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="lg:subheader-light subheader-mobile-light text-center">
               What Our Clients Measured
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
               {results.map((r) => (
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="group rounded-3xl bg-white/10 p-8 ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-white/15"
+                  className="group rounded-3xl bg-white/10 p-7 ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-white/15"
                 >
-                  <p className="font-code text-5xl font-semibold text-white">
+                  <p className="font-code text-5xl font-semibold text-amber-300">
                     {r.value}
                   </p>
-                  <p className="mt-3 text-base text-white/85">{r.label}</p>
-                  <span className="mt-6 inline-flex items-center gap-x-2 text-sm font-semibold text-amber-300">
+                  <p className="mt-3 text-base text-white/90">{r.label}</p>
+                  <span className="mt-5 inline-flex items-center gap-x-2 text-sm font-semibold text-white">
                     Read the case study
                     <ArrowRightIcon
                       aria-hidden="true"
@@ -312,46 +318,32 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
         </section>
 
         {others.length > 0 && (
-          <section className="bg-white py-14 sm:py-16">
+          <section className="bg-[#f4f1f8] py-12 sm:py-14">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
-                Other Comparisons
-              </h2>
-              <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+              <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
+                <h2 className="subheader-mobile-gradient sm:subheader-gradient">
+                  Other Comparisons
+                </h2>
+                <Link
+                  href="/compare"
+                  className="text-secondary inline-flex items-center gap-x-2 font-semibold"
+                >
+                  All comparisons
+                  <ArrowRightIcon aria-hidden="true" className="size-4" />
+                </Link>
+              </div>
+              <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
                 {others.map((c) => (
                   <CompareCard key={c.slug} competitor={c} />
                 ))}
               </div>
-              <p className="mt-8 text-center">
-                <Link
-                  href="/compare"
-                  className="text-secondary font-semibold underline underline-offset-4"
-                >
-                  All comparisons
-                </Link>
-              </p>
             </div>
           </section>
         )}
-
-        <section className="bg-white pb-6">
-          <div className="mx-auto max-w-5xl px-6 text-sm text-gray-500 lg:px-8">
-            <p className="font-semibold text-gray-700">Sources</p>
-            <ul className="mt-2 space-y-1 break-all">
-              {competitor.sources.map((s) => (
-                <li key={s}>
-                  <a href={s} rel="nofollow noopener" target="_blank">
-                    {s}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
       </main>
 
       <FAQ
-        className="pt-14 pb-8"
+        className="pt-12 pb-8"
         callHref="#book-a-call"
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
@@ -374,7 +366,7 @@ export const CompareCard = ({
 }) => (
   <Link
     href={`/compare/${competitor.slug}`}
-    className="group flex flex-col justify-between rounded-3xl bg-white p-7 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-0.5 hover:shadow-lg"
+    className="group flex flex-col justify-between rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-lg"
   >
     <div>
       {showCategory && (
