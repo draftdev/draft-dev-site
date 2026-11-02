@@ -14,7 +14,7 @@ const description =
   'We combine engineer-reviewed content, SEO and AEO, paid search, newsletter sponsorships and distribution into one program, with cost per signup on paid channels.'
 
 const heroDescription =
-  'We run one demand generation program for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We track the signups each channel brings in.'
+  'We run demand generation for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We track the signups each channel brings in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
