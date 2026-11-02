@@ -240,7 +240,7 @@ export default function Compare() {
           {
             question: 'Does Draft.dev measure AI visibility?',
             answer:
-              'Yes. We track AI citations every month across ChatGPT, Claude, Perplexity and Google AI Overviews.',
+              'Yes. We run a baseline before work starts, then track AI citations every month across ChatGPT, Claude, Perplexity and Google AI Overviews and send you a report.',
           },
           {
             question: 'Does Draft.dev publish its pricing?',

@@ -73,11 +73,11 @@ export const draftFacts: Facts = {
   based: 'Chicago, IL and Naperville, IL',
   builtFor: 'Developer tools and technical companies',
   content: 'Ready-to-publish content every week',
-  docs: 'Yes',
+  docs: 'Yes, including API reference docs, kept up to date as your product changes',
   video: 'Yes',
   aeo: 'Yes',
   aiTracking:
-    'Monthly AI citation tracking across ChatGPT, Claude, Perplexity and Google AI Overviews',
+    'A baseline before work starts, then monthly AI citation tracking and a report across ChatGPT, Claude, Perplexity and Google AI Overviews',
   paid: 'Paid search, plus newsletter, podcast and community sponsorships',
   distribution: '7,000+ developer network, Reddit and developer communities',
   pricing: 'Shared on a discovery call',
@@ -115,7 +115,7 @@ const checked = 'November 2, 2026'
 const draftAiAnswer = {
   question: 'Does Draft.dev measure AI visibility?',
   answer:
-    'Yes. We track AI citations every month across ChatGPT, Claude, Perplexity and Google AI Overviews.',
+    'Yes. We run a baseline before work starts, then track AI citations every month across ChatGPT, Claude, Perplexity and Google AI Overviews and send you a report.',
 }
 const draftWhoAnswer = {
   question: 'Who checks the content at Draft.dev?',
@@ -157,7 +157,7 @@ export const competitors: Competitor[] = [
     },
     pickThem: [
       'You want a published, fixed monthly price for an AEO sprint.',
-      'You want an AI visibility baseline before work starts and a re-measure at day 85.',
+      'You want a live AEO dashboard and a re-measure at day 85.',
       'You want a guaranteed monthly feature in a tech publication and newsletter.',
       'You want to start within 5 days.',
     ],
@@ -182,7 +182,7 @@ export const competitors: Competitor[] = [
       {
         question: 'Does Draft.dev create technical documentation?',
         answer:
-          'Yes. We create documentation, product guides and tested code samples, each reviewed by a subject matter expert.',
+          'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.',
       },
       {
         question: 'How fast can each one start?',
@@ -396,7 +396,7 @@ export const competitors: Competitor[] = [
       {
         question: 'Does Draft.dev create technical documentation?',
         answer:
-          'Yes. We create documentation, product guides and tested code samples, each reviewed by a subject matter expert.',
+          'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.',
       },
       draftWhoAnswer,
     ],
