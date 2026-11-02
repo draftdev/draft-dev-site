@@ -436,7 +436,8 @@ export const competitors: Competitor[] = [
       aiTracking:
         'AI visibility, brand mentions and revenue impact across Google AI Overviews, ChatGPT, Perplexity and Gemini',
       paid: null,
-      distribution: 'Citation outreach, Reddit engagement and LinkedIn outreach',
+      distribution:
+        'Citation outreach, Reddit engagement and LinkedIn outreach',
       pricing: 'Not published (research reports average $25k)',
       minTerm: null,
       start: null,
@@ -630,7 +631,8 @@ export const competitors: Competitor[] = [
       who: 'In-house writers, briefed by your team each week',
       network: null,
       based: 'Fully remote across the US',
-      builtFor: 'Mostly midsized B2B companies, with B2B SaaS the largest group',
+      builtFor:
+        'Mostly midsized B2B companies, with B2B SaaS the largest group',
       content: '6–7 pieces a month',
       docs: null,
       video: null,
@@ -639,8 +641,7 @@ export const competitors: Competitor[] = [
         'A baseline at kickoff, then tracked prompts across the major AI platforms',
       paid: 'Paid search management',
       distribution: 'Outside PR placements and an AI Authority Exchange',
-      pricing:
-        'No pricing page; its own research gives $6,000–$12,000 a month',
+      pricing: 'No pricing page; its own research gives $6,000–$12,000 a month',
       minTerm: 'Month to month',
       start: 'Strategy in month one, content from month two',
       revisions: null,
@@ -752,6 +753,336 @@ export const competitors: Competitor[] = [
       'https://graphite.io/seo',
       'https://graphite.io/careers',
       'https://graphite.io/privacy-policy',
+    ],
+    checked,
+  },
+  {
+    slug: 'nogood',
+    name: 'NoGood',
+    category: 'AEO agencies',
+    tagline: 'A NoGood alternative for devtool companies',
+    verdict:
+      'Pick NoGood for full-funnel growth marketing, from paid social to AEO, with a large premium team. Pick Draft.dev for developer content checked by 300+ engineers and a 7,000+ developer distribution network.',
+    summary: {
+      draft: draftSummary,
+      them: 'NoGood is a growth marketing agency headquartered in New York, with 70+ experts. It runs paid, organic and AEO programs for B2B, SaaS and eCommerce brands, on monthly retainers that average above $20,000 a month.',
+    },
+    facts: {
+      who: 'Its team of content creators, writers and content marketing specialists',
+      network: '70+ experts',
+      based: 'New York, with offices in Miami and Dubai',
+      builtFor: 'Startups, scaleups and Fortune 100 brands',
+      content: null,
+      docs: null,
+      video: 'Yes',
+      aeo: 'Yes, a dedicated AEO service',
+      aiTracking:
+        'Brand mentions and citations across ChatGPT, Google AI Overviews, AI Mode, Gemini, Perplexity, Claude and Copilot, with Goodie AI',
+      paid: 'Paid search and paid social',
+      distribution: null,
+      pricing: 'Average retainer above $20,000 a month (published)',
+      minTerm: 'Monthly retainers',
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want paid social, paid search and AEO from one large team.',
+      'You are a consumer or eCommerce brand as well as B2B.',
+      'You want creator and TikTok programs.',
+      'Your budget fits an average retainer above $20,000 a month.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want newsletter, podcast and community sponsorships plus a 7,000+ developer network.',
+      'You need technical documentation.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from NoGood?',
+        answer:
+          'NoGood runs full-funnel growth marketing for B2B, SaaS and eCommerce brands. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we run sponsorships, documentation and developer distribution.',
+      },
+      {
+        question: 'How much does NoGood cost?',
+        answer:
+          'NoGood says its average retainer is above $20,000 a month. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://nogood.io/',
+      'https://nogood.io/llms.txt',
+      'https://nogood.io/about-us/',
+      'https://nogood.io/content-marketing-services/',
+      'https://nogood.io/answer-engine-optimization-service/',
+    ],
+    checked,
+  },
+  {
+    slug: 'omniscient-digital',
+    name: 'Omniscient Digital',
+    category: 'AEO agencies',
+    tagline: 'An Omniscient Digital alternative for devtool companies',
+    verdict:
+      'Pick Omniscient Digital for SEO and AEO programs focused on pipeline, with digital PR and link building. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Omniscient Digital is an organic growth agency for B2B brands, with a remote team of 30+ people across 10 countries. It focuses on SEO, AEO, content and digital PR, and does not run paid media.',
+    },
+    facts: {
+      who: null,
+      network: '30+ people across 10 countries',
+      based: 'United States, with a remote team',
+      builtFor: 'B2B SaaS and tech companies, from startups to enterprise',
+      content: 'Scoped to the opportunity, with no fixed volume',
+      docs: null,
+      video: null,
+      aeo: 'Yes, a dedicated AEO service',
+      aiTracking:
+        'A visibility baseline, then a dashboard with AI share of voice and citation share',
+      paid: "No; they say they don't run paid media",
+      distribution: 'Digital PR, link building and community programs',
+      pricing: 'Full-service from $120,000 a year (published)',
+      minTerm: 'Depends on scope',
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want SEO and AEO tied closely to pipeline reporting.',
+      'You want digital PR and link building in the same program.',
+      'You are a mid-market or enterprise B2B company with a budget of $120,000+ a year.',
+    ],
+    pickDraft: [
+      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
+      'You want every piece checked by an engineer.',
+      'You need technical documentation or video.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Omniscient Digital?',
+        answer:
+          'Omniscient Digital focuses on organic growth and does not run paid media. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does Omniscient Digital cost?',
+        answer:
+          'Omniscient Digital says full-service engagements typically start at $120,000 a year. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://beomniscient.com/',
+      'https://beomniscient.com/about/',
+      'https://beomniscient.com/why-us/',
+      'https://beomniscient.com/ai-info/',
+      'https://beomniscient.com/services/faqs/',
+    ],
+    checked,
+  },
+  {
+    slug: 'optimist',
+    name: 'Optimist',
+    category: 'AEO agencies',
+    tagline: 'An Optimist alternative for devtool companies',
+    verdict:
+      'Pick Optimist for founder-led SEO and AEO consulting on month-to-month terms. Pick Draft.dev when you want a team to create the content and run distribution for you.',
+    summary: {
+      draft: draftSummary,
+      them: 'Optimist is a founder-led SEO and AEO consultancy for B2B tech and SaaS, based in Des Moines, Iowa. It works month to month with published entry prices, and draws on a network of freelance writers, editors and designers.',
+    },
+    facts: {
+      who: 'Founder-led strategy; a freelance network, or your own team writes from its briefs',
+      network: 'A network of freelance writers, editors and designers',
+      based: 'Des Moines, Iowa',
+      builtFor: 'B2B tech and SaaS, Series A to IPO',
+      content: 'Up to 8 projects a month on the $5,000 plan',
+      docs: null,
+      video: null,
+      aeo: 'Yes, central to the offer',
+      aiTracking:
+        'Buyer prompts benchmarked across ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews',
+      paid: null,
+      distribution: null,
+      pricing:
+        'Consulting from $3,000 a month; roadmap from $2,500 (published)',
+      minTerm: "Month to month, with 30 days' notice",
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want to work directly with the founder.',
+      'Your own team will write and needs strategy and briefs.',
+      'You want month-to-month terms and to keep everything if you cancel.',
+      'You want published entry prices.',
+    ],
+    pickDraft: [
+      'You want a team to write and publish the content for you, checked by 300+ engineers.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Optimist?',
+        answer:
+          'Optimist is a founder-led consultancy, and on some plans your team writes from its briefs. Draft.dev is a DevTool content and marketing agency that creates the content for you and runs SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Optimist cost?',
+        answer:
+          'Optimist publishes consulting from $3,000 a month and a roadmap project from $2,500. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.yesoptimist.com/about/',
+      'https://www.yesoptimist.com/full-service-seo/',
+      'https://www.yesoptimist.com/seo-consulting/',
+      'https://www.yesoptimist.com/terms-of-service/',
+    ],
+    checked,
+  },
+  {
+    slug: 'catchy',
+    name: 'Catchy',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'A Catchy alternative for devtool companies',
+    verdict:
+      'Pick Catchy for large developer marketing programs with events, video and paid media. Pick Draft.dev for technical content checked by 300+ engineers, plus AEO with monthly AI citation tracking.',
+    summary: {
+      draft: draftSummary,
+      them: 'Catchy is a developer marketing agency with offices in the UK and the US, working with startups through Fortune 500 brands. It covers go-to-market, demand generation, developer experience, content, video and events.',
+    },
+    facts: {
+      who: null,
+      network: null,
+      based: 'UK and US offices',
+      builtFor: 'Startups to Fortune 500 brands marketing to developers',
+      content: null,
+      docs: 'Yes',
+      video: 'Yes',
+      aeo: null,
+      aiTracking: null,
+      paid: 'Paid media planning and campaign management',
+      distribution:
+        'Influencer programs, events, social and community programs',
+      pricing: 'Not published',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want developer events and in-person activations.',
+      'You want video production alongside your content.',
+      'You want developer experience work, such as developer portals.',
+      'You are a large enterprise with a global developer program.',
+    ],
+    pickDraft: [
+      'You want AEO with a baseline and monthly AI citation tracking.',
+      'You want every piece checked by an engineer.',
+      'You want SEO and Reddit distribution as well as paid channels.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Catchy?',
+        answer:
+          'Catchy runs broad developer marketing programs, including events and video. Draft.dev focuses on technical content checked by 300+ engineers, plus SEO, AEO with monthly AI citation tracking, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Catchy cost?',
+        answer:
+          'Catchy does not publish pricing on its site. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.catchyagency.com/',
+      'https://www.catchyagency.com/about',
+      'https://www.catchyagency.com/developer-experience',
+      'https://www.catchyagency.com/content-and-creative',
+      'https://www.catchyagency.com/demand-generation',
+    ],
+    checked,
+  },
+  {
+    slug: 'wizard-on-demand',
+    name: 'Wizard on Demand',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'A Wizard on Demand alternative for devtool companies',
+    verdict:
+      'Both focus on devtools and run content plus paid media. Pick Wizard on Demand for a small team in Europe that also makes ad creative. Pick Draft.dev for 300+ engineers checking every piece and AEO with monthly AI citation tracking.',
+    summary: {
+      draft: draftSummary,
+      them: 'Wizard on Demand is a technical content marketing agency for devtools and infrastructure companies, based in Tallinn, Estonia. Its team of 17 covers technical content, SEO and GEO, paid media and ad creative.',
+    },
+    facts: {
+      who: 'Writers with a technical background',
+      network: 'A team of 17',
+      based: 'Tallinn, Estonia; team mostly in Europe',
+      builtFor: 'Devtools and enterprise infrastructure companies',
+      content: null,
+      docs: null,
+      video: null,
+      aeo: 'Yes, SEO and GEO',
+      aiTracking: null,
+      paid: 'Paid search and paid social, including Reddit and LinkedIn ads',
+      distribution: 'SEO, organic social and paid media',
+      pricing: 'Not published; quote on request',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want a small, devtools-focused team.',
+      'You want ad creative and paid social run alongside your content.',
+      'You want a team mostly based in Europe.',
+    ],
+    pickDraft: [
+      'You want 300+ engineers and subject matter experts checking every piece.',
+      'You want AEO with a baseline and monthly AI citation tracking.',
+      'You want newsletter, podcast and community sponsorships plus a 7,000+ developer network.',
+      'You need technical documentation.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Wizard on Demand?',
+        answer:
+          'Both focus on developer tools. Wizard on Demand is a team of 17 that adds ad creative. Draft.dev has 300+ engineers and subject matter experts checking every piece, plus AEO tracking, sponsorships and a 7,000+ developer network.',
+      },
+      {
+        question: 'How much does Wizard on Demand cost?',
+        answer:
+          'Wizard on Demand does not publish pricing; it gives a quote after a meeting. Draft.dev shares pricing on a discovery call.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.wizardondemand.com/',
+      'https://www.wizardondemand.com/services',
+      'https://www.wizardondemand.com/meeting/tech-marketing-agency',
+      'https://www.wizardondemand.com/services/technical-content-marketing-and-technical-writing',
+      'https://www.wizardondemand.com/services/paid-media-services-for-devtools-companies-and-startups',
+      'https://www.wizardondemand.com/technical-writing-agency',
     ],
     checked,
   },
