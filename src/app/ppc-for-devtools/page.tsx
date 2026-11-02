@@ -102,7 +102,7 @@ export default function PPCServices() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A growth partner that understands technical audiences"
+          title="A growth partner that understands developers"
           paragraphs={[
             'Most teams have tried paid ads with developers and been let down. Developers block ads and tune out marketing. But some people are worth reaching: buyers comparing tools, and engineers stuck in your docs. They are already looking, and that is when paid ads work.',
             'Reaching them is only half the job. The page they land on has to earn their trust, so an engineer reviews every landing page for accuracy.',

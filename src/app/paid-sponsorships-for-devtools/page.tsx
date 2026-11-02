@@ -103,7 +103,7 @@ export default function PaidSponsorships() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A growth partner that understands technical audiences"
+          title="A growth partner that understands developers"
           paragraphs={[
             "Developers ignore banner ads and tune out marketing. But they choose to read newsletters, podcasts and community publications, and they read the sponsor slot because they trust the publication. That's why the copy matters as much as the placement.",
             "We've built relationships with 50+ developer newsletters, 200+ niche sites and dozens of community platforms, so we know which channels bring quality traffic. Before we create any sponsor copy, we study your product, competitors and audience.",
