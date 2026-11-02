@@ -119,9 +119,10 @@ export default function Compare() {
               How Draft.dev Compares
             </h1>
             <p className="mt-4 max-w-3xl text-lg text-white/90 sm:text-xl">
-              Side-by-side comparisons with the DevTool content and marketing
-              agencies companies weigh us against. Facts come from each
-              company&apos;s own site, with the date we checked.
+              Our DevTool content and marketing services, compared side by side
+              with the agencies developer tool companies weigh us against. Every
+              fact comes from each company&apos;s own site, with the date we
+              checked.
             </p>
           </div>
           {/* The facts every comparison starts from */}

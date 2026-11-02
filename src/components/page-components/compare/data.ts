@@ -133,8 +133,8 @@ export const competitors: Competitor[] = [
       'Pick Literally.dev for a fixed-price, 90-day AEO sprint. Pick Draft.dev for a full content and marketing team, with 300+ engineers checking the work.',
     summary: {
       draft:
-        'A DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'A smaller AEO and content agency based in Norway. Its main offer is a 90-day AI Recommendation Sprint: 10 articles a month for $4,990 a month, with a 3-month minimum.',
+        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
+      them: 'Literally.dev is a smaller AEO and content agency based in Norway. Its main offer is a 90-day AI Recommendation Sprint: 10 articles a month for $4,990 a month, with a 3-month minimum.',
     },
     facts: {
       who: 'Hand-vetted engineers, edited in-house',
@@ -209,8 +209,8 @@ export const competitors: Competitor[] = [
       'Both run developer marketing beyond content. Pick Hackmamba for published starting prices and DevRel programs. Pick Draft.dev for weekly content checked by 300+ engineers and a 7,000+ developer distribution network.',
     summary: {
       draft:
-        'A DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'A US-based developer marketing agency founded in 2021. It covers content, documentation, SEO and GEO, DevRel, paid and influencer marketing, with published starting prices.',
+        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
+      them: 'Hackmamba is a US-based developer marketing agency founded in 2021. It covers content, documentation, SEO and GEO, DevRel, paid and influencer marketing, with published starting prices.',
     },
     facts: {
       who: 'Developers with hands-on experience in the domain',
@@ -280,8 +280,8 @@ export const competitors: Competitor[] = [
       'EveryDeveloper is a one-person advisory practice. Pick it for senior strategy advice. Pick Draft.dev when you need a team to create the content and run the marketing.',
     summary: {
       draft:
-        'A DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'A solo advisory practice run by Adam DuVander. Its retainer includes a monthly AI recommendation report, one strategy deliverable a month and unlimited calls. It does not create the content itself.',
+        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
+      them: 'EveryDeveloper is a solo advisory practice run by Adam DuVander. Its retainer includes a monthly AI recommendation report, one strategy deliverable a month and unlimited calls. It does not create the content itself.',
     },
     facts: {
       who: 'Advisory only; Adam DuVander introduces you to writers he trusts',
@@ -317,7 +317,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How is Draft.dev different from EveryDeveloper?',
         answer:
-          'EveryDeveloper is a solo advisory practice that tells your team what to do. Draft.dev is a DevTool content and marketing agency that does the work: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+          'EveryDeveloper is a solo advisory practice that advises your team. Draft.dev is a DevTool content and marketing agency that does the work: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
       },
       {
         question: 'How much does EveryDeveloper cost?',
@@ -350,8 +350,8 @@ export const competitors: Competitor[] = [
       'Pick Ritza for documentation and engineering-heavy work like demos and proofs of concept. Pick Draft.dev for content plus SEO, AEO and distribution, with monthly AI citation tracking.',
     summary: {
       draft:
-        'A DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'A technical GTM agency of engineers and ex-engineers. It covers documentation, tutorials, SEO content and solutions engineering, and offers a satisfaction guarantee.',
+        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
+      them: 'Ritza is a technical GTM agency of engineers and ex-engineers. It covers documentation, tutorials, SEO content and solutions engineering, and offers a satisfaction guarantee.',
     },
     facts: {
       who: 'Engineers and ex-engineers',
