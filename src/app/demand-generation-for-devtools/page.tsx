@@ -14,7 +14,7 @@ const description =
   'B2B demand generation agency for developer tools. We combine engineer-reviewed content, SEO, AEO, paid search, sponsorships and distribution, tracked to cost per signup.'
 
 const heroDescription =
-  'We run demand generation for your developer tool, from technical content to search, paid ads, sponsorships and distribution. Our 300+ subject matter experts check every piece. We report the signups each channel brings in.'
+  'Our B2B demand generation services cover every channel your developer tool needs, from technical content to search, paid ads, sponsorships and distribution. Every piece is checked by one of our 300+ subject matter experts, and we report the signups each channel brings in.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
