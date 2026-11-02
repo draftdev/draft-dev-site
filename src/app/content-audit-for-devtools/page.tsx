@@ -11,7 +11,7 @@ import Partner from '@/components/page-components/service-landing/partner'
 import type { Metadata } from 'next'
 
 const description =
-  'We review your technical content against competitors and SEO and AEO visibility data, then map the gaps worth filling and the aging posts to refresh first.'
+  'Content audit services for developer tools. We review your technical content against competitors and SEO and AEO data, then map the gaps to fill and the posts to refresh first.'
 
 const heroDescription =
   'We review your technical content against competitors, search data and AI answers. You get a clear list of the gaps worth filling and the older posts to refresh first.'
@@ -111,7 +111,7 @@ export default function ContentAuditServices() {
           title="A growth partner that understands developers"
           paragraphs={[
             "Most technical blogs grow one post at a time. After a few years, nobody knows which posts still rank, which ones have broken code, or what competitors cover that you don't.",
-            'An audit answers those questions. Our engineers read your content as developers would, while our growth marketers dig into search and AI visibility data.',
+            'Our content audit services answer those questions. Our engineers read your content as developers would, while our growth marketers dig into search and AI visibility data.',
             'The result is a short, ranked plan your team can act on. We can also carry it out for you through our content production team.',
           ]}
         />
@@ -221,7 +221,7 @@ export default function ContentAuditServices() {
         standardFaqs={false}
         pageFaqs={[
           {
-            question: 'What does a content audit include?',
+            question: 'What do your content audit services include?',
             answer:
               'A review of your existing content, a comparison with competitors, SEO and AEO visibility research, plus a ranked plan of gaps to fill and posts to refresh.',
           },
