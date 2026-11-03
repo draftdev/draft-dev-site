@@ -90,7 +90,11 @@ export type Competitor = {
   slug: string
   name: string
   // Section on the hub page
-  category: 'DevTool content and marketing agencies' | 'Other agencies'
+  // Top section, devtool specialists in the lower section, then general agencies
+  category:
+    | 'DevTool content and marketing agencies'
+    | 'More DevTool agencies'
+    | 'Other agencies'
   // One line for the hub card
   tagline: string
   // One-sentence verdict under the H1
@@ -413,7 +417,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'ercule',
     name: 'ércule',
-    category: 'DevTool content and marketing agencies',
+    category: 'More DevTool agencies',
     tagline: 'An ércule alternative for devtool companies',
     verdict:
       'Pick ércule for SEO and GEO tied closely to analytics and content engineering. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
@@ -738,7 +742,7 @@ export const competitors: Competitor[] = [
   {
     slug: 'dev-spotlight',
     name: 'Dev Spotlight',
-    category: 'DevTool content and marketing agencies',
+    category: 'More DevTool agencies',
     tagline: 'A Dev Spotlight alternative for devtool companies',
     verdict:
       'Pick Dev Spotlight for long-form technical content for large enterprises, with a happiness guarantee. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',

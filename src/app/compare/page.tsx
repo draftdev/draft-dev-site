@@ -97,7 +97,13 @@ const isDevtool = (c: Competitor) =>
 export default function Compare() {
   // Direct competitors first; general agencies in a smaller section below
   const devtool = competitors.filter(isDevtool)
-  const others = competitors.filter((c) => !isDevtool(c))
+  const others = competitors
+    .filter((c) => !isDevtool(c))
+    .sort(
+      (a, b) =>
+        Number(a.category === 'Other agencies') -
+        Number(b.category === 'Other agencies'),
+    )
 
   return (
     <div>
@@ -192,7 +198,8 @@ export default function Compare() {
                 Other Agencies Buyers Compare Us With
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
-                General B2B content, SEO and growth agencies
+                More devtool specialists, plus general B2B content, SEO and
+                growth agencies
               </p>
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {others.map((c) => (
