@@ -184,39 +184,41 @@ export default function Compare() {
           </div>
         </section>
 
-        {/* General agencies buyers also look at */}
-        <section className="bg-[#f4f1f8] py-12 sm:py-14">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
-              Other Agencies Buyers Compare Us With
-            </h2>
-            <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
-              General B2B content, SEO and growth agencies
-            </p>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {others.map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/compare/${c.slug}`}
-                  className="group flex items-center justify-between rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <span>
-                    <span className="font-code text-secondary block text-xs font-semibold">
-                      Draft.dev vs
+        {/* General agencies buyers also look at, when there are any */}
+        {others.length > 0 && (
+          <section className="bg-[#f4f1f8] py-12 sm:py-14">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+                Other Agencies Buyers Compare Us With
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
+                General B2B content, SEO and growth agencies
+              </p>
+              <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {others.map((c) => (
+                  <Link
+                    key={c.slug}
+                    href={`/compare/${c.slug}`}
+                    className="group flex items-center justify-between rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <span>
+                      <span className="font-code text-secondary block text-xs font-semibold">
+                        Draft.dev vs
+                      </span>
+                      <span className="font-code text-lg font-semibold text-gray-900">
+                        {c.name}
+                      </span>
                     </span>
-                    <span className="font-code text-lg font-semibold text-gray-900">
-                      {c.name}
-                    </span>
-                  </span>
-                  <ArrowRightIcon
-                    aria-hidden="true"
-                    className="text-secondary size-5 shrink-0 transition group-hover:translate-x-1"
-                  />
-                </Link>
-              ))}
+                    <ArrowRightIcon
+                      aria-hidden="true"
+                      className="text-secondary size-5 shrink-0 transition group-hover:translate-x-1"
+                    />
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Comparisons by type of provider */}
         <section className="bg-gradient-brand py-12 sm:py-14">
@@ -274,9 +276,9 @@ export default function Compare() {
               'Yes. We run a baseline before work starts, then track AI citations every month across ChatGPT, Claude, Perplexity and Google AI Overviews and send you a report.',
           },
           {
-            question: 'Does Draft.dev publish its pricing?',
+            question: 'How much does Draft.dev cost?',
             answer:
-              'No. Pricing depends on your goals and channels, so we share it on a discovery call.',
+              'Plans start at $9K a month. Contracts run for 3 months, then month to month.',
           },
           {
             question: 'How fast can we start?',
