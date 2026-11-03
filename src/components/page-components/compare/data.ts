@@ -1341,4 +1341,374 @@ export const competitors: Competitor[] = [
     ],
     checked,
   },
+  {
+    slug: 'devtools-academy',
+    name: 'DevTools Academy',
+    category: 'More DevTool agencies',
+    tagline: 'A DevTools Academy alternative for devtool companies',
+    verdict:
+      'Pick DevTools Academy to reach developers through a large network of technical creators. Pick Draft.dev for technical content checked by 300+ engineers, plus SEO, AEO and paid channels.',
+    summary: {
+      draft: draftSummary,
+      them: 'DevTools Academy is a creator-led GTM agency for DevTools, developer platform and AI companies. It runs programs with a network of 1,000+ technical creators across YouTube, X, LinkedIn, Reddit and newsletters.',
+    },
+    facts: {
+      who: 'Independent technical creators from its network',
+      network: '1,000+ technical creators',
+      based: 'Houston, Texas',
+      builtFor:
+        'DevTools, developer platform and AI startups, Seed to Series D',
+      content: null,
+      docs: null,
+      video: 'Yes, creator videos',
+      aeo: null,
+      aiTracking: null,
+      paid: 'Paid creator programs, with zero margin on creator payments',
+      distribution:
+        'Creators on YouTube, X, LinkedIn, Reddit, Hacker News and newsletters',
+      pricing: 'No fee published',
+      minTerm: 'At least a quarter',
+      start: 'Strategy and creator shortlist in 4–5 working days',
+      revisions: null,
+    },
+    pickThem: [
+      'You want to reach developers through technical creators and influencers.',
+      'You want creator payments passed through with zero margin.',
+      'You want a creator strategy within a week of signing.',
+    ],
+    pickDraft: [
+      'You want technical content, docs and tutorials checked by 300+ engineers.',
+      'You want SEO, AEO and monthly AI citation tracking.',
+      'You want paid search and newsletter sponsorships.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from DevTools Academy?',
+        answer:
+          'DevTools Academy reaches developers through technical creators. Draft.dev creates the content itself, checked by 300+ engineers, and runs SEO, AEO, paid search, sponsorships and distribution through a 7,000+ developer network.',
+      },
+      {
+        question: 'How much does DevTools Academy cost?',
+        answer:
+          'DevTools Academy does not publish its fee; creator budgets are paid on top. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.devtoolsacademy.com/',
+      'https://www.devtoolsacademy.com/services',
+      'https://www.devtoolsacademy.com/terms-of-service',
+    ],
+    checked,
+  },
+  {
+    slug: 'studio1',
+    name: 'Studio1',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'A Studio1 alternative for devtool companies',
+    verdict:
+      'Both cover devtool content, docs, video and developer growth. Pick Studio1 for hands-on DevRel and open-source launches. Pick Draft.dev for 300+ engineers checking every piece, AEO with monthly AI citation tracking, and paid channels.',
+    summary: {
+      draft: draftSummary,
+      them: 'Studio1 is a technical content and developer growth partner for devtool, SaaS, AI and open-source teams, incorporated in India. It covers technical content, documentation and DX audits, video and DevRel campaigns.',
+    },
+    facts: {
+      who: 'Engineers and technical writers matched to your stack',
+      network: null,
+      based: 'India',
+      builtFor: 'Devtool, SaaS, AI and open-source teams',
+      content: '300+ tutorials and guides published to date',
+      docs: 'Yes, including docs audits and DX audits',
+      video: 'Yes',
+      aeo: null,
+      aiTracking: null,
+      paid: null,
+      distribution: 'Reddit, YouTube, newsletters and developer communities',
+      pricing: 'Not published',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want hands-on DevRel and open-source launch support.',
+      'You want docs audits and developer experience audits.',
+      'You want developer video production alongside content.',
+    ],
+    pickDraft: [
+      'You want AEO with a baseline and monthly AI citation tracking.',
+      'You want 300+ engineers and subject matter experts checking every piece.',
+      'You want paid search plus newsletter, podcast and community sponsorships.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Studio1?',
+        answer:
+          'Both cover devtool content, docs, video and developer growth. Studio1 leans into DevRel and open-source launches. Draft.dev adds 300+ engineers checking every piece, AEO with monthly AI citation tracking, paid search and sponsorships.',
+      },
+      {
+        question: 'How much does Studio1 cost?',
+        answer:
+          'Studio1 does not publish a price list. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.studio1hq.com/',
+      'https://www.studio1hq.com/terms',
+      'https://www.studio1hq.com/technical-content-marketing',
+      'https://www.studio1hq.com/developer-documentation-dx-audit',
+      'https://www.studio1hq.com/developer-video-production',
+      'https://www.studio1hq.com/developer-relations-growth-campaigns',
+    ],
+    checked,
+  },
+  {
+    slug: 'devmarklab',
+    name: 'DevMarkLab',
+    category: 'DevTool content and marketing agencies',
+    tagline: 'A DevMarkLab alternative for devtool companies',
+    verdict:
+      'Pick DevMarkLab for organic growth through SEO, Reddit and developer social from a small team. Pick Draft.dev for 300+ engineers checking every piece, plus paid search, sponsorships and documentation.',
+    summary: {
+      draft: draftSummary,
+      them: 'DevMarkLab is a developer marketing agency for devtools, run by an 8-person team in Jaipur, India. It focuses on organic growth: SEO, content, Reddit and social media, with no paid ads.',
+    },
+    facts: {
+      who: 'Writers who have built or shipped products like yours',
+      network: '8-person team',
+      based: 'Jaipur, India',
+      builtFor: 'Dev-first SaaS companies past product-market fit',
+      content: 'Weekly content sprints',
+      docs: null,
+      video: null,
+      aeo: null,
+      aiTracking: null,
+      paid: "None; they say 'No paid ad shortcuts'",
+      distribution: 'Reddit, across 50+ subreddits',
+      pricing: 'Not published; quoted after a paid audit',
+      minTerm: null,
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want organic growth only, with no paid ads.',
+      'You want Reddit marketing across many developer subreddits.',
+      'You want a paid audit before committing.',
+    ],
+    pickDraft: [
+      'You want 300+ engineers and subject matter experts checking every piece.',
+      'You want paid search plus newsletter, podcast and community sponsorships.',
+      'You need technical documentation or video.',
+      'You want AEO with a baseline and monthly AI citation tracking.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from DevMarkLab?',
+        answer:
+          'DevMarkLab focuses on organic growth through SEO, content, Reddit and social, with no paid ads. Draft.dev adds 300+ engineers checking every piece, technical documentation, paid search, sponsorships and monthly AI citation tracking.',
+      },
+      {
+        question: 'How much does DevMarkLab cost?',
+        answer:
+          'DevMarkLab quotes after a paid audit rather than publishing a price. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      {
+        question: 'Does Draft.dev create technical documentation?',
+        answer: draftDocsAnswer,
+      },
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://devmarklab.com/',
+      'https://devmarklab.com/services/',
+      'https://devmarklab.com/services/content-for-devtools/',
+      'https://devmarklab.com/terms/',
+    ],
+    checked,
+  },
+  {
+    slug: 'manicule',
+    name: 'Manicule',
+    category: 'More DevTool agencies',
+    tagline: 'A Manicule alternative for devtool companies',
+    verdict:
+      'Pick Manicule for AI-search visibility work backed by its own tracking app. Pick Draft.dev for a full content and marketing team with 300+ engineers, paid channels and sponsorships.',
+    summary: {
+      draft: draftSummary,
+      them: 'Manicule helps developer tools get found in AI search and used by AI agents. Its team writes docs and technical content, and it also sells a self-serve AI visibility tracking app.',
+    },
+    facts: {
+      who: null,
+      network: null,
+      based: null,
+      builtFor: 'Developer tools',
+      content: null,
+      docs: 'Yes, rebuilt and checked against your live API',
+      video: null,
+      aeo: 'Yes, the core service',
+      aiTracking:
+        'Its own app checks ChatGPT, Gemini and AI Overviews every day',
+      paid: null,
+      distribution: 'X, LinkedIn and Reddit',
+      pricing: 'Agency fees set per project; tracking app sold separately',
+      minTerm: null,
+      start: 'Docs rebuilt in 14 days',
+      revisions: null,
+    },
+    pickThem: [
+      'You want AI-search visibility as the main goal.',
+      'You want a self-serve app to track how AI assistants mention you.',
+      'You want your docs rebuilt and tested against your live API.',
+    ],
+    pickDraft: [
+      'You want a full content and marketing team, checked by 300+ engineers.',
+      'You want paid search plus newsletter, podcast and community sponsorships.',
+      'You want your content shared by a 7,000+ developer network.',
+      'You want ready-to-publish content every week.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Manicule?',
+        answer:
+          'Manicule focuses on AI-search visibility and sells its own tracking app. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Manicule cost?',
+        answer:
+          'Manicule sets agency fees per project and sells its tracking app separately. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://manicule.com/',
+      'https://manicule.com/services',
+      'https://manicule.com/agent-visibility',
+      'https://manicule.com/case-studies/devrel',
+    ],
+    checked,
+  },
+  {
+    slug: 'codecontent',
+    name: 'CodeContent',
+    category: 'More DevTool agencies',
+    tagline: 'A CodeContent alternative for devtool companies',
+    verdict:
+      'Pick CodeContent for tutorials written by software engineers at published prices. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'CodeContent is a small technical content agency that pairs engineer-writers with devtools companies. It publishes its prices and starts every engagement with a paid pilot article.',
+    },
+    facts: {
+      who: 'Software engineers who run the code before writing',
+      network: null,
+      based: null,
+      builtFor: 'Devtools, B2B SaaS, AI and infrastructure companies',
+      content: '4 technical blogs a month on the starter plan',
+      docs: null,
+      video: null,
+      aeo: null,
+      aiTracking: null,
+      paid: null,
+      distribution: null,
+      pricing: 'From $1,250 a month (published)',
+      minTerm: null,
+      start: 'A paid pilot article first',
+      revisions: 'One review round',
+    },
+    pickThem: [
+      'You want lower, published prices for technical blogs and tutorials.',
+      'You want a paid pilot article before committing.',
+      'You mainly need tutorials written by software engineers.',
+    ],
+    pickDraft: [
+      'You want SEO, AEO and monthly AI citation tracking alongside your content.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from CodeContent?',
+        answer:
+          'CodeContent focuses on tutorials and technical blogs from a small team of engineers. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does CodeContent cost?',
+        answer:
+          'CodeContent publishes plans from $1,250 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://codecontent.net/',
+      'https://codecontent.net/about',
+      'https://codecontent.net/services',
+      'https://codecontent.net/pricing',
+      'https://codecontent.net/work',
+    ],
+    checked,
+  },
+  {
+    slug: 'content-turbine',
+    name: 'Content Turbine',
+    category: 'More DevTool agencies',
+    tagline: 'A Content Turbine alternative for devtool companies',
+    verdict:
+      'Pick Content Turbine for technical content and AEO from an expert-sourced network. Pick Draft.dev for 300+ engineers checking every piece, plus paid channels, sponsorships and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Content Turbine is a technical content agency for B2B software and developer-tool companies. It creates expert-sourced content, docs and sample apps, and optimizes for search and AI answer engines.',
+    },
+    facts: {
+      who: 'Expert-sourced and human-reviewed',
+      network: null,
+      based: null,
+      builtFor: 'Technical B2B and developer-tool companies',
+      content: null,
+      docs: 'Yes: quickstarts, tutorials, API docs and sample apps',
+      video: null,
+      aeo: 'Yes',
+      aiTracking: 'Covers Google AI Overviews, ChatGPT, Perplexity and Claude',
+      paid: null,
+      distribution: null,
+      pricing: 'Not published; sold as packages',
+      minTerm: null,
+      start: 'A free 30-minute discovery call',
+      revisions: null,
+    },
+    pickThem: [
+      'You want technical content and AEO from an expert-sourced network.',
+      'You want quickstarts, API docs and sample apps written by engineers.',
+      'You want to start with a free discovery call.',
+    ],
+    pickDraft: [
+      'You want paid search plus newsletter, podcast and community sponsorships.',
+      'You want your content shared by a 7,000+ developer network.',
+      'You want a baseline and monthly AI citation report.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Content Turbine?',
+        answer:
+          'Content Turbine focuses on technical content and AEO. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
+      },
+      {
+        question: 'How much does Content Turbine cost?',
+        answer:
+          'Content Turbine does not publish prices; it sells packages. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: ['https://www.contentturbine.com/llms.txt'],
+    checked,
+  },
 ]
