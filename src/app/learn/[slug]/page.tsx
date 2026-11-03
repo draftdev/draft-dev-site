@@ -188,6 +188,7 @@ export default async function PostPage({ params }: Props) {
 
   // Process content with caching
   const { sanitizedContent, readingTime } = await processPostContent(post)
+  const bylineDate = post.modified || post.date
   const schemaJsonLd = stringifySchemas(generateBlogPostSchemas(post, slug))
 
   let imageIndex = 0
@@ -242,7 +243,11 @@ export default async function PostPage({ params }: Props) {
       )
     }
 
-    if (domNode.type === 'tag' && domNode.name === 'iframe' && domNode.attribs) {
+    if (
+      domNode.type === 'tag' &&
+      domNode.name === 'iframe' &&
+      domNode.attribs
+    ) {
       const { src, allow, allowfullscreen } = domNode.attribs
       if (!src) return undefined
       return (
@@ -329,13 +334,16 @@ export default async function PostPage({ params }: Props) {
                       clipRule="evenodd"
                     />
                   </svg>
+                  {/* Last updated date, falling back to the publish date */}
                   <time
                     dateTime={
-                      post.date ? new Date(post.date).toISOString() : undefined
+                      bylineDate
+                        ? new Date(bylineDate).toISOString()
+                        : undefined
                     }
                   >
-                    {post.date
-                      ? new Date(post.date).toLocaleDateString('en-US', {
+                    {bylineDate
+                      ? new Date(bylineDate).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',
