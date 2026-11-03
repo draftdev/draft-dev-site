@@ -242,7 +242,11 @@ export default async function PostPage({ params }: Props) {
       )
     }
 
-    if (domNode.type === 'tag' && domNode.name === 'iframe' && domNode.attribs) {
+    if (
+      domNode.type === 'tag' &&
+      domNode.name === 'iframe' &&
+      domNode.attribs
+    ) {
       const { src, allow, allowfullscreen } = domNode.attribs
       if (!src) return undefined
       return (
@@ -329,19 +333,26 @@ export default async function PostPage({ params }: Props) {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <time
-                    dateTime={
-                      post.date ? new Date(post.date).toISOString() : undefined
-                    }
-                  >
-                    {post.date
-                      ? new Date(post.date).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })
-                      : 'Unknown date'}
-                  </time>
+                  <span>
+                    Last updated{' '}
+                    <time
+                      dateTime={
+                        post.modified || post.date
+                          ? new Date(post.modified || post.date).toISOString()
+                          : undefined
+                      }
+                    >
+                      {post.modified || post.date
+                        ? new Date(
+                            post.modified || post.date,
+                          ).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          })
+                        : 'Unknown date'}
+                    </time>
+                  </span>
                 </div>
 
                 <div className="flex items-center gap-2">
