@@ -236,7 +236,7 @@ export const competitors: Competitor[] = [
       pricing: 'Content retainers from $5,000 a month (published)',
       minTerm:
         'A paid trial month, then month to month or a longer statement of work',
-      start: 'About 2–3 weeks to onboard a writer',
+      start: '10 to 14 days per piece, from brief to live',
       revisions: null,
     },
     pickThem: [
@@ -266,7 +266,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How fast can each one start?',
         answer:
-          'Hackmamba says onboarding a writer takes about 2–3 weeks. Draft.dev delivers first pieces about 3 weeks after kickoff.',
+          'Hackmamba says its standard turnaround is 10 to 14 days from brief to live. Draft.dev delivers first pieces about 3 weeks after kickoff.',
       },
       draftWhoAnswer,
     ],
@@ -288,7 +288,7 @@ export const competitors: Competitor[] = [
     summary: {
       draft:
         'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'EveryDeveloper is a solo advisory practice run by Adam DuVander. Its retainer includes a monthly AI recommendation report, one strategy deliverable a month and unlimited calls. It does not create the content itself.',
+      them: 'EveryDeveloper is a solo advisory practice run by Adam DuVander. Its retainer includes a monthly AI recommendation report, one strategy deliverable a month and unlimited calls for one person on your team. For writing, it introduces you to writers it trusts.',
     },
     facts: {
       who: 'Advisory only; Adam DuVander introduces you to writers he trusts',
@@ -304,7 +304,7 @@ export const competitors: Competitor[] = [
       paid: null,
       distribution: null,
       pricing: 'From $5,000 a month (published)',
-      minTerm: "No minimum; 30 days' notice to cancel",
+      minTerm: "Either side can cancel with 30 days' notice",
       start: null,
       revisions: null,
     },
@@ -426,7 +426,7 @@ export const competitors: Competitor[] = [
       them: 'ércule is an organic growth agency for B2B and developer-focused companies. It ties SEO and GEO, content production, content engineering and analytics together, and also sells an analytics app.',
     },
     facts: {
-      who: 'Its writers, with LLM-assisted research and first drafts',
+      who: null,
       network: null,
       based: null,
       builtFor: 'B2B and developer-focused companies',
@@ -438,7 +438,8 @@ export const competitors: Competitor[] = [
         'Starts with an LLM coverage report; covers Google, ChatGPT, Perplexity and Gemini',
       paid: null,
       distribution: 'LinkedIn, Reddit and email',
-      pricing: 'Agency pricing not published (analytics app from $59 a month)',
+      pricing:
+        'Agency pricing not published (analytics app has a free plan; Pro is $59 a month)',
       minTerm: null,
       start: null,
       revisions: null,
@@ -458,12 +459,12 @@ export const competitors: Competitor[] = [
       {
         question: 'How is Draft.dev different from ércule?',
         answer:
-          'ércule focuses on SEO, GEO and the analytics behind them. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus paid search, sponsorships and developer distribution.',
+          'ércule ties SEO and GEO, content production, content engineering and analytics together. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus paid search, sponsorships and developer distribution.',
       },
       {
         question: 'How much does ércule cost?',
         answer:
-          'ércule does not publish agency pricing. Its analytics app starts at $59 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'ércule does not publish agency pricing. Its analytics app has a free plan, and Pro costs $59 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -472,6 +473,7 @@ export const competitors: Competitor[] = [
       'https://www.ercule.com/',
       'https://www.ercule.com/services/seo-and-geo',
       'https://www.ercule.com/services/content-production',
+      'https://www.ercule.com/services/content-strategy',
       'https://www.ercule.com/services/content-engineering',
       'https://www.ercule.com/services/content-systems',
       'https://www.ercule.com/pricing',
@@ -753,7 +755,7 @@ export const competitors: Competitor[] = [
     facts: {
       who: null,
       network: null,
-      based: 'Avon, Indiana (mailing address)',
+      based: 'Avon, Indiana',
       builtFor: 'Enterprise companies reaching developers and IT leaders',
       content: 'From a single piece to hundreds',
       docs: null,
@@ -884,11 +886,12 @@ export const competitors: Competitor[] = [
       them: 'Discovered Labs is an organic search agency for B2B SaaS that combines SEO and AEO. It publishes its prices, works month to month and tracks AI visibility with its own tool.',
     },
     facts: {
-      who: 'An in-house editorial team, with AI used in research and drafting',
+      who: 'A dedicated team of SEOs, editors and AI/ML engineers, using AI to speed up research and production',
       network: null,
       based: null,
       builtFor: 'Series A+ B2B SaaS companies',
-      content: 'Up to 20 pieces a month on the entry plan',
+      content:
+        'Up to 20 content units a month on the entry plan (about 20 articles)',
       docs: null,
       video: null,
       aeo: 'Yes, the core service',
@@ -956,17 +959,17 @@ export const competitors: Competitor[] = [
       who: 'In-house writers, briefed by your team each week',
       network: null,
       based: 'Fully remote across the US',
-      builtFor:
-        'Mostly midsized B2B companies, with B2B SaaS the largest group',
+      builtFor: 'Mostly midsized companies, with B2B SaaS the largest group',
       content: '6–7 pieces a month',
       docs: null,
       video: null,
       aeo: 'Yes, a GEO service launched in 2023',
       aiTracking:
-        'A baseline at kickoff, then tracked prompts across the major AI platforms',
+        'A first-month audit, then AI visibility tracking alongside SEO',
       paid: 'Paid search management',
       distribution: 'Outside PR placements and an AI Authority Exchange',
-      pricing: 'No pricing page; its own research gives $6,000–$12,000 a month',
+      pricing:
+        'No pricing page; its own pricing report lists $6,000–$12,000 a month',
       minTerm: 'Month to month',
       start: 'Strategy in month one, content from month two',
       revisions: null,
@@ -975,7 +978,7 @@ export const competitors: Competitor[] = [
       'You want in-house writers rather than a network.',
       'You want month-to-month terms.',
       'You want long-running SEO and GEO with paid search in one program.',
-      'You are a midsized B2B company.',
+      'You are a midsized company.',
     ],
     pickDraft: [
       'You want ready-to-publish content every week, with first pieces about 3 weeks after kickoff.',
@@ -987,12 +990,12 @@ export const competitors: Competitor[] = [
       {
         question: 'How is Draft.dev different from First Page Sage?',
         answer:
-          'First Page Sage runs SEO and GEO programs for B2B companies broadly. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run sponsorships, documentation and developer distribution.',
+          'First Page Sage runs SEO and GEO programs for companies across many industries. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run sponsorships, documentation and developer distribution.',
       },
       {
         question: 'How much does First Page Sage cost?',
         answer:
-          'First Page Sage has no pricing page. Its own pricing research gives a range of $6,000 to $12,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'First Page Sage has no pricing page. Its own pricing report lists $6,000 to $12,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1034,7 +1037,7 @@ export const competitors: Competitor[] = [
       video: null,
       aeo: 'Yes, a full-service AEO team',
       aiTracking:
-        'Share of voice across ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews',
+        'Citation tracking across ChatGPT, Claude, Perplexity, Gemini and Google AI Overviews',
       paid: null,
       distribution:
         'Offsite placements in publications and communities, plus Reddit',
@@ -1090,11 +1093,12 @@ export const competitors: Competitor[] = [
       'Pick NoGood for full-funnel growth marketing, from paid social to AEO, with a large premium team. Pick Draft.dev for developer content checked by 300+ engineers and a 7,000+ developer distribution network.',
     summary: {
       draft: draftSummary,
-      them: 'NoGood is a growth marketing agency headquartered in New York, with 70+ experts. It runs paid, organic and AEO programs for B2B, SaaS and eCommerce brands, on monthly retainers that average above $20,000 a month.',
+      them: 'NoGood is a growth marketing agency headquartered in New York. It runs paid, organic and AEO programs for B2B, SaaS and eCommerce brands, on monthly retainers that average above $20,000 a month.',
     },
     facts: {
       who: 'Its team of content creators, writers and content marketing specialists',
-      network: '70+ experts',
+      network:
+        'A team of growth leads, creatives, creators and data scientists',
       based: 'New York, with offices in Miami and Dubai',
       builtFor: 'Startups, scaleups and Fortune 100 brands',
       content: null,
@@ -1102,7 +1106,7 @@ export const competitors: Competitor[] = [
       video: 'Yes',
       aeo: 'Yes, a dedicated AEO service',
       aiTracking:
-        'Brand mentions and citations across ChatGPT, Google AI Overviews, AI Mode, Gemini, Perplexity, Claude and Copilot, with Goodie AI',
+        'Visibility and citations across ChatGPT, Google AI Overviews, AI Mode, Gemini, Perplexity, Claude and Copilot, with Goodie AI',
       paid: 'Paid search and paid social',
       distribution: null,
       pricing: 'Average retainer above $20,000 a month (published)',
@@ -1165,16 +1169,17 @@ export const competitors: Competitor[] = [
       network: '30+ people across 10 countries',
       based: 'United States, with a remote team',
       builtFor: 'B2B SaaS and tech companies, from startups to enterprise',
-      content: 'Scoped to the opportunity, with no fixed volume',
+      content:
+        "Scoped to each program; they say they aren't a content volume shop",
       docs: null,
       video: null,
       aeo: 'Yes, a dedicated AEO service',
       aiTracking:
-        'A visibility baseline, then a dashboard with AI share of voice and citation share',
+        'A visibility baseline, then tracking of share of voice, recommendations and citation sources',
       paid: "No; they say they don't run paid media",
-      distribution: 'Digital PR, link building and community programs',
+      distribution: 'Digital PR and link building',
       pricing: 'Full-service from $120,000 a year (published)',
-      minTerm: 'Depends on scope',
+      minTerm: null,
       start: null,
       revisions: null,
     },
@@ -1212,6 +1217,7 @@ export const competitors: Competitor[] = [
       'https://beomniscient.com/about/',
       'https://beomniscient.com/why-us/',
       'https://beomniscient.com/ai-info/',
+      'https://beomniscient.com/services/answer-engine-optimization/',
       'https://beomniscient.com/services/faqs/',
     ],
     checked,
@@ -1357,7 +1363,7 @@ export const competitors: Competitor[] = [
       network: '1,000+ technical creators',
       based: 'Houston, Texas',
       builtFor:
-        'DevTools, developer platform and AI startups, Seed to Series D',
+        'DevTools, developer platform and AI companies, usually Seed to Series D',
       content: null,
       docs: null,
       video: 'Yes, creator videos',
@@ -1366,9 +1372,11 @@ export const competitors: Competitor[] = [
       paid: 'Paid creator programs, with zero margin on creator payments',
       distribution:
         'Creators on YouTube, X, LinkedIn, Reddit, Hacker News and newsletters',
-      pricing: 'No fee published',
+      pricing:
+        'Fee not published; most clients budget $100K a month all-in, including creators',
       minTerm: 'At least a quarter',
-      start: 'Strategy and creator shortlist in 4–5 working days',
+      start:
+        'Creator shortlist in 4–5 working days; first creator content in week 1–2',
       revisions: null,
     },
     pickThem: [
@@ -1391,7 +1399,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does DevTools Academy cost?',
         answer:
-          'DevTools Academy does not publish its fee; creator budgets are paid on top. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'DevTools Academy does not publish its own fee. It says most clients budget $100K a month all-in, split between its retainer and the creator budget. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1472,7 +1480,7 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'A DevMarkLab alternative for devtool companies',
     verdict:
-      'Pick DevMarkLab for organic growth through SEO, Reddit and developer social from a small team. Pick Draft.dev for 300+ engineers checking every piece, plus paid search, sponsorships and documentation.',
+      'Pick DevMarkLab for organic growth through SEO, Reddit and developer social from a small team. Pick Draft.dev for 300+ engineers checking every piece, plus paid search, sponsorships and monthly AI citation tracking.',
     summary: {
       draft: draftSummary,
       them: 'DevMarkLab is a developer marketing agency for devtools, run by an 8-person team in Jaipur, India. It focuses on organic growth: SEO, content, Reddit and social media, with no paid ads.',
@@ -1481,15 +1489,15 @@ export const competitors: Competitor[] = [
       who: 'Writers who have built or shipped products like yours',
       network: '8-person team',
       based: 'Jaipur, India',
-      builtFor: 'Dev-first SaaS companies past product-market fit',
+      builtFor: 'Dev-first SaaS companies, mostly past product-market fit',
       content: 'Weekly content sprints',
-      docs: null,
+      docs: 'Yes, docs and tutorials, listed under content',
       video: null,
-      aeo: null,
+      aeo: 'Yes, AI search as part of its SEO service',
       aiTracking: null,
       paid: "None; they say 'No paid ad shortcuts'",
-      distribution: 'Reddit, across 50+ subreddits',
-      pricing: 'Not published; quoted after a paid audit',
+      distribution: 'Reddit (50+ subreddits), X, LinkedIn and Hacker News',
+      pricing: 'Not published; most engagements start with a paid audit',
       minTerm: null,
       start: null,
       revisions: null,
@@ -1502,19 +1510,19 @@ export const competitors: Competitor[] = [
     pickDraft: [
       'You want 300+ engineers and subject matter experts checking every piece.',
       'You want paid search plus newsletter, podcast and community sponsorships.',
-      'You need technical documentation or video.',
+      'You need video, or API reference docs kept up to date.',
       'You want AEO with a baseline and monthly AI citation tracking.',
     ],
     faqs: [
       {
         question: 'How is Draft.dev different from DevMarkLab?',
         answer:
-          'DevMarkLab focuses on organic growth through SEO, content, Reddit and social, with no paid ads. Draft.dev adds 300+ engineers checking every piece, technical documentation, paid search, sponsorships and monthly AI citation tracking.',
+          'DevMarkLab focuses on organic growth through SEO, content, Reddit and social, with no paid ads. Draft.dev adds 300+ engineers checking every piece, paid search, sponsorships and monthly AI citation tracking.',
       },
       {
         question: 'How much does DevMarkLab cost?',
         answer:
-          'DevMarkLab quotes after a paid audit rather than publishing a price. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'DevMarkLab quotes after an audit rather than publishing a price, and most engagements start with a paid audit. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1555,7 +1563,7 @@ export const competitors: Competitor[] = [
         'Its own app checks ChatGPT, Gemini and AI Overviews every day',
       paid: null,
       distribution: 'X, LinkedIn and Reddit',
-      pricing: 'Agency fees set per project; tracking app sold separately',
+      pricing: 'Agency pricing not published; tracking app sold separately',
       minTerm: null,
       start: 'Docs rebuilt in 14 days',
       revisions: null,
@@ -1580,7 +1588,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Manicule cost?',
         answer:
-          'Manicule sets agency fees per project and sells its tracking app separately. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Manicule does not publish agency pricing and sells its tracking app separately. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1608,7 +1616,7 @@ export const competitors: Competitor[] = [
       who: 'Software engineers who run the code before writing',
       network: null,
       based: null,
-      builtFor: 'Devtools, B2B SaaS, AI and infrastructure companies',
+      builtFor: 'Devtools and developer-first companies',
       content: '4 technical blogs a month on the starter plan',
       docs: null,
       video: null,
@@ -1668,7 +1676,7 @@ export const competitors: Competitor[] = [
     },
     facts: {
       who: 'Expert-sourced and human-reviewed',
-      network: null,
+      network: '300+ technical content experts',
       based: null,
       builtFor: 'Technical B2B and developer-tool companies',
       content: null,
@@ -1680,7 +1688,7 @@ export const competitors: Competitor[] = [
       distribution: null,
       pricing: 'Not published; sold as packages',
       minTerm: null,
-      start: 'A free 30-minute discovery call',
+      start: 'First pieces within weeks, they say',
       revisions: null,
     },
     pickThem: [
