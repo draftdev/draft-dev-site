@@ -1779,4 +1779,130 @@ export const competitors: Competitor[] = [
     ],
     checked: 'November 4, 2026',
   },
+  {
+    slug: 'grow-and-convert',
+    name: 'Grow and Convert',
+    category: 'Other agencies',
+    tagline: 'A Grow and Convert alternative for devtool companies',
+    verdict:
+      'Pick Grow and Convert for a few deep, interview-based articles a month for B2B SaaS. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Grow and Convert is a content marketing, SEO and GEO agency for B2B SaaS, with a remote team of around 20 writers and strategists across the US and Europe. It builds articles from interviews with your experts, and prices start at $10,000 a month.',
+    },
+    facts: {
+      who: 'Its own trained writers, from interviews with your experts',
+      network: 'Around 20 writers and strategists',
+      based: 'Remote, across the US and Europe',
+      builtFor: 'B2B SaaS, from startups to public companies',
+      content: '3–5 articles a month',
+      docs: null,
+      video: null,
+      aeo: 'Yes, SEO and GEO, plus AI citation outreach',
+      aiTracking:
+        'Its own tool, Traqer.ai, across ChatGPT, Perplexity and Google AI Overviews',
+      paid: 'Paid search',
+      distribution: 'Link building and AI citation outreach',
+      pricing: 'From $10,000 a month (published)',
+      minTerm: null,
+      start: 'Strategy in 4–6 weeks; each article then takes 3–4 weeks',
+      revisions: null,
+    },
+    pickThem: [
+      'You want 3–5 deep, interview-based articles a month.',
+      'You want to work directly with strategists.',
+      'You want AI visibility tracking included.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want newsletter, podcast and community sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Grow and Convert?',
+        answer:
+          'Grow and Convert writes a few interview-based articles a month for B2B SaaS. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run sponsorships, documentation and developer distribution.',
+      },
+      {
+        question: 'How much does Grow and Convert cost?',
+        answer:
+          'Grow and Convert publishes a starting price of $10,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://www.growandconvert.com/about/',
+      'https://www.growandconvert.com/seo-geo-service/',
+      'https://www.growandconvert.com/b2b-saas-geo-agency/',
+      'https://www.growandconvert.com/services/saas-content-writing/',
+      'https://www.growandconvert.com/services/seo-content-strategy/',
+      'https://www.growandconvert.com/services/ai-seo/',
+      'https://www.growandconvert.com/paid-search-service-agency/',
+    ],
+    checked: 'November 4, 2026',
+  },
+  {
+    slug: 'codeless',
+    name: 'Codeless',
+    category: 'Other agencies',
+    tagline: 'A Codeless alternative for devtool companies',
+    verdict:
+      'Pick Codeless for a high-volume content operation that your team takes over later. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'Codeless builds content and growth systems for growth-stage and enterprise SaaS companies, runs them, then hands them to your team. It says it has served 200+ brands over 10+ years and is based in Koloa, Hawaii.',
+    },
+    facts: {
+      who: 'Its team of strategists, editors and writer managers',
+      network: null,
+      based: 'Koloa, Hawaii',
+      builtFor: 'SaaS companies with $10M–$500M+ ARR',
+      content: '20–30 pilot pieces, then 50–100+ a month',
+      docs: null,
+      video: 'Yes, video scripts',
+      aeo: 'Yes, LLM citations as part of SEO',
+      aiTracking: null,
+      paid: 'Yes, paid campaigns and paid promotion',
+      distribution: 'Email, social, paid promotion and partnerships',
+      pricing: '$1,000 diagnostic; retainer not published',
+      minTerm: null,
+      start: 'Diagnostic in weeks 1–4, pilot content in months 2–4',
+      revisions: null,
+    },
+    pickThem: [
+      'You want a content system built, run, then handed to your team.',
+      "You're a SaaS company with $10M–$500M+ ARR.",
+      'You need 50–100+ pieces a month.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want newsletter, podcast and community sponsorships and a 7,000+ developer network.',
+      'You need technical documentation.',
+      'You want first pieces about 3 weeks after kickoff.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from Codeless?',
+        answer:
+          'Codeless builds high-volume content systems for SaaS companies and hands them to your team. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run sponsorships, documentation and developer distribution.',
+      },
+      {
+        question: 'How much does Codeless cost?',
+        answer:
+          'Codeless publishes a $1,000 diagnostic but not its retainer pricing. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://codeless.io/',
+      'https://codeless.io/about',
+      'https://codeless.io/services',
+      'https://codeless.io/methodology',
+    ],
+    checked: 'November 4, 2026',
+  },
 ]
