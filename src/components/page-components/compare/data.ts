@@ -1018,14 +1018,14 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'graphite',
-    name: 'Graphite (graphite.io)',
+    name: 'Graphite Growth',
     category: 'Other agencies',
     tagline: 'A Graphite alternative for devtool companies',
     verdict:
       'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
     summary: {
       draft: draftSummary,
-      them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands. This page compares Draft.dev with Graphite, the SEO and AEO agency at graphite.io. It is not about the Graphite code review tool.',
+      them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands. This page compares Draft.dev with Graphite Growth, the SEO and AEO agency at graphite.io. It is not about the Graphite code review tool.',
     },
     facts: {
       who: 'Writers who specialize in your category, or planning only',
