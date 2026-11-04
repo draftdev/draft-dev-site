@@ -91,19 +91,18 @@ const byApproach = [
   },
 ]
 
-const isDevtool = (c: Competitor) =>
-  c.category === 'DevTool content and marketing agencies'
+const isDevtool = (c: Competitor) => c.category !== 'Other agencies'
 
 export default function Compare() {
-  // Direct competitors first; general agencies in a smaller section below
-  const devtool = competitors.filter(isDevtool)
-  const others = competitors
-    .filter((c) => !isDevtool(c))
+  // DevTool agencies first (closest fits lead); general agencies below
+  const devtool = competitors
+    .filter(isDevtool)
     .sort(
       (a, b) =>
-        Number(a.category === 'Other agencies') -
-        Number(b.category === 'Other agencies'),
+        Number(a.category === 'More DevTool agencies') -
+        Number(b.category === 'More DevTool agencies'),
     )
+  const others = competitors.filter((c) => !isDevtool(c))
 
   return (
     <div>
@@ -121,10 +120,9 @@ export default function Compare() {
               How Draft.dev Compares
             </h1>
             <p className="mt-4 max-w-3xl text-lg text-white/90 sm:text-xl">
-              Our DevTool content and marketing services, compared side by side
-              with the agencies developer tool companies weigh us against. Every
-              fact comes from each company&apos;s own site, with the date we
-              checked.
+              See how Draft.dev compares with other DevTool content and
+              marketing agencies. We took every competitor detail from that
+              company&apos;s own website, and we show the date we checked.
             </p>
           </div>
           {/* The facts every comparison starts from */}
@@ -149,7 +147,7 @@ export default function Compare() {
         <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
-              DevTool Content &amp; Marketing Agencies
+              Draft.dev vs DevTool Agencies
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
               The agencies that specialize in developer tools, like we do
@@ -198,8 +196,7 @@ export default function Compare() {
                 Other Agencies Buyers Compare Us With
               </h2>
               <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
-                More devtool specialists, plus general B2B content, SEO and
-                growth agencies
+                General B2B content, SEO and growth agencies
               </p>
               <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 {others.map((c) => (
@@ -268,9 +265,10 @@ export default function Compare() {
               'Check who reviews the technical details, how AI visibility is measured, which channels the agency runs beyond your blog, and how fast it can start. The comparisons on this page cover each of these, company by company.',
           },
           {
-            question: 'Where do the facts on these pages come from?',
+            question:
+              'Where do the competitor details on these pages come from?',
             answer:
-              "From each company's own website, with the date we checked. If a company doesn't say something, the table shows a dash instead of a guess.",
+              "From each competitor's own website, checked on the date shown on its comparison page. If a competitor doesn't publish something, the table says 'Not stated' instead of guessing.",
           },
           {
             question: 'Is Draft.dev only a content agency?',
@@ -289,7 +287,8 @@ export default function Compare() {
           },
           {
             question: 'How fast can we start?',
-            answer: 'First pieces arrive about 3 weeks after kickoff.',
+            answer:
+              'It depends on our client roster, but we can usually start within a week or two. Your first deliverable arrives within 3 weeks of starting.',
           },
         ]}
       />

@@ -1018,14 +1018,14 @@ export const competitors: Competitor[] = [
   },
   {
     slug: 'graphite',
-    name: 'Graphite',
+    name: 'Graphite (graphite.io)',
     category: 'Other agencies',
     tagline: 'A Graphite alternative for devtool companies',
     verdict:
       'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
     summary: {
       draft: draftSummary,
-      them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands.',
+      them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands. This page compares Draft.dev with Graphite, the SEO and AEO agency at graphite.io. It is not about the Graphite code review tool.',
     },
     facts: {
       who: 'Writers who specialize in your category, or planning only',
@@ -1718,5 +1718,65 @@ export const competitors: Competitor[] = [
     ],
     sources: ['https://www.contentturbine.com/llms.txt'],
     checked,
+  },
+  {
+    slug: 'growthx',
+    name: 'GrowthX',
+    category: 'Other agencies',
+    tagline: 'A GrowthX alternative for devtool companies',
+    verdict:
+      'Pick GrowthX for an AI content platform with services on top. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+    summary: {
+      draft: draftSummary,
+      them: 'GrowthX sells an AI growth platform plus professional services: strategy, editorial and content production. It says it treats services like software, with AI workflows refined by experts. It has 100+ customers and a fully remote team.',
+    },
+    facts: {
+      who: 'AI workflows, refined by its experts',
+      network: null,
+      based: 'Fully remote team',
+      builtFor: null,
+      content: null,
+      docs: null,
+      video: null,
+      aeo: 'Yes, SEO and AI visibility in one platform',
+      aiTracking: 'AI visibility and reporting in its own platform',
+      paid: null,
+      distribution: null,
+      pricing: 'Not published',
+      minTerm: 'Set in each order form',
+      start: null,
+      revisions: null,
+    },
+    pickThem: [
+      'You want an AI content platform your team can use, with services on top.',
+      'You want SEO, AI visibility, content workflows and reporting in one platform.',
+    ],
+    pickDraft: [
+      'You sell to developers and want every piece checked by an engineer.',
+      'You want paid search, sponsorships and a 7,000+ developer network.',
+      'You need technical documentation or video.',
+      'You want unlimited revisions.',
+    ],
+    faqs: [
+      {
+        question: 'How is Draft.dev different from GrowthX?',
+        answer:
+          'GrowthX sells an AI growth platform plus professional services. Draft.dev focuses on developer tools: every piece is checked by an engineer, and we also run paid search, sponsorships and developer distribution.',
+      },
+      {
+        question: 'How much does GrowthX cost?',
+        answer:
+          'GrowthX does not publish pricing, and terms are set in each order form. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+      },
+      draftAiAnswer,
+      draftWhoAnswer,
+    ],
+    sources: [
+      'https://growthx.ai/',
+      'https://growthx.ai/about',
+      'https://growthx.ai/book-demo',
+      'https://growthx.ai/legal/master-service-agreement',
+    ],
+    checked: 'November 4, 2026',
   },
 ]
