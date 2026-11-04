@@ -16,7 +16,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 const description =
-  'Choosing a DevTool content and marketing agency? Compare Draft.dev side by side with the others, using details from each agency’s own website.'
+  'Choosing a DevTool content and marketing agency? Compare Draft.dev with the other DevTool content and marketing agencies on your shortlist. Every detail comes straight from each agency’s own website.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -119,10 +119,11 @@ export default function Compare() {
             <h1 className="font-code sm:header-light mt-6 max-w-4xl text-4xl leading-tight font-semibold text-white">
               How Draft.dev Compares
             </h1>
-            <p className="mt-4 max-w-3xl text-lg font-semibold text-white sm:text-xl">
+            <p className="mt-4 max-w-3xl text-lg text-white/90 sm:text-xl">
               Choosing a DevTool content and marketing agency? Compare Draft.dev
-              side by side with the others, using details from each
-              agency&apos;s own website.
+              with the other DevTool content and marketing agencies on your
+              shortlist. Every detail comes straight from each agency&apos;s own
+              website.
             </p>
           </div>
           {/* The facts every comparison starts from */}
