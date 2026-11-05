@@ -1,5 +1,6 @@
 import Analytics from '@/components/analytics'
 import { Footer } from '@/components/global/footer'
+import RelatedLinks from '@/components/global/related-links/related-links'
 import '@/styles/tailwind.css'
 
 // Import Fontsource CSS files
@@ -35,6 +36,7 @@ export default function RootLayout({
         <DynamicNavbar />
         <div className="flex min-h-screen flex-col">
           <main className="grow">{children}</main>
+          <RelatedLinks />
           <Footer />
         </div>
         <Analytics />
