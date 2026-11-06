@@ -104,11 +104,15 @@ const RelatedLinks = () => {
         <p className="mx-auto mt-3 max-w-2xl text-center text-lg text-gray-600">
           {subtitle}
         </p>
-        <ul className="mt-8 grid auto-rows-fr grid-cols-2 gap-3 sm:mt-10 sm:gap-5 xl:grid-cols-4">
+        {/* Flex wrap so a short row (e.g. 3 case studies) stays centered */}
+        <ul className="mt-8 flex flex-wrap justify-center gap-3 sm:mt-10 sm:gap-5">
           {links.map((link) => {
             const Icon = iconFor(link.href)
             return (
-              <li key={link.href}>
+              <li
+                key={link.href}
+                className="w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.625rem)] xl:w-[calc(25%-0.9375rem)]"
+              >
                 <a
                   href={link.href}
                   className="group flex h-full flex-col items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-1 hover:shadow-lg hover:ring-[#5e5285]/30 sm:flex-row sm:items-center sm:gap-x-4 sm:p-5"
@@ -116,7 +120,8 @@ const RelatedLinks = () => {
                   <span className="bg-gradient-brand flex size-10 shrink-0 items-center justify-center rounded-xl text-white shadow-md sm:size-12">
                     <Icon aria-hidden="true" className="size-5 sm:size-6" />
                   </span>
-                  <span className="font-code grow text-base/snug font-semibold text-gray-900">
+                  {/* Two lines reserved so every card is the same height */}
+                  <span className="font-code flex min-h-[2lh] grow items-center text-base/snug font-semibold text-gray-900">
                     {link.name}
                   </span>
                   {/* Phones show icon over name; the arrow button joins from sm up */}
