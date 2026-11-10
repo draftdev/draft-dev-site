@@ -30,23 +30,17 @@ const What = () => {
 
           <div className="mt-8 space-y-5 text-lg text-gray-600">
             <p>
-              Draft.dev is a go-to-market technical marketing agency for
-              developer tools and platforms. Founded in 2020 by former CTO Karl
-              Hughes, we combine strategic marketing with hands-on technical
-              knowledge.
+              Draft.dev is a go-to-market marketing agency for developer tools
+              and platforms, founded in 2020 by former CTO Karl Hughes.
             </p>
             <p>
-              Our network of 300+ seasoned engineers keeps every piece
-              technically accurate for developers, search engines and answer
-              engines. Experienced marketers tie each piece to your goals, and
-              we put it in front of the right people through SEO &amp; GEO,
-              distribution and paid growth.
+              Our 300+ engineers check every piece for technical accuracy. Our
+              marketers make sure it serves your goals and reaches the right
+              people.
             </p>
             <p>
-              From strategy, to production, to distribution within weeks. We run
-              the full go-to-market cycle, from strategy to paid growth. Proven
-              AI workflows and hundreds of subject matter experts keep
-              turnaround fast and quality high.
+              We cover strategy, content, SEO &amp; GEO, distribution and paid
+              growth, and we move from strategy to distribution within weeks.
             </p>
           </div>
         </div>
@@ -59,8 +53,8 @@ const What = () => {
           />
           <div className="relative h-full overflow-hidden rounded-4xl shadow-xl ring-1 ring-black/5">
             <Image
-              alt="Software developers coding."
-              src="/site/med-portrait/coding_draft_dev.jpg"
+              alt="Engineers reviewing code together on a large screen"
+              src="/site/med-portrait/dev_2.jpg"
               fill
               sizes="400px"
               className="object-cover"
