@@ -1,46 +1,72 @@
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+
 const steps = [
   {
-    title: 'Discovery call',
-    text: "A 30-minute call to learn your goals and see if we're a fit.",
+    title: 'Discovery and kickoff',
+    text: "A 30-minute call to see if we're a fit. Then we interview your team and review your product, positioning, competitors and analytics.",
   },
   {
-    title: 'Kickoff',
-    text: 'We interview your team and review your product, positioning, competitors and analytics.',
+    title: 'Research and strategy',
+    text: 'We study your market, audience and existing content, run SEO and GEO research, and deliver a strategy and roadmap for your feedback.',
   },
   {
-    title: 'Launch within 3 weeks',
-    text: 'Strategy, roadmap and your first pieces live in about 3 weeks, then weekly delivery and monthly reporting.',
+    title: 'Content production',
+    text: 'Blog posts, tutorials, comparison and landing pages, product guides and lead magnets. AI workflows speed up drafting, developers review every piece, and technical editors polish it. Your first pieces go live in about 3 weeks.',
+  },
+  {
+    title: 'Promotion and reporting',
+    text: 'We promote your content on Reddit, LinkedIn and X, place it in niche newsletters and publications, and report on results every month.',
   },
 ]
 
-// Other pages link here with /#how-we-work
+// How we work, from first call to reporting. Other pages link here with /#how-we-work
 const Steps = () => {
   return (
     <section id="how-we-work" className="scroll-mt-32 bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
-          <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            From Kickoff to Results in Weeks
-          </h2>
+        {/* Heading and intro on the left, examples link on the right */}
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+          <div className="max-w-2xl">
+            <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
+              From Kickoff to Results in Weeks
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              We plan, produce, publish, and promote your first pieces within
+              weeks.
+            </p>
+          </div>
+          <Link
+            href="/technical-content-examples"
+            className="group flex items-start gap-x-3 rounded-2xl bg-[#f4f1f8] p-5 ring-1 ring-[#5e5285]/10 transition hover:bg-[#ece7f3] lg:max-w-sm"
+          >
+            <span className="text-base text-gray-700">
+              Interested in what we can create for you? Check out content
+              examples for 40+ different clients here.
+            </span>
+            <ArrowRightIcon
+              aria-hidden="true"
+              className="text-secondary mt-1 size-5 shrink-0 transition group-hover:translate-x-1"
+            />
+          </Link>
         </div>
-        <ol className="relative mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {/* Line joining the step numbers on wider screens */}
-          <div
-            aria-hidden="true"
-            className="absolute top-[3.25rem] right-[16%] left-[16%] hidden h-0.5 bg-[#5e5285]/15 md:block"
-          />
+
+        {/* 2x2 tiles, equal height */}
+        <ol className="mt-10 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2">
           {steps.map((step, i) => (
             <li
               key={step.title}
-              className="relative rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10"
+              className="flex gap-x-5 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-[#5e5285]/10 sm:gap-x-6 sm:p-7"
             >
-              <span className="bg-gradient-brand font-code flex size-12 items-center justify-center rounded-xl text-xl font-semibold text-white shadow-md">
+              <span className="bg-gradient-brand font-code flex size-12 shrink-0 items-center justify-center rounded-xl text-xl font-semibold text-white shadow-md">
                 {i + 1}
               </span>
-              <h3 className="font-code text-secondary mt-6 text-lg font-semibold">
-                {step.title}
-              </h3>
-              <p className="mt-3 text-base text-gray-600">{step.text}</p>
+              <div>
+                <h3 className="font-code text-secondary text-xl font-semibold">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-base text-gray-600">{step.text}</p>
+              </div>
             </li>
           ))}
         </ol>

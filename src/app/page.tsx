@@ -1,7 +1,6 @@
 import { generateHomePageSchemas, stringifySchemas } from '@/app/lib/schema'
 
 import FAQ from '@/components/global/faq'
-import SinglePricingList from '@/components/global/single-price-list'
 import SinglePricing from '@/components/global/single-pricing'
 import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
 import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
@@ -118,36 +117,7 @@ export default function Home() {
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
 
-          <SinglePricingList
-            title="Lead Generation Package"
-            description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
-            callToActionURL="/call"
-            priceText="Generate qualified leads"
-            price="From $9K"
-            currency="/month"
-            includedFeatures={[
-              {
-                leadText: 'Strategic Content Creation:',
-                text: 'Full-funnel technical content, including landing pages, tutorials and demo apps, code samples, and social collateral.',
-              },
-              {
-                leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals.',
-              },
-              {
-                leadText: 'Lead Collection System:',
-                text: 'Downloadable assets with landing page copy optimized for MQL/SQL conversion.',
-              },
-              {
-                leadText: 'Performance Optimization:',
-                text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
-              },
-            ]}
-            disclaimerOne="3-month minimum, then month to month"
-            disclaimerTwo="Delivery starts after initial planning period"
-            disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
-          />
-          <TestimonialsCarousel title="Testimonials" />
+          <TestimonialsCarousel />
         </main>
         <FAQ
           className="bg-[#f4f1f8] py-12 sm:py-16"
