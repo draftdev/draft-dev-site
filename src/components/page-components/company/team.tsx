@@ -155,7 +155,7 @@ const Team = () => {
             Plus subject matter experts from our network of {NETWORK_SIZE}+
             developers, matched to your niche.
           </p>
-          <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 lg:grid-cols-9">
+          <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 xl:grid-cols-9">
             {specialists.map((person) => (
               <li key={person.name} className="text-center">
                 <PhotoFrame frameClassName="bg-white" className="w-20">
@@ -167,7 +167,9 @@ const Team = () => {
                     className="size-full bg-white object-cover"
                   />
                 </PhotoFrame>
-                <p className="mt-3 text-base text-gray-700">{person.name}</p>
+                <p className="mt-3 text-base text-gray-700 xl:whitespace-nowrap">
+                  {person.name}
+                </p>
               </li>
             ))}
             <li className="text-center">
