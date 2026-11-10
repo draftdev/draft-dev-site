@@ -70,6 +70,32 @@ const initials = (name: string) =>
     .map((part) => part[0])
     .join('')
 
+// The Draft.dev logo mark: a page with a cut top-right corner and a rounded
+// bottom-right corner (proportions taken from draftlogo_badge_*.svg)
+const docShape = {
+  clipPath: 'polygon(0 0, 78% 0, 100% 19%, 100% 100%, 0 100%)',
+  borderBottomRightRadius: '38% 33%',
+}
+
+const DocFrame = ({
+  frameClassName,
+  className,
+  children,
+}: {
+  frameClassName: string
+  className: string
+  children: React.ReactNode
+}) => (
+  // drop-shadow, not box-shadow, so the shadow follows the clipped shape
+  <div className={`mx-auto aspect-[7/8] drop-shadow-lg ${className}`}>
+    <div className={`size-full p-1 ${frameClassName}`} style={docShape}>
+      <div className="size-full overflow-hidden" style={docShape}>
+        {children}
+      </div>
+    </div>
+  </div>
+)
+
 const Team = () => {
   return (
     <section className="bg-[#f4f1f8] py-14 sm:py-20">
@@ -96,25 +122,25 @@ const Team = () => {
           <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {teamMembers.map((member) => (
               <li key={member.name} className="text-center">
-                <div className="mx-auto size-28 overflow-hidden rounded-full bg-white/15 shadow-lg ring-4 ring-white/80 sm:size-32">
+                <DocFrame frameClassName="bg-white" className="w-28 sm:w-32">
                   {member.img ? (
                     <Image
                       alt={`${member.name} - ${member.description}`}
                       src={member.img}
                       width={256}
-                      height={256}
+                      height={292}
                       className="size-full object-cover"
                     />
                   ) : (
                     <span
                       role="img"
                       aria-label={`${member.name} - ${member.description}`}
-                      className="font-code flex size-full items-center justify-center text-3xl font-semibold text-white"
+                      className="font-code bg-gradient-brand flex size-full items-center justify-center text-3xl font-semibold text-white"
                     >
                       {initials(member.name)}
                     </span>
                   )}
-                </div>
+                </DocFrame>
                 <h3 className="mt-4 text-lg font-semibold text-white">
                   {member.name}
                 </h3>
@@ -138,20 +164,24 @@ const Team = () => {
           <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 lg:grid-cols-9">
             {specialists.map((person) => (
               <li key={person.name} className="text-center">
-                <Image
-                  alt={`${person.name}, Draft.dev technical specialist`}
-                  src={`/draft/team/specialists/${person.img}`}
-                  width={160}
-                  height={160}
-                  className="mx-auto size-20 rounded-full bg-white object-cover shadow-md ring-2 ring-white"
-                />
+                <DocFrame frameClassName="bg-gradient-brand" className="w-20">
+                  <Image
+                    alt={`${person.name}, Draft.dev technical specialist`}
+                    src={`/draft/team/specialists/${person.img}`}
+                    width={160}
+                    height={183}
+                    className="size-full bg-white object-cover"
+                  />
+                </DocFrame>
                 <p className="mt-3 text-base text-gray-700">{person.name}</p>
               </li>
             ))}
             <li className="text-center">
-              <span className="bg-gradient-brand font-code mx-auto flex size-20 items-center justify-center rounded-full text-xl font-semibold text-white shadow-md ring-2 ring-white">
-                +{NETWORK_SIZE - specialists.length}
-              </span>
+              <DocFrame frameClassName="bg-gradient-brand" className="w-20">
+                <span className="font-code flex size-full items-center justify-center bg-white text-xl font-semibold text-[#5e5285]">
+                  +{NETWORK_SIZE - specialists.length}
+                </span>
+              </DocFrame>
               <p className="text-secondary mt-3 text-base font-semibold">
                 more experts
               </p>
