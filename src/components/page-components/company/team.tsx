@@ -1,39 +1,10 @@
 import Image from 'next/image'
 
-type PersonProps = {
-  name: string
-  description: string
-  img: string
-}
-
-const Person = ({ name, description, img }: PersonProps) => {
-  return (
-    <li className="flex flex-col items-center lg:items-start">
-      <div className="w-56 rounded-4xl bg-white/15 p-1 shadow ring-1 ring-black/5 sm:w-64">
-        <div className="rounded-3xl p-1 shadow-md shadow-black/5">
-          <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-            <Image
-              alt={`${name} - ${description}`}
-              src={img}
-              width={260}
-              height={260}
-              className="aspect-square w-full object-cover"
-            />
-          </div>
-        </div>
-      </div>
-      <div className="mt-4 text-center lg:text-left">
-        <h3 className="text-xl font-medium text-white">{name}</h3>
-        <p className="text-lg text-gray-300">{description}</p>
-      </div>
-    </li>
-  )
-}
-
 type TeamMember = {
   name: string
   description: string
-  img: string
+  // No photo yet: show initials instead
+  img?: string
 }
 
 const teamMembers: TeamMember[] = [
@@ -53,14 +24,9 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/manuel_weiss_draft_dev.jpg',
   },
   {
-    name: 'Jakkie Koekemoer',
-    description: 'Director of Engineering',
-    img: '/draft/team/jakkie_koekemoer_draft_dev.jpg',
-  },
-  {
     name: 'Saswata Baksi',
-    description: 'Discoverability Lead (SEO & GEO)',
-    img: '/draft/team/saswata_baksi_draft_dev.png',
+    description: 'Head of Discoverability (AEO & SEO)',
+    img: '/draft/team/saswata_baksi_draft_dev.jpg',
   },
   {
     name: 'Sthitapragyan Mohanty',
@@ -69,44 +35,131 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Aniket Bhattacharyea',
-    description: 'Developer Advocate',
+    description: 'Principal Developer Advocate',
     img: '/draft/team/aniket_bhattacharyea_draft_dev.jpg',
-  },
-  {
-    name: 'Kumar Harsh',
-    description: 'Developer Advocate',
-    img: '/draft/team/kumar_harsh_draft_dev.jpg',
   },
   {
     name: 'Shane Cullen',
     description: 'Developmental Editor',
     img: '/draft/team/shane_cullen_draft_dev.jpg',
   },
+  {
+    name: 'Suprity Acharyya',
+    description: 'Project Manager',
+  },
 ]
+
+// Technical specialists from our expert network
+const specialists = [
+  { name: 'Aykut B.', img: 'aykut_bulgu_draft_dev.jpg' },
+  { name: 'Damaso S.', img: 'damaso_sanoja_draft_dev.jpg' },
+  { name: 'Kevin K.', img: 'kevin_kimani_draft_dev.jpg' },
+  { name: 'Kumar H.', img: 'kumar_harsh_draft_dev.jpg' },
+  { name: 'Lucien C.', img: 'lucien_chemaly_draft_dev.jpg' },
+  { name: 'Manish H.', img: 'manish_hatwalne_draft_dev.jpg' },
+  { name: 'Thinus S.', img: 'thinus_swart_draft_dev.jpg' },
+  { name: 'Vivek M.', img: 'vivek_maskara_draft_dev.jpg' },
+]
+
+const NETWORK_SIZE = 300
+
+const initials = (name: string) =>
+  name
+    .split(/[\s,]+/)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
 
 const Team = () => {
   return (
-    <div className="bg-gradient-brand py-12 text-center lg:py-32 lg:text-left">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="subheader-light">Meet Our Team</h2>
-        <p className="paragraph-light max-w-3xl text-lg">
-          Our team is composed of dedicated professionals, each bringing unique
-          skills and expertise to drive our mission forward.
-        </p>
+    <section className="bg-[#f4f1f8] py-14 sm:py-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center lg:text-left">
+          <h2 className="subheader-mobile-gradient sm:subheader-gradient">
+            Meet Our Team
+          </h2>
+          <p className="mt-3 max-w-3xl text-lg text-gray-600 max-lg:mx-auto">
+            Our team is composed of dedicated professionals, each bringing
+            unique skills and expertise to drive our mission forward.
+          </p>
+        </div>
 
-        <hr className="mt-6 border-t border-gray-200/20" />
-        <ul className="mx-auto mt-16 grid grid-cols-1 gap-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 lg:mx-0 lg:grid-cols-4">
-          {teamMembers.map((member) => (
-            <Person
-              key={member.name}
-              name={member.name}
-              description={member.description}
-              img={member.img}
-            />
-          ))}
-        </ul>
+        {/* Core team on the brand gradient */}
+        <div className="bg-gradient-brand relative isolate mt-10 overflow-hidden rounded-3xl px-6 py-10 shadow-xl sm:px-10">
+          <div
+            aria-hidden="true"
+            className="absolute -top-24 -right-24 -z-10 h-72 w-72 rounded-full bg-amber-300/20 blur-3xl"
+          />
+          <p className="font-code text-center text-sm font-semibold tracking-widest text-white/90 uppercase lg:text-left">
+            Our core team, from strategy to delivery
+          </p>
+          <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+            {teamMembers.map((member) => (
+              <li key={member.name} className="text-center">
+                <div className="mx-auto size-28 overflow-hidden rounded-full bg-white/15 shadow-lg ring-4 ring-white/80 sm:size-32">
+                  {member.img ? (
+                    <Image
+                      alt={`${member.name} - ${member.description}`}
+                      src={member.img}
+                      width={256}
+                      height={256}
+                      className="size-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      role="img"
+                      aria-label={`${member.name} - ${member.description}`}
+                      className="font-code flex size-full items-center justify-center text-3xl font-semibold text-white"
+                    >
+                      {initials(member.name)}
+                    </span>
+                  )}
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-white">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-base text-white/80">
+                  {member.description}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Technical specialists */}
+        <div className="mt-14">
+          <h3 className="font-code text-secondary text-center text-2xl font-semibold lg:text-left">
+            Our Technical Specialists
+          </h3>
+          <p className="mt-2 text-center text-lg text-gray-600 lg:text-left">
+            Plus subject matter experts from our network of {NETWORK_SIZE}+
+            developers, matched to your niche.
+          </p>
+          <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 lg:grid-cols-9">
+            {specialists.map((person) => (
+              <li key={person.name} className="text-center">
+                <Image
+                  alt={`${person.name}, Draft.dev technical specialist`}
+                  src={`/draft/team/specialists/${person.img}`}
+                  width={160}
+                  height={160}
+                  className="mx-auto size-20 rounded-full bg-white object-cover shadow-md ring-2 ring-white"
+                />
+                <p className="mt-3 text-base text-gray-700">{person.name}</p>
+              </li>
+            ))}
+            <li className="text-center">
+              <span className="bg-gradient-brand font-code mx-auto flex size-20 items-center justify-center rounded-full text-xl font-semibold text-white shadow-md ring-2 ring-white">
+                +{NETWORK_SIZE - specialists.length}
+              </span>
+              <p className="text-secondary mt-3 text-base font-semibold">
+                more experts
+              </p>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
