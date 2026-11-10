@@ -36,7 +36,7 @@ const Hero = () => {
               strategy and content to SEO &amp; GEO, distribution and paid
               growth. Our 300+ engineers check every piece so it holds up with
               developers, search engines and AI assistants, and our 7,000+
-              developer network helps it reach the right people.
+              developer network helps it reach the right developers.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
