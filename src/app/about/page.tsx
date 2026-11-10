@@ -129,7 +129,7 @@ export default function About() {
         <Team />
         <SocialProof title="A growth agency with a track record" />
         <FAQ
-          className="py-16 sm:py-24"
+          className="py-12 sm:py-16"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
         />

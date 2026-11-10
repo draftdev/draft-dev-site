@@ -12,7 +12,7 @@ const services = [
 
 const What = () => {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-white py-12 sm:py-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 lg:px-8">
         <div>
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">

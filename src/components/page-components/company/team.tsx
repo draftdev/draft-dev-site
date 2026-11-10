@@ -89,7 +89,7 @@ const PhotoFrame = ({
 
 const Team = () => {
   return (
-    <section className="bg-white py-16 sm:py-24">
+    <section className="bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center lg:text-left">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">

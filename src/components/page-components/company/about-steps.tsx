@@ -13,7 +13,7 @@ interface AboutStepsProps {
 // "How we work with you" as numbered cards on a lavender band
 const AboutSteps = ({ title, subtitle, steps }: AboutStepsProps) => {
   return (
-    <section className="bg-[#f4f1f8] py-16 sm:py-24">
+    <section className="bg-[#f4f1f8] py-12 sm:py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
@@ -22,7 +22,7 @@ const AboutSteps = ({ title, subtitle, steps }: AboutStepsProps) => {
           <p className="mt-4 text-lg text-gray-600">{subtitle}</p>
         </div>
 
-        <ol className="relative mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+        <ol className="relative mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {/* Line joining the step numbers on wider screens */}
           <div
             aria-hidden="true"
