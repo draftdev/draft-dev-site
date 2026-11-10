@@ -103,7 +103,7 @@ export default function SEOServices() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A growth partner that understands technical audiences"
+          title="A growth partner that understands developers"
           paragraphs={[
             'Your blog has to reach two kinds of readers. Engineers find you when they search for error messages, setup help or integrations. Buyers find you when they compare tools and look for alternatives. Most SEO agencies only focus on one of them. We create content for both.',
             "Content for engineers has to get the technical details right. That's why every piece is reviewed by a subject matter expert in your space, not a generalist. Before we start, we study your product, your competitors and your audience, so every piece sounds like it came from your own team.",

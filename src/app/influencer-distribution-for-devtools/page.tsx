@@ -104,7 +104,7 @@ export default function InfluencerDistribution() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A growth partner that understands technical audiences"
+          title="A growth partner that understands developers"
           paragraphs={[
             'A launch only works if developers see it. Ads get ignored, and a single post from one influencer reaches one audience, once.',
             'Our Influencer Distribution Network spreads your content through many real developers at the same time. Each share reaches a different group of peers, so your content shows up across many communities at once. We also republish it on developer platforms like Dev.to, Hashnode and Coder Legion, which AI tools cite heavily.',

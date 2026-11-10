@@ -102,7 +102,7 @@ export default function VideoMarketing() {
         />
         <SocialProof title="A growth agency with a track record" compact />
         <Partner
-          title="A growth partner that understands technical audiences"
+          title="A growth partner that understands developers"
           paragraphs={[
             'Most teams know they need video, but get stuck in two places. The engineers who could explain your product are busy building it. And general video agencies can make a polished video without understanding what it shows. Developers close those videos within seconds.',
             "That's why a subject matter expert who knows tools like yours reviews every script before we record, so the video shows your product the way developers really use it.",
