@@ -70,7 +70,7 @@ const initials = (name: string) =>
     .map((part) => part[0])
     .join('')
 
-// Rounded square photo frame, like the Draft.dev logo tile
+// Round photo with a thin, soft border
 const PhotoFrame = ({
   frameClassName,
   className,
@@ -81,9 +81,9 @@ const PhotoFrame = ({
   children: React.ReactNode
 }) => (
   <div
-    className={`mx-auto aspect-square rounded-[22%] p-1 shadow-lg ${frameClassName} ${className}`}
+    className={`mx-auto aspect-square rounded-full p-0.5 shadow-md ${frameClassName} ${className}`}
   >
-    <div className="size-full overflow-hidden rounded-[19%]">{children}</div>
+    <div className="size-full overflow-hidden rounded-full">{children}</div>
   </div>
 )
 
@@ -113,7 +113,10 @@ const Team = () => {
           <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
             {teamMembers.map((member) => (
               <li key={member.name} className="text-center">
-                <PhotoFrame frameClassName="bg-white" className="w-28 sm:w-32">
+                <PhotoFrame
+                  frameClassName="bg-white/60"
+                  className="w-28 sm:w-32"
+                >
                   {member.img ? (
                     <Image
                       alt={`${member.name} - ${member.description}`}
@@ -155,7 +158,7 @@ const Team = () => {
           <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 lg:grid-cols-9">
             {specialists.map((person) => (
               <li key={person.name} className="text-center">
-                <PhotoFrame frameClassName="bg-gradient-brand" className="w-20">
+                <PhotoFrame frameClassName="bg-white" className="w-20">
                   <Image
                     alt={`${person.name}, Draft.dev technical specialist`}
                     src={`/draft/team/specialists/${person.img}`}
@@ -168,8 +171,8 @@ const Team = () => {
               </li>
             ))}
             <li className="text-center">
-              <PhotoFrame frameClassName="bg-gradient-brand" className="w-20">
-                <span className="font-code flex size-full items-center justify-center bg-white text-xl font-semibold text-[#5e5285]">
+              <PhotoFrame frameClassName="bg-white" className="w-20">
+                <span className="bg-gradient-brand font-code flex size-full items-center justify-center text-xl font-semibold text-white">
                   +{NETWORK_SIZE - specialists.length}
                 </span>
               </PhotoFrame>
