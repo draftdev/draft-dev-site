@@ -93,8 +93,8 @@ export default function Home() {
             description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
             callToActionURL="/call"
             priceText="Generate qualified leads"
-            price="$10,000"
-            currency="/Month"
+            price="From $9K"
+            currency="/month"
             includedFeatures={[
               {
                 leadText: 'Strategic Content Creation:',
@@ -113,7 +113,7 @@ export default function Home() {
                 text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
               },
             ]}
-            disclaimerOne="Six Month Minimum"
+            disclaimerOne="3-month minimum, then month to month"
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
@@ -123,8 +123,8 @@ export default function Home() {
             description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
             callToActionURL="/call"
             priceText="Generate qualified leads"
-            price="$10,000"
-            currency="/Month"
+            price="From $9K"
+            currency="/month"
             includedFeatures={[
               {
                 leadText: 'Strategic Content Creation:',
@@ -143,7 +143,7 @@ export default function Home() {
                 text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
               },
             ]}
-            disclaimerOne="Six Month Minimum"
+            disclaimerOne="3-month minimum, then month to month"
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />

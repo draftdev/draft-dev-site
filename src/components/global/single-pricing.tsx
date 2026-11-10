@@ -41,7 +41,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   }
 
   return (
-    <div className="bg-white py24 sm:py-32" id="pricing">
+    <div className="py24 bg-white sm:py-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="">
           <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
@@ -50,12 +50,18 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                 <div className="flex flex-col lg:flex-row">
                   <div className="bg-gradient-brand flex w-full flex-col lg:w-96">
                     <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
-                      <h3 className="subheader-light flex items-baseline justify-center gap-x-2 text-center text-2xl">
+                      <p className="font-code flex items-baseline justify-center gap-x-1 text-center font-semibold text-white">
+                        <span className="text-5xl">{price}</span>
+                        <span className="text-xl text-white/80">
+                          {currency}
+                        </span>
+                      </p>
+                      <p className="mt-3 text-center text-sm text-white/80">
                         Retainers and custom offers available upon request
-                      </h3>
+                      </p>
                       <Link
                         href={callToActionURL}
-                        className="rounded-md bg-white px-6 py-4 text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-base"
+                        className="mt-8 rounded-md bg-white px-6 py-4 text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-base"
                       >
                         Book a Discovery Call
                       </Link>
@@ -69,7 +75,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                               <span className="inline-block text-white/60">
                                 •
                               </span>
-                              <span>Three month minimum</span>
+                              <span>{disclaimerOne}</span>
                             </li>
                           )}
                           {disclaimerTwo && (
@@ -97,11 +103,11 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
                       Let’s talk about your growth engine
                     </h3>
                     <p className="text-base lg:text-lg">
-                      Get started with our compounding growth
-                      engine approved by real engineers. A Draft.dev
-                      subscription provides you with a Developer Content
-                      Strategy, Content Creation & Review, Lead Magnets, Content
-                      Refreshes, and ongoing Analysis and Reporting.
+                      Get started with our compounding growth engine approved by
+                      real engineers. A Draft.dev subscription provides you with
+                      a Developer Content Strategy, Content Creation & Review,
+                      Lead Magnets, Content Refreshes, and ongoing Analysis and
+                      Reporting.
                     </p>
                     <div className="my-8 h-px bg-gray-300" />
                     <ul className="grid grid-cols-1 gap-4 text-sm text-gray-600 sm:grid-cols-2">

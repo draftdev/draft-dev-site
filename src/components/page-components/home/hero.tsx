@@ -32,10 +32,11 @@ const Hero = () => {
               Go-to-Market Marketing Agency for Developer Tools &amp; Platforms
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
-              We plan and run go-to-market programs for developer tools:
-              strategy, content, SEO &amp; GEO, distribution and paid growth.
-              Our 300+ engineers check every piece, so it holds up with
-              developers, search engines and AI assistants.
+              We run the full go-to-market cycle for developer tools, from
+              strategy and content to SEO &amp; GEO, distribution and paid
+              growth. Our 300+ engineers check every piece so it holds up with
+              developers, search engines and AI assistants, and our 7,000+
+              developer network helps it reach the right people.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
