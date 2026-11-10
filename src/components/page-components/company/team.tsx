@@ -89,7 +89,7 @@ const PhotoFrame = ({
 
 const Team = () => {
   return (
-    <section className="bg-[#f4f1f8] py-14 sm:py-20">
+    <section className="bg-white py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center lg:text-left">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
@@ -158,7 +158,7 @@ const Team = () => {
           <ul className="mt-8 grid grid-cols-3 gap-x-4 gap-y-8 sm:grid-cols-5 xl:grid-cols-9">
             {specialists.map((person) => (
               <li key={person.name} className="text-center">
-                <PhotoFrame frameClassName="bg-white" className="w-20">
+                <PhotoFrame frameClassName="bg-[#e4deee]" className="w-20">
                   <Image
                     alt={`${person.name}, Draft.dev technical specialist`}
                     src={`/draft/team/specialists/${person.img}`}
@@ -173,7 +173,7 @@ const Team = () => {
               </li>
             ))}
             <li className="text-center">
-              <PhotoFrame frameClassName="bg-white" className="w-20">
+              <PhotoFrame frameClassName="bg-[#e4deee]" className="w-20">
                 <span className="bg-gradient-brand font-code flex size-full items-center justify-center text-xl font-semibold text-white">
                   +{NETWORK_SIZE - specialists.length}
                 </span>

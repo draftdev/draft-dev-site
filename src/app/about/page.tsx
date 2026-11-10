@@ -1,18 +1,17 @@
 import { generateAboutPageSchemas, stringifySchemas } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
-import { MedHeader } from '@/components/global/headers/med-header'
-import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
+import AboutHero from '@/components/page-components/company/about-hero'
+import AboutSteps from '@/components/page-components/company/about-steps'
 import Team from '@/components/page-components/company/team'
 import What from '@/components/page-components/company/what'
-import How from '@/components/page-components/how'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About Us - Draft.dev',
   description:
-    'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+    'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -67,15 +66,16 @@ export default function About() {
         />
       ))}
 
-      <MedHeader
+      <AboutHero
         title="We help Developer Tools & Platforms grow and win"
-        descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
-        descriptionTwo="Let us help you build your technical content growth engine."
+        descriptionOne="Draft.dev builds content-powered technical go-to-market strategies for developer tools. We cover strategy, content, SEO & GEO, distribution and paid growth, so developers, search engines and LLMs find your product and trust it."
+        descriptionTwo="Let us help you build your technical go-to-market engine."
+        imageSrc="/site/med-portrait/developers_draft_dev.jpg"
+        imageAlt="Technical content development"
       />
 
       <main className="overflow-hidden">
         <What />
-        <LogosDark />
         {/* <Why
           title="What Makes Draft.dev Different?"
           features={[
@@ -102,10 +102,9 @@ export default function About() {
             },
           ]}
         /> */}
-        <How
+        <AboutSteps
           title="How we work with you"
-          subtitleBold=""
-          subtitleRegular="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to published content within weeks."
+          subtitle="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to published content within weeks."
           steps={[
             {
               number: '1',
@@ -121,17 +120,19 @@ export default function About() {
             },
             {
               number: '3',
-              title: 'Content strategy, production, and output within 3 weeks',
+              title: 'Strategy, production and launch within 3 weeks',
               description:
                 'Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.',
             },
           ]}
-          imageSrc="/site/med-portrait/developers_draft_dev.jpg"
-          imageAlt="Technical content development"
         />
         <Team />
-        <SocialProof />
-        <FAQ />
+        <SocialProof title="A growth agency with a track record" />
+        <FAQ
+          className="py-16 sm:py-24"
+          headingClassName="subheader-mobile-gradient sm:subheader-gradient"
+          masonry
+        />
       </main>
     </>
   )
