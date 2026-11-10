@@ -6,12 +6,12 @@ import SinglePricing from '@/components/global/single-pricing'
 import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
 import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
 
-import SocialProof from '@/components/media/social-proof'
-import Testimonials from '@/components/media/testimonials/testimonials-group'
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
 import Services from '@/components/page-components/home/services'
+import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
+import Testimonials from '@/components/page-components/home/testimonials'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -85,7 +85,7 @@ export default function Home() {
           <Services />
           <Audience />
           <Steps />
-          <SocialProof title="A Growth Agency with a Track Record" />
+          <Stats />
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
           <SinglePricing
@@ -150,7 +150,7 @@ export default function Home() {
           <Testimonials />
         </main>
         <FAQ
-          className="py-12 sm:py-16"
+          className="bg-[#f4f1f8] py-12 sm:py-16"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
         />

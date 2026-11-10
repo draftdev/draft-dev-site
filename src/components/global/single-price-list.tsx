@@ -1,3 +1,7 @@
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+
+// Props kept so the homepage call stays the same; this block shows the process
 interface SinglePricingListProps {
   title: string
   description: string
@@ -5,222 +9,80 @@ interface SinglePricingListProps {
   priceText: string
   price: string | number
   currency: string
-  includedFeatures: Array<
-    | {
-        text: string
-        leadText?: string
-      }
-    | string
-  >
+  includedFeatures: Array<{ text: string; leadText?: string } | string>
   disclaimerOne?: string
   disclaimerTwo?: string
   disclaimerThree?: string
 }
 
-const SinglePricingList: React.FC<SinglePricingListProps> = ({
-  title,
-  description,
-  callToActionURL,
-  priceText,
-  price,
-  currency,
-  includedFeatures,
-  disclaimerOne,
-  disclaimerTwo,
-  disclaimerThree,
-}) => {
-  const normalizeFeature = (
-    feature: string | { text: string; leadText?: string },
-  ) => {
-    if (typeof feature === 'string') {
-      return { text: feature, leadText: undefined }
-    }
-    return feature
-  }
+const phases = [
+  {
+    step: 'Step 1',
+    label: 'Research & Strategy',
+    title: 'We get to know you and define a plan',
+    text: 'We analyze your industry, competitors, positioning, product features, target audience, and make sure to understand your brand and tone of voice, ensuring authentic output. We conduct SEO and GEO research, assess your existing content, study your existing marketing funnel, and deliver a content strategy and roadmap for your feedback.',
+  },
+  {
+    step: 'Step 2',
+    label: 'Content Production',
+    title: 'We publish your first pieces within weeks',
+    text: 'We create strategically relevant content pieces for you. These include blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets and more. To ensure fast turnaround times we use proven AI workflows to help draft your pieces. Each single piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience. We can manage publication of your content via all major CMSs.',
+  },
+  {
+    step: 'Step 3',
+    label: 'Content Promotion',
+    title: 'We help you get reach and click-throughs',
+    text: 'We help promoting your content on Reddit, LinkedIn, Twitter/X, and more. We create variations you can use for third-party syndication and assist in publishing and advertising your pieces niche publications and newsletters that are read by your target audience.',
+  },
+]
 
+const SinglePricingList: React.FC<SinglePricingListProps> = () => {
   return (
-    <div id="how-we-work" className="bg-gradient-brand sm:py-32">
-      <div className="mx-auto max-w-4xl px-6 py-12 sm:py-0 sm:pb-6 lg:max-w-4xl lg:text-center">
-        <h2 className="subheader-light">See Our Process</h2>
-
-        <h3 className="paragraph-light py-3 text-lg">
-          We plan, produce, publish, and promote your first pieces within weeks.
-        </h3>
-        <a
-          className="paragraph-light text-lg underline"
-          href="/technical-content-examples"
-        >
-          Interested in what we can create for you? Check out content examples
-          for 40+ different clients here.
-        </a>
-      </div>
-
-      <div className="my-6">
-        {' '}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
-                    <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 1:</span> Research & Strategy
-                    </h3>
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      We get to know you and define a plan
-                    </h4>
-                    <p className="text-base sm:text-lg">
-                      We analyze your industry, competitors, positioning,
-                      product features, target audience, and make sure to
-                      understand your brand and tone of voice, ensuring
-                      authentic output. We conduct SEO and GEO research, assess
-                      your existing content, study your existing marketing
-                      funnel, and deliver a content strategy and roadmap for
-                      your feedback.
-                    </p>
-                    <div className="my-8 bg-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="bg-gradient-brand relative isolate overflow-hidden py-12 sm:py-16">
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 -right-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
+      />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="lg:subheader-light subheader-mobile-light">
+            See Our Process
+          </h2>
+          <p className="mt-4 text-lg text-white/90">
+            We plan, produce, publish, and promote your first pieces within
+            weeks.
+          </p>
+          <Link
+            href="/technical-content-examples"
+            className="group mt-4 inline-flex items-center gap-x-1.5 text-base font-semibold text-amber-300 hover:text-amber-200"
+          >
+            Interested in what we can create for you? Check out content examples
+            for 40+ different clients here.
+            <ArrowRightIcon
+              aria-hidden="true"
+              className="size-4 shrink-0 transition group-hover:translate-x-1"
+            />
+          </Link>
         </div>
-      </div>
 
-      <div className="my-6">
-        {' '}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
-                    <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 2:</span> Content Production
-                    </h3>
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      We publish your first pieces within weeks
-                    </h4>
-                    <p className="text-base sm:text-lg">
-                      We create strategically relevant content pieces for you.
-                      These include blog posts and tutorials, comparison pages,
-                      landing pages and onboarding content, technical product
-                      guides and use case deep-dives, thought leadership pieces,
-                      lead magnets and gated assets and more. To ensure fast
-                      turnaround times we use proven AI workflows to help draft
-                      your pieces. Each single piece is reviewed by real
-                      developers and edited by professional technical editors to
-                      ensure accuracy, clarity, and value for your audience. We
-                      can manage publication of your content via all major CMSs.
-                    </p>
-                    <div className="my-8 bg-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ol className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          {phases.map((phase) => (
+            <li
+              key={phase.step}
+              className="flex flex-col rounded-3xl bg-white p-7 shadow-xl"
+            >
+              <p className="font-code text-sm font-semibold tracking-wider text-amber-600 uppercase">
+                {phase.step} · {phase.label}
+              </p>
+              <h3 className="font-code text-secondary mt-3 text-xl font-semibold">
+                {phase.title}
+              </h3>
+              <p className="mt-3 text-base text-gray-600">{phase.text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-
-      <div className="my-6">
-        {' '}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
-                    <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 3:</span> Content Promotion
-                    </h3>
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      We help you get reach and click-throughs
-                    </h4>
-                    <p className="text-base sm:text-lg">
-                      We help promoting your content on Reddit, LinkedIn,
-                      Twitter/X, and more. We create variations you can use for
-                      third-party syndication and assist in publishing and
-                      advertising your pieces niche publications and newsletters
-                      that are read by your target audience.
-                    </p>
-                    <div className="my-8 bg-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/*       <div className="my-6">
-        {' '}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
-                    <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 4:</span> Content Refreshes
-                    </h3>
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      Stay Relevant & Rank Well
-                    </h4>
-                    <p className="text-base sm:text-lg">
-                      It's crucial to keep your content fresh. Nobody wants to
-                      have a prospective customer use ChatGPT to get a result
-                      that shows outdated information about your product. We run
-                      recurring content analysis and technical, as well as
-                      SEO/GEO refreshes.
-                    </p>
-                    <div className="my-8 bg-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="my-6">
-        {' '}
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="rounded-3xl shadow-[inset_0_0_2px_1px_#ffffff4d]">
-            <div className="p-2">
-              <div className="overflow-hidden rounded-[20px] bg-white/5 shadow-2xl">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="flex min-h-12 w-full flex-col justify-center text-left lg:w-96">
-                    <h3 className="subheader-light pl-10 text-lg sm:text-4xl">
-                      <span className="block">Step 5:</span> Analyze & Optimize
-                    </h3>
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h4 className="subheader-gradient text-2xl sm:text-3xl">
-                      Insights and Transparency
-                    </h4>
-                    <p className="text-base sm:text-lg">
-                      We provide recurring reports and insights around your
-                      performance and apply content improvements based on our
-                      internal SEO and AI Optimization platform when new
-                      opportunities for updates present themselves
-                    </p>
-                    <div className="my-8 bg-gray-300" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-    </div>
+    </section>
   )
 }
 

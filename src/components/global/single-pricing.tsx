@@ -1,3 +1,4 @@
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 
 interface SinglePricingProps {
@@ -20,10 +21,7 @@ interface SinglePricingProps {
 }
 
 const SinglePricing: React.FC<SinglePricingProps> = ({
-  title,
-  description,
   callToActionURL,
-  priceText,
   price,
   currency,
   includedFeatures,
@@ -40,103 +38,85 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
     return feature
   }
 
-  return (
-    <div className="py24 bg-white sm:py-32" id="pricing">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="">
-          <div className="bg-gradient-brand/15 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-            <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-              <div className="overflow-hidden rounded-3xl bg-gray-50 shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                <div className="flex flex-col lg:flex-row">
-                  <div className="bg-gradient-brand flex w-full flex-col lg:w-96">
-                    <div className="flex flex-1 flex-col items-center justify-center px-8 py-16 sm:py-0">
-                      <p className="font-code flex items-baseline justify-center gap-x-1 text-center font-semibold text-white">
-                        <span className="text-5xl">{price}</span>
-                        <span className="text-xl text-white/80">
-                          {currency}
-                        </span>
-                      </p>
-                      <p className="mt-3 text-center text-sm text-white/80">
-                        Retainers and custom offers available upon request
-                      </p>
-                      <Link
-                        href={callToActionURL}
-                        className="mt-8 rounded-md bg-white px-6 py-4 text-base font-semibold text-gray-700 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white lg:text-base"
-                      >
-                        Book a Discovery Call
-                      </Link>
-                    </div>
+  const disclaimers = [disclaimerOne, disclaimerTwo, disclaimerThree].filter(
+    Boolean,
+  )
 
-                    {(disclaimerOne || disclaimerTwo || disclaimerThree) && (
-                      <div className="bg-black/15 px-8 py-6">
-                        <ul className="space-y-2 text-xs font-semibold text-white/90">
-                          {disclaimerOne && (
-                            <li className="flex items-center gap-x-2">
-                              <span className="inline-block text-white/60">
-                                •
-                              </span>
-                              <span>{disclaimerOne}</span>
-                            </li>
-                          )}
-                          {disclaimerTwo && (
-                            <li className="flex items-center gap-x-2">
-                              <span className="inline-block text-white/60">
-                                •
-                              </span>
-                              <span>{disclaimerTwo}</span>
-                            </li>
-                          )}
-                          {disclaimerThree && (
-                            <li className="flex items-center gap-x-2">
-                              <span className="inline-block text-white/60">
-                                •
-                              </span>
-                              <span>{disclaimerThree}</span>
-                            </li>
-                          )}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                  <div className="w-full bg-white p-8 sm:p-10 lg:w-[calc(100%-384px)]">
-                    <h3 className="subheader-gradient text-3xl">
-                      Let’s talk about your growth engine
-                    </h3>
-                    <p className="text-base lg:text-lg">
-                      Get started with our compounding growth engine approved by
-                      real engineers. A Draft.dev subscription provides you with
-                      a Developer Content Strategy, Content Creation & Review,
-                      Lead Magnets, Content Refreshes, and ongoing Analysis and
-                      Reporting.
-                    </p>
-                    <div className="my-8 h-px bg-gray-300" />
-                    <ul className="grid grid-cols-1 gap-4 text-sm text-gray-600 sm:grid-cols-2">
-                      {includedFeatures.map((feature, index) => {
-                        const { text, leadText } = normalizeFeature(feature)
-                        return (
-                          <li key={index} className="flex items-center gap-x-3">
-                            {leadText ? (
-                              <span>
-                                <span className="font-semibold">
-                                  {leadText}
-                                </span>{' '}
-                                {text}
-                              </span>
-                            ) : (
-                              text
-                            )}
-                          </li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-                </div>
-              </div>
+  return (
+    <section className="bg-white py-12 sm:py-16" id="pricing">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="overflow-hidden rounded-3xl shadow-xl ring-1 ring-[#5e5285]/15 lg:flex">
+          {/* Price panel */}
+          <div className="bg-gradient-brand relative isolate flex flex-col overflow-hidden lg:w-96 lg:shrink-0">
+            <div
+              aria-hidden="true"
+              className="absolute -top-20 -right-20 -z-10 h-56 w-56 rounded-full bg-amber-300/20 blur-3xl"
+            />
+            <div className="flex flex-1 flex-col items-center justify-center px-8 py-12 text-center">
+              <p className="font-code flex items-baseline justify-center gap-x-1 font-semibold text-white">
+                <span className="text-5xl">{price}</span>
+                <span className="text-xl text-white/80">{currency}</span>
+              </p>
+              <p className="mt-3 text-sm text-white/80">
+                Retainers and custom offers available upon request
+              </p>
+              <Link
+                href={callToActionURL}
+                className="mt-8 rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300"
+              >
+                Book a Discovery Call
+              </Link>
             </div>
+            {disclaimers.length > 0 && (
+              <ul className="space-y-2 bg-black/15 px-8 py-6 text-sm text-white/90">
+                {disclaimers.map((item) => (
+                  <li key={item} className="flex gap-x-2">
+                    <span aria-hidden="true" className="text-amber-300">
+                      •
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* What's included */}
+          <div className="bg-white p-8 sm:p-10 lg:flex-1">
+            <h3 className="font-code text-secondary text-2xl font-semibold sm:text-3xl">
+              Let’s talk about your growth engine
+            </h3>
+            <p className="mt-4 text-base text-gray-600 lg:text-lg">
+              Get started with our compounding growth engine approved by real
+              engineers. A Draft.dev subscription provides you with a Developer
+              Content Strategy, Content Creation & Review, Lead Magnets, Content
+              Refreshes, and ongoing Analysis and Reporting.
+            </p>
+            <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-5 border-t border-gray-100 pt-8 sm:grid-cols-2">
+              {includedFeatures.map((feature, index) => {
+                const { text, leadText } = normalizeFeature(feature)
+                return (
+                  <li key={index} className="flex gap-x-3 text-base">
+                    <CheckCircleIcon
+                      aria-hidden="true"
+                      className="text-secondary mt-0.5 size-5 shrink-0"
+                    />
+                    <span className="text-gray-600">
+                      {leadText && (
+                        <span className="font-semibold text-gray-900">
+                          {leadText}
+                        </span>
+                      )}{' '}
+                      {text}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

@@ -1,106 +1,82 @@
-'use client'
-
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
 
-type CaseLink = {
-  name: string
-  role: string
-  imageUrl: string
-  company: string
-  slug: string
-}
-
 const featured = {
-  title:
-    'How Sinch Mailgun Revived Its Developer-First Content Strategy and Achieved 20–45% CTR with Draft.dev',
   dek: 'When internal engineering bandwidth was tight, Draft.dev delivered SME-written tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time.',
-  image: {
-    src: '/media/testimonials-lg/em_sinch_mailgun.jpg',
-    alt: 'Sinch Mailgun case study hero image',
-    width: 1344,
-    height: 1104,
-  },
   href: '/case-studies/sinch-mailgun',
-  secondaryHref: '/#how-we-work',
 }
 
-const moreCaseStudies: CaseLink[] = [
-  {
-    name: 'Henry Poydar',
-    role: 'Founder & CEO',
-    imageUrl: '/media/testimonials-lg/henry_poydar_steady_draft_dev.jpg',
-    company: 'Status Hero',
-    slug: 'status-hero',
-  },
-  {
-    name: 'Rahul Patwardhan',
-    role: 'Senior Director, Demand Generation',
-    imageUrl: '/media/testimonials-lg/rahul_patwardhan_loft_labs_draft_dev.jpg',
-    company: 'Loft Labs',
-    slug: 'loft-labs',
-  },
-  {
-    name: 'Adam Gordon Bell',
-    role: 'Director of Developer Relations',
-    imageUrl: '/media/testimonials-lg/adam_bell_earthly_draft_dev.jpg',
-    company: 'Earthly',
-    slug: 'earthly',
-  },
-]
-
+// Featured case study; the hero's "What our clients say" link jumps here
 export default function CaseStudiesFeature() {
   return (
-    <div className="bg-white py-16" id="casestudymain">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto my-10 flex max-w-2xl flex-col items-center justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center">
-          {/* LEFT: Title + Dek with Draft.dev text styles */}
-          <div className="w-full lg:flex lg:max-w-xl lg:flex-auto lg:flex-col lg:justify-center">
-            <div>
-              <h2 className="subheader-gradient sm:text-5xl">
-                How Sinch Mailgun Revived Its Developer-First Content Strategy
-                and Achieved 20–45% CTR with Draft.dev
-              </h2>
-
-              <p className="mt-6 text-xl/8 text-gray-600">{featured.dek}</p>
-
-              <div className="mt-12 flex flex-col items-center gap-x-6 sm:flex-row">
-                <Link
-                  href="/case-studies/sinch-mailgun"
-                  className="bg-gradient-1 hover:bg-gradient-2 focus-visible:outline-primary my-2 rounded px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm ring-2 ring-white focus-visible:outline-2 focus-visible:outline-offset-2 sm:my-0 sm:text-base"
-                >
-                  Read this case study
-                </Link>
-                <Link
-                  href="/#how-we-work"
-                  className="my-2 text-sm font-semibold text-gray-600 hover:text-gray-700 sm:my-0 sm:text-base"
-                >
-                  See how we publish within weeks{' '}
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
+    <section
+      id="casestudymain"
+      className="scroll-mt-32 bg-white py-12 sm:py-16"
+    >
+      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-16 lg:px-8">
+        <div>
+          <p className="inline-flex items-center gap-x-2 rounded-full bg-[#f4f1f8] px-3 py-1 text-sm font-semibold ring-1 ring-[#5e5285]/15">
+            <span className="text-secondary">Case Study</span>
+            <span aria-hidden="true" className="text-gray-300">
+              |
+            </span>
+            <span className="text-gray-700">Sinch Mailgun</span>
+          </p>
+          <h2 className="subheader-mobile-gradient sm:subheader-gradient mt-4 text-balance">
+            How Sinch Mailgun Revived Its Developer-First Content Strategy and
+            Achieved <span className="whitespace-nowrap">20–45% CTR</span> with
+            Draft.dev
+          </h2>
+          <p className="mt-6 text-lg text-gray-600 sm:text-xl">
+            {featured.dek}
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Link
+              href={featured.href}
+              className="bg-gradient-brand rounded-md px-6 py-3.5 text-base font-semibold text-white shadow-md transition hover:opacity-90"
+            >
+              Read this case study
+            </Link>
+            <Link
+              href="/#how-we-work"
+              className="text-secondary group inline-flex items-center gap-x-1.5 text-base font-semibold"
+            >
+              See how we publish within weeks
+              <ArrowRightIcon
+                aria-hidden="true"
+                className="size-4 transition group-hover:translate-x-1"
+              />
+            </Link>
           </div>
+        </div>
 
-          {/* RIGHT: Image (smaller than before) */}
-          <div className="w-full lg:flex lg:max-w-lg lg:flex-auto lg:items-center lg:justify-center">
-            <div className="hidden lg:block lg:w-[400px]">
-              <div className="rounded-4xl bg-white/15 p-2 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                  <Image
-                    alt="Em Blitstein"
-                    height={600}
-                    width={500}
-                    priority
-                    src="/media/testimonials-lg/em_sinch_mailgun.jpg"
-                    className="aspect-2/3 w-full object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+        {/* Photo with a brand offset card behind it */}
+        <div className="relative hidden lg:block">
+          <div
+            aria-hidden="true"
+            className="bg-gradient-brand absolute inset-0 -z-10 translate-x-3 translate-y-3 rounded-4xl"
+          />
+          <div className="overflow-hidden rounded-4xl shadow-xl ring-1 ring-black/5">
+            <Image
+              alt="Em Blitstein"
+              height={600}
+              width={500}
+              src="/media/testimonials-lg/em_sinch_mailgun.jpg"
+              className="aspect-4/5 w-full object-cover"
+            />
+          </div>
+          {/* The headline result, pulled out as a badge */}
+          <div className="absolute -bottom-5 -left-6 rounded-2xl bg-white px-5 py-4 shadow-xl ring-1 ring-[#5e5285]/10">
+            <p className="font-code text-secondary text-3xl font-semibold">
+              20–45%
+            </p>
+            <p className="text-sm font-medium text-gray-600">
+              Click-through rate
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
