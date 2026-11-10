@@ -8,16 +8,18 @@ import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
 
 import SocialProof from '@/components/media/social-proof'
 import Testimonials from '@/components/media/testimonials/testimonials-group'
+import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
-import Why from '@/components/page-components/why'
+import Services from '@/components/page-components/home/services'
+import Steps from '@/components/page-components/home/steps'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title:
-    'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
+    'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
   description:
-    'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
+    'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -26,9 +28,9 @@ export const metadata: Metadata = {
     siteName: 'Draft.dev',
     locale: 'en_US',
     title:
-      'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
+      'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
     description:
-      'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -42,9 +44,9 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title:
-      'Content-Powered Growth Marketing for Developer Tools & Platforms - Draft.dev',
+      'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
     description:
-      'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -80,34 +82,10 @@ export default function Home() {
       <div className="overflow-hidden">
         <main>
           <Hero />
-          <Why
-            title="Turn developer content into a reliable growth driver"
-            subtitle="For teams launching, introducing new products, or scaling existing content engines"
-            features={[
-              {
-                title: 'From zero to growth',
-                description:
-                  'No content team yet? No problem. We bring the strategy, production, and distribution across many content types: Blog posts, videos, social collateral, comparison pages, lead magnets, and more. Let us drive your first wave of developer signups. You build product, we build your developer audience.',
-                linkText: 'See our process',
-                linkHref: '/#how-we-work',
-              },
-              {
-                title: 'Content strategies for new product releases',
-                description:
-                  'Introducing a new product or feature means educating a market that does not know it exists yet. We help you build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/GEO insights. ',
-                linkText: 'See how we drive awareness',
-                linkHref: '/drive-awareness',
-              },
-              {
-                title: 'Scale output without scaling headcount',
-                description:
-                  'More channels, more content. We integrate seamlessly with your existing team to expand content production across channels: on-site articles, guest posts, video content, newsletter campaigns, social distribution, and more. We analyze, refresh, and report on your content performance.',
-                linkText: 'See some of our technical content examples',
-                linkHref: '/technical-content-examples',
-              },
-            ]}
-          />
-          <SocialProof />
+          <Services />
+          <Audience />
+          <Steps />
+          <SocialProof title="A Growth Agency with a Track Record" />
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
           <SinglePricing
@@ -171,7 +149,11 @@ export default function Home() {
           />
           <Testimonials />
         </main>
-        <FAQ />
+        <FAQ
+          className="py-12 sm:py-16"
+          headingClassName="subheader-mobile-gradient sm:subheader-gradient"
+          masonry
+        />
       </div>
     </>
   )
