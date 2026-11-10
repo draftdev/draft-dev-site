@@ -1,4 +1,3 @@
-import { BoltIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 // What the GTM work covers, shown as chips under the heading
@@ -43,19 +42,10 @@ const What = () => {
               we put it in front of the right people through SEO &amp; GEO,
               distribution and paid growth.
             </p>
-          </div>
-
-          {/* The lifecycle promise, as a highlighted callout */}
-          <div className="mt-8 flex gap-x-4 rounded-2xl bg-[#f4f1f8] p-6 ring-1 ring-[#5e5285]/10">
-            <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-gray-900 shadow-sm">
-              <BoltIcon aria-hidden="true" className="size-6" />
-            </span>
-            <p className="text-lg text-gray-600">
-              <strong className="font-code text-secondary mb-1.5 block text-lg font-semibold">
-                From strategy, to production, to distribution within weeks.
-              </strong>
-              We run the full go-to-market cycle, from strategy to paid growth.
-              Proven AI workflows and hundreds of subject matter experts keep
+            <p>
+              From strategy, to production, to distribution within weeks. We run
+              the full go-to-market cycle, from strategy to paid growth. Proven
+              AI workflows and hundreds of subject matter experts keep
               turnaround fast and quality high.
             </p>
           </div>
