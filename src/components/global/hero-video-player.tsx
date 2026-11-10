@@ -26,6 +26,8 @@ export type HeroVideoConfig = {
   tracks?: Track[]
   /** Begin playback at this time (seconds). */
   startAt?: number
+  /** Frame size; defaults to the portrait 9:16 frame */
+  frameClassName?: string
 }
 
 export default function HeroVideoPlayer({
@@ -35,6 +37,7 @@ export default function HeroVideoPlayer({
   webmSrc,
   tracks = [],
   startAt = 0,
+  frameClassName = 'aspect-9/16 w-[280px] sm:w-[300px] lg:w-[350px] xl:w-[400px]',
 }: HeroVideoConfig) {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -200,7 +203,7 @@ export default function HeroVideoPlayer({
   return (
     <div
       ref={containerRef}
-      className="aspect-2/3sm:w-[300px] relative aspect-9/16 w-[280px] overflow-hidden lg:w-[350px] xl:w-[400px]"
+      className={`relative overflow-hidden ${frameClassName}`}
       onMouseEnter={() => pokeControls(4000)}
       onMouseMove={() => pokeControls(4000)}
       onMouseLeave={() => setControlsVisible(false)}

@@ -5,13 +5,13 @@ import SinglePricingList from '@/components/global/single-price-list'
 import SinglePricing from '@/components/global/single-pricing'
 import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
 import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
+import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
 
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
-import Testimonials from '@/components/page-components/home/testimonials'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -147,7 +147,7 @@ export default function Home() {
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
-          <Testimonials />
+          <TestimonialsCarousel title="Testimonials" />
         </main>
         <FAQ
           className="bg-[#f4f1f8] py-12 sm:py-16"

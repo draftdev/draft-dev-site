@@ -38,13 +38,15 @@ const phases = [
 
 const SinglePricingList: React.FC<SinglePricingListProps> = () => {
   return (
-    <section className="bg-gradient-brand relative isolate overflow-hidden py-12 sm:py-16">
+    <section className="bg-gradient-brand relative isolate overflow-clip py-12 sm:py-16">
       <div
         aria-hidden="true"
         className="absolute -top-24 -right-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
       />
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+      {/* Intro on the left (sticky on desktop), steps stacked on the right,
+          so steps of very different lengths still line up */}
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 lg:grid-cols-[340px_minmax(0,1fr)] lg:gap-14 lg:px-8">
+        <div className="lg:sticky lg:top-32 lg:self-start">
           <h2 className="lg:subheader-light subheader-mobile-light">
             See Our Process
           </h2>
@@ -54,30 +56,37 @@ const SinglePricingList: React.FC<SinglePricingListProps> = () => {
           </p>
           <Link
             href="/technical-content-examples"
-            className="group mt-4 inline-flex items-center gap-x-1.5 text-base font-semibold text-amber-300 hover:text-amber-200"
+            className="group mt-8 flex items-start gap-x-3 rounded-2xl bg-white/10 p-5 ring-1 ring-white/20 transition hover:bg-white/15"
           >
-            Interested in what we can create for you? Check out content examples
-            for 40+ different clients here.
+            <span className="text-base text-white">
+              Interested in what we can create for you? Check out content
+              examples for 40+ different clients here.
+            </span>
             <ArrowRightIcon
               aria-hidden="true"
-              className="size-4 shrink-0 transition group-hover:translate-x-1"
+              className="mt-1 size-5 shrink-0 text-amber-300 transition group-hover:translate-x-1"
             />
           </Link>
         </div>
 
-        <ol className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-          {phases.map((phase) => (
+        <ol className="space-y-5">
+          {phases.map((phase, i) => (
             <li
               key={phase.step}
-              className="flex flex-col rounded-3xl bg-white p-7 shadow-xl"
+              className="flex gap-x-5 rounded-3xl bg-white p-6 shadow-xl sm:gap-x-6 sm:p-8"
             >
-              <p className="font-code text-sm font-semibold tracking-wider text-amber-600 uppercase">
-                {phase.step} · {phase.label}
-              </p>
-              <h3 className="font-code text-secondary mt-3 text-xl font-semibold">
-                {phase.title}
-              </h3>
-              <p className="mt-3 text-base text-gray-600">{phase.text}</p>
+              <span className="font-code flex size-12 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-xl font-semibold text-gray-900 shadow-sm">
+                {i + 1}
+              </span>
+              <div>
+                <p className="font-code text-sm font-semibold tracking-wider text-[#5e5285]/70 uppercase">
+                  {phase.step} · {phase.label}
+                </p>
+                <h3 className="font-code text-secondary mt-2 text-xl font-semibold">
+                  {phase.title}
+                </h3>
+                <p className="mt-3 text-base text-gray-600">{phase.text}</p>
+              </div>
             </li>
           ))}
         </ol>

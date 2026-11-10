@@ -18,7 +18,7 @@ const Hero = () => {
         className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl"
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-12">
           <div>
             <Link href={guide.href} className="group inline-flex items-center">
               <span className="text-primary ring-primary-40 mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-inset">
@@ -64,6 +64,7 @@ const Hero = () => {
                   webmSrc=""
                   tracks={[]}
                   startAt={0}
+                  frameClassName="aspect-4/5 w-full"
                 />
               </div>
             </div>

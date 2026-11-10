@@ -56,26 +56,34 @@ export default function MoreCaseStudies() {
             <li key={client.slug}>
               <Link
                 href={`/case-studies/${client.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-1 hover:shadow-lg"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white p-2 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="overflow-hidden">
+                {/* Portrait photos: square crop anchored near the top keeps the whole face */}
+                <div className="relative overflow-hidden rounded-2xl">
                   <Image
                     src={client.imageUrl}
                     alt={`${client.name}'s case study for ${client.company}`}
-                    width={800}
-                    height={800}
-                    className="aspect-14/11 w-full object-cover transition duration-300 group-hover:scale-[1.03]"
+                    width={400}
+                    height={600}
+                    className="aspect-square w-full object-cover object-[50%_18%] transition duration-500 group-hover:scale-[1.03]"
                   />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-[#4b3f72]/90 to-transparent"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-x-3 p-5">
+                    <p className="font-code text-2xl font-semibold text-white">
+                      {client.company}
+                    </p>
+                    <span className="shrink-0 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-semibold text-[#5e5285]">
+                      Case study
+                    </span>
+                  </div>
                 </div>
-                <div className="flex grow flex-col p-6">
-                  <p className="font-code text-secondary text-lg font-semibold">
-                    {client.company}
-                  </p>
-                  <p className="mt-1 font-semibold text-gray-900">
-                    {client.name}
-                  </p>
+                <div className="flex grow flex-col px-4 pt-5 pb-3">
+                  <p className="font-semibold text-gray-900">{client.name}</p>
                   <p className="grow text-sm text-gray-600">{client.role}</p>
-                  <span className="text-secondary mt-5 inline-flex items-center gap-x-1.5 text-sm font-semibold">
+                  <span className="text-secondary mt-5 flex items-center justify-between rounded-xl bg-[#f4f1f8] px-4 py-3 text-sm font-semibold transition group-hover:bg-amber-400 group-hover:text-gray-900">
                     Read the case study
                     <ArrowRightIcon
                       aria-hidden="true"
