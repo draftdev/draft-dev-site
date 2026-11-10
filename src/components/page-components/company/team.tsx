@@ -51,14 +51,14 @@ const teamMembers: TeamMember[] = [
 
 // Technical specialists from our expert network
 const specialists = [
-  { name: 'Aykut B.', img: 'aykut_bulgu_draft_dev.jpg' },
-  { name: 'Damaso S.', img: 'damaso_sanoja_draft_dev.jpg' },
-  { name: 'Kevin K.', img: 'kevin_kimani_draft_dev.jpg' },
-  { name: 'Kumar H.', img: 'kumar_harsh_draft_dev.jpg' },
-  { name: 'Lucien C.', img: 'lucien_chemaly_draft_dev.jpg' },
-  { name: 'Manish H.', img: 'manish_hatwalne_draft_dev.jpg' },
-  { name: 'Thinus S.', img: 'thinus_swart_draft_dev.jpg' },
-  { name: 'Vivek M.', img: 'vivek_maskara_draft_dev.jpg' },
+  { name: 'Aykut Bulgu', img: 'aykut_bulgu_draft_dev.jpg' },
+  { name: 'Damaso Sanoja', img: 'damaso_sanoja_draft_dev.jpg' },
+  { name: 'Kevin Kimani', img: 'kevin_kimani_draft_dev.jpg' },
+  { name: 'Kumar Harsh', img: 'kumar_harsh_draft_dev.jpg' },
+  { name: 'Lucien Chemaly', img: 'lucien_chemaly_draft_dev.jpg' },
+  { name: 'Manish Hatwalne', img: 'manish_hatwalne_draft_dev.jpg' },
+  { name: 'Thinus Swart', img: 'thinus_swart_draft_dev.jpg' },
+  { name: 'Vivek Maskara', img: 'vivek_maskara_draft_dev.jpg' },
 ]
 
 const NETWORK_SIZE = 300
