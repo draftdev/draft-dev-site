@@ -15,8 +15,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title:
-    'Go-to-Market Marketing Agency for Developer Tools & AI Platforms - Draft.dev',
+  title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
   description:
     'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
@@ -26,8 +25,7 @@ export const metadata: Metadata = {
     url: 'https://draft.dev',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title:
-      'Go-to-Market Marketing Agency for Developer Tools & AI Platforms - Draft.dev',
+    title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
       'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: [
@@ -42,8 +40,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title:
-      'Go-to-Market Marketing Agency for Developer Tools & AI Platforms - Draft.dev',
+    title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
       'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: ['/draft/og/main_og_draft_dev.jpg'],

@@ -29,8 +29,7 @@ const Hero = () => {
               </span>
             </Link>
             <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl xl:text-[3.25rem]">
-              Go-to-Market Marketing Agency for Developer Tools &amp; AI
-              Platforms
+              GTM Marketing for Developer Tools &amp; AI Platforms
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
               We run the full go-to-market cycle for developer tools, from
