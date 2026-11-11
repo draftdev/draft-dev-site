@@ -8,7 +8,7 @@ const steps = [
   },
   {
     title: 'Research and strategy',
-    text: 'We study your market, audience and existing content, run SEO and GEO research, and deliver a strategy and roadmap for your feedback.',
+    text: 'We study your market, audience and existing content, run SEO and AEO research, and deliver a strategy and roadmap for your feedback.',
   },
   {
     title: 'Content production',

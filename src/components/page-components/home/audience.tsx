@@ -16,7 +16,7 @@ const stages = [
   },
   {
     title: 'New product launches',
-    text: 'A new product means teaching a market it exists. We plan the launch across content, SEO & GEO, distribution and paid channels, backed by competitor research.',
+    text: 'A new product means teaching a market it exists. We plan the launch across content, SEO & AEO, distribution and paid channels, backed by competitor research.',
     linkText: 'See how we drive awareness',
     href: '/drive-awareness',
     Icon: ArrowTrendingUpIcon,

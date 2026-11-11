@@ -23,7 +23,7 @@ const services = [
     Icon: DocumentTextIcon,
   },
   {
-    title: 'SEO & GEO',
+    title: 'SEO & AEO',
     text: 'Rank in search and get cited by ChatGPT, Claude, Perplexity and Google AI Overviews.',
     href: '/aeo-geo-services-for-devtools',
     Icon: MagnifyingGlassIcon,

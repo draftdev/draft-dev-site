@@ -33,7 +33,7 @@ const Hero = () => {
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
               We run the full go-to-market cycle for developer tools, from
-              strategy and content to SEO &amp; GEO, distribution and paid
+              strategy and content to SEO &amp; AEO, distribution and paid
               growth. Our 300+ engineers check every piece so it holds up with
               developers, search engines and AI assistants, and our 7,000+
               developer network helps it reach the right developers.

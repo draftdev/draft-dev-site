@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title:
     'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
   description:
-    'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+    'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title:
       'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
     description:
-      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title:
       'Go-to-Market Marketing Agency for Developer Tools & Platforms - Draft.dev',
     description:
-      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
