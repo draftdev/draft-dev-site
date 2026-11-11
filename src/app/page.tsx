@@ -11,6 +11,7 @@ import Hero from '@/components/page-components/home/hero'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
+import BookCall from '@/components/page-components/service-landing/book-call'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -87,7 +88,7 @@ export default function Home() {
           <SinglePricing
             title="Lead Generation Package"
             description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
-            callToActionURL="/call"
+            callToActionURL="#book-a-call"
             priceText="Generate qualified leads"
             price="From $9K"
             currency="/month"
@@ -117,10 +118,12 @@ export default function Home() {
           <TestimonialsCarousel />
         </main>
         <FAQ
+          callHref="#book-a-call"
           className="bg-[#f4f1f8] py-12 sm:py-16"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
         />
+        <BookCall />
       </div>
     </>
   )

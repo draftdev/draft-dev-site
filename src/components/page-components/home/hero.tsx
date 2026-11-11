@@ -45,7 +45,7 @@ const Hero = () => {
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
-                href="/call"
+                href="#book-a-call"
                 className="rounded-md bg-amber-400 px-6 py-3.5 text-base font-semibold text-gray-900 shadow-lg shadow-black/20 transition hover:bg-amber-300 sm:text-lg"
               >
                 Book a Discovery Call
