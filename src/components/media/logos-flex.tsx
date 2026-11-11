@@ -13,9 +13,9 @@ export function LogosFlex({ className, ...rest }: Props) {
     >
       <div className="mx-auto">
         {/* Small centred caption instead of a divider line */}
-        <h2 className="font-code text-center text-xs font-semibold tracking-[0.2em] text-white/70 uppercase sm:text-sm">
+        <p className="font-code text-center text-xs font-semibold tracking-[0.2em] text-white/70 uppercase sm:text-sm">
           Trusted by 100+ tech companies
-        </h2>
+        </p>
 
         <LogoGrid className="mt-5 sm:mt-6" />
         <LogoMarquee className="mt-5" />

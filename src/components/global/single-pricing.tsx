@@ -18,6 +18,8 @@ interface SinglePricingProps {
   disclaimerOne?: string
   disclaimerTwo?: string
   disclaimerThree?: string
+  // Section background
+  className?: string
 }
 
 const SinglePricing: React.FC<SinglePricingProps> = ({
@@ -28,6 +30,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   disclaimerOne,
   disclaimerTwo,
   disclaimerThree,
+  className = 'bg-white',
 }) => {
   const normalizeFeature = (
     feature: string | { text: string; leadText?: string },
@@ -43,7 +46,7 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
   )
 
   return (
-    <section className="bg-white py-12 sm:py-16" id="pricing">
+    <section className={`${className} py-12 sm:py-16`} id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl shadow-xl ring-1 ring-[#5e5285]/15 lg:flex">
           {/* Price panel */}
@@ -83,9 +86,9 @@ const SinglePricing: React.FC<SinglePricingProps> = ({
 
           {/* What's included */}
           <div className="bg-white p-8 sm:p-10 lg:flex-1">
-            <h3 className="font-code text-secondary text-2xl font-semibold sm:text-3xl">
+            <h2 className="font-code text-secondary text-2xl font-semibold sm:text-3xl">
               Let’s talk about your growth engine
-            </h3>
+            </h2>
             <p className="mt-4 text-base text-gray-600 lg:text-lg">
               Get started with our compounding growth engine approved by real
               engineers. A Draft.dev subscription provides you with a Developer

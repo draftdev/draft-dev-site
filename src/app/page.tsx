@@ -85,7 +85,12 @@ export default function Home() {
           <Stats />
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
+          <TestimonialsCarousel
+            exclude={['Emily Blitstein']}
+            className="bg-white py-12 sm:py-16"
+          />
           <SinglePricing
+            className="bg-[#f4f1f8]"
             title="Lead Generation Package"
             description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
             callToActionURL="#book-a-call"
@@ -99,7 +104,7 @@ export default function Home() {
               },
               {
                 leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals',
+                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals.',
               },
               {
                 leadText: 'Lead Collection System:',
@@ -114,12 +119,11 @@ export default function Home() {
             disclaimerTwo="Delivery starts after initial planning period"
             disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
           />
-
-          <TestimonialsCarousel />
         </main>
         <FAQ
           callHref="#book-a-call"
-          className="bg-[#f4f1f8] py-12 sm:py-16"
+          className="bg-white py-12 sm:py-16"
+          title="Common Questions We Get Asked"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
         />

@@ -32,7 +32,7 @@ const stages = [
 
 const Audience = () => {
   return (
-    <section className="bg-[#f4f1f8] py-12 sm:py-14">
+    <section className="bg-[#f4f1f8] py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
@@ -54,7 +54,7 @@ const Audience = () => {
               <p className="mt-3 grow text-base text-gray-600">{text}</p>
               <Link
                 href={href}
-                className="text-secondary group mt-6 inline-flex items-center gap-x-1.5 text-sm font-semibold"
+                className="text-secondary group mt-4 inline-flex items-center gap-x-1.5 py-2 text-sm font-semibold"
               >
                 {linkText}
                 <ArrowRightIcon

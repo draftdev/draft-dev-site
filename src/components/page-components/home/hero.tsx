@@ -18,10 +18,10 @@ const Hero = () => {
         className="absolute -top-32 -right-32 -z-10 h-[28rem] w-[28rem] rounded-full bg-amber-300/20 blur-3xl"
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-10">
           <div>
             <Link href={guide.href} className="group inline-flex items-center">
-              <span className="text-primary ring-primary-40 mr-3 rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-inset">
+              <span className="text-primary ring-primary-40 mr-3 shrink-0 rounded-full bg-white px-3 py-1 text-sm font-semibold whitespace-nowrap ring-1 ring-inset">
                 {guide.badge}
               </span>
               <span className="text-sm text-white group-hover:text-gray-200">
@@ -29,7 +29,7 @@ const Hero = () => {
               </span>
             </Link>
             {/* Two lines on desktop: break after "for" */}
-            <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl xl:text-[2.6rem] xl:text-wrap">
+            <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl">
               GTM Marketing for <br className="hidden xl:block" />
               <span className="xl:whitespace-nowrap">
                 Developer Tools &amp; AI Platforms
@@ -52,7 +52,7 @@ const Hero = () => {
               </Link>
               <a
                 href="#casestudymain"
-                className="text-base font-semibold text-white hover:text-gray-200"
+                className="inline-block py-2 text-base font-semibold text-white hover:text-gray-200"
               >
                 What our clients say <span aria-hidden="true">→</span>
               </a>

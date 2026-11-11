@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
     body: "I was thoroughly impressed by the smooth onboarding and ability to adapt to our product suite. Draft.dev's attention to detail and dedication to aligning content with our brand have significantly impacted our developer-focused content strategy. The high-quality technical blog posts have been well-received internally, and we're excited to see the full impact on our content program.",
     author: {
       name: 'Emily Blitstein',
-      company: 'SINCH MAILGUN',
+      company: 'Sinch Mailgun',
       imageUrl: emily.src,
     },
   },
@@ -81,7 +81,7 @@ export const testimonials: Testimonial[] = [
     body: 'In a matter of weeks, our referral traffic and organic keyword rankings increased by 3x. One post also hit Hacker News which resulted in 5 demo requests in a single day!',
     author: {
       name: 'Robert Gibb',
-      company: 'fabric. Inc',
+      company: 'fabric',
       imageUrl: robert.src,
     },
   },
@@ -97,7 +97,7 @@ export const testimonials: Testimonial[] = [
     body: "We've seen amazing results with the technical content produced from the team at Draft.dev. The attention to technical detail from start to finish has been a huge addition to our content.",
     author: {
       name: 'Tony Chan',
-      company: 'cloudforecast',
+      company: 'CloudForecast',
       imageUrl: tony.src,
     },
   },

@@ -39,7 +39,7 @@ export default function CaseStudiesFeature() {
             </Link>
             <Link
               href="/#how-we-work"
-              className="text-secondary group inline-flex items-center gap-x-1.5 text-base font-semibold"
+              className="text-secondary group inline-flex items-center gap-x-1.5 py-2 text-base font-semibold"
             >
               See how we publish within weeks
               <ArrowRightIcon

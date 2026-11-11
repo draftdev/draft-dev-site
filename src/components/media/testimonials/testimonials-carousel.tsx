@@ -13,11 +13,14 @@ export default function TestimonialsCarousel({
   title = '100+ Growing Clients',
   subtitle = 'What our clients are saying',
   exclude = [],
+  className = 'bg-white pt-10 pb-14 lg:pt-12 lg:pb-16',
 }: {
   title?: string
   subtitle?: string
   // Names already shown elsewhere on the page
   exclude?: string[]
+  // Section background and spacing; defaults to the service page style
+  className?: string
 }) {
   const items = testimonials.filter((t) => !exclude.includes(t.author.name))
   const trackRef = useRef<HTMLDivElement>(null)
@@ -55,7 +58,7 @@ export default function TestimonialsCarousel({
 
   return (
     <section
-      className="bg-white pt-10 pb-14 lg:pt-12 lg:pb-16"
+      className={className}
       id="testimonials"
       aria-roledescription="carousel"
       aria-label={title}
