@@ -75,7 +75,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <LogosFlex className="mt-12 border-t border-white/15 pt-8 sm:mt-14" />
+        <LogosFlex className="mt-14 sm:mt-16" />
       </div>
     </section>
   )

@@ -25,8 +25,7 @@ export default function CaseStudiesFeature() {
           </p>
           <h2 className="subheader-mobile-gradient sm:subheader-gradient mt-4 text-balance">
             How Sinch Mailgun Revived Its Developer-First Content Strategy and
-            Achieved <span className="whitespace-nowrap">20–45% CTR</span> with
-            Draft.dev
+            Achieved <span className="whitespace-nowrap">20–45% CTR</span>
           </h2>
           <p className="mt-6 text-lg text-gray-600 sm:text-xl">
             {featured.dek}

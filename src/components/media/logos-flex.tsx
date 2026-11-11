@@ -12,12 +12,13 @@ export function LogosFlex({ className, ...rest }: Props) {
       {...rest}
     >
       <div className="mx-auto">
-        <h2 className="mb-6 hidden text-left text-sm font-medium text-white sm:text-base lg:mb-8 lg:block">
+        {/* Small centred caption instead of a divider line */}
+        <h2 className="font-code text-center text-xs font-semibold tracking-[0.2em] text-white/70 uppercase sm:text-sm">
           Trusted by 100+ tech companies
         </h2>
 
-        <LogoGrid className="mt-6 sm:mt-10" />
-        <LogoMarquee className="mt-10" />
+        <LogoGrid className="mt-5 sm:mt-6" />
+        <LogoMarquee className="mt-5" />
       </div>
     </section>
   )

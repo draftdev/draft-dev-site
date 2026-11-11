@@ -25,30 +25,14 @@ const Steps = () => {
   return (
     <section id="how-we-work" className="scroll-mt-32 bg-white py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Heading and intro on the left, examples link on the right */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-          <div className="max-w-2xl">
-            <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-              From Kickoff to Results in Weeks
-            </h2>
-            <p className="mt-4 text-lg text-gray-600">
-              We plan, produce, publish, and promote your first pieces within
-              weeks.
-            </p>
-          </div>
-          <Link
-            href="/technical-content-examples"
-            className="group flex items-start gap-x-3 rounded-2xl bg-[#f4f1f8] p-5 ring-1 ring-[#5e5285]/10 transition hover:bg-[#ece7f3] lg:max-w-sm"
-          >
-            <span className="text-base text-gray-700">
-              Interested in what we can create for you? Check out content
-              examples for 40+ different clients here.
-            </span>
-            <ArrowRightIcon
-              aria-hidden="true"
-              className="text-secondary mt-1 size-5 shrink-0 transition group-hover:translate-x-1"
-            />
-          </Link>
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
+            From Kickoff to Results in Weeks
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            We plan, produce, publish, and promote your first pieces within
+            weeks.
+          </p>
         </div>
 
         {/* 2x2 tiles, equal height */}
@@ -70,6 +54,21 @@ const Steps = () => {
             </li>
           ))}
         </ol>
+
+        {/* Examples link sits under the steps as a follow-on */}
+        <p className="mt-8 text-center">
+          <Link
+            href="/technical-content-examples"
+            className="text-secondary group inline-flex items-center gap-x-2 text-base font-semibold"
+          >
+            Interested in what we can create for you? Check out content examples
+            for 40+ different clients here.
+            <ArrowRightIcon
+              aria-hidden="true"
+              className="size-4 shrink-0 transition group-hover:translate-x-1"
+            />
+          </Link>
+        </p>
       </div>
     </section>
   )
