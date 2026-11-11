@@ -32,12 +32,12 @@ const Hero = () => {
               GTM Marketing for Developer Tools &amp; AI Platforms
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
-              We help developer tools and AI platforms reach and convert
-              developers. We combine research-led strategy, proven AI workflows,
-              300+ subject matter experts and a network of 7,000+ developers to
-              run end-to-end growth programs across Content Strategy, Technical
-              Content, SEO &amp; AEO, Content Distribution, Paid Campaigns, and
-              Video.
+              We turn your product into something developers find, trust and
+              adopt. To do that, we combine our research-led strategy, proven AI
+              workflows, 300+ subject matter experts and 7,000+ developer
+              network to run end-to-end growth programs across Content Strategy,
+              Technical Content, SEO &amp; AEO, Content Distribution, Paid
+              Campaigns, and Video.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
