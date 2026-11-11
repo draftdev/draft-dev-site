@@ -4,7 +4,7 @@ import Image from 'next/image'
 const services = [
   'Strategy',
   'Content',
-  'SEO & GEO',
+  'SEO & AEO',
   'Distribution',
   'Paid growth',
 ]
@@ -39,7 +39,7 @@ const What = () => {
               people.
             </p>
             <p>
-              We cover strategy, content, SEO &amp; GEO, distribution and paid
+              We cover strategy, content, SEO &amp; AEO, distribution and paid
               growth, and we move from strategy to distribution within weeks.
             </p>
           </div>

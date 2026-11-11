@@ -24,6 +24,11 @@ const teamMembers: TeamMember[] = [
     img: '/draft/team/manuel_weiss_draft_dev.jpg',
   },
   {
+    name: 'Suprity Acharyya',
+    description: 'Project Manager',
+    img: '/draft/team/suprity_acharyya_draft_dev.jpg',
+  },
+  {
     name: 'Saswata Baksi',
     description: 'Head of Discoverability (AEO & SEO)',
     img: '/draft/team/saswata_baksi_draft_dev.jpg',
@@ -43,22 +48,19 @@ const teamMembers: TeamMember[] = [
     description: 'Developmental Editor',
     img: '/draft/team/shane_cullen_draft_dev.jpg',
   },
-  {
-    name: 'Suprity Acharyya',
-    description: 'Project Manager',
-  },
 ]
 
-// Technical specialists from our expert network
+// Technical specialists from our expert network. First name and last initial
+// only, in names, alt text and file names, so they can't be looked up directly.
 const specialists = [
-  { name: 'Aykut Bulgu', img: 'aykut_bulgu_draft_dev.jpg' },
-  { name: 'Damaso Sanoja', img: 'damaso_sanoja_draft_dev.jpg' },
-  { name: 'Kevin Kimani', img: 'kevin_kimani_draft_dev.jpg' },
-  { name: 'Kumar Harsh', img: 'kumar_harsh_draft_dev.jpg' },
-  { name: 'Lucien Chemaly', img: 'lucien_chemaly_draft_dev.jpg' },
-  { name: 'Manish Hatwalne', img: 'manish_hatwalne_draft_dev.jpg' },
-  { name: 'Thinus Swart', img: 'thinus_swart_draft_dev.jpg' },
-  { name: 'Vivek Maskara', img: 'vivek_maskara_draft_dev.jpg' },
+  { name: 'Aykut B.', img: 'aykut_b_draft_dev.jpg' },
+  { name: 'Damaso S.', img: 'damaso_s_draft_dev.jpg' },
+  { name: 'Kevin K.', img: 'kevin_k_draft_dev.jpg' },
+  { name: 'Kumar H.', img: 'kumar_h_draft_dev.jpg' },
+  { name: 'Lucien C.', img: 'lucien_c_draft_dev.jpg' },
+  { name: 'Manish H.', img: 'manish_h_draft_dev.jpg' },
+  { name: 'Thinus S.', img: 'thinus_s_draft_dev.jpg' },
+  { name: 'Vivek M.', img: 'vivek_m_draft_dev.jpg' },
 ]
 
 const NETWORK_SIZE = 300
@@ -148,9 +150,9 @@ const Team = () => {
 
         {/* Technical specialists */}
         <div className="mt-14">
-          <h3 className="font-code text-secondary text-center text-2xl font-semibold lg:text-left">
+          <h2 className="font-code text-secondary text-center text-2xl font-semibold lg:text-left">
             Our Technical Specialists
-          </h3>
+          </h2>
           <p className="mt-2 text-center text-lg text-gray-600 lg:text-left">
             Plus subject matter experts from our network of {NETWORK_SIZE}+
             developers, matched to your niche.

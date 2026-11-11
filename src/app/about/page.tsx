@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About Us - Draft.dev',
   description:
-    'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+    'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & GEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -68,7 +68,7 @@ export default function About() {
 
       <AboutHero
         title="We help Developer Tools & Platforms grow and win"
-        descriptionOne="Draft.dev builds content-powered technical go-to-market strategies for developer tools. We cover strategy, content, SEO & GEO, distribution and paid growth, so developers, search engines and LLMs find your product and trust it."
+        descriptionOne="Draft.dev builds content-powered technical go-to-market strategies for developer tools. We cover strategy, content, SEO & AEO, distribution and paid growth, so developers, search engines and LLMs find your product and trust it."
         descriptionTwo="Let us help you build your technical go-to-market engine."
         imageSrc="/site/med-portrait/developers_draft_dev.jpg"
         imageAlt="Technical content development"
