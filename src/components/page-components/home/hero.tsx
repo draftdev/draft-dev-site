@@ -28,8 +28,12 @@ const Hero = () => {
                 {guide.title} <span aria-hidden="true">→</span>
               </span>
             </Link>
-            <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl xl:text-[3.25rem]">
-              GTM Marketing for Developer Tools &amp; AI Platforms
+            {/* Two lines on desktop: break after "for" */}
+            <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl xl:text-[2.6rem] xl:text-wrap">
+              GTM Marketing for <br className="hidden xl:block" />
+              <span className="xl:whitespace-nowrap">
+                Developer Tools &amp; AI Platforms
+              </span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
               We turn your product into something developers find, trust and
