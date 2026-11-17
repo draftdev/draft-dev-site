@@ -1,14 +1,17 @@
 import {
   ArrowRightIcon,
   ChartBarIcon,
+  ChatBubbleLeftRightIcon,
   DocumentTextIcon,
+  EnvelopeIcon,
   MagnifyingGlassIcon,
   MapIcon,
   MegaphoneIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-// The five parts of a GTM program, each linking to its service page
+// The parts of a GTM program, each linking to its service page
 const services = [
   {
     title: 'Strategy',
@@ -18,13 +21,13 @@ const services = [
   },
   {
     title: 'Content',
-    text: 'Tutorials, blog posts, docs and videos, checked by engineers.',
+    text: 'Tutorials, blog posts, comparison pages and docs, checked by engineers.',
     href: '/content-production',
     Icon: DocumentTextIcon,
   },
   {
     title: 'SEO & AEO',
-    text: 'Rank in search and get cited by ChatGPT, Claude, Perplexity and Google AI Overviews.',
+    text: 'Rank in search and get cited in LLM answers from ChatGPT, Claude, Perplexity and Google AI Overviews.',
     href: '/aeo-geo-services-for-devtools',
     Icon: MagnifyingGlassIcon,
   },
@@ -36,9 +39,27 @@ const services = [
   },
   {
     title: 'Paid growth',
-    text: 'Paid search and sponsorships in newsletters, podcasts and communities.',
+    text: 'Google, Reddit, ChatGPT, YouTube and LinkedIn ads, plus sponsorships in newsletters and podcasts.',
     href: '/ppc-for-devtools',
     Icon: ChartBarIcon,
+  },
+  {
+    title: 'Video',
+    text: 'Technical videos and short clips made from your articles, for YouTube, LinkedIn and TikTok.',
+    href: '/video-marketing-for-devtools',
+    Icon: VideoCameraIcon,
+  },
+  {
+    title: 'Reddit & Quora',
+    text: 'Useful answers in the threads where developers compare tools, the ones AI answers often cite.',
+    href: '/reddit-marketing-for-devtools',
+    Icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    title: 'Newsletters',
+    text: 'A monthly or twice-monthly news roundup that keeps your brand in front of your customers.',
+    href: '/newsletter-services-for-devtools',
+    Icon: EnvelopeIcon,
   },
 ]
 
@@ -54,7 +75,7 @@ const Services = () => {
             One team for the full cycle, from first strategy to paid growth
           </p>
         </div>
-        <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(({ title, text, href, Icon }) => (
             <li key={title}>
               <Link

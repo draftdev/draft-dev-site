@@ -39,9 +39,9 @@ const Hero = () => {
               We turn your product into something developers find, trust and
               adopt. To do that, we combine our research-led strategy, proven AI
               workflows, 300+ subject matter experts and 7,000+ developer
-              network to run end-to-end growth programs across Content Strategy,
-              Technical Content, SEO &amp; AEO, Content Distribution, Paid
-              Campaigns, and Video.
+              network to run content-powered growth programs across Content
+              Strategy, Technical Content, SEO &amp; AEO, Content Distribution,
+              Paid Campaigns, and Video.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link

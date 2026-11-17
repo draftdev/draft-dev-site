@@ -1,13 +1,13 @@
 import { generateHomePageSchemas, stringifySchemas } from '@/app/lib/schema'
 
 import FAQ from '@/components/global/faq'
-import SinglePricing from '@/components/global/single-pricing'
 import CaseStudiesFeatureHome from '@/components/media/case-studies/featured-home'
 import MoreCaseStudies from '@/components/media/case-studies/more-case-studies'
 import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
 
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
+import Plans from '@/components/page-components/home/plans'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
   description:
-    'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+    'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
-      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+      'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
-      'Draft.dev is a go-to-market marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+      'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -89,36 +89,7 @@ export default function Home() {
             exclude={['Emily Blitstein']}
             className="bg-white py-12 sm:py-16"
           />
-          <SinglePricing
-            className="bg-[#f4f1f8]"
-            title="Lead Generation Package"
-            description="Our Lead Generation service is a comprehensive 3-step framework designed to drive awareness, uncover existing demand, and deliver clear ROI through strategic technical content."
-            callToActionURL="#book-a-call"
-            priceText="Generate qualified leads"
-            price="From $9K"
-            currency="/month"
-            includedFeatures={[
-              {
-                leadText: 'Strategic Content Creation:',
-                text: 'Full-funnel technical content, including landing pages, tutorials and demo apps, code samples, and social collateral.',
-              },
-              {
-                leadText: 'Comprehensive Campaign Strategy:',
-                text: 'Analysis of your product and features, your existing content, competitor research, and measurable goals.',
-              },
-              {
-                leadText: 'Lead Collection System:',
-                text: 'Downloadable assets with landing page copy optimized for MQL/SQL conversion.',
-              },
-              {
-                leadText: 'Performance Optimization:',
-                text: 'Monthly analytics reviews tracking cost per lead and content effectiveness.',
-              },
-            ]}
-            disclaimerOne="3-month minimum, then month to month"
-            disclaimerTwo="Delivery starts after initial planning period"
-            disclaimerThree="Draft.dev recommends supporting the content with promotional campaigns to drive traffic"
-          />
+          <Plans />
         </main>
         <FAQ
           callHref="#book-a-call"
