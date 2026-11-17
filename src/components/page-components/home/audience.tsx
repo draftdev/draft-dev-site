@@ -36,7 +36,7 @@ const Audience = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            Built for Developer Tool Teams at Every Stage
+            Built for Every Stage of Growth
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">

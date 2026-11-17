@@ -64,7 +64,7 @@ const Plans = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            Plans and Services
+            Plans and Pricing
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Go-to-market programs powered by technical content, built to drive
