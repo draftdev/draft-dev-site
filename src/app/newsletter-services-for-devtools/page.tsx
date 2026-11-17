@@ -2,6 +2,7 @@ import FAQ from '@/components/global/faq'
 import SocialProof from '@/components/media/social-proof'
 import TestimonialCarousel from '@/components/media/testimonials/testimonial-carousel'
 import TestimonialsCarousel from '@/components/media/testimonials/testimonials-carousel'
+import IssueFormat from '@/components/page-components/newsletter/issue-format'
 import BookCall from '@/components/page-components/service-landing/book-call'
 import CaseStudy from '@/components/page-components/service-landing/case-study'
 import Features from '@/components/page-components/service-landing/features'
@@ -107,6 +108,32 @@ export default function NewsletterServices() {
           ]}
         />
         <SocialProof title="A growth agency with a track record" compact />
+        <IssueFormat
+          title="What Goes Into Each Issue"
+          subtitle="A clear format your readers get used to, issue after issue"
+          parts={[
+            {
+              title: 'A note from your team',
+              description:
+                'Each issue opens with a short note from someone at your company. It reads like a person talking, not a brand.',
+            },
+            {
+              title: 'The stories that matter',
+              description:
+                'A handful of stories from your niche, each with a short summary and a link to the source.',
+            },
+            {
+              title: 'A number worth knowing',
+              description:
+                'One key stat from the news, set apart so readers see it at a glance.',
+            },
+            {
+              title: 'Your content, in context',
+              description:
+                'Each issue ends with something of yours, like a case study, a guide or a product update.',
+            },
+          ]}
+        />
         <TestimonialCarousel
           testimonials={[
             {
