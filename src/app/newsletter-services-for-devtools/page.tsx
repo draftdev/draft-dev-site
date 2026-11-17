@@ -17,7 +17,7 @@ const description =
   'Developer newsletter services for devtools and AI platforms. We curate the news in your niche, write each issue, and send it from your email tool with your brand front and center.'
 
 const heroDescription =
-  'We write a roundup of the news in your niche that developers want to read, with your brand front and center. Each issue keeps your product top of mind with the customers you already have.'
+  'We write a developer newsletter that rounds up the news in your niche, with your brand front and center. Each issue keeps your product top of mind with the customers you already have.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
@@ -68,8 +68,7 @@ export default function NewsletterServices() {
   return (
     <div>
       <Hero
-        title={'Developer Newsletters for\nDevTools & AI Platforms'}
-        compactTitle
+        title={'Newsletters for\nDevTools & AI Platforms'}
         description={heroDescription}
         primaryCTA={{ text: 'Book a Discovery Call', href: '#book-a-call' }}
         guide={{

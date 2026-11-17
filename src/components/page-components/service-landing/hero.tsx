@@ -4,8 +4,6 @@ import Link from 'next/link'
 
 interface HeroProps {
   title: string
-  // Slightly smaller title on desktop, for longer titles that need two lines
-  compactTitle?: boolean
   description: string
   primaryCTA: { text: string; href: string }
   guide: {
@@ -22,13 +20,7 @@ interface HeroProps {
 // beside the copy, the primary CTA uses a bright accent so it stands out on
 // the brand gradient, and the client logo strip lives inside the hero (as on
 // the homepage) so there is no seam between the hero and the next section.
-const Hero = ({
-  title,
-  compactTitle = false,
-  description,
-  primaryCTA,
-  guide,
-}: HeroProps) => {
+const Hero = ({ title, description, primaryCTA, guide }: HeroProps) => {
   return (
     <section className="bg-gradient-brand pt-12 pb-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -41,9 +33,7 @@ const Hero = ({
               <span className="text-sm text-white">{guide.title}</span>
             </Link>
             {/* Sized so the title sits on two lines on desktop */}
-            <h1
-              className={`font-code sm:header-light mt-6 mb-2 pb-4 text-3xl leading-tight font-semibold text-white ${compactTitle ? 'lg:text-[3.35rem]!' : ''}`}
-            >
+            <h1 className="font-code sm:header-light mt-6 mb-2 pb-4 text-3xl leading-tight font-semibold text-white">
               {/* Desktop line break: after "for" by default, or wherever the
                   title has "\n" for titles where that reads better */}
               {(() => {
