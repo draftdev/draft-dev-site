@@ -6,7 +6,6 @@ import BookCall from '@/components/page-components/service-landing/book-call'
 import CaseStudy from '@/components/page-components/service-landing/case-study'
 import Features from '@/components/page-components/service-landing/features'
 import Hero from '@/components/page-components/service-landing/hero'
-import Partner from '@/components/page-components/service-landing/partner'
 
 import type { Metadata } from 'next'
 
@@ -108,14 +107,6 @@ export default function NewsletterServices() {
           ]}
         />
         <SocialProof title="A growth agency with a track record" compact />
-        <Partner
-          title="A Newsletter Your Customers Open"
-          paragraphs={[
-            'Developers who already use your product still need a reason to come back. A short roundup of what changed in their world gives them one, every month or twice a month.',
-            "Because it's your newsletter, every issue puts your brand next to news they care about, without reading like an ad.",
-            'Our own newsletter, DevTool Content Weekly, averages a 30% open rate across 8,500+ sends. We bring the same approach to yours.',
-          ]}
-        />
         <TestimonialCarousel
           testimonials={[
             {
