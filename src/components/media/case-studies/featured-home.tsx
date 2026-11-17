@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const featured = {
-  dek: 'When internal engineering bandwidth was tight, Draft.dev delivered SME-written tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time.',
+  dek: 'When internal engineering bandwidth was tight, Draft.dev delivered SME-reviewed tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time.',
   href: '/case-studies/sinch-mailgun',
 }
 

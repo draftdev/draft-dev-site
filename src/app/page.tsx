@@ -97,6 +97,7 @@ export default function Home() {
           title="Common Questions We Get Asked"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
+          centerHeading
         />
         <BookCall />
       </div>

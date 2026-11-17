@@ -1,8 +1,8 @@
-import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline'
+import { CheckIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
 // Core plans and add-on services, from the Nov 2026 pricing deck.
-// Plan prices are shown; add-on prices are not (agreed with marketing).
+// Plan prices are shown; add-ons are named without prices.
 const plans = [
   {
     name: 'Foundation',
@@ -59,32 +59,12 @@ const plans = [
   },
 ]
 
+// Add-on services named in the line under the plans, each linking to its page
 const addOns = [
-  {
-    title: 'Developer Distribution Network',
-    text: 'Developers in our network share your articles and launches on LinkedIn, X, Reddit, dev.to and Hacker News.',
-    href: '/content-distribution',
-  },
-  {
-    title: 'Technical Video',
-    text: 'We turn your best articles into videos and short clips for YouTube, LinkedIn and TikTok.',
-    href: '/video-marketing-for-devtools',
-  },
-  {
-    title: 'Reddit & Quora Answers',
-    text: 'Useful answers in the threads where developers compare tools, with monthly AI visibility reports.',
-    href: '/reddit-marketing-for-devtools',
-  },
-  {
-    title: 'Developer Newsletters',
-    text: 'A monthly or twice-monthly news roundup for your customers, sent with your brand.',
-    href: '/newsletter-services-for-devtools',
-  },
-  {
-    title: 'Paid Advertising',
-    text: 'Google, Reddit, ChatGPT, YouTube and LinkedIn ads, managed around your acquisition cost.',
-    href: '/ppc-for-devtools',
-  },
+  { text: 'video', href: '/video-marketing-for-devtools' },
+  { text: 'Reddit & Quora answers', href: '/reddit-marketing-for-devtools' },
+  { text: 'newsletters', href: '/newsletter-services-for-devtools' },
+  { text: 'paid ads', href: '/ppc-for-devtools' },
 ]
 
 const Plans = () => {
@@ -170,7 +150,29 @@ const Plans = () => {
           ))}
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-2 text-sm text-gray-600 sm:grid-cols-2 sm:gap-6">
+        {/* Add-on services, linked inline */}
+        <p className="mx-auto mt-10 max-w-3xl text-center text-lg text-balance text-gray-700">
+          Need{' '}
+          {addOns.map((addOn, i) => (
+            <span key={addOn.href}>
+              <Link
+                href={addOn.href}
+                className="text-secondary font-semibold whitespace-nowrap underline decoration-[#5e5285]/30 underline-offset-4 hover:decoration-[#5e5285]"
+              >
+                {addOn.text}
+              </Link>
+              {i < addOns.length - 2
+                ? ', '
+                : i === addOns.length - 2
+                  ? ' or '
+                  : ''}
+            </span>
+          ))}
+          ? Add them to any plan, or run them on their own.
+        </p>
+
+        {/* Plan notes, centered under the add-on line */}
+        <div className="mx-auto mt-4 max-w-3xl space-y-1 text-center text-sm text-gray-600">
           <p>
             <span className="font-semibold text-gray-800">
               Full distribution:
@@ -178,46 +180,11 @@ const Plans = () => {
             we email the article to our developer network and ask them to share
             it.
           </p>
-          <p className="sm:text-right">
+          <p>
             <span className="font-semibold text-gray-800">Terms:</span> 3-month
             initial term, then month to month. Custom programs available.
           </p>
         </div>
-
-        {/* Add-on services */}
-        <div className="mt-14 text-center">
-          <h3 className="font-code text-secondary text-2xl font-semibold">
-            Add to Any Plan, or Run on Its Own
-          </h3>
-        </div>
-        {/* Wraps into centered rows (2, then 3) until there's room for all 5 */}
-        <ul className="mt-8 flex flex-wrap justify-center gap-5">
-          {addOns.map((addOn) => (
-            <li
-              key={addOn.title}
-              className="w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] xl:w-[calc(20%-16px)]"
-            >
-              <Link
-                href={addOn.href}
-                className="group flex h-full flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-1 hover:shadow-lg"
-              >
-                <h4 className="font-code text-secondary text-lg font-semibold">
-                  {addOn.title}
-                </h4>
-                <p className="mt-2 grow text-base text-gray-600">
-                  {addOn.text}
-                </p>
-                <span className="text-secondary mt-5 inline-flex items-center gap-x-1.5 text-sm font-semibold">
-                  Learn more
-                  <ArrowRightIcon
-                    aria-hidden="true"
-                    className="size-4 transition group-hover:translate-x-1"
-                  />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   )

@@ -60,6 +60,8 @@ type FAQProps = {
   headingClassName?: string
   // Two flowing columns, so a short answer next to a long one leaves no gap
   masonry?: boolean
+  // Center the heading and intro line (homepage); service pages keep left
+  centerHeading?: boolean
   // Service pages turn this off and pass only their own questions, since
   // the standard ones (pricing included) are about technical content
   standardFaqs?: boolean
@@ -72,6 +74,7 @@ export default function FAQ({
   title = 'Frequently asked questions',
   headingClassName = 'subheader-gradient',
   masonry = false,
+  centerHeading = false,
   standardFaqs = true,
 }: FAQProps) {
   const allFaqs = [
@@ -83,10 +86,15 @@ export default function FAQ({
     <div id="faq" className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className={`${headingClassName} scroll-mt-32`} id="faq">
+          <h2
+            className={`${headingClassName} scroll-mt-32 ${centerHeading ? 'text-center' : ''}`}
+            id="faq"
+          >
             {title}
           </h2>
-          <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
+          <p
+            className={`lg:lead-dark max-w-5xl text-lg text-gray-700 ${centerHeading ? 'mx-auto text-center text-balance' : ''}`}
+          >
             <span className="font-semibold">
               Have a different question and can't find the answer you're looking
               for?

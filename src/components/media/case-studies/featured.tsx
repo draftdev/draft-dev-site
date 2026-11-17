@@ -14,7 +14,7 @@ type CaseLink = {
 const featured = {
   title:
     'How Sinch Mailgun Revived Its Developer-First Content Strategy and Achieved 20–45% CTR with Draft.dev',
-  dek: 'When internal engineering bandwidth was tight, Draft.dev delivered SME-written tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time.',
+  dek: 'When internal engineering bandwidth was tight, Draft.dev delivered SME-reviewed tutorials, testing content, and editorial QA—fueling engagement while saving weeks of internal time.',
   image: {
     src: '/media/testimonials-lg/em_sinch_mailgun.jpg',
     alt: 'Sinch Mailgun case study hero image',
