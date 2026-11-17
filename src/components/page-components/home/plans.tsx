@@ -1,5 +1,4 @@
 import { CheckIcon } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 
 // Core plans and add-on services, from the Nov 2026 pricing deck.
 // Plan prices are shown; add-ons are named without prices.
@@ -31,7 +30,7 @@ const plans = [
       '1 technical video',
       '36 social posts',
       '12 author shares',
-      '1 full distribution',
+      '1 developer network distribution',
       'Biweekly strategy call',
       'Monthly Growth Report (SEO + AEO)',
       'Shared Slack channel',
@@ -49,7 +48,7 @@ const plans = [
       '2 technical videos',
       '60 social posts',
       '20 author shares',
-      '2 full distributions',
+      '2 developer network distributions',
       'Biweekly strategy call',
       'Monthly Growth Report (SEO + AEO)',
       'Shared Slack channel',
@@ -57,14 +56,6 @@ const plans = [
       'Revisions until approved',
     ],
   },
-]
-
-// Add-on services named in the line under the plans, each linking to its page
-const addOns = [
-  { text: 'video', href: '/video-marketing-for-devtools' },
-  { text: 'Reddit & Quora answers', href: '/reddit-marketing-for-devtools' },
-  { text: 'newsletters', href: '/newsletter-services-for-devtools' },
-  { text: 'paid ads', href: '/ppc-for-devtools' },
 ]
 
 const Plans = () => {
@@ -150,41 +141,10 @@ const Plans = () => {
           ))}
         </div>
 
-        {/* Add-on services, linked inline */}
-        <p className="mx-auto mt-10 max-w-3xl text-center text-lg text-balance text-gray-700">
-          Need{' '}
-          {addOns.map((addOn, i) => (
-            <span key={addOn.href}>
-              <Link
-                href={addOn.href}
-                className="text-secondary font-semibold whitespace-nowrap underline decoration-[#5e5285]/30 underline-offset-4 hover:decoration-[#5e5285]"
-              >
-                {addOn.text}
-              </Link>
-              {i < addOns.length - 2
-                ? ', '
-                : i === addOns.length - 2
-                  ? ' or '
-                  : ''}
-            </span>
-          ))}
-          ? Add them to any plan, or run them on their own.
+        <p className="mt-8 text-center text-sm text-gray-600">
+          <span className="font-semibold text-gray-800">Terms:</span> 3-month
+          initial term, then month to month. Custom programs available.
         </p>
-
-        {/* Plan notes, centered under the add-on line */}
-        <div className="mx-auto mt-4 max-w-3xl space-y-1 text-center text-sm text-gray-600">
-          <p>
-            <span className="font-semibold text-gray-800">
-              Full distribution:
-            </span>{' '}
-            we email the article to our developer network and ask them to share
-            it.
-          </p>
-          <p>
-            <span className="font-semibold text-gray-800">Terms:</span> 3-month
-            initial term, then month to month. Custom programs available.
-          </p>
-        </div>
       </div>
     </section>
   )
