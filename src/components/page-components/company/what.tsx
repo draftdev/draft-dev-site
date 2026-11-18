@@ -1,70 +1,62 @@
-import Image from 'next/image'
+import {
+  ArrowTrendingUpIcon,
+  CodeBracketIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/24/outline'
 
-// What the GTM work covers, shown as chips under the heading
-const services = [
-  'GTM Strategy',
-  'Technical Content',
-  'SEO & AEO',
-  'Distribution',
-  'Newsletters',
-  'Video',
-  'Reddit & Quora',
-  'Paid growth',
+// Who we are: a short story, then what makes us different.
+// Services are covered on the homepage, so they aren't listed here.
+const pillars = [
+  {
+    title: 'Only technical audiences',
+    text: 'We work only with companies that market to developers, data engineers and DevOps teams. That focus shapes every plan we write.',
+    Icon: CodeBracketIcon,
+  },
+  {
+    title: 'Checked by real engineers',
+    text: 'Our 300+ engineers check every piece for technical accuracy. Our editors make sure it reads well and fits your brand.',
+    Icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Marketers who know growth',
+    text: 'Our marketers tie every deliverable to your goals and make sure it reaches the right people.',
+    Icon: ArrowTrendingUpIcon,
+  },
 ]
 
 const What = () => {
   return (
     <section className="bg-white py-12 sm:py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 lg:px-8">
-        <div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Heading uses the full width so it fits on one line on desktop */}
+        <div className="text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            GTM technical marketing for developer tools and AI platforms
+            Built by Engineers, for Developer Audiences
           </h2>
-          <ul className="mt-5 flex flex-wrap gap-2">
-            {services.map((service) => (
-              <li
-                key={service}
-                className="text-secondary rounded-full bg-[#f4f1f8] px-3.5 py-1 text-sm font-semibold ring-1 ring-[#5e5285]/15"
-              >
-                {service}
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-8 space-y-5 text-lg text-gray-600">
-            <p>
-              Draft.dev is a go-to-market marketing agency for developer tools
-              and platforms, founded in 2020 by former CTO Karl Hughes.
-            </p>
-            <p>
-              Our 300+ real engineers check every piece for technical accuracy.
-              Our marketers make sure it serves your goals and reaches the right
-              people.
-            </p>
-            <p>
-              We cover strategy, technical content, SEO &amp; AEO, distribution,
-              newsletters, video, Reddit &amp; Quora and paid growth. We move
-              from strategy to your first deliverables within weeks.
-            </p>
-          </div>
+          <p className="mx-auto mt-6 max-w-4xl text-lg text-gray-600 sm:text-xl">
+            Former CTO Karl Hughes founded Draft.dev in 2020 to create technical
+            content that developers actually trust. Today we&apos;re a growth
+            partner for developer tools and AI platforms, running go-to-market
+            programs from first strategy to paid growth.
+          </p>
         </div>
 
-        {/* Photo fills the column, so its top and bottom line up with the copy */}
-        <div className="relative hidden lg:block">
-          <div
-            aria-hidden="true"
-            className="bg-gradient-brand absolute inset-0 -z-10 translate-x-3 translate-y-3 rounded-4xl"
-          />
-          <div className="relative h-full overflow-hidden rounded-4xl shadow-xl ring-1 ring-black/5">
-            <Image
-              alt="Engineers reviewing code together on a large screen"
-              src="/site/med-portrait/dev_2.jpg"
-              fill
-              sizes="400px"
-              className="object-cover"
-            />
-          </div>
-        </div>
+        <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {pillars.map(({ title, text, Icon }) => (
+            <li
+              key={title}
+              className="flex flex-col rounded-3xl bg-[#f4f1f8] p-7 ring-1 ring-[#5e5285]/10"
+            >
+              <span className="bg-gradient-brand flex size-12 items-center justify-center rounded-xl text-white shadow-md">
+                <Icon aria-hidden="true" className="size-6" />
+              </span>
+              <h3 className="font-code text-secondary mt-5 text-xl font-semibold">
+                {title}
+              </h3>
+              <p className="mt-3 text-base text-gray-600">{text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   )
