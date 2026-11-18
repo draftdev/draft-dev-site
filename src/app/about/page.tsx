@@ -110,13 +110,13 @@ export default function About() {
               number: '1',
               title: 'Discovery call',
               description:
-                'Before we start, we learn where your business is, what your goals are, and walk you through how we plan, deliver and report.',
+                'Before we start, we learn where your business is today, who your audience is and what your goals are. Then we walk you through how we plan, deliver and report, so you know exactly what to expect from day one.',
             },
             {
               number: '2',
               title: 'Kickoff call',
               description:
-                'We have a call with your primary contact and try to schedule 1-on-1 interviews with someone on your leadership team to extract vision and thought leadership content ideas. We also talk through nice-to-have information like product description, brand guidelines, positioning, ICPs, competitors and ideally get access to your CMS and analytics, if feasible.',
+                'We meet your main contact and schedule interviews with your leadership team to capture vision and thought leadership ideas. We also gather brand guidelines, positioning, ICPs, competitors, and access to your CMS and analytics.',
             },
             {
               number: '3',
