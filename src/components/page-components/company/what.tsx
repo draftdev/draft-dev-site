@@ -31,7 +31,7 @@ const What = () => {
         {/* Heading uses the full width so it fits on one line on desktop */}
         <div className="text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            Built by Engineers, for Developer Audiences
+            Growth Backed by Real Engineers
           </h2>
           <p className="mx-auto mt-6 max-w-4xl text-lg text-gray-600 sm:text-xl">
             Former CTO Karl Hughes founded Draft.dev in 2020 to create technical
