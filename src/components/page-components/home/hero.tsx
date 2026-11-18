@@ -37,9 +37,10 @@ const Hero = () => {
               Tools &amp; AI Platforms
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
-              We help developers find, trust and adopt your product. Our
-              content-powered growth programs are backed by 300+ subject matter
-              experts and a 7,000+ developer network.
+              We combine our research-led strategy, proven AI workflows, 300+
+              subject matter experts and 7,000+ developer network to run
+              content-powered growth programs that help developers find, trust
+              and adopt your product.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
