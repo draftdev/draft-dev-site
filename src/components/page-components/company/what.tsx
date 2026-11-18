@@ -2,10 +2,13 @@ import Image from 'next/image'
 
 // What the GTM work covers, shown as chips under the heading
 const services = [
-  'Strategy',
-  'Content',
+  'GTM Strategy',
+  'Technical Content',
   'SEO & AEO',
   'Distribution',
+  'Newsletters',
+  'Video',
+  'Reddit & Quora',
   'Paid growth',
 ]
 
@@ -15,7 +18,7 @@ const What = () => {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:gap-16 lg:px-8">
         <div>
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            GTM technical marketing for developer tools
+            GTM technical marketing for developer tools and AI platforms
           </h2>
           <ul className="mt-5 flex flex-wrap gap-2">
             {services.map((service) => (
@@ -34,13 +37,14 @@ const What = () => {
               and platforms, founded in 2020 by former CTO Karl Hughes.
             </p>
             <p>
-              Our 300+ engineers check every piece for technical accuracy. Our
-              marketers make sure it serves your goals and reaches the right
+              Our 300+ real engineers check every piece for technical accuracy.
+              Our marketers make sure it serves your goals and reaches the right
               people.
             </p>
             <p>
-              We cover strategy, content, SEO &amp; AEO, distribution and paid
-              growth, and we move from strategy to distribution within weeks.
+              We cover strategy, technical content, SEO &amp; AEO, distribution,
+              newsletters, video, Reddit &amp; Quora and paid growth. We move
+              from strategy to your first deliverables within weeks.
             </p>
           </div>
         </div>
