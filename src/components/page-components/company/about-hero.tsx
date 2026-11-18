@@ -27,7 +27,7 @@ const AboutHero = ({
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1fr)_360px] lg:gap-16">
           <div>
-            <h1 className="font-code sm:header-light text-3xl leading-tight font-semibold text-white">
+            <h1 className="font-code sm:header-light text-3xl leading-tight font-semibold text-balance text-white">
               {title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About Us - Draft.dev',
   description:
-    'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+    'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'Draft.dev is a go-to-market technical marketing agency for developer tools and platforms: strategy, content, SEO & AEO, distribution and paid growth.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -67,8 +67,8 @@ export default function About() {
       ))}
 
       <AboutHero
-        title="We help Developer Tools & Platforms grow and win"
-        descriptionOne="Draft.dev builds content-powered technical go-to-market strategies for developer tools. We cover strategy, content, SEO & AEO, distribution and paid growth, so developers, search engines and LLMs find your product and trust it."
+        title="We help Developer Tools & AI Platforms grow and win"
+        descriptionOne="Draft.dev is the growth partner for developer tools and AI platforms. We run content-powered go-to-market programs across strategy, technical content, SEO & AEO, distribution, newsletters, video, Reddit & Quora and paid growth, so developers, search engines and LLMs find your product and trust it."
         descriptionTwo="Let us help you build your technical go-to-market engine."
         imageSrc="/site/med-portrait/developers_draft_dev.jpg"
         imageAlt="Technical content development"
@@ -104,13 +104,13 @@ export default function About() {
         /> */}
         <AboutSteps
           title="How we work with you"
-          subtitle="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to published content within weeks."
+          subtitle="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to your first deliverables within weeks."
           steps={[
             {
               number: '1',
               title: 'Discovery call',
               description:
-                "Before we begin working with a new client, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll ask you where your business is at, what your content goals are, and walk you through our content strategy, production, and promotion processes.",
+                'Before we start, we learn where your business is, what your goals are, and walk you through how we plan, deliver and report.',
             },
             {
               number: '2',
@@ -120,9 +120,9 @@ export default function About() {
             },
             {
               number: '3',
-              title: 'Strategy, production and launch within 3 weeks',
+              title: 'Strategy, deliverables and launch within 3 weeks',
               description:
-                'Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.',
+                'We analyze your setup, define a strategy and roadmap, and start on the deliverables in your plan. Your first deliverables usually go live within 3 weeks. After that, we deliver weekly and meet monthly to report and adjust the strategy.',
             },
           ]}
         />
