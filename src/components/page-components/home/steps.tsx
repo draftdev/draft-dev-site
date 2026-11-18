@@ -12,7 +12,7 @@ const steps = [
   },
   {
     title: 'Deliverables',
-    text: 'Everything in your plan: technical content like tutorials, comparison pages and lead magnets, plus videos, newsletters, Reddit & Quora answers and paid campaigns. Real engineers review every piece, and your first deliverables go live in about 3 weeks.',
+    text: 'Technical content, videos, newsletters, Reddit & Quora answers and paid ads from your plan. Real engineers review every piece. First deliverables go live in about 3 weeks.',
   },
   {
     title: 'Reporting',
@@ -35,8 +35,8 @@ const Steps = () => {
           </p>
         </div>
 
-        {/* 2x2 tiles; boxes in the same row match heights */}
-        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+        {/* 2x2 tiles, all the same height; keep each text to 3 lines on desktop */}
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:auto-rows-fr md:grid-cols-2">
           {steps.map((step, i) => (
             <li
               key={step.title}
