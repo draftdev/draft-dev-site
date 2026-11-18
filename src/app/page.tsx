@@ -92,7 +92,7 @@ export default function Home() {
         </main>
         <FAQ
           callHref="#book-a-call"
-          className="bg-white py-12 sm:py-16"
+          className="bg-[#f4f1f8] py-12 sm:py-16"
           title="Common Questions We Get Asked"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry

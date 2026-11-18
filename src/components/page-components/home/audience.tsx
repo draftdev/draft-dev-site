@@ -34,7 +34,7 @@ const Audience = () => {
   return (
     <section className="bg-[#f4f1f8] py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
             Built for Every Stage of Growth
           </h2>

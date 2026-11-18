@@ -35,8 +35,8 @@ const Steps = () => {
           </p>
         </div>
 
-        {/* 2x2 tiles, equal height */}
-        <ol className="mt-10 grid grid-cols-1 gap-5 md:auto-rows-fr md:grid-cols-2">
+        {/* 2x2 tiles; boxes in the same row match heights */}
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {steps.map((step, i) => (
             <li
               key={step.title}

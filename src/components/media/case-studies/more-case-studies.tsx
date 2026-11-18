@@ -44,9 +44,6 @@ export default function MoreCaseStudies() {
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
             More Case Studies
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Our latest results, with client names kept private.
-          </p>
         </div>
 
         <ul
