@@ -1,10 +1,13 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 type TeamMember = {
   name: string
   description: string
   // No photo yet: show initials instead
   img?: string
+  // Author page, when the person has one
+  href?: string
 }
 
 const teamMembers: TeamMember[] = [
@@ -37,6 +40,7 @@ const teamMembers: TeamMember[] = [
     name: 'Sthitapragyan Mohanty',
     description: 'Head of Growth',
     img: '/draft/team/sthitapragyan_mohanty_draft_dev.jpg',
+    href: '/team/sthitapragyan-mohanty',
   },
   {
     name: 'Aniket Bhattacharyea',
@@ -138,7 +142,16 @@ const Team = () => {
                   )}
                 </PhotoFrame>
                 <h3 className="mt-4 text-lg font-semibold text-white">
-                  {member.name}
+                  {member.href ? (
+                    <Link
+                      href={member.href}
+                      className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
+                    >
+                      {member.name}
+                    </Link>
+                  ) : (
+                    member.name
+                  )}
                 </h3>
                 <p className="mt-1 text-base text-white/80">
                   {member.description}
