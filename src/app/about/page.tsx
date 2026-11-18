@@ -120,7 +120,7 @@ export default function About() {
             },
             {
               number: '3',
-              title: 'Strategy, deliverables and launch within 3 weeks',
+              title: 'Deliverables',
               description:
                 'We analyze your setup, define a strategy and roadmap, and start on the deliverables in your plan. Your first deliverables usually go live within 3 weeks. After that, we deliver weekly and meet monthly to report and adjust the strategy.',
             },
