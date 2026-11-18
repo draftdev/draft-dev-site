@@ -6,7 +6,7 @@ type TeamMember = {
   description: string
   // No photo yet: show initials instead
   img?: string
-  // Author page, when the person has one
+  // Photo and name link here: LinkedIn, or an internal page (starts with /)
   href?: string
 }
 
@@ -20,6 +20,7 @@ const teamMembers: TeamMember[] = [
     name: 'Karl Hughes',
     description: 'Founder',
     img: '/draft/team/karl_hughes_draft_dev.jpg',
+    href: 'https://www.linkedin.com/in/karllhughes/',
   },
   {
     name: 'Manuel Weiss',
@@ -40,6 +41,7 @@ const teamMembers: TeamMember[] = [
     name: 'Sthitapragyan Mohanty',
     description: 'Head of Growth',
     img: '/draft/team/sthitapragyan_mohanty_draft_dev.jpg',
+    // Author page (draft.dev/team/sthitapragyan-mohanty)
     href: '/team/sthitapragyan-mohanty',
   },
   {
@@ -93,6 +95,13 @@ const PhotoFrame = ({
   </div>
 )
 
+// LinkedIn "in" mark
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className="size-4">
+    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.25H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.96c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z" />
+  </svg>
+)
+
 const Team = () => {
   return (
     <section className="bg-white py-12 sm:py-16">
@@ -117,47 +126,90 @@ const Team = () => {
             Our core team, from strategy to delivery
           </p>
           <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
-            {teamMembers.map((member) => (
-              <li key={member.name} className="text-center">
-                <PhotoFrame
-                  frameClassName="bg-white/60"
-                  className="w-28 sm:w-32"
-                >
-                  {member.img ? (
-                    <Image
-                      alt={`${member.name} - ${member.description}`}
-                      src={member.img}
-                      width={256}
-                      height={256}
-                      className="size-full object-cover"
-                    />
-                  ) : (
+            {teamMembers.map((member) => {
+              const photo = (
+                <div className="relative mx-auto w-28 sm:w-32">
+                  <PhotoFrame
+                    frameClassName={`bg-white/60 transition ${member.href ? 'group-hover:bg-amber-300 group-focus-visible:bg-amber-300' : ''}`}
+                    className="w-full"
+                  >
+                    {member.img ? (
+                      <Image
+                        alt={`${member.name} - ${member.description}`}
+                        src={member.img}
+                        width={256}
+                        height={256}
+                        className="size-full object-cover transition duration-300 group-hover:scale-105"
+                      />
+                    ) : (
+                      <span
+                        role="img"
+                        aria-label={`${member.name} - ${member.description}`}
+                        className="font-code bg-gradient-brand flex size-full items-center justify-center text-3xl font-semibold text-white"
+                      >
+                        {initials(member.name)}
+                      </span>
+                    )}
+                  </PhotoFrame>
+                  {/* LinkedIn badge, shown on hover */}
+                  {member.href?.includes('linkedin.com') && (
                     <span
-                      role="img"
-                      aria-label={`${member.name} - ${member.description}`}
-                      className="font-code bg-gradient-brand flex size-full items-center justify-center text-3xl font-semibold text-white"
+                      aria-hidden="true"
+                      className="absolute right-0 bottom-0 flex size-8 items-center justify-center rounded-full bg-amber-300 text-gray-900 opacity-0 shadow-md transition group-hover:opacity-100 group-focus-visible:opacity-100"
                     >
-                      {initials(member.name)}
+                      <LinkedInIcon />
                     </span>
                   )}
-                </PhotoFrame>
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  {member.href ? (
-                    <Link
-                      href={member.href}
-                      className="underline decoration-white/40 underline-offset-4 hover:decoration-white"
-                    >
-                      {member.name}
-                    </Link>
-                  ) : (
-                    member.name
-                  )}
+                </div>
+              )
+              const name = (
+                <h3
+                  className={`mt-4 text-lg font-semibold text-white transition ${member.href ? 'group-hover:text-amber-300' : ''}`}
+                >
+                  {member.name}
                 </h3>
+              )
+              const role = (
                 <p className="mt-1 text-base text-white/80">
                   {member.description}
                 </p>
-              </li>
-            ))}
+              )
+              if (!member.href) {
+                return (
+                  <li key={member.name} className="text-center">
+                    {photo}
+                    {name}
+                    {role}
+                  </li>
+                )
+              }
+              const external = !member.href.startsWith('/')
+              const linkClass =
+                'group block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-300'
+              return (
+                <li key={member.name} className="text-center">
+                  {external ? (
+                    <a
+                      href={member.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name} on LinkedIn`}
+                      className={linkClass}
+                    >
+                      {photo}
+                      {name}
+                      {role}
+                    </a>
+                  ) : (
+                    <Link href={member.href} className={linkClass}>
+                      {photo}
+                      {name}
+                      {role}
+                    </Link>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </div>
 
