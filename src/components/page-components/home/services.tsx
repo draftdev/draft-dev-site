@@ -73,7 +73,7 @@ const Services = () => {
             Everything Your Go-to-Market Needs
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Your growth partner across every channel developers use
+            Your growth partner, from strategy to scale
           </p>
         </div>
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
