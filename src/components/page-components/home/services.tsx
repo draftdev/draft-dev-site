@@ -11,17 +11,18 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-// The parts of a GTM program, each linking to its service page
+// The parts of a GTM program, each linking to its service page.
+// Order agreed with Mushfiq: Newsletters before Video, Paid growth last.
 const services = [
   {
-    title: 'Strategy',
+    title: 'GTM Strategy',
     text: 'Research, positioning and a roadmap tied to your pipeline goals.',
     href: '/content-strategy-services',
     Icon: MapIcon,
   },
   {
-    title: 'Content',
-    text: 'Tutorials, blog posts, comparison pages and docs, checked by engineers.',
+    title: 'Technical Content',
+    text: 'Tutorials, blog posts, comparison pages and docs, checked by real engineers.',
     href: '/content-production',
     Icon: DocumentTextIcon,
   },
@@ -33,15 +34,15 @@ const services = [
   },
   {
     title: 'Distribution',
-    text: 'Reddit, influencers and a 7,000+ developer network to get your content seen.',
+    text: 'Developers in our network share your articles and launches on LinkedIn, X, dev.to and Hacker News.',
     href: '/content-distribution',
     Icon: MegaphoneIcon,
   },
   {
-    title: 'Paid growth',
-    text: 'Google, Reddit, ChatGPT, YouTube and LinkedIn ads, plus sponsorships in newsletters and podcasts.',
-    href: '/ppc-for-devtools',
-    Icon: ChartBarIcon,
+    title: 'Newsletters',
+    text: 'A monthly or twice-monthly news roundup that keeps your brand in front of your customers.',
+    href: '/newsletter-services-for-devtools',
+    Icon: EnvelopeIcon,
   },
   {
     title: 'Video',
@@ -56,10 +57,10 @@ const services = [
     Icon: ChatBubbleLeftRightIcon,
   },
   {
-    title: 'Newsletters',
-    text: 'A monthly or twice-monthly news roundup that keeps your brand in front of your customers.',
-    href: '/newsletter-services-for-devtools',
-    Icon: EnvelopeIcon,
+    title: 'Paid growth',
+    text: 'Google, Reddit, ChatGPT, YouTube and LinkedIn ads, plus sponsorships in newsletters and podcasts.',
+    href: '/ppc-for-devtools',
+    Icon: ChartBarIcon,
   },
 ]
 
@@ -72,7 +73,7 @@ const Services = () => {
             Everything Your Go-to-Market Needs
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            One team for the full cycle, from first strategy to paid growth
+            Every channel that drives developer adoption, run by one team
           </p>
         </div>
         <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

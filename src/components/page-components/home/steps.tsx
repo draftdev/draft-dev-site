@@ -4,19 +4,19 @@ import Link from 'next/link'
 const steps = [
   {
     title: 'Discovery and kickoff',
-    text: "A 30-minute call to see if we're a fit. Then we interview your team and review your product, positioning, competitors and analytics.",
+    text: 'We start with a kickoff call. Then we interview your team and review your product, positioning, competitors and analytics.',
   },
   {
     title: 'Research and strategy',
     text: 'We study your market, audience and existing content, run SEO and AEO research, and deliver a strategy and roadmap for your feedback.',
   },
   {
-    title: 'Content production',
-    text: 'Blog posts, tutorials, comparison and landing pages, product guides and lead magnets. AI workflows speed up drafting, developers review every piece, and technical editors polish it. Your first pieces go live in about 3 weeks.',
+    title: 'Deliverables',
+    text: 'Everything in your plan: technical content like tutorials, comparison pages and lead magnets, plus videos, newsletters, Reddit & Quora answers and paid campaigns. Real engineers review every piece, and your first deliverables go live in about 3 weeks.',
   },
   {
-    title: 'Promotion and reporting',
-    text: 'We promote your content on Reddit, LinkedIn and X, place it in niche newsletters and publications, and report on results every month.',
+    title: 'Reporting',
+    text: 'We track every channel from day one and send a monthly Growth Report on rankings, AI citations, traffic and signups. Then we update the roadmap based on what works.',
   },
 ]
 
@@ -30,8 +30,8 @@ const Steps = () => {
             From Kickoff to Results in Weeks
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            We plan, produce, publish, and promote your first pieces within
-            weeks.
+            We plan, deliver and report on your program, with first deliverables
+            live within weeks.
           </p>
         </div>
 

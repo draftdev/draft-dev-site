@@ -7,7 +7,6 @@ import TestimonialsCarousel from '@/components/media/testimonials/testimonials-c
 
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
-import Plans from '@/components/page-components/home/plans'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
@@ -89,7 +88,7 @@ export default function Home() {
             exclude={['Emily Blitstein']}
             className="bg-white py-12 sm:py-16"
           />
-          <Plans />
+          {/* Pricing hidden for now (Mushfiq). To show it again, render <Plans /> here */}
         </main>
         <FAQ
           callHref="#book-a-call"

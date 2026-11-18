@@ -28,20 +28,18 @@ const Hero = () => {
                 {guide.title} <span aria-hidden="true">→</span>
               </span>
             </Link>
-            {/* Two lines on desktop: break after "for" */}
+            {/* Two lines on desktop: break after "Developer" */}
             <h1 className="font-code mt-6 text-3xl leading-tight font-semibold tracking-tight text-balance text-white sm:text-5xl">
-              GTM Marketing for <br className="hidden xl:block" />
               <span className="xl:whitespace-nowrap">
-                Developer Tools &amp; AI Platforms
-              </span>
+                GTM Marketing for Developer
+              </span>{' '}
+              <br className="hidden xl:block" />
+              Tools &amp; AI Platforms
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl">
-              We turn your product into something developers find, trust and
-              adopt. To do that, we combine our research-led strategy, proven AI
-              workflows, 300+ subject matter experts and 7,000+ developer
-              network to run content-powered growth programs across Content
-              Strategy, Technical Content, SEO &amp; AEO, Content Distribution,
-              Paid Campaigns, and Video.
+              We help developers find, trust and adopt your product. Our
+              content-powered growth programs are backed by 300+ subject matter
+              experts and a 7,000+ developer network.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
               <Link
