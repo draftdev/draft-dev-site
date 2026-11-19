@@ -1,4 +1,9 @@
 import { cache } from 'react'
+import {
+  DEFAULT_AUTHOR_NAME,
+  getAuthorPageUrl,
+  getAuthorProfile,
+} from '../authors'
 import { PUBLISHER_REF, TECHNICAL_AUDIENCE, type Post } from './constants'
 import {
   estimateWordCount,
@@ -11,8 +16,22 @@ import { generateVideoSchema } from './video'
 export function generatePersonAuthor(post: Post) {
   const authorName = post.originalAuthor || post.author?.node?.name
 
-  if (!authorName || authorName === 'Draft.dev Team') {
+  if (!authorName || authorName === DEFAULT_AUTHOR_NAME) {
     return { '@id': PUBLISHER_REF }
+  }
+
+  // Team members with an author page: point at the Person on that page
+  const profile = getAuthorProfile(authorName)
+  if (profile) {
+    const url = getAuthorPageUrl(profile)
+    return {
+      '@type': 'Person',
+      '@id': `${url}#person`,
+      name: profile.name,
+      url,
+      worksFor: { '@id': PUBLISHER_REF, '@type': 'Organization' },
+      ...(profile.linkedin && { sameAs: [profile.linkedin] }),
+    }
   }
 
   const topics =

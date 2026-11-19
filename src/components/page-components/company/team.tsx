@@ -41,7 +41,8 @@ const teamMembers: TeamMember[] = [
     name: 'Sthitapragyan Mohanty',
     description: 'Head of Growth',
     img: '/draft/team/sthitapragyan_mohanty_draft_dev.jpg',
-    href: 'https://www.linkedin.com/in/sthitapragyan-mohanty-1278b5a6/',
+    // Author page (draft.dev/team/sthitapragyan-mohanty)
+    href: '/team/sthitapragyan-mohanty',
   },
   {
     name: 'Aniket Bhattacharyea',

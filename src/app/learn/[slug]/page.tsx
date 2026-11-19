@@ -1,3 +1,9 @@
+import {
+  getAuthorPagePath,
+  getAuthorPageUrl,
+  getAuthorProfile,
+  getPostAuthorName,
+} from '@/app/lib/authors'
 import { getImageAlt, getImageUrl } from '@/app/lib/image-utils'
 import { generateBlogPostSchemas, stringifySchemas } from '@/app/lib/schema'
 import {
@@ -109,8 +115,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           .substring(0, 160)
           .trim() + '...'
 
-  const displayAuthor =
-    post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
+  const authorProfile = getAuthorProfile(getPostAuthorName(post))
+  // Use the author page's spelling when the WordPress byline is a variant
+  const displayAuthor = authorProfile?.name ?? getPostAuthorName(post)
 
   // Use direct image URL (no proxy)
   const imageUrl = getImageUrl(post.featuredImage?.node?.sourceUrl)
@@ -123,7 +130,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description,
     keywords:
       post.customFields?.targetKeywords?.join(', ') || post.seo?.focuskw,
-    authors: [{ name: displayAuthor, url: 'https://draft.dev/about' }],
+    authors: [
+      {
+        name: displayAuthor,
+        url: authorProfile
+          ? getAuthorPageUrl(authorProfile)
+          : 'https://draft.dev/about',
+      },
+    ],
 
     openGraph: {
       type: 'article',
@@ -263,8 +277,9 @@ export default async function PostPage({ params }: Props) {
     return undefined
   }
 
-  const displayAuthor =
-    post.originalAuthor || post.author?.node?.name || 'Draft.dev Team'
+  const authorProfile = getAuthorProfile(getPostAuthorName(post))
+  // Use the author page's spelling when the WordPress byline is a variant
+  const displayAuthor = authorProfile?.name ?? getPostAuthorName(post)
 
   return (
     <>
@@ -367,9 +382,19 @@ export default async function PostPage({ params }: Props) {
                       clipRule="evenodd"
                     />
                   </svg>
-                  <span className="font-medium text-gray-900">
-                    {displayAuthor}
-                  </span>
+                  {authorProfile ? (
+                    <Link
+                      href={getAuthorPagePath(authorProfile)}
+                      rel="author"
+                      className="font-medium text-gray-900 underline-offset-4 hover:underline"
+                    >
+                      {displayAuthor}
+                    </Link>
+                  ) : (
+                    <span className="font-medium text-gray-900">
+                      {displayAuthor}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -451,7 +476,17 @@ export default async function PostPage({ params }: Props) {
                     <div>
                       <div className="mb-2 flex items-center justify-between">
                         <h4 className="text-lg font-medium text-gray-900">
-                          {displayAuthor}
+                          {authorProfile ? (
+                            <Link
+                              href={getAuthorPagePath(authorProfile)}
+                              rel="author"
+                              className="underline-offset-4 hover:underline"
+                            >
+                              {displayAuthor}
+                            </Link>
+                          ) : (
+                            displayAuthor
+                          )}
                         </h4>
 
                         {(post.customFields?.authorLinkedIn ||
