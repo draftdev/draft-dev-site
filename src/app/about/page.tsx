@@ -1,18 +1,17 @@
 import { generateAboutPageSchemas, stringifySchemas } from '@/app/lib/schema'
 import FAQ from '@/components/global/faq'
-import { MedHeader } from '@/components/global/headers/med-header'
-import { LogosDark } from '@/components/media/logos-dark'
 import SocialProof from '@/components/media/social-proof'
+import AboutHero from '@/components/page-components/company/about-hero'
+import AboutSteps from '@/components/page-components/company/about-steps'
 import Team from '@/components/page-components/company/team'
 import What from '@/components/page-components/company/what'
-import How from '@/components/page-components/how'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
   title: 'About Us - Draft.dev',
   description:
-    'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+    'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
   openGraph: {
     type: 'website',
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'About us - Draft.dev',
     description:
-      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
     images: [
       {
         url: 'https://draft.dev/draft/og/about_og_draft_dev.jpg',
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About us - Draft.dev',
     description:
-      'At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients.',
+      'Draft.dev is a go-to-market marketing agency for developer tools and AI platforms: strategy, technical content, SEO & AEO, distribution, newsletters, video and paid growth.',
     images: ['https://draft.dev/draft/og/about_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -67,15 +66,16 @@ export default function About() {
         />
       ))}
 
-      <MedHeader
-        title="We help Developer Tools & Platforms grow and win"
-        descriptionOne="At Draft.dev, we build growth engines that compound and resonate with developers, search engines and LLMs. Our work has generated hundreds of thousands of leads for our clients."
-        descriptionTwo="Let us help you build your technical content growth engine."
+      <AboutHero
+        title="We help Developer Tools & AI Platforms grow and win"
+        descriptionOne="Draft.dev is the growth partner for developer tools and AI platforms. We run content-powered go-to-market programs across strategy, technical content, SEO & AEO, distribution, newsletters, video, Reddit & Quora and paid growth, so developers, search engines and LLMs find your product and trust it."
+        descriptionTwo="Let us help you build your technical go-to-market engine."
+        imageSrc="/site/med-portrait/developers_draft_dev.jpg"
+        imageAlt="Technical content development"
       />
 
       <main className="overflow-hidden">
         <What />
-        <LogosDark />
         {/* <Why
           title="What Makes Draft.dev Different?"
           features={[
@@ -102,36 +102,37 @@ export default function About() {
             },
           ]}
         /> */}
-        <How
+        <AboutSteps
           title="How we work with you"
-          subtitleBold=""
-          subtitleRegular="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to published content within weeks."
+          subtitle="Our process is designed for speed and alignment. Three focused stages take you from initial discovery to your first deliverables within weeks."
           steps={[
             {
               number: '1',
               title: 'Discovery call',
               description:
-                "Before we begin working with a new client, we want to make sure we're a good fit for you. In our 30-minute discovery session, we'll ask you where your business is at, what your content goals are, and walk you through our content strategy, production, and promotion processes.",
+                'Before we start, we learn where your business is today, who your audience is and what your goals are. Then we walk you through how we plan, deliver and report, so you know exactly what to expect from day one.',
             },
             {
               number: '2',
               title: 'Kickoff call',
               description:
-                'We have a call with your primary contact and try to schedule 1-on-1 interviews with someone on your leadership team to extract vision and thought leadership content ideas. We also talk through nice-to-have information like product description, brand guidelines, positioning, ICPs, competitors and ideally get access to your CMS and analytics, if feasible.',
+                'We meet your main contact and schedule interviews with your leadership team to capture vision and thought leadership ideas. We also gather brand guidelines, positioning, ICPs, competitors, and access to your CMS and analytics.',
             },
             {
               number: '3',
-              title: 'Content strategy, production, and output within 3 weeks',
+              title: 'Deliverables',
               description:
-                'Based on the information from the kickoff call we analyze your existing setup, define strategy and a roadmap, and start content production. You will usually have your first content pieces published within 3 weeks. We then execute on a cadence of weekly (content delivery) and monthly (reporting and strategy call) tasks to stay aligned with your current business goals and needs.',
+                'We analyze your setup, define a strategy and roadmap, and start on the deliverables in your plan. Your first deliverables usually go live within 3 weeks. After that, we deliver weekly and meet monthly to report and adjust the strategy.',
             },
           ]}
-          imageSrc="/site/med-portrait/developers_draft_dev.jpg"
-          imageAlt="Technical content development"
         />
         <Team />
-        <SocialProof />
-        <FAQ />
+        <SocialProof title="A growth agency with a track record" />
+        <FAQ
+          className="py-12 sm:py-16"
+          headingClassName="subheader-mobile-gradient sm:subheader-gradient"
+          masonry
+        />
       </main>
     </>
   )

@@ -1,52 +1,64 @@
-import Image from 'next/image'
+import {
+  ArrowTrendingUpIcon,
+  CodeBracketIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/24/outline'
+
+// Who we are: a short story, then what makes us different.
+// Services are covered on the homepage, so they aren't listed here.
+const pillars = [
+  {
+    title: 'Only technical audiences',
+    text: 'We work only with companies that market to developers, data engineers and DevOps teams. That focus shapes every plan we write.',
+    Icon: CodeBracketIcon,
+  },
+  {
+    title: 'Checked by real engineers',
+    text: 'Our 300+ engineers check every piece for technical accuracy. Our editors make sure it reads well and fits your brand.',
+    Icon: ShieldCheckIcon,
+  },
+  {
+    title: 'Marketers who know growth',
+    text: 'Our marketers tie every deliverable to your goals and make sure it reaches the right people.',
+    Icon: ArrowTrendingUpIcon,
+  },
+]
 
 const What = () => {
   return (
-    <div className="overflow-hidden bg-white py-14 sm:py-32">
-      <div className="mx-auto max-w-7xl md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-center">
-          <div className="px-6 lg:px-0 lg:pt-4 lg:pr-4">
-            <div className="mx-auto max-w-4xl sm:max-w-4xl lg:mx-0">
-              <h2 className="sm:subheader-gradient subheader-mobile-gradient">
-                A developer content agency building growth engines for tech companies
-              </h2>
-
-              <dl className="paragraph-dark mt-6 max-w-xl space-y-8 text-lg lg:max-w-none">
-                <div className="relative">
-                  <dd className="my-2">
-                    Draft.dev delivers a breadth of authentic developer content backed by real engineering expertise. Founded in 2020 by former CTO Karl Hughes, we combine strategic marketing with hands-on technical knowledge to create content that performs.
-
-Our network of 300+ seasoned engineers produces technically accurate content that resonates with developer audiences, search and answer engines, and algorithms. Experienced marketers and editors ensure every piece is derived from strategic goals and drives results while maintaining the depth developers expect.
-                  </dd>
-                </div>
-
-                <div className="relative">
-                  <dd className="my-2">
-                    <strong>From strategy, to production, to distribution within weeks.</strong> We handle the full content lifecycle: planning, production, and promotion. Proven AI workflows combined with hundreds of subject matter experts ensure fast turnaround times and high quality.
-                  </dd>
-                </div>
-              </dl>
-            </div>
-          </div>
-
-          <div className="hidden lg:ml-auto lg:block">
-            <div className="rounded-4xl bg-white/15 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
-              <div className="rounded-4xl p-2 shadow-md shadow-black/5">
-                <div className="overflow-hidden rounded-3xl shadow-2xl outline-1 -outline-offset-1 outline-black/10">
-                  <Image
-                    alt="Software developers coding."
-                    src="/site/med-portrait/coding_draft_dev.jpg"
-                    width={400}
-                    height={500}
-                    className="rounded-xl"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+    <section className="bg-white py-12 sm:py-16">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Heading uses the full width so it fits on one line on desktop */}
+        <div className="text-center">
+          <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
+            Growth Backed by Real Engineers
+          </h2>
+          <p className="mx-auto mt-6 max-w-4xl text-lg text-gray-600 sm:text-xl">
+            Former CTO Karl Hughes founded Draft.dev in 2020 to create technical
+            content that developers actually trust. Today we&apos;re a growth
+            partner for developer tools and AI platforms, running go-to-market
+            programs from first strategy to paid growth.
+          </p>
         </div>
+
+        <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {pillars.map(({ title, text, Icon }) => (
+            <li
+              key={title}
+              className="flex flex-col rounded-3xl bg-[#f4f1f8] p-7 ring-1 ring-[#5e5285]/10"
+            >
+              <span className="bg-gradient-brand flex size-12 items-center justify-center rounded-xl text-white shadow-md">
+                <Icon aria-hidden="true" className="size-6" />
+              </span>
+              <h3 className="font-code text-secondary mt-5 text-xl font-semibold">
+                {title}
+              </h3>
+              <p className="mt-3 text-base text-gray-600">{text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   )
 }
 
