@@ -11,6 +11,8 @@ interface HeroProps {
     title: string
     href: string
     imageSrc: string
+    // Card link text; defaults to "Download the guide"
+    cta?: string
   }
 }
 
@@ -18,12 +20,7 @@ interface HeroProps {
 // beside the copy, the primary CTA uses a bright accent so it stands out on
 // the brand gradient, and the client logo strip lives inside the hero (as on
 // the homepage) so there is no seam between the hero and the next section.
-const Hero = ({
-  title,
-  description,
-  primaryCTA,
-  guide,
-}: HeroProps) => {
+const Hero = ({ title, description, primaryCTA, guide }: HeroProps) => {
   return (
     <section className="bg-gradient-brand pt-12 pb-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -47,8 +44,7 @@ const Hero = ({
                 return (
                   <>
                     {title.slice(0, at).trim()}
-                    <br className="hidden lg:block" />{' '}
-                    {title.slice(at).trim()}
+                    <br className="hidden lg:block" /> {title.slice(at).trim()}
                   </>
                 )
               })()}
@@ -90,7 +86,8 @@ const Hero = ({
                 {guide.title}
               </p>
               <p className="mt-2 text-sm font-semibold text-white group-hover:text-gray-200">
-                Download the guide <span aria-hidden="true">→</span>
+                {guide.cta ?? 'Download the guide'}{' '}
+                <span aria-hidden="true">→</span>
               </p>
             </div>
           </Link>
