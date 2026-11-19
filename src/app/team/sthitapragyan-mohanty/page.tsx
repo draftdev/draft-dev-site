@@ -15,8 +15,8 @@ const person = {
 }
 
 const bio = [
-  'Sthitapragyan Mohanty is Head of Growth at Draft.dev, a go-to-market marketing agency for developer tools and AI platforms whose clients include HP, Qualcomm, Cloudflare, Docker, JetBrains, Zoho and Supabase. He leads go-to-market, SEO, AI search visibility, content strategy, and demand generation.',
-  'He has worked in B2B growth and marketing since 2018 across ten organisations, from enterprise fintech to early-stage AI startups. At HighRadius, an enterprise finance-automation company, he rose from Senior Executive, Growth Marketing to Principal, Content & Analytics, helping launch and scale the FINsider newsletter for CFOs and finance leaders to more than 100,000 subscribers in six months, and SEO-optimising 30+ product pages for a 150% increase in organic traffic. In 2026, he built the marketing function from zero at Kutlerri.ai, a restaurant intelligence platform, and advised Binocs and CodePraxis on growth. Earlier, he built the growth team at CarbonMinus and founded Indexify.',
+  'Sthitapragyan Mohanty is Head of Growth at Draft.dev, a go-to-market agency for developer tools and AI platforms whose clients include HP, Qualcomm, Cloudflare, Docker, JetBrains, Zoho, and Supabase. He leads go-to-market, SEO, AI search visibility, content strategy, and demand generation.',
+  'He has worked in B2B growth and marketing since 2018 across ten organizations, from enterprise fintech to early-stage AI startups. At HighRadius, an enterprise finance-automation company, he rose from Senior Executive, Growth Marketing to Principal, Content & Analytics, helping launch and scale the FINsider newsletter for CFOs and finance leaders to more than 100,000 subscribers in six months, and SEO-optimizing 30+ product pages for a 150% increase in organic traffic. In 2026, he built the marketing function from zero at Kutlerri.ai, a restaurant intelligence platform, and advised Binocs and CodePraxis on growth. Earlier, he built the growth team at CarbonMinus and founded Indexify.',
   'He holds a B.Tech in Engineering Physics from IIT Bombay with a Minor in Marketing, and a gold-medal MA in Journalism & Mass Communication from Birla Global University. He is CXL-certified in Google Analytics and CRO & Experimentation, was a guest on the Learning Stories podcast, and is the author of two poetry collections, I Was Born Human (2020) and Ghats and Ganges (2023). He is based in India.',
   'He writes and speaks on developer marketing, SEO and AI search, B2B SaaS go-to-market, newsletter growth, CFO-audience marketing, and early-stage AI startup positioning.',
 ]
@@ -26,7 +26,7 @@ const media = [
     type: 'Podcast',
     title: 'Learning Stories, Episode 43',
     detail:
-      'How to Become a Full Stack Marketer in India. A one-hour interview, 30 October 2024.',
+      'How to Become a Full Stack Marketer in India. A one-hour interview, October 30, 2024.',
     links: [
       {
         text: 'Watch on YouTube',
@@ -45,7 +45,7 @@ const media = [
     links: [
       {
         text: 'View on Amazon',
-        href: 'https://www.amazon.in/Ghats-Ganges-Sthitapragyan-Mohanty-ebook/dp/B0CR96FHG6',
+        href: 'https://www.amazon.com/dp/B0CR96FHG6',
       },
     ],
   },
@@ -64,7 +64,7 @@ const media = [
 
 const title = `${person.name}, ${person.jobTitle} - Draft.dev`
 const description =
-  'Sthitapragyan Mohanty is Head of Growth at Draft.dev. He leads go-to-market, SEO, AI search visibility, content strategy and demand generation for developer tools and AI platforms.'
+  'Sthitapragyan Mohanty is Head of Growth at Draft.dev. He leads go-to-market, SEO, AI search visibility, content strategy, and demand generation for developer tools and AI platforms.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
