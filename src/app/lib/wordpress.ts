@@ -1,3 +1,4 @@
+import { getAuthorProfile, getPostAuthorName } from './authors'
 import { parseJsonField } from './parse-json'
 import type { Post as SchemaPost } from './schema/constants'
 
@@ -536,4 +537,17 @@ export async function getSchemaPostsData(
   }
 
   return allPosts.slice(0, limit) // Ensure we don't exceed the limit
+}
+
+// All published posts whose byline matches the given author page, newest first
+export async function getWpPostsByAuthor(
+  authorSlug: string,
+  limit: number = 1000,
+): Promise<SchemaPost[]> {
+  const posts = await getSchemaPostsData(limit)
+  return posts
+    .filter(
+      (post) => getAuthorProfile(getPostAuthorName(post))?.slug === authorSlug,
+    )
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }

@@ -1,17 +1,37 @@
+import { getAuthorPageUrl, getAuthorProfileBySlug } from '@/app/lib/authors'
 import { PUBLISHER_REF, stringifySchemas } from '@/app/lib/schema'
+import { getWpPostsByAuthor } from '@/app/lib/wordpress'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
+// Re-check WordPress hourly so new posts by this author show up
+export const revalidate = 3600
+
 // Author page. Bio and links come from the approved author-page brief and
 // Sthitapragyan's professional background document (links checked 13 Nov 2026).
+// Blog posts are listed when their WordPress byline matches this author's
+// profile in src/app/lib/authors.ts.
+const profile = getAuthorProfileBySlug('sthitapragyan-mohanty')
+
 const person = {
-  name: 'Sthitapragyan Mohanty',
+  name: profile.name,
   jobTitle: 'Head of Growth',
-  url: 'https://draft.dev/team/sthitapragyan-mohanty',
+  url: getAuthorPageUrl(profile),
   photo: '/draft/team/sthitapragyan_mohanty_draft_dev.jpg',
-  linkedin: 'https://www.linkedin.com/in/sthitapragyan-mohanty-1278b5a6/',
+  linkedin: profile.linkedin as string,
+}
+
+function formatPostDate(date: string) {
+  const parsed = new Date(date)
+  if (Number.isNaN(parsed.getTime())) return null
+  return parsed.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  })
 }
 
 const bio = [
@@ -126,7 +146,9 @@ const schema = {
   },
 }
 
-export default function SthitapragyanMohanty() {
+export default async function SthitapragyanMohanty() {
+  const posts = await getWpPostsByAuthor(profile.slug)
+
   return (
     <>
       {stringifySchemas([schema]).map((json, i) => (
@@ -208,8 +230,53 @@ export default function SthitapragyanMohanty() {
           </div>
         </section>
 
+        {/* Articles: blog posts whose WordPress byline is this author */}
+        {posts.length > 0 && (
+          <section className="bg-[#f4f1f8] py-12 sm:py-16">
+            <div className="mx-auto max-w-5xl px-6 lg:px-8">
+              <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+                Articles by Sthitapragyan
+              </h2>
+              <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+                {posts.map((post) => {
+                  const date = formatPostDate(post.date)
+                  return (
+                    <li
+                      key={post.id}
+                      className="group relative flex flex-col rounded-3xl bg-white p-6 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:shadow-md"
+                    >
+                      {date && (
+                        <time
+                          dateTime={post.date}
+                          className="font-code text-secondary text-sm font-semibold tracking-widest uppercase"
+                        >
+                          {date}
+                        </time>
+                      )}
+                      <h3 className="mt-3 text-xl font-semibold text-gray-900 group-hover:text-gray-600">
+                        <Link href={`/learn/${post.slug}`}>
+                          <span className="absolute inset-0" />
+                          {post.title}
+                        </Link>
+                      </h3>
+                      {post.excerpt && (
+                        <div
+                          className="mt-2 line-clamp-3 text-base text-gray-600 [&_p]:m-0 [&_p]:inline"
+                          dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                        />
+                      )}
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* Media */}
-        <section className="bg-[#f4f1f8] py-12 sm:py-16">
+        <section
+          className={`${posts.length > 0 ? 'bg-white' : 'bg-[#f4f1f8]'} py-12 sm:py-16`}
+        >
           <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               Media
