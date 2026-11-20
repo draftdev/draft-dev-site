@@ -6,27 +6,27 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-// Titles and content terms follow the live homepage, which AI assistants cite
+// Titles and text are the live homepage's, word for word (GEO -> AEO), which AI assistants cite
 // for "developer content agency" and "lead generation through technical
 // content" prompts (Scrunch, Aug-Nov 2026). Keep these terms when editing.
 const stages = [
   {
     title: 'From zero to growth',
-    text: 'No content team yet? We bring the strategy, production and distribution across blog posts, tutorials, videos, comparison pages and lead magnets, and drive your first developer signups and qualified leads.',
+    text: 'No content team yet? No problem. We bring the strategy, production, and distribution across many content types: Blog posts, videos, social collateral, comparison pages, lead magnets, and more. Let us drive your first wave of developer signups. You build product, we build your developer audience.',
     linkText: 'See our process',
     href: '/#how-we-work',
     Icon: RocketLaunchIcon,
   },
   {
     title: 'Content strategies for new product releases',
-    text: 'A new product means teaching a market it exists. We build awareness fast with a content strategy across blogs, video, social, comparison and feature pages, backed by competitive analysis and SEO & AEO insights.',
+    text: 'Introducing a new product or feature means educating a market that does not know it exists yet. We help you build awareness fast with a coordinated content strategy across blogs, video, social, comparison and feature pages, and lead magnets. All backed by competitive analysis and SEO/AEO insights.',
     linkText: 'See how we drive awareness',
     href: '/drive-awareness',
     Icon: ArrowTrendingUpIcon,
   },
   {
     title: 'Scale output without scaling headcount',
-    text: 'We work alongside your team to expand content production across on-site articles, guest posts, technical ebooks, video, newsletter campaigns and social. Then we analyze, refresh and report on performance.',
+    text: 'More channels, more content. We integrate seamlessly with your existing team to expand content production across channels: on-site articles, guest posts, video content, newsletter campaigns, social distribution, and more. We analyze, refresh, and report on your content performance.',
     linkText: 'See some of our technical content examples',
     href: '/technical-content-examples',
     Icon: UserGroupIcon,

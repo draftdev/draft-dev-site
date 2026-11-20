@@ -15,11 +15,12 @@ const Stats = () => {
         className="absolute -bottom-32 -left-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl text-center">
+        {/* Full width so the heading fits on one line on desktop */}
+        <div className="text-center">
           <h2 className="lg:subheader-light subheader-mobile-light text-balance">
-            A Growth Agency with a Track Record
+            A Content Creation Agency with a Track Record
           </h2>
-          <p className="mt-4 text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-4xl text-lg text-white/90">
             We have worked with hundreds of successful companies, including some
             of the most well-known in the tech industry.
           </p>

@@ -1,26 +1,27 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
+// The live homepage's 4 steps, word for word (GEO -> AEO, two grammar fixes)
 const steps = [
   {
-    title: 'Discovery and kickoff',
-    text: 'We start with a kickoff call. Then we interview your team and review your product, positioning, competitors and analytics.',
+    title: 'We get to know you and define a plan',
+    text: 'We analyze your industry, competitors, positioning, product features, target audience, and make sure to understand your brand and tone of voice, ensuring authentic output. We conduct SEO and AEO research, assess your existing content, study your existing marketing funnel, and deliver a content strategy and roadmap for your feedback.',
   },
   {
-    title: 'Research and strategy',
-    text: 'We study your market, audience and existing content, run SEO and AEO research, and deliver a strategy and roadmap for your feedback.',
+    title: 'We publish your first pieces within weeks',
+    text: 'We create strategically relevant content pieces for you. These include blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets and more. To ensure fast turnaround times we use proven AI workflows to help draft your pieces. Each single piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience. We can manage publication of your content via all major CMSs.',
   },
   {
-    title: 'Deliverables',
-    text: 'Technical content, videos, newsletters, Reddit & Quora answers and paid ads from your plan. Real engineers review every piece. First deliverables go live in about 3 weeks.',
+    title: 'We help you get reach and click-throughs',
+    text: 'We help promote your content on Reddit, LinkedIn, Twitter/X, and more. We create variations you can use for third-party syndication and assist in publishing and advertising your pieces in niche publications and newsletters that are read by your target audience.',
   },
   {
-    title: 'Reporting',
-    text: 'We track every channel from day one and send a monthly Growth Report on rankings, AI citations, traffic and signups. Then we update the roadmap based on what works.',
+    title: 'Stay Relevant & Rank Well',
+    text: "It's crucial to keep your content fresh. Nobody wants to have a prospective customer use ChatGPT to get a result that shows outdated information about your product. We run recurring content analysis and technical, as well as SEO/AEO refreshes.",
   },
 ]
 
-// How we work, from first call to reporting. Other pages link here with /#how-we-work
+// How we work. 12 other pages link here with /#how-we-work, so keep the id
 const Steps = () => {
   return (
     <section id="how-we-work" className="scroll-mt-32 bg-white py-12 sm:py-16">
@@ -30,13 +31,13 @@ const Steps = () => {
             From Kickoff to Results in Weeks
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            We plan, deliver and report on your program, with first deliverables
-            live within weeks.
+            We plan, produce, publish, and promote your first pieces within
+            weeks.
           </p>
         </div>
 
-        {/* 2x2 tiles, all the same height; keep each text to 3 lines on desktop */}
-        <ol className="mt-10 grid grid-cols-1 gap-5 md:auto-rows-fr md:grid-cols-2">
+        {/* 2x2 tiles; boxes in the same row match heights */}
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
           {steps.map((step, i) => (
             <li
               key={step.title}

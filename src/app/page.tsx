@@ -7,6 +7,7 @@ import TestimonialsCarousel from '@/components/media/testimonials/testimonials-c
 
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
+import LeadGenPackage from '@/components/page-components/home/lead-gen-package'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
@@ -80,18 +81,19 @@ export default function Home() {
 
       <div className="overflow-hidden">
         <main>
+          {/* Live homepage content and order, plus GTM Services and Book a Call */}
           <Hero />
           <Audience />
-          <Steps />
           <Stats />
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
           <Services />
+          <LeadGenPackage />
+          <Steps />
           <TestimonialsCarousel
             exclude={['Emily Blitstein']}
             className="bg-[#f4f1f8] py-12 sm:py-16"
           />
-          {/* Pricing hidden for now (Mushfiq). To show it again, render <Plans /> here */}
         </main>
         <FAQ
           callHref="#book-a-call"
