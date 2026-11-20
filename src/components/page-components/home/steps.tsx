@@ -1,15 +1,16 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-// The live homepage's 4 steps, word for word (GEO -> AEO, two grammar fixes)
+// The live homepage's 4 steps, trimmed to even lengths. Keeps the content
+// terms AI assistants cite the homepage for.
 const steps = [
   {
     title: 'We get to know you and define a plan',
-    text: 'We analyze your industry, competitors, positioning, product features, target audience, and make sure to understand your brand and tone of voice, ensuring authentic output. We conduct SEO and AEO research, assess your existing content, study your existing marketing funnel, and deliver a content strategy and roadmap for your feedback.',
+    text: 'We analyze your industry, competitors, positioning, product features and target audience, and learn your brand and tone of voice. We conduct SEO and AEO research, assess your existing content and marketing funnel, and deliver a content strategy and roadmap for your feedback.',
   },
   {
     title: 'We publish your first pieces within weeks',
-    text: 'We create strategically relevant content pieces for you. These include blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides and use case deep-dives, thought leadership pieces, lead magnets and gated assets and more. To ensure fast turnaround times we use proven AI workflows to help draft your pieces. Each single piece is reviewed by real developers and edited by professional technical editors to ensure accuracy, clarity, and value for your audience. We can manage publication of your content via all major CMSs.',
+    text: 'We create strategically relevant content for you: blog posts and tutorials, comparison pages, landing pages and onboarding content, technical product guides, thought leadership pieces, lead magnets and more. Proven AI workflows speed up drafting, real developers review every piece, and technical editors polish it.',
   },
   {
     title: 'We help you get reach and click-throughs',
@@ -17,7 +18,7 @@ const steps = [
   },
   {
     title: 'Stay Relevant & Rank Well',
-    text: "It's crucial to keep your content fresh. Nobody wants to have a prospective customer use ChatGPT to get a result that shows outdated information about your product. We run recurring content analysis and technical, as well as SEO/AEO refreshes.",
+    text: "It's crucial to keep your content fresh. Nobody wants a prospective customer to ask ChatGPT and get outdated information about your product. We run recurring content analysis, plus technical and SEO/AEO refreshes, so your pages stay accurate and keep ranking.",
   },
 ]
 
@@ -36,8 +37,8 @@ const Steps = () => {
           </p>
         </div>
 
-        {/* 2x2 tiles; boxes in the same row match heights */}
-        <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
+        {/* 2x2 tiles, all the same height; keep texts about 5 lines */}
+        <ol className="mt-10 grid grid-cols-1 gap-5 md:auto-rows-fr md:grid-cols-2">
           {steps.map((step, i) => (
             <li
               key={step.title}
