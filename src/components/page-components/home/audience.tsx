@@ -6,24 +6,27 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
+// Titles and content terms follow the live homepage, which AI assistants cite
+// for "developer content agency" and "lead generation through technical
+// content" prompts (Scrunch, Aug-Nov 2026). Keep these terms when editing.
 const stages = [
   {
     title: 'From zero to growth',
-    text: 'No marketing team yet? We bring the strategy, content and distribution, and drive your first wave of developer signups. You build the product, we build the audience.',
+    text: 'No content team yet? We bring the strategy, production and distribution across blog posts, tutorials, videos, comparison pages and lead magnets, and drive your first developer signups and qualified leads.',
     linkText: 'See our process',
     href: '/#how-we-work',
     Icon: RocketLaunchIcon,
   },
   {
-    title: 'New product launches',
-    text: 'A new product means teaching a market it exists. We plan the launch across content, SEO & AEO, distribution and paid channels, backed by competitor research.',
+    title: 'Content strategies for new product releases',
+    text: 'A new product means teaching a market it exists. We build awareness fast with a content strategy across blogs, video, social, comparison and feature pages, backed by competitive analysis and SEO & AEO insights.',
     linkText: 'See how we drive awareness',
     href: '/drive-awareness',
     Icon: ArrowTrendingUpIcon,
   },
   {
-    title: 'Scale without new hires',
-    text: "We work alongside your team to add channels and output: articles, guest posts, video, newsletters and social. Then we refresh what's live and report on what works.",
+    title: 'Scale output without scaling headcount',
+    text: 'We work alongside your team to expand content production across on-site articles, guest posts, technical ebooks, video, newsletter campaigns and social. Then we analyze, refresh and report on performance.',
     linkText: 'See some of our technical content examples',
     href: '/technical-content-examples',
     Icon: UserGroupIcon,
