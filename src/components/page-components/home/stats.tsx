@@ -20,7 +20,7 @@ const Stats = () => {
           <h2 className="lg:subheader-light subheader-mobile-light text-balance lg:-mx-4">
             A Technical Content Agency with a Track Record
           </h2>
-          <p className="mx-auto mt-4 max-w-4xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-4xl text-lg text-balance text-white/90">
             We have worked with hundreds of successful companies, including some
             of the most well-known in the tech industry.
           </p>

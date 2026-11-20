@@ -16,7 +16,7 @@ const BookCall = () => {
           <h2 className="subheader-mobile-gradient sm:subheader-gradient">
             Book a Discovery Call
           </h2>
-          <p className="sm:paragraph-dark pt-3 text-lg text-gray-600">
+          <p className="sm:paragraph-dark pt-3 text-lg text-balance text-gray-600">
             Pick a time that works for you, or send us a message and we&apos;ll
             reply within 24 hours.
           </p>

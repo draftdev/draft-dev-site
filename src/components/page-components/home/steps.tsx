@@ -54,7 +54,9 @@ const Steps = () => {
                 <h3 className="font-code text-secondary text-xl font-semibold">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-base text-gray-600">{step.text}</p>
+                <p className="mt-2 text-base text-pretty text-gray-600">
+                  {step.text}
+                </p>
               </div>
             </li>
           ))}
