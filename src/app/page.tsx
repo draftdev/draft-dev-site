@@ -7,7 +7,6 @@ import TestimonialsCarousel from '@/components/media/testimonials/testimonials-c
 
 import Audience from '@/components/page-components/home/audience'
 import Hero from '@/components/page-components/home/hero'
-import LeadGenPackage from '@/components/page-components/home/lead-gen-package'
 import Services from '@/components/page-components/home/services'
 import Stats from '@/components/page-components/home/stats'
 import Steps from '@/components/page-components/home/steps'
@@ -88,16 +87,15 @@ export default function Home() {
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
           <Services />
-          <LeadGenPackage />
           <Steps />
           <TestimonialsCarousel
             exclude={['Emily Blitstein']}
-            className="bg-[#f4f1f8] py-12 sm:py-16"
+            className="bg-white py-12 sm:py-16"
           />
         </main>
         <FAQ
           callHref="#book-a-call"
-          className="bg-white py-12 sm:py-16"
+          className="bg-[#f4f1f8] py-12 sm:py-16"
           title="Common Questions We Get Asked"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry

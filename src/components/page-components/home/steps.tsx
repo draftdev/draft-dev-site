@@ -25,7 +25,10 @@ const steps = [
 // How we work. 12 other pages link here with /#how-we-work, so keep the id
 const Steps = () => {
   return (
-    <section id="how-we-work" className="scroll-mt-32 bg-white py-12 sm:py-16">
+    <section
+      id="how-we-work"
+      className="scroll-mt-32 bg-[#f4f1f8] py-12 sm:py-16"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">

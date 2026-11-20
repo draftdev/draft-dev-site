@@ -17,8 +17,8 @@ const Stats = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Full width so the heading fits on one line on desktop */}
         <div className="text-center">
-          <h2 className="lg:subheader-light subheader-mobile-light text-balance">
-            A Content Creation Agency with a Track Record
+          <h2 className="lg:subheader-light subheader-mobile-light text-balance lg:-mx-4">
+            A Technical Content Agency with a Track Record
           </h2>
           <p className="mx-auto mt-4 max-w-4xl text-lg text-white/90">
             We have worked with hundreds of successful companies, including some
