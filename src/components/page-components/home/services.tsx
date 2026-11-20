@@ -70,7 +70,7 @@ const Services = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            Everything Your Go-to-Market Needs
+            GTM Services for Developer Tools
           </h2>
           <p className="mt-4 text-lg text-gray-600">
             Your growth partner, from strategy to scale

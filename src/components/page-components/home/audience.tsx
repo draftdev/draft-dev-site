@@ -36,8 +36,12 @@ const Audience = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="subheader-mobile-gradient sm:subheader-gradient text-balance">
-            Built for Every Stage of Growth
+            Turn Developer Content into a Reliable Growth Driver
           </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            For teams launching, introducing new products, or scaling existing
+            content engines
+          </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {stages.map(({ title, text, linkText, href, Icon }) => (

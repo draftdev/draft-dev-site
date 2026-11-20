@@ -15,9 +15,10 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://draft.dev'),
-  title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
+  title:
+    'Content-Powered Growth Marketing for Developer Tools & AI Platforms - Draft.dev',
   description:
-    'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
+    'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
   authors: [{ name: 'Draft.dev Team', url: 'https://draft.dev/about' }],
 
   openGraph: {
@@ -25,9 +26,10 @@ export const metadata: Metadata = {
     url: 'https://draft.dev',
     siteName: 'Draft.dev',
     locale: 'en_US',
-    title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
+    title:
+      'Content-Powered Growth Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
-      'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
+      'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
     images: [
       {
         url: '/draft/og/main_og_draft_dev.jpg',
@@ -40,9 +42,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: 'GTM Marketing for Developer Tools & AI Platforms - Draft.dev',
+    title:
+      'Content-Powered Growth Marketing for Developer Tools & AI Platforms - Draft.dev',
     description:
-      'Content-powered growth marketing for developer tools and AI platforms. We build technical content engines that reach developers, search engines and LLMs.',
+      'We build technical content systems that compound and resonate with developers, search engines and LLMs. Backed by research, proven frameworks, and human-verified AI workflows.',
     images: ['/draft/og/main_og_draft_dev.jpg'],
     creator: '@draftdev',
     site: '@draftdev',
@@ -78,21 +81,21 @@ export default function Home() {
       <div className="overflow-hidden">
         <main>
           <Hero />
-          <Services />
           <Audience />
           <Steps />
           <Stats />
           <CaseStudiesFeatureHome />
           <MoreCaseStudies />
+          <Services />
           <TestimonialsCarousel
             exclude={['Emily Blitstein']}
-            className="bg-white py-12 sm:py-16"
+            className="bg-[#f4f1f8] py-12 sm:py-16"
           />
           {/* Pricing hidden for now (Mushfiq). To show it again, render <Plans /> here */}
         </main>
         <FAQ
           callHref="#book-a-call"
-          className="bg-[#f4f1f8] py-12 sm:py-16"
+          className="bg-white py-12 sm:py-16"
           title="Common Questions We Get Asked"
           headingClassName="subheader-mobile-gradient sm:subheader-gradient"
           masonry
