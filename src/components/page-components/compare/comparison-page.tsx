@@ -2,6 +2,7 @@ import FAQ from '@/components/global/faq'
 import BookCall from '@/components/page-components/service-landing/book-call'
 import {
   AcademicCapIcon,
+  ArrowDownIcon,
   ArrowPathIcon,
   ArrowRightIcon,
   ArrowTrendingUpIcon,
@@ -22,6 +23,7 @@ import {
   type Competitor,
   type FactKey,
   type Facts,
+  type HeroRow,
 } from './data'
 
 // Label and icon for each row that can be shown as a card above the table
@@ -79,6 +81,99 @@ const results = [
     href: '/case-studies/developer-api-platform',
   },
 ]
+
+// The VS badge that sits between the two hero cards
+const VsBadge = () => (
+  <span
+    aria-hidden="true"
+    className="font-code absolute top-1/2 left-1/2 z-10 hidden size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-amber-400 text-xl font-bold text-gray-900 shadow-xl ring-8 ring-white/15 md:flex"
+  >
+    VS
+  </span>
+)
+
+// Hero cards with the same labelled rows on both sides. A subgrid lines up the
+// name, summary, each row and the buttons across the two cards.
+const MirroredCards = ({
+  competitor,
+  rows,
+}: {
+  competitor: Competitor
+  rows: HeroRow[]
+}) => {
+  // Name, summary, one track per row, then the buttons
+  const span = rows.length + 3
+  const cardRows = { gridRow: `span ${span} / span ${span}` }
+  const host = new URL(competitor.sources[0]).hostname.replace(/^www\./, '')
+
+  return (
+    <>
+      <div className="relative mt-12 grid grid-cols-1 gap-x-10 gap-y-6 md:grid-cols-2">
+        <VsBadge />
+        <div
+          style={cardRows}
+          className="grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white p-7 shadow-2xl"
+        >
+          <p className="font-code text-secondary text-2xl font-semibold">
+            Draft.dev
+          </p>
+          <p className="mt-3 text-base text-gray-700 sm:text-lg">
+            {competitor.summary.draft}
+          </p>
+          {rows.map((r) => (
+            <div key={r.label} className="mt-5 border-t border-gray-200 pt-4">
+              <p className="text-secondary text-xs font-semibold tracking-wider uppercase">
+                {r.label}
+              </p>
+              <p className="mt-1 text-base font-medium text-gray-900">
+                {r.draft}
+              </p>
+            </div>
+          ))}
+          <div className="flex flex-wrap items-start gap-3 pt-8">
+            <a
+              href="#book-a-call"
+              className="inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
+            >
+              Book a Discovery Call
+            </a>
+            <a
+              href="#side-by-side"
+              className="text-secondary inline-flex items-center gap-x-2 rounded-md px-5 py-3 text-base font-semibold ring-1 ring-[#5e5285]/30 transition hover:bg-[#f4f1f8]"
+            >
+              See the full comparison
+              <ArrowDownIcon aria-hidden="true" className="size-4" />
+            </a>
+          </div>
+        </div>
+        <div
+          style={cardRows}
+          className="grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white/10 p-7 ring-1 ring-white/20"
+        >
+          <p className="font-code text-2xl font-semibold text-white">
+            {competitor.name}
+          </p>
+          <p className="mt-3 text-base text-white/90 sm:text-lg">
+            {competitor.summary.them}
+          </p>
+          {rows.map((r) => (
+            <div key={r.label} className="mt-5 border-t border-white/20 pt-4">
+              <p className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
+                {r.label}
+              </p>
+              <p className="mt-1 text-base font-medium text-white">{r.them}</p>
+            </div>
+          ))}
+          {/* Keeps the button track so both cards end level */}
+          <div />
+        </div>
+      </div>
+      <p className="mt-6 text-center text-sm text-white/70">
+        {competitor.name} facts from {host}, checked {competitor.checked}.
+      </p>
+    </>
+  )
+}
 
 const PickList = ({
   title,
@@ -247,74 +342,78 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
             </p>
           </div>
 
-          <div className="relative mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
-            {/* VS badge between the two cards */}
-            <span
-              aria-hidden="true"
-              className="font-code absolute top-1/2 left-1/2 z-10 hidden size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-amber-400 text-xl font-bold text-gray-900 shadow-xl ring-8 ring-white/15 md:flex"
-            >
-              VS
-            </span>
-            <div className="flex flex-col rounded-3xl bg-white p-7 shadow-2xl">
-              <p className="font-code text-secondary text-2xl font-semibold">
-                Draft.dev
-              </p>
-              <p className="mt-3 text-base text-gray-700 sm:text-lg">
-                {competitor.summary.draft}
-              </p>
-              <ul className="mt-6 space-y-2">
-                {(
-                  pitch?.heroPoints ??
-                  quickFacts(draftFacts, ['network', 'content', 'start'])
-                ).map((fact) => (
-                  <li
-                    key={fact}
-                    className="flex items-start gap-x-2 text-sm font-medium text-gray-800"
+          {pitch?.heroRows ? (
+            <MirroredCards competitor={competitor} rows={pitch.heroRows} />
+          ) : (
+            <div className="relative mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-10">
+              {/* VS badge between the two cards */}
+              <span
+                aria-hidden="true"
+                className="font-code absolute top-1/2 left-1/2 z-10 hidden size-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-amber-400 text-xl font-bold text-gray-900 shadow-xl ring-8 ring-white/15 md:flex"
+              >
+                VS
+              </span>
+              <div className="flex flex-col rounded-3xl bg-white p-7 shadow-2xl">
+                <p className="font-code text-secondary text-2xl font-semibold">
+                  Draft.dev
+                </p>
+                <p className="mt-3 text-base text-gray-700 sm:text-lg">
+                  {competitor.summary.draft}
+                </p>
+                <ul className="mt-6 space-y-2">
+                  {(
+                    pitch?.heroPoints ??
+                    quickFacts(draftFacts, ['network', 'content', 'start'])
+                  ).map((fact) => (
+                    <li
+                      key={fact}
+                      className="flex items-start gap-x-2 text-sm font-medium text-gray-800"
+                    >
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-secondary mt-0.5 size-4 shrink-0"
+                      />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto pt-8">
+                  <a
+                    href="#book-a-call"
+                    className="inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
                   >
-                    <CheckIcon
-                      aria-hidden="true"
-                      className="text-secondary mt-0.5 size-4 shrink-0"
-                    />
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto pt-8">
-                <a
-                  href="#book-a-call"
-                  className="inline-block rounded-md bg-amber-400 px-5 py-3 text-base font-semibold text-gray-900 shadow-sm transition hover:bg-amber-300"
-                >
-                  Book a Discovery Call
-                </a>
+                    Book a Discovery Call
+                  </a>
+                </div>
+              </div>
+              <div className="flex flex-col rounded-3xl bg-white/10 p-7 ring-1 ring-white/20">
+                <p className="font-code text-2xl font-semibold text-white">
+                  {competitor.name}
+                </p>
+                <p className="mt-3 text-base text-white/90 sm:text-lg">
+                  {competitor.summary.them}
+                </p>
+                <ul className="mt-6 space-y-2">
+                  {quickFacts(
+                    competitor.facts,
+                    // Pitch pages skip the content row, which repeats the pricing row
+                    pitch ? ['network', 'pricing', 'builtFor'] : undefined,
+                  ).map((fact) => (
+                    <li
+                      key={fact}
+                      className="flex items-start gap-x-2 text-sm font-medium text-white/90"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber-300"
+                      />
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-            <div className="flex flex-col rounded-3xl bg-white/10 p-7 ring-1 ring-white/20">
-              <p className="font-code text-2xl font-semibold text-white">
-                {competitor.name}
-              </p>
-              <p className="mt-3 text-base text-white/90 sm:text-lg">
-                {competitor.summary.them}
-              </p>
-              <ul className="mt-6 space-y-2">
-                {quickFacts(
-                  competitor.facts,
-                  // Pitch pages skip the content row, which repeats the pricing row
-                  pitch ? ['network', 'pricing', 'builtFor'] : undefined,
-                ).map((fact) => (
-                  <li
-                    key={fact}
-                    className="flex items-start gap-x-2 text-sm font-medium text-white/90"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-1.5 size-1.5 shrink-0 rounded-full bg-amber-300"
-                    />
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 

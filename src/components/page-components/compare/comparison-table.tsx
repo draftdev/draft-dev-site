@@ -53,7 +53,7 @@ const ComparisonTable = ({
   sources?: string[]
 }) => {
   return (
-    <section className="bg-white py-12 sm:py-14">
+    <section id="side-by-side" className="scroll-mt-24 bg-white py-12 sm:py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
           Side by Side

@@ -70,7 +70,7 @@ export const rowGroups: {
 export const draftFacts: Facts = {
   who: 'Researched in-house, checked by one of our engineers who tests the code, then polished by a technical editor',
   network:
-    '300+ engineers and subject matter experts, the top 3% of 9,000+ developers in our talent pool',
+    '300+ engineers and subject matter experts, about the top 3% of 9,000+ developers in our talent pool',
   based: 'Chicago, IL and Naperville, IL',
   builtFor:
     'Developer tools and AI platforms, from first launch to scaling go-to-market',
@@ -91,6 +91,9 @@ export const draftFacts: Facts = {
     'Starts within 1 to 2 weeks, first pieces within 3 weeks, with strategy included',
   revisions: 'Unlimited',
 }
+
+// One labelled row on the hero cards, with each side's value
+export type HeroRow = { label: string; draft: string; them: string }
 
 export type Competitor = {
   slug: string
@@ -118,7 +121,10 @@ export type Competitor = {
   // shows client results next, and lists "Pick Draft.dev" first
   pitch?: {
     // Short points on the Draft.dev hero card, in place of the default facts
-    heroPoints: string[]
+    heroPoints?: string[]
+    // Labelled rows shown on both hero cards in the same order, so the buyer
+    // can compare line for line. Replaces the bullets on both cards.
+    heroRows?: HeroRow[]
     reasons: {
       title: string
       body: string
@@ -235,11 +241,11 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'A Hackmamba alternative for developer tool companies',
     verdict:
-      "Draft.dev owns your go-to-market end to end: strategy, content and distribution. Hackmamba's content clients typically keep strategy in-house and buy production and distribution.",
+      "Strategy, content and distribution from $9,000 a month. Hackmamba's programs across several workstreams start at $15,000.",
     summary: {
       draft:
-        'Draft.dev is a GTM agency for developer tools and AI platforms, founded in 2020. It covers go-to-market strategy, technical content, documentation, SEO and AI search, paid ads, Reddit, sponsorships, influencer distribution, newsletters and video. It has worked with 100+ tech companies, including Docker, JetBrains and Cloudflare.',
-      them: 'Hackmamba is a US-based developer marketing agency founded in 2021. It covers content, documentation, SEO and GEO, DevRel, paid and influencer marketing, and has worked with 50+ developer tool companies.',
+        'A GTM agency for developer tools and AI platforms since 2020, trusted by 100+ companies including Docker, JetBrains and Cloudflare.',
+      them: 'A US-based developer marketing agency founded in 2021, covering content, docs, SEO and GEO, DevRel and paid.',
     },
     facts: {
       who: 'Developers with hands-on experience in the domain',
@@ -263,9 +269,10 @@ export const competitors: Competitor[] = [
       revisions: null,
     },
     pickThem: [
-      'You already have an in-house strategist and only need extra writers to produce what they plan.',
-      'Your main need is hackathons, university programs or developer events rather than content.',
-      'You would rather test with a single trial month than build a 3-month plan.',
+      'Documentation is your main need: audits, migrations or a full docs overhaul.',
+      'You have a strategist in-house and want a team to produce and distribute what they plan.',
+      'You want DevRel programs like hackathons, university programs or developer events.',
+      'You would rather start with a paid trial month than a 3-month plan.',
     ],
     pickDraft: [
       'You want strategy, content and channels like SEO, AI search, paid ads and Reddit from one team, without hiring a content lead.',
@@ -277,7 +284,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How is Draft.dev different from Hackmamba?',
         answer:
-          'Hackmamba says most of its content clients have an internal team running strategy and editorial direction, and it plugs in as the production and distribution layer. Draft.dev covers the strategy as well as the work: technical content, SEO, AI search, paid ads, Reddit, sponsorships and influencer posts, run by one team.',
+          'Hackmamba says most of its content-retainer clients have an internal team running strategy and editorial direction, and it plugs in as the production and distribution layer. Draft.dev covers the strategy as well as the work: technical content, SEO, AI search, paid ads, Reddit, sponsorships and influencer posts, run by one team.',
       },
       {
         question: 'Is Draft.dev only a content agency?',
@@ -308,10 +315,23 @@ export const competitors: Competitor[] = [
       draftWhoAnswer,
     ],
     pitch: {
-      heroPoints: [
-        '300+ engineers, the top 3% of 9,000+ developers',
-        "7,000+ developers share our clients' content",
-        '3,000+ pieces published since 2020',
+      heroRows: [
+        {
+          label: 'Price',
+          draft: 'From $9,000 a month, strategy and distribution included',
+          them: 'From $5,000 a month for 4 blog posts; programs from $15,000',
+        },
+        {
+          label: 'Track record',
+          draft: '3,000+ pieces for 100+ companies since 2020',
+          them: '50+ developer tool companies since 2021',
+        },
+        {
+          label: 'Reach',
+          draft:
+            '7,000+ developers, 300 to 500 shortlisted for each piece, plus Reddit, Hacker News and DEV',
+          them: 'Reddit, Hacker News, DEV, Hashnode, LinkedIn, Discord and newsletters',
+        },
       ],
       reasons: [
         {
@@ -322,12 +342,12 @@ export const competitors: Competitor[] = [
             label:
               'In one day for Fabric, from a single post that hit Hacker News',
           },
-          href: '/case-studies',
-          cta: 'See more client results',
+          href: '/case-studies/status-hero',
+          cta: 'Read a similar case study',
         },
         {
-          title: 'Strategy included, not just production',
-          body: "With Hackmamba, strategy usually stays with your team. We research your market, competitors and positioning, then hand you a strategy and roadmap, so you don't need a content lead.",
+          title: 'Strategy included in every plan',
+          body: "On Hackmamba's content retainer, strategy usually stays with your team. Every Draft.dev plan includes it: we research your market, competitors and positioning, then hand you a strategy and roadmap.",
           stat: {
             value: '8 weeks',
             label:
@@ -337,12 +357,12 @@ export const competitors: Competitor[] = [
           cta: 'Read the case study',
         },
         {
-          title: 'The top 3% of 9,000+ developers',
-          body: 'Hackmamba draws on 3,000+ technical writers. We work with the top 3%: 300+ engineers out of 9,000+ developers. One of them checks every piece and tests the code.',
+          title: 'About the top 3% of developers',
+          body: 'One of our 300+ engineers, about the top 3% of 9,000+ developers in our talent pool, checks every piece and tests the code. Then a technical editor polishes it to your brand guidelines.',
           stat: {
-            value: '17 of 22',
+            value: '17',
             label:
-              "Of our articles for a developer API platform rank on Google's first page",
+              "Articles we wrote for a developer API platform now rank on Google's first page",
           },
           href: '/case-studies/developer-api-platform',
           cta: 'Read the case study',
@@ -359,25 +379,25 @@ export const competitors: Competitor[] = [
           cta: 'See influencer distribution',
         },
         {
-          title: 'Content that turns readers into users',
-          body: 'We plan each piece around what developers search for when they are choosing a tool, so the readers we bring in are ready to try yours, not just browsing.',
+          title: 'Named more often in AI answers',
+          body: 'When buyers ask AI assistants which agency to hire for developer content, Draft.dev comes up more often than Hackmamba.',
           stat: {
-            value: '6%',
+            value: '63.9%',
             label:
-              "Of Earthly's blog readers convert, with 1,500 visitors every workday",
+              'Of AI answers on developer content agencies name Draft.dev, vs 47.2% for Hackmamba (Oct 26 to Nov 24, 2026)',
           },
-          href: '/case-studies/earthly',
-          cta: 'Read the case study',
+          href: '/aeo-geo-services-for-devtools',
+          cta: 'How we track AI visibility',
         },
         {
           title: '3,000+ pieces for 100+ companies',
           body: 'Since 2020, we have published 3,000+ pieces for 100+ tech companies, including Docker, JetBrains and Cloudflare. Hackmamba, founded in 2021, lists 50+ clients.',
           stat: {
-            value: '211%',
+            value: '20–45%',
             label:
-              'More blog traffic for Status Hero, with 40 hours saved every week',
+              'Click-through rates Sinch Mailgun reached with our developer content',
           },
-          href: '/case-studies/status-hero',
+          href: '/case-studies/sinch-mailgun',
           cta: 'Read the case study',
         },
       ],
