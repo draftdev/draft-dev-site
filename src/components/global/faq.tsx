@@ -63,6 +63,8 @@ type FAQProps = {
   // Service pages turn this off and pass only their own questions, since
   // the standard ones (pricing included) are about technical content
   standardFaqs?: boolean
+  // Center the heading and intro, to match pages whose sections are centered
+  centered?: boolean
 }
 
 export default function FAQ({
@@ -73,6 +75,7 @@ export default function FAQ({
   headingClassName = 'subheader-gradient',
   masonry = false,
   standardFaqs = true,
+  centered = false,
 }: FAQProps) {
   const allFaqs = [
     ...pageFaqs.map((faq, i) => ({ ...faq, id: -(i + 1) })),
@@ -83,11 +86,20 @@ export default function FAQ({
     <div id="faq" className={className}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto">
-          <h2 className={`${headingClassName} scroll-mt-32`} id="faq">
+          <h2
+            className={`${headingClassName} scroll-mt-32 ${centered ? 'text-center' : ''}`}
+            id="faq"
+          >
             {title}
           </h2>
-          <p className="lg:lead-dark max-w-5xl text-lg text-gray-700">
-            <span className="font-semibold">
+          <p
+            className={
+              centered
+                ? 'mx-auto mt-2 max-w-4xl text-center text-lg text-gray-600'
+                : 'lg:lead-dark max-w-5xl text-lg text-gray-700'
+            }
+          >
+            <span className={centered ? undefined : 'font-semibold'}>
               Have a different question and can't find the answer you're looking
               for?
             </span>{' '}
@@ -101,7 +113,7 @@ export default function FAQ({
           </p>
 
           <p className="p-dark"></p>
-          <div className="mt-12">
+          <div className={centered ? 'mt-8' : 'mt-12'}>
             <dl
               className={
                 masonry

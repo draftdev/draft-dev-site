@@ -54,13 +54,14 @@ const ComparisonTable = ({
 }) => {
   return (
     <section className="bg-white py-12 sm:py-14">
-      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
           Side by Side
         </h2>
         <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
-          Every fact, from each company&apos;s own site. &quot;Not stated&quot;
-          means they don&apos;t say, not that the answer is no.
+          Competitor details come from each company&apos;s own website.
+          &quot;Not stated&quot; means they don&apos;t say, not that the answer
+          is no.
         </p>
 
         {/* Tablet and up: one table, Draft.dev column highlighted */}

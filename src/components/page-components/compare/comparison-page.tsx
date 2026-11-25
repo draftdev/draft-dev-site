@@ -1,12 +1,16 @@
 import FAQ from '@/components/global/faq'
 import BookCall from '@/components/page-components/service-landing/book-call'
 import {
+  AcademicCapIcon,
+  ArrowPathIcon,
   ArrowRightIcon,
+  ArrowTrendingUpIcon,
   ChartBarIcon,
   CheckIcon,
   CurrencyDollarIcon,
   DocumentTextIcon,
   MegaphoneIcon,
+  NewspaperIcon,
   RocketLaunchIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
@@ -20,18 +24,30 @@ import {
   type Facts,
 } from './data'
 
+// Label and icon for each row that can be shown as a card above the table
+const cardMeta: Partial<
+  Record<FactKey, { label: string; Icon: typeof CheckIcon }>
+> = {
+  network: { label: 'Expert network', Icon: AcademicCapIcon },
+  who: { label: 'Who creates the content', Icon: UserGroupIcon },
+  content: { label: 'Content delivery', Icon: NewspaperIcon },
+  paid: { label: 'Marketing channels', Icon: ArrowTrendingUpIcon },
+  aiTracking: { label: 'AI visibility', Icon: ChartBarIcon },
+  distribution: { label: 'Distribution', Icon: MegaphoneIcon },
+  docs: { label: 'Technical documentation', Icon: DocumentTextIcon },
+  start: { label: 'Time to first pieces', Icon: RocketLaunchIcon },
+  pricing: { label: 'Pricing', Icon: CurrencyDollarIcon },
+  revisions: { label: 'Revisions', Icon: ArrowPathIcon },
+}
+
 // The rows that matter most, shown as cards above the full table
-const keyDifferences: {
-  key: FactKey
-  label: string
-  Icon: typeof CheckIcon
-}[] = [
-  { key: 'who', label: 'Who creates the content', Icon: UserGroupIcon },
-  { key: 'aiTracking', label: 'AI visibility', Icon: ChartBarIcon },
-  { key: 'distribution', label: 'Distribution', Icon: MegaphoneIcon },
-  { key: 'docs', label: 'Technical documentation', Icon: DocumentTextIcon },
-  { key: 'start', label: 'Time to first pieces', Icon: RocketLaunchIcon },
-  { key: 'pricing', label: 'Pricing', Icon: CurrencyDollarIcon },
+const defaultKeyRows: FactKey[] = [
+  'who',
+  'aiTracking',
+  'distribution',
+  'docs',
+  'start',
+  'pricing',
 ]
 
 // Up to three short facts for each side of the hero matchup
@@ -44,22 +60,23 @@ const quickFacts = (
     .slice(0, 3)
     .map((k) => facts[k] as string)
 
-// Real Draft.dev outcomes, from the published case studies
+// Real Draft.dev outcomes, from the published case studies; named clients first
 const results = [
-  {
-    value: '10x',
-    label: 'More AI traffic for a GPU cloud platform',
-    href: '/case-studies/gpu-cloud-platform',
-  },
-  {
-    value: '72%',
-    label: "Of a developer API platform's AI citations came from our articles",
-    href: '/case-studies/developer-api-platform',
-  },
   {
     value: '346%',
     label: "Growth in Earthly's monthly blog visitors",
     href: '/case-studies/earthly',
+  },
+  {
+    value: '4x',
+    label:
+      "Growth in Loft Labs' blog traffic in one year, with one article passing 70,000 visitors",
+    href: '/case-studies/loft-labs',
+  },
+  {
+    value: '72%',
+    label: "Of a developer API platform's AI citations come from our articles",
+    href: '/case-studies/developer-api-platform',
   },
 ]
 
@@ -75,8 +92,8 @@ const PickList = ({
   <div
     className={
       highlight
-        ? 'bg-gradient-brand rounded-3xl p-8 text-white shadow-xl'
-        : 'rounded-3xl bg-white p-8 shadow-sm ring-1 ring-[#5e5285]/10'
+        ? 'bg-gradient-brand rounded-3xl p-7 text-white shadow-xl'
+        : 'rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10'
     }
   >
     <h3
@@ -116,6 +133,89 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
     .filter((c) => c.slug !== competitor.slug)
     .sort((a, b) => devtoolFirst(a) - devtoolFirst(b))
     .slice(0, 3)
+  const { pitch } = competitor
+
+  // Real Draft.dev results, shown right after the reasons when the page has a pitch
+  const resultsSection = (
+    <section className="bg-gradient-brand relative isolate overflow-hidden py-12 sm:py-14">
+      <div
+        aria-hidden="true"
+        className="absolute -top-24 -left-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
+      />
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="lg:subheader-light subheader-mobile-light text-center">
+          What Our Clients Measured
+        </h2>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-white/80">
+          Numbers from our published case studies
+        </p>
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {results.map((r) => (
+            <Link
+              key={r.href}
+              href={r.href}
+              // Subgrid: number, label and link line up across the row
+              className="group row-span-3 grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white/10 p-7 ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-white/15"
+            >
+              <p className="font-code text-5xl font-semibold text-amber-300">
+                {r.value}
+              </p>
+              <p className="mt-3 text-base text-white/90">{r.label}</p>
+              <span className="mt-5 inline-flex items-center gap-x-2 self-end text-sm font-semibold text-white">
+                Read the case study
+                <ArrowRightIcon
+                  aria-hidden="true"
+                  className="size-4 transition group-hover:translate-x-1"
+                />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+
+  // Links to a few other comparisons, DevTool specialists first
+  const othersSection = others.length > 0 && (
+    <section className="bg-[#f4f1f8] py-12 sm:py-14">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+          Other Comparisons
+        </h2>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
+          See how Draft.dev compares with other agencies
+        </p>
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {others.map((c) => (
+            <CompareCard key={c.slug} competitor={c} />
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Link
+            href="/compare"
+            className="text-secondary inline-flex items-center gap-x-2 font-semibold"
+          >
+            All comparisons
+            <ArrowRightIcon aria-hidden="true" className="size-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+
+  const pickThem = (
+    <PickList
+      title={`Pick ${competitor.name} if`}
+      items={competitor.pickThem}
+    />
+  )
+  const pickDraft = (
+    <PickList
+      title="Pick Draft.dev if"
+      items={competitor.pickDraft}
+      highlight
+    />
+  )
 
   return (
     <div>
@@ -155,7 +255,7 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
             >
               VS
             </span>
-            <div className="flex flex-col rounded-3xl bg-white p-8 shadow-2xl">
+            <div className="flex flex-col rounded-3xl bg-white p-7 shadow-2xl">
               <p className="font-code text-secondary text-2xl font-semibold">
                 Draft.dev
               </p>
@@ -163,20 +263,21 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
                 {competitor.summary.draft}
               </p>
               <ul className="mt-6 space-y-2">
-                {quickFacts(draftFacts, ['network', 'content', 'start']).map(
-                  (fact) => (
-                    <li
-                      key={fact}
-                      className="flex items-start gap-x-2 text-sm font-medium text-gray-800"
-                    >
-                      <CheckIcon
-                        aria-hidden="true"
-                        className="text-secondary mt-0.5 size-4 shrink-0"
-                      />
-                      {fact}
-                    </li>
-                  ),
-                )}
+                {(
+                  pitch?.heroPoints ??
+                  quickFacts(draftFacts, ['network', 'content', 'start'])
+                ).map((fact) => (
+                  <li
+                    key={fact}
+                    className="flex items-start gap-x-2 text-sm font-medium text-gray-800"
+                  >
+                    <CheckIcon
+                      aria-hidden="true"
+                      className="text-secondary mt-0.5 size-4 shrink-0"
+                    />
+                    {fact}
+                  </li>
+                ))}
               </ul>
               <div className="mt-auto pt-8">
                 <a
@@ -187,7 +288,7 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
                 </a>
               </div>
             </div>
-            <div className="flex flex-col rounded-3xl bg-white/10 p-8 ring-1 ring-white/20">
+            <div className="flex flex-col rounded-3xl bg-white/10 p-7 ring-1 ring-white/20">
               <p className="font-code text-2xl font-semibold text-white">
                 {competitor.name}
               </p>
@@ -195,7 +296,11 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
                 {competitor.summary.them}
               </p>
               <ul className="mt-6 space-y-2">
-                {quickFacts(competitor.facts).map((fact) => (
+                {quickFacts(
+                  competitor.facts,
+                  // Pitch pages skip the content row, which repeats the pricing row
+                  pitch ? ['network', 'pricing', 'builtFor'] : undefined,
+                ).map((fact) => (
                   <li
                     key={fact}
                     className="flex items-start gap-x-2 text-sm font-medium text-white/90"
@@ -214,6 +319,70 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
       </div>
 
       <main>
+        {pitch && (
+          <>
+            {/* Why buyers choose Draft.dev, each reason backed by a fact */}
+            <section className="py-12 sm:py-14">
+              <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+                  Why DevTool Teams Choose Draft.dev
+                </h2>
+                <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
+                  Six reasons, each backed by a client result
+                </p>
+                <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {pitch.reasons.map((reason) => (
+                    <div
+                      key={reason.title}
+                      // Subgrid: title, body, stat and link line up across each row
+                      className="row-span-4 grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10"
+                    >
+                      <div className="flex items-center gap-x-3">
+                        <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-amber-400 text-gray-900 shadow-sm">
+                          <CheckIcon aria-hidden="true" className="size-5" />
+                        </span>
+                        <h3 className="font-code text-secondary text-xl font-semibold">
+                          {reason.title}
+                        </h3>
+                      </div>
+                      <p className="mt-4 mb-5 text-base text-gray-700">
+                        {reason.body}
+                      </p>
+                      {reason.stat ? (
+                        <div className="bg-gradient-brand rounded-2xl p-4 text-white shadow-md">
+                          <p className="font-code text-3xl font-semibold text-amber-300">
+                            {reason.stat.value}
+                          </p>
+                          <p className="mt-1 text-sm text-white/90">
+                            {reason.stat.label}
+                          </p>
+                        </div>
+                      ) : (
+                        <div />
+                      )}
+                      {reason.href ? (
+                        <Link
+                          href={reason.href}
+                          className="text-secondary inline-flex items-center gap-x-2 pt-4 text-sm font-semibold"
+                        >
+                          {reason.cta ?? 'Learn more'}
+                          <ArrowRightIcon
+                            aria-hidden="true"
+                            className="size-4"
+                          />
+                        </Link>
+                      ) : (
+                        <span />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+            {resultsSection}
+          </>
+        )}
+
         {/* Key differences on a soft lavender band */}
         <section className="bg-[#f4f1f8] py-12 sm:py-14">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -221,40 +390,48 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
               Key Differences
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
-              The six things buyers ask about most
+              {pitch
+                ? `Where Draft.dev and ${competitor.name} differ`
+                : 'The six things buyers ask about most'}
             </p>
             <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {keyDifferences.map(({ key, label, Icon }) => (
-                <div
-                  key={key}
-                  className="flex flex-col rounded-3xl bg-white p-5 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
-                >
-                  <div className="flex items-center gap-x-3">
-                    <span className="flex size-10 items-center justify-center rounded-xl bg-amber-400 text-gray-900 shadow-sm">
-                      <Icon aria-hidden="true" className="size-5" />
-                    </span>
-                    <h3 className="font-code text-secondary text-lg font-semibold">
-                      {label}
-                    </h3>
+              {(pitch?.keyRows ?? defaultKeyRows).map((key) => {
+                const meta = cardMeta[key]
+                if (!meta) return null
+                const { label, Icon } = meta
+                return (
+                  <div
+                    key={key}
+                    // Subgrid: heading, Draft.dev box and competitor line up across the row
+                    className="row-span-3 grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10 transition hover:-translate-y-0.5 hover:shadow-md"
+                  >
+                    <div className="flex items-center gap-x-3">
+                      <span className="flex size-10 items-center justify-center rounded-xl bg-amber-400 text-gray-900 shadow-sm">
+                        <Icon aria-hidden="true" className="size-5" />
+                      </span>
+                      <h3 className="font-code text-secondary text-lg font-semibold">
+                        {label}
+                      </h3>
+                    </div>
+                    <div className="bg-gradient-brand mt-4 rounded-2xl p-4 text-white shadow-md">
+                      <p className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
+                        Draft.dev
+                      </p>
+                      <p className="mt-1 text-base">
+                        <FactValue value={draftFacts[key]} />
+                      </p>
+                    </div>
+                    <div className="mt-3 px-1">
+                      <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                        {competitor.name}
+                      </p>
+                      <p className="mt-1 text-base text-gray-700">
+                        <FactValue value={competitor.facts[key]} />
+                      </p>
+                    </div>
                   </div>
-                  <div className="bg-gradient-brand mt-4 rounded-2xl p-4 text-white shadow-md">
-                    <p className="text-xs font-semibold tracking-wider text-amber-300 uppercase">
-                      Draft.dev
-                    </p>
-                    <p className="mt-1 text-base">
-                      <FactValue value={draftFacts[key]} />
-                    </p>
-                  </div>
-                  <div className="mt-3 px-1">
-                    <p className="text-xs font-semibold tracking-wider text-gray-500 uppercase">
-                      {competitor.name}
-                    </p>
-                    <p className="mt-1 text-base text-gray-700">
-                      <FactValue value={competitor.facts[key]} />
-                    </p>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
@@ -269,85 +446,38 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
 
         {/* Who should pick which */}
         <section className="bg-[#f4f1f8] py-12 sm:py-14">
-          <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
               Who Should Pick Which
             </h2>
+            <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
+              A quick fit check before you book a call
+            </p>
             <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
-              <PickList
-                title={`Pick ${competitor.name} if`}
-                items={competitor.pickThem}
-              />
-              <PickList
-                title="Pick Draft.dev if"
-                items={competitor.pickDraft}
-                highlight
-              />
+              {pitch ? (
+                <>
+                  {pickDraft}
+                  {pickThem}
+                </>
+              ) : (
+                <>
+                  {pickThem}
+                  {pickDraft}
+                </>
+              )}
             </div>
           </div>
         </section>
 
-        {/* Results from real Draft.dev clients */}
-        <section className="bg-gradient-brand relative isolate overflow-hidden py-12 sm:py-14">
-          <div
-            aria-hidden="true"
-            className="absolute -top-24 -left-24 -z-10 h-80 w-80 rounded-full bg-amber-300/15 blur-3xl"
-          />
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 className="lg:subheader-light subheader-mobile-light text-center">
-              What Our Clients Measured
-            </h2>
-            <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-              {results.map((r) => (
-                <Link
-                  key={r.href}
-                  href={r.href}
-                  className="group rounded-3xl bg-white/10 p-7 ring-1 ring-white/20 transition hover:-translate-y-0.5 hover:bg-white/15"
-                >
-                  <p className="font-code text-5xl font-semibold text-amber-300">
-                    {r.value}
-                  </p>
-                  <p className="mt-3 text-base text-white/90">{r.label}</p>
-                  <span className="mt-5 inline-flex items-center gap-x-2 text-sm font-semibold text-white">
-                    Read the case study
-                    <ArrowRightIcon
-                      aria-hidden="true"
-                      className="size-4 transition group-hover:translate-x-1"
-                    />
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Results from real Draft.dev clients, already shown above with a pitch */}
+        {!pitch && resultsSection}
 
-        {others.length > 0 && (
-          <section className="bg-[#f4f1f8] py-12 sm:py-14">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-                <h2 className="subheader-mobile-gradient sm:subheader-gradient">
-                  Other Comparisons
-                </h2>
-                <Link
-                  href="/compare"
-                  className="text-secondary inline-flex items-center gap-x-2 font-semibold"
-                >
-                  All comparisons
-                  <ArrowRightIcon aria-hidden="true" className="size-4" />
-                </Link>
-              </div>
-              <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
-                {others.map((c) => (
-                  <CompareCard key={c.slug} competitor={c} />
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
+        {!pitch && othersSection}
       </main>
 
       <FAQ
-        className="pt-12 pb-8"
+        className="py-12 sm:py-14"
+        centered
         callHref="#book-a-call"
         title="Common Questions We Get Asked"
         headingClassName="subheader-mobile-gradient sm:subheader-gradient"
@@ -355,6 +485,8 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
         standardFaqs={false}
         pageFaqs={competitor.faqs}
       />
+      {/* With a pitch, other comparisons wait until after the FAQ */}
+      {pitch && othersSection}
       <BookCall />
     </div>
   )

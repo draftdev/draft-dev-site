@@ -52,7 +52,7 @@ export const rowGroups: {
   {
     title: 'Marketing and distribution',
     rows: [
-      { key: 'paid', label: 'Paid channels' },
+      { key: 'paid', label: 'Marketing channels' },
       { key: 'distribution', label: 'Distribution' },
     ],
   },
@@ -68,21 +68,27 @@ export const rowGroups: {
 ]
 
 export const draftFacts: Facts = {
-  who: 'Researched in-house, checked by an engineer, polished by a technical editor',
-  network: '300+ engineers and subject matter experts',
+  who: 'Researched in-house, checked by one of our engineers who tests the code, then polished by a technical editor',
+  network:
+    '300+ engineers and subject matter experts, the top 3% of 9,000+ developers in our talent pool',
   based: 'Chicago, IL and Naperville, IL',
-  builtFor: 'Developer tools and technical companies',
-  content: 'Ready-to-publish content every week',
+  builtFor:
+    'Developer tools and AI platforms, from first launch to scaling go-to-market',
+  content:
+    'Ready-to-publish content every week: blog posts, tutorials, comparison pages, landing pages, lead magnets and more. 3,000+ pieces published so far',
   docs: 'Yes, including API reference docs, kept up to date as your product changes',
-  video: 'Yes',
-  aeo: 'Yes',
+  video: 'Yes, video tutorials plus a full video marketing service',
+  aeo: 'Yes, a dedicated AEO and GEO service',
   aiTracking:
     'A baseline before work starts, then monthly AI citation tracking and a report across ChatGPT, Claude, Perplexity and Google AI Overviews',
-  paid: 'Paid search, plus newsletter, podcast and community sponsorships',
-  distribution: '7,000+ developer network, Reddit and developer communities',
-  pricing: 'From $9K a month',
-  minTerm: '3 months, then month to month',
-  start: 'First pieces in about 3 weeks',
+  paid: 'Paid ads, Reddit marketing, newsletter, podcast and community sponsorships, and developer influencer distribution',
+  distribution:
+    'Our own 7,000+ developer network, with 300 to 500 developers shortlisted for each piece, plus Reddit, Hacker News, DEV, Hashnode, LinkedIn and newsletters, included',
+  pricing: 'From $9,000 a month, including strategy, production and promotion',
+  minTerm:
+    '3 months to set your strategy and build momentum, then month to month',
+  start:
+    'Starts within 1 to 2 weeks, first pieces within 3 weeks, with strategy included',
   revisions: 'Unlimited',
 }
 
@@ -108,6 +114,22 @@ export type Competitor = {
   faqs: { question: string; answer: string }[]
   sources: string[]
   checked: string
+  // Optional pitch: when set, the page leads with why buyers choose Draft.dev,
+  // shows client results next, and lists "Pick Draft.dev" first
+  pitch?: {
+    // Short points on the Draft.dev hero card, in place of the default facts
+    heroPoints: string[]
+    reasons: {
+      title: string
+      body: string
+      // A measured client result that backs up the reason
+      stat?: { value: string; label: string }
+      href?: string
+      cta?: string
+    }[]
+    // The six cards under "Key Differences": rows where the two really differ
+    keyRows: FactKey[]
+  }
 }
 
 const checked = 'November 2, 2026'
@@ -135,7 +157,7 @@ export const competitors: Competitor[] = [
     slug: 'literally-dev',
     name: 'Literally.dev',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Literally.dev alternative for devtool companies',
+    tagline: 'A Literally.dev alternative for developer tool companies',
     verdict:
       'Pick Literally.dev for a fixed-price, 90-day AEO sprint. Pick Draft.dev for a full content and marketing team, with 300+ engineers checking the work.',
     summary: {
@@ -183,7 +205,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Literally.dev cost?',
         answer:
-          'Literally.dev publishes $4,990 a month for its 90-day Sprint, with a 3-month minimum. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Literally.dev publishes $4,990 a month for its 90-day Sprint, with a 3-month minimum. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -211,13 +233,13 @@ export const competitors: Competitor[] = [
     slug: 'hackmamba',
     name: 'Hackmamba',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Hackmamba alternative for devtool companies',
+    tagline: 'A Hackmamba alternative for developer tool companies',
     verdict:
-      'Both run developer marketing beyond content. Pick Hackmamba for published starting prices and DevRel programs. Pick Draft.dev for weekly content checked by 300+ engineers and a 7,000+ developer distribution network.',
+      "Draft.dev owns your go-to-market end to end: strategy, content and distribution. Hackmamba's content clients typically keep strategy in-house and buy production and distribution.",
     summary: {
       draft:
-        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'Hackmamba is a US-based developer marketing agency founded in 2021. It covers content, documentation, SEO and GEO, DevRel, paid and influencer marketing, with published starting prices.',
+        'Draft.dev is a GTM agency for developer tools and AI platforms, founded in 2020. It covers go-to-market strategy, technical content, documentation, SEO and AI search, paid ads, Reddit, sponsorships, influencer distribution, newsletters and video. It has worked with 100+ tech companies, including Docker, JetBrains and Cloudflare.',
+      them: 'Hackmamba is a US-based developer marketing agency founded in 2021. It covers content, documentation, SEO and GEO, DevRel, paid and influencer marketing, and has worked with 50+ developer tool companies.',
     },
     facts: {
       who: 'Developers with hands-on experience in the domain',
@@ -233,56 +255,147 @@ export const competitors: Competitor[] = [
       paid: 'Performance marketing and influencer marketing',
       distribution:
         'Reddit, Hacker News, DEV, Hashnode, LinkedIn, Discord and newsletters, included',
-      pricing: 'Content retainers from $5,000 a month (published)',
+      pricing:
+        'Content retainers from $5,000 a month for 4 blog posts. Programs across several workstreams from $15,000 a month',
       minTerm:
         'A paid trial month, then month to month or a longer statement of work',
       start: '10 to 14 days per piece, from brief to live',
       revisions: null,
     },
     pickThem: [
-      'You want published starting prices before the first call.',
-      'You need DevRel, hackathons or workshops alongside content.',
-      'You want a paid trial month before committing.',
-      'You are a Seed to Series C developer tool company.',
+      'You already have an in-house strategist and only need extra writers to produce what they plan.',
+      'Your main need is hackathons, university programs or developer events rather than content.',
+      'You would rather test with a single trial month than build a 3-month plan.',
     ],
     pickDraft: [
-      'You want ready-to-publish content every week, not a set number of posts per retainer.',
-      'You want 300+ engineers and subject matter experts checking accuracy and testing code.',
-      'You want your content shared by a network of 7,000+ working developers.',
-      'You want unlimited revisions.',
+      'You want strategy, content and channels like SEO, AI search, paid ads and Reddit from one team, without hiring a content lead.',
+      'You want an engineer to check every piece and test the code before a technical editor polishes it.',
+      'You want 300 to 500 developers from our network lined up to share each piece, on top of Reddit, Hacker News and DEV.',
+      'You want content every week across blog posts, tutorials, comparison pages and lead magnets, with unlimited revisions.',
     ],
     faqs: [
       {
         question: 'How is Draft.dev different from Hackmamba?',
         answer:
-          'Both run developer marketing beyond content. Hackmamba adds DevRel programs and publishes starting prices. Draft.dev delivers content every week, checked by 300+ engineers, and shares it through a network of 7,000+ developers.',
+          'Hackmamba says most of its content clients have an internal team running strategy and editorial direction, and it plugs in as the production and distribution layer. Draft.dev covers the strategy as well as the work: technical content, SEO, AI search, paid ads, Reddit, sponsorships and influencer posts, run by one team.',
       },
       {
-        question: 'How much does Hackmamba cost?',
+        question: 'Is Draft.dev only a content agency?',
         answer:
-          'Hackmamba publishes content retainers from $5,000 a month, which include 4 technical blog posts. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'No. Draft.dev is a GTM agency for developer tools and AI platforms. Technical content drives everything we do, across SEO, AI search (AEO and GEO), paid ads, Reddit, sponsorships, influencer posts, newsletters, video, docs and demand generation. We have published 3,000+ pieces for 100+ tech companies.',
+      },
+      {
+        question: 'What results do Draft.dev clients see?',
+        answer:
+          'Earthly grew monthly blog visitors by 346%. Loft Labs grew blog traffic 4x in a year. Status Hero grew blog traffic 211% and saved 40 hours a week. Fabric got 5 demo requests in one day from a post that hit Hacker News. A developer API platform got 10x more blog views in seven months, and our articles now earn 72% of its AI citations. Every number comes from a published case study or client.',
+      },
+      {
+        question: 'Does Draft.dev distribute content like Hackmamba does?',
+        answer:
+          'Yes, and more. Distribution is included in every Draft.dev plan. We share each piece on Reddit, Hacker News, DEV, Hashnode, LinkedIn and newsletters. Then we shortlist 300 to 500 developers from our network whose interests match the piece, and they post, repost and comment on it.',
+      },
+      {
+        question: 'How does pricing compare?',
+        answer:
+          "Hackmamba's content retainer starts at $5,000 a month for 4 blog posts, and its programs across several workstreams start at $15,000 a month. Draft.dev plans start at $9,000 a month, with a 3-month minimum, then month to month.",
       },
       draftAiAnswer,
       {
         question: 'How fast can each one start?',
         answer:
-          'Hackmamba says its standard turnaround is 10 to 14 days from brief to live. Draft.dev delivers first pieces about 3 weeks after kickoff.',
+          'Draft.dev usually starts within 1 to 2 weeks of signing, and your first pieces arrive within 3 weeks, with your content strategy and roadmap already in place. Hackmamba quotes 10 to 14 days per piece once a brief is ready.',
       },
       draftWhoAnswer,
     ],
+    pitch: {
+      heroPoints: [
+        '300+ engineers, the top 3% of 9,000+ developers',
+        "7,000+ developers share our clients' content",
+        '3,000+ pieces published since 2020',
+      ],
+      reasons: [
+        {
+          title: 'More than a content agency',
+          body: "Alongside the content, we run SEO, AI search, paid ads, Reddit, sponsorships, influencer posts and newsletters. You don't need one agency for content and another for marketing.",
+          stat: {
+            value: '5 demos',
+            label:
+              'In one day for Fabric, from a single post that hit Hacker News',
+          },
+          href: '/case-studies',
+          cta: 'See more client results',
+        },
+        {
+          title: 'Strategy included, not just production',
+          body: "With Hackmamba, strategy usually stays with your team. We research your market, competitors and positioning, then hand you a strategy and roadmap, so you don't need a content lead.",
+          stat: {
+            value: '8 weeks',
+            label:
+              'For a business banking platform to get cited by AI assistants, on a brand new blog',
+          },
+          href: '/case-studies/business-banking-platform',
+          cta: 'Read the case study',
+        },
+        {
+          title: 'The top 3% of 9,000+ developers',
+          body: 'Hackmamba draws on 3,000+ technical writers. We work with the top 3%: 300+ engineers out of 9,000+ developers. One of them checks every piece and tests the code.',
+          stat: {
+            value: '17 of 22',
+            label:
+              "Of our articles for a developer API platform rank on Google's first page",
+          },
+          href: '/case-studies/developer-api-platform',
+          cta: 'Read the case study',
+        },
+        {
+          title: 'Their channels, plus our own network',
+          body: 'We post on the same channels Hackmamba lists, like Reddit, Hacker News, DEV, Hashnode and LinkedIn. Then we shortlist 300 to 500 developers from our 7,000+ network to share each piece.',
+          stat: {
+            value: '60+',
+            label:
+              'Placements for one product launch, shared by developers in our network',
+          },
+          href: '/influencer-distribution-for-devtools',
+          cta: 'See influencer distribution',
+        },
+        {
+          title: 'Content that turns readers into users',
+          body: 'We plan each piece around what developers search for when they are choosing a tool, so the readers we bring in are ready to try yours, not just browsing.',
+          stat: {
+            value: '6%',
+            label:
+              "Of Earthly's blog readers convert, with 1,500 visitors every workday",
+          },
+          href: '/case-studies/earthly',
+          cta: 'Read the case study',
+        },
+        {
+          title: '3,000+ pieces for 100+ companies',
+          body: 'Since 2020, we have published 3,000+ pieces for 100+ tech companies, including Docker, JetBrains and Cloudflare. Hackmamba, founded in 2021, lists 50+ clients.',
+          stat: {
+            value: '211%',
+            label:
+              'More blog traffic for Status Hero, with 40 hours saved every week',
+          },
+          href: '/case-studies/status-hero',
+          cta: 'Read the case study',
+        },
+      ],
+      keyRows: ['network', 'who', 'paid', 'distribution', 'content', 'pricing'],
+    },
     sources: [
       'https://hackmamba.io/',
       'https://hackmamba.io/pricing',
       'https://hackmamba.io/services/technical-content-marketing-agency',
       'https://hackmamba.io/services/technical-writing-agency',
     ],
-    checked,
+    checked: 'November 24, 2026',
   },
   {
     slug: 'everydeveloper',
     name: 'EveryDeveloper',
     category: 'Other agencies',
-    tagline: 'An EveryDeveloper alternative for devtool companies',
+    tagline: 'An EveryDeveloper alternative for developer tool companies',
     verdict:
       'EveryDeveloper is a one-person advisory practice. Pick it for senior strategy advice. Pick Draft.dev when you need a team to create the content and run the marketing.',
     summary: {
@@ -329,7 +442,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does EveryDeveloper cost?',
         answer:
-          'EveryDeveloper publishes a retainer from $5,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'EveryDeveloper publishes a retainer from $5,000 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -352,7 +465,7 @@ export const competitors: Competitor[] = [
     slug: 'ritza',
     name: 'Ritza',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Ritza alternative for devtool companies',
+    tagline: 'A Ritza alternative for developer tool companies',
     verdict:
       'Pick Ritza for documentation and engineering-heavy work like demos and proofs of concept. Pick Draft.dev for content plus SEO, AEO and distribution, with monthly AI citation tracking.',
     summary: {
@@ -397,7 +510,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Ritza cost?',
         answer:
-          'Ritza does not publish pricing on its site. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Ritza does not publish pricing on its site. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -418,7 +531,7 @@ export const competitors: Competitor[] = [
     slug: 'ercule',
     name: 'ércule',
     category: 'More DevTool agencies',
-    tagline: 'An ércule alternative for devtool companies',
+    tagline: 'An ércule alternative for developer tool companies',
     verdict:
       'Pick ércule for SEO and GEO tied closely to analytics and content engineering. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
     summary: {
@@ -464,7 +577,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does ércule cost?',
         answer:
-          'ércule does not publish agency pricing. Its analytics app has a free plan, and Pro costs $59 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'ércule does not publish agency pricing. Its analytics app has a free plan, and Pro costs $59 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -484,7 +597,7 @@ export const competitors: Competitor[] = [
     slug: 'catchy',
     name: 'Catchy',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Catchy alternative for devtool companies',
+    tagline: 'A Catchy alternative for developer tool companies',
     verdict:
       'Pick Catchy for large developer marketing programs with events, video and paid media. Pick Draft.dev for technical content checked by 300+ engineers, plus AEO with monthly AI citation tracking.',
     summary: {
@@ -530,7 +643,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Catchy cost?',
         answer:
-          'Catchy does not publish pricing on its site. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Catchy does not publish pricing on its site. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -548,7 +661,7 @@ export const competitors: Competitor[] = [
     slug: 'wizard-on-demand',
     name: 'Wizard on Demand',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Wizard on Demand alternative for devtool companies',
+    tagline: 'A Wizard on Demand alternative for developer tool companies',
     verdict:
       'Both focus on devtools and run content plus paid media. Pick Wizard on Demand for a small team in Europe that also makes ad creative. Pick Draft.dev for 300+ engineers checking every piece and AEO with monthly AI citation tracking.',
     summary: {
@@ -592,7 +705,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Wizard on Demand cost?',
         answer:
-          'Wizard on Demand does not publish pricing; it gives a quote after a meeting. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Wizard on Demand does not publish pricing; it gives a quote after a meeting. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -615,7 +728,7 @@ export const competitors: Competitor[] = [
     slug: 'argot',
     name: 'Argot',
     category: 'DevTool content and marketing agencies',
-    tagline: 'An Argot alternative for devtool companies',
+    tagline: 'An Argot alternative for developer tool companies',
     verdict:
       'Pick Argot for a small team of developer-writers who run every line of code. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
     summary: {
@@ -659,7 +772,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Argot cost?',
         answer:
-          'Argot does not publish pricing; it scopes each engagement to your budget. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Argot does not publish pricing; it scopes each engagement to your budget. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -680,7 +793,7 @@ export const competitors: Competitor[] = [
     slug: 'infrasity',
     name: 'Infrasity',
     category: 'DevTool content and marketing agencies',
-    tagline: 'An Infrasity alternative for devtool companies',
+    tagline: 'An Infrasity alternative for developer tool companies',
     verdict:
       'Both cover devtool content, docs, video and AEO. Pick Infrasity for an early-stage startup focus and Reddit programs. Pick Draft.dev for 300+ engineers checking every piece, unlimited revisions and sponsorships.',
     summary: {
@@ -725,7 +838,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Infrasity cost?',
         answer:
-          'Infrasity does not publish prices; its plans list deliverables only. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Infrasity does not publish prices; its plans list deliverables only. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -745,7 +858,7 @@ export const competitors: Competitor[] = [
     slug: 'dev-spotlight',
     name: 'Dev Spotlight',
     category: 'More DevTool agencies',
-    tagline: 'A Dev Spotlight alternative for devtool companies',
+    tagline: 'A Dev Spotlight alternative for developer tool companies',
     verdict:
       'Pick Dev Spotlight for long-form technical content for large enterprises, with a happiness guarantee. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
     summary: {
@@ -789,7 +902,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Dev Spotlight cost?',
         answer:
-          'Dev Spotlight does not publish pricing; it quotes each project. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Dev Spotlight does not publish pricing; it quotes each project. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -808,7 +921,7 @@ export const competitors: Competitor[] = [
     slug: 'animalz',
     name: 'Animalz',
     category: 'Other agencies',
-    tagline: 'An Animalz alternative for devtool companies',
+    tagline: 'An Animalz alternative for developer tool companies',
     verdict:
       'Pick Animalz for brand and thought-leadership content from a large, long-running team. Pick Draft.dev for developer content checked by 300+ engineers, plus paid and community distribution.',
     summary: {
@@ -855,7 +968,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Animalz cost?',
         answer:
-          'Animalz does not publish general pricing. Its site says research reports average $25k. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Animalz does not publish general pricing. Its site says research reports average $25k. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -878,7 +991,7 @@ export const competitors: Competitor[] = [
     slug: 'discovered-labs',
     name: 'Discovered Labs',
     category: 'Other agencies',
-    tagline: 'A Discovered Labs alternative for devtool companies',
+    tagline: 'A Discovered Labs alternative for developer tool companies',
     verdict:
       'Pick Discovered Labs for a published-price SEO and AEO retainer on month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
     summary: {
@@ -908,7 +1021,7 @@ export const competitors: Competitor[] = [
       'You want published prices before the first call.',
       'You want month-to-month terms.',
       'You want content publishing within 10 days.',
-      'You want AI visibility tracked with the agency’s own tool.',
+      "You want AI visibility tracked with the agency's own tool.",
     ],
     pickDraft: [
       'You sell to developers and want every piece checked by an engineer.',
@@ -925,7 +1038,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Discovered Labs cost?',
         answer:
-          'Discovered Labs publishes plans from €6,995 a month on a 6-month commitment, or month to month at a higher rate. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Discovered Labs publishes plans from €6,995 a month on a 6-month commitment, or month to month at a higher rate. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -948,7 +1061,7 @@ export const competitors: Competitor[] = [
     slug: 'first-page-sage',
     name: 'First Page Sage',
     category: 'Other agencies',
-    tagline: 'A First Page Sage alternative for devtool companies',
+    tagline: 'A First Page Sage alternative for developer tool companies',
     verdict:
       'Pick First Page Sage for long-running SEO and GEO programs with in-house writers and month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
     summary: {
@@ -995,7 +1108,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does First Page Sage cost?',
         answer:
-          'First Page Sage has no pricing page. Its own pricing report lists $6,000 to $12,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'First Page Sage has no pricing page. Its own pricing report lists $6,000 to $12,000 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1020,7 +1133,7 @@ export const competitors: Competitor[] = [
     slug: 'graphite',
     name: 'Graphite Growth',
     category: 'Other agencies',
-    tagline: 'A Graphite alternative for devtool companies',
+    tagline: 'A Graphite alternative for developer tool companies',
     verdict:
       'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
     summary: {
@@ -1066,7 +1179,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Graphite cost?',
         answer:
-          'Graphite does not publish pricing, and its SEO work has a twelve-month minimum. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Graphite does not publish pricing, and its SEO work has a twelve-month minimum. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1088,7 +1201,7 @@ export const competitors: Competitor[] = [
     slug: 'nogood',
     name: 'NoGood',
     category: 'Other agencies',
-    tagline: 'A NoGood alternative for devtool companies',
+    tagline: 'A NoGood alternative for developer tool companies',
     verdict:
       'Pick NoGood for full-funnel growth marketing, from paid social to AEO, with a large premium team. Pick Draft.dev for developer content checked by 300+ engineers and a 7,000+ developer distribution network.',
     summary: {
@@ -1135,7 +1248,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does NoGood cost?',
         answer:
-          'NoGood says its average retainer is above $20,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'NoGood says its average retainer is above $20,000 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1157,7 +1270,7 @@ export const competitors: Competitor[] = [
     slug: 'omniscient-digital',
     name: 'Omniscient Digital',
     category: 'Other agencies',
-    tagline: 'An Omniscient Digital alternative for devtool companies',
+    tagline: 'An Omniscient Digital alternative for developer tool companies',
     verdict:
       'Pick Omniscient Digital for SEO and AEO programs focused on pipeline, with digital PR and link building. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
     summary: {
@@ -1203,7 +1316,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Omniscient Digital cost?',
         answer:
-          'Omniscient Digital says full-service engagements typically start at $120,000 a year. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Omniscient Digital says full-service engagements typically start at $120,000 a year. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1226,7 +1339,7 @@ export const competitors: Competitor[] = [
     slug: 'optimist',
     name: 'Optimist',
     category: 'Other agencies',
-    tagline: 'An Optimist alternative for devtool companies',
+    tagline: 'An Optimist alternative for developer tool companies',
     verdict:
       'Pick Optimist for founder-led SEO and AEO consulting on month-to-month terms. Pick Draft.dev when you want a team to create the content and run distribution for you.',
     summary: {
@@ -1273,7 +1386,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Optimist cost?',
         answer:
-          'Optimist publishes consulting from $3,000 a month and a roadmap project from $2,500. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Optimist publishes consulting from $3,000 a month and a roadmap project from $2,500. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1290,7 +1403,7 @@ export const competitors: Competitor[] = [
     slug: 'campfire-labs',
     name: 'Campfire Labs',
     category: 'Other agencies',
-    tagline: 'A Campfire Labs alternative for devtool companies',
+    tagline: 'A Campfire Labs alternative for developer tool companies',
     verdict:
       'Pick Campfire Labs for research reports and earned media for B2B SaaS, at published prices. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
     summary: {
@@ -1335,7 +1448,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Campfire Labs cost?',
         answer:
-          'Campfire Labs publishes retainers from $5k to $15k a month, with a three-month minimum. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Campfire Labs publishes retainers from $5k to $15k a month, with a three-month minimum. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1351,7 +1464,7 @@ export const competitors: Competitor[] = [
     slug: 'devtools-academy',
     name: 'DevTools Academy',
     category: 'More DevTool agencies',
-    tagline: 'A DevTools Academy alternative for devtool companies',
+    tagline: 'A DevTools Academy alternative for developer tool companies',
     verdict:
       'Pick DevTools Academy to reach developers through a large network of technical creators. Pick Draft.dev for technical content checked by 300+ engineers, plus SEO, AEO and paid channels.',
     summary: {
@@ -1399,7 +1512,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does DevTools Academy cost?',
         answer:
-          'DevTools Academy does not publish its own fee. It says most clients budget $100K a month all-in, split between its retainer and the creator budget. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'DevTools Academy does not publish its own fee. It says most clients budget $100K a month all-in, split between its retainer and the creator budget. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1415,7 +1528,7 @@ export const competitors: Competitor[] = [
     slug: 'studio1',
     name: 'Studio1',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A Studio1 alternative for devtool companies',
+    tagline: 'A Studio1 alternative for developer tool companies',
     verdict:
       'Both cover devtool content, docs, video and developer growth. Pick Studio1 for hands-on DevRel and open-source launches. Pick Draft.dev for 300+ engineers checking every piece, AEO with monthly AI citation tracking, and paid channels.',
     summary: {
@@ -1459,7 +1572,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Studio1 cost?',
         answer:
-          'Studio1 does not publish a price list. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Studio1 does not publish a price list. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1478,7 +1591,7 @@ export const competitors: Competitor[] = [
     slug: 'devmarklab',
     name: 'DevMarkLab',
     category: 'DevTool content and marketing agencies',
-    tagline: 'A DevMarkLab alternative for devtool companies',
+    tagline: 'A DevMarkLab alternative for developer tool companies',
     verdict:
       'Pick DevMarkLab for organic growth through SEO, Reddit and developer social from a small team. Pick Draft.dev for 300+ engineers checking every piece, plus paid search, sponsorships and monthly AI citation tracking.',
     summary: {
@@ -1522,7 +1635,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does DevMarkLab cost?',
         answer:
-          'DevMarkLab quotes after an audit rather than publishing a price, and most engagements start with a paid audit. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'DevMarkLab quotes after an audit rather than publishing a price, and most engagements start with a paid audit. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       {
@@ -1543,7 +1656,7 @@ export const competitors: Competitor[] = [
     slug: 'manicule',
     name: 'Manicule',
     category: 'More DevTool agencies',
-    tagline: 'A Manicule alternative for devtool companies',
+    tagline: 'A Manicule alternative for developer tool companies',
     verdict:
       'Pick Manicule for AI-search visibility work backed by its own tracking app. Pick Draft.dev for a full content and marketing team with 300+ engineers, paid channels and sponsorships.',
     summary: {
@@ -1588,7 +1701,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Manicule cost?',
         answer:
-          'Manicule does not publish agency pricing and sells its tracking app separately. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Manicule does not publish agency pricing and sells its tracking app separately. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1605,7 +1718,7 @@ export const competitors: Competitor[] = [
     slug: 'codecontent',
     name: 'CodeContent',
     category: 'More DevTool agencies',
-    tagline: 'A CodeContent alternative for devtool companies',
+    tagline: 'A CodeContent alternative for developer tool companies',
     verdict:
       'Pick CodeContent for tutorials written by software engineers at published prices. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
     summary: {
@@ -1649,7 +1762,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does CodeContent cost?',
         answer:
-          'CodeContent publishes plans from $1,250 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'CodeContent publishes plans from $1,250 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1667,7 +1780,7 @@ export const competitors: Competitor[] = [
     slug: 'content-turbine',
     name: 'Content Turbine',
     category: 'More DevTool agencies',
-    tagline: 'A Content Turbine alternative for devtool companies',
+    tagline: 'A Content Turbine alternative for developer tool companies',
     verdict:
       'Pick Content Turbine for technical content and AEO from an expert-sourced network. Pick Draft.dev for 300+ engineers checking every piece, plus paid channels, sponsorships and developer distribution.',
     summary: {
@@ -1711,7 +1824,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Content Turbine cost?',
         answer:
-          'Content Turbine does not publish prices; it sells packages. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Content Turbine does not publish prices; it sells packages. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1723,7 +1836,7 @@ export const competitors: Competitor[] = [
     slug: 'growthx',
     name: 'GrowthX',
     category: 'Other agencies',
-    tagline: 'A GrowthX alternative for devtool companies',
+    tagline: 'A GrowthX alternative for developer tool companies',
     verdict:
       'Pick GrowthX for an AI content platform with services on top. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
     summary: {
@@ -1766,7 +1879,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does GrowthX cost?',
         answer:
-          'GrowthX does not publish pricing, and terms are set in each order form. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'GrowthX does not publish pricing, and terms are set in each order form. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1783,7 +1896,7 @@ export const competitors: Competitor[] = [
     slug: 'grow-and-convert',
     name: 'Grow and Convert',
     category: 'Other agencies',
-    tagline: 'A Grow and Convert alternative for devtool companies',
+    tagline: 'A Grow and Convert alternative for developer tool companies',
     verdict:
       'Pick Grow and Convert for a few deep, interview-based articles a month for B2B SaaS. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
     summary: {
@@ -1828,7 +1941,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Grow and Convert cost?',
         answer:
-          'Grow and Convert publishes a starting price of $10,000 a month. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Grow and Convert publishes a starting price of $10,000 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
@@ -1848,7 +1961,7 @@ export const competitors: Competitor[] = [
     slug: 'codeless',
     name: 'Codeless',
     category: 'Other agencies',
-    tagline: 'A Codeless alternative for devtool companies',
+    tagline: 'A Codeless alternative for developer tool companies',
     verdict:
       'Pick Codeless for a high-volume content operation that your team takes over later. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
     summary: {
@@ -1892,7 +2005,7 @@ export const competitors: Competitor[] = [
       {
         question: 'How much does Codeless cost?',
         answer:
-          'Codeless publishes a $1,000 diagnostic but not its retainer pricing. Draft.dev starts at $9K a month, with a 3-month minimum, then month to month.',
+          'Codeless publishes a $1,000 diagnostic but not its retainer pricing. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
       },
       draftAiAnswer,
       draftWhoAnswer,
