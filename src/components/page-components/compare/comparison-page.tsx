@@ -17,6 +17,7 @@ import {
   NewspaperIcon,
   RocketLaunchIcon,
   UserGroupIcon,
+  VideoCameraIcon,
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -42,6 +43,7 @@ const cardMeta: Partial<
   aiTracking: { label: 'AI visibility', Icon: ChartBarIcon },
   distribution: { label: 'Distribution', Icon: MegaphoneIcon },
   docs: { label: 'Technical documentation', Icon: DocumentTextIcon },
+  video: { label: 'Video', Icon: VideoCameraIcon },
   start: { label: 'Time to first pieces', Icon: RocketLaunchIcon },
   pricing: { label: 'Pricing', Icon: CurrencyDollarIcon },
   revisions: { label: 'Revisions', Icon: ArrowPathIcon },
@@ -99,6 +101,14 @@ const VsBadge = () => (
 
 // Hero cards with the same labelled rows on both sides. A subgrid lines up the
 // name, summary, each row and the buttons across the two cards.
+// The shared testimonials store a few company names in odd casing; show them
+// the way the companies write them
+const companyNames: Record<string, string> = {
+  'SINCH MAILGUN': 'Sinch Mailgun',
+  'fabric. Inc': 'Fabric',
+  cloudforecast: 'CloudForecast',
+}
+
 // Named client quotes from the shared testimonials, picked by person's name.
 // A subgrid keeps the quotes and the names level across each row.
 const ClientQuotes = ({ names }: { names: string[] }) => {
@@ -137,7 +147,9 @@ const ClientQuotes = ({ names }: { names: string[] }) => {
                   <p className="text-secondary font-semibold">
                     {t.author.name}
                   </p>
-                  <p className="text-sm text-gray-600">{t.author.company}</p>
+                  <p className="text-sm text-gray-600">
+                    {companyNames[t.author.company] ?? t.author.company}
+                  </p>
                 </div>
               </figcaption>
             </figure>

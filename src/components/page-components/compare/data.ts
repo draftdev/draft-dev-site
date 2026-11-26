@@ -4,6 +4,7 @@
 
 import { hackmamba } from './competitors/hackmamba'
 import { literallyDev } from './competitors/literally-dev'
+import { ritza } from './competitors/ritza'
 import { draftAiAnswer, draftWhoAnswer } from './shared'
 
 export type FactKey =
@@ -235,72 +236,7 @@ export const competitors: Competitor[] = [
     ],
     checked,
   },
-  {
-    slug: 'ritza',
-    name: 'Ritza',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A Ritza alternative for developer tool companies',
-    verdict:
-      'Pick Ritza for documentation and engineering-heavy work like demos and proofs of concept. Pick Draft.dev for content plus SEO, AEO and distribution, with monthly AI citation tracking.',
-    summary: {
-      draft:
-        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'Ritza is a technical GTM agency of engineers and ex-engineers. It covers documentation, tutorials, SEO content and solutions engineering, and offers a satisfaction guarantee.',
-    },
-    facts: {
-      who: 'Engineers and ex-engineers',
-      network: null,
-      based: 'Legally in the Netherlands; most of the team in South Africa',
-      builtFor: 'Technical platforms and developer-focused companies',
-      content: null,
-      docs: 'Yes',
-      video: null,
-      aeo: null,
-      aiTracking: null,
-      paid: null,
-      distribution: null,
-      pricing: 'Not published; contact by email',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You need documentation, migration guides or solutions engineering, such as demos and proofs of concept.',
-      'You want a satisfaction guarantee with invoices sent after the work is done.',
-      'You want early product feedback and user testing from engineers.',
-    ],
-    pickDraft: [
-      'You want SEO, AEO and distribution alongside your content.',
-      'You want monthly AI citation tracking across ChatGPT, Claude, Perplexity and Google AI Overviews.',
-      'You want ready-to-publish content every week, checked by 300+ engineers and subject matter experts.',
-      'You want first pieces about 3 weeks after kickoff.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Ritza?',
-        answer:
-          'Ritza focuses on documentation, tutorials and solutions engineering. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
-      },
-      {
-        question: 'How much does Ritza cost?',
-        answer:
-          'Ritza does not publish pricing on its site. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      {
-        question: 'Does Draft.dev create technical documentation?',
-        answer:
-          'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.',
-      },
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://ritza.co/',
-      'https://ritza.co/100-guarantee.html',
-      'https://ritza.co/handbook/roles/general-application/',
-    ],
-    checked,
-  },
+  ritza,
   {
     slug: 'ercule',
     name: 'ércule',
