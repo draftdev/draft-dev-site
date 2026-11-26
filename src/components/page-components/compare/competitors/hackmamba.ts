@@ -89,7 +89,7 @@ export const hackmamba: Competitor = {
       },
       {
         label: 'Track record',
-        draft: '3,000+ pieces for 100+ companies since 2020',
+        draft: '100+ client companies since 2020, with 3,000+ pieces published',
         them: '50+ developer tool companies since 2021',
       },
       {
@@ -104,12 +104,12 @@ export const hackmamba: Competitor = {
         title: 'More than a content agency',
         body: "Alongside the content, we run SEO, AI search, paid ads, Reddit, sponsorships, influencer posts and newsletters. You don't need one agency for content and another for marketing.",
         stat: {
-          value: '5 demos',
+          value: '211%',
           label:
-            'In one day for Fabric, from a single post that hit Hacker News',
+            'More blog traffic for Status Hero, with 40 hours saved every week',
         },
         href: '/case-studies/status-hero',
-        cta: 'Read a similar case study',
+        cta: 'Read the case study',
       },
       {
         title: 'Strategy included in every plan',
@@ -156,15 +156,15 @@ export const hackmamba: Competitor = {
         cta: 'How we track AI visibility',
       },
       {
-        title: '3,000+ pieces for 100+ companies',
-        body: 'Since 2020, we have published 3,000+ pieces for 100+ tech companies, including Docker, JetBrains and Cloudflare. Hackmamba, founded in 2021, lists 50+ clients.',
+        title: 'A team that can scale with you',
+        body: 'Hackmamba, founded in 2021, lists 50+ clients. Our network of 300+ engineers and subject matter experts has published 3,000+ pieces for 100+ companies since 2020.',
         stat: {
-          value: '20–45%',
+          value: '100+',
           label:
-            'Click-through rates Sinch Mailgun reached with our developer content',
+            'Client companies since 2020, including Docker, JetBrains and Cloudflare',
         },
-        href: '/case-studies/sinch-mailgun',
-        cta: 'Read the case study',
+        href: '/technical-content-examples',
+        cta: 'See work we did for clients',
       },
     ],
     keyRows: ['network', 'who', 'paid', 'distribution', 'content', 'pricing'],

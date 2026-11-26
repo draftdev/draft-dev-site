@@ -6,6 +6,7 @@ import { catchy } from './competitors/catchy'
 import { hackmamba } from './competitors/hackmamba'
 import { literallyDev } from './competitors/literally-dev'
 import { ritza } from './competitors/ritza'
+import { wizardOnDemand } from './competitors/wizard-on-demand'
 import { draftAiAnswer, draftWhoAnswer } from './shared'
 
 export type FactKey =
@@ -305,73 +306,7 @@ export const competitors: Competitor[] = [
     checked,
   },
   catchy,
-  {
-    slug: 'wizard-on-demand',
-    name: 'Wizard on Demand',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A Wizard on Demand alternative for developer tool companies',
-    verdict:
-      'Draft.dev brings 300+ engineers and monthly AI citation tracking. Wizard on Demand is a team of 17 in Estonia that adds paid media and ad creative.',
-    summary: {
-      draft: draftSummary,
-      them: 'Wizard on Demand is a technical content marketing agency for devtools and infrastructure companies, based in Tallinn, Estonia. Its team of 17 covers technical content, SEO and GEO, paid media and ad creative.',
-    },
-    facts: {
-      who: 'Writers with a technical background',
-      network: 'A team of 17',
-      based: 'Tallinn, Estonia; team mostly in Europe',
-      builtFor: 'Devtools and enterprise infrastructure companies',
-      content: null,
-      docs: null,
-      video: null,
-      aeo: 'Yes, SEO and GEO',
-      aiTracking: null,
-      paid: 'Paid search and paid social, including Reddit and LinkedIn ads',
-      distribution: 'SEO, organic social and paid media',
-      pricing: 'Not published; quote on request',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You want a small, devtools-focused team.',
-      'You want ad creative and paid social run alongside your content.',
-      'You want a team mostly based in Europe.',
-    ],
-    pickDraft: [
-      'You want 300+ engineers and subject matter experts checking every piece.',
-      'You want AEO with a baseline and monthly AI citation tracking.',
-      'You want newsletter, podcast and community sponsorships plus a 7,000+ developer network.',
-      'You need technical documentation.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Wizard on Demand?',
-        answer:
-          'Both focus on developer tools. Wizard on Demand is a team of 17 that adds ad creative. Draft.dev has 300+ engineers and subject matter experts checking every piece, plus AEO tracking, sponsorships and a 7,000+ developer network.',
-      },
-      {
-        question: 'How much does Wizard on Demand cost?',
-        answer:
-          'Wizard on Demand does not publish pricing; it gives a quote after a meeting. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      {
-        question: 'Does Draft.dev create technical documentation?',
-        answer: draftDocsAnswer,
-      },
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.wizardondemand.com/',
-      'https://www.wizardondemand.com/services',
-      'https://www.wizardondemand.com/meeting/tech-marketing-agency',
-      'https://www.wizardondemand.com/services/technical-content-marketing-and-technical-writing',
-      'https://www.wizardondemand.com/services/paid-media-services-for-devtools-companies-and-startups',
-      'https://www.wizardondemand.com/technical-writing-agency',
-    ],
-    checked,
-  },
+  wizardOnDemand,
   {
     slug: 'argot',
     name: 'Argot',
