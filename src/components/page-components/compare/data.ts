@@ -2,6 +2,7 @@
 // competitor facts come only from each vendor's own site, with the date checked.
 // A null value means the vendor does not say, and renders as a dash.
 
+import { catchy } from './competitors/catchy'
 import { hackmamba } from './competitors/hackmamba'
 import { literallyDev } from './competitors/literally-dev'
 import { ritza } from './competitors/ritza'
@@ -172,7 +173,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'An EveryDeveloper alternative for developer tool companies',
     verdict:
-      'EveryDeveloper is a one-person advisory practice. Pick it for senior strategy advice. Pick Draft.dev when you need a team to create the content and run the marketing.',
+      "Draft.dev's team creates the content and runs your marketing, with engineers checking every piece. EveryDeveloper is a solo advisor who refers you to writers.",
     summary: {
       draft:
         'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
@@ -243,7 +244,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'An ércule alternative for developer tool companies',
     verdict:
-      'Pick ércule for SEO and GEO tied closely to analytics and content engineering. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+      'Draft.dev adds engineer-checked content, paid ads and a 7,000+ developer network to search. ércule focuses on organic SEO and GEO tied to analytics.',
     summary: {
       draft: draftSummary,
       them: 'ércule is an organic growth agency for B2B and developer-focused companies. It ties SEO and GEO, content production, content engineering and analytics together, and also sells an analytics app.',
@@ -303,77 +304,14 @@ export const competitors: Competitor[] = [
     ],
     checked,
   },
-  {
-    slug: 'catchy',
-    name: 'Catchy',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A Catchy alternative for developer tool companies',
-    verdict:
-      'Pick Catchy for large developer marketing programs with events, video and paid media. Pick Draft.dev for technical content checked by 300+ engineers, plus AEO with monthly AI citation tracking.',
-    summary: {
-      draft: draftSummary,
-      them: 'Catchy is a developer marketing agency with offices in the UK and the US, working with startups through Fortune 500 brands. It covers go-to-market, demand generation, developer experience, content, video and events.',
-    },
-    facts: {
-      who: null,
-      network: null,
-      based: 'UK and US offices',
-      builtFor: 'Startups to Fortune 500 brands marketing to developers',
-      content: null,
-      docs: 'Yes',
-      video: 'Yes',
-      aeo: null,
-      aiTracking: null,
-      paid: 'Paid media planning and campaign management',
-      distribution:
-        'Influencer programs, events, social and community programs',
-      pricing: 'Not published',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You want developer events and in-person activations.',
-      'You want video production alongside your content.',
-      'You want developer experience work, such as developer portals.',
-      'You are a large enterprise with a global developer program.',
-    ],
-    pickDraft: [
-      'You want AEO with a baseline and monthly AI citation tracking.',
-      'You want every piece checked by an engineer.',
-      'You want SEO and Reddit distribution as well as paid channels.',
-      'You want first pieces about 3 weeks after kickoff.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Catchy?',
-        answer:
-          'Catchy runs broad developer marketing programs, including events and video. Draft.dev focuses on technical content checked by 300+ engineers, plus SEO, AEO with monthly AI citation tracking, paid search, sponsorships and distribution.',
-      },
-      {
-        question: 'How much does Catchy cost?',
-        answer:
-          'Catchy does not publish pricing on its site. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.catchyagency.com/',
-      'https://www.catchyagency.com/about',
-      'https://www.catchyagency.com/developer-experience',
-      'https://www.catchyagency.com/content-and-creative',
-      'https://www.catchyagency.com/demand-generation',
-    ],
-    checked,
-  },
+  catchy,
   {
     slug: 'wizard-on-demand',
     name: 'Wizard on Demand',
     category: 'DevTool content and marketing agencies',
     tagline: 'A Wizard on Demand alternative for developer tool companies',
     verdict:
-      'Both focus on devtools and run content plus paid media. Pick Wizard on Demand for a small team in Europe that also makes ad creative. Pick Draft.dev for 300+ engineers checking every piece and AEO with monthly AI citation tracking.',
+      'Draft.dev brings 300+ engineers and monthly AI citation tracking. Wizard on Demand is a team of 17 in Estonia that adds paid media and ad creative.',
     summary: {
       draft: draftSummary,
       them: 'Wizard on Demand is a technical content marketing agency for devtools and infrastructure companies, based in Tallinn, Estonia. Its team of 17 covers technical content, SEO and GEO, paid media and ad creative.',
@@ -440,7 +378,7 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'An Argot alternative for developer tool companies',
     verdict:
-      'Pick Argot for a small team of developer-writers who run every line of code. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+      'Draft.dev pairs engineer-checked content with SEO, AI search, paid ads and distribution. Argot is a small team of developer-writers focused on the writing.',
     summary: {
       draft: draftSummary,
       them: 'Argot is a technical content marketing agency for developer tools and AI products. Its developer-writers build with your product before writing, and it offers writing, editing and strategy.',
@@ -505,7 +443,7 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'An Infrasity alternative for developer tool companies',
     verdict:
-      'Both cover devtool content, docs, video and AEO. Pick Infrasity for an early-stage startup focus and Reddit programs. Pick Draft.dev for 300+ engineers checking every piece, unlimited revisions and sponsorships.',
+      'Draft.dev brings 300+ engineers, sponsorships and a 7,000+ developer network. Infrasity is a team of 15+ in New Delhi focused on early-stage devtool startups.',
     summary: {
       draft: draftSummary,
       them: 'Infrasity is a developer marketing and technical content agency for DevTool startups, with a team of 15+ in New Delhi. It covers technical content, documentation, video, AEO and Reddit marketing.',
@@ -570,7 +508,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'A Dev Spotlight alternative for developer tool companies',
     verdict:
-      'Pick Dev Spotlight for long-form technical content for large enterprises, with a happiness guarantee. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+      'Draft.dev runs SEO, AI search, paid ads and distribution around its content. Dev Spotlight writes long-form technical content for large enterprises.',
     summary: {
       draft: draftSummary,
       them: 'Dev Spotlight is a technical content agency for enterprise companies, writing for developers, engineers and IT leaders. It creates blogs, tutorials, whitepapers, eBooks and case studies.',
@@ -633,7 +571,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'An Animalz alternative for developer tool companies',
     verdict:
-      'Pick Animalz for brand and thought-leadership content from a large, long-running team. Pick Draft.dev for developer content checked by 300+ engineers, plus paid and community distribution.',
+      'Draft.dev is built for developer audiences, with engineers checking every piece. Animalz is a B2B SaaS content and SEO agency of about 130 writers and editors.',
     summary: {
       draft: draftSummary,
       them: 'Animalz is a content marketing and SEO agency for B2B SaaS, founded in New York in 2015 and now remote. It offers content production, SEO and AEO, research reports and content operations.',
@@ -703,7 +641,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A Discovered Labs alternative for developer tool companies',
     verdict:
-      'Pick Discovered Labs for a published-price SEO and AEO retainer on month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+      'Draft.dev pairs AI search with engineer-checked developer content and paid ads. Discovered Labs sells SEO and AEO retainers for B2B SaaS.',
     summary: {
       draft: draftSummary,
       them: 'Discovered Labs is an organic search agency for B2B SaaS that combines SEO and AEO. It publishes its prices, works month to month and tracks AI visibility with its own tool.',
@@ -773,7 +711,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A First Page Sage alternative for developer tool companies',
     verdict:
-      'Pick First Page Sage for long-running SEO and GEO programs with in-house writers and month-to-month terms. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+      'Draft.dev writes for developers, with engineers checking every piece and a 7,000+ developer network. First Page Sage is a general SEO and GEO agency.',
     summary: {
       draft: draftSummary,
       them: 'First Page Sage is a US SEO and GEO agency with in-house writers and a fully remote team. It works month to month and delivers 6–7 pieces of content a month.',
@@ -845,7 +783,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A Graphite alternative for developer tool companies',
     verdict:
-      'Pick Graphite for research-led SEO and AEO at scale for large brands. Pick Draft.dev for developer content checked by 300+ engineers, with first pieces in about 3 weeks.',
+      'Draft.dev specializes in developer audiences, with engineers checking every piece. Graphite Growth runs research-led SEO and AEO for large brands.',
     summary: {
       draft: draftSummary,
       them: 'Graphite is a research-driven growth agency with 120+ team members across 15+ countries and an office in San Francisco. It focuses on SEO and AEO for category-leading brands. This page compares Draft.dev with Graphite Growth, the SEO and AEO agency at graphite.io. It is not about the Graphite code review tool.',
@@ -913,7 +851,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A NoGood alternative for developer tool companies',
     verdict:
-      'Pick NoGood for full-funnel growth marketing, from paid social to AEO, with a large premium team. Pick Draft.dev for developer content checked by 300+ engineers and a 7,000+ developer distribution network.',
+      "Draft.dev starts at $9,000 a month and is built for developer audiences. NoGood's growth retainers average above $20,000 a month.",
     summary: {
       draft: draftSummary,
       them: 'NoGood is a growth marketing agency headquartered in New York. It runs paid, organic and AEO programs for B2B, SaaS and eCommerce brands, on monthly retainers that average above $20,000 a month.',
@@ -982,7 +920,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'An Omniscient Digital alternative for developer tool companies',
     verdict:
-      'Pick Omniscient Digital for SEO and AEO programs focused on pipeline, with digital PR and link building. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+      "Draft.dev runs paid ads alongside SEO and AI search for developers. Omniscient Digital focuses on organic growth for B2B and doesn't run paid media.",
     summary: {
       draft: draftSummary,
       them: 'Omniscient Digital is an organic growth agency for B2B brands, with a remote team of 30+ people across 10 countries. It focuses on SEO, AEO, content and digital PR, and does not run paid media.',
@@ -1051,7 +989,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'An Optimist alternative for developer tool companies',
     verdict:
-      'Pick Optimist for founder-led SEO and AEO consulting on month-to-month terms. Pick Draft.dev when you want a team to create the content and run distribution for you.',
+      "Draft.dev's team creates the content and distributes it for you. Optimist is a founder-led SEO and AEO consultancy that relies on freelancers or your writers.",
     summary: {
       draft: draftSummary,
       them: 'Optimist is a founder-led SEO and AEO consultancy for B2B tech and SaaS, based in Des Moines, Iowa. It works month to month with published entry prices, and draws on a network of freelance writers, editors and designers.',
@@ -1115,7 +1053,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A Campfire Labs alternative for developer tool companies',
     verdict:
-      'Pick Campfire Labs for research reports and earned media for B2B SaaS, at published prices. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+      'Draft.dev writes for developers, with 300+ engineers and paid channels behind it. Campfire Labs is a 12-person B2B content agency offering research reports.',
     summary: {
       draft: draftSummary,
       them: 'Campfire Labs is a B2B content agency with 12 full-time employees. It offers content strategy, content creation, market research reports and earned media, with published retainer prices.',
@@ -1176,7 +1114,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'A DevTools Academy alternative for developer tool companies',
     verdict:
-      'Pick DevTools Academy to reach developers through a large network of technical creators. Pick Draft.dev for technical content checked by 300+ engineers, plus SEO, AEO and paid channels.',
+      'Draft.dev creates the content and runs SEO and AI search, from $9,000 a month. DevTools Academy runs creator programs; most clients budget $100K a month.',
     summary: {
       draft: draftSummary,
       them: 'DevTools Academy is a creator-led GTM agency for DevTools, developer platform and AI companies. It runs programs with a network of 1,000+ technical creators across YouTube, X, LinkedIn, Reddit and newsletters.',
@@ -1240,7 +1178,7 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'A Studio1 alternative for developer tool companies',
     verdict:
-      'Both cover devtool content, docs, video and developer growth. Pick Studio1 for hands-on DevRel and open-source launches. Pick Draft.dev for 300+ engineers checking every piece, AEO with monthly AI citation tracking, and paid channels.',
+      'Draft.dev adds AI search tracking, paid ads and sponsorships to developer content. Studio1 is a devtool content and DevRel partner based in India.',
     summary: {
       draft: draftSummary,
       them: 'Studio1 is a technical content and developer growth partner for devtool, SaaS, AI and open-source teams, incorporated in India. It covers technical content, documentation and DX audits, video and DevRel campaigns.',
@@ -1303,7 +1241,7 @@ export const competitors: Competitor[] = [
     category: 'DevTool content and marketing agencies',
     tagline: 'A DevMarkLab alternative for developer tool companies',
     verdict:
-      'Pick DevMarkLab for organic growth through SEO, Reddit and developer social from a small team. Pick Draft.dev for 300+ engineers checking every piece, plus paid search, sponsorships and monthly AI citation tracking.',
+      'Draft.dev brings 300+ engineers plus paid ads and sponsorships. DevMarkLab is an 8-person team in Jaipur focused on organic SEO, Reddit and social.',
     summary: {
       draft: draftSummary,
       them: 'DevMarkLab is a developer marketing agency for devtools, run by an 8-person team in Jaipur, India. It focuses on organic growth: SEO, content, Reddit and social media, with no paid ads.',
@@ -1368,7 +1306,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'A Manicule alternative for developer tool companies',
     verdict:
-      'Pick Manicule for AI-search visibility work backed by its own tracking app. Pick Draft.dev for a full content and marketing team with 300+ engineers, paid channels and sponsorships.',
+      'Draft.dev runs your whole go-to-market, from content to paid ads and sponsorships. Manicule specializes in AI search visibility and sells its own tracking app.',
     summary: {
       draft: draftSummary,
       them: 'Manicule helps developer tools get found in AI search and used by AI agents. Its team writes docs and technical content, and it also sells a self-serve AI visibility tracking app.',
@@ -1430,7 +1368,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'A CodeContent alternative for developer tool companies',
     verdict:
-      'Pick CodeContent for tutorials written by software engineers at published prices. Pick Draft.dev when you also need SEO, AEO, paid channels, sponsorships and distribution.',
+      'Draft.dev runs SEO, AI search and distribution around engineer-checked content. CodeContent is a small agency selling engineer-written tutorials.',
     summary: {
       draft: draftSummary,
       them: 'CodeContent is a small technical content agency that pairs engineer-writers with devtools companies. It publishes its prices and starts every engagement with a paid pilot article.',
@@ -1492,7 +1430,7 @@ export const competitors: Competitor[] = [
     category: 'More DevTool agencies',
     tagline: 'A Content Turbine alternative for developer tool companies',
     verdict:
-      'Pick Content Turbine for technical content and AEO from an expert-sourced network. Pick Draft.dev for 300+ engineers checking every piece, plus paid channels, sponsorships and developer distribution.',
+      'Draft.dev pairs its content with paid ads, sponsorships and a 7,000+ developer network. Content Turbine creates expert-sourced content, docs and sample apps.',
     summary: {
       draft: draftSummary,
       them: 'Content Turbine is a technical content agency for B2B software and developer-tool companies. It creates expert-sourced content, docs and sample apps, and optimizes for search and AI answer engines.',
@@ -1548,7 +1486,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A GrowthX alternative for developer tool companies',
     verdict:
-      'Pick GrowthX for an AI content platform with services on top. Pick Draft.dev for developer content checked by 300+ engineers, plus paid channels and developer distribution.',
+      "Draft.dev's content is checked by engineers who test the code. GrowthX sells an AI content platform, with services built on AI workflows.",
     summary: {
       draft: draftSummary,
       them: 'GrowthX sells an AI growth platform plus professional services: strategy, editorial and content production. It says it treats services like software, with AI workflows refined by experts. It has 100+ customers and a fully remote team.',
@@ -1608,7 +1546,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A Grow and Convert alternative for developer tool companies',
     verdict:
-      'Pick Grow and Convert for a few deep, interview-based articles a month for B2B SaaS. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+      'Draft.dev starts at $9,000 a month, with engineers and a 7,000+ developer network. Grow and Convert starts at $10,000 for 3–5 B2B SaaS articles a month.',
     summary: {
       draft: draftSummary,
       them: 'Grow and Convert is a content marketing, SEO and GEO agency for B2B SaaS, with a remote team of around 20 writers and strategists across the US and Europe. It builds articles from interviews with your experts, and prices start at $10,000 a month.',
@@ -1673,7 +1611,7 @@ export const competitors: Competitor[] = [
     category: 'Other agencies',
     tagline: 'A Codeless alternative for developer tool companies',
     verdict:
-      'Pick Codeless for a high-volume content operation that your team takes over later. Pick Draft.dev for developer content checked by 300+ engineers, plus sponsorships and developer distribution.',
+      'Draft.dev specializes in developer content, checked by engineers. Codeless builds high-volume content systems for SaaS brands, then hands them to your team.',
     summary: {
       draft: draftSummary,
       them: 'Codeless builds content and growth systems for growth-stage and enterprise SaaS companies, runs them, then hands them to your team. It says it has served 200+ brands over 10+ years and is based in Koloa, Hawaii.',

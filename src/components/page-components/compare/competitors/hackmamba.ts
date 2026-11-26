@@ -15,7 +15,7 @@ export const hackmamba: Competitor = {
   category: 'DevTool content and marketing agencies',
   tagline: 'A Hackmamba alternative for developer tool companies',
   verdict:
-    "Strategy, content and distribution from $9,000 a month. Hackmamba's programs across several workstreams start at $15,000.",
+    "Draft.dev covers strategy, content and distribution from $9,000 a month. Hackmamba's programs across several workstreams start at $15,000.",
   summary: {
     draft:
       'A GTM agency for developer tools and AI platforms since 2020, trusted by 100+ companies including Docker, JetBrains and Cloudflare.',

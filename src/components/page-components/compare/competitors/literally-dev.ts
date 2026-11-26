@@ -15,7 +15,7 @@ export const literallyDev: Competitor = {
   category: 'DevTool content and marketing agencies',
   tagline: 'A Literally.dev alternative for developer tool companies',
   verdict:
-    'Strategy, content and distribution from $9,000 a month, run as an ongoing program. Literally.dev sells a 90-day AI-visibility sprint for $4,990 a month.',
+    'Draft.dev runs your go-to-market as an ongoing program, from SEO to paid ads and Reddit. Literally.dev sells a 90-day AI-visibility sprint.',
   summary: {
     draft:
       'A GTM agency for developer tools and AI platforms since 2020, trusted by 100+ companies including Docker, JetBrains and Cloudflare.',

@@ -15,7 +15,7 @@ export const ritza: Competitor = {
   category: 'DevTool content and marketing agencies',
   tagline: 'A Ritza alternative for developer tool companies',
   verdict:
-    "Strategy, content and distribution from $9,000 a month. Ritza focuses on developer docs and education, and doesn't list AI search or publish prices.",
+    "Draft.dev pairs developer content with AI search and distribution on every piece. Ritza focuses on documentation and developer education, and doesn't list AI search.",
   summary: {
     draft:
       'A GTM agency for developer tools and AI platforms since 2020, trusted by 100+ companies including Docker, JetBrains and Cloudflare.',
