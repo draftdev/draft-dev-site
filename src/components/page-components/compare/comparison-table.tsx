@@ -6,7 +6,7 @@ import {
   MegaphoneIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
-import { rowGroups, type Facts } from './data'
+import { rowGroups, type FactKey, type Facts } from './data'
 
 const groupIcons: Record<string, typeof CheckIcon> = {
   Team: UserGroupIcon,
@@ -17,7 +17,7 @@ const groupIcons: Record<string, typeof CheckIcon> = {
 }
 
 // "Yes" answers get a check badge; a missing fact shows as "Not stated"
-export const FactValue = ({ value }: { value: string | null }) => {
+export const FactValue = ({ value }: { value?: string | null }) => {
   if (!value) {
     return (
       <span className="inline-flex rounded-full bg-gray-100 px-2.5 py-0.5 text-sm text-gray-500">
@@ -38,6 +38,10 @@ export const FactValue = ({ value }: { value: string | null }) => {
   }
   return <span>{value}</span>
 }
+
+// Skip rows we have not checked for this competitor (an optional fact left out)
+const rowsFor = (them: Facts) => (rows: { key: FactKey; label: string }[]) =>
+  rows.filter((row) => them[row.key] !== undefined)
 
 const ComparisonTable = ({
   name,
@@ -98,7 +102,7 @@ const ComparisonTable = ({
                       </span>
                     </th>
                   </tr>
-                  {group.rows.map((row) => (
+                  {rowsFor(them)(group.rows).map((row) => (
                     <tr key={row.key}>
                       <th className="border-t border-gray-100 px-6 py-3.5 align-top font-medium text-gray-900">
                         {row.label}
@@ -128,7 +132,7 @@ const ComparisonTable = ({
                   {group.title}
                 </h3>
                 <dl className="mt-3 space-y-3">
-                  {group.rows.map((row) => (
+                  {rowsFor(them)(group.rows).map((row) => (
                     <div
                       key={row.key}
                       className="rounded-2xl p-4 ring-1 ring-gray-200"

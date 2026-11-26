@@ -1,4 +1,6 @@
 import FAQ from '@/components/global/faq'
+import { LogoGrid, LogoMarquee } from '@/components/media/logo-strip'
+import { testimonials } from '@/components/media/testimonials/testimonials-group'
 import BookCall from '@/components/page-components/service-landing/book-call'
 import {
   AcademicCapIcon,
@@ -8,6 +10,7 @@ import {
   ArrowTrendingUpIcon,
   ChartBarIcon,
   CheckIcon,
+  CubeIcon,
   CurrencyDollarIcon,
   DocumentTextIcon,
   MegaphoneIcon,
@@ -15,6 +18,7 @@ import {
   RocketLaunchIcon,
   UserGroupIcon,
 } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 import Link from 'next/link'
 import ComparisonTable, { FactValue } from './comparison-table'
 import {
@@ -32,6 +36,7 @@ const cardMeta: Partial<
 > = {
   network: { label: 'Expert network', Icon: AcademicCapIcon },
   who: { label: 'Who creates the content', Icon: UserGroupIcon },
+  builtFor: { label: 'Built for', Icon: CubeIcon },
   content: { label: 'Content delivery', Icon: NewspaperIcon },
   paid: { label: 'Marketing channels', Icon: ArrowTrendingUpIcon },
   aiTracking: { label: 'AI visibility', Icon: ChartBarIcon },
@@ -94,6 +99,55 @@ const VsBadge = () => (
 
 // Hero cards with the same labelled rows on both sides. A subgrid lines up the
 // name, summary, each row and the buttons across the two cards.
+// Named client quotes from the shared testimonials, picked by person's name.
+// A subgrid keeps the quotes and the names level across each row.
+const ClientQuotes = ({ names }: { names: string[] }) => {
+  const picked = names
+    .map((n) => testimonials.find((t) => t.author.name === n))
+    .filter((t) => t !== undefined)
+  if (picked.length === 0) return null
+
+  return (
+    <section className="py-12 sm:py-14">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="subheader-mobile-gradient sm:subheader-gradient text-center">
+          What Our Clients Say
+        </h2>
+        <p className="mx-auto mt-2 max-w-2xl text-center text-lg text-gray-600">
+          Named clients, in their own words
+        </p>
+        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-3">
+          {picked.map((t) => (
+            <figure
+              key={t.author.name}
+              className="row-span-2 grid grid-rows-subgrid gap-y-0 rounded-3xl bg-white p-7 shadow-sm ring-1 ring-[#5e5285]/10"
+            >
+              <blockquote className="text-base text-gray-700">
+                &ldquo;{t.body}&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-x-3 border-t border-gray-200 pt-5">
+                <Image
+                  src={t.author.imageUrl}
+                  alt={t.author.name}
+                  width={48}
+                  height={48}
+                  className="size-12 shrink-0 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-secondary font-semibold">
+                    {t.author.name}
+                  </p>
+                  <p className="text-sm text-gray-600">{t.author.company}</p>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 const MirroredCards = ({
   competitor,
   rows,
@@ -171,6 +225,15 @@ const MirroredCards = ({
       <p className="mt-6 text-center text-sm text-white/70">
         {competitor.name} facts from {host}, checked {competitor.checked}.
       </p>
+      {/* The same client logo strip the service pages use */}
+      <div className="mt-12">
+        <p className="text-center text-base font-medium text-white/80">
+          <span className="font-bold text-amber-300">Draft.dev</span> is trusted
+          by 100+ tech companies
+        </p>
+        <LogoMarquee className="mt-6" />
+        <LogoGrid className="mt-6" />
+      </div>
     </>
   )
 }
@@ -456,6 +519,15 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
                             {reason.stat.label}
                           </p>
                         </div>
+                      ) : reason.quote ? (
+                        <figure className="bg-gradient-brand rounded-2xl p-4 text-white shadow-md">
+                          <blockquote className="text-base text-white">
+                            &ldquo;{reason.quote.text}&rdquo;
+                          </blockquote>
+                          <figcaption className="mt-2 text-sm font-semibold text-amber-300">
+                            {reason.quote.by}
+                          </figcaption>
+                        </figure>
                       ) : (
                         <div />
                       )}
@@ -479,6 +551,7 @@ const ComparisonPage = ({ competitor }: { competitor: Competitor }) => {
               </div>
             </section>
             {resultsSection}
+            {pitch.quotes && <ClientQuotes names={pitch.quotes} />}
           </>
         )}
 

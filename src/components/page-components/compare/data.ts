@@ -3,6 +3,7 @@
 // A null value means the vendor does not say, and renders as a dash.
 
 import { hackmamba } from './competitors/hackmamba'
+import { literallyDev } from './competitors/literally-dev'
 import { draftAiAnswer, draftWhoAnswer } from './shared'
 
 export type FactKey =
@@ -21,8 +22,13 @@ export type FactKey =
   | 'minTerm'
   | 'start'
   | 'revisions'
+  | 'guarantee'
 
-export type Facts = Record<FactKey, string | null>
+// Guarantee is optional: its table row only shows for competitors we have
+// checked it for, so unchecked pages don't show a misleading "Not stated"
+export type Facts = Record<Exclude<FactKey, 'guarantee'>, string | null> & {
+  guarantee?: string | null
+}
 
 export const rowGroups: {
   title: string
@@ -64,6 +70,7 @@ export const rowGroups: {
     rows: [
       { key: 'pricing', label: 'Pricing' },
       { key: 'minTerm', label: 'Minimum term' },
+      { key: 'guarantee', label: 'Guarantee' },
       { key: 'start', label: 'Time to first pieces' },
       { key: 'revisions', label: 'Revisions' },
     ],
@@ -86,13 +93,14 @@ export const draftFacts: Facts = {
     'A baseline before work starts, then monthly AI citation tracking and a report across ChatGPT, Claude, Perplexity and Google AI Overviews',
   paid: 'Paid ads, Reddit marketing, newsletter, podcast and community sponsorships, and developer influencer distribution',
   distribution:
-    'Our own 7,000+ developer network, with 300 to 500 developers shortlisted for each piece, plus Reddit, Hacker News, DEV, Hashnode, LinkedIn and newsletters, included',
-  pricing: 'From $9,000 a month, including strategy, production and promotion',
+    'Every piece shared on Reddit, Hacker News, DEV, Hashnode, LinkedIn and newsletters, plus 300 to 500 developers shortlisted from our own 7,000+ network, included',
+  pricing: 'From $9,000 a month for strategy, content and distribution',
   minTerm:
     '3 months to set your strategy and build momentum, then month to month',
   start:
     'Starts within 1 to 2 weeks, first pieces within 3 weeks, with strategy included',
   revisions: 'Unlimited',
+  guarantee: 'Guaranteed delivery schedule',
 }
 
 // One labelled row on the hero cards, with each side's value
@@ -133,11 +141,16 @@ export type Competitor = {
       body: string
       // A measured client result that backs up the reason
       stat?: { value: string; label: string }
+      // A client quote, shown in the same box when no stat fits the reason
+      quote?: { text: string; by: string }
       href?: string
       cta?: string
     }[]
     // The six cards under "Key Differences": rows where the two really differ
     keyRows: FactKey[]
+    // Named client quotes to show, by the person's name in the shared
+    // testimonials list (components/media/testimonials/testimonials-group)
+    quotes?: string[]
   }
 }
 
@@ -150,82 +163,7 @@ const draftDocsAnswer =
   'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.'
 
 export const competitors: Competitor[] = [
-  {
-    slug: 'literally-dev',
-    name: 'Literally.dev',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A Literally.dev alternative for developer tool companies',
-    verdict:
-      'Pick Literally.dev for a fixed-price, 90-day AEO sprint. Pick Draft.dev for a full content and marketing team, with 300+ engineers checking the work.',
-    summary: {
-      draft:
-        'Draft.dev is a DevTool content and marketing agency. Our 300+ engineers and subject matter experts check every piece, and we run SEO, AEO, paid search, sponsorships and distribution alongside the content.',
-      them: 'Literally.dev is a smaller AEO and content agency based in Norway. Its main offer is a 90-day AI Recommendation Sprint: 10 articles a month for $4,990 a month, with a 3-month minimum.',
-    },
-    facts: {
-      who: 'Hand-vetted engineers, edited in-house',
-      network: null,
-      based: 'Oslo, Norway',
-      builtFor: 'Technical teams in the US and Europe',
-      content: '10 articles a month in the 90-day Sprint',
-      docs: 'Yes',
-      video: 'Yes',
-      aeo: 'Yes, a 90-day AI Recommendation Sprint',
-      aiTracking:
-        'Own pipeline: a baseline on 25–50 buyer queries, a live dashboard and a re-measure at day 85',
-      paid: null,
-      distribution:
-        'A guaranteed monthly feature in a tech publication and a tech newsletter',
-      pricing: '$4,990 a month for the Sprint (published)',
-      minTerm: '3 months',
-      start: 'Onboarding in 5 days or less',
-      revisions: 'A full rewrite or a new writer after two rounds of revisions',
-    },
-    pickThem: [
-      'You want a published, fixed monthly price for an AEO sprint.',
-      'You want a live AEO dashboard and a re-measure at day 85.',
-      'You want a guaranteed monthly feature in a tech publication and newsletter.',
-      'You want to start within 5 days.',
-    ],
-    pickDraft: [
-      'You need more than AEO: SEO, paid search, sponsorships, Reddit and distribution from one team.',
-      'You want 300+ engineers and subject matter experts checking your content.',
-      'You want ready-to-publish content every week, with monthly AI citation tracking.',
-      'You want unlimited revisions.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Literally.dev?',
-        answer:
-          'Literally.dev focuses on a 90-day AEO sprint. Draft.dev is a DevTool content and marketing agency: we produce content checked by 300+ engineers and also run SEO, AEO, paid search, sponsorships and distribution.',
-      },
-      {
-        question: 'How much does Literally.dev cost?',
-        answer:
-          'Literally.dev publishes $4,990 a month for its 90-day Sprint, with a 3-month minimum. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      {
-        question: 'Does Draft.dev create technical documentation?',
-        answer:
-          'Yes. We create documentation, API reference docs, product guides and tested code samples, each reviewed by a subject matter expert, and keep them up to date as your product changes.',
-      },
-      {
-        question: 'How fast can each one start?',
-        answer:
-          'Literally.dev says onboarding takes 5 days at most. Draft.dev delivers first pieces about 3 weeks after kickoff.',
-      },
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.literally.dev/',
-      'https://www.literally.dev/aeo-services',
-      'https://www.literally.dev/technical-content',
-      'https://www.literally.dev/technical-documentation',
-      'https://www.literally.dev/about',
-    ],
-    checked,
-  },
+  literallyDev,
   hackmamba,
   {
     slug: 'everydeveloper',

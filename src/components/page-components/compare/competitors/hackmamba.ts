@@ -2,7 +2,12 @@
 // Hackmamba facts come from hackmamba.io, checked on the date in `checked`.
 
 import type { Competitor } from '../data'
-import { draftAiAnswer, draftWhoAnswer } from '../shared'
+import {
+  draftAiAnswer,
+  draftGtmAnswer,
+  draftResultsAnswer,
+  draftWhoAnswer,
+} from '../shared'
 
 export const hackmamba: Competitor = {
   slug: 'hackmamba',
@@ -55,16 +60,8 @@ export const hackmamba: Competitor = {
       answer:
         'Hackmamba says most of its content-retainer clients have an internal team running strategy and editorial direction, and it plugs in as the production and distribution layer. Draft.dev covers the strategy as well as the work: technical content, SEO, AI search, paid ads, Reddit, sponsorships and influencer posts, run by one team.',
     },
-    {
-      question: 'Is Draft.dev only a content agency?',
-      answer:
-        'No. Draft.dev is a GTM agency for developer tools and AI platforms. Technical content drives everything we do, across SEO, AI search (AEO and GEO), paid ads, Reddit, sponsorships, influencer posts, newsletters, video, docs and demand generation. We have published 3,000+ pieces for 100+ tech companies.',
-    },
-    {
-      question: 'What results do Draft.dev clients see?',
-      answer:
-        'Earthly grew monthly blog visitors by 346%. Loft Labs grew blog traffic 4x in a year. Status Hero grew blog traffic 211% and saved 40 hours a week. Fabric got 5 demo requests in one day from a post that hit Hacker News. A developer API platform got 10x more blog views in seven months, and our articles now earn 72% of its AI citations. Every number comes from a published case study or client.',
-    },
+    draftGtmAnswer,
+    draftResultsAnswer,
     {
       question: 'Does Draft.dev distribute content like Hackmamba does?',
       answer:
@@ -87,7 +84,7 @@ export const hackmamba: Competitor = {
     heroRows: [
       {
         label: 'Price',
-        draft: 'From $9,000 a month, strategy and distribution included',
+        draft: 'From $9,000 a month for strategy, content and distribution',
         them: 'From $5,000 a month for 4 blog posts; programs from $15,000',
       },
       {
@@ -171,6 +168,7 @@ export const hackmamba: Competitor = {
       },
     ],
     keyRows: ['network', 'who', 'paid', 'distribution', 'content', 'pricing'],
+    quotes: ['Ravi Dehar', 'Abhishek Iyer', 'Randall Degges'],
   },
   sources: [
     'https://hackmamba.io/',
