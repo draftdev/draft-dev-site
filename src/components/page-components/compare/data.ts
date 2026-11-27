@@ -2,10 +2,15 @@
 // competitor facts come only from each vendor's own site, with the date checked.
 // A null value means the vendor does not say, and renders as a dash.
 
+import { argot } from './competitors/argot'
 import { catchy } from './competitors/catchy'
+import { devmarklab } from './competitors/devmarklab'
+import { ercule } from './competitors/ercule'
 import { hackmamba } from './competitors/hackmamba'
+import { infrasity } from './competitors/infrasity'
 import { literallyDev } from './competitors/literally-dev'
 import { ritza } from './competitors/ritza'
+import { studio1 } from './competitors/studio1'
 import { wizardOnDemand } from './competitors/wizard-on-demand'
 import { draftAiAnswer, draftWhoAnswer } from './shared'
 
@@ -239,204 +244,11 @@ export const competitors: Competitor[] = [
     checked,
   },
   ritza,
-  {
-    slug: 'ercule',
-    name: 'ércule',
-    category: 'More DevTool agencies',
-    tagline: 'An ércule alternative for developer tool companies',
-    verdict:
-      'Draft.dev adds engineer-checked content, paid ads and a 7,000+ developer network to search. ércule focuses on organic SEO and GEO tied to analytics.',
-    summary: {
-      draft: draftSummary,
-      them: 'ércule is an organic growth agency for B2B and developer-focused companies. It ties SEO and GEO, content production, content engineering and analytics together, and also sells an analytics app.',
-    },
-    facts: {
-      who: null,
-      network: null,
-      based: null,
-      builtFor: 'B2B and developer-focused companies',
-      content: 'Weekly search-optimized outlines',
-      docs: 'Yes',
-      video: null,
-      aeo: 'Yes, an SEO and GEO service',
-      aiTracking:
-        'Starts with an LLM coverage report; covers Google, ChatGPT, Perplexity and Gemini',
-      paid: null,
-      distribution: 'LinkedIn, Reddit and email',
-      pricing:
-        'Agency pricing not published (analytics app has a free plan; Pro is $59 a month)',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You want SEO and GEO tied to analytics and content engineering.',
-      'You want help with product marketing, such as positioning and launches.',
-      'You want a self-serve analytics app for your content.',
-    ],
-    pickDraft: [
-      'You want ready-to-publish content every week, checked by 300+ engineers and subject matter experts.',
-      'You want paid search, sponsorships and a 7,000+ developer network alongside your content.',
-      'You want monthly AI citation tracking with a report.',
-      'You want first pieces about 3 weeks after kickoff.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from ércule?',
-        answer:
-          'ércule ties SEO and GEO, content production, content engineering and analytics together. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus paid search, sponsorships and developer distribution.',
-      },
-      {
-        question: 'How much does ércule cost?',
-        answer:
-          'ércule does not publish agency pricing. Its analytics app has a free plan, and Pro costs $59 a month. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.ercule.com/',
-      'https://www.ercule.com/services/seo-and-geo',
-      'https://www.ercule.com/services/content-production',
-      'https://www.ercule.com/services/content-strategy',
-      'https://www.ercule.com/services/content-engineering',
-      'https://www.ercule.com/services/content-systems',
-      'https://www.ercule.com/pricing',
-    ],
-    checked,
-  },
+  ercule,
   catchy,
   wizardOnDemand,
-  {
-    slug: 'argot',
-    name: 'Argot',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'An Argot alternative for developer tool companies',
-    verdict:
-      'Draft.dev pairs engineer-checked content with SEO, AI search, paid ads and distribution. Argot is a small team of developer-writers focused on the writing.',
-    summary: {
-      draft: draftSummary,
-      them: 'Argot is a technical content marketing agency for developer tools and AI products. Its developer-writers build with your product before writing, and it offers writing, editing and strategy.',
-    },
-    facts: {
-      who: 'Developers who write, building with your product first',
-      network: 'Smaller than Draft.dev, it says (no number given)',
-      based: null,
-      builtFor: 'Developer tools and AI companies',
-      content: null,
-      docs: null,
-      video: null,
-      aeo: null,
-      aiTracking: null,
-      paid: null,
-      distribution: null,
-      pricing: 'Not published; scoped to your budget',
-      minTerm: null,
-      start: null,
-      revisions: 'Revised until the content is right',
-    },
-    pickThem: [
-      'You want a small team of developer-writers.',
-      'You want every code sample run before you see the draft.',
-      'You want editing for drafts your team or AI wrote.',
-    ],
-    pickDraft: [
-      'You want SEO, AEO and monthly AI citation tracking alongside your content.',
-      'You want paid search, sponsorships and a 7,000+ developer network.',
-      'You need technical documentation or video.',
-      'You want ready-to-publish content every week.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Argot?',
-        answer:
-          'Argot is a smaller team focused on writing, editing and strategy. Draft.dev is a DevTool content and marketing agency: content checked by 300+ engineers, plus SEO, AEO, paid search, sponsorships and distribution.',
-      },
-      {
-        question: 'How much does Argot cost?',
-        answer:
-          'Argot does not publish pricing; it scopes each engagement to your budget. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      {
-        question: 'Does Draft.dev create technical documentation?',
-        answer: draftDocsAnswer,
-      },
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://argot.dev/',
-      'https://argot.dev/work-with-us',
-      'https://argot.dev/work-for-us',
-      'https://argot.dev/best-developer-content-agencies',
-    ],
-    checked,
-  },
-  {
-    slug: 'infrasity',
-    name: 'Infrasity',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'An Infrasity alternative for developer tool companies',
-    verdict:
-      'Draft.dev brings 300+ engineers, sponsorships and a 7,000+ developer network. Infrasity is a team of 15+ in New Delhi focused on early-stage devtool startups.',
-    summary: {
-      draft: draftSummary,
-      them: 'Infrasity is a developer marketing and technical content agency for DevTool startups, with a team of 15+ in New Delhi. It covers technical content, documentation, video, AEO and Reddit marketing.',
-    },
-    facts: {
-      who: 'In-house engineers',
-      network: '15+ team members',
-      based: 'New Delhi, India',
-      builtFor: 'DevTool startups',
-      content: '4 long-form technical blogs a month on the starter plan',
-      docs: 'Yes, including API and SDK docs',
-      video: 'Yes',
-      aeo: 'Yes',
-      aiTracking:
-        'A baseline, then citations and share of voice across ChatGPT, Claude, Perplexity, Gemini and AI Overviews',
-      paid: 'Reddit ad campaigns, when suitable',
-      distribution: 'Reddit marketing',
-      pricing: 'Not published',
-      minTerm: null,
-      start: null,
-      revisions: 'Up to 2 revisions per post',
-    },
-    pickThem: [
-      'You are an early-stage DevTool startup.',
-      'You want Reddit marketing, including ad campaigns.',
-      'You want an in-house team working from one office.',
-    ],
-    pickDraft: [
-      'You want unlimited revisions.',
-      'You want 300+ engineers and subject matter experts checking every piece.',
-      'You want paid search plus newsletter, podcast and community sponsorships.',
-      'You want your content shared by a 7,000+ developer network.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Infrasity?',
-        answer:
-          'Both cover devtool content, docs, video and AEO. Infrasity has an in-house team of 15+ focused on startups. Draft.dev has 300+ engineers and subject matter experts, unlimited revisions, paid search, sponsorships and a 7,000+ developer network.',
-      },
-      {
-        question: 'How much does Infrasity cost?',
-        answer:
-          'Infrasity does not publish prices; its plans list deliverables only. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.infrasity.com/faq',
-      'https://www.infrasity.com/careers',
-      'https://www.infrasity.com/pricing',
-      'https://www.infrasity.com/services/ai-geo-optimization-agency',
-      'https://www.infrasity.com/services/technical-writing-services',
-      'https://www.infrasity.com/services/tech-video-production',
-      'https://www.infrasity.com/services/reddit-marketing-agency',
-    ],
-    checked,
-  },
+  argot,
+  infrasity,
   {
     slug: 'dev-spotlight',
     name: 'Dev Spotlight',
@@ -1107,134 +919,8 @@ export const competitors: Competitor[] = [
     ],
     checked,
   },
-  {
-    slug: 'studio1',
-    name: 'Studio1',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A Studio1 alternative for developer tool companies',
-    verdict:
-      'Draft.dev adds AI search tracking, paid ads and sponsorships to developer content. Studio1 is a devtool content and DevRel partner based in India.',
-    summary: {
-      draft: draftSummary,
-      them: 'Studio1 is a technical content and developer growth partner for devtool, SaaS, AI and open-source teams, incorporated in India. It covers technical content, documentation and DX audits, video and DevRel campaigns.',
-    },
-    facts: {
-      who: 'Engineers and technical writers matched to your stack',
-      network: null,
-      based: 'India',
-      builtFor: 'Devtool, SaaS, AI and open-source teams',
-      content: '300+ tutorials and guides published to date',
-      docs: 'Yes, including docs audits and DX audits',
-      video: 'Yes',
-      aeo: null,
-      aiTracking: null,
-      paid: null,
-      distribution: 'Reddit, YouTube, newsletters and developer communities',
-      pricing: 'Not published',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You want hands-on DevRel and open-source launch support.',
-      'You want docs audits and developer experience audits.',
-      'You want developer video production alongside content.',
-    ],
-    pickDraft: [
-      'You want AEO with a baseline and monthly AI citation tracking.',
-      'You want 300+ engineers and subject matter experts checking every piece.',
-      'You want paid search plus newsletter, podcast and community sponsorships.',
-      'You want ready-to-publish content every week.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from Studio1?',
-        answer:
-          'Both cover devtool content, docs, video and developer growth. Studio1 leans into DevRel and open-source launches. Draft.dev adds 300+ engineers checking every piece, AEO with monthly AI citation tracking, paid search and sponsorships.',
-      },
-      {
-        question: 'How much does Studio1 cost?',
-        answer:
-          'Studio1 does not publish a price list. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://www.studio1hq.com/',
-      'https://www.studio1hq.com/terms',
-      'https://www.studio1hq.com/technical-content-marketing',
-      'https://www.studio1hq.com/developer-documentation-dx-audit',
-      'https://www.studio1hq.com/developer-video-production',
-      'https://www.studio1hq.com/developer-relations-growth-campaigns',
-    ],
-    checked,
-  },
-  {
-    slug: 'devmarklab',
-    name: 'DevMarkLab',
-    category: 'DevTool content and marketing agencies',
-    tagline: 'A DevMarkLab alternative for developer tool companies',
-    verdict:
-      'Draft.dev brings 300+ engineers plus paid ads and sponsorships. DevMarkLab is an 8-person team in Jaipur focused on organic SEO, Reddit and social.',
-    summary: {
-      draft: draftSummary,
-      them: 'DevMarkLab is a developer marketing agency for devtools, run by an 8-person team in Jaipur, India. It focuses on organic growth: SEO, content, Reddit and social media, with no paid ads.',
-    },
-    facts: {
-      who: 'Writers who have built or shipped products like yours',
-      network: '8-person team',
-      based: 'Jaipur, India',
-      builtFor: 'Dev-first SaaS companies, mostly past product-market fit',
-      content: 'Weekly content sprints',
-      docs: 'Yes, docs and tutorials, listed under content',
-      video: null,
-      aeo: 'Yes, AI search as part of its SEO service',
-      aiTracking: null,
-      paid: "None; they say 'No paid ad shortcuts'",
-      distribution: 'Reddit (50+ subreddits), X, LinkedIn and Hacker News',
-      pricing: 'Not published; most engagements start with a paid audit',
-      minTerm: null,
-      start: null,
-      revisions: null,
-    },
-    pickThem: [
-      'You want organic growth only, with no paid ads.',
-      'You want Reddit marketing across many developer subreddits.',
-      'You want a paid audit before committing.',
-    ],
-    pickDraft: [
-      'You want 300+ engineers and subject matter experts checking every piece.',
-      'You want paid search plus newsletter, podcast and community sponsorships.',
-      'You need video, or API reference docs kept up to date.',
-      'You want AEO with a baseline and monthly AI citation tracking.',
-    ],
-    faqs: [
-      {
-        question: 'How is Draft.dev different from DevMarkLab?',
-        answer:
-          'DevMarkLab focuses on organic growth through SEO, content, Reddit and social, with no paid ads. Draft.dev adds 300+ engineers checking every piece, paid search, sponsorships and monthly AI citation tracking.',
-      },
-      {
-        question: 'How much does DevMarkLab cost?',
-        answer:
-          'DevMarkLab quotes after an audit rather than publishing a price, and most engagements start with a paid audit. Draft.dev starts at $9,000 a month, with a 3-month minimum, then month to month.',
-      },
-      draftAiAnswer,
-      {
-        question: 'Does Draft.dev create technical documentation?',
-        answer: draftDocsAnswer,
-      },
-      draftWhoAnswer,
-    ],
-    sources: [
-      'https://devmarklab.com/',
-      'https://devmarklab.com/services/',
-      'https://devmarklab.com/services/content-for-devtools/',
-      'https://devmarklab.com/terms/',
-    ],
-    checked,
-  },
+  studio1,
+  devmarklab,
   {
     slug: 'manicule',
     name: 'Manicule',
